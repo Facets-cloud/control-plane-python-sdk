@@ -1,0 +1,48 @@
+# PodSpec
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**active_deadline_seconds** | **int** |  | [optional] 
+**affinity** | [**Affinity**](Affinity.md) |  | [optional] 
+**automount_service_account_token** | **bool** |  | [optional] 
+**containers** | [**list[Container]**](Container.md) |  | [optional] 
+**dns_config** | [**PodDNSConfig**](PodDNSConfig.md) |  | [optional] 
+**dns_policy** | **str** |  | [optional] 
+**enable_service_links** | **bool** |  | [optional] 
+**ephemeral_containers** | [**list[EphemeralContainer]**](EphemeralContainer.md) |  | [optional] 
+**host_aliases** | [**list[HostAlias]**](HostAlias.md) |  | [optional] 
+**host_ipc** | **bool** |  | [optional] 
+**host_network** | **bool** |  | [optional] 
+**host_pid** | **bool** |  | [optional] 
+**host_users** | **bool** |  | [optional] 
+**hostname** | **str** |  | [optional] 
+**image_pull_secrets** | [**list[LocalObjectReference]**](LocalObjectReference.md) |  | [optional] 
+**init_containers** | [**list[Container]**](Container.md) |  | [optional] 
+**node_name** | **str** |  | [optional] 
+**node_selector** | **dict(str, str)** |  | [optional] 
+**os** | [**PodOS**](PodOS.md) |  | [optional] 
+**overhead** | [**dict(str, Quantity)**](Quantity.md) |  | [optional] 
+**preemption_policy** | **str** |  | [optional] 
+**priority** | **int** |  | [optional] 
+**priority_class_name** | **str** |  | [optional] 
+**readiness_gates** | [**list[PodReadinessGate]**](PodReadinessGate.md) |  | [optional] 
+**resource_claims** | [**list[PodResourceClaim]**](PodResourceClaim.md) |  | [optional] 
+**restart_policy** | **str** |  | [optional] 
+**runtime_class_name** | **str** |  | [optional] 
+**scheduler_name** | **str** |  | [optional] 
+**scheduling_gates** | [**list[PodSchedulingGate]**](PodSchedulingGate.md) |  | [optional] 
+**security_context** | [**PodSecurityContext**](PodSecurityContext.md) |  | [optional] 
+**service_account** | **str** |  | [optional] 
+**service_account_name** | **str** |  | [optional] 
+**set_hostname_as_fqdn** | **bool** |  | [optional] 
+**share_process_namespace** | **bool** |  | [optional] 
+**subdomain** | **str** |  | [optional] 
+**termination_grace_period_seconds** | **int** |  | [optional] 
+**tolerations** | [**list[Toleration]**](Toleration.md) |  | [optional] 
+**topology_spread_constraints** | [**list[TopologySpreadConstraint]**](TopologySpreadConstraint.md) |  | [optional] 
+**volumes** | [**list[Volume]**](Volume.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

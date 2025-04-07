@@ -1,0 +1,50 @@
+# KubernetesCluster
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**auto_sign_off_schedule** | **str** |  | [optional] 
+**base_cluster_id** | **str** |  | [optional] 
+**base_cluster_name** | **str** |  | [optional] 
+**branch** | **str** |  | [optional] 
+**cd_pipeline_parent** | **str** |  | [optional] 
+**certificate_authority** | **str** |  | [optional] 
+**cloud** | **str** |  | [optional] 
+**cloud_account_id** | **str** |  | [optional] 
+**cloud_account_secret_id** | **str** |  | [optional] 
+**cluster_code** | **str** |  | [optional] 
+**cluster_state** | **str** |  | [optional] 
+**common_environment_variables** | **dict(str, str)** |  | [optional] 
+**component_versions** | **dict(str, str)** |  | [optional] 
+**configured** | **bool** |  | [optional] 
+**created_by** | **str** |  | [optional] 
+**creation_date** | **datetime** |  | [optional] 
+**deleted** | **bool** |  | [optional] 
+**dynamic_launch** | **bool** |  | [optional] 
+**enable_auto_sign_off** | **bool** |  | [optional] 
+**entity_type** | **str** |  | [optional] 
+**global_variables** | **dict(str, str)** |  | [optional] 
+**host** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
+**is_ephemeral** | **bool** |  | [optional] 
+**k8s_requests_to_limits_ratio** | **float** |  | [optional] 
+**last_modified_by** | **str** |  | [optional] 
+**last_modified_date** | **datetime** |  | [optional] 
+**name** | **str** |  | [optional] 
+**namespace** | **str** |  | [optional] 
+**number_of_versions** | **int** |  | [optional] 
+**pause_releases** | **bool** |  | [optional] 
+**release_stream** | **str** |  | [optional] 
+**require_sign_off** | **bool** |  | [optional] 
+**schedules** | **dict(str, str)** |  | [optional] 
+**secrets** | **dict(str, str)** |  | [optional] 
+**secrets_uid** | **str** |  | [optional] 
+**stack_name** | **str** |  | [optional] 
+**token** | **str** |  | [optional] 
+**tz** | **str** |  | [optional] 
+**variables** | [**dict(str, Variables)**](Variables.md) |  | [optional] 
+**versioning_key** | **str** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
