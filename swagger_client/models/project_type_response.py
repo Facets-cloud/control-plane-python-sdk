@@ -34,6 +34,8 @@ class ProjectTypeResponse(object):
         'created_by': 'str',
         'creation_date': 'datetime',
         'description': 'str',
+        'iac_tool': 'str',
+        'iac_tool_version': 'str',
         'id': 'str',
         'last_modified_by': 'str',
         'last_modified_date': 'datetime',
@@ -49,6 +51,8 @@ class ProjectTypeResponse(object):
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
         'description': 'description',
+        'iac_tool': 'iacTool',
+        'iac_tool_version': 'iacToolVersion',
         'id': 'id',
         'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
@@ -57,7 +61,7 @@ class ProjectTypeResponse(object):
         'template_git_details': 'templateGitDetails'
     }
 
-    def __init__(self, allowed_clouds=None, associated_blueprints=None, base_project_name=None, created_by=None, creation_date=None, description=None, id=None, last_modified_by=None, last_modified_date=None, mapped_resources=None, name=None, template_git_details=None):  # noqa: E501
+    def __init__(self, allowed_clouds=None, associated_blueprints=None, base_project_name=None, created_by=None, creation_date=None, description=None, iac_tool=None, iac_tool_version=None, id=None, last_modified_by=None, last_modified_date=None, mapped_resources=None, name=None, template_git_details=None):  # noqa: E501
         """ProjectTypeResponse - a model defined in Swagger"""  # noqa: E501
         self._allowed_clouds = None
         self._associated_blueprints = None
@@ -65,6 +69,8 @@ class ProjectTypeResponse(object):
         self._created_by = None
         self._creation_date = None
         self._description = None
+        self._iac_tool = None
+        self._iac_tool_version = None
         self._id = None
         self._last_modified_by = None
         self._last_modified_date = None
@@ -84,6 +90,10 @@ class ProjectTypeResponse(object):
             self.creation_date = creation_date
         if description is not None:
             self.description = description
+        if iac_tool is not None:
+            self.iac_tool = iac_tool
+        if iac_tool_version is not None:
+            self.iac_tool_version = iac_tool_version
         if id is not None:
             self.id = id
         if last_modified_by is not None:
@@ -229,6 +239,54 @@ class ProjectTypeResponse(object):
         """
 
         self._description = description
+
+    @property
+    def iac_tool(self):
+        """Gets the iac_tool of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The iac_tool of this ProjectTypeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._iac_tool
+
+    @iac_tool.setter
+    def iac_tool(self, iac_tool):
+        """Sets the iac_tool of this ProjectTypeResponse.
+
+
+        :param iac_tool: The iac_tool of this ProjectTypeResponse.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
+        if iac_tool not in allowed_values:
+            raise ValueError(
+                "Invalid value for `iac_tool` ({0}), must be one of {1}"  # noqa: E501
+                .format(iac_tool, allowed_values)
+            )
+
+        self._iac_tool = iac_tool
+
+    @property
+    def iac_tool_version(self):
+        """Gets the iac_tool_version of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The iac_tool_version of this ProjectTypeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._iac_tool_version
+
+    @iac_tool_version.setter
+    def iac_tool_version(self, iac_tool_version):
+        """Sets the iac_tool_version of this ProjectTypeResponse.
+
+
+        :param iac_tool_version: The iac_tool_version of this ProjectTypeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._iac_tool_version = iac_tool_version
 
     @property
     def id(self):

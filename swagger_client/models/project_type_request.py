@@ -32,7 +32,7 @@ class ProjectTypeRequest(object):
         'base_project_name': 'str',
         'description': 'str',
         'iac_tool': 'str',
-        'iac_version': 'str',
+        'iac_tool_version': 'str',
         'mapped_resources': 'list[ProjectTypeMappedResource]',
         'name': 'str',
         'template_git_details': 'TemplateGitDetails',
@@ -44,20 +44,20 @@ class ProjectTypeRequest(object):
         'base_project_name': 'baseProjectName',
         'description': 'description',
         'iac_tool': 'iacTool',
-        'iac_version': 'iacVersion',
+        'iac_tool_version': 'iacToolVersion',
         'mapped_resources': 'mappedResources',
         'name': 'name',
         'template_git_details': 'templateGitDetails',
         'use_branch': 'useBranch'
     }
 
-    def __init__(self, allowed_clouds=None, base_project_name=None, description=None, iac_tool=None, iac_version=None, mapped_resources=None, name=None, template_git_details=None, use_branch=None):  # noqa: E501
+    def __init__(self, allowed_clouds=None, base_project_name=None, description=None, iac_tool=None, iac_tool_version=None, mapped_resources=None, name=None, template_git_details=None, use_branch=None):  # noqa: E501
         """ProjectTypeRequest - a model defined in Swagger"""  # noqa: E501
         self._allowed_clouds = None
         self._base_project_name = None
         self._description = None
         self._iac_tool = None
-        self._iac_version = None
+        self._iac_tool_version = None
         self._mapped_resources = None
         self._name = None
         self._template_git_details = None
@@ -70,8 +70,8 @@ class ProjectTypeRequest(object):
             self.description = description
         if iac_tool is not None:
             self.iac_tool = iac_tool
-        if iac_version is not None:
-            self.iac_version = iac_version
+        if iac_tool_version is not None:
+            self.iac_tool_version = iac_tool_version
         if mapped_resources is not None:
             self.mapped_resources = mapped_resources
         self.name = name
@@ -187,25 +187,25 @@ class ProjectTypeRequest(object):
         self._iac_tool = iac_tool
 
     @property
-    def iac_version(self):
-        """Gets the iac_version of this ProjectTypeRequest.  # noqa: E501
+    def iac_tool_version(self):
+        """Gets the iac_tool_version of this ProjectTypeRequest.  # noqa: E501
 
 
-        :return: The iac_version of this ProjectTypeRequest.  # noqa: E501
+        :return: The iac_tool_version of this ProjectTypeRequest.  # noqa: E501
         :rtype: str
         """
-        return self._iac_version
+        return self._iac_tool_version
 
-    @iac_version.setter
-    def iac_version(self, iac_version):
-        """Sets the iac_version of this ProjectTypeRequest.
+    @iac_tool_version.setter
+    def iac_tool_version(self, iac_tool_version):
+        """Sets the iac_tool_version of this ProjectTypeRequest.
 
 
-        :param iac_version: The iac_version of this ProjectTypeRequest.  # noqa: E501
+        :param iac_tool_version: The iac_tool_version of this ProjectTypeRequest.  # noqa: E501
         :type: str
         """
 
-        self._iac_version = iac_version
+        self._iac_tool_version = iac_tool_version
 
     @property
     def mapped_resources(self):

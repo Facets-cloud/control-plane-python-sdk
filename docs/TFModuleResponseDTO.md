@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **flavor** | **str** | Flavor of the TF Module | [optional] 
 **git_ref** | **str** | Reference to a specific GIT branch or commit | [optional] 
 **git_url** | **str** | URL of the GIT repository | [optional] 
+**iac_tool** | **list[str]** |  | [optional] 
 **id** | **str** |  | [optional] 
 **inputs** | [**dict(str, Input)**](Input.md) | Input parameters for this module | [optional] 
 **intent** | **str** | Intent of the TF Module | [optional] 

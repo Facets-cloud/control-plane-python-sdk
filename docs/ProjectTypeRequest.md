@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **base_project_name** | **str** | Base project name | [optional] 
 **description** | **str** | Description of the project type | [optional] 
 **iac_tool** | **str** | IAC tool used for the project | [optional] 
-**iac_version** | **str** |  | [optional] 
+**iac_tool_version** | **str** |  | [optional] 
 **mapped_resources** | [**list[ProjectTypeMappedResource]**](ProjectTypeMappedResource.md) | Allowed modules for the project | [optional] 
 **name** | **str** | Name of the project type | 
 **template_git_details** | [**TemplateGitDetails**](TemplateGitDetails.md) |  | 

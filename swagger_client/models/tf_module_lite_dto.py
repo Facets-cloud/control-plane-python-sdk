@@ -31,6 +31,7 @@ class TFModuleLiteDTO(object):
         'allowed_test_projects': 'list[str]',
         'clouds': 'list[str]',
         'flavor': 'str',
+        'iac_tool': 'list[str]',
         'id': 'str',
         'inputs': 'dict(str, Input)',
         'intent': 'str',
@@ -45,6 +46,7 @@ class TFModuleLiteDTO(object):
         'allowed_test_projects': 'allowedTestProjects',
         'clouds': 'clouds',
         'flavor': 'flavor',
+        'iac_tool': 'iacTool',
         'id': 'id',
         'inputs': 'inputs',
         'intent': 'intent',
@@ -55,11 +57,12 @@ class TFModuleLiteDTO(object):
         'version': 'version'
     }
 
-    def __init__(self, allowed_test_projects=None, clouds=None, flavor=None, id=None, inputs=None, intent=None, intent_type=None, source=None, stage=None, tags=None, version=None):  # noqa: E501
+    def __init__(self, allowed_test_projects=None, clouds=None, flavor=None, iac_tool=None, id=None, inputs=None, intent=None, intent_type=None, source=None, stage=None, tags=None, version=None):  # noqa: E501
         """TFModuleLiteDTO - a model defined in Swagger"""  # noqa: E501
         self._allowed_test_projects = None
         self._clouds = None
         self._flavor = None
+        self._iac_tool = None
         self._id = None
         self._inputs = None
         self._intent = None
@@ -75,6 +78,8 @@ class TFModuleLiteDTO(object):
             self.clouds = clouds
         if flavor is not None:
             self.flavor = flavor
+        if iac_tool is not None:
+            self.iac_tool = iac_tool
         if id is not None:
             self.id = id
         if inputs is not None:
@@ -160,6 +165,34 @@ class TFModuleLiteDTO(object):
         """
 
         self._flavor = flavor
+
+    @property
+    def iac_tool(self):
+        """Gets the iac_tool of this TFModuleLiteDTO.  # noqa: E501
+
+
+        :return: The iac_tool of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._iac_tool
+
+    @iac_tool.setter
+    def iac_tool(self, iac_tool):
+        """Sets the iac_tool of this TFModuleLiteDTO.
+
+
+        :param iac_tool: The iac_tool of this TFModuleLiteDTO.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
+        if not set(iac_tool).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._iac_tool = iac_tool
 
     @property
     def id(self):

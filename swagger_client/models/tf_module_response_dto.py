@@ -38,6 +38,7 @@ class TFModuleResponseDTO(object):
         'flavor': 'str',
         'git_ref': 'str',
         'git_url': 'str',
+        'iac_tool': 'list[str]',
         'id': 'str',
         'inputs': 'dict(str, Input)',
         'intent': 'str',
@@ -72,6 +73,7 @@ class TFModuleResponseDTO(object):
         'flavor': 'flavor',
         'git_ref': 'gitRef',
         'git_url': 'gitUrl',
+        'iac_tool': 'iacTool',
         'id': 'id',
         'inputs': 'inputs',
         'intent': 'intent',
@@ -95,7 +97,7 @@ class TFModuleResponseDTO(object):
         'versioning_key': 'versioningKey'
     }
 
-    def __init__(self, alias_flavors=None, allowed_test_projects=None, clouds=None, created_by=None, creation_date=None, description=None, feature_branch=None, flavor=None, git_ref=None, git_url=None, id=None, inputs=None, intent=None, intent_details=None, last_modified_by=None, last_modified_date=None, latest_version=None, metadata=None, other_versions=None, outputs=None, preview_module_id=None, published_module_id=None, readme_md=None, sample_json=None, source=None, spec=None, stage=None, tags=None, type=None, version=None, versioning_key=None):  # noqa: E501
+    def __init__(self, alias_flavors=None, allowed_test_projects=None, clouds=None, created_by=None, creation_date=None, description=None, feature_branch=None, flavor=None, git_ref=None, git_url=None, iac_tool=None, id=None, inputs=None, intent=None, intent_details=None, last_modified_by=None, last_modified_date=None, latest_version=None, metadata=None, other_versions=None, outputs=None, preview_module_id=None, published_module_id=None, readme_md=None, sample_json=None, source=None, spec=None, stage=None, tags=None, type=None, version=None, versioning_key=None):  # noqa: E501
         """TFModuleResponseDTO - a model defined in Swagger"""  # noqa: E501
         self._alias_flavors = None
         self._allowed_test_projects = None
@@ -107,6 +109,7 @@ class TFModuleResponseDTO(object):
         self._flavor = None
         self._git_ref = None
         self._git_url = None
+        self._iac_tool = None
         self._id = None
         self._inputs = None
         self._intent = None
@@ -149,6 +152,8 @@ class TFModuleResponseDTO(object):
             self.git_ref = git_ref
         if git_url is not None:
             self.git_url = git_url
+        if iac_tool is not None:
+            self.iac_tool = iac_tool
         if id is not None:
             self.id = id
         if inputs is not None:
@@ -415,6 +420,34 @@ class TFModuleResponseDTO(object):
         """
 
         self._git_url = git_url
+
+    @property
+    def iac_tool(self):
+        """Gets the iac_tool of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The iac_tool of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._iac_tool
+
+    @iac_tool.setter
+    def iac_tool(self, iac_tool):
+        """Sets the iac_tool of this TFModuleResponseDTO.
+
+
+        :param iac_tool: The iac_tool of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
+        if not set(iac_tool).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._iac_tool = iac_tool
 
     @property
     def id(self):
