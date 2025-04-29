@@ -16,18 +16,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '11'
-      
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
-      
+
       - name: Download swagger-codegen CLI
         run: |
           wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.68/swagger-codegen-cli-3.0.68.jar -O swagger-codegen-cli.jar
@@ -35,37 +35,37 @@ jobs:
       - name: Generate timestamp for branch name
         id: timestamp
         run: echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
-      
+
       - name: Create and checkout new branch
         run: |
           git checkout -b update-sdk-${{ steps.timestamp.outputs.timestamp }}
-      
+
       - name: Fetch latest API docs
         run: |
           curl https://${{ inputs.api_url }}/v2/api-docs -o api-docs-new.json
-      
+
       - name: Generate updated SDK
         run: |
-          java -jar swagger-codegen-cli.jar generate -i api-docs-new.json -l python -o . -c swagger-config.json
-      
+          java -Dcom.fasterxml.jackson.core.StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION=true -jar swagger-codegen-cli.jar generate -i api-docs-new.json -l python -o . -c swagger-config.json
+
       - name: Remove temporary API docs file
         run: |
           rm api-docs-new.json
-      
+
       - name: Configure Git
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-      
+
       - name: Commit changes
         run: |
           git add -A
           git diff --staged --quiet || git commit -m "Update Python SDK from latest API docs"
-      
+
       - name: Push changes
         run: |
           git push origin update-sdk-${{ steps.timestamp.outputs.timestamp }}
-      
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
