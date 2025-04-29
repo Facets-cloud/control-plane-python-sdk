@@ -42,15 +42,23 @@ jobs:
 
       - name: Fetch latest API docs
         run: |
-          curl https://${{ inputs.api_url }}/v2/api-docs -o api-docs-new.json
+          curl https://${{ inputs.api_url }}/v2/api-docs -o api-docs-raw.json
+
+      - name: Install jq
+        run: |
+          sudo apt-get install -y jq
+
+      - name: Format JSON
+        run: |
+          jq . api-docs-raw.json > api-docs-fixed.json
 
       - name: Generate updated SDK
         run: |
-          java -Dcom.fasterxml.jackson.core.StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION=true -jar swagger-codegen-cli.jar generate -i api-docs-new.json -l python -o . -c swagger-config.json
+          java -jar swagger-codegen-cli.jar generate -i api-docs-fixed.json -l python -o . -c swagger-config.json
 
-      - name: Remove temporary API docs file
+      - name: Remove temporary API docs files
         run: |
-          rm api-docs-new.json
+          rm api-docs-raw.json api-docs-fixed.json
 
       - name: Configure Git
         run: |
