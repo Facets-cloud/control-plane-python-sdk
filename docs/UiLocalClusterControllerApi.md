@@ -1,6 +1,6 @@
 # swagger_client.UiLocalClusterControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,9 +9,8 @@ Method | HTTP request | Description
 [**get_vagrant_using_get**](UiLocalClusterControllerApi.md#get_vagrant_using_get) | **GET** /cc-ui/v1/local/clusters/{clusterId}/vagrant | getVagrant
 [**update_cluster_using_put3**](UiLocalClusterControllerApi.md#update_cluster_using_put3) | **PUT** /cc-ui/v1/local/clusters/{clusterId} | updateCluster
 
-
 # **create_cluster_using_post3**
-> LocalCluster create_cluster_using_post3(request)
+> LocalCluster create_cluster_using_post3(body)
 
 Create a new Environment for a blueprint
 
@@ -22,7 +21,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -30,11 +28,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiLocalClusterControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.LocalClusterRequest() # LocalClusterRequest | request
+body = swagger_client.LocalClusterRequest() # LocalClusterRequest | request
 
 try:
     # Create a new Environment for a blueprint
-    api_response = api_instance.create_cluster_using_post3(request)
+    api_response = api_instance.create_cluster_using_post3(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiLocalClusterControllerApi->create_cluster_using_post3: %s\n" % e)
@@ -44,7 +42,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**LocalClusterRequest**](LocalClusterRequest.md)| request | 
+ **body** | [**LocalClusterRequest**](LocalClusterRequest.md)| request | 
 
 ### Return type
 
@@ -73,7 +71,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -124,7 +121,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -164,7 +160,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_cluster_using_put3**
-> LocalCluster update_cluster_using_put3(cluster_id, request)
+> LocalCluster update_cluster_using_put3(body, cluster_id)
 
 updateCluster
 
@@ -175,7 +171,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -183,12 +178,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiLocalClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.LocalClusterRequest() # LocalClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.LocalClusterRequest() # LocalClusterRequest | request
 
 try:
     # updateCluster
-    api_response = api_instance.update_cluster_using_put3(cluster_id, request)
+    api_response = api_instance.update_cluster_using_put3(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiLocalClusterControllerApi->update_cluster_using_put3: %s\n" % e)
@@ -198,8 +193,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**LocalClusterRequest**](LocalClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**LocalClusterRequest**](LocalClusterRequest.md)| request | 
 
 ### Return type
 

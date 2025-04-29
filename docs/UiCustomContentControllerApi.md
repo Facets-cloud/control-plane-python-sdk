@@ -1,6 +1,6 @@
 # swagger_client.UiCustomContentControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**render_content_using_post**](UiCustomContentControllerApi.md#render_content_using_post) | **POST** /cc-ui/v1/content/files/{contentId}/render | renderContent
 [**update_content_file_using_put**](UiCustomContentControllerApi.md#update_content_file_using_put) | **PUT** /cc-ui/v1/content/files/{contentId} | updateContentFile
 
-
 # **create_content_file_using_post**
-> ContentFile create_content_file_using_post(content_file)
+> ContentFile create_content_file_using_post(body)
 
 createContentFile
 
@@ -23,7 +22,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -31,11 +29,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
-content_file = swagger_client.ContentFile() # ContentFile | contentFile
+body = swagger_client.ContentFile() # ContentFile | contentFile
 
 try:
     # createContentFile
-    api_response = api_instance.create_content_file_using_post(content_file)
+    api_response = api_instance.create_content_file_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCustomContentControllerApi->create_content_file_using_post: %s\n" % e)
@@ -45,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_file** | [**ContentFile**](ContentFile.md)| contentFile | 
+ **body** | [**ContentFile**](ContentFile.md)| contentFile | 
 
 ### Return type
 
@@ -74,7 +72,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -108,7 +105,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -124,7 +121,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -172,7 +168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **render_content_using_post**
-> str render_content_using_post(content_id, payload)
+> str render_content_using_post(body, content_id)
 
 renderContent
 
@@ -183,7 +179,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -191,12 +186,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
+body = NULL # dict(str, str) | payload
 content_id = 'content_id_example' # str | contentId
-payload = NULL # object | payload
 
 try:
     # renderContent
-    api_response = api_instance.render_content_using_post(content_id, payload)
+    api_response = api_instance.render_content_using_post(body, content_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCustomContentControllerApi->render_content_using_post: %s\n" % e)
@@ -206,8 +201,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, str)**](dict.md)| payload | 
  **content_id** | **str**| contentId | 
- **payload** | **object**| payload | 
 
 ### Return type
 
@@ -225,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_content_file_using_put**
-> ContentFile update_content_file_using_put(content_id, updated_content)
+> ContentFile update_content_file_using_put(body, content_id)
 
 updateContentFile
 
@@ -236,7 +231,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -244,12 +238,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ContentFile() # ContentFile | updatedContent
 content_id = 'content_id_example' # str | contentId
-updated_content = swagger_client.ContentFile() # ContentFile | updatedContent
 
 try:
     # updateContentFile
-    api_response = api_instance.update_content_file_using_put(content_id, updated_content)
+    api_response = api_instance.update_content_file_using_put(body, content_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCustomContentControllerApi->update_content_file_using_put: %s\n" % e)
@@ -259,8 +253,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ContentFile**](ContentFile.md)| updatedContent | 
  **content_id** | **str**| contentId | 
- **updated_content** | [**ContentFile**](ContentFile.md)| updatedContent | 
 
 ### Return type
 

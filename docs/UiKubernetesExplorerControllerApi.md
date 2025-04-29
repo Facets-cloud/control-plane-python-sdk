@@ -1,6 +1,6 @@
 # swagger_client.UiKubernetesExplorerControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,7 +28,6 @@ Method | HTTP request | Description
 [**list_services_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_services_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/services | listServicesByLabels
 [**list_statefulsets_labels_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_statefulsets_labels_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/statefulsets | listStatefulsetsLabelsByLabels
 
-
 # **container_logs_using_get**
 > StreamingResponseBody container_logs_using_get(cluster_id, container_name, labels, pod_name, tail)
 
@@ -41,7 +40,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -100,7 +98,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -151,7 +148,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -206,7 +202,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -263,7 +258,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -318,7 +312,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -373,7 +366,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -426,7 +418,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -481,7 +472,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -536,7 +526,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -589,7 +578,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -642,7 +630,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -695,7 +682,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -752,7 +738,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -805,7 +790,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -858,7 +842,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -911,7 +894,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -964,7 +946,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1017,7 +998,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1070,7 +1050,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1123,7 +1102,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1176,7 +1154,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1229,7 +1206,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

@@ -1,6 +1,6 @@
 # swagger_client.DeploymentControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**get_logs_using_get**](DeploymentControllerApi.md#get_logs_using_get) | **GET** /cc/v1/clusters/{clusterId}/deployments/{id} | getLogs
 [**trigger_automation_suite_using_post**](DeploymentControllerApi.md#trigger_automation_suite_using_post) | **POST** /cc/v1/clusters/{clusterId}/deployments/qa/triggerSuite | triggerAutomationSuite
 [**validate_sanity_result_using_post**](DeploymentControllerApi.md#validate_sanity_result_using_post) | **POST** /cc/v1/clusters/{clusterId}/deployments/qa/validateSanityResult | validateSanityResult
-
 
 # **abort_automation_suite_using_delete**
 > abort_automation_suite_using_delete(cluster_id, execution_id)
@@ -24,7 +23,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -60,7 +58,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -76,7 +74,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -129,7 +126,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -180,7 +176,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -222,7 +217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trigger_automation_suite_using_post**
-> str trigger_automation_suite_using_post(automation_suite, cluster_id)
+> str trigger_automation_suite_using_post(body, cluster_id)
 
 triggerAutomationSuite
 
@@ -233,7 +228,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -241,12 +235,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
-automation_suite = swagger_client.QASuite() # QASuite | automationSuite
+body = swagger_client.QASuite() # QASuite | automationSuite
 cluster_id = 'cluster_id_example' # str | clusterId
 
 try:
     # triggerAutomationSuite
-    api_response = api_instance.trigger_automation_suite_using_post(automation_suite, cluster_id)
+    api_response = api_instance.trigger_automation_suite_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DeploymentControllerApi->trigger_automation_suite_using_post: %s\n" % e)
@@ -256,7 +250,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **automation_suite** | [**QASuite**](QASuite.md)| automationSuite | 
+ **body** | [**QASuite**](QASuite.md)| automationSuite | 
  **cluster_id** | **str**| clusterId | 
 
 ### Return type
@@ -275,7 +269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_sanity_result_using_post**
-> validate_sanity_result_using_post(cluster_id, qa_suite_result)
+> validate_sanity_result_using_post(body, cluster_id)
 
 validateSanityResult
 
@@ -286,7 +280,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -294,12 +287,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.QASuiteResult() # QASuiteResult | qaSuiteResult
 cluster_id = 'cluster_id_example' # str | clusterId
-qa_suite_result = swagger_client.QASuiteResult() # QASuiteResult | qaSuiteResult
 
 try:
     # validateSanityResult
-    api_instance.validate_sanity_result_using_post(cluster_id, qa_suite_result)
+    api_instance.validate_sanity_result_using_post(body, cluster_id)
 except ApiException as e:
     print("Exception when calling DeploymentControllerApi->validate_sanity_result_using_post: %s\n" % e)
 ```
@@ -308,8 +301,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**QASuiteResult**](QASuiteResult.md)| qaSuiteResult | 
  **cluster_id** | **str**| clusterId | 
- **qa_suite_result** | [**QASuiteResult**](QASuiteResult.md)| qaSuiteResult | 
 
 ### Return type
 
@@ -322,7 +315,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

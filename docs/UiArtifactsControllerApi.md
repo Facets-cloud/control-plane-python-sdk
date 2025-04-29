@@ -1,6 +1,6 @@
 # swagger_client.UiArtifactsControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,9 +26,8 @@ Method | HTTP request | Description
 [**update_release_stream_using_post**](UiArtifactsControllerApi.md#update_release_stream_using_post) | **POST** /cc-ui/v1/artifacts/clusterId/{clusterId}/currentReleaseStream/{currentReleaseStream}/updatedReleaseStream/{updatedReleaseStream}/updateStream | updateReleaseStream
 [**upload_artifacts_zip_using_post**](UiArtifactsControllerApi.md#upload_artifacts_zip_using_post) | **POST** /cc-ui/v1/artifacts/upload | uploadArtifactsZip
 
-
 # **attach_image_via_register_using_post**
-> attach_image_via_register_using_post(request)
+> attach_image_via_register_using_post(body)
 
 attachImageViaRegister
 
@@ -39,7 +38,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -47,11 +45,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.ImageOverrideRequest() # ImageOverrideRequest | request
+body = swagger_client.ImageOverrideRequest() # ImageOverrideRequest | request
 
 try:
     # attachImageViaRegister
-    api_instance.attach_image_via_register_using_post(request)
+    api_instance.attach_image_via_register_using_post(body)
 except ApiException as e:
     print("Exception when calling UiArtifactsControllerApi->attach_image_via_register_using_post: %s\n" % e)
 ```
@@ -60,7 +58,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ImageOverrideRequest**](ImageOverrideRequest.md)| request | 
+ **body** | [**ImageOverrideRequest**](ImageOverrideRequest.md)| request | 
 
 ### Return type
 
@@ -73,7 +71,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -89,7 +87,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -123,7 +120,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -139,7 +136,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -175,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -192,7 +188,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -230,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -247,7 +242,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -283,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -300,7 +294,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -353,7 +346,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -406,7 +398,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -457,7 +448,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -512,7 +502,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -559,7 +548,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -595,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -612,7 +600,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -648,13 +635,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **push_artifact_using_post**
-> push_artifact_using_post(artifact_request)
+> push_artifact_using_post(body)
 
 pushArtifact
 
@@ -665,7 +652,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -673,11 +659,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-artifact_request = swagger_client.ArtifactRequest() # ArtifactRequest | artifactRequest
+body = swagger_client.ArtifactRequest() # ArtifactRequest | artifactRequest
 
 try:
     # pushArtifact
-    api_instance.push_artifact_using_post(artifact_request)
+    api_instance.push_artifact_using_post(body)
 except ApiException as e:
     print("Exception when calling UiArtifactsControllerApi->push_artifact_using_post: %s\n" % e)
 ```
@@ -686,7 +672,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_request** | [**ArtifactRequest**](ArtifactRequest.md)| artifactRequest | 
+ **body** | [**ArtifactRequest**](ArtifactRequest.md)| artifactRequest | 
 
 ### Return type
 
@@ -699,7 +685,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -715,7 +701,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -748,13 +733,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_artifact_by_env_using_post**
-> register_artifact_by_env_using_post(artifact_request)
+> register_artifact_by_env_using_post(body)
 
 registerArtifactByEnv
 
@@ -765,7 +750,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -773,11 +757,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-artifact_request = swagger_client.ArtifactByEnvironmentRequest() # ArtifactByEnvironmentRequest | artifactRequest
+body = swagger_client.ArtifactByEnvironmentRequest() # ArtifactByEnvironmentRequest | artifactRequest
 
 try:
     # registerArtifactByEnv
-    api_instance.register_artifact_by_env_using_post(artifact_request)
+    api_instance.register_artifact_by_env_using_post(body)
 except ApiException as e:
     print("Exception when calling UiArtifactsControllerApi->register_artifact_by_env_using_post: %s\n" % e)
 ```
@@ -786,7 +770,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_request** | [**ArtifactByEnvironmentRequest**](ArtifactByEnvironmentRequest.md)| artifactRequest | 
+ **body** | [**ArtifactByEnvironmentRequest**](ArtifactByEnvironmentRequest.md)| artifactRequest | 
 
 ### Return type
 
@@ -799,12 +783,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_artifact_by_release_stream_using_post**
-> register_artifact_by_release_stream_using_post(artifact_request)
+> register_artifact_by_release_stream_using_post(body)
 
 registerArtifactByReleaseStream
 
@@ -815,7 +799,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -823,11 +806,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-artifact_request = swagger_client.ArtifactByReleaseStreamRequest() # ArtifactByReleaseStreamRequest | artifactRequest
+body = swagger_client.ArtifactByReleaseStreamRequest() # ArtifactByReleaseStreamRequest | artifactRequest
 
 try:
     # registerArtifactByReleaseStream
-    api_instance.register_artifact_by_release_stream_using_post(artifact_request)
+    api_instance.register_artifact_by_release_stream_using_post(body)
 except ApiException as e:
     print("Exception when calling UiArtifactsControllerApi->register_artifact_by_release_stream_using_post: %s\n" % e)
 ```
@@ -836,7 +819,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_request** | [**ArtifactByReleaseStreamRequest**](ArtifactByReleaseStreamRequest.md)| artifactRequest | 
+ **body** | [**ArtifactByReleaseStreamRequest**](ArtifactByReleaseStreamRequest.md)| artifactRequest | 
 
 ### Return type
 
@@ -849,12 +832,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_artifact_saas_using_post**
-> register_artifact_saas_using_post(artifact_request)
+> register_artifact_saas_using_post(body)
 
 registerArtifactSaas
 
@@ -865,7 +848,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -873,11 +855,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-artifact_request = swagger_client.SaasArtifactRequest() # SaasArtifactRequest | artifactRequest
+body = swagger_client.SaasArtifactRequest() # SaasArtifactRequest | artifactRequest
 
 try:
     # registerArtifactSaas
-    api_instance.register_artifact_saas_using_post(artifact_request)
+    api_instance.register_artifact_saas_using_post(body)
 except ApiException as e:
     print("Exception when calling UiArtifactsControllerApi->register_artifact_saas_using_post: %s\n" % e)
 ```
@@ -886,7 +868,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_request** | [**SaasArtifactRequest**](SaasArtifactRequest.md)| artifactRequest | 
+ **body** | [**SaasArtifactRequest**](SaasArtifactRequest.md)| artifactRequest | 
 
 ### Return type
 
@@ -899,12 +881,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_artifact_using_post1**
-> list[Artifact] register_artifact_using_post1(artifact)
+> list[Artifact] register_artifact_using_post1(body)
 
 registerArtifact
 
@@ -915,7 +897,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -923,11 +904,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-artifact = swagger_client.Artifact() # Artifact | artifact
+body = swagger_client.Artifact() # Artifact | artifact
 
 try:
     # registerArtifact
-    api_response = api_instance.register_artifact_using_post1(artifact)
+    api_response = api_instance.register_artifact_using_post1(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactsControllerApi->register_artifact_using_post1: %s\n" % e)
@@ -937,7 +918,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact** | [**Artifact**](Artifact.md)| artifact | 
+ **body** | [**Artifact**](Artifact.md)| artifact | 
 
 ### Return type
 
@@ -955,7 +936,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_artifact_v2_using_post**
-> register_artifact_v2_using_post(artifact_request)
+> register_artifact_v2_using_post(body)
 
 registerArtifactV2
 
@@ -966,7 +947,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -974,11 +954,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-artifact_request = swagger_client.ArtifactRequest() # ArtifactRequest | artifactRequest
+body = swagger_client.ArtifactRequest() # ArtifactRequest | artifactRequest
 
 try:
     # registerArtifactV2
-    api_instance.register_artifact_v2_using_post(artifact_request)
+    api_instance.register_artifact_v2_using_post(body)
 except ApiException as e:
     print("Exception when calling UiArtifactsControllerApi->register_artifact_v2_using_post: %s\n" % e)
 ```
@@ -987,7 +967,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_request** | [**ArtifactRequest**](ArtifactRequest.md)| artifactRequest | 
+ **body** | [**ArtifactRequest**](ArtifactRequest.md)| artifactRequest | 
 
 ### Return type
 
@@ -1000,7 +980,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1016,7 +996,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1058,7 +1037,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1075,7 +1054,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1083,8 +1061,8 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactsControllerApi(swagger_client.ApiClient(configuration))
-artifact_request = NULL # object | artifactRequest
-file = '/path/to/file.txt' # file | file
+artifact_request = NULL # object | 
+file = 'file_example' # str | 
 
 try:
     # uploadArtifactsZip
@@ -1097,8 +1075,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_request** | [**object**](.md)| artifactRequest | 
- **file** | **file**| file | 
+ **artifact_request** | [**object**](.md)|  | 
+ **file** | **str**|  | 
 
 ### Return type
 
@@ -1111,7 +1089,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

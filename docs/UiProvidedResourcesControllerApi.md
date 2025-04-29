@@ -1,12 +1,11 @@
 # swagger_client.UiProvidedResourcesControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_provided_resources_info_using_get**](UiProvidedResourcesControllerApi.md#get_provided_resources_info_using_get) | **GET** /cc-ui/v1/provided-resources/cluster/{clusterId}/resource-type/{resourceType}/resource-name/{resourceName} | getProvidedResourcesInfo
 [**save_provided_resources_details_using_post**](UiProvidedResourcesControllerApi.md#save_provided_resources_details_using_post) | **POST** /cc-ui/v1/provided-resources/{clusterId} | saveProvidedResourcesDetails
-
 
 # **get_provided_resources_info_using_get**
 > GetProvidedResourcesResponse get_provided_resources_info_using_get(cluster_id, resource_name, resource_type)
@@ -20,7 +19,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -64,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_provided_resources_details_using_post**
-> save_provided_resources_details_using_post(cluster_id, save_provided_resources_request)
+> save_provided_resources_details_using_post(body, cluster_id)
 
 saveProvidedResourcesDetails
 
@@ -75,7 +73,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -83,12 +80,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiProvidedResourcesControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.SaveProvidedResourcesRequest() # SaveProvidedResourcesRequest | saveProvidedResourcesRequest
 cluster_id = 'cluster_id_example' # str | clusterId
-save_provided_resources_request = swagger_client.SaveProvidedResourcesRequest() # SaveProvidedResourcesRequest | saveProvidedResourcesRequest
 
 try:
     # saveProvidedResourcesDetails
-    api_instance.save_provided_resources_details_using_post(cluster_id, save_provided_resources_request)
+    api_instance.save_provided_resources_details_using_post(body, cluster_id)
 except ApiException as e:
     print("Exception when calling UiProvidedResourcesControllerApi->save_provided_resources_details_using_post: %s\n" % e)
 ```
@@ -97,8 +94,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SaveProvidedResourcesRequest**](SaveProvidedResourcesRequest.md)| saveProvidedResourcesRequest | 
  **cluster_id** | **str**| clusterId | 
- **save_provided_resources_request** | [**SaveProvidedResourcesRequest**](SaveProvidedResourcesRequest.md)| saveProvidedResourcesRequest | 
 
 ### Return type
 
@@ -111,7 +108,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

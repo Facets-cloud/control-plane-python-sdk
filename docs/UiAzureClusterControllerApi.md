@@ -1,6 +1,6 @@
 # swagger_client.UiAzureClusterControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**update_azure_cluster_using_put**](UiAzureClusterControllerApi.md#update_azure_cluster_using_put) | **PUT** /cc-ui/v1/azure/clusters/{clusterId} | updateAzureCluster
 [**validate_vnet_using_get**](UiAzureClusterControllerApi.md#validate_vnet_using_get) | **GET** /cc-ui/v1/azure/clusters/validate-vnet | validateVnet
 
-
 # **configure_draft_cluster_using_post1**
-> AzureCluster configure_draft_cluster_using_post1(cluster_id, request)
+> AzureCluster configure_draft_cluster_using_post1(body, cluster_id)
 
 configureDraftCluster
 
@@ -23,7 +22,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -31,12 +29,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
 
 try:
     # configureDraftCluster
-    api_response = api_instance.configure_draft_cluster_using_post1(cluster_id, request)
+    api_response = api_instance.configure_draft_cluster_using_post1(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAzureClusterControllerApi->configure_draft_cluster_using_post1: %s\n" % e)
@@ -46,8 +44,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
 
 ### Return type
 
@@ -65,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_azure_cluster_using_post**
-> AzureCluster create_azure_cluster_using_post(request)
+> AzureCluster create_azure_cluster_using_post(body)
 
 createAzureCluster
 
@@ -76,7 +74,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -84,11 +81,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
+body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
 
 try:
     # createAzureCluster
-    api_response = api_instance.create_azure_cluster_using_post(request)
+    api_response = api_instance.create_azure_cluster_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAzureClusterControllerApi->create_azure_cluster_using_post: %s\n" % e)
@@ -98,7 +95,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
+ **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
 
 ### Return type
 
@@ -127,7 +124,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -167,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_azure_cluster_using_put**
-> AzureCluster update_azure_cluster_using_put(cluster_id, request)
+> AzureCluster update_azure_cluster_using_put(body, cluster_id)
 
 updateAzureCluster
 
@@ -178,7 +174,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -186,12 +181,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
 
 try:
     # updateAzureCluster
-    api_response = api_instance.update_azure_cluster_using_put(cluster_id, request)
+    api_response = api_instance.update_azure_cluster_using_put(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAzureClusterControllerApi->update_azure_cluster_using_put: %s\n" % e)
@@ -201,8 +196,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
 
 ### Return type
 
@@ -231,7 +226,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

@@ -1,6 +1,6 @@
 # swagger_client.UiIntentControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**delete_intent_using_delete**](UiIntentControllerApi.md#delete_intent_using_delete) | **DELETE** /cc-ui/v1/intents/{name} | deleteIntent
 [**get_all_intents_using_get**](UiIntentControllerApi.md#get_all_intents_using_get) | **GET** /cc-ui/v1/intents | getAllIntents
 
-
 # **create_or_update_intent_using_post**
-> IntentResponseDTO create_or_update_intent_using_post(request_dto)
+> IntentResponseDTO create_or_update_intent_using_post(body)
 
 createOrUpdateIntent
 
@@ -21,7 +20,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -29,11 +27,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiIntentControllerApi(swagger_client.ApiClient(configuration))
-request_dto = swagger_client.IntentRequestDTO() # IntentRequestDTO | requestDTO
+body = swagger_client.IntentRequestDTO() # IntentRequestDTO | requestDTO
 
 try:
     # createOrUpdateIntent
-    api_response = api_instance.create_or_update_intent_using_post(request_dto)
+    api_response = api_instance.create_or_update_intent_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiIntentControllerApi->create_or_update_intent_using_post: %s\n" % e)
@@ -43,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request_dto** | [**IntentRequestDTO**](IntentRequestDTO.md)| requestDTO | 
+ **body** | [**IntentRequestDTO**](IntentRequestDTO.md)| requestDTO | 
 
 ### Return type
 
@@ -72,7 +70,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -106,7 +103,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -122,7 +119,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

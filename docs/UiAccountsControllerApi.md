@@ -1,6 +1,6 @@
 # swagger_client.UiAccountsControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -42,9 +42,8 @@ Method | HTTP request | Description
 [**validate_gitlab_account_using_post**](UiAccountsControllerApi.md#validate_gitlab_account_using_post) | **POST** /cc-ui/v1/accounts/gitlab/validate | validateGitlabAccount
 [**validate_kubernetes_account_using_post**](UiAccountsControllerApi.md#validate_kubernetes_account_using_post) | **POST** /cc-ui/v1/accounts/kubernetes/validate | validateKubernetesAccount
 
-
 # **create_aws_account_using_post**
-> AwsAccount create_aws_account_using_post(aws_account_request)
+> AwsAccount create_aws_account_using_post(body)
 
 createAwsAccount
 
@@ -55,7 +54,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -63,11 +61,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-aws_account_request = swagger_client.AwsAccount() # AwsAccount | awsAccountRequest
+body = swagger_client.AwsAccount() # AwsAccount | awsAccountRequest
 
 try:
     # createAwsAccount
-    api_response = api_instance.create_aws_account_using_post(aws_account_request)
+    api_response = api_instance.create_aws_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_aws_account_using_post: %s\n" % e)
@@ -77,7 +75,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aws_account_request** | [**AwsAccount**](AwsAccount.md)| awsAccountRequest | 
+ **body** | [**AwsAccount**](AwsAccount.md)| awsAccountRequest | 
 
 ### Return type
 
@@ -95,7 +93,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_azure_account_using_post**
-> AzureAccount create_azure_account_using_post(azure_account_request)
+> AzureAccount create_azure_account_using_post(body)
 
 createAzureAccount
 
@@ -106,7 +104,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -114,11 +111,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-azure_account_request = swagger_client.AzureAccount() # AzureAccount | azureAccountRequest
+body = swagger_client.AzureAccount() # AzureAccount | azureAccountRequest
 
 try:
     # createAzureAccount
-    api_response = api_instance.create_azure_account_using_post(azure_account_request)
+    api_response = api_instance.create_azure_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_azure_account_using_post: %s\n" % e)
@@ -128,7 +125,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **azure_account_request** | [**AzureAccount**](AzureAccount.md)| azureAccountRequest | 
+ **body** | [**AzureAccount**](AzureAccount.md)| azureAccountRequest | 
 
 ### Return type
 
@@ -146,7 +143,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_bit_bucket_account_using_post**
-> BitBucketAccount create_bit_bucket_account_using_post(bitbucket_account_request)
+> BitBucketAccount create_bit_bucket_account_using_post(body)
 
 createBitBucketAccount
 
@@ -157,7 +154,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -165,11 +161,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-bitbucket_account_request = swagger_client.BitBucketAccount() # BitBucketAccount | bitbucketAccountRequest
+body = swagger_client.BitBucketAccount() # BitBucketAccount | bitbucketAccountRequest
 
 try:
     # createBitBucketAccount
-    api_response = api_instance.create_bit_bucket_account_using_post(bitbucket_account_request)
+    api_response = api_instance.create_bit_bucket_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_bit_bucket_account_using_post: %s\n" % e)
@@ -179,7 +175,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bitbucket_account_request** | [**BitBucketAccount**](BitBucketAccount.md)| bitbucketAccountRequest | 
+ **body** | [**BitBucketAccount**](BitBucketAccount.md)| bitbucketAccountRequest | 
 
 ### Return type
 
@@ -197,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_coder_account_using_post**
-> CoderAccount create_coder_account_using_post(coder_account_request)
+> CoderAccount create_coder_account_using_post(body)
 
 createCoderAccount
 
@@ -208,7 +204,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -216,11 +211,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-coder_account_request = swagger_client.CoderAccount() # CoderAccount | coderAccountRequest
+body = swagger_client.CoderAccount() # CoderAccount | coderAccountRequest
 
 try:
     # createCoderAccount
-    api_response = api_instance.create_coder_account_using_post(coder_account_request)
+    api_response = api_instance.create_coder_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_coder_account_using_post: %s\n" % e)
@@ -230,7 +225,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **coder_account_request** | [**CoderAccount**](CoderAccount.md)| coderAccountRequest | 
+ **body** | [**CoderAccount**](CoderAccount.md)| coderAccountRequest | 
 
 ### Return type
 
@@ -248,7 +243,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_gcp_account_using_post**
-> GcpAccount create_gcp_account_using_post(gcp_account_request)
+> GcpAccount create_gcp_account_using_post(body)
 
 createGcpAccount
 
@@ -259,7 +254,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -267,11 +261,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-gcp_account_request = swagger_client.GcpAccount() # GcpAccount | gcpAccountRequest
+body = swagger_client.GcpAccount() # GcpAccount | gcpAccountRequest
 
 try:
     # createGcpAccount
-    api_response = api_instance.create_gcp_account_using_post(gcp_account_request)
+    api_response = api_instance.create_gcp_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_gcp_account_using_post: %s\n" % e)
@@ -281,7 +275,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gcp_account_request** | [**GcpAccount**](GcpAccount.md)| gcpAccountRequest | 
+ **body** | [**GcpAccount**](GcpAccount.md)| gcpAccountRequest | 
 
 ### Return type
 
@@ -299,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_git_hub_account_using_post**
-> GitHubAccount create_git_hub_account_using_post(github_account_request)
+> GitHubAccount create_git_hub_account_using_post(body)
 
 createGitHubAccount
 
@@ -310,7 +304,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -318,11 +311,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-github_account_request = swagger_client.GitHubAccount() # GitHubAccount | githubAccountRequest
+body = swagger_client.GitHubAccount() # GitHubAccount | githubAccountRequest
 
 try:
     # createGitHubAccount
-    api_response = api_instance.create_git_hub_account_using_post(github_account_request)
+    api_response = api_instance.create_git_hub_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_git_hub_account_using_post: %s\n" % e)
@@ -332,7 +325,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **github_account_request** | [**GitHubAccount**](GitHubAccount.md)| githubAccountRequest | 
+ **body** | [**GitHubAccount**](GitHubAccount.md)| githubAccountRequest | 
 
 ### Return type
 
@@ -350,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_git_lab_account_using_post**
-> GitLabAccount create_git_lab_account_using_post(gitlab_account_request)
+> GitLabAccount create_git_lab_account_using_post(body)
 
 createGitLabAccount
 
@@ -361,7 +354,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -369,11 +361,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-gitlab_account_request = swagger_client.GitLabAccount() # GitLabAccount | gitlabAccountRequest
+body = swagger_client.GitLabAccount() # GitLabAccount | gitlabAccountRequest
 
 try:
     # createGitLabAccount
-    api_response = api_instance.create_git_lab_account_using_post(gitlab_account_request)
+    api_response = api_instance.create_git_lab_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_git_lab_account_using_post: %s\n" % e)
@@ -383,7 +375,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gitlab_account_request** | [**GitLabAccount**](GitLabAccount.md)| gitlabAccountRequest | 
+ **body** | [**GitLabAccount**](GitLabAccount.md)| gitlabAccountRequest | 
 
 ### Return type
 
@@ -401,7 +393,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_kubernetes_account_using_post**
-> KubernetesAccount create_kubernetes_account_using_post(k8s_account_request)
+> KubernetesAccount create_kubernetes_account_using_post(body)
 
 createKubernetesAccount
 
@@ -412,7 +404,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -420,11 +411,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-k8s_account_request = swagger_client.KubernetesAccount() # KubernetesAccount | k8sAccountRequest
+body = swagger_client.KubernetesAccount() # KubernetesAccount | k8sAccountRequest
 
 try:
     # createKubernetesAccount
-    api_response = api_instance.create_kubernetes_account_using_post(k8s_account_request)
+    api_response = api_instance.create_kubernetes_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->create_kubernetes_account_using_post: %s\n" % e)
@@ -434,7 +425,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **k8s_account_request** | [**KubernetesAccount**](KubernetesAccount.md)| k8sAccountRequest | 
+ **body** | [**KubernetesAccount**](KubernetesAccount.md)| k8sAccountRequest | 
 
 ### Return type
 
@@ -463,7 +454,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -514,7 +504,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -565,7 +554,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -616,7 +604,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -667,7 +654,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -714,7 +700,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -761,7 +746,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -803,7 +787,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_vcs_organisations_using_post**
-> list[str] get_vcs_organisations_using_post(vcs_organizations_request)
+> list[str] get_vcs_organisations_using_post(body)
 
 getVCSOrganisations
 
@@ -814,7 +798,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -822,11 +805,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-vcs_organizations_request = swagger_client.VCSOrganizationsRequest() # VCSOrganizationsRequest | VCSOrganizationsRequest
+body = swagger_client.VCSOrganizationsRequest() # VCSOrganizationsRequest | VCSOrganizationsRequest
 
 try:
     # getVCSOrganisations
-    api_response = api_instance.get_vcs_organisations_using_post(vcs_organizations_request)
+    api_response = api_instance.get_vcs_organisations_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->get_vcs_organisations_using_post: %s\n" % e)
@@ -836,7 +819,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcs_organizations_request** | [**VCSOrganizationsRequest**](VCSOrganizationsRequest.md)| VCSOrganizationsRequest | 
+ **body** | [**VCSOrganizationsRequest**](VCSOrganizationsRequest.md)| VCSOrganizationsRequest | 
 
 ### Return type
 
@@ -865,7 +848,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -916,7 +898,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -967,7 +948,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -996,13 +976,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **request_cloud_account_linking_using_post**
-> OneTimeWebhook request_cloud_account_linking_using_post(cloud_linking_request)
+> OneTimeWebhook request_cloud_account_linking_using_post(body)
 
 requestCloudAccountLinking
 
@@ -1013,7 +993,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1021,11 +1000,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-cloud_linking_request = swagger_client.CloudLinkingRequest() # CloudLinkingRequest | cloudLinkingRequest
+body = swagger_client.CloudLinkingRequest() # CloudLinkingRequest | cloudLinkingRequest
 
 try:
     # requestCloudAccountLinking
-    api_response = api_instance.request_cloud_account_linking_using_post(cloud_linking_request)
+    api_response = api_instance.request_cloud_account_linking_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->request_cloud_account_linking_using_post: %s\n" % e)
@@ -1035,7 +1014,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_linking_request** | [**CloudLinkingRequest**](CloudLinkingRequest.md)| cloudLinkingRequest | 
+ **body** | [**CloudLinkingRequest**](CloudLinkingRequest.md)| cloudLinkingRequest | 
 
 ### Return type
 
@@ -1053,7 +1032,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **request_vcs_linking_using_post**
-> VCSLinkingResponse request_vcs_linking_using_post(vcs_linking_request)
+> VCSLinkingResponse request_vcs_linking_using_post(body)
 
 requestVCSLinking
 
@@ -1064,7 +1043,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1072,11 +1050,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-vcs_linking_request = swagger_client.VCSLinkingRequest() # VCSLinkingRequest | vcsLinkingRequest
+body = swagger_client.VCSLinkingRequest() # VCSLinkingRequest | vcsLinkingRequest
 
 try:
     # requestVCSLinking
-    api_response = api_instance.request_vcs_linking_using_post(vcs_linking_request)
+    api_response = api_instance.request_vcs_linking_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->request_vcs_linking_using_post: %s\n" % e)
@@ -1086,7 +1064,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vcs_linking_request** | [**VCSLinkingRequest**](VCSLinkingRequest.md)| vcsLinkingRequest | 
+ **body** | [**VCSLinkingRequest**](VCSLinkingRequest.md)| vcsLinkingRequest | 
 
 ### Return type
 
@@ -1104,7 +1082,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_aws_account_using_put**
-> AwsAccount update_aws_account_using_put(aws_account_request, id)
+> AwsAccount update_aws_account_using_put(body, id)
 
 updateAwsAccount
 
@@ -1115,7 +1093,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1123,12 +1100,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-aws_account_request = swagger_client.AwsAccount() # AwsAccount | awsAccountRequest
+body = swagger_client.AwsAccount() # AwsAccount | awsAccountRequest
 id = 'id_example' # str | id
 
 try:
     # updateAwsAccount
-    api_response = api_instance.update_aws_account_using_put(aws_account_request, id)
+    api_response = api_instance.update_aws_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_aws_account_using_put: %s\n" % e)
@@ -1138,7 +1115,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aws_account_request** | [**AwsAccount**](AwsAccount.md)| awsAccountRequest | 
+ **body** | [**AwsAccount**](AwsAccount.md)| awsAccountRequest | 
  **id** | **str**| id | 
 
 ### Return type
@@ -1157,7 +1134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_azure_account_using_put**
-> AzureAccount update_azure_account_using_put(azure_account_request, id)
+> AzureAccount update_azure_account_using_put(body, id)
 
 updateAzureAccount
 
@@ -1168,7 +1145,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1176,12 +1152,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-azure_account_request = swagger_client.AzureAccount() # AzureAccount | azureAccountRequest
+body = swagger_client.AzureAccount() # AzureAccount | azureAccountRequest
 id = 'id_example' # str | id
 
 try:
     # updateAzureAccount
-    api_response = api_instance.update_azure_account_using_put(azure_account_request, id)
+    api_response = api_instance.update_azure_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_azure_account_using_put: %s\n" % e)
@@ -1191,7 +1167,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **azure_account_request** | [**AzureAccount**](AzureAccount.md)| azureAccountRequest | 
+ **body** | [**AzureAccount**](AzureAccount.md)| azureAccountRequest | 
  **id** | **str**| id | 
 
 ### Return type
@@ -1210,7 +1186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_bit_bucket_account_using_put**
-> BitBucketAccount update_bit_bucket_account_using_put(bitbucket_account_request, id)
+> BitBucketAccount update_bit_bucket_account_using_put(body, id)
 
 updateBitBucketAccount
 
@@ -1221,7 +1197,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1229,12 +1204,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-bitbucket_account_request = swagger_client.BitBucketAccount() # BitBucketAccount | bitbucketAccountRequest
+body = swagger_client.BitBucketAccount() # BitBucketAccount | bitbucketAccountRequest
 id = 'id_example' # str | id
 
 try:
     # updateBitBucketAccount
-    api_response = api_instance.update_bit_bucket_account_using_put(bitbucket_account_request, id)
+    api_response = api_instance.update_bit_bucket_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_bit_bucket_account_using_put: %s\n" % e)
@@ -1244,7 +1219,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bitbucket_account_request** | [**BitBucketAccount**](BitBucketAccount.md)| bitbucketAccountRequest | 
+ **body** | [**BitBucketAccount**](BitBucketAccount.md)| bitbucketAccountRequest | 
  **id** | **str**| id | 
 
 ### Return type
@@ -1263,7 +1238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_coder_account_using_put**
-> CoderAccount update_coder_account_using_put(coder_account, id)
+> CoderAccount update_coder_account_using_put(body, id)
 
 updateCoderAccount
 
@@ -1274,7 +1249,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1282,12 +1256,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-coder_account = swagger_client.CoderAccount() # CoderAccount | coderAccount
+body = swagger_client.CoderAccount() # CoderAccount | coderAccount
 id = 'id_example' # str | id
 
 try:
     # updateCoderAccount
-    api_response = api_instance.update_coder_account_using_put(coder_account, id)
+    api_response = api_instance.update_coder_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_coder_account_using_put: %s\n" % e)
@@ -1297,7 +1271,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **coder_account** | [**CoderAccount**](CoderAccount.md)| coderAccount | 
+ **body** | [**CoderAccount**](CoderAccount.md)| coderAccount | 
  **id** | **str**| id | 
 
 ### Return type
@@ -1316,7 +1290,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_gcp_account_using_put**
-> GcpAccount update_gcp_account_using_put(gcp_account_request, id)
+> GcpAccount update_gcp_account_using_put(body, id)
 
 updateGcpAccount
 
@@ -1327,7 +1301,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1335,12 +1308,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-gcp_account_request = swagger_client.GcpAccount() # GcpAccount | gcpAccountRequest
+body = swagger_client.GcpAccount() # GcpAccount | gcpAccountRequest
 id = 'id_example' # str | id
 
 try:
     # updateGcpAccount
-    api_response = api_instance.update_gcp_account_using_put(gcp_account_request, id)
+    api_response = api_instance.update_gcp_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_gcp_account_using_put: %s\n" % e)
@@ -1350,7 +1323,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gcp_account_request** | [**GcpAccount**](GcpAccount.md)| gcpAccountRequest | 
+ **body** | [**GcpAccount**](GcpAccount.md)| gcpAccountRequest | 
  **id** | **str**| id | 
 
 ### Return type
@@ -1369,7 +1342,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_git_hub_account_using_put**
-> GitHubAccount update_git_hub_account_using_put(github_account_request, id)
+> GitHubAccount update_git_hub_account_using_put(body, id)
 
 updateGitHubAccount
 
@@ -1380,7 +1353,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1388,12 +1360,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-github_account_request = swagger_client.GitHubAccount() # GitHubAccount | githubAccountRequest
+body = swagger_client.GitHubAccount() # GitHubAccount | githubAccountRequest
 id = 'id_example' # str | id
 
 try:
     # updateGitHubAccount
-    api_response = api_instance.update_git_hub_account_using_put(github_account_request, id)
+    api_response = api_instance.update_git_hub_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_git_hub_account_using_put: %s\n" % e)
@@ -1403,7 +1375,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **github_account_request** | [**GitHubAccount**](GitHubAccount.md)| githubAccountRequest | 
+ **body** | [**GitHubAccount**](GitHubAccount.md)| githubAccountRequest | 
  **id** | **str**| id | 
 
 ### Return type
@@ -1422,7 +1394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_git_lab_account_using_put**
-> GitLabAccount update_git_lab_account_using_put(gitlab_account_request, id)
+> GitLabAccount update_git_lab_account_using_put(body, id)
 
 updateGitLabAccount
 
@@ -1433,7 +1405,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1441,12 +1412,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-gitlab_account_request = swagger_client.GitLabAccount() # GitLabAccount | gitlabAccountRequest
+body = swagger_client.GitLabAccount() # GitLabAccount | gitlabAccountRequest
 id = 'id_example' # str | id
 
 try:
     # updateGitLabAccount
-    api_response = api_instance.update_git_lab_account_using_put(gitlab_account_request, id)
+    api_response = api_instance.update_git_lab_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_git_lab_account_using_put: %s\n" % e)
@@ -1456,7 +1427,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gitlab_account_request** | [**GitLabAccount**](GitLabAccount.md)| gitlabAccountRequest | 
+ **body** | [**GitLabAccount**](GitLabAccount.md)| gitlabAccountRequest | 
  **id** | **str**| id | 
 
 ### Return type
@@ -1475,7 +1446,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_kubernetes_account_using_put**
-> KubernetesAccount update_kubernetes_account_using_put(id, k8s_account_request)
+> KubernetesAccount update_kubernetes_account_using_put(body, id)
 
 updateKubernetesAccount
 
@@ -1486,7 +1457,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1494,12 +1464,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.KubernetesAccount() # KubernetesAccount | k8sAccountRequest
 id = 'id_example' # str | id
-k8s_account_request = swagger_client.KubernetesAccount() # KubernetesAccount | k8sAccountRequest
 
 try:
     # updateKubernetesAccount
-    api_response = api_instance.update_kubernetes_account_using_put(id, k8s_account_request)
+    api_response = api_instance.update_kubernetes_account_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_kubernetes_account_using_put: %s\n" % e)
@@ -1509,8 +1479,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**KubernetesAccount**](KubernetesAccount.md)| k8sAccountRequest | 
  **id** | **str**| id | 
- **k8s_account_request** | [**KubernetesAccount**](KubernetesAccount.md)| k8sAccountRequest | 
 
 ### Return type
 
@@ -1528,7 +1498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_vcs_account_using_patch**
-> update_vcs_account_using_patch(id, vcs_account_update_request)
+> update_vcs_account_using_patch(body, id)
 
 updateVCSAccount
 
@@ -1539,7 +1509,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1547,12 +1516,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.VCSAccountUpdateRequest() # VCSAccountUpdateRequest | vcsAccountUpdateRequest
 id = 'id_example' # str | id
-vcs_account_update_request = swagger_client.VCSAccountUpdateRequest() # VCSAccountUpdateRequest | vcsAccountUpdateRequest
 
 try:
     # updateVCSAccount
-    api_instance.update_vcs_account_using_patch(id, vcs_account_update_request)
+    api_instance.update_vcs_account_using_patch(body, id)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->update_vcs_account_using_patch: %s\n" % e)
 ```
@@ -1561,8 +1530,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**VCSAccountUpdateRequest**](VCSAccountUpdateRequest.md)| vcsAccountUpdateRequest | 
  **id** | **str**| id | 
- **vcs_account_update_request** | [**VCSAccountUpdateRequest**](VCSAccountUpdateRequest.md)| vcsAccountUpdateRequest | 
 
 ### Return type
 
@@ -1575,12 +1544,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_aws_account_using_post**
-> Response validate_aws_account_using_post(aws_account)
+> Response validate_aws_account_using_post(body)
 
 validateAwsAccount
 
@@ -1591,7 +1560,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1599,11 +1567,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-aws_account = swagger_client.AwsAccount() # AwsAccount | awsAccount
+body = swagger_client.AwsAccount() # AwsAccount | awsAccount
 
 try:
     # validateAwsAccount
-    api_response = api_instance.validate_aws_account_using_post(aws_account)
+    api_response = api_instance.validate_aws_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->validate_aws_account_using_post: %s\n" % e)
@@ -1613,7 +1581,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aws_account** | [**AwsAccount**](AwsAccount.md)| awsAccount | 
+ **body** | [**AwsAccount**](AwsAccount.md)| awsAccount | 
 
 ### Return type
 
@@ -1631,7 +1599,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_azure_account_using_post**
-> Response validate_azure_account_using_post(azure_account)
+> Response validate_azure_account_using_post(body)
 
 validateAzureAccount
 
@@ -1642,7 +1610,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1650,11 +1617,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-azure_account = swagger_client.AzureAccount() # AzureAccount | azureAccount
+body = swagger_client.AzureAccount() # AzureAccount | azureAccount
 
 try:
     # validateAzureAccount
-    api_response = api_instance.validate_azure_account_using_post(azure_account)
+    api_response = api_instance.validate_azure_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->validate_azure_account_using_post: %s\n" % e)
@@ -1664,7 +1631,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **azure_account** | [**AzureAccount**](AzureAccount.md)| azureAccount | 
+ **body** | [**AzureAccount**](AzureAccount.md)| azureAccount | 
 
 ### Return type
 
@@ -1682,7 +1649,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_bitbucket_account_using_post**
-> Response validate_bitbucket_account_using_post(bit_bucket_account)
+> Response validate_bitbucket_account_using_post(body)
 
 validateBitbucketAccount
 
@@ -1693,7 +1660,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1701,11 +1667,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-bit_bucket_account = swagger_client.BitBucketAccount() # BitBucketAccount | bitBucketAccount
+body = swagger_client.BitBucketAccount() # BitBucketAccount | bitBucketAccount
 
 try:
     # validateBitbucketAccount
-    api_response = api_instance.validate_bitbucket_account_using_post(bit_bucket_account)
+    api_response = api_instance.validate_bitbucket_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->validate_bitbucket_account_using_post: %s\n" % e)
@@ -1715,7 +1681,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bit_bucket_account** | [**BitBucketAccount**](BitBucketAccount.md)| bitBucketAccount | 
+ **body** | [**BitBucketAccount**](BitBucketAccount.md)| bitBucketAccount | 
 
 ### Return type
 
@@ -1733,7 +1699,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_gcp_account_using_post**
-> Response validate_gcp_account_using_post(gcp_account)
+> Response validate_gcp_account_using_post(body)
 
 validateGcpAccount
 
@@ -1744,7 +1710,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1752,11 +1717,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-gcp_account = swagger_client.GcpAccount() # GcpAccount | gcpAccount
+body = swagger_client.GcpAccount() # GcpAccount | gcpAccount
 
 try:
     # validateGcpAccount
-    api_response = api_instance.validate_gcp_account_using_post(gcp_account)
+    api_response = api_instance.validate_gcp_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->validate_gcp_account_using_post: %s\n" % e)
@@ -1766,7 +1731,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gcp_account** | [**GcpAccount**](GcpAccount.md)| gcpAccount | 
+ **body** | [**GcpAccount**](GcpAccount.md)| gcpAccount | 
 
 ### Return type
 
@@ -1784,7 +1749,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_github_account_using_post**
-> Response validate_github_account_using_post(git_hub_account)
+> Response validate_github_account_using_post(body)
 
 validateGithubAccount
 
@@ -1795,7 +1760,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1803,11 +1767,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-git_hub_account = swagger_client.GitHubAccount() # GitHubAccount | gitHubAccount
+body = swagger_client.GitHubAccount() # GitHubAccount | gitHubAccount
 
 try:
     # validateGithubAccount
-    api_response = api_instance.validate_github_account_using_post(git_hub_account)
+    api_response = api_instance.validate_github_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->validate_github_account_using_post: %s\n" % e)
@@ -1817,7 +1781,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **git_hub_account** | [**GitHubAccount**](GitHubAccount.md)| gitHubAccount | 
+ **body** | [**GitHubAccount**](GitHubAccount.md)| gitHubAccount | 
 
 ### Return type
 
@@ -1835,7 +1799,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_gitlab_account_using_post**
-> Response validate_gitlab_account_using_post(git_lab_account)
+> Response validate_gitlab_account_using_post(body)
 
 validateGitlabAccount
 
@@ -1846,7 +1810,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1854,11 +1817,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-git_lab_account = swagger_client.GitLabAccount() # GitLabAccount | gitLabAccount
+body = swagger_client.GitLabAccount() # GitLabAccount | gitLabAccount
 
 try:
     # validateGitlabAccount
-    api_response = api_instance.validate_gitlab_account_using_post(git_lab_account)
+    api_response = api_instance.validate_gitlab_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->validate_gitlab_account_using_post: %s\n" % e)
@@ -1868,7 +1831,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **git_lab_account** | [**GitLabAccount**](GitLabAccount.md)| gitLabAccount | 
+ **body** | [**GitLabAccount**](GitLabAccount.md)| gitLabAccount | 
 
 ### Return type
 
@@ -1886,7 +1849,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_kubernetes_account_using_post**
-> Response validate_kubernetes_account_using_post(kubernetes_account)
+> Response validate_kubernetes_account_using_post(body)
 
 validateKubernetesAccount
 
@@ -1897,7 +1860,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1905,11 +1867,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAccountsControllerApi(swagger_client.ApiClient(configuration))
-kubernetes_account = swagger_client.KubernetesAccount() # KubernetesAccount | kubernetesAccount
+body = swagger_client.KubernetesAccount() # KubernetesAccount | kubernetesAccount
 
 try:
     # validateKubernetesAccount
-    api_response = api_instance.validate_kubernetes_account_using_post(kubernetes_account)
+    api_response = api_instance.validate_kubernetes_account_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAccountsControllerApi->validate_kubernetes_account_using_post: %s\n" % e)
@@ -1919,7 +1881,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **kubernetes_account** | [**KubernetesAccount**](KubernetesAccount.md)| kubernetesAccount | 
+ **body** | [**KubernetesAccount**](KubernetesAccount.md)| kubernetesAccount | 
 
 ### Return type
 

@@ -1,13 +1,12 @@
 # swagger_client.UiMetaControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_cp_account_using_get**](UiMetaControllerApi.md#get_cp_account_using_get) | **GET** /cc-ui/v1/meta/cpAccount | getCPAccount
 [**get_supported_component_version_using_get1**](UiMetaControllerApi.md#get_supported_component_version_using_get1) | **GET** /cc-ui/v1/meta/components/{componentType}/supportedVersion | getSupportedComponentVersion
 [**get_supported_component_versions_using_get1**](UiMetaControllerApi.md#get_supported_component_versions_using_get1) | **GET** /cc-ui/v1/meta/components/supportedVersion | getSupportedComponentVersions
-
 
 # **get_cp_account_using_get**
 > dict(str, str) get_cp_account_using_get()
@@ -21,7 +20,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -68,7 +66,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -119,7 +116,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

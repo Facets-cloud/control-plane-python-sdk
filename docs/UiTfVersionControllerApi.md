@@ -1,6 +1,6 @@
 # swagger_client.UiTfVersionControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**get_tf_versions_for_stream_using_get**](UiTfVersionControllerApi.md#get_tf_versions_for_stream_using_get) | **GET** /cc-ui/v1/terraform/stream/{tfStream}/versions | getTfVersionsForStream
 [**populate_release_stream_tf_version_mapping_using_post**](UiTfVersionControllerApi.md#populate_release_stream_tf_version_mapping_using_post) | **POST** /cc-ui/v1/terraform/sync-release-stream-mapping | populateReleaseStreamTfVersionMapping
 [**set_tf_version_for_cluster_using_put**](UiTfVersionControllerApi.md#set_tf_version_for_cluster_using_put) | **PUT** /cc-ui/v1/terraform/cluster/{clusterId} | setTfVersionForCluster
-
 
 # **delete_tf_stream_for_cluster_using_delete**
 > bool delete_tf_stream_for_cluster_using_delete(cluster_id)
@@ -25,7 +24,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -76,7 +74,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -123,7 +120,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -174,7 +170,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -225,7 +220,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -276,7 +270,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -305,13 +298,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_tf_version_for_cluster_using_put**
-> ClusterTfVersionMapping set_tf_version_for_cluster_using_put(cluster_id, tf_version)
+> ClusterTfVersionMapping set_tf_version_for_cluster_using_put(body, cluster_id)
 
 setTfVersionForCluster
 
@@ -322,7 +315,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -330,12 +322,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.TfVersion() # TfVersion | tfVersion
 cluster_id = 'cluster_id_example' # str | clusterId
-tf_version = swagger_client.TfVersion() # TfVersion | tfVersion
 
 try:
     # setTfVersionForCluster
-    api_response = api_instance.set_tf_version_for_cluster_using_put(cluster_id, tf_version)
+    api_response = api_instance.set_tf_version_for_cluster_using_put(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiTfVersionControllerApi->set_tf_version_for_cluster_using_put: %s\n" % e)
@@ -345,8 +337,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TfVersion**](TfVersion.md)| tfVersion | 
  **cluster_id** | **str**| clusterId | 
- **tf_version** | [**TfVersion**](TfVersion.md)| tfVersion | 
 
 ### Return type
 

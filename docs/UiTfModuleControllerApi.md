@@ -1,6 +1,6 @@
 # swagger_client.UiTfModuleControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,14 +12,13 @@ Method | HTTP request | Description
 [**get_all_modules_using_get**](UiTfModuleControllerApi.md#get_all_modules_using_get) | **GET** /cc-ui/v1/modules | getAllModules
 [**get_all_using_get4**](UiTfModuleControllerApi.md#get_all_using_get4) | **GET** /cc-ui/v1/modules/all | Get All Modules
 [**get_by_id_using_get**](UiTfModuleControllerApi.md#get_by_id_using_get) | **GET** /cc-ui/v1/modules/{id} | Get Module by ID
-[**get_facets_yaml_by_stack_using_get**](UiTfModuleControllerApi.md#get_facets_yaml_by_stack_using_get) | **GET** /cc-ui/v1/modules/stack/{stackName}/{intent}/{flavor}/{version}/fields | Get facets.yaml by Stack
 [**get_grouped_modules_for_stack_using_get**](UiTfModuleControllerApi.md#get_grouped_modules_for_stack_using_get) | **GET** /cc-ui/v1/modules/stack/{stackName}/grouped | Get Grouped Modules for Stack
 [**get_intent_add_on_modules_using_get**](UiTfModuleControllerApi.md#get_intent_add_on_modules_using_get) | **GET** /cc-ui/v1/modules/intent/{intent}/flavor/{flavor}/add-ons | Get Add-On Modules
 [**get_module_for_ifv_and_stack_using_get**](UiTfModuleControllerApi.md#get_module_for_ifv_and_stack_using_get) | **GET** /cc-ui/v1/modules/stack/{stackName}/{intent}/{flavor}/{version}/module | getModuleForIFVAndStack
+[**get_module_usages_using_get**](UiTfModuleControllerApi.md#get_module_usages_using_get) | **GET** /cc-ui/v1/modules/{id}/usages | Get Module Usages
 [**mark_as_published_by_id_using_post**](UiTfModuleControllerApi.md#mark_as_published_by_id_using_post) | **POST** /cc-ui/v1/modules/{id}/mark-published | Mark Module as Published
 [**mark_as_published_using_post**](UiTfModuleControllerApi.md#mark_as_published_using_post) | **POST** /cc-ui/v1/modules/intent/{intent}/flavor/{flavor}/version/{version}/mark-published | Mark Module as Published
 [**upload_module_using_post**](UiTfModuleControllerApi.md#upload_module_using_post) | **POST** /cc-ui/v1/modules/upload | Upload a module
-
 
 # **bootstrap_modules_using_post**
 > dict(str, list[str]) bootstrap_modules_using_post()
@@ -35,7 +34,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -65,7 +63,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -84,7 +82,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -135,7 +132,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -186,7 +182,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -237,7 +232,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -290,7 +284,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -339,7 +332,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -396,7 +388,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -435,65 +426,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_facets_yaml_by_stack_using_get**
-> JsonNode get_facets_yaml_by_stack_using_get(flavor, intent, stack_name, version)
-
-Get facets.yaml by Stack
-
-- **Description:** Retrieves facets.yaml by stack information. - **Audit Logging:** No specific audit logging at the moment.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiTfModuleControllerApi(swagger_client.ApiClient(configuration))
-flavor = 'flavor_example' # str | flavor
-intent = 'intent_example' # str | intent
-stack_name = 'stack_name_example' # str | stackName
-version = 'version_example' # str | version
-
-try:
-    # Get facets.yaml by Stack
-    api_response = api_instance.get_facets_yaml_by_stack_using_get(flavor, intent, stack_name, version)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiTfModuleControllerApi->get_facets_yaml_by_stack_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **flavor** | **str**| flavor | 
- **intent** | **str**| intent | 
- **stack_name** | **str**| stackName | 
- **version** | **str**| version | 
-
-### Return type
-
-[**JsonNode**](JsonNode.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_grouped_modules_for_stack_using_get**
 > ListResourcesResponse get_grouped_modules_for_stack_using_get(stack_name)
 
@@ -508,7 +440,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -561,7 +492,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -616,7 +546,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -661,6 +590,58 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_module_usages_using_get**
+> list[ModuleUsageDTO] get_module_usages_using_get(id)
+
+Get Module Usages
+
+- **Description:** Retrieves all usages of a module across stacks and clusters. - **Audit Logging:** No specific audit logging at the moment.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiTfModuleControllerApi(swagger_client.ApiClient(configuration))
+id = 'id_example' # str | id
+
+try:
+    # Get Module Usages
+    api_response = api_instance.get_module_usages_using_get(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiTfModuleControllerApi->get_module_usages_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| id | 
+
+### Return type
+
+[**list[ModuleUsageDTO]**](ModuleUsageDTO.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **mark_as_published_by_id_using_post**
 > TFModule mark_as_published_by_id_using_post(id)
 
@@ -675,7 +656,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -709,7 +689,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -728,7 +708,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -766,13 +745,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_module_using_post**
-> TFModule upload_module_using_post(file, metadata=metadata)
+> TFModule upload_module_using_post(file, metadata)
 
 Upload a module
 
@@ -785,7 +764,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -793,12 +771,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTfModuleControllerApi(swagger_client.ApiClient(configuration))
-file = '/path/to/file.txt' # file | file
-metadata = NULL # object | metadata (optional)
+file = 'file_example' # str | 
+metadata = NULL # object | 
 
 try:
     # Upload a module
-    api_response = api_instance.upload_module_using_post(file, metadata=metadata)
+    api_response = api_instance.upload_module_using_post(file, metadata)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiTfModuleControllerApi->upload_module_using_post: %s\n" % e)
@@ -808,8 +786,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **file**| file | 
- **metadata** | [**object**](.md)| metadata | [optional] 
+ **file** | **str**|  | 
+ **metadata** | [**object**](.md)|  | 
 
 ### Return type
 

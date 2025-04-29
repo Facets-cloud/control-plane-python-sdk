@@ -1,6 +1,6 @@
 # swagger_client.UiCloudCostExplorerControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**get_service_wise_cost_using_get**](UiCloudCostExplorerControllerApi.md#get_service_wise_cost_using_get) | **GET** /cc-ui/v1/cost-explorer/service-wise-cost/{clusterId} | getServiceWiseCost
 [**is_aws_cost_explorer_enabled_using_get**](UiCloudCostExplorerControllerApi.md#is_aws_cost_explorer_enabled_using_get) | **GET** /cc-ui/v1/cost-explorer/aws/enabled | isAwsCostExplorerEnabled
 [**sync_cloud_cost_using_get**](UiCloudCostExplorerControllerApi.md#sync_cloud_cost_using_get) | **GET** /cc-ui/v1/cost-explorer/sync-cost | syncCloudCost
-
 
 # **get_daily_cloud_cost_using_get**
 > DailyCloudCostDTO get_daily_cloud_cost_using_get(end, stack_name, start, cluster_ids=cluster_ids)
@@ -22,7 +21,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -79,7 +77,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -134,7 +131,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -181,7 +177,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -211,7 +206,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

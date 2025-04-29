@@ -1,13 +1,12 @@
 # swagger_client.UiResourceStatusControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_release_preview_using_get**](UiResourceStatusControllerApi.md#get_release_preview_using_get) | **GET** /cc-ui/v1/resources/{clusterId}/release-preview | getReleasePreview
 [**get_resource_status_using_get**](UiResourceStatusControllerApi.md#get_resource_status_using_get) | **GET** /cc-ui/v1/resources/{projectName}/{environmentName}/status | getResourceStatus
 [**sync_resource_using_post**](UiResourceStatusControllerApi.md#sync_resource_using_post) | **POST** /cc-ui/v1/resources/sync | syncResource
-
 
 # **get_release_preview_using_get**
 > ReleasePreviewResponse get_release_preview_using_get(cluster_id)
@@ -21,7 +20,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -72,7 +70,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -116,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sync_resource_using_post**
-> ResourceStatusResponse sync_resource_using_post(request)
+> ResourceStatusResponse sync_resource_using_post(body)
 
 syncResource
 
@@ -127,7 +124,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -135,11 +131,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceStatusControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.ResourceSyncRequest() # ResourceSyncRequest | request
+body = swagger_client.ResourceSyncRequest() # ResourceSyncRequest | request
 
 try:
     # syncResource
-    api_response = api_instance.sync_resource_using_post(request)
+    api_response = api_instance.sync_resource_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiResourceStatusControllerApi->sync_resource_using_post: %s\n" % e)
@@ -149,7 +145,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**ResourceSyncRequest**](ResourceSyncRequest.md)| request | 
+ **body** | [**ResourceSyncRequest**](ResourceSyncRequest.md)| request | 
 
 ### Return type
 

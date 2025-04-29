@@ -1,6 +1,6 @@
 # swagger_client.UiAssistantControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**create_thread_using_get**](UiAssistantControllerApi.md#create_thread_using_get) | **GET** /cc-ui/v2/assistant/thread | createThread
 [**get_chat_using_post**](UiAssistantControllerApi.md#get_chat_using_post) | **POST** /cc-ui/v2/assistant/{threadId}/getChat | getChat
 
-
 # **continue_chat_using_post**
-> AssistantResponse continue_chat_using_post(request)
+> AssistantResponse continue_chat_using_post(body)
 
 Continue Chat
 
@@ -21,7 +20,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -29,11 +27,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAssistantControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.AssistantRequest() # AssistantRequest | request
+body = swagger_client.AssistantRequest() # AssistantRequest | request
 
 try:
     # Continue Chat
-    api_response = api_instance.continue_chat_using_post(request)
+    api_response = api_instance.continue_chat_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAssistantControllerApi->continue_chat_using_post: %s\n" % e)
@@ -43,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AssistantRequest**](AssistantRequest.md)| request | 
+ **body** | [**AssistantRequest**](AssistantRequest.md)| request | 
 
 ### Return type
 
@@ -72,7 +70,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -119,7 +116,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -153,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

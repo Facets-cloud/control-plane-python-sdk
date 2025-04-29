@@ -1,6 +1,6 @@
 # swagger_client.CommonClusterControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,9 +16,8 @@ Method | HTTP request | Description
 [**pin_snapshot_using_post**](CommonClusterControllerApi.md#pin_snapshot_using_post) | **POST** /cc/v1/clusters/{clusterId}/dr/{resourceType}/snapshots/{instanceName}/pinnedSnapshot | pinSnapshot
 [**upsert_vars_using_post**](CommonClusterControllerApi.md#upsert_vars_using_post) | **POST** /cc/v1/clusters/{clusterId}/vars/upsert | upsertVars
 
-
 # **add_cluster_k8s_credentials_using_post**
-> bool add_cluster_k8s_credentials_using_post(cluster_id, request)
+> bool add_cluster_k8s_credentials_using_post(body, cluster_id)
 
 addClusterK8sCredentials
 
@@ -29,7 +28,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -37,12 +35,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.CommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.K8sCredentials() # K8sCredentials | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.K8sCredentials() # K8sCredentials | request
 
 try:
     # addClusterK8sCredentials
-    api_response = api_instance.add_cluster_k8s_credentials_using_post(cluster_id, request)
+    api_response = api_instance.add_cluster_k8s_credentials_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommonClusterControllerApi->add_cluster_k8s_credentials_using_post: %s\n" % e)
@@ -52,8 +50,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**K8sCredentials**](K8sCredentials.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**K8sCredentials**](K8sCredentials.md)| request | 
 
 ### Return type
 
@@ -82,7 +80,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -133,7 +130,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -184,7 +180,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -239,7 +234,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -283,7 +277,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **notify_alerts_using_post**
-> bool notify_alerts_using_post(alerts, cluster_id)
+> bool notify_alerts_using_post(body, cluster_id)
 
 notifyAlerts
 
@@ -294,7 +288,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -302,12 +295,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.CommonClusterControllerApi(swagger_client.ApiClient(configuration))
-alerts = swagger_client.Response() # Response | alerts
+body = swagger_client.Response() # Response | alerts
 cluster_id = 'cluster_id_example' # str | clusterId
 
 try:
     # notifyAlerts
-    api_response = api_instance.notify_alerts_using_post(alerts, cluster_id)
+    api_response = api_instance.notify_alerts_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommonClusterControllerApi->notify_alerts_using_post: %s\n" % e)
@@ -317,7 +310,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **alerts** | [**Response**](Response.md)| alerts | 
+ **body** | [**Response**](Response.md)| alerts | 
  **cluster_id** | **str**| clusterId | 
 
 ### Return type
@@ -347,7 +340,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -387,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -404,7 +396,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -445,13 +436,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **override_sizing_using_post**
-> list[OverrideObject] override_sizing_using_post(cluster_id, request)
+> list[OverrideObject] override_sizing_using_post(body, cluster_id)
 
 overrideSizing
 
@@ -462,7 +453,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -470,12 +460,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.CommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.OverrideRequest()] # list[OverrideRequest] | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = [swagger_client.OverrideRequest()] # list[OverrideRequest] | request
 
 try:
     # overrideSizing
-    api_response = api_instance.override_sizing_using_post(cluster_id, request)
+    api_response = api_instance.override_sizing_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommonClusterControllerApi->override_sizing_using_post: %s\n" % e)
@@ -485,8 +475,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**list[OverrideRequest]**](OverrideRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**list[OverrideRequest]**](OverrideRequest.md)| request | 
 
 ### Return type
 
@@ -504,7 +494,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pin_snapshot_using_post**
-> SnapshotInfo pin_snapshot_using_post(cluster_id, instance_name, resource_type, snapshot_info)
+> SnapshotInfo pin_snapshot_using_post(body, cluster_id, instance_name, resource_type)
 
 pinSnapshot
 
@@ -515,7 +505,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -523,14 +512,14 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.CommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.SnapshotInfo() # SnapshotInfo | snapshotInfo
 cluster_id = 'cluster_id_example' # str | clusterId
 instance_name = 'instance_name_example' # str | instanceName
 resource_type = 'resource_type_example' # str | resourceType
-snapshot_info = swagger_client.SnapshotInfo() # SnapshotInfo | snapshotInfo
 
 try:
     # pinSnapshot
-    api_response = api_instance.pin_snapshot_using_post(cluster_id, instance_name, resource_type, snapshot_info)
+    api_response = api_instance.pin_snapshot_using_post(body, cluster_id, instance_name, resource_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommonClusterControllerApi->pin_snapshot_using_post: %s\n" % e)
@@ -540,10 +529,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SnapshotInfo**](SnapshotInfo.md)| snapshotInfo | 
  **cluster_id** | **str**| clusterId | 
  **instance_name** | **str**| instanceName | 
  **resource_type** | **str**| resourceType | 
- **snapshot_info** | [**SnapshotInfo**](SnapshotInfo.md)| snapshotInfo | 
 
 ### Return type
 
@@ -561,7 +550,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upsert_vars_using_post**
-> dict(str, str) upsert_vars_using_post(cluster_id, cluster_vars)
+> dict(str, str) upsert_vars_using_post(body, cluster_id)
 
 upsertVars
 
@@ -572,7 +561,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -580,12 +568,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.CommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = NULL # dict(str, str) | clusterVars
 cluster_id = 'cluster_id_example' # str | clusterId
-cluster_vars = NULL # object | clusterVars
 
 try:
     # upsertVars
-    api_response = api_instance.upsert_vars_using_post(cluster_id, cluster_vars)
+    api_response = api_instance.upsert_vars_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommonClusterControllerApi->upsert_vars_using_post: %s\n" % e)
@@ -595,8 +583,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, str)**](dict.md)| clusterVars | 
  **cluster_id** | **str**| clusterId | 
- **cluster_vars** | **object**| clusterVars | 
 
 ### Return type
 

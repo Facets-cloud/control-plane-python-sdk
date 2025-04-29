@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **flavor** | **str** | Flavor of the TF Module | [optional] 
 **git_ref** | **str** |  | [optional] 
 **git_url** | **str** |  | [optional] 
+**iac_tool** | **list[str]** |  | [optional] 
 **id** | **str** |  | [optional] 
 **intent_details** | [**IntentResponseDTO**](IntentResponseDTO.md) |  | [optional] 
 **last_modified_by** | **str** |  | [optional] 
@@ -24,5 +25,4 @@ Name | Type | Description | Notes
 **version** | **str** | Version of the TF Module | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

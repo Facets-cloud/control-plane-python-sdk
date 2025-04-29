@@ -18,9 +18,8 @@ Name | Type | Description | Notes
 **release_comment** | **str** |  | [optional] 
 **release_trace_id** | **str** |  | [optional] 
 **release_type** | **str** | CUSTOM | [optional] 
-**tf_version** | [**TfVersion**](TfVersion.md) | true | [optional] 
+**tf_version** | [**TfVersion**](TfVersion.md) |  | [optional] 
 **with_refresh** | **bool** | false | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

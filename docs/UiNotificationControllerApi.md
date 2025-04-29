@@ -1,6 +1,6 @@
 # swagger_client.UiNotificationControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,9 +22,8 @@ Method | HTTP request | Description
 [**get_subscription_using_get**](UiNotificationControllerApi.md#get_subscription_using_get) | **GET** /cc-ui/v1/notification/subscriptions/{subscriptionId} | getSubscription
 [**test_notification_channel_using_post**](UiNotificationControllerApi.md#test_notification_channel_using_post) | **POST** /cc-ui/v1/notification/channels/test | testNotificationChannel
 
-
 # **create_notification_channel_using_post**
-> list[NotificationChannel] create_notification_channel_using_post(nc)
+> list[NotificationChannel] create_notification_channel_using_post(body)
 
 createNotificationChannel
 
@@ -35,7 +34,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -43,11 +41,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNotificationControllerApi(swagger_client.ApiClient(configuration))
-nc = swagger_client.NotificationChannel() # NotificationChannel | nc
+body = swagger_client.NotificationChannel() # NotificationChannel | nc
 
 try:
     # createNotificationChannel
-    api_response = api_instance.create_notification_channel_using_post(nc)
+    api_response = api_instance.create_notification_channel_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNotificationControllerApi->create_notification_channel_using_post: %s\n" % e)
@@ -57,7 +55,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nc** | [**NotificationChannel**](NotificationChannel.md)| nc | 
+ **body** | [**NotificationChannel**](NotificationChannel.md)| nc | 
 
 ### Return type
 
@@ -75,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_subscription_using_post**
-> list[Subscription] create_subscription_using_post(subscription)
+> list[Subscription] create_subscription_using_post(body)
 
 createSubscription
 
@@ -86,7 +84,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -94,11 +91,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNotificationControllerApi(swagger_client.ApiClient(configuration))
-subscription = swagger_client.Subscription() # Subscription | subscription
+body = swagger_client.Subscription() # Subscription | subscription
 
 try:
     # createSubscription
-    api_response = api_instance.create_subscription_using_post(subscription)
+    api_response = api_instance.create_subscription_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNotificationControllerApi->create_subscription_using_post: %s\n" % e)
@@ -108,7 +105,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription** | [**Subscription**](Subscription.md)| subscription | 
+ **body** | [**Subscription**](Subscription.md)| subscription | 
 
 ### Return type
 
@@ -137,7 +134,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -188,7 +184,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -228,7 +223,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_notification_channel_using_put**
-> list[NotificationChannel] edit_notification_channel_using_put(channel_id, nc)
+> list[NotificationChannel] edit_notification_channel_using_put(body, channel_id)
 
 editNotificationChannel
 
@@ -239,7 +234,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -247,12 +241,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNotificationControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.NotificationChannel() # NotificationChannel | nc
 channel_id = 'channel_id_example' # str | channelId
-nc = swagger_client.NotificationChannel() # NotificationChannel | nc
 
 try:
     # editNotificationChannel
-    api_response = api_instance.edit_notification_channel_using_put(channel_id, nc)
+    api_response = api_instance.edit_notification_channel_using_put(body, channel_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNotificationControllerApi->edit_notification_channel_using_put: %s\n" % e)
@@ -262,8 +256,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**NotificationChannel**](NotificationChannel.md)| nc | 
  **channel_id** | **str**| channelId | 
- **nc** | [**NotificationChannel**](NotificationChannel.md)| nc | 
 
 ### Return type
 
@@ -281,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_subscription_using_put**
-> list[Subscription] edit_subscription_using_put(subscription, subscription_id)
+> list[Subscription] edit_subscription_using_put(body, subscription_id)
 
 editSubscription
 
@@ -292,7 +286,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -300,12 +293,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNotificationControllerApi(swagger_client.ApiClient(configuration))
-subscription = swagger_client.Subscription() # Subscription | subscription
+body = swagger_client.Subscription() # Subscription | subscription
 subscription_id = 'subscription_id_example' # str | subscriptionId
 
 try:
     # editSubscription
-    api_response = api_instance.edit_subscription_using_put(subscription, subscription_id)
+    api_response = api_instance.edit_subscription_using_put(body, subscription_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNotificationControllerApi->edit_subscription_using_put: %s\n" % e)
@@ -315,7 +308,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subscription** | [**Subscription**](Subscription.md)| subscription | 
+ **body** | [**Subscription**](Subscription.md)| subscription | 
  **subscription_id** | **str**| subscriptionId | 
 
 ### Return type
@@ -345,7 +338,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -392,7 +384,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -439,7 +430,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -486,7 +476,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -533,7 +522,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -580,7 +568,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -620,7 +607,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_filters_for_subscriptions_using_post**
-> TagDataModel get_filters_for_subscriptions_using_post(filter_params, notification_type, tag_name)
+> TagDataModel get_filters_for_subscriptions_using_post(body, notification_type, tag_name)
 
 getFiltersForSubscriptions
 
@@ -631,7 +618,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -639,13 +625,13 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNotificationControllerApi(swagger_client.ApiClient(configuration))
-filter_params = NULL # object | filterParams
+body = NULL # dict(str, list[str]) | filterParams
 notification_type = 'notification_type_example' # str | notificationType
 tag_name = 'tag_name_example' # str | tagName
 
 try:
     # getFiltersForSubscriptions
-    api_response = api_instance.get_filters_for_subscriptions_using_post(filter_params, notification_type, tag_name)
+    api_response = api_instance.get_filters_for_subscriptions_using_post(body, notification_type, tag_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNotificationControllerApi->get_filters_for_subscriptions_using_post: %s\n" % e)
@@ -655,7 +641,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_params** | **object**| filterParams | 
+ **body** | [**dict(str, list[str])**](dict.md)| filterParams | 
  **notification_type** | **str**| notificationType | 
  **tag_name** | **str**| tagName | 
 
@@ -686,7 +672,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -737,7 +722,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -788,7 +772,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -828,7 +811,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_notification_channel_using_post**
-> bool test_notification_channel_using_post(test_notification_request)
+> bool test_notification_channel_using_post(body)
 
 testNotificationChannel
 
@@ -839,7 +822,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -847,11 +829,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNotificationControllerApi(swagger_client.ApiClient(configuration))
-test_notification_request = swagger_client.TestNotificationRequest() # TestNotificationRequest | testNotificationRequest
+body = swagger_client.TestNotificationRequest() # TestNotificationRequest | testNotificationRequest
 
 try:
     # testNotificationChannel
-    api_response = api_instance.test_notification_channel_using_post(test_notification_request)
+    api_response = api_instance.test_notification_channel_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNotificationControllerApi->test_notification_channel_using_post: %s\n" % e)
@@ -861,7 +843,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **test_notification_request** | [**TestNotificationRequest**](TestNotificationRequest.md)| testNotificationRequest | 
+ **body** | [**TestNotificationRequest**](TestNotificationRequest.md)| testNotificationRequest | 
 
 ### Return type
 

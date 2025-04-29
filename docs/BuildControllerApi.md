@@ -1,11 +1,10 @@
 # swagger_client.BuildControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_image_from_deployer_using_get**](BuildControllerApi.md#get_image_from_deployer_using_get) | **GET** /cc/v1/build/deployer/{applicationId} | getImageFromDeployer
-
 
 # **get_image_from_deployer_using_get**
 > Build get_image_from_deployer_using_get(application_id, strategy, release_type=release_type)
@@ -19,7 +18,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

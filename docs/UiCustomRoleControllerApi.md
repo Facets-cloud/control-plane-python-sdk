@@ -1,6 +1,6 @@
 # swagger_client.UiCustomRoleControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,9 +11,8 @@ Method | HTTP request | Description
 [**get_custom_role_using_get**](UiCustomRoleControllerApi.md#get_custom_role_using_get) | **GET** /cc-ui/v1/custom-role/{roleName} | getCustomRole
 [**update_custom_role_using_put**](UiCustomRoleControllerApi.md#update_custom_role_using_put) | **PUT** /cc-ui/v1/custom-role/{roleName} | updateCustomRole
 
-
 # **create_custom_role_using_post**
-> RoleMapping create_custom_role_using_post(request)
+> RoleMapping create_custom_role_using_post(body)
 
 createCustomRole
 
@@ -24,7 +23,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -32,11 +30,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomRoleControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.CustomRoleRequest() # CustomRoleRequest | request
+body = swagger_client.CustomRoleRequest() # CustomRoleRequest | request
 
 try:
     # createCustomRole
-    api_response = api_instance.create_custom_role_using_post(request)
+    api_response = api_instance.create_custom_role_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCustomRoleControllerApi->create_custom_role_using_post: %s\n" % e)
@@ -46,7 +44,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**CustomRoleRequest**](CustomRoleRequest.md)| request | 
+ **body** | [**CustomRoleRequest**](CustomRoleRequest.md)| request | 
 
 ### Return type
 
@@ -75,7 +73,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -109,7 +106,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -125,7 +122,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -172,7 +168,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -219,7 +214,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -259,7 +253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_custom_role_using_put**
-> RoleMapping update_custom_role_using_put(request, role_name)
+> RoleMapping update_custom_role_using_put(body, role_name)
 
 updateCustomRole
 
@@ -270,7 +264,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -278,12 +271,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomRoleControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.CustomRoleRequest() # CustomRoleRequest | request
+body = swagger_client.CustomRoleRequest() # CustomRoleRequest | request
 role_name = 'role_name_example' # str | roleName
 
 try:
     # updateCustomRole
-    api_response = api_instance.update_custom_role_using_put(request, role_name)
+    api_response = api_instance.update_custom_role_using_put(body, role_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCustomRoleControllerApi->update_custom_role_using_put: %s\n" % e)
@@ -293,7 +286,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**CustomRoleRequest**](CustomRoleRequest.md)| request | 
+ **body** | [**CustomRoleRequest**](CustomRoleRequest.md)| request | 
  **role_name** | **str**| roleName | 
 
 ### Return type

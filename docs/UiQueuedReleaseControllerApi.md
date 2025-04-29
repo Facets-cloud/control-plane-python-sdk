@@ -1,12 +1,11 @@
 # swagger_client.UiQueuedReleaseControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_by_id_using_delete**](UiQueuedReleaseControllerApi.md#delete_by_id_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/queued-releases/{queuedReleaseId} | deleteById
 [**get_all_queued_releases_using_get**](UiQueuedReleaseControllerApi.md#get_all_queued_releases_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/queued-releases/ | getAllQueuedReleases
-
 
 # **delete_by_id_using_delete**
 > delete_by_id_using_delete(cluster_id, queued_release_id)
@@ -20,7 +19,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -56,7 +54,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -72,7 +70,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

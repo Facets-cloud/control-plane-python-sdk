@@ -1,6 +1,6 @@
 # swagger_client.UiIacRepoControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**get_iac_repo_by_id_using_get**](UiIacRepoControllerApi.md#get_iac_repo_by_id_using_get) | **GET** /cc-ui/v1/iac/repo/{id} | getIacRepoById
 [**update_iac_repo_using_put**](UiIacRepoControllerApi.md#update_iac_repo_using_put) | **PUT** /cc-ui/v1/iac/repo/{id} | updateIacRepo
 
-
 # **create_iac_repo_using_post**
-> IacRepo create_iac_repo_using_post(iac_repo)
+> IacRepo create_iac_repo_using_post(body)
 
 createIacRepo
 
@@ -23,7 +22,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -31,11 +29,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiIacRepoControllerApi(swagger_client.ApiClient(configuration))
-iac_repo = swagger_client.IacRepo() # IacRepo | iacRepo
+body = swagger_client.IacRepo() # IacRepo | iacRepo
 
 try:
     # createIacRepo
-    api_response = api_instance.create_iac_repo_using_post(iac_repo)
+    api_response = api_instance.create_iac_repo_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiIacRepoControllerApi->create_iac_repo_using_post: %s\n" % e)
@@ -45,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **iac_repo** | [**IacRepo**](IacRepo.md)| iacRepo | 
+ **body** | [**IacRepo**](IacRepo.md)| iacRepo | 
 
 ### Return type
 
@@ -74,7 +72,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -108,7 +105,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -124,7 +121,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -171,7 +167,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -211,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_iac_repo_using_put**
-> IacRepo update_iac_repo_using_put(id, updated_iac_repo)
+> IacRepo update_iac_repo_using_put(body, id)
 
 updateIacRepo
 
@@ -222,7 +217,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -230,12 +224,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiIacRepoControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.IacRepo() # IacRepo | updatedIacRepo
 id = 'id_example' # str | id
-updated_iac_repo = swagger_client.IacRepo() # IacRepo | updatedIacRepo
 
 try:
     # updateIacRepo
-    api_response = api_instance.update_iac_repo_using_put(id, updated_iac_repo)
+    api_response = api_instance.update_iac_repo_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiIacRepoControllerApi->update_iac_repo_using_put: %s\n" % e)
@@ -245,8 +239,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**IacRepo**](IacRepo.md)| updatedIacRepo | 
  **id** | **str**| id | 
- **updated_iac_repo** | [**IacRepo**](IacRepo.md)| updatedIacRepo | 
 
 ### Return type
 

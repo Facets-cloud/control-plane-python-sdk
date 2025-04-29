@@ -1,12 +1,11 @@
 # swagger_client.UiArtifactHubControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_helm_values_using_get**](UiArtifactHubControllerApi.md#get_helm_values_using_get) | **GET** /cc-ui/v1/artifactHub/packages/{packageId}/values | getHelmValues
 [**search_packages_using_get**](UiArtifactHubControllerApi.md#search_packages_using_get) | **GET** /cc-ui/v1/artifactHub/search-packages | searchPackages
-
 
 # **get_helm_values_using_get**
 > object get_helm_values_using_get(package_id, version)
@@ -20,7 +19,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -73,7 +71,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

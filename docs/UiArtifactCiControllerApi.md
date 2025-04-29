@@ -1,6 +1,6 @@
 # swagger_client.UiArtifactCiControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,8 @@ Method | HTTP request | Description
 [**get_artifacts_for_ci_using_get**](UiArtifactCiControllerApi.md#get_artifacts_for_ci_using_get) | **GET** /cc-ui/v1/artifacts-ci/{ciName}/artifacts | getArtifactsForCI
 [**update_artifact_ci_using_put**](UiArtifactCiControllerApi.md#update_artifact_ci_using_put) | **PUT** /cc-ui/v1/artifacts-ci/{ciId} | updateArtifactCI
 
-
 # **bulk_edit_workflow_using_post**
-> bulk_edit_workflow_using_post(bulk_workflow_attach_request)
+> bulk_edit_workflow_using_post(body)
 
 bulkEditWorkflow
 
@@ -27,7 +26,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -35,11 +33,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-bulk_workflow_attach_request = swagger_client.BulkWorkflowAttachRequest() # BulkWorkflowAttachRequest | bulkWorkflowAttachRequest
+body = swagger_client.BulkWorkflowAttachRequest() # BulkWorkflowAttachRequest | bulkWorkflowAttachRequest
 
 try:
     # bulkEditWorkflow
-    api_instance.bulk_edit_workflow_using_post(bulk_workflow_attach_request)
+    api_instance.bulk_edit_workflow_using_post(body)
 except ApiException as e:
     print("Exception when calling UiArtifactCiControllerApi->bulk_edit_workflow_using_post: %s\n" % e)
 ```
@@ -48,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bulk_workflow_attach_request** | [**BulkWorkflowAttachRequest**](BulkWorkflowAttachRequest.md)| bulkWorkflowAttachRequest | 
+ **body** | [**BulkWorkflowAttachRequest**](BulkWorkflowAttachRequest.md)| bulkWorkflowAttachRequest | 
 
 ### Return type
 
@@ -61,12 +59,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_artifact_ci_using_post**
-> ArtifactCI create_artifact_ci_using_post(artifact_ci)
+> ArtifactCI create_artifact_ci_using_post(body)
 
 createArtifactCI
 
@@ -77,7 +75,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -85,11 +82,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-artifact_ci = swagger_client.ArtifactCI() # ArtifactCI | artifactCI
+body = swagger_client.ArtifactCI() # ArtifactCI | artifactCI
 
 try:
     # createArtifactCI
-    api_response = api_instance.create_artifact_ci_using_post(artifact_ci)
+    api_response = api_instance.create_artifact_ci_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactCiControllerApi->create_artifact_ci_using_post: %s\n" % e)
@@ -99,7 +96,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_ci** | [**ArtifactCI**](ArtifactCI.md)| artifactCI | 
+ **body** | [**ArtifactCI**](ArtifactCI.md)| artifactCI | 
 
 ### Return type
 
@@ -128,7 +125,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -179,7 +175,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -226,7 +221,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -277,7 +271,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -328,7 +321,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -379,7 +371,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -419,7 +410,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_artifact_ci_using_put**
-> ArtifactCI update_artifact_ci_using_put(artifact_ci, ci_id)
+> ArtifactCI update_artifact_ci_using_put(body, ci_id)
 
 updateArtifactCI
 
@@ -430,7 +421,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -438,12 +428,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-artifact_ci = swagger_client.ArtifactCI() # ArtifactCI | artifactCI
+body = swagger_client.ArtifactCI() # ArtifactCI | artifactCI
 ci_id = 'ci_id_example' # str | ciId
 
 try:
     # updateArtifactCI
-    api_response = api_instance.update_artifact_ci_using_put(artifact_ci, ci_id)
+    api_response = api_instance.update_artifact_ci_using_put(body, ci_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactCiControllerApi->update_artifact_ci_using_put: %s\n" % e)
@@ -453,7 +443,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_ci** | [**ArtifactCI**](ArtifactCI.md)| artifactCI | 
+ **body** | [**ArtifactCI**](ArtifactCI.md)| artifactCI | 
  **ci_id** | **str**| ciId | 
 
 ### Return type

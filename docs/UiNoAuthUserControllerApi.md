@@ -1,6 +1,6 @@
 # swagger_client.UiNoAuthUserControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**save_password_using_post**](UiNoAuthUserControllerApi.md#save_password_using_post) | **POST** /public-ui/v1/user/savePassword | savePassword
 [**validate_token_using_post**](UiNoAuthUserControllerApi.md#validate_token_using_post) | **POST** /public-ui/v1/user/token/validate | validateToken
 
-
 # **reset_password_request_using_post**
-> Response reset_password_request_using_post(reset_password_request)
+> Response reset_password_request_using_post(body)
 
 resetPasswordRequest
 
@@ -21,7 +20,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -29,11 +27,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNoAuthUserControllerApi(swagger_client.ApiClient(configuration))
-reset_password_request = swagger_client.ResetPasswordRequest() # ResetPasswordRequest | resetPasswordRequest
+body = swagger_client.ResetPasswordRequest() # ResetPasswordRequest | resetPasswordRequest
 
 try:
     # resetPasswordRequest
-    api_response = api_instance.reset_password_request_using_post(reset_password_request)
+    api_response = api_instance.reset_password_request_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNoAuthUserControllerApi->reset_password_request_using_post: %s\n" % e)
@@ -43,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reset_password_request** | [**ResetPasswordRequest**](ResetPasswordRequest.md)| resetPasswordRequest | 
+ **body** | [**ResetPasswordRequest**](ResetPasswordRequest.md)| resetPasswordRequest | 
 
 ### Return type
 
@@ -61,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **save_password_using_post**
-> Response save_password_using_post(save_password_reset_password_request)
+> Response save_password_using_post(body)
 
 savePassword
 
@@ -72,7 +70,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -80,11 +77,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNoAuthUserControllerApi(swagger_client.ApiClient(configuration))
-save_password_reset_password_request = swagger_client.SavePasswordResetPasswordRequest() # SavePasswordResetPasswordRequest | savePasswordResetPasswordRequest
+body = swagger_client.SavePasswordResetPasswordRequest() # SavePasswordResetPasswordRequest | savePasswordResetPasswordRequest
 
 try:
     # savePassword
-    api_response = api_instance.save_password_using_post(save_password_reset_password_request)
+    api_response = api_instance.save_password_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNoAuthUserControllerApi->save_password_using_post: %s\n" % e)
@@ -94,7 +91,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **save_password_reset_password_request** | [**SavePasswordResetPasswordRequest**](SavePasswordResetPasswordRequest.md)| savePasswordResetPasswordRequest | 
+ **body** | [**SavePasswordResetPasswordRequest**](SavePasswordResetPasswordRequest.md)| savePasswordResetPasswordRequest | 
 
 ### Return type
 
@@ -112,7 +109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_token_using_post**
-> TokenValidity validate_token_using_post(validation_request)
+> TokenValidity validate_token_using_post(body)
 
 validateToken
 
@@ -123,7 +120,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -131,11 +127,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiNoAuthUserControllerApi(swagger_client.ApiClient(configuration))
-validation_request = swagger_client.TokenValidationRequest() # TokenValidationRequest | validationRequest
+body = swagger_client.TokenValidationRequest() # TokenValidationRequest | validationRequest
 
 try:
     # validateToken
-    api_response = api_instance.validate_token_using_post(validation_request)
+    api_response = api_instance.validate_token_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiNoAuthUserControllerApi->validate_token_using_post: %s\n" % e)
@@ -145,7 +141,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **validation_request** | [**TokenValidationRequest**](TokenValidationRequest.md)| validationRequest | 
+ **body** | [**TokenValidationRequest**](TokenValidationRequest.md)| validationRequest | 
 
 ### Return type
 
