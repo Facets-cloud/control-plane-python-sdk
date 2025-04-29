@@ -1,13 +1,15 @@
 # swagger_client.UiDeploymentControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**abort_automation_suite_using_delete1**](UiDeploymentControllerApi.md#abort_automation_suite_using_delete1) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite | abortAutomationSuite
 [**approve_release_using_post**](UiDeploymentControllerApi.md#approve_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/approveRelease | approveRelease
+[**clean_s3_sources_using_delete**](UiDeploymentControllerApi.md#clean_s3_sources_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/clean-s3-sources | cleanS3Sources
 [**create_deployment_using_post**](UiDeploymentControllerApi.md#create_deployment_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments | createDeployment
 [**destroy_cluster_using_delete**](UiDeploymentControllerApi.md#destroy_cluster_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/destroy | destroyCluster
+[**download_terraform_export_using_get**](UiDeploymentControllerApi.md#download_terraform_export_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/download-terraform-export | downloadTerraformExport
 [**get_cluster_state_using_get**](UiDeploymentControllerApi.md#get_cluster_state_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/state | getClusterState
 [**get_deployment_logs_using_get**](UiDeploymentControllerApi.md#get_deployment_logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs | getDeploymentLogs
 [**get_deployment_stats_using_get**](UiDeploymentControllerApi.md#get_deployment_stats_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/stats | getDeploymentStats
@@ -28,7 +30,7 @@ Method | HTTP request | Description
 [**state_unlock_using_put**](UiDeploymentControllerApi.md#state_unlock_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/unlock | stateUnlock
 [**stream_deployment_logs_using_get**](UiDeploymentControllerApi.md#stream_deployment_logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs/stream | streamDeploymentLogs
 [**trigger_maintenance_release_using_post**](UiDeploymentControllerApi.md#trigger_maintenance_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/maintenance | triggerMaintenanceRelease
-
+[**trigger_terraform_export_using_post**](UiDeploymentControllerApi.md#trigger_terraform_export_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/terraform-export | triggerTerraformExport
 
 # **abort_automation_suite_using_delete1**
 > abort_automation_suite_using_delete1(cluster_id, execution_id)
@@ -42,7 +44,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -78,7 +79,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -94,7 +95,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -130,13 +130,62 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **clean_s3_sources_using_delete**
+> clean_s3_sources_using_delete(cluster_id)
+
+cleanS3Sources
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+cluster_id = 'cluster_id_example' # str | clusterId
+
+try:
+    # cleanS3Sources
+    api_instance.clean_s3_sources_using_delete(cluster_id)
+except ApiException as e:
+    print("Exception when calling UiDeploymentControllerApi->clean_s3_sources_using_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **str**| clusterId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_deployment_using_post**
-> DeploymentLog create_deployment_using_post(cluster_id, deployment_request)
+> DeploymentLog create_deployment_using_post(body, cluster_id)
 
 createDeployment
 
@@ -147,7 +196,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -155,12 +203,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.DeploymentRequest() # DeploymentRequest | deploymentRequest
 cluster_id = 'cluster_id_example' # str | clusterId
-deployment_request = swagger_client.DeploymentRequest() # DeploymentRequest | deploymentRequest
 
 try:
     # createDeployment
-    api_response = api_instance.create_deployment_using_post(cluster_id, deployment_request)
+    api_response = api_instance.create_deployment_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiDeploymentControllerApi->create_deployment_using_post: %s\n" % e)
@@ -170,8 +218,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**DeploymentRequest**](DeploymentRequest.md)| deploymentRequest | 
  **cluster_id** | **str**| clusterId | 
- **deployment_request** | [**DeploymentRequest**](DeploymentRequest.md)| deploymentRequest | 
 
 ### Return type
 
@@ -200,7 +248,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -239,6 +286,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **download_terraform_export_using_get**
+> download_terraform_export_using_get(cluster_id, deployment_id)
+
+downloadTerraformExport
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+cluster_id = 'cluster_id_example' # str | clusterId
+deployment_id = 'deployment_id_example' # str | deploymentId
+
+try:
+    # downloadTerraformExport
+    api_instance.download_terraform_export_using_get(cluster_id, deployment_id)
+except ApiException as e:
+    print("Exception when calling UiDeploymentControllerApi->download_terraform_export_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **str**| clusterId | 
+ **deployment_id** | **str**| deploymentId | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_cluster_state_using_get**
 > str get_cluster_state_using_get(cluster_id)
 
@@ -251,7 +349,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -302,7 +399,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -357,7 +453,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -410,7 +505,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -463,7 +557,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -514,7 +607,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -565,7 +657,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -618,7 +709,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -669,7 +759,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -722,7 +811,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -756,7 +844,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -773,7 +861,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -809,7 +896,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -826,7 +913,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -870,7 +956,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -887,7 +973,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -933,13 +1018,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **run_hotfix_deployment_recipe_using_post**
-> DeploymentLog run_hotfix_deployment_recipe_using_post(cluster_id, deployment_recipe, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, is_plan=is_plan, with_refresh=with_refresh)
+> DeploymentLog run_hotfix_deployment_recipe_using_post(body, cluster_id, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, is_plan=is_plan, with_refresh=with_refresh)
 
 runHotfixDeploymentRecipe
 
@@ -950,7 +1035,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -958,8 +1042,8 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.HotfixDeploymentRecipe() # HotfixDeploymentRecipe | deploymentRecipe
 cluster_id = 'cluster_id_example' # str | clusterId
-deployment_recipe = swagger_client.HotfixDeploymentRecipe() # HotfixDeploymentRecipe | deploymentRecipe
 allow_destroy = false # bool | allowDestroy (optional) (default to false)
 can_queue = false # bool | canQueue (optional) (default to false)
 comment = 'comment_example' # str | comment (optional)
@@ -969,7 +1053,7 @@ with_refresh = false # bool | withRefresh (optional) (default to false)
 
 try:
     # runHotfixDeploymentRecipe
-    api_response = api_instance.run_hotfix_deployment_recipe_using_post(cluster_id, deployment_recipe, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, is_plan=is_plan, with_refresh=with_refresh)
+    api_response = api_instance.run_hotfix_deployment_recipe_using_post(body, cluster_id, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, is_plan=is_plan, with_refresh=with_refresh)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiDeploymentControllerApi->run_hotfix_deployment_recipe_using_post: %s\n" % e)
@@ -979,8 +1063,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**HotfixDeploymentRecipe**](HotfixDeploymentRecipe.md)| deploymentRecipe | 
  **cluster_id** | **str**| clusterId | 
- **deployment_recipe** | [**HotfixDeploymentRecipe**](HotfixDeploymentRecipe.md)| deploymentRecipe | 
  **allow_destroy** | **bool**| allowDestroy | [optional] [default to false]
  **can_queue** | **bool**| canQueue | [optional] [default to false]
  **comment** | **str**| comment | [optional] 
@@ -1015,7 +1099,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1084,7 +1167,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1120,7 +1202,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1137,7 +1219,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1188,7 +1269,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1224,7 +1304,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1241,7 +1321,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1294,7 +1373,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1328,7 +1406,57 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **trigger_terraform_export_using_post**
+> DeploymentLog trigger_terraform_export_using_post(cluster_id)
+
+triggerTerraformExport
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+cluster_id = 'cluster_id_example' # str | clusterId
+
+try:
+    # triggerTerraformExport
+    api_response = api_instance.trigger_terraform_export_using_post(cluster_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDeploymentControllerApi->trigger_terraform_export_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **str**| clusterId | 
+
+### Return type
+
+[**DeploymentLog**](DeploymentLog.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

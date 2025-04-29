@@ -1,6 +1,6 @@
 # swagger_client.UiOpaControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,9 +13,8 @@ Method | HTTP request | Description
 [**get_all_policy_templates_using_get**](UiOpaControllerApi.md#get_all_policy_templates_using_get) | **GET** /cc-ui/v1/opa/policy-templates | getAllPolicyTemplates
 [**get_policy_using_get**](UiOpaControllerApi.md#get_policy_using_get) | **GET** /cc-ui/v1/opa/{policyName} | getPolicy
 
-
 # **bulk_edit_opa_policy_state_using_post**
-> bulk_edit_opa_policy_state_using_post(enable_disable_opa_policies_list)
+> bulk_edit_opa_policy_state_using_post(body)
 
 bulkEditOpaPolicyState
 
@@ -26,7 +25,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -34,11 +32,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOpaControllerApi(swagger_client.ApiClient(configuration))
-enable_disable_opa_policies_list = [swagger_client.EnableDisableOPAPolicy()] # list[EnableDisableOPAPolicy] | enableDisableOPAPoliciesList
+body = [swagger_client.EnableDisableOPAPolicy()] # list[EnableDisableOPAPolicy] | enableDisableOPAPoliciesList
 
 try:
     # bulkEditOpaPolicyState
-    api_instance.bulk_edit_opa_policy_state_using_post(enable_disable_opa_policies_list)
+    api_instance.bulk_edit_opa_policy_state_using_post(body)
 except ApiException as e:
     print("Exception when calling UiOpaControllerApi->bulk_edit_opa_policy_state_using_post: %s\n" % e)
 ```
@@ -47,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **enable_disable_opa_policies_list** | [**list[EnableDisableOPAPolicy]**](EnableDisableOPAPolicy.md)| enableDisableOPAPoliciesList | 
+ **body** | [**list[EnableDisableOPAPolicy]**](EnableDisableOPAPolicy.md)| enableDisableOPAPoliciesList | 
 
 ### Return type
 
@@ -60,12 +58,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_policy_using_post**
-> OpaPolicy create_policy_using_post(opa_request, policy_name)
+> OpaPolicy create_policy_using_post(body, policy_name)
 
 createPolicy
 
@@ -76,7 +74,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -84,12 +81,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOpaControllerApi(swagger_client.ApiClient(configuration))
-opa_request = swagger_client.OpaPolicyRequest() # OpaPolicyRequest | opaRequest
+body = swagger_client.OpaPolicyRequest() # OpaPolicyRequest | opaRequest
 policy_name = 'policy_name_example' # str | policyName
 
 try:
     # createPolicy
-    api_response = api_instance.create_policy_using_post(opa_request, policy_name)
+    api_response = api_instance.create_policy_using_post(body, policy_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOpaControllerApi->create_policy_using_post: %s\n" % e)
@@ -99,7 +96,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **opa_request** | [**OpaPolicyRequest**](OpaPolicyRequest.md)| opaRequest | 
+ **body** | [**OpaPolicyRequest**](OpaPolicyRequest.md)| opaRequest | 
  **policy_name** | **str**| policyName | 
 
 ### Return type
@@ -129,7 +126,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -163,12 +159,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_policy_using_put**
-> OpaPolicy edit_policy_using_put(opa_request, policy_name)
+> OpaPolicy edit_policy_using_put(body, policy_name)
 
 editPolicy
 
@@ -179,7 +175,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -187,12 +182,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOpaControllerApi(swagger_client.ApiClient(configuration))
-opa_request = swagger_client.OpaPolicyRequest() # OpaPolicyRequest | opaRequest
+body = swagger_client.OpaPolicyRequest() # OpaPolicyRequest | opaRequest
 policy_name = 'policy_name_example' # str | policyName
 
 try:
     # editPolicy
-    api_response = api_instance.edit_policy_using_put(opa_request, policy_name)
+    api_response = api_instance.edit_policy_using_put(body, policy_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOpaControllerApi->edit_policy_using_put: %s\n" % e)
@@ -202,7 +197,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **opa_request** | [**OpaPolicyRequest**](OpaPolicyRequest.md)| opaRequest | 
+ **body** | [**OpaPolicyRequest**](OpaPolicyRequest.md)| opaRequest | 
  **policy_name** | **str**| policyName | 
 
 ### Return type
@@ -221,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **execute_policy_using_post**
-> OpaPolicyExecutionResult execute_policy_using_post(input_json, policy_name)
+> OpaPolicyExecutionResult execute_policy_using_post(body, policy_name)
 
 executePolicy
 
@@ -232,7 +227,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -240,12 +234,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOpaControllerApi(swagger_client.ApiClient(configuration))
-input_json = 'input_json_example' # str | inputJson
+body = 'body_example' # str | inputJson
 policy_name = 'policy_name_example' # str | policyName
 
 try:
     # executePolicy
-    api_response = api_instance.execute_policy_using_post(input_json, policy_name)
+    api_response = api_instance.execute_policy_using_post(body, policy_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOpaControllerApi->execute_policy_using_post: %s\n" % e)
@@ -255,7 +249,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input_json** | **str**| inputJson | 
+ **body** | [**str**](str.md)| inputJson | 
  **policy_name** | **str**| policyName | 
 
 ### Return type
@@ -285,7 +279,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -332,7 +325,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -379,7 +371,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

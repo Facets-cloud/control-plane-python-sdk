@@ -1,6 +1,6 @@
 # swagger_client.UiArtifactRoutingRuleControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,9 +12,8 @@ Method | HTTP request | Description
 [**test_rule_for_branch_name_using_post**](UiArtifactRoutingRuleControllerApi.md#test_rule_for_branch_name_using_post) | **POST** /cc-ui/v1/artifact-routing-rule/test | testRuleForBranchName
 [**update_artifact_routing_rule_using_put**](UiArtifactRoutingRuleControllerApi.md#update_artifact_routing_rule_using_put) | **PUT** /cc-ui/v1/artifact-routing-rule | updateArtifactRoutingRule
 
-
 # **add_artifact_routing_rule_using_post**
-> ArtifactRoutingRuleResponse add_artifact_routing_rule_using_post(artifact_routing_rule_request)
+> ArtifactRoutingRuleResponse add_artifact_routing_rule_using_post(body)
 
 addArtifactRoutingRule
 
@@ -25,7 +24,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -33,11 +31,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-artifact_routing_rule_request = swagger_client.ArtifactRoutingRuleRequest() # ArtifactRoutingRuleRequest | artifactRoutingRuleRequest
+body = swagger_client.ArtifactRoutingRuleRequest() # ArtifactRoutingRuleRequest | artifactRoutingRuleRequest
 
 try:
     # addArtifactRoutingRule
-    api_response = api_instance.add_artifact_routing_rule_using_post(artifact_routing_rule_request)
+    api_response = api_instance.add_artifact_routing_rule_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactRoutingRuleControllerApi->add_artifact_routing_rule_using_post: %s\n" % e)
@@ -47,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_routing_rule_request** | [**ArtifactRoutingRuleRequest**](ArtifactRoutingRuleRequest.md)| artifactRoutingRuleRequest | 
+ **body** | [**ArtifactRoutingRuleRequest**](ArtifactRoutingRuleRequest.md)| artifactRoutingRuleRequest | 
 
 ### Return type
 
@@ -76,7 +74,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -110,7 +107,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -126,7 +123,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -179,7 +175,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -226,7 +221,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -266,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_rule_for_branch_name_using_post**
-> TestRuleResponse test_rule_for_branch_name_using_post(criteria, metadata)
+> TestRuleResponse test_rule_for_branch_name_using_post(body, metadata)
 
 testRuleForBranchName
 
@@ -277,7 +271,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -285,12 +278,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-criteria = [swagger_client.Criterion()] # list[Criterion] | criteria
+body = [swagger_client.Criterion()] # list[Criterion] | criteria
 metadata = NULL # object | metadata
 
 try:
     # testRuleForBranchName
-    api_response = api_instance.test_rule_for_branch_name_using_post(criteria, metadata)
+    api_response = api_instance.test_rule_for_branch_name_using_post(body, metadata)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactRoutingRuleControllerApi->test_rule_for_branch_name_using_post: %s\n" % e)
@@ -300,7 +293,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **criteria** | [**list[Criterion]**](Criterion.md)| criteria | 
+ **body** | [**list[Criterion]**](Criterion.md)| criteria | 
  **metadata** | [**object**](.md)| metadata | 
 
 ### Return type
@@ -319,7 +312,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_artifact_routing_rule_using_put**
-> ArtifactRoutingRuleResponse update_artifact_routing_rule_using_put(artifact_routing_rule_request)
+> ArtifactRoutingRuleResponse update_artifact_routing_rule_using_put(body)
 
 updateArtifactRoutingRule
 
@@ -330,7 +323,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -338,11 +330,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-artifact_routing_rule_request = swagger_client.ArtifactRoutingRuleRequest() # ArtifactRoutingRuleRequest | artifactRoutingRuleRequest
+body = swagger_client.ArtifactRoutingRuleRequest() # ArtifactRoutingRuleRequest | artifactRoutingRuleRequest
 
 try:
     # updateArtifactRoutingRule
-    api_response = api_instance.update_artifact_routing_rule_using_put(artifact_routing_rule_request)
+    api_response = api_instance.update_artifact_routing_rule_using_put(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactRoutingRuleControllerApi->update_artifact_routing_rule_using_put: %s\n" % e)
@@ -352,7 +344,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifact_routing_rule_request** | [**ArtifactRoutingRuleRequest**](ArtifactRoutingRuleRequest.md)| artifactRoutingRuleRequest | 
+ **body** | [**ArtifactRoutingRuleRequest**](ArtifactRoutingRuleRequest.md)| artifactRoutingRuleRequest | 
 
 ### Return type
 

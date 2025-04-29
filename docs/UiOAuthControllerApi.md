@@ -1,6 +1,6 @@
 # swagger_client.UiOAuthControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,9 +11,8 @@ Method | HTTP request | Description
 [**get_all_integrations_using_get**](UiOAuthControllerApi.md#get_all_integrations_using_get) | **GET** /cc-ui/v1/oauth | getAllIntegrations
 [**update_integrations_using_put**](UiOAuthControllerApi.md#update_integrations_using_put) | **PUT** /cc-ui/v1/oauth/{registrationId} | updateIntegrations
 
-
 # **add_generic_o_auth_integration_using_post**
-> list[CustomOAuth2ClientRegistration] add_generic_o_auth_integration_using_post(client)
+> list[CustomOAuth2ClientRegistration] add_generic_o_auth_integration_using_post(body)
 
 addGenericOAuthIntegration
 
@@ -24,7 +23,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -32,11 +30,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOAuthControllerApi(swagger_client.ApiClient(configuration))
-client = swagger_client.GenericOAuth2ClientRegistration() # GenericOAuth2ClientRegistration | client
+body = swagger_client.GenericOAuth2ClientRegistration() # GenericOAuth2ClientRegistration | client
 
 try:
     # addGenericOAuthIntegration
-    api_response = api_instance.add_generic_o_auth_integration_using_post(client)
+    api_response = api_instance.add_generic_o_auth_integration_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOAuthControllerApi->add_generic_o_auth_integration_using_post: %s\n" % e)
@@ -46,7 +44,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | [**GenericOAuth2ClientRegistration**](GenericOAuth2ClientRegistration.md)| client | 
+ **body** | [**GenericOAuth2ClientRegistration**](GenericOAuth2ClientRegistration.md)| client | 
 
 ### Return type
 
@@ -64,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_integrations_using_post**
-> list[CustomOAuth2ClientRegistration] add_integrations_using_post(client)
+> list[CustomOAuth2ClientRegistration] add_integrations_using_post(body)
 
 addIntegrations
 
@@ -75,7 +73,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -83,11 +80,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOAuthControllerApi(swagger_client.ApiClient(configuration))
-client = swagger_client.CustomOAuth2ClientRegistration() # CustomOAuth2ClientRegistration | client
+body = swagger_client.CustomOAuth2ClientRegistration() # CustomOAuth2ClientRegistration | client
 
 try:
     # addIntegrations
-    api_response = api_instance.add_integrations_using_post(client)
+    api_response = api_instance.add_integrations_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOAuthControllerApi->add_integrations_using_post: %s\n" % e)
@@ -97,7 +94,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | [**CustomOAuth2ClientRegistration**](CustomOAuth2ClientRegistration.md)| client | 
+ **body** | [**CustomOAuth2ClientRegistration**](CustomOAuth2ClientRegistration.md)| client | 
 
 ### Return type
 
@@ -126,7 +123,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -166,7 +162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_generic_o_auth_integration_using_put**
-> list[CustomOAuth2ClientRegistration] edit_generic_o_auth_integration_using_put(client, registration_id=registration_id)
+> list[CustomOAuth2ClientRegistration] edit_generic_o_auth_integration_using_put(body, registration_id=registration_id)
 
 editGenericOAuthIntegration
 
@@ -177,7 +173,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -185,12 +180,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOAuthControllerApi(swagger_client.ApiClient(configuration))
-client = swagger_client.GenericOAuth2ClientRegistration() # GenericOAuth2ClientRegistration | client
+body = swagger_client.GenericOAuth2ClientRegistration() # GenericOAuth2ClientRegistration | client
 registration_id = 'registration_id_example' # str | registrationId (optional)
 
 try:
     # editGenericOAuthIntegration
-    api_response = api_instance.edit_generic_o_auth_integration_using_put(client, registration_id=registration_id)
+    api_response = api_instance.edit_generic_o_auth_integration_using_put(body, registration_id=registration_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOAuthControllerApi->edit_generic_o_auth_integration_using_put: %s\n" % e)
@@ -200,7 +195,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | [**GenericOAuth2ClientRegistration**](GenericOAuth2ClientRegistration.md)| client | 
+ **body** | [**GenericOAuth2ClientRegistration**](GenericOAuth2ClientRegistration.md)| client | 
  **registration_id** | **str**| registrationId | [optional] 
 
 ### Return type
@@ -230,7 +225,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -266,7 +260,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_integrations_using_put**
-> list[CustomOAuth2ClientRegistration] update_integrations_using_put(client, registration_id)
+> list[CustomOAuth2ClientRegistration] update_integrations_using_put(body, registration_id)
 
 updateIntegrations
 
@@ -277,7 +271,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -285,12 +278,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOAuthControllerApi(swagger_client.ApiClient(configuration))
-client = swagger_client.CustomOAuth2ClientRegistration() # CustomOAuth2ClientRegistration | client
+body = swagger_client.CustomOAuth2ClientRegistration() # CustomOAuth2ClientRegistration | client
 registration_id = 'registration_id_example' # str | registrationId
 
 try:
     # updateIntegrations
-    api_response = api_instance.update_integrations_using_put(client, registration_id)
+    api_response = api_instance.update_integrations_using_put(body, registration_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOAuthControllerApi->update_integrations_using_put: %s\n" % e)
@@ -300,7 +293,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | [**CustomOAuth2ClientRegistration**](CustomOAuth2ClientRegistration.md)| client | 
+ **body** | [**CustomOAuth2ClientRegistration**](CustomOAuth2ClientRegistration.md)| client | 
  **registration_id** | **str**| registrationId | 
 
 ### Return type

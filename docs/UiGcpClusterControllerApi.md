@@ -1,6 +1,6 @@
 # swagger_client.UiGcpClusterControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**update_gcp_cluster_using_put**](UiGcpClusterControllerApi.md#update_gcp_cluster_using_put) | **PUT** /cc-ui/v1/gcp/clusters/{clusterId} | updateGCPCluster
 [**validate_vpc_id_using_get1**](UiGcpClusterControllerApi.md#validate_vpc_id_using_get1) | **GET** /cc-ui/v1/gcp/clusters/validate-vpcId | validateVpcId
 
-
 # **configure_draft_cluster_using_post2**
-> GCPCluster configure_draft_cluster_using_post2(cluster_id, request)
+> GCPCluster configure_draft_cluster_using_post2(body, cluster_id)
 
 configureDraftCluster
 
@@ -23,7 +22,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -31,12 +29,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
 
 try:
     # configureDraftCluster
-    api_response = api_instance.configure_draft_cluster_using_post2(cluster_id, request)
+    api_response = api_instance.configure_draft_cluster_using_post2(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiGcpClusterControllerApi->configure_draft_cluster_using_post2: %s\n" % e)
@@ -46,8 +44,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
 
 ### Return type
 
@@ -65,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_gcp_cluster_using_post**
-> GCPCluster create_gcp_cluster_using_post(request)
+> GCPCluster create_gcp_cluster_using_post(body)
 
 createGCPCluster
 
@@ -76,7 +74,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -84,11 +81,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
+body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
 
 try:
     # createGCPCluster
-    api_response = api_instance.create_gcp_cluster_using_post(request)
+    api_response = api_instance.create_gcp_cluster_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiGcpClusterControllerApi->create_gcp_cluster_using_post: %s\n" % e)
@@ -98,7 +95,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
+ **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
 
 ### Return type
 
@@ -127,7 +124,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -167,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_gcp_cluster_using_put**
-> GCPCluster update_gcp_cluster_using_put(cluster_id, request)
+> GCPCluster update_gcp_cluster_using_put(body, cluster_id)
 
 updateGCPCluster
 
@@ -178,7 +174,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -186,12 +181,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
 
 try:
     # updateGCPCluster
-    api_response = api_instance.update_gcp_cluster_using_put(cluster_id, request)
+    api_response = api_instance.update_gcp_cluster_using_put(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiGcpClusterControllerApi->update_gcp_cluster_using_put: %s\n" % e)
@@ -201,8 +196,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
 
 ### Return type
 
@@ -231,7 +226,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

@@ -1,6 +1,6 @@
 # swagger_client.UiDomainMappingControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,9 +9,8 @@ Method | HTTP request | Description
 [**get_all_domains_using_get**](UiDomainMappingControllerApi.md#get_all_domains_using_get) | **GET** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | getAllDomains
 [**update_domain_mapping_using_put**](UiDomainMappingControllerApi.md#update_domain_mapping_using_put) | **PUT** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | updateDomainMapping
 
-
 # **add_domain_mapping_using_post**
-> add_domain_mapping_using_post(cluster_id, domain, resource_name, resource_type)
+> add_domain_mapping_using_post(body, cluster_id, resource_name, resource_type)
 
 addDomainMapping
 
@@ -22,7 +21,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -30,14 +28,14 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDomainMappingControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.DomainDTO() # DomainDTO | domain
 cluster_id = 'cluster_id_example' # str | clusterId
-domain = swagger_client.DomainDTO() # DomainDTO | domain
 resource_name = 'resource_name_example' # str | resourceName
 resource_type = 'resource_type_example' # str | resourceType
 
 try:
     # addDomainMapping
-    api_instance.add_domain_mapping_using_post(cluster_id, domain, resource_name, resource_type)
+    api_instance.add_domain_mapping_using_post(body, cluster_id, resource_name, resource_type)
 except ApiException as e:
     print("Exception when calling UiDomainMappingControllerApi->add_domain_mapping_using_post: %s\n" % e)
 ```
@@ -46,8 +44,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**DomainDTO**](DomainDTO.md)| domain | 
  **cluster_id** | **str**| clusterId | 
- **domain** | [**DomainDTO**](DomainDTO.md)| domain | 
  **resource_name** | **str**| resourceName | 
  **resource_type** | **str**| resourceType | 
 
@@ -62,7 +60,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -78,7 +76,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -118,7 +115,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -134,7 +131,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -178,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_domain_mapping_using_put**
-> update_domain_mapping_using_put(cluster_id, domain, resource_name, resource_type)
+> update_domain_mapping_using_put(body, cluster_id, resource_name, resource_type)
 
 updateDomainMapping
 
@@ -189,7 +185,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -197,14 +192,14 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDomainMappingControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.DomainDTO() # DomainDTO | domain
 cluster_id = 'cluster_id_example' # str | clusterId
-domain = swagger_client.DomainDTO() # DomainDTO | domain
 resource_name = 'resource_name_example' # str | resourceName
 resource_type = 'resource_type_example' # str | resourceType
 
 try:
     # updateDomainMapping
-    api_instance.update_domain_mapping_using_put(cluster_id, domain, resource_name, resource_type)
+    api_instance.update_domain_mapping_using_put(body, cluster_id, resource_name, resource_type)
 except ApiException as e:
     print("Exception when calling UiDomainMappingControllerApi->update_domain_mapping_using_put: %s\n" % e)
 ```
@@ -213,8 +208,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**DomainDTO**](DomainDTO.md)| domain | 
  **cluster_id** | **str**| clusterId | 
- **domain** | [**DomainDTO**](DomainDTO.md)| domain | 
  **resource_name** | **str**| resourceName | 
  **resource_type** | **str**| resourceType | 
 
@@ -229,7 +224,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

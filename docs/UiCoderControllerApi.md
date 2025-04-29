@@ -1,6 +1,6 @@
 # swagger_client.UiCoderControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,9 +12,8 @@ Method | HTTP request | Description
 [**get_all_using_get2**](UiCoderControllerApi.md#get_all_using_get2) | **GET** /cc-ui/v1/coder/stack/{stackName}/workspaces | getAll
 [**identify_coder_launch_eligible_using_get**](UiCoderControllerApi.md#identify_coder_launch_eligible_using_get) | **GET** /cc-ui/v1/coder/stack/{stackName}/coder-eligibility | identifyCoderLaunchEligible
 
-
 # **create_workspace_with_existing_branch_using_post**
-> CoderWorkspaceResponse create_workspace_with_existing_branch_using_post(create_workspace_existing_branch_request, stack_name)
+> CoderWorkspaceResponse create_workspace_with_existing_branch_using_post(body, stack_name)
 
 createWorkspaceWithExistingBranch
 
@@ -25,7 +24,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -33,12 +31,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCoderControllerApi(swagger_client.ApiClient(configuration))
-create_workspace_existing_branch_request = swagger_client.CreateWorkspaceExistingBranchRequest() # CreateWorkspaceExistingBranchRequest | createWorkspaceExistingBranchRequest
+body = swagger_client.CreateWorkspaceExistingBranchRequest() # CreateWorkspaceExistingBranchRequest | createWorkspaceExistingBranchRequest
 stack_name = 'stack_name_example' # str | stackName
 
 try:
     # createWorkspaceWithExistingBranch
-    api_response = api_instance.create_workspace_with_existing_branch_using_post(create_workspace_existing_branch_request, stack_name)
+    api_response = api_instance.create_workspace_with_existing_branch_using_post(body, stack_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCoderControllerApi->create_workspace_with_existing_branch_using_post: %s\n" % e)
@@ -48,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_workspace_existing_branch_request** | [**CreateWorkspaceExistingBranchRequest**](CreateWorkspaceExistingBranchRequest.md)| createWorkspaceExistingBranchRequest | 
+ **body** | [**CreateWorkspaceExistingBranchRequest**](CreateWorkspaceExistingBranchRequest.md)| createWorkspaceExistingBranchRequest | 
  **stack_name** | **str**| stackName | 
 
 ### Return type
@@ -67,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_workspace_with_existing_branch_using_post1**
-> CoderWorkspaceResponse create_workspace_with_existing_branch_using_post1(create_workspace_existing_branch_request, resource_name, resource_type, stack_name)
+> CoderWorkspaceResponse create_workspace_with_existing_branch_using_post1(body, resource_name, resource_type, stack_name)
 
 createWorkspaceWithExistingBranch
 
@@ -78,7 +76,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -86,14 +83,14 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCoderControllerApi(swagger_client.ApiClient(configuration))
-create_workspace_existing_branch_request = swagger_client.CreateWorkspaceExistingBranchRequest() # CreateWorkspaceExistingBranchRequest | createWorkspaceExistingBranchRequest
+body = swagger_client.CreateWorkspaceExistingBranchRequest() # CreateWorkspaceExistingBranchRequest | createWorkspaceExistingBranchRequest
 resource_name = 'resource_name_example' # str | resourceName
 resource_type = 'resource_type_example' # str | resourceType
 stack_name = 'stack_name_example' # str | stackName
 
 try:
     # createWorkspaceWithExistingBranch
-    api_response = api_instance.create_workspace_with_existing_branch_using_post1(create_workspace_existing_branch_request, resource_name, resource_type, stack_name)
+    api_response = api_instance.create_workspace_with_existing_branch_using_post1(body, resource_name, resource_type, stack_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCoderControllerApi->create_workspace_with_existing_branch_using_post1: %s\n" % e)
@@ -103,7 +100,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_workspace_existing_branch_request** | [**CreateWorkspaceExistingBranchRequest**](CreateWorkspaceExistingBranchRequest.md)| createWorkspaceExistingBranchRequest | 
+ **body** | [**CreateWorkspaceExistingBranchRequest**](CreateWorkspaceExistingBranchRequest.md)| createWorkspaceExistingBranchRequest | 
  **resource_name** | **str**| resourceName | 
  **resource_type** | **str**| resourceType | 
  **stack_name** | **str**| stackName | 
@@ -124,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_workspace_with_new_branch_using_post**
-> CoderWorkspaceResponse create_workspace_with_new_branch_using_post(create_workspace_new_branch_request, stack_name)
+> CoderWorkspaceResponse create_workspace_with_new_branch_using_post(body, stack_name)
 
 createWorkspaceWithNewBranch
 
@@ -135,7 +132,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -143,12 +139,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCoderControllerApi(swagger_client.ApiClient(configuration))
-create_workspace_new_branch_request = swagger_client.CreateWorkspaceNewBranchRequest() # CreateWorkspaceNewBranchRequest | createWorkspaceNewBranchRequest
+body = swagger_client.CreateWorkspaceNewBranchRequest() # CreateWorkspaceNewBranchRequest | createWorkspaceNewBranchRequest
 stack_name = 'stack_name_example' # str | stackName
 
 try:
     # createWorkspaceWithNewBranch
-    api_response = api_instance.create_workspace_with_new_branch_using_post(create_workspace_new_branch_request, stack_name)
+    api_response = api_instance.create_workspace_with_new_branch_using_post(body, stack_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCoderControllerApi->create_workspace_with_new_branch_using_post: %s\n" % e)
@@ -158,7 +154,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_workspace_new_branch_request** | [**CreateWorkspaceNewBranchRequest**](CreateWorkspaceNewBranchRequest.md)| createWorkspaceNewBranchRequest | 
+ **body** | [**CreateWorkspaceNewBranchRequest**](CreateWorkspaceNewBranchRequest.md)| createWorkspaceNewBranchRequest | 
  **stack_name** | **str**| stackName | 
 
 ### Return type
@@ -177,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_workspace_with_new_branch_using_post1**
-> CoderWorkspaceResponse create_workspace_with_new_branch_using_post1(create_workspace_new_branch_request, resource_name, resource_type, stack_name)
+> CoderWorkspaceResponse create_workspace_with_new_branch_using_post1(body, resource_name, resource_type, stack_name)
 
 createWorkspaceWithNewBranch
 
@@ -188,7 +184,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -196,14 +191,14 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCoderControllerApi(swagger_client.ApiClient(configuration))
-create_workspace_new_branch_request = swagger_client.CreateWorkspaceNewBranchRequest() # CreateWorkspaceNewBranchRequest | createWorkspaceNewBranchRequest
+body = swagger_client.CreateWorkspaceNewBranchRequest() # CreateWorkspaceNewBranchRequest | createWorkspaceNewBranchRequest
 resource_name = 'resource_name_example' # str | resourceName
 resource_type = 'resource_type_example' # str | resourceType
 stack_name = 'stack_name_example' # str | stackName
 
 try:
     # createWorkspaceWithNewBranch
-    api_response = api_instance.create_workspace_with_new_branch_using_post1(create_workspace_new_branch_request, resource_name, resource_type, stack_name)
+    api_response = api_instance.create_workspace_with_new_branch_using_post1(body, resource_name, resource_type, stack_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCoderControllerApi->create_workspace_with_new_branch_using_post1: %s\n" % e)
@@ -213,7 +208,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_workspace_new_branch_request** | [**CreateWorkspaceNewBranchRequest**](CreateWorkspaceNewBranchRequest.md)| createWorkspaceNewBranchRequest | 
+ **body** | [**CreateWorkspaceNewBranchRequest**](CreateWorkspaceNewBranchRequest.md)| createWorkspaceNewBranchRequest | 
  **resource_name** | **str**| resourceName | 
  **resource_type** | **str**| resourceType | 
  **stack_name** | **str**| stackName | 
@@ -245,7 +240,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -300,7 +294,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -351,7 +344,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

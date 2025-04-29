@@ -1,12 +1,11 @@
 # swagger_client.UiOneTimeWebhookControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**poll_webhook_using_get**](UiOneTimeWebhookControllerApi.md#poll_webhook_using_get) | **GET** /cc-ui/v1/onetime-webhook/poll/{webhookId} | pollWebhook
 [**register_webhook_using_post**](UiOneTimeWebhookControllerApi.md#register_webhook_using_post) | **POST** /cc-ui/v1/onetime-webhook/register | registerWebhook
-
 
 # **poll_webhook_using_get**
 > OneTimeWebhook poll_webhook_using_get(webhook_id)
@@ -20,7 +19,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -60,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register_webhook_using_post**
-> OneTimeWebhook register_webhook_using_post(webhook)
+> OneTimeWebhook register_webhook_using_post(body)
 
 registerWebhook
 
@@ -71,7 +69,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -79,11 +76,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOneTimeWebhookControllerApi(swagger_client.ApiClient(configuration))
-webhook = swagger_client.OneTimeWebhook() # OneTimeWebhook | webhook
+body = swagger_client.OneTimeWebhook() # OneTimeWebhook | webhook
 
 try:
     # registerWebhook
-    api_response = api_instance.register_webhook_using_post(webhook)
+    api_response = api_instance.register_webhook_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiOneTimeWebhookControllerApi->register_webhook_using_post: %s\n" % e)
@@ -93,7 +90,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**OneTimeWebhook**](OneTimeWebhook.md)| webhook | 
+ **body** | [**OneTimeWebhook**](OneTimeWebhook.md)| webhook | 
 
 ### Return type
 

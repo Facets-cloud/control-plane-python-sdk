@@ -1,12 +1,11 @@
 # swagger_client.MetaControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_supported_component_version_using_get**](MetaControllerApi.md#get_supported_component_version_using_get) | **GET** /cc/v1/meta/components/{componentType}/supportedVersion | getSupportedComponentVersion
 [**get_supported_component_versions_using_get**](MetaControllerApi.md#get_supported_component_versions_using_get) | **GET** /cc/v1/meta/components/supportedVersion | getSupportedComponentVersions
-
 
 # **get_supported_component_version_using_get**
 > SupportedVersions get_supported_component_version_using_get(component_type)
@@ -20,7 +19,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -71,7 +69,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

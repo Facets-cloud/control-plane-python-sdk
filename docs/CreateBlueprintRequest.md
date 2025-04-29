@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **git_ops_enabled** | **bool** |  | [optional] 
 **github_account_id** | **str** |  | [optional] 
 **github_organisation_name** | **str** |  | [optional] 
+**is_imported_project** | **bool** |  | [optional] 
 **mono_repo** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **primary_cloud** | **str** |  | [optional] 
@@ -22,5 +23,4 @@ Name | Type | Description | Notes
 **vcs_url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

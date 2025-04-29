@@ -1,6 +1,6 @@
 # swagger_client.UiAwsClusterControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,9 +11,8 @@ Method | HTTP request | Description
 [**update_cluster_using_put2**](UiAwsClusterControllerApi.md#update_cluster_using_put2) | **PUT** /cc-ui/v1/aws/clusters/{clusterId} | updateCluster
 [**validate_vpc_id_using_get**](UiAwsClusterControllerApi.md#validate_vpc_id_using_get) | **GET** /cc-ui/v1/aws/clusters/validate-vpcId | validateVpcId
 
-
 # **configure_draft_cluster_using_post**
-> AwsCluster configure_draft_cluster_using_post(cluster_id, request)
+> AwsCluster configure_draft_cluster_using_post(body, cluster_id)
 
 configureDraftCluster
 
@@ -24,7 +23,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -32,12 +30,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAwsClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AwsClusterRequest() # AwsClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.AwsClusterRequest() # AwsClusterRequest | request
 
 try:
     # configureDraftCluster
-    api_response = api_instance.configure_draft_cluster_using_post(cluster_id, request)
+    api_response = api_instance.configure_draft_cluster_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAwsClusterControllerApi->configure_draft_cluster_using_post: %s\n" % e)
@@ -47,8 +45,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**AwsClusterRequest**](AwsClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**AwsClusterRequest**](AwsClusterRequest.md)| request | 
 
 ### Return type
 
@@ -66,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_cluster_using_post2**
-> AwsCluster create_cluster_using_post2(request)
+> AwsCluster create_cluster_using_post2(body)
 
 Create a new Environment for a blueprint
 
@@ -77,7 +75,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -85,11 +82,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAwsClusterControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.AwsClusterRequest() # AwsClusterRequest | request
+body = swagger_client.AwsClusterRequest() # AwsClusterRequest | request
 
 try:
     # Create a new Environment for a blueprint
-    api_response = api_instance.create_cluster_using_post2(request)
+    api_response = api_instance.create_cluster_using_post2(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAwsClusterControllerApi->create_cluster_using_post2: %s\n" % e)
@@ -99,7 +96,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**AwsClusterRequest**](AwsClusterRequest.md)| request | 
+ **body** | [**AwsClusterRequest**](AwsClusterRequest.md)| request | 
 
 ### Return type
 
@@ -128,7 +125,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -168,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **onboard_customer_using_post**
-> onboard_customer_using_post(request)
+> onboard_customer_using_post(body)
 
 onboardCustomer
 
@@ -179,7 +175,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -187,11 +182,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAwsClusterControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.CustomerOnboardRequest() # CustomerOnboardRequest | request
+body = swagger_client.CustomerOnboardRequest() # CustomerOnboardRequest | request
 
 try:
     # onboardCustomer
-    api_instance.onboard_customer_using_post(request)
+    api_instance.onboard_customer_using_post(body)
 except ApiException as e:
     print("Exception when calling UiAwsClusterControllerApi->onboard_customer_using_post: %s\n" % e)
 ```
@@ -200,7 +195,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**CustomerOnboardRequest**](CustomerOnboardRequest.md)| request | 
+ **body** | [**CustomerOnboardRequest**](CustomerOnboardRequest.md)| request | 
 
 ### Return type
 
@@ -213,12 +208,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_cluster_using_put2**
-> AwsCluster update_cluster_using_put2(cluster_id, request)
+> AwsCluster update_cluster_using_put2(body, cluster_id)
 
 updateCluster
 
@@ -229,7 +224,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -237,12 +231,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAwsClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AwsClusterRequest() # AwsClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.AwsClusterRequest() # AwsClusterRequest | request
 
 try:
     # updateCluster
-    api_response = api_instance.update_cluster_using_put2(cluster_id, request)
+    api_response = api_instance.update_cluster_using_put2(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiAwsClusterControllerApi->update_cluster_using_put2: %s\n" % e)
@@ -252,8 +246,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**AwsClusterRequest**](AwsClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**AwsClusterRequest**](AwsClusterRequest.md)| request | 
 
 ### Return type
 
@@ -282,7 +276,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

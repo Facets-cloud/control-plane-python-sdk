@@ -1,6 +1,6 @@
 # swagger_client.UiResourceGroupControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,9 +13,8 @@ Method | HTTP request | Description
 [**update_resource_using_patch**](UiResourceGroupControllerApi.md#update_resource_using_patch) | **PATCH** /cc-ui/v1/resource-groups/{resourceGroupId}/resources | updateResource
 [**update_using_put1**](UiResourceGroupControllerApi.md#update_using_put1) | **PUT** /cc-ui/v1/resource-groups/{resourceGroupId} | update
 
-
 # **create_using_post**
-> ResourceGroup create_using_post(resource_group_request)
+> ResourceGroup create_using_post(body)
 
 create
 
@@ -26,7 +25,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -34,11 +32,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-resource_group_request = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | resourceGroupRequest
+body = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | resourceGroupRequest
 
 try:
     # create
-    api_response = api_instance.create_using_post(resource_group_request)
+    api_response = api_instance.create_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiResourceGroupControllerApi->create_using_post: %s\n" % e)
@@ -48,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_group_request** | [**ResourceGroupRequest**](ResourceGroupRequest.md)| resourceGroupRequest | 
+ **body** | [**ResourceGroupRequest**](ResourceGroupRequest.md)| resourceGroupRequest | 
 
 ### Return type
 
@@ -77,7 +75,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -128,7 +125,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -175,7 +171,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -226,7 +221,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -262,7 +256,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_all_resources_using_put**
-> ResourceGroup update_all_resources_using_put(all_resources_update_request, resource_group_id)
+> ResourceGroup update_all_resources_using_put(body, resource_group_id)
 
 updateAllResources
 
@@ -273,7 +267,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -281,12 +274,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-all_resources_update_request = [swagger_client.ResourceInfo()] # list[ResourceInfo] | allResourcesUpdateRequest
+body = [swagger_client.ResourceInfo()] # list[ResourceInfo] | allResourcesUpdateRequest
 resource_group_id = 'resource_group_id_example' # str | resourceGroupId
 
 try:
     # updateAllResources
-    api_response = api_instance.update_all_resources_using_put(all_resources_update_request, resource_group_id)
+    api_response = api_instance.update_all_resources_using_put(body, resource_group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiResourceGroupControllerApi->update_all_resources_using_put: %s\n" % e)
@@ -296,7 +289,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **all_resources_update_request** | [**list[ResourceInfo]**](ResourceInfo.md)| allResourcesUpdateRequest | 
+ **body** | [**list[ResourceInfo]**](ResourceInfo.md)| allResourcesUpdateRequest | 
  **resource_group_id** | **str**| resourceGroupId | 
 
 ### Return type
@@ -315,7 +308,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_resource_using_patch**
-> ResourceGroup update_resource_using_patch(resource_group_id, resource_update_request)
+> ResourceGroup update_resource_using_patch(body, resource_group_id)
 
 updateResource
 
@@ -326,7 +319,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -334,12 +326,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ResourceInfo() # ResourceInfo | resourceUpdateRequest
 resource_group_id = 'resource_group_id_example' # str | resourceGroupId
-resource_update_request = swagger_client.ResourceInfo() # ResourceInfo | resourceUpdateRequest
 
 try:
     # updateResource
-    api_response = api_instance.update_resource_using_patch(resource_group_id, resource_update_request)
+    api_response = api_instance.update_resource_using_patch(body, resource_group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiResourceGroupControllerApi->update_resource_using_patch: %s\n" % e)
@@ -349,8 +341,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ResourceInfo**](ResourceInfo.md)| resourceUpdateRequest | 
  **resource_group_id** | **str**| resourceGroupId | 
- **resource_update_request** | [**ResourceInfo**](ResourceInfo.md)| resourceUpdateRequest | 
 
 ### Return type
 
@@ -368,7 +360,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_using_put1**
-> ResourceGroup update_using_put1(resource_group_id, resource_group_request)
+> ResourceGroup update_using_put1(body, resource_group_id)
 
 update
 
@@ -379,7 +371,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -387,12 +378,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | resourceGroupRequest
 resource_group_id = 'resource_group_id_example' # str | resourceGroupId
-resource_group_request = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | resourceGroupRequest
 
 try:
     # update
-    api_response = api_instance.update_using_put1(resource_group_id, resource_group_request)
+    api_response = api_instance.update_using_put1(body, resource_group_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiResourceGroupControllerApi->update_using_put1: %s\n" % e)
@@ -402,8 +393,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ResourceGroupRequest**](ResourceGroupRequest.md)| resourceGroupRequest | 
  **resource_group_id** | **str**| resourceGroupId | 
- **resource_group_request** | [**ResourceGroupRequest**](ResourceGroupRequest.md)| resourceGroupRequest | 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # swagger_client.StackControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,9 +14,8 @@ Method | HTTP request | Description
 [**toggle_release_using_post**](StackControllerApi.md#toggle_release_using_post) | **POST** /cc/v1/stacks/{stackName}/toggleRelease | toggleRelease
 [**update_stack_using_put**](StackControllerApi.md#update_stack_using_put) | **PUT** /cc/v1/stacks/{stackName} | updateStack
 
-
 # **create_cluster_tasks_using_post**
-> list[ClusterTask] create_cluster_tasks_using_post(task_request)
+> list[ClusterTask] create_cluster_tasks_using_post(body)
 
 createClusterTasks
 
@@ -27,7 +26,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -35,11 +33,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.StackControllerApi(swagger_client.ApiClient(configuration))
-task_request = swagger_client.ClusterTaskRequest() # ClusterTaskRequest | taskRequest
+body = swagger_client.ClusterTaskRequest() # ClusterTaskRequest | taskRequest
 
 try:
     # createClusterTasks
-    api_response = api_instance.create_cluster_tasks_using_post(task_request)
+    api_response = api_instance.create_cluster_tasks_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StackControllerApi->create_cluster_tasks_using_post: %s\n" % e)
@@ -49,7 +47,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **task_request** | [**ClusterTaskRequest**](ClusterTaskRequest.md)| taskRequest | 
+ **body** | [**ClusterTaskRequest**](ClusterTaskRequest.md)| taskRequest | 
 
 ### Return type
 
@@ -67,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_stack_using_post**
-> Stack create_stack_using_post(stack)
+> Stack create_stack_using_post(body)
 
 createStack
 
@@ -78,7 +76,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -86,11 +83,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.StackControllerApi(swagger_client.ApiClient(configuration))
-stack = swagger_client.Stack() # Stack | stack
+body = swagger_client.Stack() # Stack | stack
 
 try:
     # createStack
-    api_response = api_instance.create_stack_using_post(stack)
+    api_response = api_instance.create_stack_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StackControllerApi->create_stack_using_post: %s\n" % e)
@@ -100,7 +97,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack** | [**Stack**](Stack.md)| stack | 
+ **body** | [**Stack**](Stack.md)| stack | 
 
 ### Return type
 
@@ -118,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_substack_using_post**
-> Substack create_substack_using_post(sub_stack, substack_name)
+> Substack create_substack_using_post(body, substack_name)
 
 createSubstack
 
@@ -129,7 +126,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -137,12 +133,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.StackControllerApi(swagger_client.ApiClient(configuration))
-sub_stack = swagger_client.Substack() # Substack | subStack
+body = swagger_client.Substack() # Substack | subStack
 substack_name = 'substack_name_example' # str | substackName
 
 try:
     # createSubstack
-    api_response = api_instance.create_substack_using_post(sub_stack, substack_name)
+    api_response = api_instance.create_substack_using_post(body, substack_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StackControllerApi->create_substack_using_post: %s\n" % e)
@@ -152,7 +148,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sub_stack** | [**Substack**](Substack.md)| subStack | 
+ **body** | [**Substack**](Substack.md)| subStack | 
  **substack_name** | **str**| substackName | 
 
 ### Return type
@@ -182,7 +178,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -233,7 +228,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -284,7 +278,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -331,7 +324,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -371,7 +363,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **toggle_release_using_post**
-> ToggleRelease toggle_release_using_post(stack_name, toggle_release)
+> ToggleRelease toggle_release_using_post(body, stack_name)
 
 toggleRelease
 
@@ -382,7 +374,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -390,12 +381,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.StackControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ToggleRelease() # ToggleRelease | toggleRelease
 stack_name = 'stack_name_example' # str | stackName
-toggle_release = swagger_client.ToggleRelease() # ToggleRelease | toggleRelease
 
 try:
     # toggleRelease
-    api_response = api_instance.toggle_release_using_post(stack_name, toggle_release)
+    api_response = api_instance.toggle_release_using_post(body, stack_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StackControllerApi->toggle_release_using_post: %s\n" % e)
@@ -405,8 +396,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ToggleRelease**](ToggleRelease.md)| toggleRelease | 
  **stack_name** | **str**| stackName | 
- **toggle_release** | [**ToggleRelease**](ToggleRelease.md)| toggleRelease | 
 
 ### Return type
 
@@ -424,7 +415,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_stack_using_put**
-> Stack update_stack_using_put(stack, stack_name)
+> Stack update_stack_using_put(body, stack_name)
 
 updateStack
 
@@ -435,7 +426,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -443,12 +433,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.StackControllerApi(swagger_client.ApiClient(configuration))
-stack = swagger_client.Stack() # Stack | stack
+body = swagger_client.Stack() # Stack | stack
 stack_name = 'stack_name_example' # str | stackName
 
 try:
     # updateStack
-    api_response = api_instance.update_stack_using_put(stack, stack_name)
+    api_response = api_instance.update_stack_using_put(body, stack_name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StackControllerApi->update_stack_using_put: %s\n" % e)
@@ -458,7 +448,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack** | [**Stack**](Stack.md)| stack | 
+ **body** | [**Stack**](Stack.md)| stack | 
  **stack_name** | **str**| stackName | 
 
 ### Return type

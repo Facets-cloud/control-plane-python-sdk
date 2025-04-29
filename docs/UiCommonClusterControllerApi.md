@@ -1,6 +1,6 @@
 # swagger_client.UiCommonClusterControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,7 @@ Method | HTTP request | Description
 [**add_tools_config_using_post**](UiCommonClusterControllerApi.md#add_tools_config_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/tools-config | addToolsConfig
 [**attach_image_using_post**](UiCommonClusterControllerApi.md#attach_image_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/attach-image | attachImage
 [**bulk_enable_disable_resources_using_put**](UiCommonClusterControllerApi.md#bulk_enable_disable_resources_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/resource-enable-disable | bulkEnableDisableResources
-[**copy_configurations_selective_using_put**](UiCommonClusterControllerApi.md#copy_configurations_selective_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/copy-configurations-selective | copyConfigurationsSelective
-[**copy_configurations_using_put**](UiCommonClusterControllerApi.md#copy_configurations_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/copy-configurations | This method is used to copy configurations from one cluster to another cluster.
+[**copy_configurations_selective_using_put**](UiCommonClusterControllerApi.md#copy_configurations_selective_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/copy-configurations-selective | Copy configurations from one cluster to another selectively
 [**create_availability_schedule_using_post**](UiCommonClusterControllerApi.md#create_availability_schedule_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/availability-schedule | createAvailabilitySchedule
 [**create_cluster_tf_details_using_post**](UiCommonClusterControllerApi.md#create_cluster_tf_details_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/tfRunConfigurations | createClusterTFDetails
 [**create_draft_cluster_using_post**](UiCommonClusterControllerApi.md#create_draft_cluster_using_post) | **POST** /cc-ui/v1/clusters/draft-cluster | createDraftCluster
@@ -72,9 +71,8 @@ Method | HTTP request | Description
 [**upsert_provided_resources_using_post**](UiCommonClusterControllerApi.md#upsert_provided_resources_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/providedResources | upsertProvidedResources
 [**upsert_vars_using_post1**](UiCommonClusterControllerApi.md#upsert_vars_using_post1) | **POST** /cc-ui/v1/clusters/{clusterId}/vars/upsert | upsertVars
 
-
 # **add_cluster_schedules_using_post**
-> list[ClusterSchedule] add_cluster_schedules_using_post(cluster_id, request)
+> list[ClusterSchedule] add_cluster_schedules_using_post(body, cluster_id)
 
 addClusterSchedules
 
@@ -85,7 +83,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -93,12 +90,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ScheduleRequest() # ScheduleRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.ScheduleRequest() # ScheduleRequest | request
 
 try:
     # addClusterSchedules
-    api_response = api_instance.add_cluster_schedules_using_post(cluster_id, request)
+    api_response = api_instance.add_cluster_schedules_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->add_cluster_schedules_using_post: %s\n" % e)
@@ -108,8 +105,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ScheduleRequest**](ScheduleRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**ScheduleRequest**](ScheduleRequest.md)| request | 
 
 ### Return type
 
@@ -127,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **add_tools_config_using_post**
-> ToolsConfig add_tools_config_using_post(cluster_id, tools_config)
+> ToolsConfig add_tools_config_using_post(body, cluster_id)
 
 addToolsConfig
 
@@ -138,7 +135,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -146,12 +142,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ToolsConfig() # ToolsConfig | toolsConfig
 cluster_id = 'cluster_id_example' # str | clusterId
-tools_config = swagger_client.ToolsConfig() # ToolsConfig | toolsConfig
 
 try:
     # addToolsConfig
-    api_response = api_instance.add_tools_config_using_post(cluster_id, tools_config)
+    api_response = api_instance.add_tools_config_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->add_tools_config_using_post: %s\n" % e)
@@ -161,8 +157,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ToolsConfig**](ToolsConfig.md)| toolsConfig | 
  **cluster_id** | **str**| clusterId | 
- **tools_config** | [**ToolsConfig**](ToolsConfig.md)| toolsConfig | 
 
 ### Return type
 
@@ -180,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **attach_image_using_post**
-> attach_image_using_post(cluster_id, request)
+> attach_image_using_post(body, cluster_id)
 
 attachImage
 
@@ -191,7 +187,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -199,12 +194,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ImageOverrideRequest() # ImageOverrideRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.ImageOverrideRequest() # ImageOverrideRequest | request
 
 try:
     # attachImage
-    api_instance.attach_image_using_post(cluster_id, request)
+    api_instance.attach_image_using_post(body, cluster_id)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->attach_image_using_post: %s\n" % e)
 ```
@@ -213,8 +208,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ImageOverrideRequest**](ImageOverrideRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**ImageOverrideRequest**](ImageOverrideRequest.md)| request | 
 
 ### Return type
 
@@ -227,12 +222,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_enable_disable_resources_using_put**
-> bulk_enable_disable_resources_using_put(cluster_id, resource_enable_disable_request_list)
+> bulk_enable_disable_resources_using_put(body, cluster_id)
 
 bulkEnableDisableResources
 
@@ -243,7 +238,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -251,12 +245,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.ResourceEnableDisableRequest()] # list[ResourceEnableDisableRequest] | resourceEnableDisableRequestList
 cluster_id = 'cluster_id_example' # str | clusterId
-resource_enable_disable_request_list = [swagger_client.ResourceEnableDisableRequest()] # list[ResourceEnableDisableRequest] | resourceEnableDisableRequestList
 
 try:
     # bulkEnableDisableResources
-    api_instance.bulk_enable_disable_resources_using_put(cluster_id, resource_enable_disable_request_list)
+    api_instance.bulk_enable_disable_resources_using_put(body, cluster_id)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->bulk_enable_disable_resources_using_put: %s\n" % e)
 ```
@@ -265,8 +259,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**list[ResourceEnableDisableRequest]**](ResourceEnableDisableRequest.md)| resourceEnableDisableRequestList | 
  **cluster_id** | **str**| clusterId | 
- **resource_enable_disable_request_list** | [**list[ResourceEnableDisableRequest]**](ResourceEnableDisableRequest.md)| resourceEnableDisableRequestList | 
 
 ### Return type
 
@@ -279,14 +273,16 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **copy_configurations_selective_using_put**
-> bool copy_configurations_selective_using_put(cluster_id, copy_configurations_request)
+> AbstractCluster copy_configurations_selective_using_put(body, cluster_id)
 
-copyConfigurationsSelective
+Copy configurations from one cluster to another selectively
+
+Copies configurations from the source cluster to the target cluster. When mode is INCLUDE: Only specified configuration types are copied. When mode is EXCLUDE: All configuration types are copied except the specified ones.
 
 ### Example
 ```python
@@ -295,7 +291,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -303,12 +298,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.CopyConfigurationsRequest() # CopyConfigurationsRequest | Request containing source cluster ID, selection mode (INCLUDE/EXCLUDE), and set of configuration types
 cluster_id = 'cluster_id_example' # str | clusterId
-copy_configurations_request = swagger_client.CopyConfigurationsRequest() # CopyConfigurationsRequest | copyConfigurationsRequest
 
 try:
-    # copyConfigurationsSelective
-    api_response = api_instance.copy_configurations_selective_using_put(cluster_id, copy_configurations_request)
+    # Copy configurations from one cluster to another selectively
+    api_response = api_instance.copy_configurations_selective_using_put(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->copy_configurations_selective_using_put: %s\n" % e)
@@ -318,65 +313,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**CopyConfigurationsRequest**](CopyConfigurationsRequest.md)| Request containing source cluster ID, selection mode (INCLUDE/EXCLUDE), and set of configuration types | 
  **cluster_id** | **str**| clusterId | 
- **copy_configurations_request** | [**CopyConfigurationsRequest**](CopyConfigurationsRequest.md)| copyConfigurationsRequest | 
 
 ### Return type
 
-**bool**
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **copy_configurations_using_put**
-> bool copy_configurations_using_put(cluster_id, copy_configurations_request)
-
-This method is used to copy configurations from one cluster to another cluster.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-copy_configurations_request = swagger_client.CopyConfigurationsRequest() # CopyConfigurationsRequest | copyConfigurationsRequest
-
-try:
-    # This method is used to copy configurations from one cluster to another cluster.
-    api_response = api_instance.copy_configurations_using_put(cluster_id, copy_configurations_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiCommonClusterControllerApi->copy_configurations_using_put: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **copy_configurations_request** | [**CopyConfigurationsRequest**](CopyConfigurationsRequest.md)| copyConfigurationsRequest | 
-
-### Return type
-
-**bool**
+[**AbstractCluster**](AbstractCluster.md)
 
 ### Authorization
 
@@ -390,7 +332,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_availability_schedule_using_post**
-> create_availability_schedule_using_post(cluster_id, schedules)
+> create_availability_schedule_using_post(body, cluster_id)
 
 createAvailabilitySchedule
 
@@ -401,7 +343,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -409,12 +350,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.ScheduleRequest()] # list[ScheduleRequest] | schedules
 cluster_id = 'cluster_id_example' # str | clusterId
-schedules = [swagger_client.ScheduleRequest()] # list[ScheduleRequest] | schedules
 
 try:
     # createAvailabilitySchedule
-    api_instance.create_availability_schedule_using_post(cluster_id, schedules)
+    api_instance.create_availability_schedule_using_post(body, cluster_id)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->create_availability_schedule_using_post: %s\n" % e)
 ```
@@ -423,8 +364,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**list[ScheduleRequest]**](ScheduleRequest.md)| schedules | 
  **cluster_id** | **str**| clusterId | 
- **schedules** | [**list[ScheduleRequest]**](ScheduleRequest.md)| schedules | 
 
 ### Return type
 
@@ -437,12 +378,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_cluster_tf_details_using_post**
-> TFRunConfigurations create_cluster_tf_details_using_post(cluster_id, tf_run_configurations)
+> TFRunConfigurations create_cluster_tf_details_using_post(body, cluster_id)
 
 createClusterTFDetails
 
@@ -453,7 +394,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -461,12 +401,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.TFRunConfigurations() # TFRunConfigurations | tfRunConfigurations
 cluster_id = 'cluster_id_example' # str | clusterId
-tf_run_configurations = swagger_client.TFRunConfigurations() # TFRunConfigurations | tfRunConfigurations
 
 try:
     # createClusterTFDetails
-    api_response = api_instance.create_cluster_tf_details_using_post(cluster_id, tf_run_configurations)
+    api_response = api_instance.create_cluster_tf_details_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->create_cluster_tf_details_using_post: %s\n" % e)
@@ -476,8 +416,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TFRunConfigurations**](TFRunConfigurations.md)| tfRunConfigurations | 
  **cluster_id** | **str**| clusterId | 
- **tf_run_configurations** | [**TFRunConfigurations**](TFRunConfigurations.md)| tfRunConfigurations | 
 
 ### Return type
 
@@ -495,7 +435,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_draft_cluster_using_post**
-> AbstractCluster create_draft_cluster_using_post(cluster_request)
+> AbstractCluster create_draft_cluster_using_post(body)
 
 createDraftCluster
 
@@ -506,7 +446,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -514,11 +453,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_request = swagger_client.DraftClusterRequest() # DraftClusterRequest | clusterRequest
+body = swagger_client.DraftClusterRequest() # DraftClusterRequest | clusterRequest
 
 try:
     # createDraftCluster
-    api_response = api_instance.create_draft_cluster_using_post(cluster_request)
+    api_response = api_instance.create_draft_cluster_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->create_draft_cluster_using_post: %s\n" % e)
@@ -528,7 +467,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_request** | [**DraftClusterRequest**](DraftClusterRequest.md)| clusterRequest | 
+ **body** | [**DraftClusterRequest**](DraftClusterRequest.md)| clusterRequest | 
 
 ### Return type
 
@@ -557,7 +496,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -595,13 +533,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_template_inputs_using_post**
-> dict(str, list[StackTemplateInput]) create_template_inputs_using_post(cluster_id, input_type, template_inputs)
+> dict(str, list[StackTemplateInput]) create_template_inputs_using_post(body, cluster_id, input_type)
 
 createTemplateInputs
 
@@ -612,7 +550,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -620,13 +557,13 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.StackTemplateInput()] # list[StackTemplateInput] | templateInputs
 cluster_id = 'cluster_id_example' # str | clusterId
 input_type = 'input_type_example' # str | inputType
-template_inputs = [swagger_client.StackTemplateInput()] # list[StackTemplateInput] | templateInputs
 
 try:
     # createTemplateInputs
-    api_response = api_instance.create_template_inputs_using_post(cluster_id, input_type, template_inputs)
+    api_response = api_instance.create_template_inputs_using_post(body, cluster_id, input_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->create_template_inputs_using_post: %s\n" % e)
@@ -636,9 +573,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**list[StackTemplateInput]**](StackTemplateInput.md)| templateInputs | 
  **cluster_id** | **str**| clusterId | 
  **input_type** | **str**| inputType | 
- **template_inputs** | [**list[StackTemplateInput]**](StackTemplateInput.md)| templateInputs | 
 
 ### Return type
 
@@ -667,7 +604,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -703,7 +639,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -719,7 +655,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -770,7 +705,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -823,7 +757,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -874,7 +807,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -925,7 +857,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -980,7 +911,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1035,7 +965,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1069,12 +998,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **detach_image_using_delete**
-> detach_image_using_delete(cluster_id, request)
+> detach_image_using_delete(body, cluster_id)
 
 detachImage
 
@@ -1085,7 +1014,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1093,12 +1021,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ImageOverrideRequest() # ImageOverrideRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.ImageOverrideRequest() # ImageOverrideRequest | request
 
 try:
     # detachImage
-    api_instance.detach_image_using_delete(cluster_id, request)
+    api_instance.detach_image_using_delete(body, cluster_id)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->detach_image_using_delete: %s\n" % e)
 ```
@@ -1107,8 +1035,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ImageOverrideRequest**](ImageOverrideRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**ImageOverrideRequest**](ImageOverrideRequest.md)| request | 
 
 ### Return type
 
@@ -1120,8 +1048,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Content-Type**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1137,7 +1065,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1171,13 +1098,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_tools_config_using_put**
-> ToolsConfig edit_tools_config_using_put(cluster_id, tools_config, tools_config_id)
+> ToolsConfig edit_tools_config_using_put(body, cluster_id, tools_config_id)
 
 editToolsConfig
 
@@ -1188,7 +1115,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1196,13 +1122,13 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ToolsConfig() # ToolsConfig | toolsConfig
 cluster_id = 'cluster_id_example' # str | clusterId
-tools_config = swagger_client.ToolsConfig() # ToolsConfig | toolsConfig
 tools_config_id = 'tools_config_id_example' # str | toolsConfigId
 
 try:
     # editToolsConfig
-    api_response = api_instance.edit_tools_config_using_put(cluster_id, tools_config, tools_config_id)
+    api_response = api_instance.edit_tools_config_using_put(body, cluster_id, tools_config_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->edit_tools_config_using_put: %s\n" % e)
@@ -1212,8 +1138,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ToolsConfig**](ToolsConfig.md)| toolsConfig | 
  **cluster_id** | **str**| clusterId | 
- **tools_config** | [**ToolsConfig**](ToolsConfig.md)| toolsConfig | 
  **tools_config_id** | **str**| toolsConfigId | 
 
 ### Return type
@@ -1243,7 +1169,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1277,7 +1202,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1294,7 +1219,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1345,7 +1269,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1396,7 +1319,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1447,7 +1369,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1498,7 +1419,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1549,7 +1469,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1600,7 +1519,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1651,7 +1569,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1702,7 +1619,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1753,7 +1669,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1806,7 +1721,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1857,7 +1771,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1908,7 +1821,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -1959,7 +1871,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2010,7 +1921,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2061,7 +1971,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2116,7 +2025,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2167,7 +2075,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2180,11 +2087,11 @@ resource_name = 'resource_name_example' # str | resourceName
 resource_type = 'resource_type_example' # str | resourceType
 attribute = 'attribute_example' # str | attribute (optional)
 change_type = 'change_type_example' # str | changeType (optional)
-end = '2023-10-31T01:30:00.000+05:30' # datetime | end (optional)
+end = '2013-10-20T19:20:30+01:00' # datetime | end (optional)
 page_number = 0 # int | pageNumber (optional) (default to 0)
 page_size = 50 # int | pageSize (optional) (default to 50)
 release_type = 'release_type_example' # str | releaseType (optional)
-start = '2023-10-31T01:30:00.000+05:30' # datetime | start (optional)
+start = '2013-10-20T19:20:30+01:00' # datetime | start (optional)
 triggered_by = 'triggered_by_example' # str | triggeredBy (optional)
 
 try:
@@ -2238,7 +2145,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2289,7 +2195,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2344,7 +2249,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2397,7 +2301,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2448,7 +2351,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2499,7 +2401,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2550,7 +2451,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2601,7 +2501,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2652,7 +2551,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2703,7 +2601,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2747,7 +2644,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **override_sizing_using_post1**
-> list[OverrideObject] override_sizing_using_post1(cluster_id, request)
+> list[OverrideObject] override_sizing_using_post1(body, cluster_id)
 
 overrideSizing
 
@@ -2758,7 +2655,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2766,12 +2662,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.OverrideRequest()] # list[OverrideRequest] | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = [swagger_client.OverrideRequest()] # list[OverrideRequest] | request
 
 try:
     # overrideSizing
-    api_response = api_instance.override_sizing_using_post1(cluster_id, request)
+    api_response = api_instance.override_sizing_using_post1(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->override_sizing_using_post1: %s\n" % e)
@@ -2781,8 +2677,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**list[OverrideRequest]**](OverrideRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**list[OverrideRequest]**](OverrideRequest.md)| request | 
 
 ### Return type
 
@@ -2800,7 +2696,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pause_release_using_post**
-> str pause_release_using_post(cluster_id, pause_release_request)
+> str pause_release_using_post(body, cluster_id)
 
 pauseRelease
 
@@ -2811,7 +2707,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2819,12 +2714,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.PauseReleaseRequest() # PauseReleaseRequest | pauseReleaseRequest
 cluster_id = 'cluster_id_example' # str | clusterId
-pause_release_request = swagger_client.PauseReleaseRequest() # PauseReleaseRequest | pauseReleaseRequest
 
 try:
     # pauseRelease
-    api_response = api_instance.pause_release_using_post(cluster_id, pause_release_request)
+    api_response = api_instance.pause_release_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->pause_release_using_post: %s\n" % e)
@@ -2834,8 +2729,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**PauseReleaseRequest**](PauseReleaseRequest.md)| pauseReleaseRequest | 
  **cluster_id** | **str**| clusterId | 
- **pause_release_request** | [**PauseReleaseRequest**](PauseReleaseRequest.md)| pauseReleaseRequest | 
 
 ### Return type
 
@@ -2853,7 +2748,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **pin_snapshot_using_post1**
-> SnapshotInfo pin_snapshot_using_post1(cluster_id, instance_name, resource_type, snapshot_info)
+> SnapshotInfo pin_snapshot_using_post1(body, cluster_id, instance_name, resource_type)
 
 pinSnapshot
 
@@ -2864,7 +2759,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2872,14 +2766,14 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.SnapshotInfo() # SnapshotInfo | snapshotInfo
 cluster_id = 'cluster_id_example' # str | clusterId
 instance_name = 'instance_name_example' # str | instanceName
 resource_type = 'resource_type_example' # str | resourceType
-snapshot_info = swagger_client.SnapshotInfo() # SnapshotInfo | snapshotInfo
 
 try:
     # pinSnapshot
-    api_response = api_instance.pin_snapshot_using_post1(cluster_id, instance_name, resource_type, snapshot_info)
+    api_response = api_instance.pin_snapshot_using_post1(body, cluster_id, instance_name, resource_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->pin_snapshot_using_post1: %s\n" % e)
@@ -2889,10 +2783,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SnapshotInfo**](SnapshotInfo.md)| snapshotInfo | 
  **cluster_id** | **str**| clusterId | 
  **instance_name** | **str**| instanceName | 
  **resource_type** | **str**| resourceType | 
- **snapshot_info** | [**SnapshotInfo**](SnapshotInfo.md)| snapshotInfo | 
 
 ### Return type
 
@@ -2921,7 +2815,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -2972,7 +2865,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3025,7 +2917,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3076,7 +2967,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3110,13 +3000,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **silence_alerts_using_post**
-> dict(str, object) silence_alerts_using_post(cluster_id, request)
+> dict(str, object) silence_alerts_using_post(body, cluster_id)
 
 silenceAlerts
 
@@ -3127,7 +3017,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3135,12 +3024,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.SilenceAlarmRequest() # SilenceAlarmRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.SilenceAlarmRequest() # SilenceAlarmRequest | request
 
 try:
     # silenceAlerts
-    api_response = api_instance.silence_alerts_using_post(cluster_id, request)
+    api_response = api_instance.silence_alerts_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->silence_alerts_using_post: %s\n" % e)
@@ -3150,8 +3039,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SilenceAlarmRequest**](SilenceAlarmRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**SilenceAlarmRequest**](SilenceAlarmRequest.md)| request | 
 
 ### Return type
 
@@ -3169,7 +3058,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_availability_schedules_using_put**
-> update_availability_schedules_using_put(cluster_id, schedule_id, schedules)
+> update_availability_schedules_using_put(body, cluster_id, schedule_id)
 
 updateAvailabilitySchedules
 
@@ -3180,7 +3069,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3188,13 +3076,13 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.ScheduleRequest()] # list[ScheduleRequest] | schedules
 cluster_id = 'cluster_id_example' # str | clusterId
 schedule_id = 'schedule_id_example' # str | scheduleId
-schedules = [swagger_client.ScheduleRequest()] # list[ScheduleRequest] | schedules
 
 try:
     # updateAvailabilitySchedules
-    api_instance.update_availability_schedules_using_put(cluster_id, schedule_id, schedules)
+    api_instance.update_availability_schedules_using_put(body, cluster_id, schedule_id)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->update_availability_schedules_using_put: %s\n" % e)
 ```
@@ -3203,9 +3091,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**list[ScheduleRequest]**](ScheduleRequest.md)| schedules | 
  **cluster_id** | **str**| clusterId | 
  **schedule_id** | **str**| scheduleId | 
- **schedules** | [**list[ScheduleRequest]**](ScheduleRequest.md)| schedules | 
 
 ### Return type
 
@@ -3218,12 +3106,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_cluster_branch_using_patch**
-> AbstractCluster update_cluster_branch_using_patch(cluster_id, req)
+> AbstractCluster update_cluster_branch_using_patch(body, cluster_id)
 
 updateClusterBranch
 
@@ -3234,7 +3122,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3242,12 +3129,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.BranchUpdateRequest() # BranchUpdateRequest | req
 cluster_id = 'cluster_id_example' # str | clusterId
-req = swagger_client.BranchUpdateRequest() # BranchUpdateRequest | req
 
 try:
     # updateClusterBranch
-    api_response = api_instance.update_cluster_branch_using_patch(cluster_id, req)
+    api_response = api_instance.update_cluster_branch_using_patch(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->update_cluster_branch_using_patch: %s\n" % e)
@@ -3257,8 +3144,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**BranchUpdateRequest**](BranchUpdateRequest.md)| req | 
  **cluster_id** | **str**| clusterId | 
- **req** | [**BranchUpdateRequest**](BranchUpdateRequest.md)| req | 
 
 ### Return type
 
@@ -3276,7 +3163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_cluster_schedules_using_put**
-> list[ClusterSchedule] update_cluster_schedules_using_put(cluster_id, cluster_schedule_id, request)
+> list[ClusterSchedule] update_cluster_schedules_using_put(body, cluster_id, cluster_schedule_id)
 
 updateClusterSchedules
 
@@ -3287,7 +3174,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3295,13 +3181,13 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ScheduleRequest() # ScheduleRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
 cluster_schedule_id = 'cluster_schedule_id_example' # str | clusterScheduleId
-request = swagger_client.ScheduleRequest() # ScheduleRequest | request
 
 try:
     # updateClusterSchedules
-    api_response = api_instance.update_cluster_schedules_using_put(cluster_id, cluster_schedule_id, request)
+    api_response = api_instance.update_cluster_schedules_using_put(body, cluster_id, cluster_schedule_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->update_cluster_schedules_using_put: %s\n" % e)
@@ -3311,9 +3197,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ScheduleRequest**](ScheduleRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
  **cluster_schedule_id** | **str**| clusterScheduleId | 
- **request** | [**ScheduleRequest**](ScheduleRequest.md)| request | 
 
 ### Return type
 
@@ -3331,7 +3217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_cluster_tf_details_using_put**
-> TFRunConfigurations update_cluster_tf_details_using_put(cluster_id, tf_run_configurations)
+> TFRunConfigurations update_cluster_tf_details_using_put(body, cluster_id)
 
 updateClusterTFDetails
 
@@ -3342,7 +3228,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3350,12 +3235,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.TFRunConfigurations() # TFRunConfigurations | tfRunConfigurations
 cluster_id = 'cluster_id_example' # str | clusterId
-tf_run_configurations = swagger_client.TFRunConfigurations() # TFRunConfigurations | tfRunConfigurations
 
 try:
     # updateClusterTFDetails
-    api_response = api_instance.update_cluster_tf_details_using_put(cluster_id, tf_run_configurations)
+    api_response = api_instance.update_cluster_tf_details_using_put(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->update_cluster_tf_details_using_put: %s\n" % e)
@@ -3365,8 +3250,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**TFRunConfigurations**](TFRunConfigurations.md)| tfRunConfigurations | 
  **cluster_id** | **str**| clusterId | 
- **tf_run_configurations** | [**TFRunConfigurations**](TFRunConfigurations.md)| tfRunConfigurations | 
 
 ### Return type
 
@@ -3384,7 +3269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_draft_cluster_using_put**
-> AbstractCluster update_draft_cluster_using_put(cluster_id, cluster_request)
+> AbstractCluster update_draft_cluster_using_put(body, cluster_id)
 
 updateDraftCluster
 
@@ -3395,7 +3280,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3403,12 +3287,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.DraftClusterRequest() # DraftClusterRequest | clusterRequest
 cluster_id = 'cluster_id_example' # str | clusterId
-cluster_request = swagger_client.DraftClusterRequest() # DraftClusterRequest | clusterRequest
 
 try:
     # updateDraftCluster
-    api_response = api_instance.update_draft_cluster_using_put(cluster_id, cluster_request)
+    api_response = api_instance.update_draft_cluster_using_put(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->update_draft_cluster_using_put: %s\n" % e)
@@ -3418,8 +3302,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**DraftClusterRequest**](DraftClusterRequest.md)| clusterRequest | 
  **cluster_id** | **str**| clusterId | 
- **cluster_request** | [**DraftClusterRequest**](DraftClusterRequest.md)| clusterRequest | 
 
 ### Return type
 
@@ -3437,7 +3321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_template_input_using_put**
-> StackTemplateInput update_template_input_using_put(cluster_id, input_type, template_input, uid)
+> StackTemplateInput update_template_input_using_put(body, cluster_id, input_type, uid)
 
 updateTemplateInput
 
@@ -3448,7 +3332,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3456,14 +3339,14 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.StackTemplateInput() # StackTemplateInput | templateInput
 cluster_id = 'cluster_id_example' # str | clusterId
 input_type = 'input_type_example' # str | inputType
-template_input = swagger_client.StackTemplateInput() # StackTemplateInput | templateInput
 uid = 'uid_example' # str | uid
 
 try:
     # updateTemplateInput
-    api_response = api_instance.update_template_input_using_put(cluster_id, input_type, template_input, uid)
+    api_response = api_instance.update_template_input_using_put(body, cluster_id, input_type, uid)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->update_template_input_using_put: %s\n" % e)
@@ -3473,9 +3356,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**StackTemplateInput**](StackTemplateInput.md)| templateInput | 
  **cluster_id** | **str**| clusterId | 
  **input_type** | **str**| inputType | 
- **template_input** | [**StackTemplateInput**](StackTemplateInput.md)| templateInput | 
  **uid** | **str**| uid | 
 
 ### Return type
@@ -3494,7 +3377,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upsert_provided_resources_using_post**
-> ProvidedResources upsert_provided_resources_using_post(cluster_id, provided_resources)
+> ProvidedResources upsert_provided_resources_using_post(body, cluster_id)
 
 upsertProvidedResources
 
@@ -3505,7 +3388,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3513,12 +3395,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ProvidedResources() # ProvidedResources | providedResources
 cluster_id = 'cluster_id_example' # str | clusterId
-provided_resources = swagger_client.ProvidedResources() # ProvidedResources | providedResources
 
 try:
     # upsertProvidedResources
-    api_response = api_instance.upsert_provided_resources_using_post(cluster_id, provided_resources)
+    api_response = api_instance.upsert_provided_resources_using_post(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->upsert_provided_resources_using_post: %s\n" % e)
@@ -3528,8 +3410,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ProvidedResources**](ProvidedResources.md)| providedResources | 
  **cluster_id** | **str**| clusterId | 
- **provided_resources** | [**ProvidedResources**](ProvidedResources.md)| providedResources | 
 
 ### Return type
 
@@ -3547,7 +3429,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upsert_vars_using_post1**
-> AbstractCluster upsert_vars_using_post1(cluster_id, cluster_vars)
+> AbstractCluster upsert_vars_using_post1(body, cluster_id)
 
 upsertVars
 
@@ -3558,7 +3440,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -3566,12 +3447,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = NULL # dict(str, str) | clusterVars
 cluster_id = 'cluster_id_example' # str | clusterId
-cluster_vars = NULL # object | clusterVars
 
 try:
     # upsertVars
-    api_response = api_instance.upsert_vars_using_post1(cluster_id, cluster_vars)
+    api_response = api_instance.upsert_vars_using_post1(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiCommonClusterControllerApi->upsert_vars_using_post1: %s\n" % e)
@@ -3581,8 +3462,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, str)**](dict.md)| clusterVars | 
  **cluster_id** | **str**| clusterId | 
- **cluster_vars** | **object**| clusterVars | 
 
 ### Return type
 

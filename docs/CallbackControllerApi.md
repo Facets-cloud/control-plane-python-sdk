@@ -1,11 +1,10 @@
 # swagger_client.CallbackControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**sonar_call_back_using_post**](CallbackControllerApi.md#sonar_call_back_using_post) | **POST** /callback/sonar | sonarCallBack
-
 
 # **sonar_call_back_using_post**
 > bool sonar_call_back_using_post(body)
@@ -19,7 +18,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

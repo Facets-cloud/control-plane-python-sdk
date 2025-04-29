@@ -1,6 +1,6 @@
 # swagger_client.UiK8sClusterControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,9 +9,8 @@ Method | HTTP request | Description
 [**get_k8s_cluster_using_get**](UiK8sClusterControllerApi.md#get_k8s_cluster_using_get) | **GET** /cc-ui/v1/kubernetes/clusters/{clusterId} | getK8sCluster
 [**update_k8s_cluster_using_put**](UiK8sClusterControllerApi.md#update_k8s_cluster_using_put) | **PUT** /cc-ui/v1/kubernetes/clusters/{clusterId} | updateK8sCluster
 
-
 # **create_draft_cluster_using_post1**
-> KubernetesCluster create_draft_cluster_using_post1(cluster_id, request)
+> KubernetesCluster create_draft_cluster_using_post1(body, cluster_id)
 
 createDraftCluster
 
@@ -22,7 +21,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -30,12 +28,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiK8sClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
 
 try:
     # createDraftCluster
-    api_response = api_instance.create_draft_cluster_using_post1(cluster_id, request)
+    api_response = api_instance.create_draft_cluster_using_post1(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiK8sClusterControllerApi->create_draft_cluster_using_post1: %s\n" % e)
@@ -45,8 +43,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
 
 ### Return type
 
@@ -64,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_k8s_cluster_using_post**
-> KubernetesCluster create_k8s_cluster_using_post(request)
+> KubernetesCluster create_k8s_cluster_using_post(body)
 
 createK8sCluster
 
@@ -75,7 +73,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -83,11 +80,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiK8sClusterControllerApi(swagger_client.ApiClient(configuration))
-request = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
+body = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
 
 try:
     # createK8sCluster
-    api_response = api_instance.create_k8s_cluster_using_post(request)
+    api_response = api_instance.create_k8s_cluster_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiK8sClusterControllerApi->create_k8s_cluster_using_post: %s\n" % e)
@@ -97,7 +94,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
+ **body** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
 
 ### Return type
 
@@ -126,7 +123,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -166,7 +162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_k8s_cluster_using_put**
-> KubernetesCluster update_k8s_cluster_using_put(cluster_id, request)
+> KubernetesCluster update_k8s_cluster_using_put(body, cluster_id)
 
 updateK8sCluster
 
@@ -177,7 +173,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -185,12 +180,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiK8sClusterControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
 cluster_id = 'cluster_id_example' # str | clusterId
-request = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
 
 try:
     # updateK8sCluster
-    api_response = api_instance.update_k8s_cluster_using_put(cluster_id, request)
+    api_response = api_instance.update_k8s_cluster_using_put(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiK8sClusterControllerApi->update_k8s_cluster_using_put: %s\n" % e)
@@ -200,8 +195,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
  **cluster_id** | **str**| clusterId | 
- **request** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
 
 ### Return type
 

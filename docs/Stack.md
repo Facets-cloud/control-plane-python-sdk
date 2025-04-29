@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **git_overrides_enabled** | **bool** |  | [optional] 
 **github_organization_name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**imported_project** | **bool** |  | [optional] 
 **label** | **str** |  | [optional] 
 **last_modified_by** | **str** |  | [optional] 
 **last_modified_date** | **datetime** |  | [optional] 
@@ -48,5 +49,4 @@ Name | Type | Description | Notes
 **versioning_key** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

@@ -1,6 +1,6 @@
 # swagger_client.UiProjectTypeControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**get_project_type_by_id_using_get**](UiProjectTypeControllerApi.md#get_project_type_by_id_using_get) | **GET** /cc-ui/v1/project-types/{id} | Get project type by ID
 [**update_project_type_using_put**](UiProjectTypeControllerApi.md#update_project_type_using_put) | **PUT** /cc-ui/v1/project-types/{id} | Update an existing project type
 
-
 # **add_project_type_using_post**
-> ProjectTypeResponse add_project_type_using_post(project_type_request)
+> ProjectTypeResponse add_project_type_using_post(body)
 
 Add a new project type
 
@@ -25,7 +24,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -33,11 +31,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiProjectTypeControllerApi(swagger_client.ApiClient(configuration))
-project_type_request = swagger_client.ProjectTypeRequest() # ProjectTypeRequest | projectTypeRequest
+body = swagger_client.ProjectTypeRequest() # ProjectTypeRequest | projectTypeRequest
 
 try:
     # Add a new project type
-    api_response = api_instance.add_project_type_using_post(project_type_request)
+    api_response = api_instance.add_project_type_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiProjectTypeControllerApi->add_project_type_using_post: %s\n" % e)
@@ -47,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_type_request** | [**ProjectTypeRequest**](ProjectTypeRequest.md)| projectTypeRequest | 
+ **body** | [**ProjectTypeRequest**](ProjectTypeRequest.md)| projectTypeRequest | 
 
 ### Return type
 
@@ -78,7 +76,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -112,7 +109,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -130,7 +127,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -179,7 +175,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -219,7 +214,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_project_type_using_put**
-> ProjectTypeResponse update_project_type_using_put(id, project_type_request)
+> ProjectTypeResponse update_project_type_using_put(body, id)
 
 Update an existing project type
 
@@ -232,7 +227,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -240,12 +234,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiProjectTypeControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ProjectTypeRequest() # ProjectTypeRequest | projectTypeRequest
 id = 'id_example' # str | id
-project_type_request = swagger_client.ProjectTypeRequest() # ProjectTypeRequest | projectTypeRequest
 
 try:
     # Update an existing project type
-    api_response = api_instance.update_project_type_using_put(id, project_type_request)
+    api_response = api_instance.update_project_type_using_put(body, id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiProjectTypeControllerApi->update_project_type_using_put: %s\n" % e)
@@ -255,8 +249,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ProjectTypeRequest**](ProjectTypeRequest.md)| projectTypeRequest | 
  **id** | **str**| id | 
- **project_type_request** | [**ProjectTypeRequest**](ProjectTypeRequest.md)| projectTypeRequest | 
 
 ### Return type
 

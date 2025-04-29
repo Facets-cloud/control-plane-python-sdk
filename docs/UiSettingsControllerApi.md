@@ -1,6 +1,6 @@
 # swagger_client.UiSettingsControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**get_setting_value_using_get**](UiSettingsControllerApi.md#get_setting_value_using_get) | **GET** /cc-ui/v1/settings/value/{entityType}/{entityId} | getSettingValue
 [**set_onboarding_display_using_put**](UiSettingsControllerApi.md#set_onboarding_display_using_put) | **PUT** /cc-ui/v1/settings/onboarding-display/{value} | setOnboardingDisplay
 
-
 # **add_setting_value_using_put**
-> object add_setting_value_using_put(entity_id, entity_type, setting_value_request)
+> object add_setting_value_using_put(body, entity_id, entity_type)
 
 addSettingValue
 
@@ -23,7 +22,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -31,13 +29,13 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiSettingsControllerApi(swagger_client.ApiClient(configuration))
+body = NULL # object | settingValueRequest
 entity_id = 'entity_id_example' # str | entityId
 entity_type = 'entity_type_example' # str | entityType
-setting_value_request = NULL # object | settingValueRequest
 
 try:
     # addSettingValue
-    api_response = api_instance.add_setting_value_using_put(entity_id, entity_type, setting_value_request)
+    api_response = api_instance.add_setting_value_using_put(body, entity_id, entity_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiSettingsControllerApi->add_setting_value_using_put: %s\n" % e)
@@ -47,9 +45,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**object**](object.md)| settingValueRequest | 
  **entity_id** | **str**| entityId | 
  **entity_type** | **str**| entityType | 
- **setting_value_request** | **object**| settingValueRequest | 
 
 ### Return type
 
@@ -78,7 +76,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -129,7 +126,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -176,7 +172,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -229,7 +224,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -262,8 +256,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

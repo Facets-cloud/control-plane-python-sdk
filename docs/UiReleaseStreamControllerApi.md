@@ -1,6 +1,6 @@
 # swagger_client.UiReleaseStreamControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**delete_using_delete**](UiReleaseStreamControllerApi.md#delete_using_delete) | **DELETE** /cc-ui/v1/release-stream/{name} | delete
 [**get_all_using_get3**](UiReleaseStreamControllerApi.md#get_all_using_get3) | **GET** /cc-ui/v1/release-stream | getAll
 
-
 # **add_using_post**
-> ReleaseStream add_using_post(release_stream_request)
+> ReleaseStream add_using_post(body)
 
 add
 
@@ -21,7 +20,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -29,11 +27,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiReleaseStreamControllerApi(swagger_client.ApiClient(configuration))
-release_stream_request = swagger_client.ReleaseStreamRequest() # ReleaseStreamRequest | releaseStreamRequest
+body = swagger_client.ReleaseStreamRequest() # ReleaseStreamRequest | releaseStreamRequest
 
 try:
     # add
-    api_response = api_instance.add_using_post(release_stream_request)
+    api_response = api_instance.add_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiReleaseStreamControllerApi->add_using_post: %s\n" % e)
@@ -43,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **release_stream_request** | [**ReleaseStreamRequest**](ReleaseStreamRequest.md)| releaseStreamRequest | 
+ **body** | [**ReleaseStreamRequest**](ReleaseStreamRequest.md)| releaseStreamRequest | 
 
 ### Return type
 
@@ -72,7 +70,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -106,7 +103,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -122,7 +119,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'

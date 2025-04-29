@@ -1,6 +1,6 @@
 # swagger_client.UiArtifactoryControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,9 +22,8 @@ Method | HTTP request | Description
 [**update_basic_docker_artifactory_using_post**](UiArtifactoryControllerApi.md#update_basic_docker_artifactory_using_post) | **POST** /cc-ui/v1/artifactories/others/{artifactoryId} | updateBasicDockerArtifactory
 [**update_ecr_artifactory_using_post**](UiArtifactoryControllerApi.md#update_ecr_artifactory_using_post) | **POST** /cc-ui/v1/artifactories/{artifactoryId} | updateECRArtifactory
 
-
 # **associate_stacks_using_post**
-> associate_stacks_using_post(artifactory_id, stacks)
+> associate_stacks_using_post(body, artifactory_id)
 
 associateStacks
 
@@ -35,7 +34,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -43,12 +41,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactoryControllerApi(swagger_client.ApiClient(configuration))
+body = ['body_example'] # list[str] | stacks
 artifactory_id = 'artifactory_id_example' # str | artifactoryId
-stacks = [swagger_client.list[str]()] # list[str] | stacks
 
 try:
     # associateStacks
-    api_instance.associate_stacks_using_post(artifactory_id, stacks)
+    api_instance.associate_stacks_using_post(body, artifactory_id)
 except ApiException as e:
     print("Exception when calling UiArtifactoryControllerApi->associate_stacks_using_post: %s\n" % e)
 ```
@@ -57,8 +55,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**list[str]**](str.md)| stacks | 
  **artifactory_id** | **str**| artifactoryId | 
- **stacks** | **list[str]**| stacks | 
 
 ### Return type
 
@@ -71,12 +69,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_artifactory_mirror_using_post**
-> ArtifactoryMirror create_artifactory_mirror_using_post(artifactory_mirror)
+> ArtifactoryMirror create_artifactory_mirror_using_post(body)
 
 createArtifactoryMirror
 
@@ -87,7 +85,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -95,11 +92,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactoryControllerApi(swagger_client.ApiClient(configuration))
-artifactory_mirror = swagger_client.ArtifactoryMirror() # ArtifactoryMirror | artifactoryMirror
+body = swagger_client.ArtifactoryMirror() # ArtifactoryMirror | artifactoryMirror
 
 try:
     # createArtifactoryMirror
-    api_response = api_instance.create_artifactory_mirror_using_post(artifactory_mirror)
+    api_response = api_instance.create_artifactory_mirror_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactoryControllerApi->create_artifactory_mirror_using_post: %s\n" % e)
@@ -109,7 +106,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifactory_mirror** | [**ArtifactoryMirror**](ArtifactoryMirror.md)| artifactoryMirror | 
+ **body** | [**ArtifactoryMirror**](ArtifactoryMirror.md)| artifactoryMirror | 
 
 ### Return type
 
@@ -127,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_basic_docker_artifactory_using_post**
-> BasicDockerArtifactory create_basic_docker_artifactory_using_post(basic_docker_dto)
+> BasicDockerArtifactory create_basic_docker_artifactory_using_post(body)
 
 createBasicDockerArtifactory
 
@@ -138,7 +135,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -146,11 +142,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactoryControllerApi(swagger_client.ApiClient(configuration))
-basic_docker_dto = swagger_client.BasicDockerDTO() # BasicDockerDTO | basicDockerDTO
+body = swagger_client.BasicDockerDTO() # BasicDockerDTO | basicDockerDTO
 
 try:
     # createBasicDockerArtifactory
-    api_response = api_instance.create_basic_docker_artifactory_using_post(basic_docker_dto)
+    api_response = api_instance.create_basic_docker_artifactory_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactoryControllerApi->create_basic_docker_artifactory_using_post: %s\n" % e)
@@ -160,7 +156,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **basic_docker_dto** | [**BasicDockerDTO**](BasicDockerDTO.md)| basicDockerDTO | 
+ **body** | [**BasicDockerDTO**](BasicDockerDTO.md)| basicDockerDTO | 
 
 ### Return type
 
@@ -178,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_ecr_artifactory_using_post1**
-> ECRArtifactory create_ecr_artifactory_using_post1(ecr_artifactory)
+> ECRArtifactory create_ecr_artifactory_using_post1(body)
 
 createECRArtifactory
 
@@ -189,7 +185,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -197,11 +192,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactoryControllerApi(swagger_client.ApiClient(configuration))
-ecr_artifactory = swagger_client.ECRArtifactory() # ECRArtifactory | ecrArtifactory
+body = swagger_client.ECRArtifactory() # ECRArtifactory | ecrArtifactory
 
 try:
     # createECRArtifactory
-    api_response = api_instance.create_ecr_artifactory_using_post1(ecr_artifactory)
+    api_response = api_instance.create_ecr_artifactory_using_post1(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactoryControllerApi->create_ecr_artifactory_using_post1: %s\n" % e)
@@ -211,7 +206,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ecr_artifactory** | [**ECRArtifactory**](ECRArtifactory.md)| ecrArtifactory | 
+ **body** | [**ECRArtifactory**](ECRArtifactory.md)| ecrArtifactory | 
 
 ### Return type
 
@@ -240,7 +235,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -274,7 +268,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -290,7 +284,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -341,7 +334,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -392,7 +384,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -439,7 +430,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -490,7 +480,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -541,7 +530,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -594,7 +582,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -645,7 +632,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -700,7 +686,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -742,7 +727,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **request_artifactory_linking_using_post**
-> OneTimeWebhook request_artifactory_linking_using_post(artifactory_linking_request)
+> OneTimeWebhook request_artifactory_linking_using_post(body)
 
 requestArtifactoryLinking
 
@@ -753,7 +738,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -761,11 +745,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactoryControllerApi(swagger_client.ApiClient(configuration))
-artifactory_linking_request = swagger_client.ArtifactoryLinkingRequest() # ArtifactoryLinkingRequest | artifactoryLinkingRequest
+body = swagger_client.ArtifactoryLinkingRequest() # ArtifactoryLinkingRequest | artifactoryLinkingRequest
 
 try:
     # requestArtifactoryLinking
-    api_response = api_instance.request_artifactory_linking_using_post(artifactory_linking_request)
+    api_response = api_instance.request_artifactory_linking_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactoryControllerApi->request_artifactory_linking_using_post: %s\n" % e)
@@ -775,7 +759,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artifactory_linking_request** | [**ArtifactoryLinkingRequest**](ArtifactoryLinkingRequest.md)| artifactoryLinkingRequest | 
+ **body** | [**ArtifactoryLinkingRequest**](ArtifactoryLinkingRequest.md)| artifactoryLinkingRequest | 
 
 ### Return type
 
@@ -793,7 +777,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_basic_docker_artifactory_using_post**
-> BasicDockerArtifactory update_basic_docker_artifactory_using_post(artifactory_id, basic_docker_dto)
+> BasicDockerArtifactory update_basic_docker_artifactory_using_post(body, artifactory_id)
 
 updateBasicDockerArtifactory
 
@@ -804,7 +788,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -812,12 +795,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactoryControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.BasicDockerDTO() # BasicDockerDTO | basicDockerDTO
 artifactory_id = 'artifactory_id_example' # str | artifactoryId
-basic_docker_dto = swagger_client.BasicDockerDTO() # BasicDockerDTO | basicDockerDTO
 
 try:
     # updateBasicDockerArtifactory
-    api_response = api_instance.update_basic_docker_artifactory_using_post(artifactory_id, basic_docker_dto)
+    api_response = api_instance.update_basic_docker_artifactory_using_post(body, artifactory_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactoryControllerApi->update_basic_docker_artifactory_using_post: %s\n" % e)
@@ -827,8 +810,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**BasicDockerDTO**](BasicDockerDTO.md)| basicDockerDTO | 
  **artifactory_id** | **str**| artifactoryId | 
- **basic_docker_dto** | [**BasicDockerDTO**](BasicDockerDTO.md)| basicDockerDTO | 
 
 ### Return type
 
@@ -846,7 +829,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_ecr_artifactory_using_post**
-> ECRArtifactory update_ecr_artifactory_using_post(artifactory_id, ecr_artifactory)
+> ECRArtifactory update_ecr_artifactory_using_post(body, artifactory_id)
 
 updateECRArtifactory
 
@@ -857,7 +840,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -865,12 +847,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactoryControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ECRArtifactory() # ECRArtifactory | ecrArtifactory
 artifactory_id = 'artifactory_id_example' # str | artifactoryId
-ecr_artifactory = swagger_client.ECRArtifactory() # ECRArtifactory | ecrArtifactory
 
 try:
     # updateECRArtifactory
-    api_response = api_instance.update_ecr_artifactory_using_post(artifactory_id, ecr_artifactory)
+    api_response = api_instance.update_ecr_artifactory_using_post(body, artifactory_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiArtifactoryControllerApi->update_ecr_artifactory_using_post: %s\n" % e)
@@ -880,8 +862,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ECRArtifactory**](ECRArtifactory.md)| ecrArtifactory | 
  **artifactory_id** | **str**| artifactoryId | 
- **ecr_artifactory** | [**ECRArtifactory**](ECRArtifactory.md)| ecrArtifactory | 
 
 ### Return type
 

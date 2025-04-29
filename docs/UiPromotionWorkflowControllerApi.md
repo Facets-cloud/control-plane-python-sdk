@@ -1,6 +1,6 @@
 # swagger_client.UiPromotionWorkflowControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,9 +13,8 @@ Method | HTTP request | Description
 [**get_workflows_by_stack_using_get**](UiPromotionWorkflowControllerApi.md#get_workflows_by_stack_using_get) | **GET** /cc-ui/v1/workflow/blueprint/{stackName} | getWorkflowsByStack
 [**update_workflow_using_put**](UiPromotionWorkflowControllerApi.md#update_workflow_using_put) | **PUT** /cc-ui/v1/workflow/{workflowId} | updateWorkflow
 
-
 # **create_workflow_using_post**
-> PromotionWorkflow create_workflow_using_post(promotion_workflow)
+> PromotionWorkflow create_workflow_using_post(body)
 
 createWorkflow
 
@@ -26,7 +25,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -34,11 +32,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiPromotionWorkflowControllerApi(swagger_client.ApiClient(configuration))
-promotion_workflow = swagger_client.PromotionWorkflow() # PromotionWorkflow | promotionWorkflow
+body = swagger_client.PromotionWorkflow() # PromotionWorkflow | promotionWorkflow
 
 try:
     # createWorkflow
-    api_response = api_instance.create_workflow_using_post(promotion_workflow)
+    api_response = api_instance.create_workflow_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiPromotionWorkflowControllerApi->create_workflow_using_post: %s\n" % e)
@@ -48,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **promotion_workflow** | [**PromotionWorkflow**](PromotionWorkflow.md)| promotionWorkflow | 
+ **body** | [**PromotionWorkflow**](PromotionWorkflow.md)| promotionWorkflow | 
 
 ### Return type
 
@@ -77,7 +75,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -128,7 +125,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -175,7 +171,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -228,7 +223,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -281,7 +275,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -332,7 +325,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -372,7 +364,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_workflow_using_put**
-> PromotionWorkflow update_workflow_using_put(promotion_workflow, workflow_id)
+> PromotionWorkflow update_workflow_using_put(body, workflow_id)
 
 updateWorkflow
 
@@ -383,7 +375,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -391,12 +382,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiPromotionWorkflowControllerApi(swagger_client.ApiClient(configuration))
-promotion_workflow = swagger_client.PromotionWorkflow() # PromotionWorkflow | promotionWorkflow
+body = swagger_client.PromotionWorkflow() # PromotionWorkflow | promotionWorkflow
 workflow_id = 'workflow_id_example' # str | workflowId
 
 try:
     # updateWorkflow
-    api_response = api_instance.update_workflow_using_put(promotion_workflow, workflow_id)
+    api_response = api_instance.update_workflow_using_put(body, workflow_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiPromotionWorkflowControllerApi->update_workflow_using_put: %s\n" % e)
@@ -406,7 +397,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **promotion_workflow** | [**PromotionWorkflow**](PromotionWorkflow.md)| promotionWorkflow | 
+ **body** | [**PromotionWorkflow**](PromotionWorkflow.md)| promotionWorkflow | 
  **workflow_id** | **str**| workflowId | 
 
 ### Return type

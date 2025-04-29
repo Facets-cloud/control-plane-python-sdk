@@ -1,6 +1,6 @@
 # swagger_client.UiWebComponentControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,8 @@ Method | HTTP request | Description
 [**get_component_using_get**](UiWebComponentControllerApi.md#get_component_using_get) | **GET** /cc-ui/v1/web-components/{webComponentId} | getComponent
 [**update_component_using_put**](UiWebComponentControllerApi.md#update_component_using_put) | **PUT** /cc-ui/v1/web-components/{webComponentId} | updateComponent
 
-
 # **create_component_using_post**
-> WebComponentDTO create_component_using_post(component)
+> WebComponentDTO create_component_using_post(body)
 
 createComponent
 
@@ -23,7 +22,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -31,11 +29,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiWebComponentControllerApi(swagger_client.ApiClient(configuration))
-component = swagger_client.WebComponentDTO() # WebComponentDTO | component
+body = swagger_client.WebComponentDTO() # WebComponentDTO | component
 
 try:
     # createComponent
-    api_response = api_instance.create_component_using_post(component)
+    api_response = api_instance.create_component_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiWebComponentControllerApi->create_component_using_post: %s\n" % e)
@@ -45,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **component** | [**WebComponentDTO**](WebComponentDTO.md)| component | 
+ **body** | [**WebComponentDTO**](WebComponentDTO.md)| component | 
 
 ### Return type
 
@@ -74,7 +72,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -108,7 +105,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -124,7 +121,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -171,7 +167,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -211,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_component_using_put**
-> WebComponentDTO update_component_using_put(component, web_component_id)
+> WebComponentDTO update_component_using_put(body, web_component_id)
 
 updateComponent
 
@@ -222,7 +217,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -230,12 +224,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiWebComponentControllerApi(swagger_client.ApiClient(configuration))
-component = swagger_client.WebComponentDTO() # WebComponentDTO | component
+body = swagger_client.WebComponentDTO() # WebComponentDTO | component
 web_component_id = 'web_component_id_example' # str | webComponentId
 
 try:
     # updateComponent
-    api_response = api_instance.update_component_using_put(component, web_component_id)
+    api_response = api_instance.update_component_using_put(body, web_component_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiWebComponentControllerApi->update_component_using_put: %s\n" % e)
@@ -245,7 +239,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **component** | [**WebComponentDTO**](WebComponentDTO.md)| component | 
+ **body** | [**WebComponentDTO**](WebComponentDTO.md)| component | 
  **web_component_id** | **str**| webComponentId | 
 
 ### Return type

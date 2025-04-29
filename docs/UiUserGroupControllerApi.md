@@ -1,6 +1,6 @@
 # swagger_client.UiUserGroupControllerApi
 
-All URIs are relative to *https://facetsdemo.console.facets.cloud*
+All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,9 +12,8 @@ Method | HTTP request | Description
 [**get_user_group_using_get**](UiUserGroupControllerApi.md#get_user_group_using_get) | **GET** /cc-ui/v1/user-groups/{groupId} | getUserGroup
 [**update_user_group_using_put**](UiUserGroupControllerApi.md#update_user_group_using_put) | **PUT** /cc-ui/v1/user-groups/ | updateUserGroup
 
-
 # **create_user_group_using_post**
-> UserGroup create_user_group_using_post(user_group)
+> UserGroup create_user_group_using_post(body)
 
 createUserGroup
 
@@ -25,7 +24,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -33,11 +31,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
-user_group = swagger_client.UserGroup() # UserGroup | userGroup
+body = swagger_client.UserGroup() # UserGroup | userGroup
 
 try:
     # createUserGroup
-    api_response = api_instance.create_user_group_using_post(user_group)
+    api_response = api_instance.create_user_group_using_post(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiUserGroupControllerApi->create_user_group_using_post: %s\n" % e)
@@ -47,7 +45,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_group** | [**UserGroup**](UserGroup.md)| userGroup | 
+ **body** | [**UserGroup**](UserGroup.md)| userGroup | 
 
 ### Return type
 
@@ -76,7 +74,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -110,7 +107,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -126,7 +123,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -173,7 +169,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -220,7 +215,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -271,7 +265,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -311,7 +304,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user_group_using_put**
-> UserGroup update_user_group_using_put(user_group)
+> UserGroup update_user_group_using_put(body)
 
 updateUserGroup
 
@@ -322,7 +315,6 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-
 # Configure HTTP basic authorization: main
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
@@ -330,11 +322,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
-user_group = swagger_client.UserGroup() # UserGroup | userGroup
+body = swagger_client.UserGroup() # UserGroup | userGroup
 
 try:
     # updateUserGroup
-    api_response = api_instance.update_user_group_using_put(user_group)
+    api_response = api_instance.update_user_group_using_put(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiUserGroupControllerApi->update_user_group_using_put: %s\n" % e)
@@ -344,7 +336,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_group** | [**UserGroup**](UserGroup.md)| userGroup | 
+ **body** | [**UserGroup**](UserGroup.md)| userGroup | 
 
 ### Return type
 
