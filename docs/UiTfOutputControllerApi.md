@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_output_using_delete**](UiTfOutputControllerApi.md#delete_output_using_delete) | **DELETE** /cc-ui/v1/tf-outputs/{name} | deleteOutput
 [**get_all_outputs_using_get**](UiTfOutputControllerApi.md#get_all_outputs_using_get) | **GET** /cc-ui/v1/tf-outputs | getAllOutputs
 [**get_output_by_name_using_get**](UiTfOutputControllerApi.md#get_output_by_name_using_get) | **GET** /cc-ui/v1/tf-outputs/{name} | getOutputByName
+[**get_outputs_by_provider_source_using_get**](UiTfOutputControllerApi.md#get_outputs_by_provider_source_using_get) | **GET** /cc-ui/v1/tf-outputs/provider | Get all outputs that use a specific provider source
 
 # **create_or_update_output_using_post**
 > TFOutputResponseDTO create_or_update_output_using_post(body)
@@ -196,6 +197,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TFOutputResponseDTO**](TFOutputResponseDTO.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_outputs_by_provider_source_using_get**
+> list[TFOutputResponseDTO] get_outputs_by_provider_source_using_get(source)
+
+Get all outputs that use a specific provider source
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiTfOutputControllerApi(swagger_client.ApiClient(configuration))
+source = 'source_example' # str | Provider source name
+
+try:
+    # Get all outputs that use a specific provider source
+    api_response = api_instance.get_outputs_by_provider_source_using_get(source)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiTfOutputControllerApi->get_outputs_by_provider_source_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **str**| Provider source name | 
+
+### Return type
+
+[**list[TFOutputResponseDTO]**](TFOutputResponseDTO.md)
 
 ### Authorization
 
