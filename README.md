@@ -1804,6 +1804,7 @@ Class | Method | HTTP request | Description
 *UiTfOutputControllerApi* | [**delete_output_using_delete**](docs/UiTfOutputControllerApi.md#delete_output_using_delete) | **DELETE** /cc-ui/v1/tf-outputs/{name} | deleteOutput
 *UiTfOutputControllerApi* | [**get_all_outputs_using_get**](docs/UiTfOutputControllerApi.md#get_all_outputs_using_get) | **GET** /cc-ui/v1/tf-outputs | getAllOutputs
 *UiTfOutputControllerApi* | [**get_output_by_name_using_get**](docs/UiTfOutputControllerApi.md#get_output_by_name_using_get) | **GET** /cc-ui/v1/tf-outputs/{name} | getOutputByName
+*UiTfOutputControllerApi* | [**get_outputs_by_provider_source_using_get**](docs/UiTfOutputControllerApi.md#get_outputs_by_provider_source_using_get) | **GET** /cc-ui/v1/tf-outputs/provider | Get all outputs that use a specific provider source
 *UiTfVersionControllerApi* | [**delete_tf_stream_for_cluster_using_delete**](docs/UiTfVersionControllerApi.md#delete_tf_stream_for_cluster_using_delete) | **DELETE** /cc-ui/v1/terraform/cluster/{clusterId} | deleteTfStreamForCluster
 *UiTfVersionControllerApi* | [**get_all_versions_using_get**](docs/UiTfVersionControllerApi.md#get_all_versions_using_get) | **GET** /cc-ui/v1/terraform/versions | getAllVersions
 *UiTfVersionControllerApi* | [**get_pending_migration_scripts_by_cluster_id_using_get**](docs/UiTfVersionControllerApi.md#get_pending_migration_scripts_by_cluster_id_using_get) | **GET** /cc-ui/v1/terraform/cluster/{clusterId}/pending-migration-scripts | getPendingMigrationScriptsByClusterId
