@@ -56,9 +56,9 @@ jobs:
         run: |
           java -jar swagger-codegen-cli.jar generate -i api-docs-fixed.json -l python -o . -c swagger-config.json
 
-      - name: Remove temporary API docs files
+      - name: Remove temporary files
         run: |
-          rm api-docs-raw.json api-docs-fixed.json
+          rm api-docs-raw.json api-docs-fixed.json swagger-codegen-cli.jar
 
       - name: Configure Git
         run: |
