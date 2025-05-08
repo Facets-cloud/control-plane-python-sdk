@@ -373,6 +373,7 @@ from swagger_client.models.page_chat import PageChat
 from swagger_client.models.page_deployment_log import PageDeploymentLog
 from swagger_client.models.page_facets_audit_log_response import PageFacetsAuditLogResponse
 from swagger_client.models.page_resource_release_impact import PageResourceReleaseImpact
+from swagger_client.models.page_version import PageVersion
 from swagger_client.models.pageable import Pageable
 from swagger_client.models.password_change import PasswordChange
 from swagger_client.models.pause_release_request import PauseReleaseRequest

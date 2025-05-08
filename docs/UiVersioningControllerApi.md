@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**delete_all_soft_delete_entities_using_delete**](UiVersioningControllerApi.md#delete_all_soft_delete_entities_using_delete) | **DELETE** /cc-ui/v1/versions/softDeletedEntities/all | deleteAllSoftDeleteEntities
 [**delete_soft_delete_entity_using_delete**](UiVersioningControllerApi.md#delete_soft_delete_entity_using_delete) | **DELETE** /cc-ui/v1/versions/softDeletedEntities | deleteSoftDeleteEntity
 [**get_version_by_id_using_get**](UiVersioningControllerApi.md#get_version_by_id_using_get) | **GET** /cc-ui/v1/versions/id/{id} | getVersionById
+[**get_versions_paginated_using_get**](UiVersioningControllerApi.md#get_versions_paginated_using_get) | **GET** /cc-ui/v1/versions/{versioningKey}/paginated | getVersionsPaginated
 [**get_versions_using_get**](UiVersioningControllerApi.md#get_versions_using_get) | **GET** /cc-ui/v1/versions/{versioningKey} | getVersions
 [**restore_soft_delete_using_post**](UiVersioningControllerApi.md#restore_soft_delete_using_post) | **POST** /cc-ui/v1/versions/softDeletedEntities/{entityId} | restoreSoftDelete
 [**restore_using_post**](UiVersioningControllerApi.md#restore_using_post) | **POST** /cc-ui/v1/versions/{versionId}/restore | restore
@@ -145,6 +146,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Version**](Version.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_versions_paginated_using_get**
+> PageVersion get_versions_paginated_using_get(versioning_key, page=page, per_page=per_page)
+
+getVersionsPaginated
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
+versioning_key = 'versioning_key_example' # str | versioningKey
+page = 0 # int | page (optional) (default to 0)
+per_page = 10 # int | perPage (optional) (default to 10)
+
+try:
+    # getVersionsPaginated
+    api_response = api_instance.get_versions_paginated_using_get(versioning_key, page=page, per_page=per_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiVersioningControllerApi->get_versions_paginated_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **versioning_key** | **str**| versioningKey | 
+ **page** | **int**| page | [optional] [default to 0]
+ **per_page** | **int**| perPage | [optional] [default to 10]
+
+### Return type
+
+[**PageVersion**](PageVersion.md)
 
 ### Authorization
 

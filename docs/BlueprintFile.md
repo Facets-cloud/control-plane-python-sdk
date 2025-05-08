@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **errors** | [**list[BlueprintValidationError]**](BlueprintValidationError.md) |  | [optional] 
 **expressions** | [**list[RefExpression]**](RefExpression.md) |  | [optional] 
 **filename** | **str** |  | [optional] 
+**icon_url** | **str** |  | [optional] 
 **info** | [**Info**](Info.md) |  | [optional] 
 **overridden** | **bool** |  | [optional] 
 **override** | **object** |  | [optional] 
