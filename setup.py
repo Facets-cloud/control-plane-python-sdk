@@ -12,8 +12,11 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
+with open("VERSION", "r") as version_file:
+    version = version_file.read().strip()
+
 NAME = "swagger-client"
-VERSION = "1.1.0"
+VERSION = version
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -32,7 +35,7 @@ setup(
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
-    python_requires=">=3.6",
+    python_requires=">=3.10",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
