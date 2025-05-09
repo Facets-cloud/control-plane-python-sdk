@@ -3,7 +3,7 @@ from setuptools import setup, find_packages  # noqa: H301
 with open("VERSION", "r") as version_file:
     version = version_file.read().strip()
     
-NAME = "swagger-client"
+NAME = "facets-control-plane-sdk"
 VERSION = version
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
