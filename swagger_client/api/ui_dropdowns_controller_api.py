@@ -1146,6 +1146,8 @@ class UiDropdownsControllerApi(object):
         :param async_req bool
         :param str output_type: outputType (required)
         :param str stack_name: stackName (required)
+        :param str resource_name: resourceName
+        :param str resource_type: resourceType
         :return: list[OutputReference]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1168,12 +1170,14 @@ class UiDropdownsControllerApi(object):
         :param async_req bool
         :param str output_type: outputType (required)
         :param str stack_name: stackName (required)
+        :param str resource_name: resourceName
+        :param str resource_type: resourceType
         :return: list[OutputReference]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['output_type', 'stack_name']  # noqa: E501
+        all_params = ['output_type', 'stack_name', 'resource_name', 'resource_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1206,6 +1210,10 @@ class UiDropdownsControllerApi(object):
             path_params['stackName'] = params['stack_name']  # noqa: E501
 
         query_params = []
+        if 'resource_name' in params:
+            query_params.append(('resourceName', params['resource_name']))  # noqa: E501
+        if 'resource_type' in params:
+            query_params.append(('resourceType', params['resource_type']))  # noqa: E501
 
         header_params = {}
 
