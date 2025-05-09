@@ -1,5 +1,13 @@
 {
   "packageName": "swagger_client",
   "projectName": "swagger-client",
-  "packageVersion": "1.1.0"
+  "packageVersion": "1.1.0",
+  "packageUrl": "https://github.com/Facets-cloud/control-plane-python-sdk",
+  "licenseInfo": "MIT License",
+  "artifactDescription": "Api Documentation",
+  "artifactUrl": "https://github.com/Facets-cloud/control-plane-python-sdk",
+  "developerEmail": "anujhydrabadi@facets.cloud",
+  "developerName": "Anuj Hydrabadi",
+  "developerOrganization": "Facets Cloud",
+  "developerOrganizationUrl": "https://facets.cloud"
 }
