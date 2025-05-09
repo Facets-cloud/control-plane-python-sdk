@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_output_references_using_get**
-> list[OutputReference] get_output_references_using_get(output_type, stack_name)
+> list[OutputReference] get_output_references_using_get(output_type, stack_name, resource_name=resource_name, resource_type=resource_type)
 
 getOutputReferences
 
@@ -624,10 +624,12 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
 output_type = 'output_type_example' # str | outputType
 stack_name = 'stack_name_example' # str | stackName
+resource_name = 'resource_name_example' # str | resourceName (optional)
+resource_type = 'resource_type_example' # str | resourceType (optional)
 
 try:
     # getOutputReferences
-    api_response = api_instance.get_output_references_using_get(output_type, stack_name)
+    api_response = api_instance.get_output_references_using_get(output_type, stack_name, resource_name=resource_name, resource_type=resource_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiDropdownsControllerApi->get_output_references_using_get: %s\n" % e)
@@ -639,6 +641,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **output_type** | **str**| outputType | 
  **stack_name** | **str**| stackName | 
+ **resource_name** | **str**| resourceName | [optional] 
+ **resource_type** | **str**| resourceType | [optional] 
 
 ### Return type
 

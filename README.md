@@ -1842,6 +1842,7 @@ Class | Method | HTTP request | Description
 *UiVersioningControllerApi* | [**delete_all_soft_delete_entities_using_delete**](docs/UiVersioningControllerApi.md#delete_all_soft_delete_entities_using_delete) | **DELETE** /cc-ui/v1/versions/softDeletedEntities/all | deleteAllSoftDeleteEntities
 *UiVersioningControllerApi* | [**delete_soft_delete_entity_using_delete**](docs/UiVersioningControllerApi.md#delete_soft_delete_entity_using_delete) | **DELETE** /cc-ui/v1/versions/softDeletedEntities | deleteSoftDeleteEntity
 *UiVersioningControllerApi* | [**get_version_by_id_using_get**](docs/UiVersioningControllerApi.md#get_version_by_id_using_get) | **GET** /cc-ui/v1/versions/id/{id} | getVersionById
+*UiVersioningControllerApi* | [**get_versions_paginated_using_get**](docs/UiVersioningControllerApi.md#get_versions_paginated_using_get) | **GET** /cc-ui/v1/versions/{versioningKey}/paginated | getVersionsPaginated
 *UiVersioningControllerApi* | [**get_versions_using_get**](docs/UiVersioningControllerApi.md#get_versions_using_get) | **GET** /cc-ui/v1/versions/{versioningKey} | getVersions
 *UiVersioningControllerApi* | [**restore_soft_delete_using_post**](docs/UiVersioningControllerApi.md#restore_soft_delete_using_post) | **POST** /cc-ui/v1/versions/softDeletedEntities/{entityId} | restoreSoftDelete
 *UiVersioningControllerApi* | [**restore_using_post**](docs/UiVersioningControllerApi.md#restore_using_post) | **POST** /cc-ui/v1/versions/{versionId}/restore | restore
@@ -2214,6 +2215,7 @@ Class | Method | HTTP request | Description
  - [PageDeploymentLog](docs/PageDeploymentLog.md)
  - [PageFacetsAuditLogResponse](docs/PageFacetsAuditLogResponse.md)
  - [PageResourceReleaseImpact](docs/PageResourceReleaseImpact.md)
+ - [PageVersion](docs/PageVersion.md)
  - [Pageable](docs/Pageable.md)
  - [PasswordChange](docs/PasswordChange.md)
  - [PauseReleaseRequest](docs/PauseReleaseRequest.md)

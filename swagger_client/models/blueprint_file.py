@@ -37,6 +37,7 @@ class BlueprintFile(object):
         'errors': 'list[BlueprintValidationError]',
         'expressions': 'list[RefExpression]',
         'filename': 'str',
+        'icon_url': 'str',
         'info': 'Info',
         'overridden': 'bool',
         'override': 'object',
@@ -61,6 +62,7 @@ class BlueprintFile(object):
         'errors': 'errors',
         'expressions': 'expressions',
         'filename': 'filename',
+        'icon_url': 'iconUrl',
         'info': 'info',
         'overridden': 'overridden',
         'override': 'override',
@@ -75,7 +77,7 @@ class BlueprintFile(object):
         'version': 'version'
     }
 
-    def __init__(self, alpha=None, children_resource_ids=None, cluster_id=None, content=None, directory=None, edges=None, errors=None, expressions=None, filename=None, info=None, overridden=None, override=None, parent_resource_id=None, resource_name=None, resource_type=None, stack_name=None, substack=None, sync_ctx_md5=None, sync_id=None, templated_resource=None, version=None):  # noqa: E501
+    def __init__(self, alpha=None, children_resource_ids=None, cluster_id=None, content=None, directory=None, edges=None, errors=None, expressions=None, filename=None, icon_url=None, info=None, overridden=None, override=None, parent_resource_id=None, resource_name=None, resource_type=None, stack_name=None, substack=None, sync_ctx_md5=None, sync_id=None, templated_resource=None, version=None):  # noqa: E501
         """BlueprintFile - a model defined in Swagger"""  # noqa: E501
         self._alpha = None
         self._children_resource_ids = None
@@ -86,6 +88,7 @@ class BlueprintFile(object):
         self._errors = None
         self._expressions = None
         self._filename = None
+        self._icon_url = None
         self._info = None
         self._overridden = None
         self._override = None
@@ -117,6 +120,8 @@ class BlueprintFile(object):
             self.expressions = expressions
         if filename is not None:
             self.filename = filename
+        if icon_url is not None:
+            self.icon_url = icon_url
         if info is not None:
             self.info = info
         if overridden is not None:
@@ -330,6 +335,27 @@ class BlueprintFile(object):
         """
 
         self._filename = filename
+
+    @property
+    def icon_url(self):
+        """Gets the icon_url of this BlueprintFile.  # noqa: E501
+
+
+        :return: The icon_url of this BlueprintFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._icon_url
+
+    @icon_url.setter
+    def icon_url(self, icon_url):
+        """Sets the icon_url of this BlueprintFile.
+
+
+        :param icon_url: The icon_url of this BlueprintFile.  # noqa: E501
+        :type: str
+        """
+
+        self._icon_url = icon_url
 
     @property
     def info(self):
