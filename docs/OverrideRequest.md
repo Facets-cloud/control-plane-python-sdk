@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **change_log** | **str** |  | [optional] 
+**overrides** | **object** |  | [optional] 
 **resource_name** | **str** |  | [optional] 
 **resource_type** | **str** |  | [optional] 
 

@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **created_by** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **description** | **str** |  | [optional] 
-**do_not_persist_version** | **bool** |  | [optional] 
 **facets_yaml** | **str** | Facets YAML content | [optional] 
 **feature_branch** | **bool** |  | [optional] 
 **flavor** | **str** | Flavor of the TF Module | [optional] 

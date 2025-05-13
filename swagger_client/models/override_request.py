@@ -29,24 +29,29 @@ class OverrideRequest(object):
     """
     swagger_types = {
         'change_log': 'str',
+        'overrides': 'object',
         'resource_name': 'str',
         'resource_type': 'str'
     }
 
     attribute_map = {
         'change_log': 'changeLog',
+        'overrides': 'overrides',
         'resource_name': 'resourceName',
         'resource_type': 'resourceType'
     }
 
-    def __init__(self, change_log=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, change_log=None, overrides=None, resource_name=None, resource_type=None):  # noqa: E501
         """OverrideRequest - a model defined in Swagger"""  # noqa: E501
         self._change_log = None
+        self._overrides = None
         self._resource_name = None
         self._resource_type = None
         self.discriminator = None
         if change_log is not None:
             self.change_log = change_log
+        if overrides is not None:
+            self.overrides = overrides
         if resource_name is not None:
             self.resource_name = resource_name
         if resource_type is not None:
@@ -72,6 +77,27 @@ class OverrideRequest(object):
         """
 
         self._change_log = change_log
+
+    @property
+    def overrides(self):
+        """Gets the overrides of this OverrideRequest.  # noqa: E501
+
+
+        :return: The overrides of this OverrideRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._overrides
+
+    @overrides.setter
+    def overrides(self, overrides):
+        """Sets the overrides of this OverrideRequest.
+
+
+        :param overrides: The overrides of this OverrideRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._overrides = overrides
 
     @property
     def resource_name(self):

@@ -36,7 +36,6 @@ class TFModule(object):
         'created_by': 'str',
         'creation_date': 'datetime',
         'description': 'str',
-        'do_not_persist_version': 'bool',
         'facets_yaml': 'str',
         'feature_branch': 'bool',
         'flavor': 'str',
@@ -75,7 +74,6 @@ class TFModule(object):
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
         'description': 'description',
-        'do_not_persist_version': 'doNotPersistVersion',
         'facets_yaml': 'facetsYaml',
         'feature_branch': 'featureBranch',
         'flavor': 'flavor',
@@ -105,7 +103,7 @@ class TFModule(object):
         'versioning_key': 'versioningKey'
     }
 
-    def __init__(self, account_id=None, alias_flavors=None, allowed_test_projects=None, clouds=None, contains_overridable_fields=None, created_by=None, creation_date=None, description=None, do_not_persist_version=None, facets_yaml=None, feature_branch=None, flavor=None, git_ref=None, git_url=None, iac_tool=None, id=None, inputs=None, intent=None, last_modified_by=None, last_modified_date=None, metadata=None, module_group_id=None, number_of_versions=None, outputs=None, path=None, readme_md=None, relative_path=None, sample_json=None, source=None, spec=None, spec_modeled=None, stage=None, tags=None, type=None, version=None, versioning_key=None):  # noqa: E501
+    def __init__(self, account_id=None, alias_flavors=None, allowed_test_projects=None, clouds=None, contains_overridable_fields=None, created_by=None, creation_date=None, description=None, facets_yaml=None, feature_branch=None, flavor=None, git_ref=None, git_url=None, iac_tool=None, id=None, inputs=None, intent=None, last_modified_by=None, last_modified_date=None, metadata=None, module_group_id=None, number_of_versions=None, outputs=None, path=None, readme_md=None, relative_path=None, sample_json=None, source=None, spec=None, spec_modeled=None, stage=None, tags=None, type=None, version=None, versioning_key=None):  # noqa: E501
         """TFModule - a model defined in Swagger"""  # noqa: E501
         self._account_id = None
         self._alias_flavors = None
@@ -115,7 +113,6 @@ class TFModule(object):
         self._created_by = None
         self._creation_date = None
         self._description = None
-        self._do_not_persist_version = None
         self._facets_yaml = None
         self._feature_branch = None
         self._flavor = None
@@ -160,8 +157,6 @@ class TFModule(object):
             self.creation_date = creation_date
         if description is not None:
             self.description = description
-        if do_not_persist_version is not None:
-            self.do_not_persist_version = do_not_persist_version
         if facets_yaml is not None:
             self.facets_yaml = facets_yaml
         if feature_branch is not None:
@@ -392,27 +387,6 @@ class TFModule(object):
         """
 
         self._description = description
-
-    @property
-    def do_not_persist_version(self):
-        """Gets the do_not_persist_version of this TFModule.  # noqa: E501
-
-
-        :return: The do_not_persist_version of this TFModule.  # noqa: E501
-        :rtype: bool
-        """
-        return self._do_not_persist_version
-
-    @do_not_persist_version.setter
-    def do_not_persist_version(self, do_not_persist_version):
-        """Sets the do_not_persist_version of this TFModule.
-
-
-        :param do_not_persist_version: The do_not_persist_version of this TFModule.  # noqa: E501
-        :type: bool
-        """
-
-        self._do_not_persist_version = do_not_persist_version
 
     @property
     def facets_yaml(self):
