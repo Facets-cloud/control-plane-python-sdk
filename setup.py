@@ -17,7 +17,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Anuj Hydrabadi",
-    author_email="anujhydrabadi@facets.cloud",
+    author_email="anuj.hydrabadi@facets.cloud",
     url="https://github.com/Facets-cloud/control-plane-python-sdk",
     keywords=["Swagger", "Api Documentation"],
     install_requires=REQUIRES,
