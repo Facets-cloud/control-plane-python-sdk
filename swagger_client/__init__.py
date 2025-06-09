@@ -98,6 +98,8 @@ from swagger_client.models.account import Account
 from swagger_client.models.account_association_info import AccountAssociationInfo
 from swagger_client.models.action_execution import ActionExecution
 from swagger_client.models.add_on_dto import AddOnDTO
+from swagger_client.models.affected_resource import AffectedResource
+from swagger_client.models.affected_resources_request import AffectedResourcesRequest
 from swagger_client.models.affinity import Affinity
 from swagger_client.models.alert import Alert
 from swagger_client.models.alert_group import AlertGroup
@@ -132,6 +134,7 @@ from swagger_client.models.assistant_request import AssistantRequest
 from swagger_client.models.assistant_response import AssistantResponse
 from swagger_client.models.attach_detach_ci_request import AttachDetachCiRequest
 from swagger_client.models.autocomplete_response import AutocompleteResponse
+from swagger_client.models.autocomplete_response_v2 import AutocompleteResponseV2
 from swagger_client.models.availability_schedule import AvailabilitySchedule
 from swagger_client.models.availability_task_schedule import AvailabilityTaskSchedule
 from swagger_client.models.aws_account import AwsAccount
@@ -191,8 +194,6 @@ from swagger_client.models.cluster_resources_response import ClusterResourcesRes
 from swagger_client.models.cluster_resources_response_facets_resource import ClusterResourcesResponseFacetsResource
 from swagger_client.models.cluster_response import ClusterResponse
 from swagger_client.models.cluster_schedule import ClusterSchedule
-from swagger_client.models.cluster_task import ClusterTask
-from swagger_client.models.cluster_task_request import ClusterTaskRequest
 from swagger_client.models.cluster_tf_version_mapping import ClusterTfVersionMapping
 from swagger_client.models.code_build_status_callback import CodeBuildStatusCallback
 from swagger_client.models.coder_account import CoderAccount
@@ -388,6 +389,7 @@ from swagger_client.models.log_event import LogEvent
 from swagger_client.models.maintenance_window_dto import MaintenanceWindowDTO
 from swagger_client.models.managed_fields_entry import ManagedFieldsEntry
 from swagger_client.models.mapstring_artifact import MapstringArtifact
+from swagger_client.models.mapstring_json_node import MapstringJsonNode
 from swagger_client.models.mapstring_snapshot_info import MapstringSnapshotInfo
 from swagger_client.models.mapstring_tf_module_lite_list_dto import MapstringTFModuleLiteListDTO
 from swagger_client.models.mapstringobject import Mapstringobject
@@ -525,6 +527,7 @@ from swagger_client.models.replicaset_dto import ReplicasetDTO
 from swagger_client.models.repository import Repository
 from swagger_client.models.reset_password_request import ResetPasswordRequest
 from swagger_client.models.resource import Resource
+from swagger_client.models.resource_affected_response import ResourceAffectedResponse
 from swagger_client.models.resource_change import ResourceChange
 from swagger_client.models.resource_claim import ResourceClaim
 from swagger_client.models.resource_details import ResourceDetails
@@ -611,6 +614,7 @@ from swagger_client.models.tf_output_response_dto import TFOutputResponseDTO
 from swagger_client.models.tf_provider import TFProvider
 from swagger_client.models.tf_run_configurations import TFRunConfigurations
 from swagger_client.models.tag_data_model import TagDataModel
+from swagger_client.models.target_resource import TargetResource
 from swagger_client.models.team import Team
 from swagger_client.models.team_membership import TeamMembership
 from swagger_client.models.team_resource import TeamResource

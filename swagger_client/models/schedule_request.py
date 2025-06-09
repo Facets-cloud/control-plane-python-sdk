@@ -208,7 +208,7 @@ class ScheduleRequest(object):
         :param release_type: The release_type of this ScheduleRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT"]  # noqa: E501
+        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
         if release_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501

@@ -1,12 +1,9 @@
-# InputOutputResource
+# AutocompleteResponseV2
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**default** | **bool** |  | [optional] 
-**output_name** | **str** |  | [optional] 
-**resource_name** | **str** |  | [optional] 
-**resource_type** | **str** |  | [optional] 
+**resource_output_trees** | **dict(str, dict(str, JsonNode))** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

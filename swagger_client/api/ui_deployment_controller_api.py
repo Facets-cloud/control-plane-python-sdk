@@ -2066,6 +2066,7 @@ class UiDeploymentControllerApi(object):
         :param bool signed_off: signedOff
         :param datetime start: start
         :param str status: status
+        :param str tf_version: tfVersion
         :param str triggered_by: triggeredBy
         :return: PageDeploymentLog
                  If the method is called asynchronously,
@@ -2096,13 +2097,14 @@ class UiDeploymentControllerApi(object):
         :param bool signed_off: signedOff
         :param datetime start: start
         :param str status: status
+        :param str tf_version: tfVersion
         :param str triggered_by: triggeredBy
         :return: PageDeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'end', 'exclude_status', 'page_number', 'page_size', 'release_type', 'signed_off', 'start', 'status', 'triggered_by']  # noqa: E501
+        all_params = ['cluster_id', 'end', 'exclude_status', 'page_number', 'page_size', 'release_type', 'signed_off', 'start', 'status', 'tf_version', 'triggered_by']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2146,6 +2148,8 @@ class UiDeploymentControllerApi(object):
             query_params.append(('start', params['start']))  # noqa: E501
         if 'status' in params:
             query_params.append(('status', params['status']))  # noqa: E501
+        if 'tf_version' in params:
+            query_params.append(('tfVersion', params['tf_version']))  # noqa: E501
         if 'triggered_by' in params:
             query_params.append(('triggeredBy', params['triggered_by']))  # noqa: E501
 
@@ -2653,6 +2657,123 @@ class UiDeploymentControllerApi(object):
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/maintenance', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeploymentLog',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def trigger_rollback_plan_release_using_post(self, cluster_id, deployment_id, resource_name, resource_type, **kwargs):  # noqa: E501
+        """triggerRollbackPlanRelease  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.trigger_rollback_plan_release_using_post(cluster_id, deployment_id, resource_name, resource_type, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: clusterId (required)
+        :param str deployment_id: deploymentId (required)
+        :param str resource_name: resourceName (required)
+        :param str resource_type: resourceType (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.trigger_rollback_plan_release_using_post_with_http_info(cluster_id, deployment_id, resource_name, resource_type, **kwargs)  # noqa: E501
+        else:
+            (data) = self.trigger_rollback_plan_release_using_post_with_http_info(cluster_id, deployment_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return data
+
+    def trigger_rollback_plan_release_using_post_with_http_info(self, cluster_id, deployment_id, resource_name, resource_type, **kwargs):  # noqa: E501
+        """triggerRollbackPlanRelease  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.trigger_rollback_plan_release_using_post_with_http_info(cluster_id, deployment_id, resource_name, resource_type, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: clusterId (required)
+        :param str deployment_id: deploymentId (required)
+        :param str resource_name: resourceName (required)
+        :param str resource_type: resourceType (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cluster_id', 'deployment_id', 'resource_name', 'resource_type']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method trigger_rollback_plan_release_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'cluster_id' is set
+        if ('cluster_id' not in params or
+                params['cluster_id'] is None):
+            raise ValueError("Missing the required parameter `cluster_id` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params or
+                params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'cluster_id' in params:
+            path_params['clusterId'] = params['cluster_id']  # noqa: E501
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['main']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan', 'POST',
             path_params,
             query_params,
             header_params,

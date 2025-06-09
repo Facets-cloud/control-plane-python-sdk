@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **static_image** | **str** |  | [optional] 
 **strategy** | **str** |  | [optional] 
 **tag** | **str** |  | [optional] 
+**tf_module_id** | **str** |  | [optional] 
 **ui** | **object** |  | [optional] 
 **version** | **str** |  | [optional] 
 

@@ -130,6 +130,7 @@ class UiTfModuleControllerApi(object):
 
         :param async_req bool
         :param str id: id (required)
+        :param bool force: force
         :return: TFModule
                  If the method is called asynchronously,
                  returns the request thread.
@@ -152,12 +153,13 @@ class UiTfModuleControllerApi(object):
 
         :param async_req bool
         :param str id: id (required)
+        :param bool force: force
         :return: TFModule
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'force']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -184,6 +186,8 @@ class UiTfModuleControllerApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'force' in params:
+            query_params.append(('force', params['force']))  # noqa: E501
 
         header_params = {}
 

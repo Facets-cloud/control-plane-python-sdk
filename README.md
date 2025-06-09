@@ -1289,10 +1289,8 @@ Class | Method | HTTP request | Description
 *PublicApIsApi* | [**link_k8s_account_using_post**](docs/PublicApIsApi.md#link_k8s_account_using_post) | **POST** /public/v1/link-kubernetes | linkK8sAccount
 *PublicApIsApi* | [**process_github_installation_request_using_post**](docs/PublicApIsApi.md#process_github_installation_request_using_post) | **POST** /public/v1/github-installation-request | processGithubInstallationRequest
 *PublicApIsApi* | [**retrieve_theme_file_using_get**](docs/PublicApIsApi.md#retrieve_theme_file_using_get) | **GET** /public/v1/themeFile | retrieveThemeFile
-*StackControllerApi* | [**create_cluster_tasks_using_post**](docs/StackControllerApi.md#create_cluster_tasks_using_post) | **POST** /cc/v1/stacks/clusterTask | createClusterTasks
 *StackControllerApi* | [**create_stack_using_post**](docs/StackControllerApi.md#create_stack_using_post) | **POST** /cc/v1/stacks/ | createStack
 *StackControllerApi* | [**create_substack_using_post**](docs/StackControllerApi.md#create_substack_using_post) | **POST** /cc/v1/stacks/substack/{substackName} | createSubstack
-*StackControllerApi* | [**get_cluster_tasks_using_get**](docs/StackControllerApi.md#get_cluster_tasks_using_get) | **GET** /cc/v1/stacks/clusterTask/{stackName} | getClusterTasks
 *StackControllerApi* | [**get_clusters_using_get**](docs/StackControllerApi.md#get_clusters_using_get) | **GET** /cc/v1/stacks/{stackName}/clusters | getClusters
 *StackControllerApi* | [**get_stacks_using_get**](docs/StackControllerApi.md#get_stacks_using_get) | **GET** /cc/v1/stacks/ | getStacks
 *StackControllerApi* | [**reload_stack_using_get**](docs/StackControllerApi.md#reload_stack_using_get) | **GET** /cc/v1/stacks/{stackName}/reload | reloadStack
@@ -1441,12 +1439,11 @@ Class | Method | HTTP request | Description
 *UiBlueprintDesignerControllerApi* | [**bulk_edit_disabled_for_resources_using_put1**](docs/UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources_using_put1) | **PUT** /cc-ui/v1/designer/{stackName}/resource-enable-disable | bulkEditDisabledForResources
 *UiBlueprintDesignerControllerApi* | [**create_branch_using_post**](docs/UiBlueprintDesignerControllerApi.md#create_branch_using_post) | **POST** /cc-ui/v1/designer/{stackName}/{branch}/create-branch | createBranch
 *UiBlueprintDesignerControllerApi* | [**create_resources_using_post**](docs/UiBlueprintDesignerControllerApi.md#create_resources_using_post) | **POST** /cc-ui/v1/designer/{stackName}/branch/{branch} | createResources
-*UiBlueprintDesignerControllerApi* | [**create_resources_using_post1**](docs/UiBlueprintDesignerControllerApi.md#create_resources_using_post1) | **POST** /cc-ui/v1/designer/{stackName} | createResources
 *UiBlueprintDesignerControllerApi* | [**delete_resources_using_delete**](docs/UiBlueprintDesignerControllerApi.md#delete_resources_using_delete) | **DELETE** /cc-ui/v1/designer/{stackName}/branch/{branch} | deleteResources
-*UiBlueprintDesignerControllerApi* | [**delete_resources_using_delete1**](docs/UiBlueprintDesignerControllerApi.md#delete_resources_using_delete1) | **DELETE** /cc-ui/v1/designer/{stackName} | deleteResources
 *UiBlueprintDesignerControllerApi* | [**delete_variables_using_delete**](docs/UiBlueprintDesignerControllerApi.md#delete_variables_using_delete) | **DELETE** /cc-ui/v1/designer/{stackName}/variables | deleteVariables
 *UiBlueprintDesignerControllerApi* | [**get_add_on_modules_using_get**](docs/UiBlueprintDesignerControllerApi.md#get_add_on_modules_using_get) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/add-ons | Get add ons for this resource
 *UiBlueprintDesignerControllerApi* | [**get_autocomplete_data_using_get**](docs/UiBlueprintDesignerControllerApi.md#get_autocomplete_data_using_get) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data | getAutocompleteData
+*UiBlueprintDesignerControllerApi* | [**get_autocomplete_data_v2_using_get**](docs/UiBlueprintDesignerControllerApi.md#get_autocomplete_data_v2_using_get) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data-v2 | Get autocomplete data with module-specific output trees
 *UiBlueprintDesignerControllerApi* | [**get_designer_resources_using_get**](docs/UiBlueprintDesignerControllerApi.md#get_designer_resources_using_get) | **GET** /cc-ui/v1/designer/{stackName}/{branchName}/files | getDesignerResources
 *UiBlueprintDesignerControllerApi* | [**get_module_inputs_using_get**](docs/UiBlueprintDesignerControllerApi.md#get_module_inputs_using_get) | **GET** /cc-ui/v1/designer/{stackName}/intent/{intent}/flavor/{flavor}/input | getModuleInputs
 *UiBlueprintDesignerControllerApi* | [**get_pull_requests_using_get**](docs/UiBlueprintDesignerControllerApi.md#get_pull_requests_using_get) | **GET** /cc-ui/v1/designer/{stackName}/pulls | getPullRequests
@@ -1459,10 +1456,8 @@ Class | Method | HTTP request | Description
 *UiBlueprintDesignerControllerApi* | [**list_branches_using_get**](docs/UiBlueprintDesignerControllerApi.md#list_branches_using_get) | **GET** /cc-ui/v1/designer/{stackName}/branch-list | listBranches
 *UiBlueprintDesignerControllerApi* | [**list_branches_using_get1**](docs/UiBlueprintDesignerControllerApi.md#list_branches_using_get1) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/branch-list | listBranches
 *UiBlueprintDesignerControllerApi* | [**rename_resource_using_put**](docs/UiBlueprintDesignerControllerApi.md#rename_resource_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/rename | renameResource
-*UiBlueprintDesignerControllerApi* | [**rename_resource_using_put1**](docs/UiBlueprintDesignerControllerApi.md#rename_resource_using_put1) | **PUT** /cc-ui/v1/designer/{stackName}/rename | renameResource
 *UiBlueprintDesignerControllerApi* | [**sync_specified_blueprints_with_templates_using_post**](docs/UiBlueprintDesignerControllerApi.md#sync_specified_blueprints_with_templates_using_post) | **POST** /cc-ui/v1/designer/{templateName}/sync | syncSpecifiedBlueprintsWithTemplates
 *UiBlueprintDesignerControllerApi* | [**update_resources_using_put**](docs/UiBlueprintDesignerControllerApi.md#update_resources_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch} | updateResources
-*UiBlueprintDesignerControllerApi* | [**update_resources_using_put1**](docs/UiBlueprintDesignerControllerApi.md#update_resources_using_put1) | **PUT** /cc-ui/v1/designer/{stackName} | updateResources
 *UiBlueprintDesignerControllerApi* | [**update_variables_using_put**](docs/UiBlueprintDesignerControllerApi.md#update_variables_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/variables | updateVariables
 *UiChatGptControllerApi* | [**analyze_kubernetes_cluster_using_get**](docs/UiChatGptControllerApi.md#analyze_kubernetes_cluster_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/kubernetes/analyze | analyzeKubernetesCluster
 *UiChatGptControllerApi* | [**chat_using_post**](docs/UiChatGptControllerApi.md#chat_using_post) | **POST** /cc-ui/v1/clusters/chat/{chatId} | Send a message to a chat
@@ -1507,9 +1502,7 @@ Class | Method | HTTP request | Description
 *UiCommonClusterControllerApi* | [**delete_template_inputs_using_delete**](docs/UiCommonClusterControllerApi.md#delete_template_inputs_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/templateInputs/{inputType}/items/{uid} | deleteTemplateInputs
 *UiCommonClusterControllerApi* | [**delete_tools_config_using_delete**](docs/UiCommonClusterControllerApi.md#delete_tools_config_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/tools-config | deleteToolsConfig
 *UiCommonClusterControllerApi* | [**detach_image_using_delete**](docs/UiCommonClusterControllerApi.md#detach_image_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/detachImage | detachImage
-*UiCommonClusterControllerApi* | [**disable_cluster_task_using_post**](docs/UiCommonClusterControllerApi.md#disable_cluster_task_using_post) | **POST** /cc-ui/v1/clusters/clusterTask/disable | disableClusterTask
 *UiCommonClusterControllerApi* | [**edit_tools_config_using_put**](docs/UiCommonClusterControllerApi.md#edit_tools_config_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/tools-config/{toolsConfigId} | editToolsConfig
-*UiCommonClusterControllerApi* | [**enable_cluster_task_using_post**](docs/UiCommonClusterControllerApi.md#enable_cluster_task_using_post) | **POST** /cc-ui/v1/clusters/clusterTask/enable | enableClusterTask
 *UiCommonClusterControllerApi* | [**get_alerts_using_get**](docs/UiCommonClusterControllerApi.md#get_alerts_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/alerts | getAlerts
 *UiCommonClusterControllerApi* | [**get_all_template_inputs_using_get**](docs/UiCommonClusterControllerApi.md#get_all_template_inputs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/templateInputs/ | getAllTemplateInputs
 *UiCommonClusterControllerApi* | [**get_availability_schedules_using_get**](docs/UiCommonClusterControllerApi.md#get_availability_schedules_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/availability-schedule | getAvailabilitySchedules
@@ -1517,7 +1510,6 @@ Class | Method | HTTP request | Description
 *UiCommonClusterControllerApi* | [**get_cluster_info_using_get**](docs/UiCommonClusterControllerApi.md#get_cluster_info_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/info | getClusterInfo
 *UiCommonClusterControllerApi* | [**get_cluster_metadata_using_get**](docs/UiCommonClusterControllerApi.md#get_cluster_metadata_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/cluster-metadata | getClusterMetadata
 *UiCommonClusterControllerApi* | [**get_cluster_schedules_using_get**](docs/UiCommonClusterControllerApi.md#get_cluster_schedules_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/schedule | getClusterSchedules
-*UiCommonClusterControllerApi* | [**get_cluster_task_using_get**](docs/UiCommonClusterControllerApi.md#get_cluster_task_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/clusterTask | getClusterTask
 *UiCommonClusterControllerApi* | [**get_cluster_tf_details_using_get**](docs/UiCommonClusterControllerApi.md#get_cluster_tf_details_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/tfRunConfigurations | getClusterTFDetails
 *UiCommonClusterControllerApi* | [**get_k8s_credentials_using_get**](docs/UiCommonClusterControllerApi.md#get_k8s_credentials_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8sCredentials | getK8sCredentials
 *UiCommonClusterControllerApi* | [**get_kube_config_using_get**](docs/UiCommonClusterControllerApi.md#get_kube_config_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/kubeconfig | getKubeConfig
@@ -1593,11 +1585,14 @@ Class | Method | HTTP request | Description
 *UiDeploymentControllerApi* | [**state_unlock_using_put**](docs/UiDeploymentControllerApi.md#state_unlock_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/unlock | stateUnlock
 *UiDeploymentControllerApi* | [**stream_deployment_logs_using_get**](docs/UiDeploymentControllerApi.md#stream_deployment_logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs/stream | streamDeploymentLogs
 *UiDeploymentControllerApi* | [**trigger_maintenance_release_using_post**](docs/UiDeploymentControllerApi.md#trigger_maintenance_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/maintenance | triggerMaintenanceRelease
+*UiDeploymentControllerApi* | [**trigger_rollback_plan_release_using_post**](docs/UiDeploymentControllerApi.md#trigger_rollback_plan_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan | triggerRollbackPlanRelease
 *UiDeploymentControllerApi* | [**trigger_terraform_export_using_post**](docs/UiDeploymentControllerApi.md#trigger_terraform_export_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/terraform-export | triggerTerraformExport
 *UiDomainMappingControllerApi* | [**add_domain_mapping_using_post**](docs/UiDomainMappingControllerApi.md#add_domain_mapping_using_post) | **POST** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | addDomainMapping
 *UiDomainMappingControllerApi* | [**delete_domain_mapping_using_delete**](docs/UiDomainMappingControllerApi.md#delete_domain_mapping_using_delete) | **DELETE** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | deleteDomainMapping
 *UiDomainMappingControllerApi* | [**get_all_domains_using_get**](docs/UiDomainMappingControllerApi.md#get_all_domains_using_get) | **GET** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | getAllDomains
 *UiDomainMappingControllerApi* | [**update_domain_mapping_using_put**](docs/UiDomainMappingControllerApi.md#update_domain_mapping_using_put) | **PUT** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | updateDomainMapping
+*UiDropdownsControllerApi* | [**get_affected_resources_by_cluster_using_post**](docs/UiDropdownsControllerApi.md#get_affected_resources_by_cluster_using_post) | **POST** /cc-ui/v1/dropdown/cluster/{clusterId}/affected-resources | getAffectedResourcesByCluster
+*UiDropdownsControllerApi* | [**get_affected_resources_by_stack_using_post**](docs/UiDropdownsControllerApi.md#get_affected_resources_by_stack_using_post) | **POST** /cc-ui/v1/dropdown/stack/{stackName}/affected-resources | getAffectedResourcesByStack
 *UiDropdownsControllerApi* | [**get_all_cluster_resources_by_stack_using_get**](docs/UiDropdownsControllerApi.md#get_all_cluster_resources_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/cluster-resources-info | getAllClusterResourcesByStack
 *UiDropdownsControllerApi* | [**get_all_permissions_using_get**](docs/UiDropdownsControllerApi.md#get_all_permissions_using_get) | **GET** /cc-ui/v1/dropdown/getAllPermissions | getAllPermissions
 *UiDropdownsControllerApi* | [**get_all_resources_by_cluster_using_get**](docs/UiDropdownsControllerApi.md#get_all_resources_by_cluster_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources-info | getAllResourcesByCluster
@@ -1606,11 +1601,13 @@ Class | Method | HTTP request | Description
 *UiDropdownsControllerApi* | [**get_all_resources_using_get**](docs/UiDropdownsControllerApi.md#get_all_resources_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources | getAllResources
 *UiDropdownsControllerApi* | [**get_all_vcs_using_get**](docs/UiDropdownsControllerApi.md#get_all_vcs_using_get) | **GET** /cc-ui/v1/dropdown/vcs | getAllVCS
 *UiDropdownsControllerApi* | [**get_application_list_by_cluster_id_and_resource_name_using_get**](docs/UiDropdownsControllerApi.md#get_application_list_by_cluster_id_and_resource_name_using_get) | **GET** /cc-ui/v1/dropdown/{clusterId}/{resourceType} | getApplicationListByClusterIdAndResourceName
+*UiDropdownsControllerApi* | [**get_az_for_region_by_cloud_using_get**](docs/UiDropdownsControllerApi.md#get_az_for_region_by_cloud_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/region/{region}/availability-zones | getAzForRegionByCloud
 *UiDropdownsControllerApi* | [**get_file_from_facets_modules_using_get**](docs/UiDropdownsControllerApi.md#get_file_from_facets_modules_using_get) | **GET** /cc-ui/v1/dropdown/file | getFileFromFacetsModules
 *UiDropdownsControllerApi* | [**get_git_history_for_resource_using_get**](docs/UiDropdownsControllerApi.md#get_git_history_for_resource_using_get) | **GET** /cc-ui/v1/dropdown/logs/cluster/{clusterId}/resourceName/{resourceName}/resourceType/{resourceType} | getGitHistoryForResource
 *UiDropdownsControllerApi* | [**get_launch_dag_using_get**](docs/UiDropdownsControllerApi.md#get_launch_dag_using_get) | **GET** /cc-ui/v1/dropdown/{clusterId}/cloud/{cloud}/launch-dag | getLaunchDAG
 *UiDropdownsControllerApi* | [**get_output_references_using_get**](docs/UiDropdownsControllerApi.md#get_output_references_using_get) | **GET** /cc-ui/v1/dropdown/{stackName}/output/{outputType}/references | getOutputReferences
 *UiDropdownsControllerApi* | [**get_regions_using_get**](docs/UiDropdownsControllerApi.md#get_regions_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/regions | getRegions
+*UiDropdownsControllerApi* | [**get_regions_v2_using_get**](docs/UiDropdownsControllerApi.md#get_regions_v2_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/regions-v2 | getRegionsV2
 *UiDropdownsControllerApi* | [**get_release_streams_using_get**](docs/UiDropdownsControllerApi.md#get_release_streams_using_get) | **GET** /cc-ui/v1/dropdown/releaseStreams | getReleaseStreams
 *UiDropdownsControllerApi* | [**get_resource_by_cluster_id_using_get**](docs/UiDropdownsControllerApi.md#get_resource_by_cluster_id_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/{resourceType}/{resourceName}/resource-info | getResourceByClusterId
 *UiDropdownsControllerApi* | [**get_resource_by_stack_using_get**](docs/UiDropdownsControllerApi.md#get_resource_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/resource-info | getResourceByStack
@@ -1742,7 +1739,6 @@ Class | Method | HTTP request | Description
 *UiSettingsControllerApi* | [**get_all_settings_yaml_using_get**](docs/UiSettingsControllerApi.md#get_all_settings_yaml_using_get) | **GET** /cc-ui/v1/settings/ui-yaml | getAllSettingsYaml
 *UiSettingsControllerApi* | [**get_setting_value_using_get**](docs/UiSettingsControllerApi.md#get_setting_value_using_get) | **GET** /cc-ui/v1/settings/value/{entityType}/{entityId} | getSettingValue
 *UiSettingsControllerApi* | [**set_onboarding_display_using_put**](docs/UiSettingsControllerApi.md#set_onboarding_display_using_put) | **PUT** /cc-ui/v1/settings/onboarding-display/{value} | setOnboardingDisplay
-*UiStackControllerApi* | [**create_cluster_tasks_using_post1**](docs/UiStackControllerApi.md#create_cluster_tasks_using_post1) | **POST** /cc-ui/v1/stacks/clusterTask | createClusterTasks
 *UiStackControllerApi* | [**create_project_using_post**](docs/UiStackControllerApi.md#create_project_using_post) | **POST** /cc-ui/v1/stacks/project | createProject
 *UiStackControllerApi* | [**create_stack_using_post1**](docs/UiStackControllerApi.md#create_stack_using_post1) | **POST** /cc-ui/v1/stacks/ | createStack
 *UiStackControllerApi* | [**create_stack_v2_using_post**](docs/UiStackControllerApi.md#create_stack_v2_using_post) | **POST** /cc-ui/v1/stacks/v2 | createStackV2
@@ -1751,7 +1747,6 @@ Class | Method | HTTP request | Description
 *UiStackControllerApi* | [**create_subscription_using_post1**](docs/UiStackControllerApi.md#create_subscription_using_post1) | **POST** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | createSubscription
 *UiStackControllerApi* | [**delete_stack_using_delete**](docs/UiStackControllerApi.md#delete_stack_using_delete) | **DELETE** /cc-ui/v1/stacks/{stackName} | deleteStack
 *UiStackControllerApi* | [**enable_git_ops_using_put**](docs/UiStackControllerApi.md#enable_git_ops_using_put) | **PUT** /cc-ui/v1/stacks/{stackName}/enable-git-ops | enableGitOps
-*UiStackControllerApi* | [**get_all_cluster_tasks_using_get**](docs/UiStackControllerApi.md#get_all_cluster_tasks_using_get) | **GET** /cc-ui/v1/stacks/clusterTask/{stackName} | getAllClusterTasks
 *UiStackControllerApi* | [**get_all_clusters_using_get**](docs/UiStackControllerApi.md#get_all_clusters_using_get) | **GET** /cc-ui/v1/stacks/clusters | getAllClusters
 *UiStackControllerApi* | [**get_all_subscriptions_using_get1**](docs/UiStackControllerApi.md#get_all_subscriptions_using_get1) | **GET** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | getAllSubscriptions
 *UiStackControllerApi* | [**get_all_template_inputs_meta_using_get**](docs/UiStackControllerApi.md#get_all_template_inputs_meta_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/templateInputs/meta | getAllTemplateInputsMeta
@@ -1864,6 +1859,8 @@ Class | Method | HTTP request | Description
  - [AccountAssociationInfo](docs/AccountAssociationInfo.md)
  - [ActionExecution](docs/ActionExecution.md)
  - [AddOnDTO](docs/AddOnDTO.md)
+ - [AffectedResource](docs/AffectedResource.md)
+ - [AffectedResourcesRequest](docs/AffectedResourcesRequest.md)
  - [Affinity](docs/Affinity.md)
  - [Alert](docs/Alert.md)
  - [AlertGroup](docs/AlertGroup.md)
@@ -1898,6 +1895,7 @@ Class | Method | HTTP request | Description
  - [AssistantResponse](docs/AssistantResponse.md)
  - [AttachDetachCiRequest](docs/AttachDetachCiRequest.md)
  - [AutocompleteResponse](docs/AutocompleteResponse.md)
+ - [AutocompleteResponseV2](docs/AutocompleteResponseV2.md)
  - [AvailabilitySchedule](docs/AvailabilitySchedule.md)
  - [AvailabilityTaskSchedule](docs/AvailabilityTaskSchedule.md)
  - [AwsAccount](docs/AwsAccount.md)
@@ -1957,8 +1955,6 @@ Class | Method | HTTP request | Description
  - [ClusterResourcesResponseFacetsResource](docs/ClusterResourcesResponseFacetsResource.md)
  - [ClusterResponse](docs/ClusterResponse.md)
  - [ClusterSchedule](docs/ClusterSchedule.md)
- - [ClusterTask](docs/ClusterTask.md)
- - [ClusterTaskRequest](docs/ClusterTaskRequest.md)
  - [ClusterTfVersionMapping](docs/ClusterTfVersionMapping.md)
  - [CodeBuildStatusCallback](docs/CodeBuildStatusCallback.md)
  - [CoderAccount](docs/CoderAccount.md)
@@ -2154,6 +2150,7 @@ Class | Method | HTTP request | Description
  - [MaintenanceWindowDTO](docs/MaintenanceWindowDTO.md)
  - [ManagedFieldsEntry](docs/ManagedFieldsEntry.md)
  - [MapstringArtifact](docs/MapstringArtifact.md)
+ - [MapstringJsonNode](docs/MapstringJsonNode.md)
  - [MapstringSnapshotInfo](docs/MapstringSnapshotInfo.md)
  - [MapstringTFModuleLiteListDTO](docs/MapstringTFModuleLiteListDTO.md)
  - [Mapstringobject](docs/Mapstringobject.md)
@@ -2291,6 +2288,7 @@ Class | Method | HTTP request | Description
  - [Repository](docs/Repository.md)
  - [ResetPasswordRequest](docs/ResetPasswordRequest.md)
  - [Resource](docs/Resource.md)
+ - [ResourceAffectedResponse](docs/ResourceAffectedResponse.md)
  - [ResourceChange](docs/ResourceChange.md)
  - [ResourceClaim](docs/ResourceClaim.md)
  - [ResourceDetails](docs/ResourceDetails.md)
@@ -2377,6 +2375,7 @@ Class | Method | HTTP request | Description
  - [TFProvider](docs/TFProvider.md)
  - [TFRunConfigurations](docs/TFRunConfigurations.md)
  - [TagDataModel](docs/TagDataModel.md)
+ - [TargetResource](docs/TargetResource.md)
  - [Team](docs/Team.md)
  - [TeamMembership](docs/TeamMembership.md)
  - [TeamResource](docs/TeamResource.md)

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **release_comment** | **str** |  | [optional] 
 **release_trace_id** | **str** |  | [optional] 
 **release_type** | **str** | CUSTOM | [optional] 
+**rollback_deployment_id** | **str** |  | [optional] 
 **tf_version** | [**TfVersion**](TfVersion.md) |  | [optional] 
 **with_refresh** | **bool** | false | [optional] 
 
