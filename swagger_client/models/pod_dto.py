@@ -196,7 +196,7 @@ class PodDTO(object):
         :param status: The status of this PodDTO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Pending", "Running", "Succeeded", "Failed", "Unknown", "CrashLoopBackOff", "ImagePullBackOff", "ContainerCreating", "Terminating", "Evicted", "Completed", "Restarting", "Error", "InvalidImageName"]  # noqa: E501
+        allowed_values = ["Pending", "Running", "Succeeded", "Failed", "Unknown", "CrashLoopBackOff", "ImagePullBackOff", "ContainerCreating", "Terminating", "Evicted", "Completed", "Restarting", "Error", "InvalidImageName", "OOMKilled"]  # noqa: E501
         if status not in allowed_values:
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501

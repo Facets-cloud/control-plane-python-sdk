@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **current_override_version** | **str** |  | [optional] 
 **current_state** | **str** |  | [optional] 
 **disabled** | **bool** |  | [optional] 
+**flavor** | **str** |  | [optional] 
 **has_state_change** | **bool** |  | [optional] 
 **health_status** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 

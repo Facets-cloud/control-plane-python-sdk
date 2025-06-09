@@ -10,12 +10,11 @@ Method | HTTP request | Description
 [**bulk_edit_disabled_for_resources_using_put1**](UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources_using_put1) | **PUT** /cc-ui/v1/designer/{stackName}/resource-enable-disable | bulkEditDisabledForResources
 [**create_branch_using_post**](UiBlueprintDesignerControllerApi.md#create_branch_using_post) | **POST** /cc-ui/v1/designer/{stackName}/{branch}/create-branch | createBranch
 [**create_resources_using_post**](UiBlueprintDesignerControllerApi.md#create_resources_using_post) | **POST** /cc-ui/v1/designer/{stackName}/branch/{branch} | createResources
-[**create_resources_using_post1**](UiBlueprintDesignerControllerApi.md#create_resources_using_post1) | **POST** /cc-ui/v1/designer/{stackName} | createResources
 [**delete_resources_using_delete**](UiBlueprintDesignerControllerApi.md#delete_resources_using_delete) | **DELETE** /cc-ui/v1/designer/{stackName}/branch/{branch} | deleteResources
-[**delete_resources_using_delete1**](UiBlueprintDesignerControllerApi.md#delete_resources_using_delete1) | **DELETE** /cc-ui/v1/designer/{stackName} | deleteResources
 [**delete_variables_using_delete**](UiBlueprintDesignerControllerApi.md#delete_variables_using_delete) | **DELETE** /cc-ui/v1/designer/{stackName}/variables | deleteVariables
 [**get_add_on_modules_using_get**](UiBlueprintDesignerControllerApi.md#get_add_on_modules_using_get) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/add-ons | Get add ons for this resource
 [**get_autocomplete_data_using_get**](UiBlueprintDesignerControllerApi.md#get_autocomplete_data_using_get) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data | getAutocompleteData
+[**get_autocomplete_data_v2_using_get**](UiBlueprintDesignerControllerApi.md#get_autocomplete_data_v2_using_get) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data-v2 | Get autocomplete data with module-specific output trees
 [**get_designer_resources_using_get**](UiBlueprintDesignerControllerApi.md#get_designer_resources_using_get) | **GET** /cc-ui/v1/designer/{stackName}/{branchName}/files | getDesignerResources
 [**get_module_inputs_using_get**](UiBlueprintDesignerControllerApi.md#get_module_inputs_using_get) | **GET** /cc-ui/v1/designer/{stackName}/intent/{intent}/flavor/{flavor}/input | getModuleInputs
 [**get_pull_requests_using_get**](UiBlueprintDesignerControllerApi.md#get_pull_requests_using_get) | **GET** /cc-ui/v1/designer/{stackName}/pulls | getPullRequests
@@ -28,10 +27,8 @@ Method | HTTP request | Description
 [**list_branches_using_get**](UiBlueprintDesignerControllerApi.md#list_branches_using_get) | **GET** /cc-ui/v1/designer/{stackName}/branch-list | listBranches
 [**list_branches_using_get1**](UiBlueprintDesignerControllerApi.md#list_branches_using_get1) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/branch-list | listBranches
 [**rename_resource_using_put**](UiBlueprintDesignerControllerApi.md#rename_resource_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/rename | renameResource
-[**rename_resource_using_put1**](UiBlueprintDesignerControllerApi.md#rename_resource_using_put1) | **PUT** /cc-ui/v1/designer/{stackName}/rename | renameResource
 [**sync_specified_blueprints_with_templates_using_post**](UiBlueprintDesignerControllerApi.md#sync_specified_blueprints_with_templates_using_post) | **POST** /cc-ui/v1/designer/{templateName}/sync | syncSpecifiedBlueprintsWithTemplates
 [**update_resources_using_put**](UiBlueprintDesignerControllerApi.md#update_resources_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch} | updateResources
-[**update_resources_using_put1**](UiBlueprintDesignerControllerApi.md#update_resources_using_put1) | **PUT** /cc-ui/v1/designer/{stackName} | updateResources
 [**update_variables_using_put**](UiBlueprintDesignerControllerApi.md#update_variables_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/variables | updateVariables
 
 # **add_variables_using_post**
@@ -348,57 +345,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_resources_using_post1**
-> create_resources_using_post1(body, stack_name)
-
-createResources
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | resourceFileRequests
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # createResources
-    api_instance.create_resources_using_post1(body, stack_name)
-except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->create_resources_using_post1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **delete_resources_using_delete**
 > delete_resources_using_delete(body, branch, stack_name)
 
@@ -435,57 +381,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
  **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_resources_using_delete1**
-> delete_resources_using_delete1(body, stack_name)
-
-deleteResources
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | resourceFileRequests
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # deleteResources
-    api_instance.delete_resources_using_delete1(body, stack_name)
-except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->delete_resources_using_delete1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
  **stack_name** | **str**| stackName | 
 
 ### Return type
@@ -648,6 +543,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AutocompleteResponse**](AutocompleteResponse.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_autocomplete_data_v2_using_get**
+> AutocompleteResponseV2 get_autocomplete_data_v2_using_get(stack_name)
+
+Get autocomplete data with module-specific output trees
+
+Returns module-specific output trees for each resource with automatic fallback to intent-level outputs
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
+stack_name = 'stack_name_example' # str | stackName
+
+try:
+    # Get autocomplete data with module-specific output trees
+    api_response = api_instance.get_autocomplete_data_v2_using_get(stack_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_autocomplete_data_v2_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stack_name** | **str**| stackName | 
+
+### Return type
+
+[**AutocompleteResponseV2**](AutocompleteResponseV2.md)
 
 ### Authorization
 
@@ -1329,57 +1276,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **rename_resource_using_put1**
-> rename_resource_using_put1(body, stack_name)
-
-renameResource
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ResourceRenameRequest() # ResourceRenameRequest | resourceRenameRequest
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # renameResource
-    api_instance.rename_resource_using_put1(body, stack_name)
-except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->rename_resource_using_put1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ResourceRenameRequest**](ResourceRenameRequest.md)| resourceRenameRequest | 
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **sync_specified_blueprints_with_templates_using_post**
 > sync_specified_blueprints_with_templates_using_post(body, template_name)
 
@@ -1467,57 +1363,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
  **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_resources_using_put1**
-> update_resources_using_put1(body, stack_name)
-
-updateResources
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | resourceFileRequests
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # updateResources
-    api_instance.update_resources_using_put1(body, stack_name)
-except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->update_resources_using_put1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
  **stack_name** | **str**| stackName | 
 
 ### Return type

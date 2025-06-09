@@ -23,9 +23,7 @@ Method | HTTP request | Description
 [**delete_template_inputs_using_delete**](UiCommonClusterControllerApi.md#delete_template_inputs_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/templateInputs/{inputType}/items/{uid} | deleteTemplateInputs
 [**delete_tools_config_using_delete**](UiCommonClusterControllerApi.md#delete_tools_config_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/tools-config | deleteToolsConfig
 [**detach_image_using_delete**](UiCommonClusterControllerApi.md#detach_image_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/detachImage | detachImage
-[**disable_cluster_task_using_post**](UiCommonClusterControllerApi.md#disable_cluster_task_using_post) | **POST** /cc-ui/v1/clusters/clusterTask/disable | disableClusterTask
 [**edit_tools_config_using_put**](UiCommonClusterControllerApi.md#edit_tools_config_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/tools-config/{toolsConfigId} | editToolsConfig
-[**enable_cluster_task_using_post**](UiCommonClusterControllerApi.md#enable_cluster_task_using_post) | **POST** /cc-ui/v1/clusters/clusterTask/enable | enableClusterTask
 [**get_alerts_using_get**](UiCommonClusterControllerApi.md#get_alerts_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/alerts | getAlerts
 [**get_all_template_inputs_using_get**](UiCommonClusterControllerApi.md#get_all_template_inputs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/templateInputs/ | getAllTemplateInputs
 [**get_availability_schedules_using_get**](UiCommonClusterControllerApi.md#get_availability_schedules_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/availability-schedule | getAvailabilitySchedules
@@ -33,7 +31,6 @@ Method | HTTP request | Description
 [**get_cluster_info_using_get**](UiCommonClusterControllerApi.md#get_cluster_info_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/info | getClusterInfo
 [**get_cluster_metadata_using_get**](UiCommonClusterControllerApi.md#get_cluster_metadata_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/cluster-metadata | getClusterMetadata
 [**get_cluster_schedules_using_get**](UiCommonClusterControllerApi.md#get_cluster_schedules_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/schedule | getClusterSchedules
-[**get_cluster_task_using_get**](UiCommonClusterControllerApi.md#get_cluster_task_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/clusterTask | getClusterTask
 [**get_cluster_tf_details_using_get**](UiCommonClusterControllerApi.md#get_cluster_tf_details_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/tfRunConfigurations | getClusterTFDetails
 [**get_k8s_credentials_using_get**](UiCommonClusterControllerApi.md#get_k8s_credentials_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8sCredentials | getK8sCredentials
 [**get_kube_config_using_get**](UiCommonClusterControllerApi.md#get_kube_config_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/kubeconfig | getKubeConfig
@@ -1053,56 +1050,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disable_cluster_task_using_post**
-> ClusterTask disable_cluster_task_using_post(task_id=task_id)
-
-disableClusterTask
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
-task_id = 'task_id_example' # str | taskId (optional)
-
-try:
-    # disableClusterTask
-    api_response = api_instance.disable_cluster_task_using_post(task_id=task_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiCommonClusterControllerApi->disable_cluster_task_using_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **task_id** | **str**| taskId | [optional] 
-
-### Return type
-
-[**ClusterTask**](ClusterTask.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **edit_tools_config_using_put**
 > ToolsConfig edit_tools_config_using_put(body, cluster_id, tools_config_id)
 
@@ -1153,56 +1100,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **enable_cluster_task_using_post**
-> ClusterTask enable_cluster_task_using_post(task_id=task_id)
-
-enableClusterTask
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
-task_id = 'task_id_example' # str | taskId (optional)
-
-try:
-    # enableClusterTask
-    api_response = api_instance.enable_cluster_task_using_post(task_id=task_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiCommonClusterControllerApi->enable_cluster_task_using_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **task_id** | **str**| taskId | [optional] 
-
-### Return type
-
-[**ClusterTask**](ClusterTask.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1545,56 +1442,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ClusterSchedule]**](ClusterSchedule.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_cluster_task_using_get**
-> ClusterTask get_cluster_task_using_get(cluster_id)
-
-getClusterTask
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-
-try:
-    # getClusterTask
-    api_response = api_instance.get_cluster_task_using_get(cluster_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiCommonClusterControllerApi->get_cluster_task_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
-
-### Return type
-
-[**ClusterTask**](ClusterTask.md)
 
 ### Authorization
 

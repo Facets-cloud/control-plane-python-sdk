@@ -4,7 +4,6 @@ All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_cluster_tasks_using_post1**](UiStackControllerApi.md#create_cluster_tasks_using_post1) | **POST** /cc-ui/v1/stacks/clusterTask | createClusterTasks
 [**create_project_using_post**](UiStackControllerApi.md#create_project_using_post) | **POST** /cc-ui/v1/stacks/project | createProject
 [**create_stack_using_post1**](UiStackControllerApi.md#create_stack_using_post1) | **POST** /cc-ui/v1/stacks/ | createStack
 [**create_stack_v2_using_post**](UiStackControllerApi.md#create_stack_v2_using_post) | **POST** /cc-ui/v1/stacks/v2 | createStackV2
@@ -13,7 +12,6 @@ Method | HTTP request | Description
 [**create_subscription_using_post1**](UiStackControllerApi.md#create_subscription_using_post1) | **POST** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | createSubscription
 [**delete_stack_using_delete**](UiStackControllerApi.md#delete_stack_using_delete) | **DELETE** /cc-ui/v1/stacks/{stackName} | deleteStack
 [**enable_git_ops_using_put**](UiStackControllerApi.md#enable_git_ops_using_put) | **PUT** /cc-ui/v1/stacks/{stackName}/enable-git-ops | enableGitOps
-[**get_all_cluster_tasks_using_get**](UiStackControllerApi.md#get_all_cluster_tasks_using_get) | **GET** /cc-ui/v1/stacks/clusterTask/{stackName} | getAllClusterTasks
 [**get_all_clusters_using_get**](UiStackControllerApi.md#get_all_clusters_using_get) | **GET** /cc-ui/v1/stacks/clusters | getAllClusters
 [**get_all_subscriptions_using_get1**](UiStackControllerApi.md#get_all_subscriptions_using_get1) | **GET** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | getAllSubscriptions
 [**get_all_template_inputs_meta_using_get**](UiStackControllerApi.md#get_all_template_inputs_meta_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/templateInputs/meta | getAllTemplateInputsMeta
@@ -42,56 +40,6 @@ Method | HTTP request | Description
 [**sync_stack_with_git_using_get**](UiStackControllerApi.md#sync_stack_with_git_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/sync-with-git | syncStackWithGit
 [**toggle_release_using_post1**](UiStackControllerApi.md#toggle_release_using_post1) | **POST** /cc-ui/v1/stacks/{stackName}/toggleRelease | toggleRelease
 [**update_stack_using_put1**](UiStackControllerApi.md#update_stack_using_put1) | **PUT** /cc-ui/v1/stacks/{stackName} | updateStack
-
-# **create_cluster_tasks_using_post1**
-> list[ClusterTask] create_cluster_tasks_using_post1(body)
-
-createClusterTasks
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ClusterTaskRequest() # ClusterTaskRequest | taskRequest
-
-try:
-    # createClusterTasks
-    api_response = api_instance.create_cluster_tasks_using_post1(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiStackControllerApi->create_cluster_tasks_using_post1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ClusterTaskRequest**](ClusterTaskRequest.md)| taskRequest | 
-
-### Return type
-
-[**list[ClusterTask]**](ClusterTask.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_project_using_post**
 > Stack create_project_using_post(body)
@@ -491,56 +439,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_all_cluster_tasks_using_get**
-> list[ClusterTask] get_all_cluster_tasks_using_get(stack_name)
-
-getAllClusterTasks
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # getAllClusterTasks
-    api_response = api_instance.get_all_cluster_tasks_using_get(stack_name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_all_cluster_tasks_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-[**list[ClusterTask]**](ClusterTask.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

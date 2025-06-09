@@ -43,6 +43,7 @@ class Info(object):
         'static_image': 'str',
         'strategy': 'str',
         'tag': 'str',
+        'tf_module_id': 'str',
         'ui': 'object',
         'version': 'str'
     }
@@ -63,11 +64,12 @@ class Info(object):
         'static_image': 'staticImage',
         'strategy': 'strategy',
         'tag': 'tag',
+        'tf_module_id': 'tfModuleId',
         'ui': 'ui',
         'version': 'version'
     }
 
-    def __init__(self, artifact_type=None, artifactory=None, ci_name=None, disabled=None, flavour=None, github_repository_url=None, inherit_from_base=None, namespace=None, overridden_name=None, provided=None, repository=None, repository_path=None, static_image=None, strategy=None, tag=None, ui=None, version=None):  # noqa: E501
+    def __init__(self, artifact_type=None, artifactory=None, ci_name=None, disabled=None, flavour=None, github_repository_url=None, inherit_from_base=None, namespace=None, overridden_name=None, provided=None, repository=None, repository_path=None, static_image=None, strategy=None, tag=None, tf_module_id=None, ui=None, version=None):  # noqa: E501
         """Info - a model defined in Swagger"""  # noqa: E501
         self._artifact_type = None
         self._artifactory = None
@@ -84,6 +86,7 @@ class Info(object):
         self._static_image = None
         self._strategy = None
         self._tag = None
+        self._tf_module_id = None
         self._ui = None
         self._version = None
         self.discriminator = None
@@ -117,6 +120,8 @@ class Info(object):
             self.strategy = strategy
         if tag is not None:
             self.tag = tag
+        if tf_module_id is not None:
+            self.tf_module_id = tf_module_id
         if ui is not None:
             self.ui = ui
         if version is not None:
@@ -448,6 +453,27 @@ class Info(object):
         """
 
         self._tag = tag
+
+    @property
+    def tf_module_id(self):
+        """Gets the tf_module_id of this Info.  # noqa: E501
+
+
+        :return: The tf_module_id of this Info.  # noqa: E501
+        :rtype: str
+        """
+        return self._tf_module_id
+
+    @tf_module_id.setter
+    def tf_module_id(self, tf_module_id):
+        """Sets the tf_module_id of this Info.
+
+
+        :param tf_module_id: The tf_module_id of this Info.  # noqa: E501
+        :type: str
+        """
+
+        self._tf_module_id = tf_module_id
 
     @property
     def ui(self):

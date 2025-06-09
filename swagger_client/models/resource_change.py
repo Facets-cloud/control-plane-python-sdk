@@ -30,6 +30,7 @@ class ResourceChange(object):
     swagger_types = {
         'change_type': 'str',
         'changed_attributes': 'list[ChangedAttribute]',
+        'flavor': 'str',
         'resource_name': 'str',
         'resource_type': 'str'
     }
@@ -37,14 +38,16 @@ class ResourceChange(object):
     attribute_map = {
         'change_type': 'changeType',
         'changed_attributes': 'changedAttributes',
+        'flavor': 'flavor',
         'resource_name': 'resourceName',
         'resource_type': 'resourceType'
     }
 
-    def __init__(self, change_type=None, changed_attributes=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, change_type=None, changed_attributes=None, flavor=None, resource_name=None, resource_type=None):  # noqa: E501
         """ResourceChange - a model defined in Swagger"""  # noqa: E501
         self._change_type = None
         self._changed_attributes = None
+        self._flavor = None
         self._resource_name = None
         self._resource_type = None
         self.discriminator = None
@@ -52,6 +55,8 @@ class ResourceChange(object):
             self.change_type = change_type
         if changed_attributes is not None:
             self.changed_attributes = changed_attributes
+        if flavor is not None:
+            self.flavor = flavor
         if resource_name is not None:
             self.resource_name = resource_name
         if resource_type is not None:
@@ -104,6 +109,27 @@ class ResourceChange(object):
         """
 
         self._changed_attributes = changed_attributes
+
+    @property
+    def flavor(self):
+        """Gets the flavor of this ResourceChange.  # noqa: E501
+
+
+        :return: The flavor of this ResourceChange.  # noqa: E501
+        :rtype: str
+        """
+        return self._flavor
+
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this ResourceChange.
+
+
+        :param flavor: The flavor of this ResourceChange.  # noqa: E501
+        :type: str
+        """
+
+        self._flavor = flavor
 
     @property
     def resource_name(self):

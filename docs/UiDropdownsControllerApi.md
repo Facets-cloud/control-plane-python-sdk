@@ -4,6 +4,8 @@ All URIs are relative to *//facetsdemo.console.facets.cloud/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_affected_resources_by_cluster_using_post**](UiDropdownsControllerApi.md#get_affected_resources_by_cluster_using_post) | **POST** /cc-ui/v1/dropdown/cluster/{clusterId}/affected-resources | getAffectedResourcesByCluster
+[**get_affected_resources_by_stack_using_post**](UiDropdownsControllerApi.md#get_affected_resources_by_stack_using_post) | **POST** /cc-ui/v1/dropdown/stack/{stackName}/affected-resources | getAffectedResourcesByStack
 [**get_all_cluster_resources_by_stack_using_get**](UiDropdownsControllerApi.md#get_all_cluster_resources_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/cluster-resources-info | getAllClusterResourcesByStack
 [**get_all_permissions_using_get**](UiDropdownsControllerApi.md#get_all_permissions_using_get) | **GET** /cc-ui/v1/dropdown/getAllPermissions | getAllPermissions
 [**get_all_resources_by_cluster_using_get**](UiDropdownsControllerApi.md#get_all_resources_by_cluster_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources-info | getAllResourcesByCluster
@@ -12,11 +14,13 @@ Method | HTTP request | Description
 [**get_all_resources_using_get**](UiDropdownsControllerApi.md#get_all_resources_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources | getAllResources
 [**get_all_vcs_using_get**](UiDropdownsControllerApi.md#get_all_vcs_using_get) | **GET** /cc-ui/v1/dropdown/vcs | getAllVCS
 [**get_application_list_by_cluster_id_and_resource_name_using_get**](UiDropdownsControllerApi.md#get_application_list_by_cluster_id_and_resource_name_using_get) | **GET** /cc-ui/v1/dropdown/{clusterId}/{resourceType} | getApplicationListByClusterIdAndResourceName
+[**get_az_for_region_by_cloud_using_get**](UiDropdownsControllerApi.md#get_az_for_region_by_cloud_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/region/{region}/availability-zones | getAzForRegionByCloud
 [**get_file_from_facets_modules_using_get**](UiDropdownsControllerApi.md#get_file_from_facets_modules_using_get) | **GET** /cc-ui/v1/dropdown/file | getFileFromFacetsModules
 [**get_git_history_for_resource_using_get**](UiDropdownsControllerApi.md#get_git_history_for_resource_using_get) | **GET** /cc-ui/v1/dropdown/logs/cluster/{clusterId}/resourceName/{resourceName}/resourceType/{resourceType} | getGitHistoryForResource
 [**get_launch_dag_using_get**](UiDropdownsControllerApi.md#get_launch_dag_using_get) | **GET** /cc-ui/v1/dropdown/{clusterId}/cloud/{cloud}/launch-dag | getLaunchDAG
 [**get_output_references_using_get**](UiDropdownsControllerApi.md#get_output_references_using_get) | **GET** /cc-ui/v1/dropdown/{stackName}/output/{outputType}/references | getOutputReferences
 [**get_regions_using_get**](UiDropdownsControllerApi.md#get_regions_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/regions | getRegions
+[**get_regions_v2_using_get**](UiDropdownsControllerApi.md#get_regions_v2_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/regions-v2 | getRegionsV2
 [**get_release_streams_using_get**](UiDropdownsControllerApi.md#get_release_streams_using_get) | **GET** /cc-ui/v1/dropdown/releaseStreams | getReleaseStreams
 [**get_resource_by_cluster_id_using_get**](UiDropdownsControllerApi.md#get_resource_by_cluster_id_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/{resourceType}/{resourceName}/resource-info | getResourceByClusterId
 [**get_resource_by_stack_using_get**](UiDropdownsControllerApi.md#get_resource_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/resource-info | getResourceByStack
@@ -26,6 +30,110 @@ Method | HTTP request | Description
 [**get_service_overview_using_get**](UiDropdownsControllerApi.md#get_service_overview_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/service/{serviceName}/overview | getServiceOverview
 [**sync_cluster_history_using_post**](UiDropdownsControllerApi.md#sync_cluster_history_using_post) | **POST** /cc-ui/v1/dropdown/logs/cluster/{clusterId} | syncClusterHistory
 [**sync_substack_git_history_using_post**](UiDropdownsControllerApi.md#sync_substack_git_history_using_post) | **POST** /cc-ui/v1/dropdown/logs/substack | syncSubstackGitHistory
+
+# **get_affected_resources_by_cluster_using_post**
+> ResourceAffectedResponse get_affected_resources_by_cluster_using_post(body, cluster_id)
+
+getAffectedResourcesByCluster
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AffectedResourcesRequest() # AffectedResourcesRequest | request
+cluster_id = 'cluster_id_example' # str | clusterId
+
+try:
+    # getAffectedResourcesByCluster
+    api_response = api_instance.get_affected_resources_by_cluster_using_post(body, cluster_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_affected_resources_by_cluster_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AffectedResourcesRequest**](AffectedResourcesRequest.md)| request | 
+ **cluster_id** | **str**| clusterId | 
+
+### Return type
+
+[**ResourceAffectedResponse**](ResourceAffectedResponse.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_affected_resources_by_stack_using_post**
+> ResourceAffectedResponse get_affected_resources_by_stack_using_post(body, stack_name)
+
+getAffectedResourcesByStack
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.AffectedResourcesRequest() # AffectedResourcesRequest | request
+stack_name = 'stack_name_example' # str | stackName
+
+try:
+    # getAffectedResourcesByStack
+    api_response = api_instance.get_affected_resources_by_stack_using_post(body, stack_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_affected_resources_by_stack_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AffectedResourcesRequest**](AffectedResourcesRequest.md)| request | 
+ **stack_name** | **str**| stackName | 
+
+### Return type
+
+[**ResourceAffectedResponse**](ResourceAffectedResponse.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_cluster_resources_by_stack_using_get**
 > list[BlueprintFile] get_all_cluster_resources_by_stack_using_get(resource_name, resource_type, stack_name)
@@ -441,6 +549,58 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_az_for_region_by_cloud_using_get**
+> list[str] get_az_for_region_by_cloud_using_get(cloud, region)
+
+getAzForRegionByCloud
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+cloud = 'cloud_example' # str | cloud
+region = 'region_example' # str | region
+
+try:
+    # getAzForRegionByCloud
+    api_response = api_instance.get_az_for_region_by_cloud_using_get(cloud, region)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_az_for_region_by_cloud_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloud** | **str**| cloud | 
+ **region** | **str**| region | 
+
+### Return type
+
+**list[str]**
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_file_from_facets_modules_using_get**
 > JsonNode get_file_from_facets_modules_using_get(file_name, path)
 
@@ -697,6 +857,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[AllRegionsAndAZ]**](AllRegionsAndAZ.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_regions_v2_using_get**
+> AllRegionsAndAZ get_regions_v2_using_get(cloud)
+
+getRegionsV2
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+cloud = 'cloud_example' # str | cloud
+
+try:
+    # getRegionsV2
+    api_response = api_instance.get_regions_v2_using_get(cloud)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_regions_v2_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloud** | **str**| cloud | 
+
+### Return type
+
+[**AllRegionsAndAZ**](AllRegionsAndAZ.md)
 
 ### Authorization
 

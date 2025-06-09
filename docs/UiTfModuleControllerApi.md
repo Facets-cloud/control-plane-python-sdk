@@ -69,7 +69,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_tf_module_using_delete**
-> TFModule delete_tf_module_using_delete(id)
+> TFModule delete_tf_module_using_delete(id, force=force)
 
 Delete a Module
 
@@ -90,10 +90,11 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = swagger_client.UiTfModuleControllerApi(swagger_client.ApiClient(configuration))
 id = 'id_example' # str | id
+force = false # bool | force (optional) (default to false)
 
 try:
     # Delete a Module
-    api_response = api_instance.delete_tf_module_using_delete(id)
+    api_response = api_instance.delete_tf_module_using_delete(id, force=force)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiTfModuleControllerApi->delete_tf_module_using_delete: %s\n" % e)
@@ -104,6 +105,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| id | 
+ **force** | **bool**| force | [optional] [default to false]
 
 ### Return type
 

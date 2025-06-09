@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**state_unlock_using_put**](UiDeploymentControllerApi.md#state_unlock_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/unlock | stateUnlock
 [**stream_deployment_logs_using_get**](UiDeploymentControllerApi.md#stream_deployment_logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs/stream | streamDeploymentLogs
 [**trigger_maintenance_release_using_post**](UiDeploymentControllerApi.md#trigger_maintenance_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/maintenance | triggerMaintenanceRelease
+[**trigger_rollback_plan_release_using_post**](UiDeploymentControllerApi.md#trigger_rollback_plan_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan | triggerRollbackPlanRelease
 [**trigger_terraform_export_using_post**](UiDeploymentControllerApi.md#trigger_terraform_export_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/terraform-export | triggerTerraformExport
 
 # **abort_automation_suite_using_delete1**
@@ -1088,7 +1089,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_deployments_using_get**
-> PageDeploymentLog search_deployments_using_get(cluster_id, end=end, exclude_status=exclude_status, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, start=start, status=status, triggered_by=triggered_by)
+> PageDeploymentLog search_deployments_using_get(cluster_id, end=end, exclude_status=exclude_status, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, start=start, status=status, tf_version=tf_version, triggered_by=triggered_by)
 
 searchDeployments
 
@@ -1115,11 +1116,12 @@ release_type = 'release_type_example' # str | releaseType (optional)
 signed_off = true # bool | signedOff (optional)
 start = '2013-10-20T19:20:30+01:00' # datetime | start (optional)
 status = 'status_example' # str | status (optional)
+tf_version = 'tf_version_example' # str | tfVersion (optional)
 triggered_by = 'triggered_by_example' # str | triggeredBy (optional)
 
 try:
     # searchDeployments
-    api_response = api_instance.search_deployments_using_get(cluster_id, end=end, exclude_status=exclude_status, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, start=start, status=status, triggered_by=triggered_by)
+    api_response = api_instance.search_deployments_using_get(cluster_id, end=end, exclude_status=exclude_status, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, start=start, status=status, tf_version=tf_version, triggered_by=triggered_by)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiDeploymentControllerApi->search_deployments_using_get: %s\n" % e)
@@ -1138,6 +1140,7 @@ Name | Type | Description  | Notes
  **signed_off** | **bool**| signedOff | [optional] 
  **start** | **datetime**| start | [optional] 
  **status** | **str**| status | [optional] 
+ **tf_version** | **str**| tfVersion | [optional] 
  **triggered_by** | **str**| triggeredBy | [optional] 
 
 ### Return type
@@ -1395,6 +1398,62 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cluster_id** | **str**| clusterId | 
+
+### Return type
+
+[**DeploymentLog**](DeploymentLog.md)
+
+### Authorization
+
+[main](../README.md#main)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **trigger_rollback_plan_release_using_post**
+> DeploymentLog trigger_rollback_plan_release_using_post(cluster_id, deployment_id, resource_name, resource_type)
+
+triggerRollbackPlanRelease
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: main
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+cluster_id = 'cluster_id_example' # str | clusterId
+deployment_id = 'deployment_id_example' # str | deploymentId
+resource_name = 'resource_name_example' # str | resourceName
+resource_type = 'resource_type_example' # str | resourceType
+
+try:
+    # triggerRollbackPlanRelease
+    api_response = api_instance.trigger_rollback_plan_release_using_post(cluster_id, deployment_id, resource_name, resource_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDeploymentControllerApi->trigger_rollback_plan_release_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **str**| clusterId | 
+ **deployment_id** | **str**| deploymentId | 
+ **resource_name** | **str**| resourceName | 
+ **resource_type** | **str**| resourceType | 
 
 ### Return type
 

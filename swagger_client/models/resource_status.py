@@ -34,6 +34,7 @@ class ResourceStatus(object):
         'current_override_version': 'str',
         'current_state': 'str',
         'disabled': 'bool',
+        'flavor': 'str',
         'has_state_change': 'bool',
         'health_status': 'str',
         'id': 'str',
@@ -56,6 +57,7 @@ class ResourceStatus(object):
         'current_override_version': 'currentOverrideVersion',
         'current_state': 'currentState',
         'disabled': 'disabled',
+        'flavor': 'flavor',
         'has_state_change': 'hasStateChange',
         'health_status': 'healthStatus',
         'id': 'id',
@@ -71,7 +73,7 @@ class ResourceStatus(object):
         'sync_status': 'syncStatus'
     }
 
-    def __init__(self, cluster_id=None, current_artifact_url=None, current_bp_version=None, current_override_version=None, current_state=None, disabled=None, has_state_change=None, health_status=None, id=None, is_alpha=None, live_artifact_url=None, live_bp_version=None, live_override_version=None, previous_state=None, release_status=None, release_trace_id=None, resource_name=None, resource_type=None, sync_status=None):  # noqa: E501
+    def __init__(self, cluster_id=None, current_artifact_url=None, current_bp_version=None, current_override_version=None, current_state=None, disabled=None, flavor=None, has_state_change=None, health_status=None, id=None, is_alpha=None, live_artifact_url=None, live_bp_version=None, live_override_version=None, previous_state=None, release_status=None, release_trace_id=None, resource_name=None, resource_type=None, sync_status=None):  # noqa: E501
         """ResourceStatus - a model defined in Swagger"""  # noqa: E501
         self._cluster_id = None
         self._current_artifact_url = None
@@ -79,6 +81,7 @@ class ResourceStatus(object):
         self._current_override_version = None
         self._current_state = None
         self._disabled = None
+        self._flavor = None
         self._has_state_change = None
         self._health_status = None
         self._id = None
@@ -105,6 +108,8 @@ class ResourceStatus(object):
             self.current_state = current_state
         if disabled is not None:
             self.disabled = disabled
+        if flavor is not None:
+            self.flavor = flavor
         if has_state_change is not None:
             self.has_state_change = has_state_change
         if health_status is not None:
@@ -263,6 +268,27 @@ class ResourceStatus(object):
         """
 
         self._disabled = disabled
+
+    @property
+    def flavor(self):
+        """Gets the flavor of this ResourceStatus.  # noqa: E501
+
+
+        :return: The flavor of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._flavor
+
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this ResourceStatus.
+
+
+        :param flavor: The flavor of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._flavor = flavor
 
     @property
     def has_state_change(self):

@@ -53,10 +53,10 @@ class DeploymentLog(object):
         'release_reviewed_by': 'str',
         'release_trace_id': 'str',
         'release_type': 'str',
+        'rollback_deployment_id': 'str',
         'signed_off': 'bool',
         'stack_version': 'str',
         'status': 'str',
-        'status_deprecated': 'str',
         'tf_version': 'str',
         'time_taken_in_seconds': 'int',
         'triggered_by': 'str',
@@ -91,10 +91,10 @@ class DeploymentLog(object):
         'release_reviewed_by': 'releaseReviewedBy',
         'release_trace_id': 'releaseTraceId',
         'release_type': 'releaseType',
+        'rollback_deployment_id': 'rollbackDeploymentId',
         'signed_off': 'signedOff',
         'stack_version': 'stackVersion',
         'status': 'status',
-        'status_deprecated': 'statusDeprecated',
         'tf_version': 'tfVersion',
         'time_taken_in_seconds': 'timeTakenInSeconds',
         'triggered_by': 'triggeredBy',
@@ -103,7 +103,7 @@ class DeploymentLog(object):
         'with_refresh': 'withRefresh'
     }
 
-    def __init__(self, allow_destroy=None, app_deployments=None, approved_release_id=None, changes_applied=None, codebuild_id=None, created_on=None, deployment_context_file_path=None, deployment_context_version=None, deployment_job_type=None, deployment_type=None, description=None, error_logs=None, finished_on=None, force_release=None, hotfix_resources=None, id=None, integration_test=None, is_destroy=None, migration_scripts_run=None, override_build_steps=None, parallel_release=None, release_comment=None, release_reviewed_by=None, release_trace_id=None, release_type=None, signed_off=None, stack_version=None, status=None, status_deprecated=None, tf_version=None, time_taken_in_seconds=None, triggered_by=None, validation_responses=None, validation_result=None, with_refresh=None):  # noqa: E501
+    def __init__(self, allow_destroy=None, app_deployments=None, approved_release_id=None, changes_applied=None, codebuild_id=None, created_on=None, deployment_context_file_path=None, deployment_context_version=None, deployment_job_type=None, deployment_type=None, description=None, error_logs=None, finished_on=None, force_release=None, hotfix_resources=None, id=None, integration_test=None, is_destroy=None, migration_scripts_run=None, override_build_steps=None, parallel_release=None, release_comment=None, release_reviewed_by=None, release_trace_id=None, release_type=None, rollback_deployment_id=None, signed_off=None, stack_version=None, status=None, tf_version=None, time_taken_in_seconds=None, triggered_by=None, validation_responses=None, validation_result=None, with_refresh=None):  # noqa: E501
         """DeploymentLog - a model defined in Swagger"""  # noqa: E501
         self._allow_destroy = None
         self._app_deployments = None
@@ -130,10 +130,10 @@ class DeploymentLog(object):
         self._release_reviewed_by = None
         self._release_trace_id = None
         self._release_type = None
+        self._rollback_deployment_id = None
         self._signed_off = None
         self._stack_version = None
         self._status = None
-        self._status_deprecated = None
         self._tf_version = None
         self._time_taken_in_seconds = None
         self._triggered_by = None
@@ -191,14 +191,14 @@ class DeploymentLog(object):
             self.release_trace_id = release_trace_id
         if release_type is not None:
             self.release_type = release_type
+        if rollback_deployment_id is not None:
+            self.rollback_deployment_id = rollback_deployment_id
         if signed_off is not None:
             self.signed_off = signed_off
         if stack_version is not None:
             self.stack_version = stack_version
         if status is not None:
             self.status = status
-        if status_deprecated is not None:
-            self.status_deprecated = status_deprecated
         if tf_version is not None:
             self.tf_version = tf_version
         if time_taken_in_seconds is not None:
@@ -746,7 +746,7 @@ class DeploymentLog(object):
         :param release_type: The release_type of this DeploymentLog.  # noqa: E501
         :type: str
         """
-        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT"]  # noqa: E501
+        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
         if release_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
@@ -754,6 +754,27 @@ class DeploymentLog(object):
             )
 
         self._release_type = release_type
+
+    @property
+    def rollback_deployment_id(self):
+        """Gets the rollback_deployment_id of this DeploymentLog.  # noqa: E501
+
+
+        :return: The rollback_deployment_id of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._rollback_deployment_id
+
+    @rollback_deployment_id.setter
+    def rollback_deployment_id(self, rollback_deployment_id):
+        """Sets the rollback_deployment_id of this DeploymentLog.
+
+
+        :param rollback_deployment_id: The rollback_deployment_id of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._rollback_deployment_id = rollback_deployment_id
 
     @property
     def signed_off(self):
@@ -823,33 +844,6 @@ class DeploymentLog(object):
             )
 
         self._status = status
-
-    @property
-    def status_deprecated(self):
-        """Gets the status_deprecated of this DeploymentLog.  # noqa: E501
-
-
-        :return: The status_deprecated of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._status_deprecated
-
-    @status_deprecated.setter
-    def status_deprecated(self, status_deprecated):
-        """Sets the status_deprecated of this DeploymentLog.
-
-
-        :param status_deprecated: The status_deprecated of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["SUCCEEDED", "FAILED", "FAULT", "TIMED_OUT", "IN_PROGRESS", "STOPPED", "null"]  # noqa: E501
-        if status_deprecated not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status_deprecated` ({0}), must be one of {1}"  # noqa: E501
-                .format(status_deprecated, allowed_values)
-            )
-
-        self._status_deprecated = status_deprecated
 
     @property
     def tf_version(self):

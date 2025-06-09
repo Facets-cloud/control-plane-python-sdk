@@ -43,6 +43,7 @@ class DeploymentRequest(object):
         'release_comment': 'str',
         'release_trace_id': 'str',
         'release_type': 'str',
+        'rollback_deployment_id': 'str',
         'tf_version': 'TfVersion',
         'with_refresh': 'bool'
     }
@@ -63,11 +64,12 @@ class DeploymentRequest(object):
         'release_comment': 'releaseComment',
         'release_trace_id': 'releaseTraceId',
         'release_type': 'releaseType',
+        'rollback_deployment_id': 'rollbackDeploymentId',
         'tf_version': 'tfVersion',
         'with_refresh': 'withRefresh'
     }
 
-    def __init__(self, allow_destroy=None, alpha=None, approved_release=None, can_queue=None, extra_env=None, force_release=None, hotfix_resources=None, lock_id=None, override_build_steps=None, parallel_release=None, plan_code_build_id=None, queued_release_id=None, release_comment=None, release_trace_id=None, release_type=None, tf_version=None, with_refresh=None):  # noqa: E501
+    def __init__(self, allow_destroy=None, alpha=None, approved_release=None, can_queue=None, extra_env=None, force_release=None, hotfix_resources=None, lock_id=None, override_build_steps=None, parallel_release=None, plan_code_build_id=None, queued_release_id=None, release_comment=None, release_trace_id=None, release_type=None, rollback_deployment_id=None, tf_version=None, with_refresh=None):  # noqa: E501
         """DeploymentRequest - a model defined in Swagger"""  # noqa: E501
         self._allow_destroy = None
         self._alpha = None
@@ -84,6 +86,7 @@ class DeploymentRequest(object):
         self._release_comment = None
         self._release_trace_id = None
         self._release_type = None
+        self._rollback_deployment_id = None
         self._tf_version = None
         self._with_refresh = None
         self.discriminator = None
@@ -116,6 +119,8 @@ class DeploymentRequest(object):
             self.release_trace_id = release_trace_id
         if release_type is not None:
             self.release_type = release_type
+        if rollback_deployment_id is not None:
+            self.rollback_deployment_id = rollback_deployment_id
         if tf_version is not None:
             self.tf_version = tf_version
         if with_refresh is not None:
@@ -441,7 +446,7 @@ class DeploymentRequest(object):
         :param release_type: The release_type of this DeploymentRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT"]  # noqa: E501
+        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
         if release_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
@@ -449,6 +454,27 @@ class DeploymentRequest(object):
             )
 
         self._release_type = release_type
+
+    @property
+    def rollback_deployment_id(self):
+        """Gets the rollback_deployment_id of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The rollback_deployment_id of this DeploymentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._rollback_deployment_id
+
+    @rollback_deployment_id.setter
+    def rollback_deployment_id(self, rollback_deployment_id):
+        """Sets the rollback_deployment_id of this DeploymentRequest.
+
+
+        :param rollback_deployment_id: The rollback_deployment_id of this DeploymentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._rollback_deployment_id = rollback_deployment_id
 
     @property
     def tf_version(self):
