@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiDeliveryPipelineControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_delivery_pipeline_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """getDeliveryPipeline  # noqa: E501
+    def get_delivery_pipeline(self, stack_name, **kwargs):  # noqa: E501
+        """get_delivery_pipeline  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_delivery_pipeline_using_get(stack_name, async_req=True)
+        >>> thread = api.get_delivery_pipeline(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[PipelineNode]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoPipelineNode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_delivery_pipeline_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.get_delivery_pipeline_with_http_info(stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_delivery_pipeline_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_delivery_pipeline_with_http_info(stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_delivery_pipeline_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getDeliveryPipeline  # noqa: E501
+    def get_delivery_pipeline_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_delivery_pipeline  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_delivery_pipeline_using_get_with_http_info(stack_name, async_req=True)
+        >>> thread = api.get_delivery_pipeline_with_http_info(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[PipelineNode]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoPipelineNode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiDeliveryPipelineControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_delivery_pipeline_using_get" % key
+                    " to method get_delivery_pipeline" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_delivery_pipeline_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_delivery_pipeline`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,10 +104,10 @@ class UiDeliveryPipelineControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/delivery-pipeline/{stackName}', 'GET',
@@ -117,7 +117,7 @@ class UiDeliveryPipelineControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PipelineNode]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoPipelineNode]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -125,40 +125,40 @@ class UiDeliveryPipelineControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_delivery_pipeline_using_put(self, body, stack_name, **kwargs):  # noqa: E501
-        """updateDeliveryPipeline  # noqa: E501
+    def update_delivery_pipeline(self, body, stack_name, **kwargs):  # noqa: E501
+        """update_delivery_pipeline  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_delivery_pipeline_using_put(body, stack_name, async_req=True)
+        >>> thread = api.update_delivery_pipeline(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[PipelineNode] body: pipelineNodes (required)
-        :param str stack_name: stackName (required)
-        :return: list[PipelineNode]
+        :param list[ComCapillaryOpsCpBoPipelineNode] body: (required)
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoPipelineNode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_delivery_pipeline_using_put_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            return self.update_delivery_pipeline_with_http_info(body, stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_delivery_pipeline_using_put_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            (data) = self.update_delivery_pipeline_with_http_info(body, stack_name, **kwargs)  # noqa: E501
             return data
 
-    def update_delivery_pipeline_using_put_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
-        """updateDeliveryPipeline  # noqa: E501
+    def update_delivery_pipeline_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
+        """update_delivery_pipeline  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_delivery_pipeline_using_put_with_http_info(body, stack_name, async_req=True)
+        >>> thread = api.update_delivery_pipeline_with_http_info(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[PipelineNode] body: pipelineNodes (required)
-        :param str stack_name: stackName (required)
-        :return: list[PipelineNode]
+        :param list[ComCapillaryOpsCpBoPipelineNode] body: (required)
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoPipelineNode]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -174,18 +174,18 @@ class UiDeliveryPipelineControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_delivery_pipeline_using_put" % key
+                    " to method update_delivery_pipeline" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_delivery_pipeline_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_delivery_pipeline`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `update_delivery_pipeline_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `update_delivery_pipeline`")  # noqa: E501
 
         collection_formats = {}
 
@@ -205,14 +205,14 @@ class UiDeliveryPipelineControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/delivery-pipeline/{stackName}', 'PUT',
@@ -222,7 +222,7 @@ class UiDeliveryPipelineControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PipelineNode]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoPipelineNode]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

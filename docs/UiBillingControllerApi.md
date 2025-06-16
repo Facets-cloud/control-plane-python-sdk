@@ -1,18 +1,18 @@
 # swagger_client.UiBillingControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**buy_support_plan_using_post**](UiBillingControllerApi.md#buy_support_plan_using_post) | **POST** /cc-ui/v1/billing/buy-support-plan | buySupportPlan
-[**get_billing_metadata_using_get**](UiBillingControllerApi.md#get_billing_metadata_using_get) | **GET** /cc-ui/v1/billing/metadata | getBillingMetadata
-[**report_usage_using_get**](UiBillingControllerApi.md#report_usage_using_get) | **GET** /cc-ui/v1/billing/report-usage | reportUsage
-[**start_stripe_customer_portal_session_using_get**](UiBillingControllerApi.md#start_stripe_customer_portal_session_using_get) | **GET** /cc-ui/v1/billing/manage-billing | startStripeCustomerPortalSession
+[**buy_support_plan**](UiBillingControllerApi.md#buy_support_plan) | **POST** /cc-ui/v1/billing/buy-support-plan | 
+[**get_billing_metadata**](UiBillingControllerApi.md#get_billing_metadata) | **GET** /cc-ui/v1/billing/metadata | 
+[**report_usage**](UiBillingControllerApi.md#report_usage) | **GET** /cc-ui/v1/billing/report-usage | 
+[**start_stripe_customer_portal_session**](UiBillingControllerApi.md#start_stripe_customer_portal_session) | **GET** /cc-ui/v1/billing/manage-billing | 
 
-# **buy_support_plan_using_post**
-> str buy_support_plan_using_post(cancel_url, success_url)
+# **buy_support_plan**
+> str buy_support_plan(success_url, cancel_url)
 
-buySupportPlan
+
 
 ### Example
 ```python
@@ -21,30 +21,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBillingControllerApi(swagger_client.ApiClient(configuration))
-cancel_url = 'cancel_url_example' # str | cancelUrl
-success_url = 'success_url_example' # str | successUrl
+success_url = 'success_url_example' # str | 
+cancel_url = 'cancel_url_example' # str | 
 
 try:
-    # buySupportPlan
-    api_response = api_instance.buy_support_plan_using_post(cancel_url, success_url)
+    api_response = api_instance.buy_support_plan(success_url, cancel_url)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBillingControllerApi->buy_support_plan_using_post: %s\n" % e)
+    print("Exception when calling UiBillingControllerApi->buy_support_plan: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cancel_url** | **str**| cancelUrl | 
- **success_url** | **str**| successUrl | 
+ **success_url** | **str**|  | 
+ **cancel_url** | **str**|  | 
 
 ### Return type
 
@@ -52,19 +51,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_billing_metadata_using_get**
-> list[BillingMetadata] get_billing_metadata_using_get()
+# **get_billing_metadata**
+> list[ComCapillaryOpsCpServiceBillingBillingMetadata] get_billing_metadata()
 
-getBillingMetadata
+
 
 ### Example
 ```python
@@ -73,7 +72,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -82,11 +81,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiBillingControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getBillingMetadata
-    api_response = api_instance.get_billing_metadata_using_get()
+    api_response = api_instance.get_billing_metadata()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBillingControllerApi->get_billing_metadata_using_get: %s\n" % e)
+    print("Exception when calling UiBillingControllerApi->get_billing_metadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -94,23 +92,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[BillingMetadata]**](BillingMetadata.md)
+[**list[ComCapillaryOpsCpServiceBillingBillingMetadata]**](ComCapillaryOpsCpServiceBillingBillingMetadata.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **report_usage_using_get**
-> report_usage_using_get()
+# **report_usage**
+> report_usage()
 
-reportUsage
+
 
 ### Example
 ```python
@@ -119,7 +117,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -128,10 +126,9 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiBillingControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # reportUsage
-    api_instance.report_usage_using_get()
+    api_instance.report_usage()
 except ApiException as e:
-    print("Exception when calling UiBillingControllerApi->report_usage_using_get: %s\n" % e)
+    print("Exception when calling UiBillingControllerApi->report_usage: %s\n" % e)
 ```
 
 ### Parameters
@@ -143,19 +140,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **start_stripe_customer_portal_session_using_get**
-> str start_stripe_customer_portal_session_using_get(return_url)
+# **start_stripe_customer_portal_session**
+> str start_stripe_customer_portal_session(return_url)
 
-startStripeCustomerPortalSession
+
 
 ### Example
 ```python
@@ -164,28 +161,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBillingControllerApi(swagger_client.ApiClient(configuration))
-return_url = 'return_url_example' # str | returnUrl
+return_url = 'return_url_example' # str | 
 
 try:
-    # startStripeCustomerPortalSession
-    api_response = api_instance.start_stripe_customer_portal_session_using_get(return_url)
+    api_response = api_instance.start_stripe_customer_portal_session(return_url)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBillingControllerApi->start_stripe_customer_portal_session_using_get: %s\n" % e)
+    print("Exception when calling UiBillingControllerApi->start_stripe_customer_portal_session: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **return_url** | **str**| returnUrl | 
+ **return_url** | **str**|  | 
 
 ### Return type
 
@@ -193,12 +189,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,45 +32,45 @@ class UiBillingControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def buy_support_plan_using_post(self, cancel_url, success_url, **kwargs):  # noqa: E501
-        """buySupportPlan  # noqa: E501
+    def buy_support_plan(self, success_url, cancel_url, **kwargs):  # noqa: E501
+        """buy_support_plan  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.buy_support_plan_using_post(cancel_url, success_url, async_req=True)
+        >>> thread = api.buy_support_plan(success_url, cancel_url, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cancel_url: cancelUrl (required)
-        :param str success_url: successUrl (required)
+        :param str success_url: (required)
+        :param str cancel_url: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.buy_support_plan_using_post_with_http_info(cancel_url, success_url, **kwargs)  # noqa: E501
+            return self.buy_support_plan_with_http_info(success_url, cancel_url, **kwargs)  # noqa: E501
         else:
-            (data) = self.buy_support_plan_using_post_with_http_info(cancel_url, success_url, **kwargs)  # noqa: E501
+            (data) = self.buy_support_plan_with_http_info(success_url, cancel_url, **kwargs)  # noqa: E501
             return data
 
-    def buy_support_plan_using_post_with_http_info(self, cancel_url, success_url, **kwargs):  # noqa: E501
-        """buySupportPlan  # noqa: E501
+    def buy_support_plan_with_http_info(self, success_url, cancel_url, **kwargs):  # noqa: E501
+        """buy_support_plan  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.buy_support_plan_using_post_with_http_info(cancel_url, success_url, async_req=True)
+        >>> thread = api.buy_support_plan_with_http_info(success_url, cancel_url, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cancel_url: cancelUrl (required)
-        :param str success_url: successUrl (required)
+        :param str success_url: (required)
+        :param str cancel_url: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cancel_url', 'success_url']  # noqa: E501
+        all_params = ['success_url', 'cancel_url']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -81,28 +81,28 @@ class UiBillingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method buy_support_plan_using_post" % key
+                    " to method buy_support_plan" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'cancel_url' is set
-        if ('cancel_url' not in params or
-                params['cancel_url'] is None):
-            raise ValueError("Missing the required parameter `cancel_url` when calling `buy_support_plan_using_post`")  # noqa: E501
         # verify the required parameter 'success_url' is set
         if ('success_url' not in params or
                 params['success_url'] is None):
-            raise ValueError("Missing the required parameter `success_url` when calling `buy_support_plan_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `success_url` when calling `buy_support_plan`")  # noqa: E501
+        # verify the required parameter 'cancel_url' is set
+        if ('cancel_url' not in params or
+                params['cancel_url'] is None):
+            raise ValueError("Missing the required parameter `cancel_url` when calling `buy_support_plan`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'cancel_url' in params:
-            query_params.append(('cancelUrl', params['cancel_url']))  # noqa: E501
         if 'success_url' in params:
             query_params.append(('successUrl', params['success_url']))  # noqa: E501
+        if 'cancel_url' in params:
+            query_params.append(('cancelUrl', params['cancel_url']))  # noqa: E501
 
         header_params = {}
 
@@ -112,10 +112,10 @@ class UiBillingControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/billing/buy-support-plan', 'POST',
@@ -133,36 +133,36 @@ class UiBillingControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_billing_metadata_using_get(self, **kwargs):  # noqa: E501
-        """getBillingMetadata  # noqa: E501
+    def get_billing_metadata(self, **kwargs):  # noqa: E501
+        """get_billing_metadata  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_billing_metadata_using_get(async_req=True)
+        >>> thread = api.get_billing_metadata(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[BillingMetadata]
+        :return: list[ComCapillaryOpsCpServiceBillingBillingMetadata]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_billing_metadata_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_billing_metadata_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_billing_metadata_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_billing_metadata_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_billing_metadata_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getBillingMetadata  # noqa: E501
+    def get_billing_metadata_with_http_info(self, **kwargs):  # noqa: E501
+        """get_billing_metadata  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_billing_metadata_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_billing_metadata_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[BillingMetadata]
+        :return: list[ComCapillaryOpsCpServiceBillingBillingMetadata]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -178,7 +178,7 @@ class UiBillingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_billing_metadata_using_get" % key
+                    " to method get_billing_metadata" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -197,10 +197,10 @@ class UiBillingControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/billing/metadata', 'GET',
@@ -210,7 +210,7 @@ class UiBillingControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[BillingMetadata]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpServiceBillingBillingMetadata]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -218,12 +218,12 @@ class UiBillingControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def report_usage_using_get(self, **kwargs):  # noqa: E501
-        """reportUsage  # noqa: E501
+    def report_usage(self, **kwargs):  # noqa: E501
+        """report_usage  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.report_usage_using_get(async_req=True)
+        >>> thread = api.report_usage(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -233,17 +233,17 @@ class UiBillingControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.report_usage_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.report_usage_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.report_usage_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.report_usage_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def report_usage_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """reportUsage  # noqa: E501
+    def report_usage_with_http_info(self, **kwargs):  # noqa: E501
+        """report_usage  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.report_usage_using_get_with_http_info(async_req=True)
+        >>> thread = api.report_usage_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -263,7 +263,7 @@ class UiBillingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method report_usage_using_get" % key
+                    " to method report_usage" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -280,8 +280,12 @@ class UiBillingControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/billing/report-usage', 'GET',
@@ -299,37 +303,37 @@ class UiBillingControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def start_stripe_customer_portal_session_using_get(self, return_url, **kwargs):  # noqa: E501
-        """startStripeCustomerPortalSession  # noqa: E501
+    def start_stripe_customer_portal_session(self, return_url, **kwargs):  # noqa: E501
+        """start_stripe_customer_portal_session  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.start_stripe_customer_portal_session_using_get(return_url, async_req=True)
+        >>> thread = api.start_stripe_customer_portal_session(return_url, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str return_url: returnUrl (required)
+        :param str return_url: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.start_stripe_customer_portal_session_using_get_with_http_info(return_url, **kwargs)  # noqa: E501
+            return self.start_stripe_customer_portal_session_with_http_info(return_url, **kwargs)  # noqa: E501
         else:
-            (data) = self.start_stripe_customer_portal_session_using_get_with_http_info(return_url, **kwargs)  # noqa: E501
+            (data) = self.start_stripe_customer_portal_session_with_http_info(return_url, **kwargs)  # noqa: E501
             return data
 
-    def start_stripe_customer_portal_session_using_get_with_http_info(self, return_url, **kwargs):  # noqa: E501
-        """startStripeCustomerPortalSession  # noqa: E501
+    def start_stripe_customer_portal_session_with_http_info(self, return_url, **kwargs):  # noqa: E501
+        """start_stripe_customer_portal_session  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.start_stripe_customer_portal_session_using_get_with_http_info(return_url, async_req=True)
+        >>> thread = api.start_stripe_customer_portal_session_with_http_info(return_url, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str return_url: returnUrl (required)
+        :param str return_url: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -346,14 +350,14 @@ class UiBillingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method start_stripe_customer_portal_session_using_get" % key
+                    " to method start_stripe_customer_portal_session" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'return_url' is set
         if ('return_url' not in params or
                 params['return_url'] is None):
-            raise ValueError("Missing the required parameter `return_url` when calling `start_stripe_customer_portal_session_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `return_url` when calling `start_stripe_customer_portal_session`")  # noqa: E501
 
         collection_formats = {}
 
@@ -371,10 +375,10 @@ class UiBillingControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/billing/manage-billing', 'GET',

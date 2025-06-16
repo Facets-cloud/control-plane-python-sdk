@@ -1,16 +1,16 @@
 # swagger_client.UiLocalClusterControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_cluster_using_post3**](UiLocalClusterControllerApi.md#create_cluster_using_post3) | **POST** /cc-ui/v1/local/clusters | Create a new Environment for a blueprint
-[**get_cluster_using_get3**](UiLocalClusterControllerApi.md#get_cluster_using_get3) | **GET** /cc-ui/v1/local/clusters/{clusterId} | getCluster
-[**get_vagrant_using_get**](UiLocalClusterControllerApi.md#get_vagrant_using_get) | **GET** /cc-ui/v1/local/clusters/{clusterId}/vagrant | getVagrant
-[**update_cluster_using_put3**](UiLocalClusterControllerApi.md#update_cluster_using_put3) | **PUT** /cc-ui/v1/local/clusters/{clusterId} | updateCluster
+[**get_cluster_using_get3**](UiLocalClusterControllerApi.md#get_cluster_using_get3) | **GET** /cc-ui/v1/local/clusters/{clusterId} | 
+[**get_vagrant**](UiLocalClusterControllerApi.md#get_vagrant) | **GET** /cc-ui/v1/local/clusters/{clusterId}/vagrant | 
+[**update_cluster_using_put3**](UiLocalClusterControllerApi.md#update_cluster_using_put3) | **PUT** /cc-ui/v1/local/clusters/{clusterId} | 
 
 # **create_cluster_using_post3**
-> LocalCluster create_cluster_using_post3(body)
+> ComCapillaryOpsCpBoLocalCluster create_cluster_using_post3(body)
 
 Create a new Environment for a blueprint
 
@@ -21,14 +21,14 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiLocalClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.LocalClusterRequest() # LocalClusterRequest | request
+body = swagger_client.ComCapillaryOpsCpBoRequestsLocalClusterRequest() # ComCapillaryOpsCpBoRequestsLocalClusterRequest | 
 
 try:
     # Create a new Environment for a blueprint
@@ -42,27 +42,27 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LocalClusterRequest**](LocalClusterRequest.md)| request | 
+ **body** | [**ComCapillaryOpsCpBoRequestsLocalClusterRequest**](ComCapillaryOpsCpBoRequestsLocalClusterRequest.md)|  | 
 
 ### Return type
 
-[**LocalCluster**](LocalCluster.md)
+[**ComCapillaryOpsCpBoLocalCluster**](ComCapillaryOpsCpBoLocalCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cluster_using_get3**
-> LocalCluster get_cluster_using_get3(cluster_id)
+> ComCapillaryOpsCpBoLocalCluster get_cluster_using_get3(cluster_id)
 
-getCluster
+
 
 ### Example
 ```python
@@ -71,17 +71,16 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiLocalClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getCluster
     api_response = api_instance.get_cluster_using_get3(cluster_id)
     pprint(api_response)
 except ApiException as e:
@@ -92,27 +91,27 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**LocalCluster**](LocalCluster.md)
+[**ComCapillaryOpsCpBoLocalCluster**](ComCapillaryOpsCpBoLocalCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_vagrant_using_get**
-> str get_vagrant_using_get(cluster_id)
+# **get_vagrant**
+> str get_vagrant(cluster_id)
 
-getVagrant
+
 
 ### Example
 ```python
@@ -121,28 +120,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiLocalClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getVagrant
-    api_response = api_instance.get_vagrant_using_get(cluster_id)
+    api_response = api_instance.get_vagrant(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiLocalClusterControllerApi->get_vagrant_using_get: %s\n" % e)
+    print("Exception when calling UiLocalClusterControllerApi->get_vagrant: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -150,19 +148,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_cluster_using_put3**
-> LocalCluster update_cluster_using_put3(body, cluster_id)
+> ComCapillaryOpsCpBoLocalCluster update_cluster_using_put3(body, cluster_id)
 
-updateCluster
+
 
 ### Example
 ```python
@@ -171,18 +169,17 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiLocalClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.LocalClusterRequest() # LocalClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoRequestsLocalClusterRequest() # ComCapillaryOpsCpBoRequestsLocalClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # updateCluster
     api_response = api_instance.update_cluster_using_put3(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
@@ -193,21 +190,21 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**LocalClusterRequest**](LocalClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoRequestsLocalClusterRequest**](ComCapillaryOpsCpBoRequestsLocalClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**LocalCluster**](LocalCluster.md)
+[**ComCapillaryOpsCpBoLocalCluster**](ComCapillaryOpsCpBoLocalCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

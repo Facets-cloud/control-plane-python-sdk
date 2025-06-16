@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class ArtifactControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def register_artifact_using_post(self, body, **kwargs):  # noqa: E501
-        """registerArtifact  # noqa: E501
+    def register_artifact(self, body, **kwargs):  # noqa: E501
+        """register_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_using_post(body, async_req=True)
+        >>> thread = api.register_artifact(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Artifact body: artifact (required)
+        :param ComCapillaryOpsCpBoArtifact body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.register_artifact_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.register_artifact_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.register_artifact_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.register_artifact_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def register_artifact_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """registerArtifact  # noqa: E501
+    def register_artifact_with_http_info(self, body, **kwargs):  # noqa: E501
+        """register_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.register_artifact_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Artifact body: artifact (required)
+        :param ComCapillaryOpsCpBoArtifact body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class ArtifactControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method register_artifact_using_post" % key
+                    " to method register_artifact" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `register_artifact_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `register_artifact`")  # noqa: E501
 
         collection_formats = {}
 
@@ -102,12 +102,16 @@ class ArtifactControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/artifacts/register', 'POST',

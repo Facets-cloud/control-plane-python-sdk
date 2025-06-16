@@ -1,0 +1,47 @@
+# IoFabric8KubernetesApiModelPodSpec
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**active_deadline_seconds** | **int** |  | [optional] 
+**affinity** | [**IoFabric8KubernetesApiModelAffinity**](IoFabric8KubernetesApiModelAffinity.md) |  | [optional] 
+**automount_service_account_token** | **bool** |  | [optional] 
+**containers** | [**list[IoFabric8KubernetesApiModelContainer]**](IoFabric8KubernetesApiModelContainer.md) |  | [optional] 
+**dns_config** | [**IoFabric8KubernetesApiModelPodDNSConfig**](IoFabric8KubernetesApiModelPodDNSConfig.md) |  | [optional] 
+**dns_policy** | **str** |  | [optional] 
+**enable_service_links** | **bool** |  | [optional] 
+**ephemeral_containers** | [**list[IoFabric8KubernetesApiModelEphemeralContainer]**](IoFabric8KubernetesApiModelEphemeralContainer.md) |  | [optional] 
+**host_aliases** | [**list[IoFabric8KubernetesApiModelHostAlias]**](IoFabric8KubernetesApiModelHostAlias.md) |  | [optional] 
+**host_ipc** | **bool** |  | [optional] 
+**host_network** | **bool** |  | [optional] 
+**host_pid** | **bool** |  | [optional] 
+**host_users** | **bool** |  | [optional] 
+**hostname** | **str** |  | [optional] 
+**image_pull_secrets** | [**list[IoFabric8KubernetesApiModelLocalObjectReference]**](IoFabric8KubernetesApiModelLocalObjectReference.md) |  | [optional] 
+**init_containers** | [**list[IoFabric8KubernetesApiModelContainer]**](IoFabric8KubernetesApiModelContainer.md) |  | [optional] 
+**node_name** | **str** |  | [optional] 
+**node_selector** | **dict(str, str)** |  | [optional] 
+**os** | [**IoFabric8KubernetesApiModelPodOS**](IoFabric8KubernetesApiModelPodOS.md) |  | [optional] 
+**overhead** | [**dict(str, IoFabric8KubernetesApiModelQuantity)**](IoFabric8KubernetesApiModelQuantity.md) |  | [optional] 
+**preemption_policy** | **str** |  | [optional] 
+**priority** | **int** |  | [optional] 
+**priority_class_name** | **str** |  | [optional] 
+**readiness_gates** | [**list[IoFabric8KubernetesApiModelPodReadinessGate]**](IoFabric8KubernetesApiModelPodReadinessGate.md) |  | [optional] 
+**resource_claims** | [**list[IoFabric8KubernetesApiModelPodResourceClaim]**](IoFabric8KubernetesApiModelPodResourceClaim.md) |  | [optional] 
+**restart_policy** | **str** |  | [optional] 
+**runtime_class_name** | **str** |  | [optional] 
+**scheduler_name** | **str** |  | [optional] 
+**scheduling_gates** | [**list[IoFabric8KubernetesApiModelPodSchedulingGate]**](IoFabric8KubernetesApiModelPodSchedulingGate.md) |  | [optional] 
+**security_context** | [**IoFabric8KubernetesApiModelPodSecurityContext**](IoFabric8KubernetesApiModelPodSecurityContext.md) |  | [optional] 
+**service_account** | **str** |  | [optional] 
+**service_account_name** | **str** |  | [optional] 
+**set_hostname_as_fqdn** | **bool** |  | [optional] 
+**share_process_namespace** | **bool** |  | [optional] 
+**subdomain** | **str** |  | [optional] 
+**termination_grace_period_seconds** | **int** |  | [optional] 
+**tolerations** | [**list[IoFabric8KubernetesApiModelToleration]**](IoFabric8KubernetesApiModelToleration.md) |  | [optional] 
+**topology_spread_constraints** | [**list[IoFabric8KubernetesApiModelTopologySpreadConstraint]**](IoFabric8KubernetesApiModelTopologySpreadConstraint.md) |  | [optional] 
+**volumes** | [**list[IoFabric8KubernetesApiModelVolume]**](IoFabric8KubernetesApiModelVolume.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

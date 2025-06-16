@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,61 +32,61 @@ class UiAuditLogsControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_audit_logs_using_get(self, **kwargs):  # noqa: E501
-        """getAuditLogs  # noqa: E501
+    def get_audit_logs(self, start, **kwargs):  # noqa: E501
+        """get_audit_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_audit_logs_using_get(async_req=True)
+        >>> thread = api.get_audit_logs(start, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_name: Regex based string match
-        :param datetime end: end
-        :param list[str] entity: entity
-        :param list[str] entity_action: entityAction
-        :param int number: number
-        :param str performed_by: Regex based string match
-        :param int size: size
+        :param datetime start: (required)
+        :param datetime end:
+        :param int number:
+        :param int size:
         :param str stack_name: Regex based string match
-        :param datetime start: start
+        :param str cluster_name: Regex based string match
         :param str target: Regex based string match
-        :return: PageFacetsAuditLogResponse
+        :param str performed_by: Regex based string match
+        :param list[str] entity:
+        :param list[str] entity_action:
+        :return: OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoAuditFacetsAuditLogResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_audit_logs_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_audit_logs_with_http_info(start, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_audit_logs_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_audit_logs_with_http_info(start, **kwargs)  # noqa: E501
             return data
 
-    def get_audit_logs_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAuditLogs  # noqa: E501
+    def get_audit_logs_with_http_info(self, start, **kwargs):  # noqa: E501
+        """get_audit_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_audit_logs_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_audit_logs_with_http_info(start, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_name: Regex based string match
-        :param datetime end: end
-        :param list[str] entity: entity
-        :param list[str] entity_action: entityAction
-        :param int number: number
-        :param str performed_by: Regex based string match
-        :param int size: size
+        :param datetime start: (required)
+        :param datetime end:
+        :param int number:
+        :param int size:
         :param str stack_name: Regex based string match
-        :param datetime start: start
+        :param str cluster_name: Regex based string match
         :param str target: Regex based string match
-        :return: PageFacetsAuditLogResponse
+        :param str performed_by: Regex based string match
+        :param list[str] entity:
+        :param list[str] entity_action:
+        :return: OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoAuditFacetsAuditLogResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_name', 'end', 'entity', 'entity_action', 'number', 'performed_by', 'size', 'stack_name', 'start', 'target']  # noqa: E501
+        all_params = ['start', 'end', 'number', 'size', 'stack_name', 'cluster_name', 'target', 'performed_by', 'entity', 'entity_action']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -97,38 +97,42 @@ class UiAuditLogsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_audit_logs_using_get" % key
+                    " to method get_audit_logs" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'start' is set
+        if ('start' not in params or
+                params['start'] is None):
+            raise ValueError("Missing the required parameter `start` when calling `get_audit_logs`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'cluster_name' in params:
-            query_params.append(('clusterName', params['cluster_name']))  # noqa: E501
+        if 'start' in params:
+            query_params.append(('start', params['start']))  # noqa: E501
         if 'end' in params:
             query_params.append(('end', params['end']))  # noqa: E501
+        if 'number' in params:
+            query_params.append(('number', params['number']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+        if 'stack_name' in params:
+            query_params.append(('stackName', params['stack_name']))  # noqa: E501
+        if 'cluster_name' in params:
+            query_params.append(('clusterName', params['cluster_name']))  # noqa: E501
+        if 'target' in params:
+            query_params.append(('target', params['target']))  # noqa: E501
+        if 'performed_by' in params:
+            query_params.append(('performedBy', params['performed_by']))  # noqa: E501
         if 'entity' in params:
             query_params.append(('entity', params['entity']))  # noqa: E501
             collection_formats['entity'] = 'multi'  # noqa: E501
         if 'entity_action' in params:
             query_params.append(('entityAction', params['entity_action']))  # noqa: E501
             collection_formats['entityAction'] = 'multi'  # noqa: E501
-        if 'number' in params:
-            query_params.append(('number', params['number']))  # noqa: E501
-        if 'performed_by' in params:
-            query_params.append(('performedBy', params['performed_by']))  # noqa: E501
-        if 'size' in params:
-            query_params.append(('size', params['size']))  # noqa: E501
-        if 'stack_name' in params:
-            query_params.append(('stackName', params['stack_name']))  # noqa: E501
-        if 'start' in params:
-            query_params.append(('start', params['start']))  # noqa: E501
-        if 'target' in params:
-            query_params.append(('target', params['target']))  # noqa: E501
 
         header_params = {}
 
@@ -138,10 +142,10 @@ class UiAuditLogsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/audit-logs', 'GET',
@@ -151,7 +155,7 @@ class UiAuditLogsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PageFacetsAuditLogResponse',  # noqa: E501
+            response_type='OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoAuditFacetsAuditLogResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

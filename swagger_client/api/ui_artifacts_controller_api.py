@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiArtifactsControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def attach_image_via_register_using_post(self, body, **kwargs):  # noqa: E501
-        """attachImageViaRegister  # noqa: E501
+    def attach_image_via_register(self, body, **kwargs):  # noqa: E501
+        """attach_image_via_register  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.attach_image_via_register_using_post(body, async_req=True)
+        >>> thread = api.attach_image_via_register(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ImageOverrideRequest body: request (required)
+        :param ComCapillaryOpsCpBoRequestsImageOverrideRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.attach_image_via_register_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.attach_image_via_register_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.attach_image_via_register_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.attach_image_via_register_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def attach_image_via_register_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """attachImageViaRegister  # noqa: E501
+    def attach_image_via_register_with_http_info(self, body, **kwargs):  # noqa: E501
+        """attach_image_via_register  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.attach_image_via_register_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.attach_image_via_register_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ImageOverrideRequest body: request (required)
+        :param ComCapillaryOpsCpBoRequestsImageOverrideRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method attach_image_via_register_using_post" % key
+                    " to method attach_image_via_register" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `attach_image_via_register_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `attach_image_via_register`")  # noqa: E501
 
         collection_formats = {}
 
@@ -102,12 +102,16 @@ class UiArtifactsControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/attach-image-via-register', 'POST',
@@ -125,37 +129,37 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_artifact_using_delete(self, artifact_id, **kwargs):  # noqa: E501
-        """deleteArtifact  # noqa: E501
+    def delete_artifact(self, artifact_id, **kwargs):  # noqa: E501
+        """delete_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_artifact_using_delete(artifact_id, async_req=True)
+        >>> thread = api.delete_artifact(artifact_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_id: artifactId (required)
+        :param str artifact_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_artifact_using_delete_with_http_info(artifact_id, **kwargs)  # noqa: E501
+            return self.delete_artifact_with_http_info(artifact_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_artifact_using_delete_with_http_info(artifact_id, **kwargs)  # noqa: E501
+            (data) = self.delete_artifact_with_http_info(artifact_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_artifact_using_delete_with_http_info(self, artifact_id, **kwargs):  # noqa: E501
-        """deleteArtifact  # noqa: E501
+    def delete_artifact_with_http_info(self, artifact_id, **kwargs):  # noqa: E501
+        """delete_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_artifact_using_delete_with_http_info(artifact_id, async_req=True)
+        >>> thread = api.delete_artifact_with_http_info(artifact_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_id: artifactId (required)
+        :param str artifact_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -172,14 +176,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_artifact_using_delete" % key
+                    " to method delete_artifact" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'artifact_id' is set
         if ('artifact_id' not in params or
                 params['artifact_id'] is None):
-            raise ValueError("Missing the required parameter `artifact_id` when calling `delete_artifact_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `artifact_id` when calling `delete_artifact`")  # noqa: E501
 
         collection_formats = {}
 
@@ -195,8 +199,12 @@ class UiArtifactsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/{artifactId}', 'DELETE',
@@ -214,45 +222,45 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def generate_artifact_push_credentials_using_post(self, app_name, stack_name, **kwargs):  # noqa: E501
-        """generateArtifactPushCredentials  # noqa: E501
+    def generate_artifact_push_credentials1(self, stack_name, app_name, **kwargs):  # noqa: E501
+        """generate_artifact_push_credentials1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.generate_artifact_push_credentials_using_post(app_name, stack_name, async_req=True)
+        >>> thread = api.generate_artifact_push_credentials1(stack_name, app_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_name: appName (required)
-        :param str stack_name: stackName (required)
-        :return: ECRAuthorizationData
+        :param str stack_name: (required)
+        :param str app_name: (required)
+        :return: ComCapillaryOpsCpBoECRAuthorizationData
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.generate_artifact_push_credentials_using_post_with_http_info(app_name, stack_name, **kwargs)  # noqa: E501
+            return self.generate_artifact_push_credentials1_with_http_info(stack_name, app_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.generate_artifact_push_credentials_using_post_with_http_info(app_name, stack_name, **kwargs)  # noqa: E501
+            (data) = self.generate_artifact_push_credentials1_with_http_info(stack_name, app_name, **kwargs)  # noqa: E501
             return data
 
-    def generate_artifact_push_credentials_using_post_with_http_info(self, app_name, stack_name, **kwargs):  # noqa: E501
-        """generateArtifactPushCredentials  # noqa: E501
+    def generate_artifact_push_credentials1_with_http_info(self, stack_name, app_name, **kwargs):  # noqa: E501
+        """generate_artifact_push_credentials1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.generate_artifact_push_credentials_using_post_with_http_info(app_name, stack_name, async_req=True)
+        >>> thread = api.generate_artifact_push_credentials1_with_http_info(stack_name, app_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_name: appName (required)
-        :param str stack_name: stackName (required)
-        :return: ECRAuthorizationData
+        :param str stack_name: (required)
+        :param str app_name: (required)
+        :return: ComCapillaryOpsCpBoECRAuthorizationData
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['app_name', 'stack_name']  # noqa: E501
+        all_params = ['stack_name', 'app_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -263,26 +271,26 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method generate_artifact_push_credentials_using_post" % key
+                    " to method generate_artifact_push_credentials1" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'app_name' is set
-        if ('app_name' not in params or
-                params['app_name'] is None):
-            raise ValueError("Missing the required parameter `app_name` when calling `generate_artifact_push_credentials_using_post`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `generate_artifact_push_credentials_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `generate_artifact_push_credentials1`")  # noqa: E501
+        # verify the required parameter 'app_name' is set
+        if ('app_name' not in params or
+                params['app_name'] is None):
+            raise ValueError("Missing the required parameter `app_name` when calling `generate_artifact_push_credentials1`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'app_name' in params:
-            path_params['appName'] = params['app_name']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'app_name' in params:
+            path_params['appName'] = params['app_name']  # noqa: E501
 
         query_params = []
 
@@ -294,10 +302,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/pushCredentials/{stackName}/{appName}', 'POST',
@@ -307,7 +315,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ECRAuthorizationData',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoECRAuthorizationData',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -315,42 +323,42 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def generate_artifact_push_credentials_v2_using_post(self, artifact_name, registration_type, registration_value, **kwargs):  # noqa: E501
-        """generateArtifactPushCredentialsV2  # noqa: E501
+    def generate_artifact_push_credentials_v2(self, artifact_name, registration_type, registration_value, **kwargs):  # noqa: E501
+        """generate_artifact_push_credentials_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.generate_artifact_push_credentials_v2_using_post(artifact_name, registration_type, registration_value, async_req=True)
+        >>> thread = api.generate_artifact_push_credentials_v2(artifact_name, registration_type, registration_value, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_name: artifactName (required)
-        :param str registration_type: registrationType (required)
-        :param str registration_value: registrationValue (required)
-        :return: ECRAuthorizationData
+        :param str artifact_name: (required)
+        :param str registration_type: (required)
+        :param str registration_value: (required)
+        :return: ComCapillaryOpsCpBoECRAuthorizationData
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.generate_artifact_push_credentials_v2_using_post_with_http_info(artifact_name, registration_type, registration_value, **kwargs)  # noqa: E501
+            return self.generate_artifact_push_credentials_v2_with_http_info(artifact_name, registration_type, registration_value, **kwargs)  # noqa: E501
         else:
-            (data) = self.generate_artifact_push_credentials_v2_using_post_with_http_info(artifact_name, registration_type, registration_value, **kwargs)  # noqa: E501
+            (data) = self.generate_artifact_push_credentials_v2_with_http_info(artifact_name, registration_type, registration_value, **kwargs)  # noqa: E501
             return data
 
-    def generate_artifact_push_credentials_v2_using_post_with_http_info(self, artifact_name, registration_type, registration_value, **kwargs):  # noqa: E501
-        """generateArtifactPushCredentialsV2  # noqa: E501
+    def generate_artifact_push_credentials_v2_with_http_info(self, artifact_name, registration_type, registration_value, **kwargs):  # noqa: E501
+        """generate_artifact_push_credentials_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.generate_artifact_push_credentials_v2_using_post_with_http_info(artifact_name, registration_type, registration_value, async_req=True)
+        >>> thread = api.generate_artifact_push_credentials_v2_with_http_info(artifact_name, registration_type, registration_value, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_name: artifactName (required)
-        :param str registration_type: registrationType (required)
-        :param str registration_value: registrationValue (required)
-        :return: ECRAuthorizationData
+        :param str artifact_name: (required)
+        :param str registration_type: (required)
+        :param str registration_value: (required)
+        :return: ComCapillaryOpsCpBoECRAuthorizationData
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -366,22 +374,22 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method generate_artifact_push_credentials_v2_using_post" % key
+                    " to method generate_artifact_push_credentials_v2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'artifact_name' is set
         if ('artifact_name' not in params or
                 params['artifact_name'] is None):
-            raise ValueError("Missing the required parameter `artifact_name` when calling `generate_artifact_push_credentials_v2_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `artifact_name` when calling `generate_artifact_push_credentials_v2`")  # noqa: E501
         # verify the required parameter 'registration_type' is set
         if ('registration_type' not in params or
                 params['registration_type'] is None):
-            raise ValueError("Missing the required parameter `registration_type` when calling `generate_artifact_push_credentials_v2_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `registration_type` when calling `generate_artifact_push_credentials_v2`")  # noqa: E501
         # verify the required parameter 'registration_value' is set
         if ('registration_value' not in params or
                 params['registration_value'] is None):
-            raise ValueError("Missing the required parameter `registration_value` when calling `generate_artifact_push_credentials_v2_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `registration_value` when calling `generate_artifact_push_credentials_v2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -403,10 +411,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/pushCredentialsV2/artifactName/{artifactName}/registrationType/{registrationType}/value/{registrationValue}', 'POST',
@@ -416,7 +424,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ECRAuthorizationData',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoECRAuthorizationData',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -424,40 +432,40 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def generate_artifact_push_credentials_v3_using_post(self, artifact_name, metadata, **kwargs):  # noqa: E501
-        """generateArtifactPushCredentialsV3  # noqa: E501
+    def generate_artifact_push_credentials_v3(self, artifact_name, metadata, **kwargs):  # noqa: E501
+        """generate_artifact_push_credentials_v3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.generate_artifact_push_credentials_v3_using_post(artifact_name, metadata, async_req=True)
+        >>> thread = api.generate_artifact_push_credentials_v3(artifact_name, metadata, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_name: artifactName (required)
-        :param object metadata: metadata (required)
-        :return: ECRAuthorizationData
+        :param str artifact_name: (required)
+        :param dict(str, str) metadata: (required)
+        :return: ComCapillaryOpsCpBoECRAuthorizationData
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.generate_artifact_push_credentials_v3_using_post_with_http_info(artifact_name, metadata, **kwargs)  # noqa: E501
+            return self.generate_artifact_push_credentials_v3_with_http_info(artifact_name, metadata, **kwargs)  # noqa: E501
         else:
-            (data) = self.generate_artifact_push_credentials_v3_using_post_with_http_info(artifact_name, metadata, **kwargs)  # noqa: E501
+            (data) = self.generate_artifact_push_credentials_v3_with_http_info(artifact_name, metadata, **kwargs)  # noqa: E501
             return data
 
-    def generate_artifact_push_credentials_v3_using_post_with_http_info(self, artifact_name, metadata, **kwargs):  # noqa: E501
-        """generateArtifactPushCredentialsV3  # noqa: E501
+    def generate_artifact_push_credentials_v3_with_http_info(self, artifact_name, metadata, **kwargs):  # noqa: E501
+        """generate_artifact_push_credentials_v3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.generate_artifact_push_credentials_v3_using_post_with_http_info(artifact_name, metadata, async_req=True)
+        >>> thread = api.generate_artifact_push_credentials_v3_with_http_info(artifact_name, metadata, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_name: artifactName (required)
-        :param object metadata: metadata (required)
-        :return: ECRAuthorizationData
+        :param str artifact_name: (required)
+        :param dict(str, str) metadata: (required)
+        :return: ComCapillaryOpsCpBoECRAuthorizationData
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -473,18 +481,18 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method generate_artifact_push_credentials_v3_using_post" % key
+                    " to method generate_artifact_push_credentials_v3" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'artifact_name' is set
         if ('artifact_name' not in params or
                 params['artifact_name'] is None):
-            raise ValueError("Missing the required parameter `artifact_name` when calling `generate_artifact_push_credentials_v3_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `artifact_name` when calling `generate_artifact_push_credentials_v3`")  # noqa: E501
         # verify the required parameter 'metadata' is set
         if ('metadata' not in params or
                 params['metadata'] is None):
-            raise ValueError("Missing the required parameter `metadata` when calling `generate_artifact_push_credentials_v3_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `metadata` when calling `generate_artifact_push_credentials_v3`")  # noqa: E501
 
         collection_formats = {}
 
@@ -504,10 +512,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/pushCredentialsV3/artifactName/{artifactName}', 'POST',
@@ -517,7 +525,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ECRAuthorizationData',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoECRAuthorizationData',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -525,40 +533,40 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_using_get(self, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all5(self, **kwargs):  # noqa: E501
+        """get_all5  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get(async_req=True)
+        >>> thread = api.get_all5(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifactory: artifactory
-        :param bool classified: classified
-        :return: list[Artifact]
+        :param str artifactory:
+        :param bool classified:
+        :return: list[ComCapillaryOpsCpBoArtifact]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all5_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all5_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all5_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all5  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all5_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifactory: artifactory
-        :param bool classified: classified
-        :return: list[Artifact]
+        :param str artifactory:
+        :param bool classified:
+        :return: list[ComCapillaryOpsCpBoArtifact]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -574,7 +582,7 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_using_get" % key
+                    " to method get_all5" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -597,10 +605,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts', 'GET',
@@ -610,7 +618,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Artifact]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoArtifact]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -618,40 +626,40 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_artifact_by_application_name_using_get(self, application_name, cluster_id, **kwargs):  # noqa: E501
-        """getArtifactByApplicationName  # noqa: E501
+    def get_artifact_by_application_name(self, application_name, cluster_id, **kwargs):  # noqa: E501
+        """get_artifact_by_application_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_by_application_name_using_get(application_name, cluster_id, async_req=True)
+        >>> thread = api.get_artifact_by_application_name(application_name, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application_name: applicationName (required)
-        :param str cluster_id: clusterId (required)
-        :return: Artifact
+        :param str application_name: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoArtifact
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_artifact_by_application_name_using_get_with_http_info(application_name, cluster_id, **kwargs)  # noqa: E501
+            return self.get_artifact_by_application_name_with_http_info(application_name, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_artifact_by_application_name_using_get_with_http_info(application_name, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_artifact_by_application_name_with_http_info(application_name, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_artifact_by_application_name_using_get_with_http_info(self, application_name, cluster_id, **kwargs):  # noqa: E501
-        """getArtifactByApplicationName  # noqa: E501
+    def get_artifact_by_application_name_with_http_info(self, application_name, cluster_id, **kwargs):  # noqa: E501
+        """get_artifact_by_application_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_by_application_name_using_get_with_http_info(application_name, cluster_id, async_req=True)
+        >>> thread = api.get_artifact_by_application_name_with_http_info(application_name, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application_name: applicationName (required)
-        :param str cluster_id: clusterId (required)
-        :return: Artifact
+        :param str application_name: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoArtifact
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -667,18 +675,18 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_artifact_by_application_name_using_get" % key
+                    " to method get_artifact_by_application_name" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'application_name' is set
         if ('application_name' not in params or
                 params['application_name'] is None):
-            raise ValueError("Missing the required parameter `application_name` when calling `get_artifact_by_application_name_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `application_name` when calling `get_artifact_by_application_name`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_artifact_by_application_name_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_artifact_by_application_name`")  # noqa: E501
 
         collection_formats = {}
 
@@ -698,10 +706,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/cluster/{clusterId}/application/{applicationName}', 'GET',
@@ -711,7 +719,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Artifact',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifact',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -719,38 +727,38 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_artifact_by_cluster_id_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getArtifactByClusterId  # noqa: E501
+    def get_artifact_by_cluster_id(self, cluster_id, **kwargs):  # noqa: E501
+        """get_artifact_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_by_cluster_id_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_artifact_by_cluster_id(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: dict(str, dict(str, Artifact))
+        :param str cluster_id: (required)
+        :return: dict(str, dict(str, ComCapillaryOpsCpBoArtifact))
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_artifact_by_cluster_id_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_artifact_by_cluster_id_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_artifact_by_cluster_id_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_artifact_by_cluster_id_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_artifact_by_cluster_id_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getArtifactByClusterId  # noqa: E501
+    def get_artifact_by_cluster_id_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_artifact_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_by_cluster_id_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_artifact_by_cluster_id_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: dict(str, dict(str, Artifact))
+        :param str cluster_id: (required)
+        :return: dict(str, dict(str, ComCapillaryOpsCpBoArtifact))
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -766,14 +774,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_artifact_by_cluster_id_using_get" % key
+                    " to method get_artifact_by_cluster_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_artifact_by_cluster_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_artifact_by_cluster_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -791,10 +799,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/{clusterId}', 'GET',
@@ -804,7 +812,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='dict(str, dict(str, Artifact))',  # noqa: E501
+            response_type='dict(str, dict(str, ComCapillaryOpsCpBoArtifact))',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -812,47 +820,47 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_artifacts_by_resource_name_and_resource_type_using_get(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getArtifactsByResourceNameAndResourceType  # noqa: E501
+    def get_artifacts_by_resource_name_and_resource_type(self, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_artifacts_by_resource_name_and_resource_type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifacts_by_resource_name_and_resource_type_using_get(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_artifacts_by_resource_name_and_resource_type(cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :return: Artifact
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: ComCapillaryOpsCpBoArtifact
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_artifacts_by_resource_name_and_resource_type_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.get_artifacts_by_resource_name_and_resource_type_with_http_info(cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_artifacts_by_resource_name_and_resource_type_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.get_artifacts_by_resource_name_and_resource_type_with_http_info(cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def get_artifacts_by_resource_name_and_resource_type_using_get_with_http_info(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getArtifactsByResourceNameAndResourceType  # noqa: E501
+    def get_artifacts_by_resource_name_and_resource_type_with_http_info(self, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_artifacts_by_resource_name_and_resource_type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifacts_by_resource_name_and_resource_type_using_get_with_http_info(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_artifacts_by_resource_name_and_resource_type_with_http_info(cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :return: Artifact
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: ComCapillaryOpsCpBoArtifact
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'resource_name', 'resource_type']  # noqa: E501
+        all_params = ['cluster_id', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -863,32 +871,32 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_artifacts_by_resource_name_and_resource_type_using_get" % key
+                    " to method get_artifacts_by_resource_name_and_resource_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_artifacts_by_resource_name_and_resource_type_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_artifacts_by_resource_name_and_resource_type_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_artifacts_by_resource_name_and_resource_type`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_artifacts_by_resource_name_and_resource_type_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_artifacts_by_resource_name_and_resource_type`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_artifacts_by_resource_name_and_resource_type`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -900,10 +908,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/cluster/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}', 'GET',
@@ -913,7 +921,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Artifact',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifact',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -921,12 +929,12 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_metadata_keys_using_get(self, **kwargs):  # noqa: E501
-        """getMetadataKeys  # noqa: E501
+    def get_metadata_keys(self, **kwargs):  # noqa: E501
+        """get_metadata_keys  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_metadata_keys_using_get(async_req=True)
+        >>> thread = api.get_metadata_keys(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -936,17 +944,17 @@ class UiArtifactsControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_metadata_keys_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_metadata_keys_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_metadata_keys_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_metadata_keys_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_metadata_keys_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getMetadataKeys  # noqa: E501
+    def get_metadata_keys_with_http_info(self, **kwargs):  # noqa: E501
+        """get_metadata_keys  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_metadata_keys_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_metadata_keys_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -966,7 +974,7 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_metadata_keys_using_get" % key
+                    " to method get_metadata_keys" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -985,10 +993,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/metadata/keys', 'GET',
@@ -1006,45 +1014,45 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def promote_artifact_by_artifact_ci_name_using_post(self, artifact_id, ci_name, **kwargs):  # noqa: E501
-        """promoteArtifactByArtifactCiName  # noqa: E501
+    def promote_artifact(self, ci_id, artifact_id, **kwargs):  # noqa: E501
+        """promote_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.promote_artifact_by_artifact_ci_name_using_post(artifact_id, ci_name, async_req=True)
+        >>> thread = api.promote_artifact(ci_id, artifact_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_id: artifactId (required)
-        :param str ci_name: ciName (required)
-        :return: Artifact
+        :param str ci_id: (required)
+        :param str artifact_id: (required)
+        :return: ComCapillaryOpsCpBoArtifact
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.promote_artifact_by_artifact_ci_name_using_post_with_http_info(artifact_id, ci_name, **kwargs)  # noqa: E501
+            return self.promote_artifact_with_http_info(ci_id, artifact_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.promote_artifact_by_artifact_ci_name_using_post_with_http_info(artifact_id, ci_name, **kwargs)  # noqa: E501
+            (data) = self.promote_artifact_with_http_info(ci_id, artifact_id, **kwargs)  # noqa: E501
             return data
 
-    def promote_artifact_by_artifact_ci_name_using_post_with_http_info(self, artifact_id, ci_name, **kwargs):  # noqa: E501
-        """promoteArtifactByArtifactCiName  # noqa: E501
+    def promote_artifact_with_http_info(self, ci_id, artifact_id, **kwargs):  # noqa: E501
+        """promote_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.promote_artifact_by_artifact_ci_name_using_post_with_http_info(artifact_id, ci_name, async_req=True)
+        >>> thread = api.promote_artifact_with_http_info(ci_id, artifact_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_id: artifactId (required)
-        :param str ci_name: ciName (required)
-        :return: Artifact
+        :param str ci_id: (required)
+        :param str artifact_id: (required)
+        :return: ComCapillaryOpsCpBoArtifact
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['artifact_id', 'ci_name']  # noqa: E501
+        all_params = ['ci_id', 'artifact_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1055,127 +1063,26 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method promote_artifact_by_artifact_ci_name_using_post" % key
+                    " to method promote_artifact" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'artifact_id' is set
-        if ('artifact_id' not in params or
-                params['artifact_id'] is None):
-            raise ValueError("Missing the required parameter `artifact_id` when calling `promote_artifact_by_artifact_ci_name_using_post`")  # noqa: E501
-        # verify the required parameter 'ci_name' is set
-        if ('ci_name' not in params or
-                params['ci_name'] is None):
-            raise ValueError("Missing the required parameter `ci_name` when calling `promote_artifact_by_artifact_ci_name_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'artifact_id' in params:
-            query_params.append(('artifactId', params['artifact_id']))  # noqa: E501
-        if 'ci_name' in params:
-            query_params.append(('ciName', params['ci_name']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/artifacts/promote', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Artifact',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def promote_artifact_using_post(self, artifact_id, ci_id, **kwargs):  # noqa: E501
-        """promoteArtifact  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.promote_artifact_using_post(artifact_id, ci_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str artifact_id: artifactId (required)
-        :param str ci_id: ciId (required)
-        :return: Artifact
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.promote_artifact_using_post_with_http_info(artifact_id, ci_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.promote_artifact_using_post_with_http_info(artifact_id, ci_id, **kwargs)  # noqa: E501
-            return data
-
-    def promote_artifact_using_post_with_http_info(self, artifact_id, ci_id, **kwargs):  # noqa: E501
-        """promoteArtifact  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.promote_artifact_using_post_with_http_info(artifact_id, ci_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str artifact_id: artifactId (required)
-        :param str ci_id: ciId (required)
-        :return: Artifact
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['artifact_id', 'ci_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method promote_artifact_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'artifact_id' is set
-        if ('artifact_id' not in params or
-                params['artifact_id'] is None):
-            raise ValueError("Missing the required parameter `artifact_id` when calling `promote_artifact_using_post`")  # noqa: E501
         # verify the required parameter 'ci_id' is set
         if ('ci_id' not in params or
                 params['ci_id'] is None):
-            raise ValueError("Missing the required parameter `ci_id` when calling `promote_artifact_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `ci_id` when calling `promote_artifact`")  # noqa: E501
+        # verify the required parameter 'artifact_id' is set
+        if ('artifact_id' not in params or
+                params['artifact_id'] is None):
+            raise ValueError("Missing the required parameter `artifact_id` when calling `promote_artifact`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'artifact_id' in params:
-            path_params['artifactId'] = params['artifact_id']  # noqa: E501
         if 'ci_id' in params:
             path_params['ciId'] = params['ci_id']  # noqa: E501
+        if 'artifact_id' in params:
+            path_params['artifactId'] = params['artifact_id']  # noqa: E501
 
         query_params = []
 
@@ -1187,10 +1094,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/{ciId}/promote/{artifactId}', 'POST',
@@ -1200,7 +1107,7 @@ class UiArtifactsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Artifact',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifact',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1208,37 +1115,138 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def push_artifact_using_post(self, body, **kwargs):  # noqa: E501
-        """pushArtifact  # noqa: E501
+    def promote_artifact_by_artifact_ci_name(self, ci_name, artifact_id, **kwargs):  # noqa: E501
+        """promote_artifact_by_artifact_ci_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.push_artifact_using_post(body, async_req=True)
+        >>> thread = api.promote_artifact_by_artifact_ci_name(ci_name, artifact_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactRequest body: artifactRequest (required)
+        :param str ci_name: (required)
+        :param str artifact_id: (required)
+        :return: ComCapillaryOpsCpBoArtifact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.promote_artifact_by_artifact_ci_name_with_http_info(ci_name, artifact_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.promote_artifact_by_artifact_ci_name_with_http_info(ci_name, artifact_id, **kwargs)  # noqa: E501
+            return data
+
+    def promote_artifact_by_artifact_ci_name_with_http_info(self, ci_name, artifact_id, **kwargs):  # noqa: E501
+        """promote_artifact_by_artifact_ci_name  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.promote_artifact_by_artifact_ci_name_with_http_info(ci_name, artifact_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str ci_name: (required)
+        :param str artifact_id: (required)
+        :return: ComCapillaryOpsCpBoArtifact
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ci_name', 'artifact_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method promote_artifact_by_artifact_ci_name" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'ci_name' is set
+        if ('ci_name' not in params or
+                params['ci_name'] is None):
+            raise ValueError("Missing the required parameter `ci_name` when calling `promote_artifact_by_artifact_ci_name`")  # noqa: E501
+        # verify the required parameter 'artifact_id' is set
+        if ('artifact_id' not in params or
+                params['artifact_id'] is None):
+            raise ValueError("Missing the required parameter `artifact_id` when calling `promote_artifact_by_artifact_ci_name`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'ci_name' in params:
+            query_params.append(('ciName', params['ci_name']))  # noqa: E501
+        if 'artifact_id' in params:
+            query_params.append(('artifactId', params['artifact_id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/artifacts/promote', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ComCapillaryOpsCpBoArtifact',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def push_artifact(self, body, **kwargs):  # noqa: E501
+        """push_artifact  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.push_artifact(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ComCapillaryOpsCpBoRequestsArtifactRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.push_artifact_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.push_artifact_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.push_artifact_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.push_artifact_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def push_artifact_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """pushArtifact  # noqa: E501
+    def push_artifact_with_http_info(self, body, **kwargs):  # noqa: E501
+        """push_artifact  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.push_artifact_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.push_artifact_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactRequest body: artifactRequest (required)
+        :param ComCapillaryOpsCpBoRequestsArtifactRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1255,14 +1263,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method push_artifact_using_post" % key
+                    " to method push_artifact" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `push_artifact_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `push_artifact`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1278,12 +1286,16 @@ class UiArtifactsControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/push', 'POST',
@@ -1301,37 +1313,37 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def reclassify_artifacts_using_put(self, artifact_ci_id, **kwargs):  # noqa: E501
-        """reclassifyArtifacts  # noqa: E501
+    def reclassify_artifacts(self, artifact_ci_id, **kwargs):  # noqa: E501
+        """reclassify_artifacts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reclassify_artifacts_using_put(artifact_ci_id, async_req=True)
+        >>> thread = api.reclassify_artifacts(artifact_ci_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_ci_id: artifactCiId (required)
+        :param str artifact_ci_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.reclassify_artifacts_using_put_with_http_info(artifact_ci_id, **kwargs)  # noqa: E501
+            return self.reclassify_artifacts_with_http_info(artifact_ci_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.reclassify_artifacts_using_put_with_http_info(artifact_ci_id, **kwargs)  # noqa: E501
+            (data) = self.reclassify_artifacts_with_http_info(artifact_ci_id, **kwargs)  # noqa: E501
             return data
 
-    def reclassify_artifacts_using_put_with_http_info(self, artifact_ci_id, **kwargs):  # noqa: E501
-        """reclassifyArtifacts  # noqa: E501
+    def reclassify_artifacts_with_http_info(self, artifact_ci_id, **kwargs):  # noqa: E501
+        """reclassify_artifacts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reclassify_artifacts_using_put_with_http_info(artifact_ci_id, async_req=True)
+        >>> thread = api.reclassify_artifacts_with_http_info(artifact_ci_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str artifact_ci_id: artifactCiId (required)
+        :param str artifact_ci_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1348,14 +1360,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method reclassify_artifacts_using_put" % key
+                    " to method reclassify_artifacts" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'artifact_ci_id' is set
         if ('artifact_ci_id' not in params or
                 params['artifact_ci_id'] is None):
-            raise ValueError("Missing the required parameter `artifact_ci_id` when calling `reclassify_artifacts_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `artifact_ci_id` when calling `reclassify_artifacts`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1371,8 +1383,12 @@ class UiArtifactsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/reclassify', 'PUT',
@@ -1390,37 +1406,134 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def register_artifact_by_env_using_post(self, body, **kwargs):  # noqa: E501
-        """registerArtifactByEnv  # noqa: E501
+    def register_artifact1(self, body, **kwargs):  # noqa: E501
+        """register_artifact1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_by_env_using_post(body, async_req=True)
+        >>> thread = api.register_artifact1(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactByEnvironmentRequest body: artifactRequest (required)
+        :param ComCapillaryOpsCpBoArtifact body: (required)
+        :return: list[ComCapillaryOpsCpBoArtifact]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.register_artifact1_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.register_artifact1_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def register_artifact1_with_http_info(self, body, **kwargs):  # noqa: E501
+        """register_artifact1  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.register_artifact1_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ComCapillaryOpsCpBoArtifact body: (required)
+        :return: list[ComCapillaryOpsCpBoArtifact]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method register_artifact1" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `register_artifact1`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/artifacts/register', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ComCapillaryOpsCpBoArtifact]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def register_artifact_by_env(self, body, **kwargs):  # noqa: E501
+        """register_artifact_by_env  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.register_artifact_by_env(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ComCapillaryOpsCpBoRequestsArtifactArtifactByEnvironmentRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.register_artifact_by_env_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.register_artifact_by_env_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.register_artifact_by_env_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.register_artifact_by_env_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def register_artifact_by_env_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """registerArtifactByEnv  # noqa: E501
+    def register_artifact_by_env_with_http_info(self, body, **kwargs):  # noqa: E501
+        """register_artifact_by_env  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_by_env_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.register_artifact_by_env_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactByEnvironmentRequest body: artifactRequest (required)
+        :param ComCapillaryOpsCpBoRequestsArtifactArtifactByEnvironmentRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1437,14 +1550,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method register_artifact_by_env_using_post" % key
+                    " to method register_artifact_by_env" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `register_artifact_by_env_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `register_artifact_by_env`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1460,12 +1573,16 @@ class UiArtifactsControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/register-by-env', 'POST',
@@ -1483,37 +1600,37 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def register_artifact_by_release_stream_using_post(self, body, **kwargs):  # noqa: E501
-        """registerArtifactByReleaseStream  # noqa: E501
+    def register_artifact_by_release_stream(self, body, **kwargs):  # noqa: E501
+        """register_artifact_by_release_stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_by_release_stream_using_post(body, async_req=True)
+        >>> thread = api.register_artifact_by_release_stream(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactByReleaseStreamRequest body: artifactRequest (required)
+        :param ComCapillaryOpsCpBoRequestsArtifactArtifactByReleaseStreamRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.register_artifact_by_release_stream_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.register_artifact_by_release_stream_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.register_artifact_by_release_stream_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.register_artifact_by_release_stream_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def register_artifact_by_release_stream_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """registerArtifactByReleaseStream  # noqa: E501
+    def register_artifact_by_release_stream_with_http_info(self, body, **kwargs):  # noqa: E501
+        """register_artifact_by_release_stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_by_release_stream_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.register_artifact_by_release_stream_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactByReleaseStreamRequest body: artifactRequest (required)
+        :param ComCapillaryOpsCpBoRequestsArtifactArtifactByReleaseStreamRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1530,14 +1647,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method register_artifact_by_release_stream_using_post" % key
+                    " to method register_artifact_by_release_stream" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `register_artifact_by_release_stream_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `register_artifact_by_release_stream`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1553,12 +1670,16 @@ class UiArtifactsControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/register-by-release-stream', 'POST',
@@ -1576,37 +1697,37 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def register_artifact_saas_using_post(self, body, **kwargs):  # noqa: E501
-        """registerArtifactSaas  # noqa: E501
+    def register_artifact_saas1(self, body, **kwargs):  # noqa: E501
+        """register_artifact_saas1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_saas_using_post(body, async_req=True)
+        >>> thread = api.register_artifact_saas1(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param SaasArtifactRequest body: artifactRequest (required)
+        :param ComCapillaryOpsCpV2ArtifactSaasArtifactRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.register_artifact_saas_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.register_artifact_saas1_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.register_artifact_saas_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.register_artifact_saas1_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def register_artifact_saas_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """registerArtifactSaas  # noqa: E501
+    def register_artifact_saas1_with_http_info(self, body, **kwargs):  # noqa: E501
+        """register_artifact_saas1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_saas_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.register_artifact_saas1_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param SaasArtifactRequest body: artifactRequest (required)
+        :param ComCapillaryOpsCpV2ArtifactSaasArtifactRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1623,14 +1744,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method register_artifact_saas_using_post" % key
+                    " to method register_artifact_saas1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `register_artifact_saas_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `register_artifact_saas1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1646,12 +1767,16 @@ class UiArtifactsControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/register-saas', 'POST',
@@ -1669,38 +1794,38 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def register_artifact_using_post1(self, body, **kwargs):  # noqa: E501
-        """registerArtifact  # noqa: E501
+    def register_artifact_v2(self, body, **kwargs):  # noqa: E501
+        """register_artifact_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_using_post1(body, async_req=True)
+        >>> thread = api.register_artifact_v2(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Artifact body: artifact (required)
-        :return: list[Artifact]
+        :param ComCapillaryOpsCpBoRequestsArtifactRequest body: (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.register_artifact_using_post1_with_http_info(body, **kwargs)  # noqa: E501
+            return self.register_artifact_v2_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.register_artifact_using_post1_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.register_artifact_v2_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def register_artifact_using_post1_with_http_info(self, body, **kwargs):  # noqa: E501
-        """registerArtifact  # noqa: E501
+    def register_artifact_v2_with_http_info(self, body, **kwargs):  # noqa: E501
+        """register_artifact_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_using_post1_with_http_info(body, async_req=True)
+        >>> thread = api.register_artifact_v2_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Artifact body: artifact (required)
-        :return: list[Artifact]
+        :param ComCapillaryOpsCpBoRequestsArtifactRequest body: (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1716,14 +1841,14 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method register_artifact_using_post1" % key
+                    " to method register_artifact_v2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `register_artifact_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `register_artifact_v2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1741,107 +1866,14 @@ class UiArtifactsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/artifacts/register', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[Artifact]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def register_artifact_v2_using_post(self, body, **kwargs):  # noqa: E501
-        """registerArtifactV2  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_v2_using_post(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ArtifactRequest body: artifactRequest (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.register_artifact_v2_using_post_with_http_info(body, **kwargs)  # noqa: E501
-        else:
-            (data) = self.register_artifact_v2_using_post_with_http_info(body, **kwargs)  # noqa: E501
-            return data
-
-    def register_artifact_v2_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """registerArtifactV2  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.register_artifact_v2_using_post_with_http_info(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ArtifactRequest body: artifactRequest (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method register_artifact_v2_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `register_artifact_v2_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/registerV2', 'POST',
@@ -1859,51 +1891,51 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_release_stream_using_post(self, cluster_id, current_release_stream, exclude_apps, include_apps, updated_release_stream, **kwargs):  # noqa: E501
-        """updateReleaseStream  # noqa: E501
+    def update_release_stream(self, cluster_id, current_release_stream, updated_release_stream, include_apps, exclude_apps, **kwargs):  # noqa: E501
+        """update_release_stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_release_stream_using_post(cluster_id, current_release_stream, exclude_apps, include_apps, updated_release_stream, async_req=True)
+        >>> thread = api.update_release_stream(cluster_id, current_release_stream, updated_release_stream, include_apps, exclude_apps, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str current_release_stream: currentReleaseStream (required)
-        :param list[str] exclude_apps: excludeApps (required)
-        :param list[str] include_apps: includeApps (required)
-        :param str updated_release_stream: updatedReleaseStream (required)
+        :param str cluster_id: (required)
+        :param str current_release_stream: (required)
+        :param str updated_release_stream: (required)
+        :param list[str] include_apps: (required)
+        :param list[str] exclude_apps: (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_release_stream_using_post_with_http_info(cluster_id, current_release_stream, exclude_apps, include_apps, updated_release_stream, **kwargs)  # noqa: E501
+            return self.update_release_stream_with_http_info(cluster_id, current_release_stream, updated_release_stream, include_apps, exclude_apps, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_release_stream_using_post_with_http_info(cluster_id, current_release_stream, exclude_apps, include_apps, updated_release_stream, **kwargs)  # noqa: E501
+            (data) = self.update_release_stream_with_http_info(cluster_id, current_release_stream, updated_release_stream, include_apps, exclude_apps, **kwargs)  # noqa: E501
             return data
 
-    def update_release_stream_using_post_with_http_info(self, cluster_id, current_release_stream, exclude_apps, include_apps, updated_release_stream, **kwargs):  # noqa: E501
-        """updateReleaseStream  # noqa: E501
+    def update_release_stream_with_http_info(self, cluster_id, current_release_stream, updated_release_stream, include_apps, exclude_apps, **kwargs):  # noqa: E501
+        """update_release_stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_release_stream_using_post_with_http_info(cluster_id, current_release_stream, exclude_apps, include_apps, updated_release_stream, async_req=True)
+        >>> thread = api.update_release_stream_with_http_info(cluster_id, current_release_stream, updated_release_stream, include_apps, exclude_apps, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str current_release_stream: currentReleaseStream (required)
-        :param list[str] exclude_apps: excludeApps (required)
-        :param list[str] include_apps: includeApps (required)
-        :param str updated_release_stream: updatedReleaseStream (required)
+        :param str cluster_id: (required)
+        :param str current_release_stream: (required)
+        :param str updated_release_stream: (required)
+        :param list[str] include_apps: (required)
+        :param list[str] exclude_apps: (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'current_release_stream', 'exclude_apps', 'include_apps', 'updated_release_stream']  # noqa: E501
+        all_params = ['cluster_id', 'current_release_stream', 'updated_release_stream', 'include_apps', 'exclude_apps']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1914,30 +1946,30 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_release_stream_using_post" % key
+                    " to method update_release_stream" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `update_release_stream_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `update_release_stream`")  # noqa: E501
         # verify the required parameter 'current_release_stream' is set
         if ('current_release_stream' not in params or
                 params['current_release_stream'] is None):
-            raise ValueError("Missing the required parameter `current_release_stream` when calling `update_release_stream_using_post`")  # noqa: E501
-        # verify the required parameter 'exclude_apps' is set
-        if ('exclude_apps' not in params or
-                params['exclude_apps'] is None):
-            raise ValueError("Missing the required parameter `exclude_apps` when calling `update_release_stream_using_post`")  # noqa: E501
-        # verify the required parameter 'include_apps' is set
-        if ('include_apps' not in params or
-                params['include_apps'] is None):
-            raise ValueError("Missing the required parameter `include_apps` when calling `update_release_stream_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `current_release_stream` when calling `update_release_stream`")  # noqa: E501
         # verify the required parameter 'updated_release_stream' is set
         if ('updated_release_stream' not in params or
                 params['updated_release_stream'] is None):
-            raise ValueError("Missing the required parameter `updated_release_stream` when calling `update_release_stream_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `updated_release_stream` when calling `update_release_stream`")  # noqa: E501
+        # verify the required parameter 'include_apps' is set
+        if ('include_apps' not in params or
+                params['include_apps'] is None):
+            raise ValueError("Missing the required parameter `include_apps` when calling `update_release_stream`")  # noqa: E501
+        # verify the required parameter 'exclude_apps' is set
+        if ('exclude_apps' not in params or
+                params['exclude_apps'] is None):
+            raise ValueError("Missing the required parameter `exclude_apps` when calling `update_release_stream`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1950,12 +1982,12 @@ class UiArtifactsControllerApi(object):
             path_params['updatedReleaseStream'] = params['updated_release_stream']  # noqa: E501
 
         query_params = []
-        if 'exclude_apps' in params:
-            query_params.append(('excludeApps', params['exclude_apps']))  # noqa: E501
-            collection_formats['excludeApps'] = 'multi'  # noqa: E501
         if 'include_apps' in params:
             query_params.append(('includeApps', params['include_apps']))  # noqa: E501
             collection_formats['includeApps'] = 'multi'  # noqa: E501
+        if 'exclude_apps' in params:
+            query_params.append(('excludeApps', params['exclude_apps']))  # noqa: E501
+            collection_formats['excludeApps'] = 'multi'  # noqa: E501
 
         header_params = {}
 
@@ -1965,10 +1997,10 @@ class UiArtifactsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/clusterId/{clusterId}/currentReleaseStream/{currentReleaseStream}/updatedReleaseStream/{updatedReleaseStream}/updateStream', 'POST',
@@ -1986,45 +2018,43 @@ class UiArtifactsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_artifacts_zip_using_post(self, artifact_request, file, **kwargs):  # noqa: E501
-        """uploadArtifactsZip  # noqa: E501
+    def upload_artifacts_zip(self, **kwargs):  # noqa: E501
+        """upload_artifacts_zip  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upload_artifacts_zip_using_post(artifact_request, file, async_req=True)
+        >>> thread = api.upload_artifacts_zip(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param object artifact_request: (required)
-        :param str file: (required)
+        :param ArtifactsUploadBody body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.upload_artifacts_zip_using_post_with_http_info(artifact_request, file, **kwargs)  # noqa: E501
+            return self.upload_artifacts_zip_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.upload_artifacts_zip_using_post_with_http_info(artifact_request, file, **kwargs)  # noqa: E501
+            (data) = self.upload_artifacts_zip_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def upload_artifacts_zip_using_post_with_http_info(self, artifact_request, file, **kwargs):  # noqa: E501
-        """uploadArtifactsZip  # noqa: E501
+    def upload_artifacts_zip_with_http_info(self, **kwargs):  # noqa: E501
+        """upload_artifacts_zip  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upload_artifacts_zip_using_post_with_http_info(artifact_request, file, async_req=True)
+        >>> thread = api.upload_artifacts_zip_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param object artifact_request: (required)
-        :param str file: (required)
+        :param ArtifactsUploadBody body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['artifact_request', 'file']  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2035,18 +2065,10 @@ class UiArtifactsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method upload_artifacts_zip_using_post" % key
+                    " to method upload_artifacts_zip" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'artifact_request' is set
-        if ('artifact_request' not in params or
-                params['artifact_request'] is None):
-            raise ValueError("Missing the required parameter `artifact_request` when calling `upload_artifacts_zip_using_post`")  # noqa: E501
-        # verify the required parameter 'file' is set
-        if ('file' not in params or
-                params['file'] is None):
-            raise ValueError("Missing the required parameter `file` when calling `upload_artifacts_zip_using_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2058,18 +2080,20 @@ class UiArtifactsControllerApi(object):
 
         form_params = []
         local_var_files = {}
-        if 'artifact_request' in params:
-            form_params.append(('artifactRequest', params['artifact_request']))  # noqa: E501
-        if 'file' in params:
-            local_var_files['file'] = params['file']  # noqa: E501
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['multipart/form-data'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifacts/upload', 'POST',

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -41,8 +41,8 @@ class UiLocalClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param LocalClusterRequest body: request (required)
-        :return: LocalCluster
+        :param ComCapillaryOpsCpBoRequestsLocalClusterRequest body: (required)
+        :return: ComCapillaryOpsCpBoLocalCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -62,8 +62,8 @@ class UiLocalClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param LocalClusterRequest body: request (required)
-        :return: LocalCluster
+        :param ComCapillaryOpsCpBoRequestsLocalClusterRequest body: (required)
+        :return: ComCapillaryOpsCpBoLocalCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -104,14 +104,14 @@ class UiLocalClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/local/clusters', 'POST',
@@ -121,7 +121,7 @@ class UiLocalClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='LocalCluster',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoLocalCluster',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -130,7 +130,7 @@ class UiLocalClusterControllerApi(object):
             collection_formats=collection_formats)
 
     def get_cluster_using_get3(self, cluster_id, **kwargs):  # noqa: E501
-        """getCluster  # noqa: E501
+        """get_cluster_using_get3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -138,8 +138,8 @@ class UiLocalClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: LocalCluster
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoLocalCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -151,7 +151,7 @@ class UiLocalClusterControllerApi(object):
             return data
 
     def get_cluster_using_get3_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getCluster  # noqa: E501
+        """get_cluster_using_get3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -159,8 +159,8 @@ class UiLocalClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: LocalCluster
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoLocalCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -201,10 +201,10 @@ class UiLocalClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/local/clusters/{clusterId}', 'GET',
@@ -214,7 +214,7 @@ class UiLocalClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='LocalCluster',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoLocalCluster',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -222,37 +222,37 @@ class UiLocalClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_vagrant_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getVagrant  # noqa: E501
+    def get_vagrant(self, cluster_id, **kwargs):  # noqa: E501
+        """get_vagrant  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vagrant_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_vagrant(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_vagrant_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_vagrant_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_vagrant_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_vagrant_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_vagrant_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getVagrant  # noqa: E501
+    def get_vagrant_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_vagrant  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vagrant_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_vagrant_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -269,14 +269,14 @@ class UiLocalClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_vagrant_using_get" % key
+                    " to method get_vagrant" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_vagrant_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_vagrant`")  # noqa: E501
 
         collection_formats = {}
 
@@ -294,10 +294,10 @@ class UiLocalClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/local/clusters/{clusterId}/vagrant', 'GET',
@@ -316,7 +316,7 @@ class UiLocalClusterControllerApi(object):
             collection_formats=collection_formats)
 
     def update_cluster_using_put3(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateCluster  # noqa: E501
+        """update_cluster_using_put3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -324,9 +324,9 @@ class UiLocalClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param LocalClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: LocalCluster
+        :param ComCapillaryOpsCpBoRequestsLocalClusterRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoLocalCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -338,7 +338,7 @@ class UiLocalClusterControllerApi(object):
             return data
 
     def update_cluster_using_put3_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateCluster  # noqa: E501
+        """update_cluster_using_put3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -346,9 +346,9 @@ class UiLocalClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param LocalClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: LocalCluster
+        :param ComCapillaryOpsCpBoRequestsLocalClusterRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoLocalCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -395,14 +395,14 @@ class UiLocalClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/local/clusters/{clusterId}', 'PUT',
@@ -412,7 +412,7 @@ class UiLocalClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='LocalCluster',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoLocalCluster',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

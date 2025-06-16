@@ -1,15 +1,15 @@
 # swagger_client.UiAssistantControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**continue_chat_using_post**](UiAssistantControllerApi.md#continue_chat_using_post) | **POST** /cc-ui/v2/assistant/chat | Continue Chat
-[**create_thread_using_get**](UiAssistantControllerApi.md#create_thread_using_get) | **GET** /cc-ui/v2/assistant/thread | createThread
-[**get_chat_using_post**](UiAssistantControllerApi.md#get_chat_using_post) | **POST** /cc-ui/v2/assistant/{threadId}/getChat | getChat
+[**continue_chat**](UiAssistantControllerApi.md#continue_chat) | **POST** /cc-ui/v2/assistant/chat | Continue Chat
+[**create_thread**](UiAssistantControllerApi.md#create_thread) | **GET** /cc-ui/v2/assistant/thread | 
+[**get_chat**](UiAssistantControllerApi.md#get_chat) | **POST** /cc-ui/v2/assistant/{threadId}/getChat | 
 
-# **continue_chat_using_post**
-> AssistantResponse continue_chat_using_post(body)
+# **continue_chat**
+> ComCapillaryOpsCpV2AssistantsBoAssistantResponse continue_chat(body)
 
 Continue Chat
 
@@ -20,48 +20,48 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAssistantControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AssistantRequest() # AssistantRequest | request
+body = swagger_client.ComCapillaryOpsCpV2AssistantsBoAssistantRequest() # ComCapillaryOpsCpV2AssistantsBoAssistantRequest | 
 
 try:
     # Continue Chat
-    api_response = api_instance.continue_chat_using_post(body)
+    api_response = api_instance.continue_chat(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAssistantControllerApi->continue_chat_using_post: %s\n" % e)
+    print("Exception when calling UiAssistantControllerApi->continue_chat: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AssistantRequest**](AssistantRequest.md)| request | 
+ **body** | [**ComCapillaryOpsCpV2AssistantsBoAssistantRequest**](ComCapillaryOpsCpV2AssistantsBoAssistantRequest.md)|  | 
 
 ### Return type
 
-[**AssistantResponse**](AssistantResponse.md)
+[**ComCapillaryOpsCpV2AssistantsBoAssistantResponse**](ComCapillaryOpsCpV2AssistantsBoAssistantResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_thread_using_get**
-> AssistantResponse create_thread_using_get()
+# **create_thread**
+> ComCapillaryOpsCpV2AssistantsBoAssistantResponse create_thread()
 
-createThread
+
 
 ### Example
 ```python
@@ -70,7 +70,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -79,11 +79,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiAssistantControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # createThread
-    api_response = api_instance.create_thread_using_get()
+    api_response = api_instance.create_thread()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAssistantControllerApi->create_thread_using_get: %s\n" % e)
+    print("Exception when calling UiAssistantControllerApi->create_thread: %s\n" % e)
 ```
 
 ### Parameters
@@ -91,23 +90,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AssistantResponse**](AssistantResponse.md)
+[**ComCapillaryOpsCpV2AssistantsBoAssistantResponse**](ComCapillaryOpsCpV2AssistantsBoAssistantResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_chat_using_post**
-> AssistantResponse get_chat_using_post(thread_id)
+# **get_chat**
+> ComCapillaryOpsCpV2AssistantsBoAssistantResponse get_chat(thread_id)
 
-getChat
+
 
 ### Example
 ```python
@@ -116,41 +115,40 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAssistantControllerApi(swagger_client.ApiClient(configuration))
-thread_id = 'thread_id_example' # str | threadId
+thread_id = 'thread_id_example' # str | 
 
 try:
-    # getChat
-    api_response = api_instance.get_chat_using_post(thread_id)
+    api_response = api_instance.get_chat(thread_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAssistantControllerApi->get_chat_using_post: %s\n" % e)
+    print("Exception when calling UiAssistantControllerApi->get_chat: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **thread_id** | **str**| threadId | 
+ **thread_id** | **str**|  | 
 
 ### Return type
 
-[**AssistantResponse**](AssistantResponse.md)
+[**ComCapillaryOpsCpV2AssistantsBoAssistantResponse**](ComCapillaryOpsCpV2AssistantsBoAssistantResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

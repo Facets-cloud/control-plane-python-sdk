@@ -1,19 +1,19 @@
 # swagger_client.UiAlertsControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_all_using_delete**](UiAlertsControllerApi.md#delete_all_using_delete) | **DELETE** /cc-ui/v1/alerts | deleteAll
-[**get_alerts_count_using_get**](UiAlertsControllerApi.md#get_alerts_count_using_get) | **GET** /cc-ui/v1/alerts/firing/count | getAlertsCount
-[**get_alerts_overview_using_get**](UiAlertsControllerApi.md#get_alerts_overview_using_get) | **GET** /cc-ui/v1/alerts/firing/overview | getAlertsOverview
-[**get_cluster_alerts_using_get**](UiAlertsControllerApi.md#get_cluster_alerts_using_get) | **GET** /cc-ui/v1/alerts/{clusterId}/all | getClusterAlerts
-[**get_firing_alerts_using_get**](UiAlertsControllerApi.md#get_firing_alerts_using_get) | **GET** /cc-ui/v1/alerts/firing | getFiringAlerts
+[**delete_all**](UiAlertsControllerApi.md#delete_all) | **DELETE** /cc-ui/v1/alerts | 
+[**get_alerts_count**](UiAlertsControllerApi.md#get_alerts_count) | **GET** /cc-ui/v1/alerts/firing/count | 
+[**get_alerts_overview**](UiAlertsControllerApi.md#get_alerts_overview) | **GET** /cc-ui/v1/alerts/firing/overview | 
+[**get_cluster_alerts**](UiAlertsControllerApi.md#get_cluster_alerts) | **GET** /cc-ui/v1/alerts/{clusterId}/all | 
+[**get_firing_alerts**](UiAlertsControllerApi.md#get_firing_alerts) | **GET** /cc-ui/v1/alerts/firing | 
 
-# **delete_all_using_delete**
-> delete_all_using_delete()
+# **delete_all**
+> delete_all()
 
-deleteAll
+
 
 ### Example
 ```python
@@ -22,7 +22,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -31,10 +31,9 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiAlertsControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # deleteAll
-    api_instance.delete_all_using_delete()
+    api_instance.delete_all()
 except ApiException as e:
-    print("Exception when calling UiAlertsControllerApi->delete_all_using_delete: %s\n" % e)
+    print("Exception when calling UiAlertsControllerApi->delete_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -46,19 +45,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_alerts_count_using_get**
-> dict(str, int) get_alerts_count_using_get()
+# **get_alerts_count**
+> dict(str, int) get_alerts_count()
 
-getAlertsCount
+
 
 ### Example
 ```python
@@ -67,7 +66,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -76,11 +75,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiAlertsControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAlertsCount
-    api_response = api_instance.get_alerts_count_using_get()
+    api_response = api_instance.get_alerts_count()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAlertsControllerApi->get_alerts_count_using_get: %s\n" % e)
+    print("Exception when calling UiAlertsControllerApi->get_alerts_count: %s\n" % e)
 ```
 
 ### Parameters
@@ -92,19 +90,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_alerts_overview_using_get**
-> list[AlertOverview] get_alerts_overview_using_get()
+# **get_alerts_overview**
+> list[ComCapillaryOpsCpBoAlertsAlertOverview] get_alerts_overview()
 
-getAlertsOverview
+
 
 ### Example
 ```python
@@ -113,7 +111,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -122,11 +120,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiAlertsControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAlertsOverview
-    api_response = api_instance.get_alerts_overview_using_get()
+    api_response = api_instance.get_alerts_overview()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAlertsControllerApi->get_alerts_overview_using_get: %s\n" % e)
+    print("Exception when calling UiAlertsControllerApi->get_alerts_overview: %s\n" % e)
 ```
 
 ### Parameters
@@ -134,23 +131,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[AlertOverview]**](AlertOverview.md)
+[**list[ComCapillaryOpsCpBoAlertsAlertOverview]**](ComCapillaryOpsCpBoAlertsAlertOverview.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_cluster_alerts_using_get**
-> ClusterFiringAlertsDTO get_cluster_alerts_using_get(cluster_id)
+# **get_cluster_alerts**
+> ComCapillaryOpsCpBoAlertsClusterFiringAlertsDTO get_cluster_alerts(cluster_id)
 
-getClusterAlerts
+
 
 ### Example
 ```python
@@ -159,48 +156,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAlertsControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getClusterAlerts
-    api_response = api_instance.get_cluster_alerts_using_get(cluster_id)
+    api_response = api_instance.get_cluster_alerts(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAlertsControllerApi->get_cluster_alerts_using_get: %s\n" % e)
+    print("Exception when calling UiAlertsControllerApi->get_cluster_alerts: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**ClusterFiringAlertsDTO**](ClusterFiringAlertsDTO.md)
+[**ComCapillaryOpsCpBoAlertsClusterFiringAlertsDTO**](ComCapillaryOpsCpBoAlertsClusterFiringAlertsDTO.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_firing_alerts_using_get**
-> list[AlertGroup] get_firing_alerts_using_get()
+# **get_firing_alerts**
+> list[ComCapillaryOpsCpBoAlertsAlertGroup] get_firing_alerts()
 
-getFiringAlerts
+
 
 ### Example
 ```python
@@ -209,7 +205,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -218,11 +214,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiAlertsControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getFiringAlerts
-    api_response = api_instance.get_firing_alerts_using_get()
+    api_response = api_instance.get_firing_alerts()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAlertsControllerApi->get_firing_alerts_using_get: %s\n" % e)
+    print("Exception when calling UiAlertsControllerApi->get_firing_alerts: %s\n" % e)
 ```
 
 ### Parameters
@@ -230,16 +225,16 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[AlertGroup]**](AlertGroup.md)
+[**list[ComCapillaryOpsCpBoAlertsAlertGroup]**](ComCapillaryOpsCpBoAlertsAlertGroup.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

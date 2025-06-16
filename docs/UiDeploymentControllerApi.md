@@ -1,42 +1,43 @@
 # swagger_client.UiDeploymentControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**abort_automation_suite_using_delete1**](UiDeploymentControllerApi.md#abort_automation_suite_using_delete1) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite | abortAutomationSuite
-[**approve_release_using_post**](UiDeploymentControllerApi.md#approve_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/approveRelease | approveRelease
-[**clean_s3_sources_using_delete**](UiDeploymentControllerApi.md#clean_s3_sources_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/clean-s3-sources | cleanS3Sources
-[**create_deployment_using_post**](UiDeploymentControllerApi.md#create_deployment_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments | createDeployment
-[**destroy_cluster_using_delete**](UiDeploymentControllerApi.md#destroy_cluster_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/destroy | destroyCluster
-[**download_terraform_export_using_get**](UiDeploymentControllerApi.md#download_terraform_export_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/download-terraform-export | downloadTerraformExport
-[**get_cluster_state_using_get**](UiDeploymentControllerApi.md#get_cluster_state_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/state | getClusterState
-[**get_deployment_logs_using_get**](UiDeploymentControllerApi.md#get_deployment_logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs | getDeploymentLogs
-[**get_deployment_stats_using_get**](UiDeploymentControllerApi.md#get_deployment_stats_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/stats | getDeploymentStats
-[**get_deployment_using_get**](UiDeploymentControllerApi.md#get_deployment_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId} | getDeployment
-[**get_deployments_overview_using_get**](UiDeploymentControllerApi.md#get_deployments_overview_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/overview | getDeploymentsOverview
-[**get_deployments_using_get1**](UiDeploymentControllerApi.md#get_deployments_using_get1) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments | getDeployments
-[**get_latest_release_by_application_using_get**](UiDeploymentControllerApi.md#get_latest_release_by_application_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/latest-successful-release/{application} | getLatestReleaseByApplication
-[**get_latest_release_using_get**](UiDeploymentControllerApi.md#get_latest_release_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/latest-successful-release | getLatestRelease
-[**get_release_changes_using_get**](UiDeploymentControllerApi.md#get_release_changes_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/release-changes | getReleaseChanges
-[**launch_cluster_using_put**](UiDeploymentControllerApi.md#launch_cluster_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/launch | launchCluster
-[**reject_release_using_post**](UiDeploymentControllerApi.md#reject_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/rejectRelease | rejectRelease
-[**release_using_put**](UiDeploymentControllerApi.md#release_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/release | release
-[**release_v2_using_put**](UiDeploymentControllerApi.md#release_v2_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/releaseV2/{releaseType} | releaseV2
-[**run_hotfix_deployment_recipe_using_post**](UiDeploymentControllerApi.md#run_hotfix_deployment_recipe_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/recipes/deployment/hotfix | runHotfixDeploymentRecipe
-[**search_deployments_using_get**](UiDeploymentControllerApi.md#search_deployments_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/search | searchDeployments
-[**sign_off_deployment_using_put**](UiDeploymentControllerApi.md#sign_off_deployment_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/signoff | signOffDeployment
-[**simulate_using_get**](UiDeploymentControllerApi.md#simulate_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/simulate | simulate
-[**state_unlock_using_put**](UiDeploymentControllerApi.md#state_unlock_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/unlock | stateUnlock
-[**stream_deployment_logs_using_get**](UiDeploymentControllerApi.md#stream_deployment_logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs/stream | streamDeploymentLogs
-[**trigger_maintenance_release_using_post**](UiDeploymentControllerApi.md#trigger_maintenance_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/maintenance | triggerMaintenanceRelease
-[**trigger_rollback_plan_release_using_post**](UiDeploymentControllerApi.md#trigger_rollback_plan_release_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan | triggerRollbackPlanRelease
-[**trigger_terraform_export_using_post**](UiDeploymentControllerApi.md#trigger_terraform_export_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/terraform-export | triggerTerraformExport
+[**abort_automation_suite1**](UiDeploymentControllerApi.md#abort_automation_suite1) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite | 
+[**approve_release**](UiDeploymentControllerApi.md#approve_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/approveRelease | 
+[**clean_s3_sources**](UiDeploymentControllerApi.md#clean_s3_sources) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/clean-s3-sources | 
+[**create_deployment**](UiDeploymentControllerApi.md#create_deployment) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments | 
+[**destroy_cluster**](UiDeploymentControllerApi.md#destroy_cluster) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/destroy | 
+[**download_terraform_export**](UiDeploymentControllerApi.md#download_terraform_export) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/download-terraform-export | 
+[**get_cluster_state**](UiDeploymentControllerApi.md#get_cluster_state) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/state | 
+[**get_deployment**](UiDeploymentControllerApi.md#get_deployment) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId} | 
+[**get_deployment_by_release_trace_id**](UiDeploymentControllerApi.md#get_deployment_by_release_trace_id) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/trace-id/{releaseTraceId} | 
+[**get_deployment_logs**](UiDeploymentControllerApi.md#get_deployment_logs) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs | 
+[**get_deployment_stats**](UiDeploymentControllerApi.md#get_deployment_stats) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/stats | 
+[**get_deployments1**](UiDeploymentControllerApi.md#get_deployments1) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments | 
+[**get_deployments_overview**](UiDeploymentControllerApi.md#get_deployments_overview) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/overview | 
+[**get_latest_release**](UiDeploymentControllerApi.md#get_latest_release) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/latest-successful-release | 
+[**get_latest_release_by_application**](UiDeploymentControllerApi.md#get_latest_release_by_application) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/latest-successful-release/{application} | 
+[**get_release_changes**](UiDeploymentControllerApi.md#get_release_changes) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/release-changes | 
+[**launch_cluster**](UiDeploymentControllerApi.md#launch_cluster) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/launch | 
+[**reject_release**](UiDeploymentControllerApi.md#reject_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/rejectRelease | 
+[**release**](UiDeploymentControllerApi.md#release) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/release | 
+[**release_v2**](UiDeploymentControllerApi.md#release_v2) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/releaseV2/{releaseType} | 
+[**run_hotfix_deployment_recipe**](UiDeploymentControllerApi.md#run_hotfix_deployment_recipe) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/recipes/deployment/hotfix | 
+[**search_deployments**](UiDeploymentControllerApi.md#search_deployments) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/search | 
+[**sign_off_deployment**](UiDeploymentControllerApi.md#sign_off_deployment) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/signoff | 
+[**simulate**](UiDeploymentControllerApi.md#simulate) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/simulate | 
+[**state_unlock**](UiDeploymentControllerApi.md#state_unlock) | **PUT** /cc-ui/v1/clusters/{clusterId}/deployments/unlock | 
+[**stream_deployment_logs**](UiDeploymentControllerApi.md#stream_deployment_logs) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs/stream | 
+[**trigger_maintenance_release**](UiDeploymentControllerApi.md#trigger_maintenance_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/maintenance | 
+[**trigger_rollback_plan_release**](UiDeploymentControllerApi.md#trigger_rollback_plan_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan | 
+[**trigger_terraform_export**](UiDeploymentControllerApi.md#trigger_terraform_export) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/terraform-export | 
 
-# **abort_automation_suite_using_delete1**
-> abort_automation_suite_using_delete1(cluster_id, execution_id)
+# **abort_automation_suite1**
+> abort_automation_suite1(cluster_id, execution_id)
 
-abortAutomationSuite
+
 
 ### Example
 ```python
@@ -45,29 +46,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-execution_id = 'execution_id_example' # str | executionId
+cluster_id = 'cluster_id_example' # str | 
+execution_id = 'execution_id_example' # str | 
 
 try:
-    # abortAutomationSuite
-    api_instance.abort_automation_suite_using_delete1(cluster_id, execution_id)
+    api_instance.abort_automation_suite1(cluster_id, execution_id)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->abort_automation_suite_using_delete1: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->abort_automation_suite1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **execution_id** | **str**| executionId | 
+ **cluster_id** | **str**|  | 
+ **execution_id** | **str**|  | 
 
 ### Return type
 
@@ -75,19 +75,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **approve_release_using_post**
-> DeploymentLog approve_release_using_post(cluster_id, deployment_id)
+# **approve_release**
+> ComCapillaryOpsCpBoDeploymentLog approve_release(cluster_id, deployment_id)
 
-approveRelease
+
 
 ### Example
 ```python
@@ -96,50 +96,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
 
 try:
-    # approveRelease
-    api_response = api_instance.approve_release_using_post(cluster_id, deployment_id)
+    api_response = api_instance.approve_release(cluster_id, deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->approve_release_using_post: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->approve_release: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **clean_s3_sources_using_delete**
-> clean_s3_sources_using_delete(cluster_id)
+# **clean_s3_sources**
+> clean_s3_sources(cluster_id)
 
-cleanS3Sources
+
 
 ### Example
 ```python
@@ -148,27 +147,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # cleanS3Sources
-    api_instance.clean_s3_sources_using_delete(cluster_id)
+    api_instance.clean_s3_sources(cluster_id)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->clean_s3_sources_using_delete: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->clean_s3_sources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -176,19 +174,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_deployment_using_post**
-> DeploymentLog create_deployment_using_post(body, cluster_id)
+# **create_deployment**
+> ComCapillaryOpsCpBoDeploymentLog create_deployment(body, cluster_id)
 
-createDeployment
+
 
 ### Example
 ```python
@@ -197,50 +195,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.DeploymentRequest() # DeploymentRequest | deploymentRequest
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoRequestsDeploymentRequest() # ComCapillaryOpsCpBoRequestsDeploymentRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # createDeployment
-    api_response = api_instance.create_deployment_using_post(body, cluster_id)
+    api_response = api_instance.create_deployment(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->create_deployment_using_post: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->create_deployment: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeploymentRequest**](DeploymentRequest.md)| deploymentRequest | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoRequestsDeploymentRequest**](ComCapillaryOpsCpBoRequestsDeploymentRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **destroy_cluster_using_delete**
-> DeploymentLog destroy_cluster_using_delete(cluster_id)
+# **destroy_cluster**
+> ComCapillaryOpsCpBoDeploymentLog destroy_cluster(cluster_id)
 
-destroyCluster
+
 
 ### Example
 ```python
@@ -249,48 +246,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # destroyCluster
-    api_response = api_instance.destroy_cluster_using_delete(cluster_id)
+    api_response = api_instance.destroy_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->destroy_cluster_using_delete: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->destroy_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **download_terraform_export_using_get**
-> download_terraform_export_using_get(cluster_id, deployment_id)
+# **download_terraform_export**
+> download_terraform_export(cluster_id, deployment_id)
 
-downloadTerraformExport
+
 
 ### Example
 ```python
@@ -299,29 +295,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
 
 try:
-    # downloadTerraformExport
-    api_instance.download_terraform_export_using_get(cluster_id, deployment_id)
+    api_instance.download_terraform_export(cluster_id, deployment_id)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->download_terraform_export_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->download_terraform_export: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
 
 ### Return type
 
@@ -329,19 +324,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_cluster_state_using_get**
-> str get_cluster_state_using_get(cluster_id)
+# **get_cluster_state**
+> str get_cluster_state(cluster_id)
 
-getClusterState
+
 
 ### Example
 ```python
@@ -350,28 +345,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getClusterState
-    api_response = api_instance.get_cluster_state_using_get(cluster_id)
+    api_response = api_instance.get_cluster_state(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_cluster_state_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_cluster_state: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -379,19 +373,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deployment_logs_using_get**
-> TokenPaginatedResponse get_deployment_logs_using_get(cluster_id, deployment_id, next_token=next_token)
+# **get_deployment**
+> ComCapillaryOpsCpBoDeploymentLog get_deployment(cluster_id, deployment_id)
 
-getDeploymentLogs
+
 
 ### Example
 ```python
@@ -400,52 +394,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
-next_token = 'next_token_example' # str | nextToken (optional)
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
 
 try:
-    # getDeploymentLogs
-    api_response = api_instance.get_deployment_logs_using_get(cluster_id, deployment_id, next_token=next_token)
+    api_response = api_instance.get_deployment(cluster_id, deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_deployment_logs_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_deployment: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
- **next_token** | **str**| nextToken | [optional] 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
 
 ### Return type
 
-[**TokenPaginatedResponse**](TokenPaginatedResponse.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deployment_stats_using_get**
-> DeploymentStatsDto get_deployment_stats_using_get(cluster_id, days=days)
+# **get_deployment_by_release_trace_id**
+> ComCapillaryOpsCpBoDeploymentLog get_deployment_by_release_trace_id(cluster_id, release_trace_id)
 
-getDeploymentStats
+
 
 ### Example
 ```python
@@ -454,50 +445,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-days = 30 # int | days (optional) (default to 30)
+cluster_id = 'cluster_id_example' # str | 
+release_trace_id = 'release_trace_id_example' # str | 
 
 try:
-    # getDeploymentStats
-    api_response = api_instance.get_deployment_stats_using_get(cluster_id, days=days)
+    api_response = api_instance.get_deployment_by_release_trace_id(cluster_id, release_trace_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_deployment_stats_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_deployment_by_release_trace_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **days** | **int**| days | [optional] [default to 30]
+ **cluster_id** | **str**|  | 
+ **release_trace_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentStatsDto**](DeploymentStatsDto.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deployment_using_get**
-> DeploymentLog get_deployment_using_get(cluster_id, deployment_id)
+# **get_deployment_logs**
+> ComCapillaryOpsDeployerBoTokenPaginatedResponse get_deployment_logs(cluster_id, deployment_id, next_token=next_token)
 
-getDeployment
+
 
 ### Example
 ```python
@@ -506,50 +496,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
+next_token = 'next_token_example' # str |  (optional)
 
 try:
-    # getDeployment
-    api_response = api_instance.get_deployment_using_get(cluster_id, deployment_id)
+    api_response = api_instance.get_deployment_logs(cluster_id, deployment_id, next_token=next_token)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_deployment_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_deployment_logs: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
+ **next_token** | **str**|  | [optional] 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsDeployerBoTokenPaginatedResponse**](ComCapillaryOpsDeployerBoTokenPaginatedResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deployments_overview_using_get**
-> DeploymentOverview get_deployments_overview_using_get(cluster_id)
+# **get_deployment_stats**
+> ComCapillaryOpsCpBoDeploymentStatsDto get_deployment_stats(cluster_id, days=days)
 
-getDeploymentsOverview
+
 
 ### Example
 ```python
@@ -558,48 +549,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
+days = 30 # int |  (optional) (default to 30)
 
 try:
-    # getDeploymentsOverview
-    api_response = api_instance.get_deployments_overview_using_get(cluster_id)
+    api_response = api_instance.get_deployment_stats(cluster_id, days=days)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_deployments_overview_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_deployment_stats: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
+ **days** | **int**|  | [optional] [default to 30]
 
 ### Return type
 
-[**DeploymentOverview**](DeploymentOverview.md)
+[**ComCapillaryOpsCpBoDeploymentStatsDto**](ComCapillaryOpsCpBoDeploymentStatsDto.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deployments_using_get1**
-> ListDeploymentsWrapper get_deployments_using_get1(cluster_id)
+# **get_deployments1**
+> ComCapillaryOpsCpBoWrappersListDeploymentsWrapper get_deployments1(cluster_id)
 
-getDeployments
+
 
 ### Example
 ```python
@@ -608,48 +600,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getDeployments
-    api_response = api_instance.get_deployments_using_get1(cluster_id)
+    api_response = api_instance.get_deployments1(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_deployments_using_get1: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_deployments1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**ListDeploymentsWrapper**](ListDeploymentsWrapper.md)
+[**ComCapillaryOpsCpBoWrappersListDeploymentsWrapper**](ComCapillaryOpsCpBoWrappersListDeploymentsWrapper.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_latest_release_by_application_using_get**
-> DeploymentLog get_latest_release_by_application_using_get(application, cluster_id)
+# **get_deployments_overview**
+> ComCapillaryOpsCpBoWrappersDeploymentOverview get_deployments_overview(cluster_id)
 
-getLatestReleaseByApplication
+
 
 ### Example
 ```python
@@ -658,50 +649,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-application = 'application_example' # str | application
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getLatestReleaseByApplication
-    api_response = api_instance.get_latest_release_by_application_using_get(application, cluster_id)
+    api_response = api_instance.get_deployments_overview(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_latest_release_by_application_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_deployments_overview: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | **str**| application | 
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoWrappersDeploymentOverview**](ComCapillaryOpsCpBoWrappersDeploymentOverview.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_latest_release_using_get**
-> DeploymentLog get_latest_release_using_get(cluster_id)
+# **get_latest_release**
+> ComCapillaryOpsCpBoDeploymentLog get_latest_release(cluster_id)
 
-getLatestRelease
+
 
 ### Example
 ```python
@@ -710,48 +698,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getLatestRelease
-    api_response = api_instance.get_latest_release_using_get(cluster_id)
+    api_response = api_instance.get_latest_release(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_latest_release_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_latest_release: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_release_changes_using_get**
-> ReleaseChanges get_release_changes_using_get(cluster_id, deployment_id)
+# **get_latest_release_by_application**
+> ComCapillaryOpsCpBoDeploymentLog get_latest_release_by_application(cluster_id, application)
 
-getReleaseChanges
+
 
 ### Example
 ```python
@@ -760,50 +747,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
+cluster_id = 'cluster_id_example' # str | 
+application = 'application_example' # str | 
 
 try:
-    # getReleaseChanges
-    api_response = api_instance.get_release_changes_using_get(cluster_id, deployment_id)
+    api_response = api_instance.get_latest_release_by_application(cluster_id, application)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->get_release_changes_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_latest_release_by_application: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
+ **cluster_id** | **str**|  | 
+ **application** | **str**|  | 
 
 ### Return type
 
-[**ReleaseChanges**](ReleaseChanges.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **launch_cluster_using_put**
-> DeploymentLog launch_cluster_using_put(cluster_id)
+# **get_release_changes**
+> ComCapillaryOpsCpBoReleaseReleaseChanges get_release_changes(cluster_id, deployment_id)
 
-launchCluster
+
 
 ### Example
 ```python
@@ -812,48 +798,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
 
 try:
-    # launchCluster
-    api_response = api_instance.launch_cluster_using_put(cluster_id)
+    api_response = api_instance.get_release_changes(cluster_id, deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->launch_cluster_using_put: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->get_release_changes: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoReleaseReleaseChanges**](ComCapillaryOpsCpBoReleaseReleaseChanges.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reject_release_using_post**
-> DeploymentLog reject_release_using_post(cluster_id, deployment_id)
+# **launch_cluster**
+> ComCapillaryOpsCpBoDeploymentLog launch_cluster(cluster_id)
 
-rejectRelease
+
 
 ### Example
 ```python
@@ -862,50 +849,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # rejectRelease
-    api_response = api_instance.reject_release_using_post(cluster_id, deployment_id)
+    api_response = api_instance.launch_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->reject_release_using_post: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->launch_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **release_using_put**
-> DeploymentLog release_using_put(cluster_id, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, with_refresh=with_refresh)
+# **reject_release**
+> ComCapillaryOpsCpBoDeploymentLog reject_release(cluster_id, deployment_id)
 
-release
+
 
 ### Example
 ```python
@@ -914,58 +898,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-allow_destroy = false # bool | allowDestroy (optional) (default to false)
-can_queue = false # bool | canQueue (optional) (default to false)
-comment = 'comment_example' # str | comment (optional)
-force_release = false # bool | forceRelease (optional) (default to false)
-with_refresh = true # bool | withRefresh (optional) (default to true)
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
 
 try:
-    # release
-    api_response = api_instance.release_using_put(cluster_id, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, with_refresh=with_refresh)
+    api_response = api_instance.reject_release(cluster_id, deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->release_using_put: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->reject_release: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **allow_destroy** | **bool**| allowDestroy | [optional] [default to false]
- **can_queue** | **bool**| canQueue | [optional] [default to false]
- **comment** | **str**| comment | [optional] 
- **force_release** | **bool**| forceRelease | [optional] [default to false]
- **with_refresh** | **bool**| withRefresh | [optional] [default to true]
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **release_v2_using_put**
-> DeploymentLog release_v2_using_put(cluster_id, release_type, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, with_refresh=with_refresh)
+# **release**
+> ComCapillaryOpsCpBoDeploymentLog release(cluster_id, with_refresh=with_refresh, force_release=force_release, allow_destroy=allow_destroy, comment=comment, can_queue=can_queue)
 
-releaseV2
+
 
 ### Example
 ```python
@@ -974,60 +949,57 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-release_type = 'release_type_example' # str | releaseType
-allow_destroy = false # bool | allowDestroy (optional) (default to false)
-can_queue = false # bool | canQueue (optional) (default to false)
-comment = 'comment_example' # str | comment (optional)
-force_release = false # bool | forceRelease (optional) (default to false)
-with_refresh = true # bool | withRefresh (optional) (default to true)
+cluster_id = 'cluster_id_example' # str | 
+with_refresh = true # bool |  (optional) (default to true)
+force_release = false # bool |  (optional) (default to false)
+allow_destroy = false # bool |  (optional) (default to false)
+comment = 'comment_example' # str |  (optional)
+can_queue = false # bool |  (optional) (default to false)
 
 try:
-    # releaseV2
-    api_response = api_instance.release_v2_using_put(cluster_id, release_type, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, with_refresh=with_refresh)
+    api_response = api_instance.release(cluster_id, with_refresh=with_refresh, force_release=force_release, allow_destroy=allow_destroy, comment=comment, can_queue=can_queue)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->release_v2_using_put: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->release: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **release_type** | **str**| releaseType | 
- **allow_destroy** | **bool**| allowDestroy | [optional] [default to false]
- **can_queue** | **bool**| canQueue | [optional] [default to false]
- **comment** | **str**| comment | [optional] 
- **force_release** | **bool**| forceRelease | [optional] [default to false]
- **with_refresh** | **bool**| withRefresh | [optional] [default to true]
+ **cluster_id** | **str**|  | 
+ **with_refresh** | **bool**|  | [optional] [default to true]
+ **force_release** | **bool**|  | [optional] [default to false]
+ **allow_destroy** | **bool**|  | [optional] [default to false]
+ **comment** | **str**|  | [optional] 
+ **can_queue** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **run_hotfix_deployment_recipe_using_post**
-> DeploymentLog run_hotfix_deployment_recipe_using_post(body, cluster_id, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, is_plan=is_plan, with_refresh=with_refresh)
+# **release_v2**
+> ComCapillaryOpsCpBoDeploymentLog release_v2(cluster_id, release_type, with_refresh=with_refresh, force_release=force_release, allow_destroy=allow_destroy, comment=comment, can_queue=can_queue)
 
-runHotfixDeploymentRecipe
+
 
 ### Example
 ```python
@@ -1036,62 +1008,124 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.HotfixDeploymentRecipe() # HotfixDeploymentRecipe | deploymentRecipe
-cluster_id = 'cluster_id_example' # str | clusterId
-allow_destroy = false # bool | allowDestroy (optional) (default to false)
-can_queue = false # bool | canQueue (optional) (default to false)
-comment = 'comment_example' # str | comment (optional)
-force_release = false # bool | forceRelease (optional) (default to false)
-is_plan = false # bool | isPlan (optional) (default to false)
-with_refresh = false # bool | withRefresh (optional) (default to false)
+cluster_id = 'cluster_id_example' # str | 
+release_type = 'release_type_example' # str | 
+with_refresh = true # bool |  (optional) (default to true)
+force_release = false # bool |  (optional) (default to false)
+allow_destroy = false # bool |  (optional) (default to false)
+comment = 'comment_example' # str |  (optional)
+can_queue = false # bool |  (optional) (default to false)
 
 try:
-    # runHotfixDeploymentRecipe
-    api_response = api_instance.run_hotfix_deployment_recipe_using_post(body, cluster_id, allow_destroy=allow_destroy, can_queue=can_queue, comment=comment, force_release=force_release, is_plan=is_plan, with_refresh=with_refresh)
+    api_response = api_instance.release_v2(cluster_id, release_type, with_refresh=with_refresh, force_release=force_release, allow_destroy=allow_destroy, comment=comment, can_queue=can_queue)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->run_hotfix_deployment_recipe_using_post: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->release_v2: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HotfixDeploymentRecipe**](HotfixDeploymentRecipe.md)| deploymentRecipe | 
- **cluster_id** | **str**| clusterId | 
- **allow_destroy** | **bool**| allowDestroy | [optional] [default to false]
- **can_queue** | **bool**| canQueue | [optional] [default to false]
- **comment** | **str**| comment | [optional] 
- **force_release** | **bool**| forceRelease | [optional] [default to false]
- **is_plan** | **bool**| isPlan | [optional] [default to false]
- **with_refresh** | **bool**| withRefresh | [optional] [default to false]
+ **cluster_id** | **str**|  | 
+ **release_type** | **str**|  | 
+ **with_refresh** | **bool**|  | [optional] [default to true]
+ **force_release** | **bool**|  | [optional] [default to false]
+ **allow_destroy** | **bool**|  | [optional] [default to false]
+ **comment** | **str**|  | [optional] 
+ **can_queue** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **run_hotfix_deployment_recipe**
+> ComCapillaryOpsCpBoDeploymentLog run_hotfix_deployment_recipe(body, cluster_id, allow_destroy=allow_destroy, with_refresh=with_refresh, force_release=force_release, comment=comment, is_plan=is_plan, can_queue=can_queue, release_trace_id=release_trace_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ComCapillaryOpsCpBoRecipesHotfixDeploymentRecipe() # ComCapillaryOpsCpBoRecipesHotfixDeploymentRecipe | 
+cluster_id = 'cluster_id_example' # str | 
+allow_destroy = false # bool |  (optional) (default to false)
+with_refresh = false # bool |  (optional) (default to false)
+force_release = false # bool |  (optional) (default to false)
+comment = 'comment_example' # str |  (optional)
+is_plan = false # bool |  (optional) (default to false)
+can_queue = false # bool |  (optional) (default to false)
+release_trace_id = 'release_trace_id_example' # str | Unique identifier of the release that you can search it with (optional)
+
+try:
+    api_response = api_instance.run_hotfix_deployment_recipe(body, cluster_id, allow_destroy=allow_destroy, with_refresh=with_refresh, force_release=force_release, comment=comment, is_plan=is_plan, can_queue=can_queue, release_trace_id=release_trace_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDeploymentControllerApi->run_hotfix_deployment_recipe: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ComCapillaryOpsCpBoRecipesHotfixDeploymentRecipe**](ComCapillaryOpsCpBoRecipesHotfixDeploymentRecipe.md)|  | 
+ **cluster_id** | **str**|  | 
+ **allow_destroy** | **bool**|  | [optional] [default to false]
+ **with_refresh** | **bool**|  | [optional] [default to false]
+ **force_release** | **bool**|  | [optional] [default to false]
+ **comment** | **str**|  | [optional] 
+ **is_plan** | **bool**|  | [optional] [default to false]
+ **can_queue** | **bool**|  | [optional] [default to false]
+ **release_trace_id** | **str**| Unique identifier of the release that you can search it with | [optional] 
+
+### Return type
+
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_deployments_using_get**
-> PageDeploymentLog search_deployments_using_get(cluster_id, end=end, exclude_status=exclude_status, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, start=start, status=status, tf_version=tf_version, triggered_by=triggered_by)
+# **search_deployments**
+> OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoDeploymentLog search_deployments(cluster_id, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, status=status, exclude_status=exclude_status, triggered_by=triggered_by, start=start, end=end, tf_version=tf_version)
 
-searchDeployments
+
 
 ### Example
 ```python
@@ -1100,68 +1134,67 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-end = '2013-10-20T19:20:30+01:00' # datetime | end (optional)
-exclude_status = ['exclude_status_example'] # list[str] | excludeStatus (optional)
-page_number = 0 # int | pageNumber (optional) (default to 0)
-page_size = 50 # int | pageSize (optional) (default to 50)
-release_type = 'release_type_example' # str | releaseType (optional)
-signed_off = true # bool | signedOff (optional)
-start = '2013-10-20T19:20:30+01:00' # datetime | start (optional)
-status = 'status_example' # str | status (optional)
-tf_version = 'tf_version_example' # str | tfVersion (optional)
-triggered_by = 'triggered_by_example' # str | triggeredBy (optional)
+cluster_id = 'cluster_id_example' # str | 
+page_number = 0 # int |  (optional) (default to 0)
+page_size = 50 # int |  (optional) (default to 50)
+release_type = 'release_type_example' # str |  (optional)
+signed_off = true # bool |  (optional)
+status = 'status_example' # str |  (optional)
+exclude_status = ['exclude_status_example'] # list[str] |  (optional)
+triggered_by = 'triggered_by_example' # str |  (optional)
+start = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+end = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+tf_version = 'tf_version_example' # str |  (optional)
 
 try:
-    # searchDeployments
-    api_response = api_instance.search_deployments_using_get(cluster_id, end=end, exclude_status=exclude_status, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, start=start, status=status, tf_version=tf_version, triggered_by=triggered_by)
+    api_response = api_instance.search_deployments(cluster_id, page_number=page_number, page_size=page_size, release_type=release_type, signed_off=signed_off, status=status, exclude_status=exclude_status, triggered_by=triggered_by, start=start, end=end, tf_version=tf_version)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->search_deployments_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->search_deployments: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **end** | **datetime**| end | [optional] 
- **exclude_status** | [**list[str]**](str.md)| excludeStatus | [optional] 
- **page_number** | **int**| pageNumber | [optional] [default to 0]
- **page_size** | **int**| pageSize | [optional] [default to 50]
- **release_type** | **str**| releaseType | [optional] 
- **signed_off** | **bool**| signedOff | [optional] 
- **start** | **datetime**| start | [optional] 
- **status** | **str**| status | [optional] 
- **tf_version** | **str**| tfVersion | [optional] 
- **triggered_by** | **str**| triggeredBy | [optional] 
+ **cluster_id** | **str**|  | 
+ **page_number** | **int**|  | [optional] [default to 0]
+ **page_size** | **int**|  | [optional] [default to 50]
+ **release_type** | **str**|  | [optional] 
+ **signed_off** | **bool**|  | [optional] 
+ **status** | **str**|  | [optional] 
+ **exclude_status** | [**list[str]**](str.md)|  | [optional] 
+ **triggered_by** | **str**|  | [optional] 
+ **start** | **datetime**|  | [optional] 
+ **end** | **datetime**|  | [optional] 
+ **tf_version** | **str**|  | [optional] 
 
 ### Return type
 
-[**PageDeploymentLog**](PageDeploymentLog.md)
+[**OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoDeploymentLog**](OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sign_off_deployment_using_put**
-> DeploymentLog sign_off_deployment_using_put(cluster_id, deployment_id)
+# **sign_off_deployment**
+> ComCapillaryOpsCpBoDeploymentLog sign_off_deployment(cluster_id, deployment_id)
 
-signOffDeployment
+
 
 ### Example
 ```python
@@ -1170,50 +1203,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
 
 try:
-    # signOffDeployment
-    api_response = api_instance.sign_off_deployment_using_put(cluster_id, deployment_id)
+    api_response = api_instance.sign_off_deployment(cluster_id, deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->sign_off_deployment_using_put: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->sign_off_deployment: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **simulate_using_get**
-> list[ChangeRepresentation] simulate_using_get(cluster_id)
+# **simulate**
+> list[ComCapillaryOpsCpBoChangeRepresentationJavaLangObject] simulate(cluster_id)
 
-simulate
+
 
 ### Example
 ```python
@@ -1222,48 +1254,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # simulate
-    api_response = api_instance.simulate_using_get(cluster_id)
+    api_response = api_instance.simulate(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->simulate_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->simulate: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**list[ChangeRepresentation]**](ChangeRepresentation.md)
+[**list[ComCapillaryOpsCpBoChangeRepresentationJavaLangObject]**](ComCapillaryOpsCpBoChangeRepresentationJavaLangObject.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **state_unlock_using_put**
-> DeploymentLog state_unlock_using_put(cluster_id, lock_id)
+# **state_unlock**
+> ComCapillaryOpsCpBoDeploymentLog state_unlock(cluster_id, lock_id)
 
-stateUnlock
+
 
 ### Example
 ```python
@@ -1272,50 +1303,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-lock_id = 'lock_id_example' # str | lockId
+cluster_id = 'cluster_id_example' # str | 
+lock_id = 'lock_id_example' # str | 
 
 try:
-    # stateUnlock
-    api_response = api_instance.state_unlock_using_put(cluster_id, lock_id)
+    api_response = api_instance.state_unlock(cluster_id, lock_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->state_unlock_using_put: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->state_unlock: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **lock_id** | **str**| lockId | 
+ **cluster_id** | **str**|  | 
+ **lock_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **stream_deployment_logs_using_get**
-> StreamingResponseBody stream_deployment_logs_using_get(cluster_id, deployment_id)
+# **stream_deployment_logs**
+> OrgSpringframeworkWebServletMvcMethodAnnotationStreamingResponseBody stream_deployment_logs(cluster_id, deployment_id)
 
-streamDeploymentLogs
+
 
 ### Example
 ```python
@@ -1324,50 +1354,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
 
 try:
-    # streamDeploymentLogs
-    api_response = api_instance.stream_deployment_logs_using_get(cluster_id, deployment_id)
+    api_response = api_instance.stream_deployment_logs(cluster_id, deployment_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->stream_deployment_logs_using_get: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->stream_deployment_logs: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
 
 ### Return type
 
-[**StreamingResponseBody**](StreamingResponseBody.md)
+[**OrgSpringframeworkWebServletMvcMethodAnnotationStreamingResponseBody**](OrgSpringframeworkWebServletMvcMethodAnnotationStreamingResponseBody.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **trigger_maintenance_release_using_post**
-> DeploymentLog trigger_maintenance_release_using_post(cluster_id)
+# **trigger_maintenance_release**
+> ComCapillaryOpsCpBoDeploymentLog trigger_maintenance_release(cluster_id)
 
-triggerMaintenanceRelease
+
 
 ### Example
 ```python
@@ -1376,48 +1405,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # triggerMaintenanceRelease
-    api_response = api_instance.trigger_maintenance_release_using_post(cluster_id)
+    api_response = api_instance.trigger_maintenance_release(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->trigger_maintenance_release_using_post: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->trigger_maintenance_release: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **trigger_rollback_plan_release_using_post**
-> DeploymentLog trigger_rollback_plan_release_using_post(cluster_id, deployment_id, resource_name, resource_type)
+# **trigger_rollback_plan_release**
+> ComCapillaryOpsCpBoDeploymentLog trigger_rollback_plan_release(cluster_id, deployment_id, resource_type, resource_name)
 
-triggerRollbackPlanRelease
+
 
 ### Example
 ```python
@@ -1426,54 +1454,53 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_id = 'deployment_id_example' # str | deploymentId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # triggerRollbackPlanRelease
-    api_response = api_instance.trigger_rollback_plan_release_using_post(cluster_id, deployment_id, resource_name, resource_type)
+    api_response = api_instance.trigger_rollback_plan_release(cluster_id, deployment_id, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->trigger_rollback_plan_release_using_post: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->trigger_rollback_plan_release: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_id** | **str**| deploymentId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **trigger_terraform_export_using_post**
-> DeploymentLog trigger_terraform_export_using_post(cluster_id)
+# **trigger_terraform_export**
+> ComCapillaryOpsCpBoDeploymentLog trigger_terraform_export(cluster_id)
 
-triggerTerraformExport
+
 
 ### Example
 ```python
@@ -1482,41 +1509,40 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # triggerTerraformExport
-    api_response = api_instance.trigger_terraform_export_using_post(cluster_id)
+    api_response = api_instance.trigger_terraform_export(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->trigger_terraform_export_using_post: %s\n" % e)
+    print("Exception when calling UiDeploymentControllerApi->trigger_terraform_export: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**DeploymentLog**](DeploymentLog.md)
+[**ComCapillaryOpsCpBoDeploymentLog**](ComCapillaryOpsCpBoDeploymentLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class StackControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_stack_using_post(self, body, **kwargs):  # noqa: E501
-        """createStack  # noqa: E501
+    def create_stack(self, body, **kwargs):  # noqa: E501
+        """create_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_stack_using_post(body, async_req=True)
+        >>> thread = api.create_stack(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stack body: stack (required)
-        :return: Stack
+        :param ComCapillaryOpsCpBoStack body: (required)
+        :return: ComCapillaryOpsCpBoStack
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_stack_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_stack_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_stack_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_stack_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_stack_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createStack  # noqa: E501
+    def create_stack_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_stack_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_stack_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stack body: stack (required)
-        :return: Stack
+        :param ComCapillaryOpsCpBoStack body: (required)
+        :return: ComCapillaryOpsCpBoStack
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class StackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_stack_using_post" % key
+                    " to method create_stack" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_stack_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_stack`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class StackControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/stacks/', 'POST',
@@ -121,7 +121,7 @@ class StackControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Stack',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoStack',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,40 +129,40 @@ class StackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_substack_using_post(self, body, substack_name, **kwargs):  # noqa: E501
-        """createSubstack  # noqa: E501
+    def create_substack(self, body, substack_name, **kwargs):  # noqa: E501
+        """create_substack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_substack_using_post(body, substack_name, async_req=True)
+        >>> thread = api.create_substack(body, substack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Substack body: subStack (required)
-        :param str substack_name: substackName (required)
-        :return: Substack
+        :param ComCapillaryOpsCpBoSubstack body: (required)
+        :param str substack_name: (required)
+        :return: ComCapillaryOpsCpBoSubstack
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_substack_using_post_with_http_info(body, substack_name, **kwargs)  # noqa: E501
+            return self.create_substack_with_http_info(body, substack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_substack_using_post_with_http_info(body, substack_name, **kwargs)  # noqa: E501
+            (data) = self.create_substack_with_http_info(body, substack_name, **kwargs)  # noqa: E501
             return data
 
-    def create_substack_using_post_with_http_info(self, body, substack_name, **kwargs):  # noqa: E501
-        """createSubstack  # noqa: E501
+    def create_substack_with_http_info(self, body, substack_name, **kwargs):  # noqa: E501
+        """create_substack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_substack_using_post_with_http_info(body, substack_name, async_req=True)
+        >>> thread = api.create_substack_with_http_info(body, substack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Substack body: subStack (required)
-        :param str substack_name: substackName (required)
-        :return: Substack
+        :param ComCapillaryOpsCpBoSubstack body: (required)
+        :param str substack_name: (required)
+        :return: ComCapillaryOpsCpBoSubstack
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -178,18 +178,18 @@ class StackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_substack_using_post" % key
+                    " to method create_substack" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_substack_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_substack`")  # noqa: E501
         # verify the required parameter 'substack_name' is set
         if ('substack_name' not in params or
                 params['substack_name'] is None):
-            raise ValueError("Missing the required parameter `substack_name` when calling `create_substack_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `substack_name` when calling `create_substack`")  # noqa: E501
 
         collection_formats = {}
 
@@ -209,14 +209,14 @@ class StackControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/stacks/substack/{substackName}', 'POST',
@@ -226,7 +226,7 @@ class StackControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Substack',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoSubstack',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -234,38 +234,38 @@ class StackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_clusters_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """getClusters  # noqa: E501
+    def get_clusters(self, stack_name, **kwargs):  # noqa: E501
+        """get_clusters  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_clusters_using_get(stack_name, async_req=True)
+        >>> thread = api.get_clusters(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[AbstractCluster]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoAbstractCluster]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_clusters_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.get_clusters_with_http_info(stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_clusters_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_clusters_with_http_info(stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_clusters_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getClusters  # noqa: E501
+    def get_clusters_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_clusters  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_clusters_using_get_with_http_info(stack_name, async_req=True)
+        >>> thread = api.get_clusters_with_http_info(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[AbstractCluster]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoAbstractCluster]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -281,14 +281,14 @@ class StackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_clusters_using_get" % key
+                    " to method get_clusters" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_clusters_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_clusters`")  # noqa: E501
 
         collection_formats = {}
 
@@ -306,10 +306,10 @@ class StackControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/stacks/{stackName}/clusters', 'GET',
@@ -319,7 +319,7 @@ class StackControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AbstractCluster]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoAbstractCluster]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -327,36 +327,36 @@ class StackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_stacks_using_get(self, **kwargs):  # noqa: E501
-        """getStacks  # noqa: E501
+    def get_stacks(self, **kwargs):  # noqa: E501
+        """get_stacks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_stacks_using_get(async_req=True)
+        >>> thread = api.get_stacks(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Stack]
+        :return: list[ComCapillaryOpsCpBoStack]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_stacks_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_stacks_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_stacks_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_stacks_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_stacks_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getStacks  # noqa: E501
+    def get_stacks_with_http_info(self, **kwargs):  # noqa: E501
+        """get_stacks  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_stacks_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_stacks_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Stack]
+        :return: list[ComCapillaryOpsCpBoStack]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -372,7 +372,7 @@ class StackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_stacks_using_get" % key
+                    " to method get_stacks" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -391,10 +391,10 @@ class StackControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/stacks/', 'GET',
@@ -404,7 +404,7 @@ class StackControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Stack]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoStack]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -412,38 +412,38 @@ class StackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def reload_stack_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """reloadStack  # noqa: E501
+    def reload_stack(self, stack_name, **kwargs):  # noqa: E501
+        """reload_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reload_stack_using_get(stack_name, async_req=True)
+        >>> thread = api.reload_stack(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: Stack
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoStack
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.reload_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.reload_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.reload_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.reload_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
             return data
 
-    def reload_stack_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """reloadStack  # noqa: E501
+    def reload_stack_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """reload_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reload_stack_using_get_with_http_info(stack_name, async_req=True)
+        >>> thread = api.reload_stack_with_http_info(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: Stack
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoStack
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -459,14 +459,14 @@ class StackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method reload_stack_using_get" % key
+                    " to method reload_stack" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `reload_stack_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `reload_stack`")  # noqa: E501
 
         collection_formats = {}
 
@@ -484,10 +484,10 @@ class StackControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/stacks/{stackName}/reload', 'GET',
@@ -497,7 +497,7 @@ class StackControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Stack',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoStack',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -505,40 +505,40 @@ class StackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def toggle_release_using_post(self, body, stack_name, **kwargs):  # noqa: E501
-        """toggleRelease  # noqa: E501
+    def toggle_release(self, body, stack_name, **kwargs):  # noqa: E501
+        """toggle_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.toggle_release_using_post(body, stack_name, async_req=True)
+        >>> thread = api.toggle_release(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ToggleRelease body: toggleRelease (required)
-        :param str stack_name: stackName (required)
-        :return: ToggleRelease
+        :param ComCapillaryOpsCpBoToggleRelease body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoToggleRelease
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.toggle_release_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            return self.toggle_release_with_http_info(body, stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.toggle_release_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            (data) = self.toggle_release_with_http_info(body, stack_name, **kwargs)  # noqa: E501
             return data
 
-    def toggle_release_using_post_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
-        """toggleRelease  # noqa: E501
+    def toggle_release_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
+        """toggle_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.toggle_release_using_post_with_http_info(body, stack_name, async_req=True)
+        >>> thread = api.toggle_release_with_http_info(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ToggleRelease body: toggleRelease (required)
-        :param str stack_name: stackName (required)
-        :return: ToggleRelease
+        :param ComCapillaryOpsCpBoToggleRelease body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoToggleRelease
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -554,18 +554,18 @@ class StackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method toggle_release_using_post" % key
+                    " to method toggle_release" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `toggle_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `toggle_release`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `toggle_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `toggle_release`")  # noqa: E501
 
         collection_formats = {}
 
@@ -585,14 +585,14 @@ class StackControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/stacks/{stackName}/toggleRelease', 'POST',
@@ -602,7 +602,7 @@ class StackControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ToggleRelease',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoToggleRelease',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -610,40 +610,40 @@ class StackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_stack_using_put(self, body, stack_name, **kwargs):  # noqa: E501
-        """updateStack  # noqa: E501
+    def update_stack(self, body, stack_name, **kwargs):  # noqa: E501
+        """update_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_stack_using_put(body, stack_name, async_req=True)
+        >>> thread = api.update_stack(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stack body: stack (required)
-        :param str stack_name: stackName (required)
-        :return: Stack
+        :param ComCapillaryOpsCpBoStack body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoStack
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_stack_using_put_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            return self.update_stack_with_http_info(body, stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_stack_using_put_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            (data) = self.update_stack_with_http_info(body, stack_name, **kwargs)  # noqa: E501
             return data
 
-    def update_stack_using_put_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
-        """updateStack  # noqa: E501
+    def update_stack_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
+        """update_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_stack_using_put_with_http_info(body, stack_name, async_req=True)
+        >>> thread = api.update_stack_with_http_info(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stack body: stack (required)
-        :param str stack_name: stackName (required)
-        :return: Stack
+        :param ComCapillaryOpsCpBoStack body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoStack
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -659,18 +659,18 @@ class StackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_stack_using_put" % key
+                    " to method update_stack" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_stack_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_stack`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `update_stack_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `update_stack`")  # noqa: E501
 
         collection_formats = {}
 
@@ -690,14 +690,14 @@ class StackControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/stacks/{stackName}', 'PUT',
@@ -707,7 +707,7 @@ class StackControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Stack',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoStack',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

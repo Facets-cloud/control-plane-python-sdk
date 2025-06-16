@@ -1,23 +1,23 @@
 # swagger_client.UiArtifactCiControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bulk_edit_workflow_using_post**](UiArtifactCiControllerApi.md#bulk_edit_workflow_using_post) | **POST** /cc-ui/v1/artifacts-ci/bulk-edit-workflow | bulkEditWorkflow
-[**create_artifact_ci_using_post**](UiArtifactCiControllerApi.md#create_artifact_ci_using_post) | **POST** /cc-ui/v1/artifacts-ci | createArtifactCI
-[**delete_artifact_ci_using_delete**](UiArtifactCiControllerApi.md#delete_artifact_ci_using_delete) | **DELETE** /cc-ui/v1/artifacts-ci/{ciId} | deleteArtifactCI
-[**get_all_artifacts_ci_using_get**](UiArtifactCiControllerApi.md#get_all_artifacts_ci_using_get) | **GET** /cc-ui/v1/artifacts-ci | getAllArtifactsCI
-[**get_artifact_ci_by_name_using_get**](UiArtifactCiControllerApi.md#get_artifact_ci_by_name_using_get) | **GET** /cc-ui/v1/artifacts-ci/name/{ciName} | getArtifactCiByName
-[**get_artifact_ci_using_get**](UiArtifactCiControllerApi.md#get_artifact_ci_using_get) | **GET** /cc-ui/v1/artifacts-ci/{ciId} | getArtifactCI
-[**get_artifact_cis_by_stack_using_get**](UiArtifactCiControllerApi.md#get_artifact_cis_by_stack_using_get) | **GET** /cc-ui/v1/artifacts-ci/blueprint/{stackName} | getArtifactCisByStack
-[**get_artifacts_for_ci_using_get**](UiArtifactCiControllerApi.md#get_artifacts_for_ci_using_get) | **GET** /cc-ui/v1/artifacts-ci/{ciName}/artifacts | getArtifactsForCI
-[**update_artifact_ci_using_put**](UiArtifactCiControllerApi.md#update_artifact_ci_using_put) | **PUT** /cc-ui/v1/artifacts-ci/{ciId} | updateArtifactCI
+[**bulk_edit_workflow**](UiArtifactCiControllerApi.md#bulk_edit_workflow) | **POST** /cc-ui/v1/artifacts-ci/bulk-edit-workflow | 
+[**create_artifact_ci**](UiArtifactCiControllerApi.md#create_artifact_ci) | **POST** /cc-ui/v1/artifacts-ci | 
+[**delete_artifact_ci**](UiArtifactCiControllerApi.md#delete_artifact_ci) | **DELETE** /cc-ui/v1/artifacts-ci/{ciId} | 
+[**get_all_artifacts_ci**](UiArtifactCiControllerApi.md#get_all_artifacts_ci) | **GET** /cc-ui/v1/artifacts-ci | 
+[**get_artifact_ci**](UiArtifactCiControllerApi.md#get_artifact_ci) | **GET** /cc-ui/v1/artifacts-ci/{ciId} | 
+[**get_artifact_ci_by_name**](UiArtifactCiControllerApi.md#get_artifact_ci_by_name) | **GET** /cc-ui/v1/artifacts-ci/name/{ciName} | 
+[**get_artifact_cis_by_stack**](UiArtifactCiControllerApi.md#get_artifact_cis_by_stack) | **GET** /cc-ui/v1/artifacts-ci/blueprint/{stackName} | 
+[**get_artifacts_for_ci**](UiArtifactCiControllerApi.md#get_artifacts_for_ci) | **GET** /cc-ui/v1/artifacts-ci/{ciName}/artifacts | 
+[**update_artifact_ci**](UiArtifactCiControllerApi.md#update_artifact_ci) | **PUT** /cc-ui/v1/artifacts-ci/{ciId} | 
 
-# **bulk_edit_workflow_using_post**
-> bulk_edit_workflow_using_post(body)
+# **bulk_edit_workflow**
+> bulk_edit_workflow(body)
 
-bulkEditWorkflow
+
 
 ### Example
 ```python
@@ -26,27 +26,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.BulkWorkflowAttachRequest() # BulkWorkflowAttachRequest | bulkWorkflowAttachRequest
+body = swagger_client.ComCapillaryOpsCpBoArtifactsBulkWorkflowAttachRequest() # ComCapillaryOpsCpBoArtifactsBulkWorkflowAttachRequest | 
 
 try:
-    # bulkEditWorkflow
-    api_instance.bulk_edit_workflow_using_post(body)
+    api_instance.bulk_edit_workflow(body)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->bulk_edit_workflow_using_post: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->bulk_edit_workflow: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BulkWorkflowAttachRequest**](BulkWorkflowAttachRequest.md)| bulkWorkflowAttachRequest | 
+ **body** | [**ComCapillaryOpsCpBoArtifactsBulkWorkflowAttachRequest**](ComCapillaryOpsCpBoArtifactsBulkWorkflowAttachRequest.md)|  | 
 
 ### Return type
 
@@ -54,19 +53,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_artifact_ci_using_post**
-> ArtifactCI create_artifact_ci_using_post(body)
+# **create_artifact_ci**
+> ComCapillaryOpsCpBoArtifactsArtifactCI create_artifact_ci(body)
 
-createArtifactCI
+
 
 ### Example
 ```python
@@ -75,48 +74,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ArtifactCI() # ArtifactCI | artifactCI
+body = swagger_client.ComCapillaryOpsCpBoArtifactsArtifactCI() # ComCapillaryOpsCpBoArtifactsArtifactCI | 
 
 try:
-    # createArtifactCI
-    api_response = api_instance.create_artifact_ci_using_post(body)
+    api_response = api_instance.create_artifact_ci(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->create_artifact_ci_using_post: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->create_artifact_ci: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ArtifactCI**](ArtifactCI.md)| artifactCI | 
+ **body** | [**ComCapillaryOpsCpBoArtifactsArtifactCI**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)|  | 
 
 ### Return type
 
-[**ArtifactCI**](ArtifactCI.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactCI**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_artifact_ci_using_delete**
-> ArtifactCI delete_artifact_ci_using_delete(ci_id)
+# **delete_artifact_ci**
+> ComCapillaryOpsCpBoArtifactsArtifactCI delete_artifact_ci(ci_id)
 
-deleteArtifactCI
+
 
 ### Example
 ```python
@@ -125,48 +123,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-ci_id = 'ci_id_example' # str | ciId
+ci_id = 'ci_id_example' # str | 
 
 try:
-    # deleteArtifactCI
-    api_response = api_instance.delete_artifact_ci_using_delete(ci_id)
+    api_response = api_instance.delete_artifact_ci(ci_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->delete_artifact_ci_using_delete: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->delete_artifact_ci: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ci_id** | **str**| ciId | 
+ **ci_id** | **str**|  | 
 
 ### Return type
 
-[**ArtifactCI**](ArtifactCI.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactCI**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_artifacts_ci_using_get**
-> list[ArtifactCI] get_all_artifacts_ci_using_get()
+# **get_all_artifacts_ci**
+> list[ComCapillaryOpsCpBoArtifactsArtifactCI] get_all_artifacts_ci()
 
-getAllArtifactsCI
+
 
 ### Example
 ```python
@@ -175,7 +172,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -184,11 +181,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllArtifactsCI
-    api_response = api_instance.get_all_artifacts_ci_using_get()
+    api_response = api_instance.get_all_artifacts_ci()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->get_all_artifacts_ci_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->get_all_artifacts_ci: %s\n" % e)
 ```
 
 ### Parameters
@@ -196,23 +192,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[ArtifactCI]**](ArtifactCI.md)
+[**list[ComCapillaryOpsCpBoArtifactsArtifactCI]**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_artifact_ci_by_name_using_get**
-> ArtifactCI get_artifact_ci_by_name_using_get(ci_name)
+# **get_artifact_ci**
+> ComCapillaryOpsCpBoArtifactsArtifactCI get_artifact_ci(ci_id)
 
-getArtifactCiByName
+
 
 ### Example
 ```python
@@ -221,48 +217,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-ci_name = 'ci_name_example' # str | ciName
+ci_id = 'ci_id_example' # str | 
 
 try:
-    # getArtifactCiByName
-    api_response = api_instance.get_artifact_ci_by_name_using_get(ci_name)
+    api_response = api_instance.get_artifact_ci(ci_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->get_artifact_ci_by_name_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->get_artifact_ci: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ci_name** | **str**| ciName | 
+ **ci_id** | **str**|  | 
 
 ### Return type
 
-[**ArtifactCI**](ArtifactCI.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactCI**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_artifact_ci_using_get**
-> ArtifactCI get_artifact_ci_using_get(ci_id)
+# **get_artifact_ci_by_name**
+> ComCapillaryOpsCpBoArtifactsArtifactCI get_artifact_ci_by_name(ci_name)
 
-getArtifactCI
+
 
 ### Example
 ```python
@@ -271,48 +266,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-ci_id = 'ci_id_example' # str | ciId
+ci_name = 'ci_name_example' # str | 
 
 try:
-    # getArtifactCI
-    api_response = api_instance.get_artifact_ci_using_get(ci_id)
+    api_response = api_instance.get_artifact_ci_by_name(ci_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->get_artifact_ci_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->get_artifact_ci_by_name: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ci_id** | **str**| ciId | 
+ **ci_name** | **str**|  | 
 
 ### Return type
 
-[**ArtifactCI**](ArtifactCI.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactCI**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_artifact_cis_by_stack_using_get**
-> list[ArtifactCI] get_artifact_cis_by_stack_using_get(stack_name)
+# **get_artifact_cis_by_stack**
+> list[ComCapillaryOpsCpBoArtifactsArtifactCI] get_artifact_cis_by_stack(stack_name)
 
-getArtifactCisByStack
+
 
 ### Example
 ```python
@@ -321,48 +315,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getArtifactCisByStack
-    api_response = api_instance.get_artifact_cis_by_stack_using_get(stack_name)
+    api_response = api_instance.get_artifact_cis_by_stack(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->get_artifact_cis_by_stack_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->get_artifact_cis_by_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**list[ArtifactCI]**](ArtifactCI.md)
+[**list[ComCapillaryOpsCpBoArtifactsArtifactCI]**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_artifacts_for_ci_using_get**
-> list[CiArtifactResponse] get_artifacts_for_ci_using_get(ci_name)
+# **get_artifacts_for_ci**
+> list[ComCapillaryOpsCpBoArtifactsCiArtifactResponse] get_artifacts_for_ci(ci_name)
 
-getArtifactsForCI
+
 
 ### Example
 ```python
@@ -371,48 +364,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-ci_name = 'ci_name_example' # str | ciName
+ci_name = 'ci_name_example' # str | 
 
 try:
-    # getArtifactsForCI
-    api_response = api_instance.get_artifacts_for_ci_using_get(ci_name)
+    api_response = api_instance.get_artifacts_for_ci(ci_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->get_artifacts_for_ci_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->get_artifacts_for_ci: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ci_name** | **str**| ciName | 
+ **ci_name** | **str**|  | 
 
 ### Return type
 
-[**list[CiArtifactResponse]**](CiArtifactResponse.md)
+[**list[ComCapillaryOpsCpBoArtifactsCiArtifactResponse]**](ComCapillaryOpsCpBoArtifactsCiArtifactResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_artifact_ci_using_put**
-> ArtifactCI update_artifact_ci_using_put(body, ci_id)
+# **update_artifact_ci**
+> ComCapillaryOpsCpBoArtifactsArtifactCI update_artifact_ci(body, ci_id)
 
-updateArtifactCI
+
 
 ### Example
 ```python
@@ -421,43 +413,42 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactCiControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ArtifactCI() # ArtifactCI | artifactCI
-ci_id = 'ci_id_example' # str | ciId
+body = swagger_client.ComCapillaryOpsCpBoArtifactsArtifactCI() # ComCapillaryOpsCpBoArtifactsArtifactCI | 
+ci_id = 'ci_id_example' # str | 
 
 try:
-    # updateArtifactCI
-    api_response = api_instance.update_artifact_ci_using_put(body, ci_id)
+    api_response = api_instance.update_artifact_ci(body, ci_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactCiControllerApi->update_artifact_ci_using_put: %s\n" % e)
+    print("Exception when calling UiArtifactCiControllerApi->update_artifact_ci: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ArtifactCI**](ArtifactCI.md)| artifactCI | 
- **ci_id** | **str**| ciId | 
+ **body** | [**ComCapillaryOpsCpBoArtifactsArtifactCI**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)|  | 
+ **ci_id** | **str**|  | 
 
 ### Return type
 
-[**ArtifactCI**](ArtifactCI.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactCI**](ComCapillaryOpsCpBoArtifactsArtifactCI.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

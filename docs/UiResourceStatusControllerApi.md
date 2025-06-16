@@ -1,17 +1,17 @@
 # swagger_client.UiResourceStatusControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_release_preview_using_get**](UiResourceStatusControllerApi.md#get_release_preview_using_get) | **GET** /cc-ui/v1/resources/{clusterId}/release-preview | getReleasePreview
-[**get_resource_status_using_get**](UiResourceStatusControllerApi.md#get_resource_status_using_get) | **GET** /cc-ui/v1/resources/{projectName}/{environmentName}/status | getResourceStatus
-[**sync_resource_using_post**](UiResourceStatusControllerApi.md#sync_resource_using_post) | **POST** /cc-ui/v1/resources/sync | syncResource
+[**get_release_preview**](UiResourceStatusControllerApi.md#get_release_preview) | **GET** /cc-ui/v1/resources/{clusterId}/release-preview | 
+[**get_resource_status**](UiResourceStatusControllerApi.md#get_resource_status) | **GET** /cc-ui/v1/resources/{projectName}/{environmentName}/status | 
+[**sync_resource**](UiResourceStatusControllerApi.md#sync_resource) | **POST** /cc-ui/v1/resources/sync | 
 
-# **get_release_preview_using_get**
-> ReleasePreviewResponse get_release_preview_using_get(cluster_id)
+# **get_release_preview**
+> ComCapillaryOpsCpV2ResourcesyncBoReleasePreviewResponse get_release_preview(cluster_id)
 
-getReleasePreview
+
 
 ### Example
 ```python
@@ -20,48 +20,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceStatusControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getReleasePreview
-    api_response = api_instance.get_release_preview_using_get(cluster_id)
+    api_response = api_instance.get_release_preview(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceStatusControllerApi->get_release_preview_using_get: %s\n" % e)
+    print("Exception when calling UiResourceStatusControllerApi->get_release_preview: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**ReleasePreviewResponse**](ReleasePreviewResponse.md)
+[**ComCapillaryOpsCpV2ResourcesyncBoReleasePreviewResponse**](ComCapillaryOpsCpV2ResourcesyncBoReleasePreviewResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_status_using_get**
-> ResourceStatusResponse get_resource_status_using_get(environment_name, project_name, resources)
+# **get_resource_status**
+> ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse get_resource_status(project_name, environment_name, resources)
 
-getResourceStatus
+
 
 ### Example
 ```python
@@ -70,52 +69,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceStatusControllerApi(swagger_client.ApiClient(configuration))
-environment_name = 'environment_name_example' # str | environmentName
-project_name = 'project_name_example' # str | projectName
-resources = NULL # object | resources
+project_name = 'project_name_example' # str | 
+environment_name = 'environment_name_example' # str | 
+resources = {'key': 'resources_example'} # dict(str, str) | 
 
 try:
-    # getResourceStatus
-    api_response = api_instance.get_resource_status_using_get(environment_name, project_name, resources)
+    api_response = api_instance.get_resource_status(project_name, environment_name, resources)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceStatusControllerApi->get_resource_status_using_get: %s\n" % e)
+    print("Exception when calling UiResourceStatusControllerApi->get_resource_status: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **environment_name** | **str**| environmentName | 
- **project_name** | **str**| projectName | 
- **resources** | [**object**](.md)| resources | 
+ **project_name** | **str**|  | 
+ **environment_name** | **str**|  | 
+ **resources** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
-[**ResourceStatusResponse**](ResourceStatusResponse.md)
+[**ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse**](ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_resource_using_post**
-> ResourceStatusResponse sync_resource_using_post(body)
+# **sync_resource**
+> ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse sync_resource(body)
 
-syncResource
+
 
 ### Example
 ```python
@@ -124,41 +122,40 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceStatusControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ResourceSyncRequest() # ResourceSyncRequest | request
+body = swagger_client.ComCapillaryOpsCpV2ResourcesyncBoResourceSyncRequest() # ComCapillaryOpsCpV2ResourcesyncBoResourceSyncRequest | 
 
 try:
-    # syncResource
-    api_response = api_instance.sync_resource_using_post(body)
+    api_response = api_instance.sync_resource(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceStatusControllerApi->sync_resource_using_post: %s\n" % e)
+    print("Exception when calling UiResourceStatusControllerApi->sync_resource: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResourceSyncRequest**](ResourceSyncRequest.md)| request | 
+ **body** | [**ComCapillaryOpsCpV2ResourcesyncBoResourceSyncRequest**](ComCapillaryOpsCpV2ResourcesyncBoResourceSyncRequest.md)|  | 
 
 ### Return type
 
-[**ResourceStatusResponse**](ResourceStatusResponse.md)
+[**ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse**](ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

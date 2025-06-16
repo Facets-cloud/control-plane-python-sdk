@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class MetaControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_supported_component_version_using_get(self, component_type, **kwargs):  # noqa: E501
-        """getSupportedComponentVersion  # noqa: E501
+    def get_supported_component_version(self, component_type, **kwargs):  # noqa: E501
+        """get_supported_component_version  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_version_using_get(component_type, async_req=True)
+        >>> thread = api.get_supported_component_version(component_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str component_type: componentType (required)
-        :return: SupportedVersions
+        :param str component_type: (required)
+        :return: ComCapillaryOpsCpBoComponentsSupportedVersions
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_supported_component_version_using_get_with_http_info(component_type, **kwargs)  # noqa: E501
+            return self.get_supported_component_version_with_http_info(component_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_supported_component_version_using_get_with_http_info(component_type, **kwargs)  # noqa: E501
+            (data) = self.get_supported_component_version_with_http_info(component_type, **kwargs)  # noqa: E501
             return data
 
-    def get_supported_component_version_using_get_with_http_info(self, component_type, **kwargs):  # noqa: E501
-        """getSupportedComponentVersion  # noqa: E501
+    def get_supported_component_version_with_http_info(self, component_type, **kwargs):  # noqa: E501
+        """get_supported_component_version  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_version_using_get_with_http_info(component_type, async_req=True)
+        >>> thread = api.get_supported_component_version_with_http_info(component_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str component_type: componentType (required)
-        :return: SupportedVersions
+        :param str component_type: (required)
+        :return: ComCapillaryOpsCpBoComponentsSupportedVersions
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class MetaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_supported_component_version_using_get" % key
+                    " to method get_supported_component_version" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'component_type' is set
         if ('component_type' not in params or
                 params['component_type'] is None):
-            raise ValueError("Missing the required parameter `component_type` when calling `get_supported_component_version_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `component_type` when calling `get_supported_component_version`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,10 +104,10 @@ class MetaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/meta/components/{componentType}/supportedVersion', 'GET',
@@ -117,7 +117,7 @@ class MetaControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SupportedVersions',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoComponentsSupportedVersions',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -125,36 +125,36 @@ class MetaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_supported_component_versions_using_get(self, **kwargs):  # noqa: E501
-        """getSupportedComponentVersions  # noqa: E501
+    def get_supported_component_versions(self, **kwargs):  # noqa: E501
+        """get_supported_component_versions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_versions_using_get(async_req=True)
+        >>> thread = api.get_supported_component_versions(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[SupportedVersions]
+        :return: list[ComCapillaryOpsCpBoComponentsSupportedVersions]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_supported_component_versions_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_supported_component_versions_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_supported_component_versions_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_supported_component_versions_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_supported_component_versions_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getSupportedComponentVersions  # noqa: E501
+    def get_supported_component_versions_with_http_info(self, **kwargs):  # noqa: E501
+        """get_supported_component_versions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_versions_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_supported_component_versions_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[SupportedVersions]
+        :return: list[ComCapillaryOpsCpBoComponentsSupportedVersions]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -170,7 +170,7 @@ class MetaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_supported_component_versions_using_get" % key
+                    " to method get_supported_component_versions" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -189,10 +189,10 @@ class MetaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/meta/components/supportedVersion', 'GET',
@@ -202,7 +202,7 @@ class MetaControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[SupportedVersions]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoComponentsSupportedVersions]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

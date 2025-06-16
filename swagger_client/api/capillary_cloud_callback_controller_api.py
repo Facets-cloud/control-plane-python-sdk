@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class CapillaryCloudCallbackControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def code_build_callback_using_post(self, body, **kwargs):  # noqa: E501
-        """codeBuildCallback  # noqa: E501
+    def code_build_callback(self, body, **kwargs):  # noqa: E501
+        """code_build_callback  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.code_build_callback_using_post(body, async_req=True)
+        >>> thread = api.code_build_callback(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CodeBuildStatusCallback body: callback (required)
+        :param ComCapillaryOpsCpBoCodeBuildStatusCallback body: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.code_build_callback_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.code_build_callback_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.code_build_callback_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.code_build_callback_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def code_build_callback_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """codeBuildCallback  # noqa: E501
+    def code_build_callback_with_http_info(self, body, **kwargs):  # noqa: E501
+        """code_build_callback  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.code_build_callback_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.code_build_callback_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CodeBuildStatusCallback body: callback (required)
+        :param ComCapillaryOpsCpBoCodeBuildStatusCallback body: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class CapillaryCloudCallbackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method code_build_callback_using_post" % key
+                    " to method code_build_callback" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `code_build_callback_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `code_build_callback`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class CapillaryCloudCallbackControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/callbacks/codebuild', 'POST',
@@ -129,49 +129,49 @@ class CapillaryCloudCallbackControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def dr_result_callback_using_post(self, body, cluster, instance_name, module_type, **kwargs):  # noqa: E501
-        """drResultCallback  # noqa: E501
+    def dr_result_callback(self, body, cluster, module_type, instance_name, **kwargs):  # noqa: E501
+        """dr_result_callback  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dr_result_callback_using_post(body, cluster, instance_name, module_type, async_req=True)
+        >>> thread = api.dr_result_callback(body, cluster, module_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DRResult body: callback (required)
-        :param str cluster: cluster (required)
-        :param str instance_name: instanceName (required)
-        :param str module_type: moduleType (required)
+        :param ComCapillaryOpsCpBoDRResult body: (required)
+        :param str cluster: (required)
+        :param str module_type: (required)
+        :param str instance_name: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.dr_result_callback_using_post_with_http_info(body, cluster, instance_name, module_type, **kwargs)  # noqa: E501
+            return self.dr_result_callback_with_http_info(body, cluster, module_type, instance_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.dr_result_callback_using_post_with_http_info(body, cluster, instance_name, module_type, **kwargs)  # noqa: E501
+            (data) = self.dr_result_callback_with_http_info(body, cluster, module_type, instance_name, **kwargs)  # noqa: E501
             return data
 
-    def dr_result_callback_using_post_with_http_info(self, body, cluster, instance_name, module_type, **kwargs):  # noqa: E501
-        """drResultCallback  # noqa: E501
+    def dr_result_callback_with_http_info(self, body, cluster, module_type, instance_name, **kwargs):  # noqa: E501
+        """dr_result_callback  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dr_result_callback_using_post_with_http_info(body, cluster, instance_name, module_type, async_req=True)
+        >>> thread = api.dr_result_callback_with_http_info(body, cluster, module_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DRResult body: callback (required)
-        :param str cluster: cluster (required)
-        :param str instance_name: instanceName (required)
-        :param str module_type: moduleType (required)
+        :param ComCapillaryOpsCpBoDRResult body: (required)
+        :param str cluster: (required)
+        :param str module_type: (required)
+        :param str instance_name: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'cluster', 'instance_name', 'module_type']  # noqa: E501
+        all_params = ['body', 'cluster', 'module_type', 'instance_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -182,36 +182,36 @@ class CapillaryCloudCallbackControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method dr_result_callback_using_post" % key
+                    " to method dr_result_callback" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `dr_result_callback_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `dr_result_callback`")  # noqa: E501
         # verify the required parameter 'cluster' is set
         if ('cluster' not in params or
                 params['cluster'] is None):
-            raise ValueError("Missing the required parameter `cluster` when calling `dr_result_callback_using_post`")  # noqa: E501
-        # verify the required parameter 'instance_name' is set
-        if ('instance_name' not in params or
-                params['instance_name'] is None):
-            raise ValueError("Missing the required parameter `instance_name` when calling `dr_result_callback_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster` when calling `dr_result_callback`")  # noqa: E501
         # verify the required parameter 'module_type' is set
         if ('module_type' not in params or
                 params['module_type'] is None):
-            raise ValueError("Missing the required parameter `module_type` when calling `dr_result_callback_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `module_type` when calling `dr_result_callback`")  # noqa: E501
+        # verify the required parameter 'instance_name' is set
+        if ('instance_name' not in params or
+                params['instance_name'] is None):
+            raise ValueError("Missing the required parameter `instance_name` when calling `dr_result_callback`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster' in params:
             path_params['cluster'] = params['cluster']  # noqa: E501
-        if 'instance_name' in params:
-            path_params['instanceName'] = params['instance_name']  # noqa: E501
         if 'module_type' in params:
             path_params['moduleType'] = params['module_type']  # noqa: E501
+        if 'instance_name' in params:
+            path_params['instanceName'] = params['instance_name']  # noqa: E501
 
         query_params = []
 
@@ -225,14 +225,14 @@ class CapillaryCloudCallbackControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/callbacks/{cluster}/dr/{moduleType}/{instanceName}', 'POST',

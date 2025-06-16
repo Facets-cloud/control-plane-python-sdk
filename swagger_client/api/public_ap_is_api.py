@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,12 +32,12 @@ class PublicApIsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_all_feature_properties_using_get(self, **kwargs):  # noqa: E501
-        """getAllFeatureProperties  # noqa: E501
+    def get_all_feature_properties(self, **kwargs):  # noqa: E501
+        """get_all_feature_properties  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_feature_properties_using_get(async_req=True)
+        >>> thread = api.get_all_feature_properties(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -47,17 +47,17 @@ class PublicApIsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_feature_properties_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_feature_properties_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_feature_properties_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_feature_properties_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_feature_properties_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllFeatureProperties  # noqa: E501
+    def get_all_feature_properties_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_feature_properties  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_feature_properties_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_feature_properties_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -77,7 +77,7 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_feature_properties_using_get" % key
+                    " to method get_all_feature_properties" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -96,10 +96,10 @@ class PublicApIsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/features', 'GET',
@@ -117,12 +117,12 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_cp_cloud_using_get(self, **kwargs):  # noqa: E501
-        """getCPCloud  # noqa: E501
+    def get_cp_cloud(self, **kwargs):  # noqa: E501
+        """get_cp_cloud  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cp_cloud_using_get(async_req=True)
+        >>> thread = api.get_cp_cloud(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -132,17 +132,17 @@ class PublicApIsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_cp_cloud_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_cp_cloud_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_cp_cloud_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_cp_cloud_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_cp_cloud_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getCPCloud  # noqa: E501
+    def get_cp_cloud_with_http_info(self, **kwargs):  # noqa: E501
+        """get_cp_cloud  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cp_cloud_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_cp_cloud_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -162,7 +162,7 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_cp_cloud_using_get" % key
+                    " to method get_cp_cloud" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -181,10 +181,10 @@ class PublicApIsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/cp-cloud', 'GET',
@@ -202,37 +202,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_feature_property_using_get(self, name, **kwargs):  # noqa: E501
-        """getFeatureProperty  # noqa: E501
+    def get_feature_property(self, name, **kwargs):  # noqa: E501
+        """get_feature_property  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_feature_property_using_get(name, async_req=True)
+        >>> thread = api.get_feature_property(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: name (required)
+        :param str name: (required)
         :return: dict(str, str)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_feature_property_using_get_with_http_info(name, **kwargs)  # noqa: E501
+            return self.get_feature_property_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_feature_property_using_get_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.get_feature_property_with_http_info(name, **kwargs)  # noqa: E501
             return data
 
-    def get_feature_property_using_get_with_http_info(self, name, **kwargs):  # noqa: E501
-        """getFeatureProperty  # noqa: E501
+    def get_feature_property_with_http_info(self, name, **kwargs):  # noqa: E501
+        """get_feature_property  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_feature_property_using_get_with_http_info(name, async_req=True)
+        >>> thread = api.get_feature_property_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: name (required)
+        :param str name: (required)
         :return: dict(str, str)
                  If the method is called asynchronously,
                  returns the request thread.
@@ -249,14 +249,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_feature_property_using_get" % key
+                    " to method get_feature_property" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_feature_property_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `get_feature_property`")  # noqa: E501
 
         collection_formats = {}
 
@@ -274,10 +274,10 @@ class PublicApIsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/features/{name}', 'GET',
@@ -295,36 +295,36 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_login_options_using_get(self, **kwargs):  # noqa: E501
-        """getLoginOptions  # noqa: E501
+    def get_login_options(self, **kwargs):  # noqa: E501
+        """get_login_options  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_login_options_using_get(async_req=True)
+        >>> thread = api.get_login_options(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[CustomOAuth2ClientRegistration]
+        :return: list[ComCapillaryOpsCpBoAuthCustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_login_options_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_login_options_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_login_options_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_login_options_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_login_options_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getLoginOptions  # noqa: E501
+    def get_login_options_with_http_info(self, **kwargs):  # noqa: E501
+        """get_login_options  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_login_options_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_login_options_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[CustomOAuth2ClientRegistration]
+        :return: list[ComCapillaryOpsCpBoAuthCustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -340,7 +340,7 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_login_options_using_get" % key
+                    " to method get_login_options" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -359,10 +359,10 @@ class PublicApIsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/loginOptions', 'GET',
@@ -372,7 +372,7 @@ class PublicApIsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomOAuth2ClientRegistration]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoAuthCustomOAuth2ClientRegistration]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -380,12 +380,12 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_logo_using_get(self, **kwargs):  # noqa: E501
-        """getLogo  # noqa: E501
+    def get_logo(self, **kwargs):  # noqa: E501
+        """get_logo  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_logo_using_get(async_req=True)
+        >>> thread = api.get_logo(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -395,17 +395,17 @@ class PublicApIsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_logo_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_logo_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_logo_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_logo_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_logo_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getLogo  # noqa: E501
+    def get_logo_with_http_info(self, **kwargs):  # noqa: E501
+        """get_logo  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_logo_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_logo_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -425,7 +425,7 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_logo_using_get" % key
+                    " to method get_logo" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -444,10 +444,10 @@ class PublicApIsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/logo', 'GET',
@@ -465,12 +465,12 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def health_check_using_get(self, **kwargs):  # noqa: E501
-        """healthCheck  # noqa: E501
+    def health_check(self, **kwargs):  # noqa: E501
+        """health_check  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.health_check_using_get(async_req=True)
+        >>> thread = api.health_check(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -480,17 +480,17 @@ class PublicApIsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.health_check_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.health_check_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.health_check_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.health_check_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def health_check_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """healthCheck  # noqa: E501
+    def health_check_with_http_info(self, **kwargs):  # noqa: E501
+        """health_check  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.health_check_using_get_with_http_info(async_req=True)
+        >>> thread = api.health_check_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -510,7 +510,7 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method health_check_using_get" % key
+                    " to method health_check" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -529,10 +529,10 @@ class PublicApIsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/health', 'GET',
@@ -550,37 +550,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_aws_account_using_post(self, body, **kwargs):  # noqa: E501
-        """linkAwsAccount  # noqa: E501
+    def link_aws_account(self, body, **kwargs):  # noqa: E501
+        """link_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_aws_account_using_post(body, async_req=True)
+        >>> thread = api.link_aws_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadAwsAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_aws_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_aws_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_aws_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_aws_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_aws_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkAwsAccount  # noqa: E501
+    def link_aws_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_aws_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_aws_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadAwsAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -597,14 +597,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_aws_account_using_post" % key
+                    " to method link_aws_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_aws_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_aws_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -620,12 +620,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-aws', 'POST',
@@ -643,37 +647,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_azure_account_using_post(self, body, **kwargs):  # noqa: E501
-        """linkAzureAccount  # noqa: E501
+    def link_azure_account(self, body, **kwargs):  # noqa: E501
+        """link_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_azure_account_using_post(body, async_req=True)
+        >>> thread = api.link_azure_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadAzureAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_azure_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_azure_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_azure_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_azure_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_azure_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkAzureAccount  # noqa: E501
+    def link_azure_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_azure_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_azure_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadAzureAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -690,14 +694,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_azure_account_using_post" % key
+                    " to method link_azure_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_azure_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_azure_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -713,12 +717,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-azure', 'POST',
@@ -736,37 +744,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_bitbucket_account_using_post(self, body, **kwargs):  # noqa: E501
-        """linkBitbucketAccount  # noqa: E501
+    def link_bitbucket_account(self, body, **kwargs):  # noqa: E501
+        """link_bitbucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_bitbucket_account_using_post(body, async_req=True)
+        >>> thread = api.link_bitbucket_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadBitbucketOauthAppPayload body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitbucketOauthAppPayload body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_bitbucket_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_bitbucket_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_bitbucket_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_bitbucket_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_bitbucket_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkBitbucketAccount  # noqa: E501
+    def link_bitbucket_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_bitbucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_bitbucket_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_bitbucket_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadBitbucketOauthAppPayload body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitbucketOauthAppPayload body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -783,14 +791,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_bitbucket_account_using_post" % key
+                    " to method link_bitbucket_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_bitbucket_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_bitbucket_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -806,12 +814,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-bitbucket', 'POST',
@@ -829,37 +841,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_docker_registries_using_post(self, body, **kwargs):  # noqa: E501
-        """linkDockerRegistries  # noqa: E501
+    def link_docker_registries(self, body, **kwargs):  # noqa: E501
+        """link_docker_registries  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_docker_registries_using_post(body, async_req=True)
+        >>> thread = api.link_docker_registries(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadBasicDockerDTO body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoArtifactoryDtoBasicDockerDTO body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_docker_registries_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_docker_registries_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_docker_registries_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_docker_registries_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_docker_registries_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkDockerRegistries  # noqa: E501
+    def link_docker_registries_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_docker_registries  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_docker_registries_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_docker_registries_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadBasicDockerDTO body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoArtifactoryDtoBasicDockerDTO body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -876,14 +888,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_docker_registries_using_post" % key
+                    " to method link_docker_registries" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_docker_registries_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_docker_registries`")  # noqa: E501
 
         collection_formats = {}
 
@@ -899,12 +911,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-docker-registries', 'POST',
@@ -922,37 +938,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_ecr_using_post(self, body, **kwargs):  # noqa: E501
-        """linkECR  # noqa: E501
+    def link_ecr(self, body, **kwargs):  # noqa: E501
+        """link_ecr  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_ecr_using_post(body, async_req=True)
+        >>> thread = api.link_ecr(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadECRArtifactory body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoECRArtifactory body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_ecr_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_ecr_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_ecr_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_ecr_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_ecr_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkECR  # noqa: E501
+    def link_ecr_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_ecr  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_ecr_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_ecr_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadECRArtifactory body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoECRArtifactory body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -969,14 +985,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_ecr_using_post" % key
+                    " to method link_ecr" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_ecr_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_ecr`")  # noqa: E501
 
         collection_formats = {}
 
@@ -992,12 +1008,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-ecr', 'POST',
@@ -1015,37 +1035,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_gcp_account_using_post(self, body, **kwargs):  # noqa: E501
-        """linkGcpAccount  # noqa: E501
+    def link_gcp_account(self, body, **kwargs):  # noqa: E501
+        """link_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_gcp_account_using_post(body, async_req=True)
+        >>> thread = api.link_gcp_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadGcpAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_gcp_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_gcp_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_gcp_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_gcp_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_gcp_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkGcpAccount  # noqa: E501
+    def link_gcp_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_gcp_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_gcp_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadGcpAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1062,14 +1082,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_gcp_account_using_post" % key
+                    " to method link_gcp_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_gcp_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_gcp_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1085,12 +1105,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-gcp', 'POST',
@@ -1108,37 +1132,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_github_account_using_post(self, body, **kwargs):  # noqa: E501
-        """linkGithubAccount  # noqa: E501
+    def link_github_account(self, body, **kwargs):  # noqa: E501
+        """link_github_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_github_account_using_post(body, async_req=True)
+        >>> thread = api.link_github_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadGithubAppInstallationPayload body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsVersioncontrolGithubGithubAppInstallationPayload body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_github_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_github_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_github_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_github_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_github_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkGithubAccount  # noqa: E501
+    def link_github_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_github_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_github_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_github_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadGithubAppInstallationPayload body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsVersioncontrolGithubGithubAppInstallationPayload body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1155,14 +1179,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_github_account_using_post" % key
+                    " to method link_github_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_github_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_github_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1178,12 +1202,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-github', 'POST',
@@ -1201,37 +1229,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_gitlab_account_using_post(self, body, **kwargs):  # noqa: E501
-        """linkGitlabAccount  # noqa: E501
+    def link_gitlab_account(self, body, **kwargs):  # noqa: E501
+        """link_gitlab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_gitlab_account_using_post(body, async_req=True)
+        >>> thread = api.link_gitlab_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadGitlabOauthAppPayload body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitlabOauthAppPayload body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_gitlab_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_gitlab_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_gitlab_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_gitlab_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_gitlab_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkGitlabAccount  # noqa: E501
+    def link_gitlab_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_gitlab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_gitlab_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_gitlab_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadGitlabOauthAppPayload body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitlabOauthAppPayload body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1248,14 +1276,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_gitlab_account_using_post" % key
+                    " to method link_gitlab_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_gitlab_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_gitlab_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1271,12 +1299,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-gitlab', 'POST',
@@ -1294,37 +1326,37 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def link_k8s_account_using_post(self, body, **kwargs):  # noqa: E501
-        """linkK8sAccount  # noqa: E501
+    def link_k8s_account(self, body, **kwargs):  # noqa: E501
+        """link_k8s_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_k8s_account_using_post(body, async_req=True)
+        >>> thread = api.link_k8s_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadKubernetesAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.link_k8s_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.link_k8s_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.link_k8s_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.link_k8s_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def link_k8s_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """linkK8sAccount  # noqa: E501
+    def link_k8s_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """link_k8s_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.link_k8s_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.link_k8s_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OneTimePayloadKubernetesAccount body: payload (required)
+        :param ComCapillaryOpsCpBoWebhookOneTimePayloadComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1341,14 +1373,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method link_k8s_account_using_post" % key
+                    " to method link_k8s_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `link_k8s_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `link_k8s_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1364,12 +1396,16 @@ class PublicApIsApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/link-kubernetes', 'POST',
@@ -1387,38 +1423,38 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def process_github_installation_request_using_post(self, body, **kwargs):  # noqa: E501
-        """processGithubInstallationRequest  # noqa: E501
+    def process_github_installation_request(self, body, **kwargs):  # noqa: E501
+        """process_github_installation_request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.process_github_installation_request_using_post(body, async_req=True)
+        >>> thread = api.process_github_installation_request(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GithubAppInstallationRequest body: githubAppInstallationRequest (required)
-        :return: GithubAppInstallationRequestResponse
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGithubAppInstallationRequest body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGithubGithubAppInstallationRequestResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.process_github_installation_request_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.process_github_installation_request_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.process_github_installation_request_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.process_github_installation_request_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def process_github_installation_request_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """processGithubInstallationRequest  # noqa: E501
+    def process_github_installation_request_with_http_info(self, body, **kwargs):  # noqa: E501
+        """process_github_installation_request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.process_github_installation_request_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.process_github_installation_request_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GithubAppInstallationRequest body: githubAppInstallationRequest (required)
-        :return: GithubAppInstallationRequestResponse
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGithubAppInstallationRequest body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGithubGithubAppInstallationRequestResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1434,14 +1470,14 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method process_github_installation_request_using_post" % key
+                    " to method process_github_installation_request" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `process_github_installation_request_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `process_github_installation_request`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1459,14 +1495,14 @@ class PublicApIsApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/github-installation-request', 'POST',
@@ -1476,7 +1512,7 @@ class PublicApIsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GithubAppInstallationRequestResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolGithubGithubAppInstallationRequestResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1484,36 +1520,36 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def retrieve_theme_file_using_get(self, **kwargs):  # noqa: E501
-        """retrieveThemeFile  # noqa: E501
+    def retrieve_theme_file(self, **kwargs):  # noqa: E501
+        """retrieve_theme_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.retrieve_theme_file_using_get(async_req=True)
+        >>> thread = api.retrieve_theme_file(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ThemeFileResponse
+        :return: ComCapillaryOpsCpBoThemeThemeFileResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.retrieve_theme_file_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.retrieve_theme_file_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.retrieve_theme_file_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.retrieve_theme_file_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def retrieve_theme_file_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """retrieveThemeFile  # noqa: E501
+    def retrieve_theme_file_with_http_info(self, **kwargs):  # noqa: E501
+        """retrieve_theme_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.retrieve_theme_file_using_get_with_http_info(async_req=True)
+        >>> thread = api.retrieve_theme_file_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: ThemeFileResponse
+        :return: ComCapillaryOpsCpBoThemeThemeFileResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1529,7 +1565,7 @@ class PublicApIsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method retrieve_theme_file_using_get" % key
+                    " to method retrieve_theme_file" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1548,10 +1584,10 @@ class PublicApIsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public/v1/themeFile', 'GET',
@@ -1561,7 +1597,7 @@ class PublicApIsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ThemeFileResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoThemeThemeFileResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

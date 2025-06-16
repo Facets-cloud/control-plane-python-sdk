@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiResourceStatusControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_release_preview_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getReleasePreview  # noqa: E501
+    def get_release_preview(self, cluster_id, **kwargs):  # noqa: E501
+        """get_release_preview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_release_preview_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_release_preview(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: ReleasePreviewResponse
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpV2ResourcesyncBoReleasePreviewResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_release_preview_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_release_preview_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_release_preview_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_release_preview_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_release_preview_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getReleasePreview  # noqa: E501
+    def get_release_preview_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_release_preview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_release_preview_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_release_preview_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: ReleasePreviewResponse
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpV2ResourcesyncBoReleasePreviewResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiResourceStatusControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_release_preview_using_get" % key
+                    " to method get_release_preview" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_release_preview_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_release_preview`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,10 +104,10 @@ class UiResourceStatusControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resources/{clusterId}/release-preview', 'GET',
@@ -117,7 +117,7 @@ class UiResourceStatusControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ReleasePreviewResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpV2ResourcesyncBoReleasePreviewResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -125,47 +125,47 @@ class UiResourceStatusControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resource_status_using_get(self, environment_name, project_name, resources, **kwargs):  # noqa: E501
-        """getResourceStatus  # noqa: E501
+    def get_resource_status(self, project_name, environment_name, resources, **kwargs):  # noqa: E501
+        """get_resource_status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_status_using_get(environment_name, project_name, resources, async_req=True)
+        >>> thread = api.get_resource_status(project_name, environment_name, resources, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str environment_name: environmentName (required)
-        :param str project_name: projectName (required)
-        :param object resources: resources (required)
-        :return: ResourceStatusResponse
+        :param str project_name: (required)
+        :param str environment_name: (required)
+        :param dict(str, str) resources: (required)
+        :return: ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_resource_status_using_get_with_http_info(environment_name, project_name, resources, **kwargs)  # noqa: E501
+            return self.get_resource_status_with_http_info(project_name, environment_name, resources, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_resource_status_using_get_with_http_info(environment_name, project_name, resources, **kwargs)  # noqa: E501
+            (data) = self.get_resource_status_with_http_info(project_name, environment_name, resources, **kwargs)  # noqa: E501
             return data
 
-    def get_resource_status_using_get_with_http_info(self, environment_name, project_name, resources, **kwargs):  # noqa: E501
-        """getResourceStatus  # noqa: E501
+    def get_resource_status_with_http_info(self, project_name, environment_name, resources, **kwargs):  # noqa: E501
+        """get_resource_status  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_status_using_get_with_http_info(environment_name, project_name, resources, async_req=True)
+        >>> thread = api.get_resource_status_with_http_info(project_name, environment_name, resources, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str environment_name: environmentName (required)
-        :param str project_name: projectName (required)
-        :param object resources: resources (required)
-        :return: ResourceStatusResponse
+        :param str project_name: (required)
+        :param str environment_name: (required)
+        :param dict(str, str) resources: (required)
+        :return: ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['environment_name', 'project_name', 'resources']  # noqa: E501
+        all_params = ['project_name', 'environment_name', 'resources']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -176,30 +176,30 @@ class UiResourceStatusControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_resource_status_using_get" % key
+                    " to method get_resource_status" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'environment_name' is set
-        if ('environment_name' not in params or
-                params['environment_name'] is None):
-            raise ValueError("Missing the required parameter `environment_name` when calling `get_resource_status_using_get`")  # noqa: E501
         # verify the required parameter 'project_name' is set
         if ('project_name' not in params or
                 params['project_name'] is None):
-            raise ValueError("Missing the required parameter `project_name` when calling `get_resource_status_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `project_name` when calling `get_resource_status`")  # noqa: E501
+        # verify the required parameter 'environment_name' is set
+        if ('environment_name' not in params or
+                params['environment_name'] is None):
+            raise ValueError("Missing the required parameter `environment_name` when calling `get_resource_status`")  # noqa: E501
         # verify the required parameter 'resources' is set
         if ('resources' not in params or
                 params['resources'] is None):
-            raise ValueError("Missing the required parameter `resources` when calling `get_resource_status_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resources` when calling `get_resource_status`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'environment_name' in params:
-            path_params['environmentName'] = params['environment_name']  # noqa: E501
         if 'project_name' in params:
             path_params['projectName'] = params['project_name']  # noqa: E501
+        if 'environment_name' in params:
+            path_params['environmentName'] = params['environment_name']  # noqa: E501
 
         query_params = []
         if 'resources' in params:
@@ -213,10 +213,10 @@ class UiResourceStatusControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resources/{projectName}/{environmentName}/status', 'GET',
@@ -226,7 +226,7 @@ class UiResourceStatusControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ResourceStatusResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -234,38 +234,38 @@ class UiResourceStatusControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def sync_resource_using_post(self, body, **kwargs):  # noqa: E501
-        """syncResource  # noqa: E501
+    def sync_resource(self, body, **kwargs):  # noqa: E501
+        """sync_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_resource_using_post(body, async_req=True)
+        >>> thread = api.sync_resource(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResourceSyncRequest body: request (required)
-        :return: ResourceStatusResponse
+        :param ComCapillaryOpsCpV2ResourcesyncBoResourceSyncRequest body: (required)
+        :return: ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.sync_resource_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.sync_resource_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.sync_resource_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.sync_resource_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def sync_resource_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """syncResource  # noqa: E501
+    def sync_resource_with_http_info(self, body, **kwargs):  # noqa: E501
+        """sync_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_resource_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.sync_resource_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResourceSyncRequest body: request (required)
-        :return: ResourceStatusResponse
+        :param ComCapillaryOpsCpV2ResourcesyncBoResourceSyncRequest body: (required)
+        :return: ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -281,14 +281,14 @@ class UiResourceStatusControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method sync_resource_using_post" % key
+                    " to method sync_resource" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `sync_resource_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `sync_resource`")  # noqa: E501
 
         collection_formats = {}
 
@@ -306,14 +306,14 @@ class UiResourceStatusControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resources/sync', 'POST',
@@ -323,7 +323,7 @@ class UiResourceStatusControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ResourceStatusResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpV2ResourcesyncBoResourceStatusResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

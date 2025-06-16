@@ -1,20 +1,20 @@
 # swagger_client.DeploymentControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**abort_automation_suite_using_delete**](DeploymentControllerApi.md#abort_automation_suite_using_delete) | **DELETE** /cc/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite | abortAutomationSuite
-[**get_automation_suite_status_using_get**](DeploymentControllerApi.md#get_automation_suite_status_using_get) | **GET** /cc/v1/clusters/{clusterId}/deployments/qa/{executionId}/status | getAutomationSuiteStatus
-[**get_deployments_using_get**](DeploymentControllerApi.md#get_deployments_using_get) | **GET** /cc/v1/clusters/{clusterId}/deployments | getDeployments
-[**get_logs_using_get**](DeploymentControllerApi.md#get_logs_using_get) | **GET** /cc/v1/clusters/{clusterId}/deployments/{id} | getLogs
-[**trigger_automation_suite_using_post**](DeploymentControllerApi.md#trigger_automation_suite_using_post) | **POST** /cc/v1/clusters/{clusterId}/deployments/qa/triggerSuite | triggerAutomationSuite
-[**validate_sanity_result_using_post**](DeploymentControllerApi.md#validate_sanity_result_using_post) | **POST** /cc/v1/clusters/{clusterId}/deployments/qa/validateSanityResult | validateSanityResult
+[**abort_automation_suite**](DeploymentControllerApi.md#abort_automation_suite) | **DELETE** /cc/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite | 
+[**get_automation_suite_status**](DeploymentControllerApi.md#get_automation_suite_status) | **GET** /cc/v1/clusters/{clusterId}/deployments/qa/{executionId}/status | 
+[**get_deployments**](DeploymentControllerApi.md#get_deployments) | **GET** /cc/v1/clusters/{clusterId}/deployments | 
+[**get_logs**](DeploymentControllerApi.md#get_logs) | **GET** /cc/v1/clusters/{clusterId}/deployments/{id} | 
+[**trigger_automation_suite**](DeploymentControllerApi.md#trigger_automation_suite) | **POST** /cc/v1/clusters/{clusterId}/deployments/qa/triggerSuite | 
+[**validate_sanity_result**](DeploymentControllerApi.md#validate_sanity_result) | **POST** /cc/v1/clusters/{clusterId}/deployments/qa/validateSanityResult | 
 
-# **abort_automation_suite_using_delete**
-> abort_automation_suite_using_delete(cluster_id, execution_id)
+# **abort_automation_suite**
+> abort_automation_suite(cluster_id, execution_id)
 
-abortAutomationSuite
+
 
 ### Example
 ```python
@@ -23,29 +23,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-execution_id = 'execution_id_example' # str | executionId
+cluster_id = 'cluster_id_example' # str | 
+execution_id = 'execution_id_example' # str | 
 
 try:
-    # abortAutomationSuite
-    api_instance.abort_automation_suite_using_delete(cluster_id, execution_id)
+    api_instance.abort_automation_suite(cluster_id, execution_id)
 except ApiException as e:
-    print("Exception when calling DeploymentControllerApi->abort_automation_suite_using_delete: %s\n" % e)
+    print("Exception when calling DeploymentControllerApi->abort_automation_suite: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **execution_id** | **str**| executionId | 
+ **cluster_id** | **str**|  | 
+ **execution_id** | **str**|  | 
 
 ### Return type
 
@@ -53,19 +52,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_automation_suite_status_using_get**
-> str get_automation_suite_status_using_get(cluster_id, execution_id)
+# **get_automation_suite_status**
+> str get_automation_suite_status(cluster_id, execution_id)
 
-getAutomationSuiteStatus
+
 
 ### Example
 ```python
@@ -74,30 +73,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-execution_id = 'execution_id_example' # str | executionId
+cluster_id = 'cluster_id_example' # str | 
+execution_id = 'execution_id_example' # str | 
 
 try:
-    # getAutomationSuiteStatus
-    api_response = api_instance.get_automation_suite_status_using_get(cluster_id, execution_id)
+    api_response = api_instance.get_automation_suite_status(cluster_id, execution_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeploymentControllerApi->get_automation_suite_status_using_get: %s\n" % e)
+    print("Exception when calling DeploymentControllerApi->get_automation_suite_status: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **execution_id** | **str**| executionId | 
+ **cluster_id** | **str**|  | 
+ **execution_id** | **str**|  | 
 
 ### Return type
 
@@ -105,19 +103,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deployments_using_get**
-> ListDeploymentsWrapper get_deployments_using_get(cluster_id)
+# **get_deployments**
+> ComCapillaryOpsCpBoWrappersListDeploymentsWrapper get_deployments(cluster_id)
 
-getDeployments
+
 
 ### Example
 ```python
@@ -126,48 +124,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getDeployments
-    api_response = api_instance.get_deployments_using_get(cluster_id)
+    api_response = api_instance.get_deployments(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeploymentControllerApi->get_deployments_using_get: %s\n" % e)
+    print("Exception when calling DeploymentControllerApi->get_deployments: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**ListDeploymentsWrapper**](ListDeploymentsWrapper.md)
+[**ComCapillaryOpsCpBoWrappersListDeploymentsWrapper**](ComCapillaryOpsCpBoWrappersListDeploymentsWrapper.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_logs_using_get**
-> list[str] get_logs_using_get(cluster_id, id)
+# **get_logs**
+> list[str] get_logs(cluster_id, id)
 
-getLogs
+
 
 ### Example
 ```python
@@ -176,30 +173,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-id = 'id_example' # str | id
+cluster_id = 'cluster_id_example' # str | 
+id = 'id_example' # str | 
 
 try:
-    # getLogs
-    api_response = api_instance.get_logs_using_get(cluster_id, id)
+    api_response = api_instance.get_logs(cluster_id, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeploymentControllerApi->get_logs_using_get: %s\n" % e)
+    print("Exception when calling DeploymentControllerApi->get_logs: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **id** | **str**| id | 
+ **cluster_id** | **str**|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -207,19 +203,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **trigger_automation_suite_using_post**
-> str trigger_automation_suite_using_post(body, cluster_id)
+# **trigger_automation_suite**
+> str trigger_automation_suite(body, cluster_id)
 
-triggerAutomationSuite
+
 
 ### Example
 ```python
@@ -228,30 +224,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.QASuite() # QASuite | automationSuite
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoQASuite() # ComCapillaryOpsCpBoQASuite | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # triggerAutomationSuite
-    api_response = api_instance.trigger_automation_suite_using_post(body, cluster_id)
+    api_response = api_instance.trigger_automation_suite(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeploymentControllerApi->trigger_automation_suite_using_post: %s\n" % e)
+    print("Exception when calling DeploymentControllerApi->trigger_automation_suite: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**QASuite**](QASuite.md)| automationSuite | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoQASuite**](ComCapillaryOpsCpBoQASuite.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -259,19 +254,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **validate_sanity_result_using_post**
-> validate_sanity_result_using_post(body, cluster_id)
+# **validate_sanity_result**
+> validate_sanity_result(body, cluster_id)
 
-validateSanityResult
+
 
 ### Example
 ```python
@@ -280,29 +275,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.DeploymentControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.QASuiteResult() # QASuiteResult | qaSuiteResult
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoQASuiteResult() # ComCapillaryOpsCpBoQASuiteResult | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # validateSanityResult
-    api_instance.validate_sanity_result_using_post(body, cluster_id)
+    api_instance.validate_sanity_result(body, cluster_id)
 except ApiException as e:
-    print("Exception when calling DeploymentControllerApi->validate_sanity_result_using_post: %s\n" % e)
+    print("Exception when calling DeploymentControllerApi->validate_sanity_result: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**QASuiteResult**](QASuiteResult.md)| qaSuiteResult | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoQASuiteResult**](ComCapillaryOpsCpBoQASuiteResult.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -310,12 +304,12 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
