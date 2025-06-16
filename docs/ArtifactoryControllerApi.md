@@ -1,17 +1,17 @@
 # swagger_client.ArtifactoryControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ecr_artifactory_using_post**](ArtifactoryControllerApi.md#create_ecr_artifactory_using_post) | **POST** /cc/v1/artifactories | createECRArtifactory
-[**get_all_artifactories_using_get**](ArtifactoryControllerApi.md#get_all_artifactories_using_get) | **GET** /cc/v1/artifactories | getAllArtifactories
-[**update_ecr_artifactory_using_put**](ArtifactoryControllerApi.md#update_ecr_artifactory_using_put) | **PUT** /cc/v1/artifactories/{artifactoryId} | updateECRArtifactory
+[**create_ecr_artifactory**](ArtifactoryControllerApi.md#create_ecr_artifactory) | **POST** /cc/v1/artifactories | 
+[**get_all_artifactories**](ArtifactoryControllerApi.md#get_all_artifactories) | **GET** /cc/v1/artifactories | 
+[**update_ecr_artifactory**](ArtifactoryControllerApi.md#update_ecr_artifactory) | **PUT** /cc/v1/artifactories/{artifactoryId} | 
 
-# **create_ecr_artifactory_using_post**
-> ECRArtifactory create_ecr_artifactory_using_post(body)
+# **create_ecr_artifactory**
+> ComCapillaryOpsCpBoECRArtifactory create_ecr_artifactory(body)
 
-createECRArtifactory
+
 
 ### Example
 ```python
@@ -20,48 +20,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ArtifactoryControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ECRArtifactory() # ECRArtifactory | ecrArtifactory
+body = swagger_client.ComCapillaryOpsCpBoECRArtifactory() # ComCapillaryOpsCpBoECRArtifactory | 
 
 try:
-    # createECRArtifactory
-    api_response = api_instance.create_ecr_artifactory_using_post(body)
+    api_response = api_instance.create_ecr_artifactory(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ArtifactoryControllerApi->create_ecr_artifactory_using_post: %s\n" % e)
+    print("Exception when calling ArtifactoryControllerApi->create_ecr_artifactory: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ECRArtifactory**](ECRArtifactory.md)| ecrArtifactory | 
+ **body** | [**ComCapillaryOpsCpBoECRArtifactory**](ComCapillaryOpsCpBoECRArtifactory.md)|  | 
 
 ### Return type
 
-[**ECRArtifactory**](ECRArtifactory.md)
+[**ComCapillaryOpsCpBoECRArtifactory**](ComCapillaryOpsCpBoECRArtifactory.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_artifactories_using_get**
-> list[Artifactory] get_all_artifactories_using_get()
+# **get_all_artifactories**
+> list[ComCapillaryOpsCpBoArtifactory] get_all_artifactories()
 
-getAllArtifactories
+
 
 ### Example
 ```python
@@ -70,7 +69,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -79,11 +78,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ArtifactoryControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllArtifactories
-    api_response = api_instance.get_all_artifactories_using_get()
+    api_response = api_instance.get_all_artifactories()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ArtifactoryControllerApi->get_all_artifactories_using_get: %s\n" % e)
+    print("Exception when calling ArtifactoryControllerApi->get_all_artifactories: %s\n" % e)
 ```
 
 ### Parameters
@@ -91,23 +89,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[Artifactory]**](Artifactory.md)
+[**list[ComCapillaryOpsCpBoArtifactory]**](ComCapillaryOpsCpBoArtifactory.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_ecr_artifactory_using_put**
-> ECRArtifactory update_ecr_artifactory_using_put(body, artifactory_id)
+# **update_ecr_artifactory**
+> ComCapillaryOpsCpBoECRArtifactory update_ecr_artifactory(body, artifactory_id)
 
-updateECRArtifactory
+
 
 ### Example
 ```python
@@ -116,43 +114,42 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ArtifactoryControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ECRArtifactory() # ECRArtifactory | ecrArtifactory
-artifactory_id = 'artifactory_id_example' # str | artifactoryId
+body = swagger_client.ComCapillaryOpsCpBoECRArtifactory() # ComCapillaryOpsCpBoECRArtifactory | 
+artifactory_id = 'artifactory_id_example' # str | 
 
 try:
-    # updateECRArtifactory
-    api_response = api_instance.update_ecr_artifactory_using_put(body, artifactory_id)
+    api_response = api_instance.update_ecr_artifactory(body, artifactory_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ArtifactoryControllerApi->update_ecr_artifactory_using_put: %s\n" % e)
+    print("Exception when calling ArtifactoryControllerApi->update_ecr_artifactory: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ECRArtifactory**](ECRArtifactory.md)| ecrArtifactory | 
- **artifactory_id** | **str**| artifactoryId | 
+ **body** | [**ComCapillaryOpsCpBoECRArtifactory**](ComCapillaryOpsCpBoECRArtifactory.md)|  | 
+ **artifactory_id** | **str**|  | 
 
 ### Return type
 
-[**ECRArtifactory**](ECRArtifactory.md)
+[**ComCapillaryOpsCpBoECRArtifactory**](ComCapillaryOpsCpBoECRArtifactory.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

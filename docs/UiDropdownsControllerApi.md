@@ -1,40 +1,41 @@
 # swagger_client.UiDropdownsControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_affected_resources_by_cluster_using_post**](UiDropdownsControllerApi.md#get_affected_resources_by_cluster_using_post) | **POST** /cc-ui/v1/dropdown/cluster/{clusterId}/affected-resources | getAffectedResourcesByCluster
-[**get_affected_resources_by_stack_using_post**](UiDropdownsControllerApi.md#get_affected_resources_by_stack_using_post) | **POST** /cc-ui/v1/dropdown/stack/{stackName}/affected-resources | getAffectedResourcesByStack
-[**get_all_cluster_resources_by_stack_using_get**](UiDropdownsControllerApi.md#get_all_cluster_resources_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/cluster-resources-info | getAllClusterResourcesByStack
-[**get_all_permissions_using_get**](UiDropdownsControllerApi.md#get_all_permissions_using_get) | **GET** /cc-ui/v1/dropdown/getAllPermissions | getAllPermissions
-[**get_all_resources_by_cluster_using_get**](UiDropdownsControllerApi.md#get_all_resources_by_cluster_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources-info | getAllResourcesByCluster
-[**get_all_resources_by_stack_using_get**](UiDropdownsControllerApi.md#get_all_resources_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/resources-info | getAllResourcesByStack
-[**get_all_resources_for_all_cluster_of_stack_using_get**](UiDropdownsControllerApi.md#get_all_resources_for_all_cluster_of_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/all-cluster-resources | getAllResourcesForAllClusterOfStack
-[**get_all_resources_using_get**](UiDropdownsControllerApi.md#get_all_resources_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources | getAllResources
-[**get_all_vcs_using_get**](UiDropdownsControllerApi.md#get_all_vcs_using_get) | **GET** /cc-ui/v1/dropdown/vcs | getAllVCS
-[**get_application_list_by_cluster_id_and_resource_name_using_get**](UiDropdownsControllerApi.md#get_application_list_by_cluster_id_and_resource_name_using_get) | **GET** /cc-ui/v1/dropdown/{clusterId}/{resourceType} | getApplicationListByClusterIdAndResourceName
-[**get_az_for_region_by_cloud_using_get**](UiDropdownsControllerApi.md#get_az_for_region_by_cloud_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/region/{region}/availability-zones | getAzForRegionByCloud
-[**get_file_from_facets_modules_using_get**](UiDropdownsControllerApi.md#get_file_from_facets_modules_using_get) | **GET** /cc-ui/v1/dropdown/file | getFileFromFacetsModules
-[**get_git_history_for_resource_using_get**](UiDropdownsControllerApi.md#get_git_history_for_resource_using_get) | **GET** /cc-ui/v1/dropdown/logs/cluster/{clusterId}/resourceName/{resourceName}/resourceType/{resourceType} | getGitHistoryForResource
-[**get_launch_dag_using_get**](UiDropdownsControllerApi.md#get_launch_dag_using_get) | **GET** /cc-ui/v1/dropdown/{clusterId}/cloud/{cloud}/launch-dag | getLaunchDAG
-[**get_output_references_using_get**](UiDropdownsControllerApi.md#get_output_references_using_get) | **GET** /cc-ui/v1/dropdown/{stackName}/output/{outputType}/references | getOutputReferences
-[**get_regions_using_get**](UiDropdownsControllerApi.md#get_regions_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/regions | getRegions
-[**get_regions_v2_using_get**](UiDropdownsControllerApi.md#get_regions_v2_using_get) | **GET** /cc-ui/v1/dropdown/{cloud}/regions-v2 | getRegionsV2
-[**get_release_streams_using_get**](UiDropdownsControllerApi.md#get_release_streams_using_get) | **GET** /cc-ui/v1/dropdown/releaseStreams | getReleaseStreams
-[**get_resource_by_cluster_id_using_get**](UiDropdownsControllerApi.md#get_resource_by_cluster_id_using_get) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/{resourceType}/{resourceName}/resource-info | getResourceByClusterId
-[**get_resource_by_stack_using_get**](UiDropdownsControllerApi.md#get_resource_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/resource-info | getResourceByStack
-[**get_resource_histories_by_stack_using_get**](UiDropdownsControllerApi.md#get_resource_histories_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history | getResourceHistoriesByStack
-[**get_resource_history_overview_by_stack_using_get**](UiDropdownsControllerApi.md#get_resource_history_overview_by_stack_using_get) | **GET** /cc-ui/v1/dropdown/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history-overview | getResourceHistoryOverviewByStack
-[**get_role_permissions_using_get**](UiDropdownsControllerApi.md#get_role_permissions_using_get) | **GET** /cc-ui/v1/dropdown/rolePermissions/{role} | getRolePermissions
-[**get_service_overview_using_get**](UiDropdownsControllerApi.md#get_service_overview_using_get) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/service/{serviceName}/overview | getServiceOverview
-[**sync_cluster_history_using_post**](UiDropdownsControllerApi.md#sync_cluster_history_using_post) | **POST** /cc-ui/v1/dropdown/logs/cluster/{clusterId} | syncClusterHistory
-[**sync_substack_git_history_using_post**](UiDropdownsControllerApi.md#sync_substack_git_history_using_post) | **POST** /cc-ui/v1/dropdown/logs/substack | syncSubstackGitHistory
+[**get_affected_resources_by_cluster**](UiDropdownsControllerApi.md#get_affected_resources_by_cluster) | **POST** /cc-ui/v1/dropdown/cluster/{clusterId}/affected-resources | 
+[**get_affected_resources_by_stack**](UiDropdownsControllerApi.md#get_affected_resources_by_stack) | **POST** /cc-ui/v1/dropdown/stack/{stackName}/affected-resources | 
+[**get_all_cluster_resources_by_stack**](UiDropdownsControllerApi.md#get_all_cluster_resources_by_stack) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/cluster-resources-info | 
+[**get_all_permissions**](UiDropdownsControllerApi.md#get_all_permissions) | **GET** /cc-ui/v1/dropdown/getAllPermissions | 
+[**get_all_resources**](UiDropdownsControllerApi.md#get_all_resources) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources | 
+[**get_all_resources_by_cluster**](UiDropdownsControllerApi.md#get_all_resources_by_cluster) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/resources-info | 
+[**get_all_resources_by_stack**](UiDropdownsControllerApi.md#get_all_resources_by_stack) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/resources-info | 
+[**get_all_resources_for_all_cluster_of_stack**](UiDropdownsControllerApi.md#get_all_resources_for_all_cluster_of_stack) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/all-cluster-resources | 
+[**get_all_vcs**](UiDropdownsControllerApi.md#get_all_vcs) | **GET** /cc-ui/v1/dropdown/vcs | 
+[**get_application_list_by_cluster_id_and_resource_name**](UiDropdownsControllerApi.md#get_application_list_by_cluster_id_and_resource_name) | **GET** /cc-ui/v1/dropdown/{clusterId}/{resourceType} | 
+[**get_az_for_region_by_cloud**](UiDropdownsControllerApi.md#get_az_for_region_by_cloud) | **GET** /cc-ui/v1/dropdown/{cloud}/region/{region}/availability-zones | 
+[**get_file_from_facets_modules**](UiDropdownsControllerApi.md#get_file_from_facets_modules) | **GET** /cc-ui/v1/dropdown/file | 
+[**get_git_history_for_resource**](UiDropdownsControllerApi.md#get_git_history_for_resource) | **GET** /cc-ui/v1/dropdown/logs/cluster/{clusterId}/resourceName/{resourceName}/resourceType/{resourceType} | 
+[**get_launch_dag**](UiDropdownsControllerApi.md#get_launch_dag) | **GET** /cc-ui/v1/dropdown/{clusterId}/cloud/{cloud}/launch-dag | 
+[**get_output_references**](UiDropdownsControllerApi.md#get_output_references) | **GET** /cc-ui/v1/dropdown/{stackName}/output/{outputType}/references | 
+[**get_output_references_by_type**](UiDropdownsControllerApi.md#get_output_references_by_type) | **GET** /cc-ui/v1/dropdown/{stackName}/output-references | 
+[**get_regions**](UiDropdownsControllerApi.md#get_regions) | **GET** /cc-ui/v1/dropdown/{cloud}/regions | 
+[**get_regions_v2**](UiDropdownsControllerApi.md#get_regions_v2) | **GET** /cc-ui/v1/dropdown/{cloud}/regions-v2 | 
+[**get_release_streams**](UiDropdownsControllerApi.md#get_release_streams) | **GET** /cc-ui/v1/dropdown/releaseStreams | 
+[**get_resource_by_cluster_id**](UiDropdownsControllerApi.md#get_resource_by_cluster_id) | **GET** /cc-ui/v1/dropdown/cluster/{clusterId}/{resourceType}/{resourceName}/resource-info | 
+[**get_resource_by_stack**](UiDropdownsControllerApi.md#get_resource_by_stack) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/resource-info | 
+[**get_resource_histories_by_stack**](UiDropdownsControllerApi.md#get_resource_histories_by_stack) | **GET** /cc-ui/v1/dropdown/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history | 
+[**get_resource_history_overview_by_stack**](UiDropdownsControllerApi.md#get_resource_history_overview_by_stack) | **GET** /cc-ui/v1/dropdown/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history-overview | 
+[**get_role_permissions**](UiDropdownsControllerApi.md#get_role_permissions) | **GET** /cc-ui/v1/dropdown/rolePermissions/{role} | 
+[**get_service_overview**](UiDropdownsControllerApi.md#get_service_overview) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/service/{serviceName}/overview | 
+[**sync_cluster_history**](UiDropdownsControllerApi.md#sync_cluster_history) | **POST** /cc-ui/v1/dropdown/logs/cluster/{clusterId} | 
+[**sync_substack_git_history**](UiDropdownsControllerApi.md#sync_substack_git_history) | **POST** /cc-ui/v1/dropdown/logs/substack | 
 
-# **get_affected_resources_by_cluster_using_post**
-> ResourceAffectedResponse get_affected_resources_by_cluster_using_post(body, cluster_id)
+# **get_affected_resources_by_cluster**
+> ComCapillaryOpsCpBoResoucesResourceAffectedResponse get_affected_resources_by_cluster(body, cluster_id)
 
-getAffectedResourcesByCluster
+
 
 ### Example
 ```python
@@ -43,50 +44,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AffectedResourcesRequest() # AffectedResourcesRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoRequestsAffectedResourcesRequest() # ComCapillaryOpsCpBoRequestsAffectedResourcesRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getAffectedResourcesByCluster
-    api_response = api_instance.get_affected_resources_by_cluster_using_post(body, cluster_id)
+    api_response = api_instance.get_affected_resources_by_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_affected_resources_by_cluster_using_post: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_affected_resources_by_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AffectedResourcesRequest**](AffectedResourcesRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoRequestsAffectedResourcesRequest**](ComCapillaryOpsCpBoRequestsAffectedResourcesRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**ResourceAffectedResponse**](ResourceAffectedResponse.md)
+[**ComCapillaryOpsCpBoResoucesResourceAffectedResponse**](ComCapillaryOpsCpBoResoucesResourceAffectedResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_affected_resources_by_stack_using_post**
-> ResourceAffectedResponse get_affected_resources_by_stack_using_post(body, stack_name)
+# **get_affected_resources_by_stack**
+> ComCapillaryOpsCpBoResoucesResourceAffectedResponse get_affected_resources_by_stack(body, stack_name)
 
-getAffectedResourcesByStack
+
 
 ### Example
 ```python
@@ -95,50 +95,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AffectedResourcesRequest() # AffectedResourcesRequest | request
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ComCapillaryOpsCpBoRequestsAffectedResourcesRequest() # ComCapillaryOpsCpBoRequestsAffectedResourcesRequest | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getAffectedResourcesByStack
-    api_response = api_instance.get_affected_resources_by_stack_using_post(body, stack_name)
+    api_response = api_instance.get_affected_resources_by_stack(body, stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_affected_resources_by_stack_using_post: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_affected_resources_by_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AffectedResourcesRequest**](AffectedResourcesRequest.md)| request | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ComCapillaryOpsCpBoRequestsAffectedResourcesRequest**](ComCapillaryOpsCpBoRequestsAffectedResourcesRequest.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**ResourceAffectedResponse**](ResourceAffectedResponse.md)
+[**ComCapillaryOpsCpBoResoucesResourceAffectedResponse**](ComCapillaryOpsCpBoResoucesResourceAffectedResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_cluster_resources_by_stack_using_get**
-> list[BlueprintFile] get_all_cluster_resources_by_stack_using_get(resource_name, resource_type, stack_name)
+# **get_all_cluster_resources_by_stack**
+> list[ComCapillaryOpsCpBoResoucesBlueprintFile] get_all_cluster_resources_by_stack(stack_name, resource_type, resource_name)
 
-getAllClusterResourcesByStack
+
 
 ### Example
 ```python
@@ -147,52 +146,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getAllClusterResourcesByStack
-    api_response = api_instance.get_all_cluster_resources_by_stack_using_get(resource_name, resource_type, stack_name)
+    api_response = api_instance.get_all_cluster_resources_by_stack(stack_name, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_all_cluster_resources_by_stack_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_all_cluster_resources_by_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
-[**list[BlueprintFile]**](BlueprintFile.md)
+[**list[ComCapillaryOpsCpBoResoucesBlueprintFile]**](ComCapillaryOpsCpBoResoucesBlueprintFile.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_permissions_using_get**
-> list[RBACEntity] get_all_permissions_using_get()
+# **get_all_permissions**
+> list[str] get_all_permissions()
 
-getAllPermissions
+
 
 ### Example
 ```python
@@ -201,7 +199,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -210,11 +208,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllPermissions
-    api_response = api_instance.get_all_permissions_using_get()
+    api_response = api_instance.get_all_permissions()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_all_permissions_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_all_permissions: %s\n" % e)
 ```
 
 ### Parameters
@@ -222,23 +219,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[RBACEntity]**](RBACEntity.md)
+**list[str]**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_resources_by_cluster_using_get**
-> list[BlueprintFile] get_all_resources_by_cluster_using_get(cluster_id, exclude_add_ons=exclude_add_ons, include_content=include_content, include_substack=include_substack)
+# **get_all_resources**
+> dict(str, list[str]) get_all_resources(cluster_id, exclude_substack_resources=exclude_substack_resources)
 
-getAllResourcesByCluster
+
 
 ### Example
 ```python
@@ -247,194 +244,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-exclude_add_ons = false # bool | excludeAddOns (optional) (default to false)
-include_content = false # bool | includeContent (optional) (default to false)
-include_substack = true # bool | includeSubstack (optional) (default to true)
+cluster_id = 'cluster_id_example' # str | 
+exclude_substack_resources = false # bool |  (optional) (default to false)
 
 try:
-    # getAllResourcesByCluster
-    api_response = api_instance.get_all_resources_by_cluster_using_get(cluster_id, exclude_add_ons=exclude_add_ons, include_content=include_content, include_substack=include_substack)
+    api_response = api_instance.get_all_resources(cluster_id, exclude_substack_resources=exclude_substack_resources)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_all_resources_by_cluster_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_all_resources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **exclude_add_ons** | **bool**| excludeAddOns | [optional] [default to false]
- **include_content** | **bool**| includeContent | [optional] [default to false]
- **include_substack** | **bool**| includeSubstack | [optional] [default to true]
-
-### Return type
-
-[**list[BlueprintFile]**](BlueprintFile.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_all_resources_by_stack_using_get**
-> list[BlueprintFile] get_all_resources_by_stack_using_get(stack_name, branch=branch, exclude_add_ons=exclude_add_ons, include_content=include_content)
-
-getAllResourcesByStack
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-branch = 'branch_example' # str | branch (optional)
-exclude_add_ons = false # bool | excludeAddOns (optional) (default to false)
-include_content = false # bool | includeContent (optional) (default to false)
-
-try:
-    # getAllResourcesByStack
-    api_response = api_instance.get_all_resources_by_stack_using_get(stack_name, branch=branch, exclude_add_ons=exclude_add_ons, include_content=include_content)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_all_resources_by_stack_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
- **branch** | **str**| branch | [optional] 
- **exclude_add_ons** | **bool**| excludeAddOns | [optional] [default to false]
- **include_content** | **bool**| includeContent | [optional] [default to false]
-
-### Return type
-
-[**list[BlueprintFile]**](BlueprintFile.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_all_resources_for_all_cluster_of_stack_using_get**
-> list[ClusterResourcesResponse] get_all_resources_for_all_cluster_of_stack_using_get(stack_name, exclude_add_ons=exclude_add_ons)
-
-getAllResourcesForAllClusterOfStack
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-exclude_add_ons = false # bool | excludeAddOns (optional) (default to false)
-
-try:
-    # getAllResourcesForAllClusterOfStack
-    api_response = api_instance.get_all_resources_for_all_cluster_of_stack_using_get(stack_name, exclude_add_ons=exclude_add_ons)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_all_resources_for_all_cluster_of_stack_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
- **exclude_add_ons** | **bool**| excludeAddOns | [optional] [default to false]
-
-### Return type
-
-[**list[ClusterResourcesResponse]**](ClusterResourcesResponse.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_all_resources_using_get**
-> dict(str, list[str]) get_all_resources_using_get(cluster_id, exclude_substack_resources=exclude_substack_resources)
-
-getAllResources
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-exclude_substack_resources = false # bool | excludeSubstackResources (optional) (default to false)
-
-try:
-    # getAllResources
-    api_response = api_instance.get_all_resources_using_get(cluster_id, exclude_substack_resources=exclude_substack_resources)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_all_resources_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **exclude_substack_resources** | **bool**| excludeSubstackResources | [optional] [default to false]
+ **cluster_id** | **str**|  | 
+ **exclude_substack_resources** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
@@ -442,19 +274,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_vcs_using_get**
-> list[str] get_all_vcs_using_get()
+# **get_all_resources_by_cluster**
+> list[ComCapillaryOpsCpBoResoucesBlueprintFile] get_all_resources_by_cluster(cluster_id, include_content=include_content, include_substack=include_substack, exclude_add_ons=exclude_add_ons)
 
-getAllVCS
+
 
 ### Example
 ```python
@@ -463,7 +295,168 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+cluster_id = 'cluster_id_example' # str | 
+include_content = false # bool |  (optional) (default to false)
+include_substack = true # bool |  (optional) (default to true)
+exclude_add_ons = false # bool |  (optional) (default to false)
+
+try:
+    api_response = api_instance.get_all_resources_by_cluster(cluster_id, include_content=include_content, include_substack=include_substack, exclude_add_ons=exclude_add_ons)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_all_resources_by_cluster: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **str**|  | 
+ **include_content** | **bool**|  | [optional] [default to false]
+ **include_substack** | **bool**|  | [optional] [default to true]
+ **exclude_add_ons** | **bool**|  | [optional] [default to false]
+
+### Return type
+
+[**list[ComCapillaryOpsCpBoResoucesBlueprintFile]**](ComCapillaryOpsCpBoResoucesBlueprintFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_resources_by_stack**
+> list[ComCapillaryOpsCpBoResoucesBlueprintFile] get_all_resources_by_stack(stack_name, include_content=include_content, branch=branch, exclude_add_ons=exclude_add_ons)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+stack_name = 'stack_name_example' # str | 
+include_content = false # bool |  (optional) (default to false)
+branch = '' # str |  (optional)
+exclude_add_ons = false # bool |  (optional) (default to false)
+
+try:
+    api_response = api_instance.get_all_resources_by_stack(stack_name, include_content=include_content, branch=branch, exclude_add_ons=exclude_add_ons)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_all_resources_by_stack: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stack_name** | **str**|  | 
+ **include_content** | **bool**|  | [optional] [default to false]
+ **branch** | **str**|  | [optional] 
+ **exclude_add_ons** | **bool**|  | [optional] [default to false]
+
+### Return type
+
+[**list[ComCapillaryOpsCpBoResoucesBlueprintFile]**](ComCapillaryOpsCpBoResoucesBlueprintFile.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_resources_for_all_cluster_of_stack**
+> list[ComCapillaryOpsCpBoResoucesClusterResourcesResponse] get_all_resources_for_all_cluster_of_stack(stack_name, exclude_add_ons=exclude_add_ons)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+stack_name = 'stack_name_example' # str | 
+exclude_add_ons = false # bool |  (optional) (default to false)
+
+try:
+    api_response = api_instance.get_all_resources_for_all_cluster_of_stack(stack_name, exclude_add_ons=exclude_add_ons)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_all_resources_for_all_cluster_of_stack: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stack_name** | **str**|  | 
+ **exclude_add_ons** | **bool**|  | [optional] [default to false]
+
+### Return type
+
+[**list[ComCapillaryOpsCpBoResoucesClusterResourcesResponse]**](ComCapillaryOpsCpBoResoucesClusterResourcesResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_all_vcs**
+> list[str] get_all_vcs()
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -472,11 +465,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllVCS
-    api_response = api_instance.get_all_vcs_using_get()
+    api_response = api_instance.get_all_vcs()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_all_vcs_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_all_vcs: %s\n" % e)
 ```
 
 ### Parameters
@@ -488,19 +480,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_application_list_by_cluster_id_and_resource_name_using_get**
-> list[str] get_application_list_by_cluster_id_and_resource_name_using_get(cluster_id, resource_type)
+# **get_application_list_by_cluster_id_and_resource_name**
+> list[str] get_application_list_by_cluster_id_and_resource_name(cluster_id, resource_type)
 
-getApplicationListByClusterIdAndResourceName
+
 
 ### Example
 ```python
@@ -509,30 +501,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getApplicationListByClusterIdAndResourceName
-    api_response = api_instance.get_application_list_by_cluster_id_and_resource_name_using_get(cluster_id, resource_type)
+    api_response = api_instance.get_application_list_by_cluster_id_and_resource_name(cluster_id, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_application_list_by_cluster_id_and_resource_name_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_application_list_by_cluster_id_and_resource_name: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **resource_type** | **str**|  | 
 
 ### Return type
 
@@ -540,19 +531,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_az_for_region_by_cloud_using_get**
-> list[str] get_az_for_region_by_cloud_using_get(cloud, region)
+# **get_az_for_region_by_cloud**
+> list[str] get_az_for_region_by_cloud(cloud, region)
 
-getAzForRegionByCloud
+
 
 ### Example
 ```python
@@ -561,30 +552,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cloud = 'cloud_example' # str | cloud
-region = 'region_example' # str | region
+cloud = 'cloud_example' # str | 
+region = 'region_example' # str | 
 
 try:
-    # getAzForRegionByCloud
-    api_response = api_instance.get_az_for_region_by_cloud_using_get(cloud, region)
+    api_response = api_instance.get_az_for_region_by_cloud(cloud, region)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_az_for_region_by_cloud_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_az_for_region_by_cloud: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud** | **str**| cloud | 
- **region** | **str**| region | 
+ **cloud** | **str**|  | 
+ **region** | **str**|  | 
 
 ### Return type
 
@@ -592,19 +582,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_file_from_facets_modules_using_get**
-> JsonNode get_file_from_facets_modules_using_get(file_name, path)
+# **get_file_from_facets_modules**
+> ComFasterxmlJacksonDatabindJsonNode get_file_from_facets_modules(path, file_name)
 
-getFileFromFacetsModules
+
 
 ### Example
 ```python
@@ -613,50 +603,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-file_name = 'file_name_example' # str | fileName
-path = 'path_example' # str | path
+path = 'path_example' # str | 
+file_name = 'file_name_example' # str | 
 
 try:
-    # getFileFromFacetsModules
-    api_response = api_instance.get_file_from_facets_modules_using_get(file_name, path)
+    api_response = api_instance.get_file_from_facets_modules(path, file_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_file_from_facets_modules_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_file_from_facets_modules: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_name** | **str**| fileName | 
- **path** | **str**| path | 
+ **path** | **str**|  | 
+ **file_name** | **str**|  | 
 
 ### Return type
 
-[**JsonNode**](JsonNode.md)
+[**ComFasterxmlJacksonDatabindJsonNode**](ComFasterxmlJacksonDatabindJsonNode.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_git_history_for_resource_using_get**
-> StackGitLog get_git_history_for_resource_using_get(cluster_id, resource_name, resource_type)
+# **get_git_history_for_resource**
+> ComCapillaryOpsCpBoStackGitLog get_git_history_for_resource(cluster_id, resource_name, resource_type)
 
-getGitHistoryForResource
+
 
 ### Example
 ```python
@@ -665,52 +654,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+resource_name = 'resource_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getGitHistoryForResource
-    api_response = api_instance.get_git_history_for_resource_using_get(cluster_id, resource_name, resource_type)
+    api_response = api_instance.get_git_history_for_resource(cluster_id, resource_name, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_git_history_for_resource_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_git_history_for_resource: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **resource_type** | **str**|  | 
 
 ### Return type
 
-[**StackGitLog**](StackGitLog.md)
+[**ComCapillaryOpsCpBoStackGitLog**](ComCapillaryOpsCpBoStackGitLog.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_launch_dag_using_get**
-> list[BlueprintFile] get_launch_dag_using_get(cloud, cluster_id, is_dependent=is_dependent, is_provided_k8s=is_provided_k8s)
+# **get_launch_dag**
+> list[ComCapillaryOpsCpBoResoucesBlueprintFile] get_launch_dag(cluster_id, cloud, is_provided_k8s=is_provided_k8s, is_dependent=is_dependent)
 
-getLaunchDAG
+
 
 ### Example
 ```python
@@ -719,54 +707,53 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cloud = 'cloud_example' # str | cloud
-cluster_id = 'cluster_id_example' # str | clusterId
-is_dependent = false # bool | isDependent (optional) (default to false)
-is_provided_k8s = false # bool | isProvidedK8s (optional) (default to false)
+cluster_id = 'cluster_id_example' # str | 
+cloud = 'cloud_example' # str | 
+is_provided_k8s = false # bool |  (optional) (default to false)
+is_dependent = false # bool |  (optional) (default to false)
 
 try:
-    # getLaunchDAG
-    api_response = api_instance.get_launch_dag_using_get(cloud, cluster_id, is_dependent=is_dependent, is_provided_k8s=is_provided_k8s)
+    api_response = api_instance.get_launch_dag(cluster_id, cloud, is_provided_k8s=is_provided_k8s, is_dependent=is_dependent)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_launch_dag_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_launch_dag: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud** | **str**| cloud | 
- **cluster_id** | **str**| clusterId | 
- **is_dependent** | **bool**| isDependent | [optional] [default to false]
- **is_provided_k8s** | **bool**| isProvidedK8s | [optional] [default to false]
+ **cluster_id** | **str**|  | 
+ **cloud** | **str**|  | 
+ **is_provided_k8s** | **bool**|  | [optional] [default to false]
+ **is_dependent** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
-[**list[BlueprintFile]**](BlueprintFile.md)
+[**list[ComCapillaryOpsCpBoResoucesBlueprintFile]**](ComCapillaryOpsCpBoResoucesBlueprintFile.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_output_references_using_get**
-> list[OutputReference] get_output_references_using_get(output_type, stack_name, resource_name=resource_name, resource_type=resource_type)
+# **get_output_references**
+> list[ComCapillaryOpsCpV2RegistryOutputOutputReference] get_output_references(stack_name, output_type, resource_type=resource_type, resource_name=resource_name)
 
-getOutputReferences
+
 
 ### Example
 ```python
@@ -775,54 +762,53 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-output_type = 'output_type_example' # str | outputType
-stack_name = 'stack_name_example' # str | stackName
-resource_name = 'resource_name_example' # str | resourceName (optional)
-resource_type = 'resource_type_example' # str | resourceType (optional)
+stack_name = 'stack_name_example' # str | 
+output_type = 'output_type_example' # str | 
+resource_type = 'resource_type_example' # str |  (optional)
+resource_name = 'resource_name_example' # str |  (optional)
 
 try:
-    # getOutputReferences
-    api_response = api_instance.get_output_references_using_get(output_type, stack_name, resource_name=resource_name, resource_type=resource_type)
+    api_response = api_instance.get_output_references(stack_name, output_type, resource_type=resource_type, resource_name=resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_output_references_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_output_references: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **output_type** | **str**| outputType | 
- **stack_name** | **str**| stackName | 
- **resource_name** | **str**| resourceName | [optional] 
- **resource_type** | **str**| resourceType | [optional] 
+ **stack_name** | **str**|  | 
+ **output_type** | **str**|  | 
+ **resource_type** | **str**|  | [optional] 
+ **resource_name** | **str**|  | [optional] 
 
 ### Return type
 
-[**list[OutputReference]**](OutputReference.md)
+[**list[ComCapillaryOpsCpV2RegistryOutputOutputReference]**](ComCapillaryOpsCpV2RegistryOutputOutputReference.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_regions_using_get**
-> list[AllRegionsAndAZ] get_regions_using_get(cloud)
+# **get_output_references_by_type**
+> list[ComCapillaryOpsCpV2RegistryOutputOutputReference] get_output_references_by_type(stack_name, output_type, resource_type=resource_type, resource_name=resource_name)
 
-getRegions
+
 
 ### Example
 ```python
@@ -831,48 +817,53 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cloud = 'cloud_example' # str | cloud
+stack_name = 'stack_name_example' # str | 
+output_type = 'output_type_example' # str | 
+resource_type = 'resource_type_example' # str |  (optional)
+resource_name = 'resource_name_example' # str |  (optional)
 
 try:
-    # getRegions
-    api_response = api_instance.get_regions_using_get(cloud)
+    api_response = api_instance.get_output_references_by_type(stack_name, output_type, resource_type=resource_type, resource_name=resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_regions_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_output_references_by_type: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud** | **str**| cloud | 
+ **stack_name** | **str**|  | 
+ **output_type** | **str**|  | 
+ **resource_type** | **str**|  | [optional] 
+ **resource_name** | **str**|  | [optional] 
 
 ### Return type
 
-[**list[AllRegionsAndAZ]**](AllRegionsAndAZ.md)
+[**list[ComCapillaryOpsCpV2RegistryOutputOutputReference]**](ComCapillaryOpsCpV2RegistryOutputOutputReference.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_regions_v2_using_get**
-> AllRegionsAndAZ get_regions_v2_using_get(cloud)
+# **get_regions**
+> list[ComCapillaryOpsCpBoHistoryAllRegionsAndAZ] get_regions(cloud)
 
-getRegionsV2
+
 
 ### Example
 ```python
@@ -881,48 +872,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cloud = 'cloud_example' # str | cloud
+cloud = 'cloud_example' # str | 
 
 try:
-    # getRegionsV2
-    api_response = api_instance.get_regions_v2_using_get(cloud)
+    api_response = api_instance.get_regions(cloud)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_regions_v2_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_regions: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud** | **str**| cloud | 
+ **cloud** | **str**|  | 
 
 ### Return type
 
-[**AllRegionsAndAZ**](AllRegionsAndAZ.md)
+[**list[ComCapillaryOpsCpBoHistoryAllRegionsAndAZ]**](ComCapillaryOpsCpBoHistoryAllRegionsAndAZ.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_release_streams_using_get**
-> list[str] get_release_streams_using_get()
+# **get_regions_v2**
+> ComCapillaryOpsCpBoHistoryAllRegionsAndAZ get_regions_v2(cloud)
 
-getReleaseStreams
+
 
 ### Example
 ```python
@@ -931,7 +921,56 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
+cloud = 'cloud_example' # str | 
+
+try:
+    api_response = api_instance.get_regions_v2(cloud)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiDropdownsControllerApi->get_regions_v2: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloud** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsCpBoHistoryAllRegionsAndAZ**](ComCapillaryOpsCpBoHistoryAllRegionsAndAZ.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_release_streams**
+> list[str] get_release_streams()
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -940,11 +979,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getReleaseStreams
-    api_response = api_instance.get_release_streams_using_get()
+    api_response = api_instance.get_release_streams()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_release_streams_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_release_streams: %s\n" % e)
 ```
 
 ### Parameters
@@ -956,19 +994,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_by_cluster_id_using_get**
-> BlueprintFile get_resource_by_cluster_id_using_get(cluster_id, resource_name, resource_type, include_content=include_content)
+# **get_resource_by_cluster_id**
+> ComCapillaryOpsCpBoResoucesBlueprintFile get_resource_by_cluster_id(cluster_id, resource_type, resource_name, include_content=include_content)
 
-getResourceByClusterId
+
 
 ### Example
 ```python
@@ -977,54 +1015,53 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-include_content = false # bool | includeContent (optional) (default to false)
+cluster_id = 'cluster_id_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
+include_content = false # bool |  (optional) (default to false)
 
 try:
-    # getResourceByClusterId
-    api_response = api_instance.get_resource_by_cluster_id_using_get(cluster_id, resource_name, resource_type, include_content=include_content)
+    api_response = api_instance.get_resource_by_cluster_id(cluster_id, resource_type, resource_name, include_content=include_content)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_resource_by_cluster_id_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_resource_by_cluster_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **include_content** | **bool**| includeContent | [optional] [default to false]
+ **cluster_id** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **include_content** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
-[**BlueprintFile**](BlueprintFile.md)
+[**ComCapillaryOpsCpBoResoucesBlueprintFile**](ComCapillaryOpsCpBoResoucesBlueprintFile.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_by_stack_using_get**
-> BlueprintFile get_resource_by_stack_using_get(resource_name, resource_type, stack_name, branch=branch)
+# **get_resource_by_stack**
+> ComCapillaryOpsCpBoResoucesBlueprintFile get_resource_by_stack(stack_name, resource_type, resource_name, branch=branch)
 
-getResourceByStack
+
 
 ### Example
 ```python
@@ -1033,54 +1070,53 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
-branch = 'branch_example' # str | branch (optional)
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
+branch = '' # str |  (optional)
 
 try:
-    # getResourceByStack
-    api_response = api_instance.get_resource_by_stack_using_get(resource_name, resource_type, stack_name, branch=branch)
+    api_response = api_instance.get_resource_by_stack(stack_name, resource_type, resource_name, branch=branch)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_resource_by_stack_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_resource_by_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
- **branch** | **str**| branch | [optional] 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **branch** | **str**|  | [optional] 
 
 ### Return type
 
-[**BlueprintFile**](BlueprintFile.md)
+[**ComCapillaryOpsCpBoResoucesBlueprintFile**](ComCapillaryOpsCpBoResoucesBlueprintFile.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_histories_by_stack_using_get**
-> list[ResourceHistory] get_resource_histories_by_stack_using_get(resource_name, resource_type, stack_name)
+# **get_resource_histories_by_stack**
+> list[ComCapillaryOpsCpBoHistoryResourceHistory] get_resource_histories_by_stack(stack_name, resource_type, resource_name)
 
-getResourceHistoriesByStack
+
 
 ### Example
 ```python
@@ -1089,52 +1125,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getResourceHistoriesByStack
-    api_response = api_instance.get_resource_histories_by_stack_using_get(resource_name, resource_type, stack_name)
+    api_response = api_instance.get_resource_histories_by_stack(stack_name, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_resource_histories_by_stack_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_resource_histories_by_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
-[**list[ResourceHistory]**](ResourceHistory.md)
+[**list[ComCapillaryOpsCpBoHistoryResourceHistory]**](ComCapillaryOpsCpBoHistoryResourceHistory.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_history_overview_by_stack_using_get**
-> list[ResourceHistoryOverview] get_resource_history_overview_by_stack_using_get(resource_name, resource_type, stack_name)
+# **get_resource_history_overview_by_stack**
+> list[ComCapillaryOpsCpBoHistoryResourceHistoryOverview] get_resource_history_overview_by_stack(stack_name, resource_type, resource_name)
 
-getResourceHistoryOverviewByStack
+
 
 ### Example
 ```python
@@ -1143,52 +1178,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getResourceHistoryOverviewByStack
-    api_response = api_instance.get_resource_history_overview_by_stack_using_get(resource_name, resource_type, stack_name)
+    api_response = api_instance.get_resource_history_overview_by_stack(stack_name, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_resource_history_overview_by_stack_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_resource_history_overview_by_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
-[**list[ResourceHistoryOverview]**](ResourceHistoryOverview.md)
+[**list[ComCapillaryOpsCpBoHistoryResourceHistoryOverview]**](ComCapillaryOpsCpBoHistoryResourceHistoryOverview.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_role_permissions_using_get**
-> list[RBACEntity] get_role_permissions_using_get(role)
+# **get_role_permissions**
+> list[str] get_role_permissions(role)
 
-getRolePermissions
+
 
 ### Example
 ```python
@@ -1197,48 +1231,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-role = 'role_example' # str | role
+role = 'role_example' # str | 
 
 try:
-    # getRolePermissions
-    api_response = api_instance.get_role_permissions_using_get(role)
+    api_response = api_instance.get_role_permissions(role)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_role_permissions_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_role_permissions: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **role** | **str**| role | 
+ **role** | **str**|  | 
 
 ### Return type
 
-[**list[RBACEntity]**](RBACEntity.md)
+**list[str]**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_overview_using_get**
-> ServiceOverview get_service_overview_using_get(service_name, stack_name)
+# **get_service_overview**
+> ComCapillaryOpsCpBoResoucesServiceOverview get_service_overview(stack_name, service_name)
 
-getServiceOverview
+
 
 ### Example
 ```python
@@ -1247,50 +1280,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-service_name = 'service_name_example' # str | serviceName
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+service_name = 'service_name_example' # str | 
 
 try:
-    # getServiceOverview
-    api_response = api_instance.get_service_overview_using_get(service_name, stack_name)
+    api_response = api_instance.get_service_overview(stack_name, service_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->get_service_overview_using_get: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->get_service_overview: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_name** | **str**| serviceName | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **service_name** | **str**|  | 
 
 ### Return type
 
-[**ServiceOverview**](ServiceOverview.md)
+[**ComCapillaryOpsCpBoResoucesServiceOverview**](ComCapillaryOpsCpBoResoucesServiceOverview.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_cluster_history_using_post**
-> sync_cluster_history_using_post(cluster_id, force=force)
+# **sync_cluster_history**
+> sync_cluster_history(cluster_id, force=force)
 
-syncClusterHistory
+
 
 ### Example
 ```python
@@ -1299,29 +1331,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-force = false # bool | force (optional) (default to false)
+cluster_id = 'cluster_id_example' # str | 
+force = false # bool |  (optional) (default to false)
 
 try:
-    # syncClusterHistory
-    api_instance.sync_cluster_history_using_post(cluster_id, force=force)
+    api_instance.sync_cluster_history(cluster_id, force=force)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->sync_cluster_history_using_post: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->sync_cluster_history: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **force** | **bool**| force | [optional] [default to false]
+ **cluster_id** | **str**|  | 
+ **force** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
@@ -1329,19 +1360,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_substack_git_history_using_post**
-> sync_substack_git_history_using_post(force_sync, substack_name)
+# **sync_substack_git_history**
+> sync_substack_git_history(substack_name, force_sync)
 
-syncSubstackGitHistory
+
 
 ### Example
 ```python
@@ -1350,29 +1381,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiDropdownsControllerApi(swagger_client.ApiClient(configuration))
-force_sync = true # bool | forceSync
-substack_name = 'substack_name_example' # str | substackName
+substack_name = 'substack_name_example' # str | 
+force_sync = true # bool | 
 
 try:
-    # syncSubstackGitHistory
-    api_instance.sync_substack_git_history_using_post(force_sync, substack_name)
+    api_instance.sync_substack_git_history(substack_name, force_sync)
 except ApiException as e:
-    print("Exception when calling UiDropdownsControllerApi->sync_substack_git_history_using_post: %s\n" % e)
+    print("Exception when calling UiDropdownsControllerApi->sync_substack_git_history: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **force_sync** | **bool**| forceSync | 
- **substack_name** | **str**| substackName | 
+ **substack_name** | **str**|  | 
+ **force_sync** | **bool**|  | 
 
 ### Return type
 
@@ -1380,12 +1410,12 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

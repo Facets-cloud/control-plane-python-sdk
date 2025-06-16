@@ -1,16 +1,16 @@
 # swagger_client.MetaControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_supported_component_version_using_get**](MetaControllerApi.md#get_supported_component_version_using_get) | **GET** /cc/v1/meta/components/{componentType}/supportedVersion | getSupportedComponentVersion
-[**get_supported_component_versions_using_get**](MetaControllerApi.md#get_supported_component_versions_using_get) | **GET** /cc/v1/meta/components/supportedVersion | getSupportedComponentVersions
+[**get_supported_component_version**](MetaControllerApi.md#get_supported_component_version) | **GET** /cc/v1/meta/components/{componentType}/supportedVersion | 
+[**get_supported_component_versions**](MetaControllerApi.md#get_supported_component_versions) | **GET** /cc/v1/meta/components/supportedVersion | 
 
-# **get_supported_component_version_using_get**
-> SupportedVersions get_supported_component_version_using_get(component_type)
+# **get_supported_component_version**
+> ComCapillaryOpsCpBoComponentsSupportedVersions get_supported_component_version(component_type)
 
-getSupportedComponentVersion
+
 
 ### Example
 ```python
@@ -19,48 +19,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.MetaControllerApi(swagger_client.ApiClient(configuration))
-component_type = 'component_type_example' # str | componentType
+component_type = 'component_type_example' # str | 
 
 try:
-    # getSupportedComponentVersion
-    api_response = api_instance.get_supported_component_version_using_get(component_type)
+    api_response = api_instance.get_supported_component_version(component_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling MetaControllerApi->get_supported_component_version_using_get: %s\n" % e)
+    print("Exception when calling MetaControllerApi->get_supported_component_version: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **component_type** | **str**| componentType | 
+ **component_type** | **str**|  | 
 
 ### Return type
 
-[**SupportedVersions**](SupportedVersions.md)
+[**ComCapillaryOpsCpBoComponentsSupportedVersions**](ComCapillaryOpsCpBoComponentsSupportedVersions.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_supported_component_versions_using_get**
-> list[SupportedVersions] get_supported_component_versions_using_get()
+# **get_supported_component_versions**
+> list[ComCapillaryOpsCpBoComponentsSupportedVersions] get_supported_component_versions()
 
-getSupportedComponentVersions
+
 
 ### Example
 ```python
@@ -69,7 +68,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -78,11 +77,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.MetaControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getSupportedComponentVersions
-    api_response = api_instance.get_supported_component_versions_using_get()
+    api_response = api_instance.get_supported_component_versions()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling MetaControllerApi->get_supported_component_versions_using_get: %s\n" % e)
+    print("Exception when calling MetaControllerApi->get_supported_component_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -90,16 +88,16 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[SupportedVersions]**](SupportedVersions.md)
+[**list[ComCapillaryOpsCpBoComponentsSupportedVersions]**](ComCapillaryOpsCpBoComponentsSupportedVersions.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

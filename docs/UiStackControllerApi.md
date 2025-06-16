@@ -1,50 +1,50 @@
 # swagger_client.UiStackControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_project_using_post**](UiStackControllerApi.md#create_project_using_post) | **POST** /cc-ui/v1/stacks/project | createProject
-[**create_stack_using_post1**](UiStackControllerApi.md#create_stack_using_post1) | **POST** /cc-ui/v1/stacks/ | createStack
-[**create_stack_v2_using_post**](UiStackControllerApi.md#create_stack_v2_using_post) | **POST** /cc-ui/v1/stacks/v2 | createStackV2
-[**create_starter_project_using_post**](UiStackControllerApi.md#create_starter_project_using_post) | **POST** /cc-ui/v1/stacks/starter-project | createStarterProject
-[**create_sub_stack_using_post**](UiStackControllerApi.md#create_sub_stack_using_post) | **POST** /cc-ui/v1/stacks/substack/{substackName} | createSubStack
-[**create_subscription_using_post1**](UiStackControllerApi.md#create_subscription_using_post1) | **POST** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | createSubscription
-[**delete_stack_using_delete**](UiStackControllerApi.md#delete_stack_using_delete) | **DELETE** /cc-ui/v1/stacks/{stackName} | deleteStack
-[**enable_git_ops_using_put**](UiStackControllerApi.md#enable_git_ops_using_put) | **PUT** /cc-ui/v1/stacks/{stackName}/enable-git-ops | enableGitOps
-[**get_all_clusters_using_get**](UiStackControllerApi.md#get_all_clusters_using_get) | **GET** /cc-ui/v1/stacks/clusters | getAllClusters
-[**get_all_subscriptions_using_get1**](UiStackControllerApi.md#get_all_subscriptions_using_get1) | **GET** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | getAllSubscriptions
-[**get_all_template_inputs_meta_using_get**](UiStackControllerApi.md#get_all_template_inputs_meta_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/templateInputs/meta | getAllTemplateInputsMeta
-[**get_application_list_using_get**](UiStackControllerApi.md#get_application_list_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/{resourceType}/ | getApplicationList
-[**get_application_using_get1**](UiStackControllerApi.md#get_application_using_get1) | **GET** /cc-ui/v1/stacks/{stackName}/{resourceType}/{appName} | getApplication
-[**get_cluster_metadata_by_stack_using_get**](UiStackControllerApi.md#get_cluster_metadata_by_stack_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/clusters-metadata | getClusterMetadataByStack
-[**get_clusters_overview_using_get**](UiStackControllerApi.md#get_clusters_overview_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/clusters-overview | getClustersOverview
-[**get_clusters_using_get1**](UiStackControllerApi.md#get_clusters_using_get1) | **GET** /cc-ui/v1/stacks/{stackName}/clusters | getClusters
-[**get_clusters_with_status_using_get**](UiStackControllerApi.md#get_clusters_with_status_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/clustersWithStatus | getClustersWithStatus
-[**get_local_deployment_context_using_get**](UiStackControllerApi.md#get_local_deployment_context_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/localDeploymentContext | getLocalDeploymentContext
-[**get_overrides_using_get2**](UiStackControllerApi.md#get_overrides_using_get2) | **GET** /cc-ui/v1/stacks/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/overrides | getOverrides
-[**get_resource_types_using_get**](UiStackControllerApi.md#get_resource_types_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/suggestions/resourceType | getResourceTypes
-[**get_resources_by_types_using_get**](UiStackControllerApi.md#get_resources_by_types_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/suggestions/resourceType/{resourceType} | getResourcesByTypes
-[**get_running_base_clusters_using_get**](UiStackControllerApi.md#get_running_base_clusters_using_get) | **GET** /cc-ui/v1/stacks/running-base-clusters | getRunningBaseClusters
-[**get_stack_templates_using_get**](UiStackControllerApi.md#get_stack_templates_using_get) | **GET** /cc-ui/v1/stacks/templates | getStackTemplates
-[**get_stack_using_get**](UiStackControllerApi.md#get_stack_using_get) | **GET** /cc-ui/v1/stacks/{stackName} | getStack
-[**get_stack_with_account_using_get**](UiStackControllerApi.md#get_stack_with_account_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/withAccount | getStackWithAccount
-[**get_stacks_using_get1**](UiStackControllerApi.md#get_stacks_using_get1) | **GET** /cc-ui/v1/stacks/ | getStacks
-[**migrate_overrides_to_git_using_get**](UiStackControllerApi.md#migrate_overrides_to_git_using_get) | **GET** /cc-ui/v1/stacks/migrate-overrides | migrateOverridesToGit
-[**migrate_overrides_to_git_v2_using_post**](UiStackControllerApi.md#migrate_overrides_to_git_v2_using_post) | **POST** /cc-ui/v1/stacks/migrate-overrides-v2 | migrateOverridesToGitV2
-[**reload_stack_using_get1**](UiStackControllerApi.md#reload_stack_using_get1) | **GET** /cc-ui/v1/stacks/{stackName}/reload | reloadStack
-[**save_as_template_using_post**](UiStackControllerApi.md#save_as_template_using_post) | **POST** /cc-ui/v1/stacks/{stackName}/template | saveAsTemplate
-[**save_as_template_v2_using_post**](UiStackControllerApi.md#save_as_template_v2_using_post) | **POST** /cc-ui/v1/stacks/{stackName}/template-v2 | saveAsTemplateV2
-[**stack_sync_with_git_using_get**](UiStackControllerApi.md#stack_sync_with_git_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/sync-with-git/v2 | Sync stack with git
-[**sync_resources_using_get**](UiStackControllerApi.md#sync_resources_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/sync-resources | syncResources
-[**sync_stack_with_git_using_get**](UiStackControllerApi.md#sync_stack_with_git_using_get) | **GET** /cc-ui/v1/stacks/{stackName}/sync-with-git | syncStackWithGit
-[**toggle_release_using_post1**](UiStackControllerApi.md#toggle_release_using_post1) | **POST** /cc-ui/v1/stacks/{stackName}/toggleRelease | toggleRelease
-[**update_stack_using_put1**](UiStackControllerApi.md#update_stack_using_put1) | **PUT** /cc-ui/v1/stacks/{stackName} | updateStack
+[**create_project**](UiStackControllerApi.md#create_project) | **POST** /cc-ui/v1/stacks/project | 
+[**create_stack1**](UiStackControllerApi.md#create_stack1) | **POST** /cc-ui/v1/stacks/ | 
+[**create_stack_v2**](UiStackControllerApi.md#create_stack_v2) | **POST** /cc-ui/v1/stacks/v2 | 
+[**create_starter_project**](UiStackControllerApi.md#create_starter_project) | **POST** /cc-ui/v1/stacks/starter-project | 
+[**create_sub_stack**](UiStackControllerApi.md#create_sub_stack) | **POST** /cc-ui/v1/stacks/substack/{substackName} | 
+[**create_subscription**](UiStackControllerApi.md#create_subscription) | **POST** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | 
+[**delete_stack**](UiStackControllerApi.md#delete_stack) | **DELETE** /cc-ui/v1/stacks/{stackName} | 
+[**enable_git_ops**](UiStackControllerApi.md#enable_git_ops) | **PUT** /cc-ui/v1/stacks/{stackName}/enable-git-ops | 
+[**get_all_clusters**](UiStackControllerApi.md#get_all_clusters) | **GET** /cc-ui/v1/stacks/clusters | 
+[**get_all_subscriptions**](UiStackControllerApi.md#get_all_subscriptions) | **GET** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | 
+[**get_all_template_inputs_meta**](UiStackControllerApi.md#get_all_template_inputs_meta) | **GET** /cc-ui/v1/stacks/{stackName}/templateInputs/meta | 
+[**get_application**](UiStackControllerApi.md#get_application) | **GET** /cc-ui/v1/stacks/{stackName}/{resourceType}/{appName} | 
+[**get_application_list**](UiStackControllerApi.md#get_application_list) | **GET** /cc-ui/v1/stacks/{stackName}/{resourceType}/ | 
+[**get_cluster_metadata_by_stack**](UiStackControllerApi.md#get_cluster_metadata_by_stack) | **GET** /cc-ui/v1/stacks/{stackName}/clusters-metadata | 
+[**get_clusters1**](UiStackControllerApi.md#get_clusters1) | **GET** /cc-ui/v1/stacks/{stackName}/clusters | 
+[**get_clusters_overview**](UiStackControllerApi.md#get_clusters_overview) | **GET** /cc-ui/v1/stacks/{stackName}/clusters-overview | 
+[**get_clusters_with_status**](UiStackControllerApi.md#get_clusters_with_status) | **GET** /cc-ui/v1/stacks/{stackName}/clustersWithStatus | 
+[**get_local_deployment_context**](UiStackControllerApi.md#get_local_deployment_context) | **GET** /cc-ui/v1/stacks/{stackName}/localDeploymentContext | 
+[**get_overrides1**](UiStackControllerApi.md#get_overrides1) | **GET** /cc-ui/v1/stacks/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/overrides | 
+[**get_resource_types**](UiStackControllerApi.md#get_resource_types) | **GET** /cc-ui/v1/stacks/{stackName}/suggestions/resourceType | 
+[**get_resources_by_types**](UiStackControllerApi.md#get_resources_by_types) | **GET** /cc-ui/v1/stacks/{stackName}/suggestions/resourceType/{resourceType} | 
+[**get_running_base_clusters**](UiStackControllerApi.md#get_running_base_clusters) | **GET** /cc-ui/v1/stacks/running-base-clusters | 
+[**get_stack**](UiStackControllerApi.md#get_stack) | **GET** /cc-ui/v1/stacks/{stackName} | 
+[**get_stack_templates**](UiStackControllerApi.md#get_stack_templates) | **GET** /cc-ui/v1/stacks/templates | 
+[**get_stack_with_account**](UiStackControllerApi.md#get_stack_with_account) | **GET** /cc-ui/v1/stacks/{stackName}/withAccount | 
+[**get_stacks1**](UiStackControllerApi.md#get_stacks1) | **GET** /cc-ui/v1/stacks/ | 
+[**migrate_overrides_to_git**](UiStackControllerApi.md#migrate_overrides_to_git) | **GET** /cc-ui/v1/stacks/migrate-overrides | 
+[**migrate_overrides_to_git_v2**](UiStackControllerApi.md#migrate_overrides_to_git_v2) | **POST** /cc-ui/v1/stacks/migrate-overrides-v2 | 
+[**reload_stack1**](UiStackControllerApi.md#reload_stack1) | **GET** /cc-ui/v1/stacks/{stackName}/reload | 
+[**save_as_template**](UiStackControllerApi.md#save_as_template) | **POST** /cc-ui/v1/stacks/{stackName}/template | 
+[**save_as_template_v2**](UiStackControllerApi.md#save_as_template_v2) | **POST** /cc-ui/v1/stacks/{stackName}/template-v2 | 
+[**stack_sync_with_git**](UiStackControllerApi.md#stack_sync_with_git) | **GET** /cc-ui/v1/stacks/{stackName}/sync-with-git/v2 | Sync stack with git
+[**sync_resources**](UiStackControllerApi.md#sync_resources) | **GET** /cc-ui/v1/stacks/{stackName}/sync-resources | 
+[**sync_stack_with_git**](UiStackControllerApi.md#sync_stack_with_git) | **GET** /cc-ui/v1/stacks/{stackName}/sync-with-git | 
+[**toggle_release1**](UiStackControllerApi.md#toggle_release1) | **POST** /cc-ui/v1/stacks/{stackName}/toggleRelease | 
+[**update_stack1**](UiStackControllerApi.md#update_stack1) | **PUT** /cc-ui/v1/stacks/{stackName} | 
 
-# **create_project_using_post**
-> Stack create_project_using_post(body)
+# **create_project**
+> ComCapillaryOpsCpBoStack create_project(body)
 
-createProject
+
 
 ### Example
 ```python
@@ -53,48 +53,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.CreateProjectRequest() # CreateProjectRequest | request
+body = swagger_client.ComCapillaryOpsCpBoStackCreateProjectRequest() # ComCapillaryOpsCpBoStackCreateProjectRequest | 
 
 try:
-    # createProject
-    api_response = api_instance.create_project_using_post(body)
+    api_response = api_instance.create_project(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->create_project_using_post: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->create_project: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateProjectRequest**](CreateProjectRequest.md)| request | 
+ **body** | [**ComCapillaryOpsCpBoStackCreateProjectRequest**](ComCapillaryOpsCpBoStackCreateProjectRequest.md)|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_stack_using_post1**
-> Stack create_stack_using_post1(body)
+# **create_stack1**
+> ComCapillaryOpsCpBoStack create_stack1(body)
 
-createStack
+
 
 ### Example
 ```python
@@ -103,48 +102,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Stack() # Stack | stack
+body = swagger_client.ComCapillaryOpsCpBoStack() # ComCapillaryOpsCpBoStack | 
 
 try:
-    # createStack
-    api_response = api_instance.create_stack_using_post1(body)
+    api_response = api_instance.create_stack1(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->create_stack_using_post1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->create_stack1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Stack**](Stack.md)| stack | 
+ **body** | [**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_stack_v2_using_post**
-> Stack create_stack_v2_using_post(body)
+# **create_stack_v2**
+> ComCapillaryOpsCpBoStack create_stack_v2(body)
 
-createStackV2
+
 
 ### Example
 ```python
@@ -153,48 +151,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.CreateBlueprintRequest() # CreateBlueprintRequest | createBlueprintRequest
+body = swagger_client.ComCapillaryOpsCpBoStackCreateBlueprintRequest() # ComCapillaryOpsCpBoStackCreateBlueprintRequest | 
 
 try:
-    # createStackV2
-    api_response = api_instance.create_stack_v2_using_post(body)
+    api_response = api_instance.create_stack_v2(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->create_stack_v2_using_post: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->create_stack_v2: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateBlueprintRequest**](CreateBlueprintRequest.md)| createBlueprintRequest | 
+ **body** | [**ComCapillaryOpsCpBoStackCreateBlueprintRequest**](ComCapillaryOpsCpBoStackCreateBlueprintRequest.md)|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_starter_project_using_post**
-> Stack create_starter_project_using_post()
+# **create_starter_project**
+> ComCapillaryOpsCpBoStack create_starter_project()
 
-createStarterProject
+
 
 ### Example
 ```python
@@ -203,7 +200,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -212,11 +209,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # createStarterProject
-    api_response = api_instance.create_starter_project_using_post()
+    api_response = api_instance.create_starter_project()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->create_starter_project_using_post: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->create_starter_project: %s\n" % e)
 ```
 
 ### Parameters
@@ -224,23 +220,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_sub_stack_using_post**
-> Substack create_sub_stack_using_post(body, substack_name)
+# **create_sub_stack**
+> ComCapillaryOpsCpBoSubstack create_sub_stack(body, substack_name)
 
-createSubStack
+
 
 ### Example
 ```python
@@ -249,50 +245,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.SubstackRequest() # SubstackRequest | subStack
-substack_name = 'substack_name_example' # str | substackName
+body = swagger_client.ComCapillaryOpsCpBoRequestsSubstackRequest() # ComCapillaryOpsCpBoRequestsSubstackRequest | 
+substack_name = 'substack_name_example' # str | 
 
 try:
-    # createSubStack
-    api_response = api_instance.create_sub_stack_using_post(body, substack_name)
+    api_response = api_instance.create_sub_stack(body, substack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->create_sub_stack_using_post: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->create_sub_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SubstackRequest**](SubstackRequest.md)| subStack | 
- **substack_name** | **str**| substackName | 
+ **body** | [**ComCapillaryOpsCpBoRequestsSubstackRequest**](ComCapillaryOpsCpBoRequestsSubstackRequest.md)|  | 
+ **substack_name** | **str**|  | 
 
 ### Return type
 
-[**Substack**](Substack.md)
+[**ComCapillaryOpsCpBoSubstack**](ComCapillaryOpsCpBoSubstack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_subscription_using_post1**
-> Subscription create_subscription_using_post1(body, stack_name)
+# **create_subscription**
+> ComCapillaryOpsCpBoNotificationsSubscription create_subscription(body, stack_name)
 
-createSubscription
+
 
 ### Example
 ```python
@@ -301,50 +296,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Subscription() # Subscription | subscription
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ComCapillaryOpsCpBoNotificationsSubscription() # ComCapillaryOpsCpBoNotificationsSubscription | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # createSubscription
-    api_response = api_instance.create_subscription_using_post1(body, stack_name)
+    api_response = api_instance.create_subscription(body, stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->create_subscription_using_post1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->create_subscription: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Subscription**](Subscription.md)| subscription | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ComCapillaryOpsCpBoNotificationsSubscription**](ComCapillaryOpsCpBoNotificationsSubscription.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+[**ComCapillaryOpsCpBoNotificationsSubscription**](ComCapillaryOpsCpBoNotificationsSubscription.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_stack_using_delete**
-> Stack delete_stack_using_delete(stack_name)
+# **delete_stack**
+> ComCapillaryOpsCpBoStack delete_stack(stack_name)
 
-deleteStack
+
 
 ### Example
 ```python
@@ -353,48 +347,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # deleteStack
-    api_response = api_instance.delete_stack_using_delete(stack_name)
+    api_response = api_instance.delete_stack(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->delete_stack_using_delete: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->delete_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **enable_git_ops_using_put**
-> Stack enable_git_ops_using_put(body, stack_name)
+# **enable_git_ops**
+> ComCapillaryOpsCpBoStack enable_git_ops(body, stack_name)
 
-enableGitOps
+
 
 ### Example
 ```python
@@ -403,50 +396,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.EnableGitOpsRequest() # EnableGitOpsRequest | request
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ComCapillaryOpsCpBoStackEnableGitOpsRequest() # ComCapillaryOpsCpBoStackEnableGitOpsRequest | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # enableGitOps
-    api_response = api_instance.enable_git_ops_using_put(body, stack_name)
+    api_response = api_instance.enable_git_ops(body, stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->enable_git_ops_using_put: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->enable_git_ops: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**EnableGitOpsRequest**](EnableGitOpsRequest.md)| request | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ComCapillaryOpsCpBoStackEnableGitOpsRequest**](ComCapillaryOpsCpBoStackEnableGitOpsRequest.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_clusters_using_get**
-> PageAbstractCluster get_all_clusters_using_get(page=page, per_page=per_page, sort_by=sort_by)
+# **get_all_clusters**
+> OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoAbstractCluster get_all_clusters(page=page, per_page=per_page, sort_by=sort_by)
 
-getAllClusters
+
 
 ### Example
 ```python
@@ -455,52 +447,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-page = 0 # int | page (optional) (default to 0)
-per_page = 50 # int | perPage (optional) (default to 50)
-sort_by = 'lastModifiedDate' # str | sortBy (optional) (default to lastModifiedDate)
+page = 0 # int |  (optional) (default to 0)
+per_page = 50 # int |  (optional) (default to 50)
+sort_by = 'lastModifiedDate' # str |  (optional) (default to lastModifiedDate)
 
 try:
-    # getAllClusters
-    api_response = api_instance.get_all_clusters_using_get(page=page, per_page=per_page, sort_by=sort_by)
+    api_response = api_instance.get_all_clusters(page=page, per_page=per_page, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_all_clusters_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_all_clusters: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| page | [optional] [default to 0]
- **per_page** | **int**| perPage | [optional] [default to 50]
- **sort_by** | **str**| sortBy | [optional] [default to lastModifiedDate]
+ **page** | **int**|  | [optional] [default to 0]
+ **per_page** | **int**|  | [optional] [default to 50]
+ **sort_by** | **str**|  | [optional] [default to lastModifiedDate]
 
 ### Return type
 
-[**PageAbstractCluster**](PageAbstractCluster.md)
+[**OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoAbstractCluster**](OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoAbstractCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_subscriptions_using_get1**
-> list[Subscription] get_all_subscriptions_using_get1(stack_name)
+# **get_all_subscriptions**
+> list[ComCapillaryOpsCpBoNotificationsSubscription] get_all_subscriptions(stack_name)
 
-getAllSubscriptions
+
 
 ### Example
 ```python
@@ -509,48 +500,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getAllSubscriptions
-    api_response = api_instance.get_all_subscriptions_using_get1(stack_name)
+    api_response = api_instance.get_all_subscriptions(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_all_subscriptions_using_get1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_all_subscriptions: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**list[Subscription]**](Subscription.md)
+[**list[ComCapillaryOpsCpBoNotificationsSubscription]**](ComCapillaryOpsCpBoNotificationsSubscription.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_template_inputs_meta_using_get**
-> object get_all_template_inputs_meta_using_get(stack_name)
+# **get_all_template_inputs_meta**
+> dict(str, object) get_all_template_inputs_meta(stack_name)
 
-getAllTemplateInputsMeta
+
 
 ### Example
 ```python
@@ -559,48 +549,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getAllTemplateInputsMeta
-    api_response = api_instance.get_all_template_inputs_meta_using_get(stack_name)
+    api_response = api_instance.get_all_template_inputs_meta(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_all_template_inputs_meta_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_all_template_inputs_meta: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-**object**
+**dict(str, object)**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_application_list_using_get**
-> list[str] get_application_list_using_get(resource_type, stack_name)
+# **get_application**
+> dict(str, object) get_application(stack_name, app_name, resource_type)
 
-getApplicationList
+
 
 ### Example
 ```python
@@ -609,30 +598,82 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+app_name = 'app_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getApplicationList
-    api_response = api_instance.get_application_list_using_get(resource_type, stack_name)
+    api_response = api_instance.get_application(stack_name, app_name, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_application_list_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_application: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **app_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+
+### Return type
+
+**dict(str, object)**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_application_list**
+> list[str] get_application_list(stack_name, resource_type)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+
+try:
+    api_response = api_instance.get_application_list(stack_name, resource_type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiStackControllerApi->get_application_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
 
 ### Return type
 
@@ -640,19 +681,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_application_using_get1**
-> object get_application_using_get1(app_name, resource_type, stack_name)
+# **get_cluster_metadata_by_stack**
+> list[ComCapillaryOpsCpV2ClustermetadataBoClusterMetadata] get_cluster_metadata_by_stack(stack_name)
 
-getApplication
+
 
 ### Example
 ```python
@@ -661,52 +702,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-app_name = 'app_name_example' # str | appName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getApplication
-    api_response = api_instance.get_application_using_get1(app_name, resource_type, stack_name)
+    api_response = api_instance.get_cluster_metadata_by_stack(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_application_using_get1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_cluster_metadata_by_stack: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_name** | **str**| appName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-**object**
+[**list[ComCapillaryOpsCpV2ClustermetadataBoClusterMetadata]**](ComCapillaryOpsCpV2ClustermetadataBoClusterMetadata.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_cluster_metadata_by_stack_using_get**
-> list[ClusterMetadata] get_cluster_metadata_by_stack_using_get(stack_name)
+# **get_clusters1**
+> list[ComCapillaryOpsCpBoAbstractCluster] get_clusters1(stack_name)
 
-getClusterMetadataByStack
+
 
 ### Example
 ```python
@@ -715,48 +751,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getClusterMetadataByStack
-    api_response = api_instance.get_cluster_metadata_by_stack_using_get(stack_name)
+    api_response = api_instance.get_clusters1(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_cluster_metadata_by_stack_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_clusters1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**list[ClusterMetadata]**](ClusterMetadata.md)
+[**list[ComCapillaryOpsCpBoAbstractCluster]**](ComCapillaryOpsCpBoAbstractCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_clusters_overview_using_get**
-> list[ClusterOverview] get_clusters_overview_using_get(stack_name)
+# **get_clusters_overview**
+> list[ComCapillaryOpsCpBoClusterOverview] get_clusters_overview(stack_name)
 
-getClustersOverview
+
 
 ### Example
 ```python
@@ -765,48 +800,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getClustersOverview
-    api_response = api_instance.get_clusters_overview_using_get(stack_name)
+    api_response = api_instance.get_clusters_overview(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_clusters_overview_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_clusters_overview: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**list[ClusterOverview]**](ClusterOverview.md)
+[**list[ComCapillaryOpsCpBoClusterOverview]**](ComCapillaryOpsCpBoClusterOverview.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_clusters_using_get1**
-> list[AbstractCluster] get_clusters_using_get1(stack_name)
+# **get_clusters_with_status**
+> list[ComCapillaryOpsCpBoAbstractCluster] get_clusters_with_status(stack_name)
 
-getClusters
+
 
 ### Example
 ```python
@@ -815,48 +849,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getClusters
-    api_response = api_instance.get_clusters_using_get1(stack_name)
+    api_response = api_instance.get_clusters_with_status(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_clusters_using_get1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_clusters_with_status: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**list[AbstractCluster]**](AbstractCluster.md)
+[**list[ComCapillaryOpsCpBoAbstractCluster]**](ComCapillaryOpsCpBoAbstractCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_clusters_with_status_using_get**
-> list[AbstractCluster] get_clusters_with_status_using_get(stack_name)
+# **get_local_deployment_context**
+> ComCapillaryOpsCpBoDeploymentContext get_local_deployment_context(stack_name)
 
-getClustersWithStatus
+
 
 ### Example
 ```python
@@ -865,48 +898,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getClustersWithStatus
-    api_response = api_instance.get_clusters_with_status_using_get(stack_name)
+    api_response = api_instance.get_local_deployment_context(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_clusters_with_status_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_local_deployment_context: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**list[AbstractCluster]**](AbstractCluster.md)
+[**ComCapillaryOpsCpBoDeploymentContext**](ComCapillaryOpsCpBoDeploymentContext.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_local_deployment_context_using_get**
-> DeploymentContext get_local_deployment_context_using_get(stack_name)
+# **get_overrides1**
+> list[ComCapillaryOpsCpBoOverrideClusterOverrideResponse] get_overrides1(stack_name, resource_type, resource_name)
 
-getLocalDeploymentContext
+
 
 ### Example
 ```python
@@ -915,48 +947,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getLocalDeploymentContext
-    api_response = api_instance.get_local_deployment_context_using_get(stack_name)
+    api_response = api_instance.get_overrides1(stack_name, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_local_deployment_context_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_overrides1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
-[**DeploymentContext**](DeploymentContext.md)
+[**list[ComCapillaryOpsCpBoOverrideClusterOverrideResponse]**](ComCapillaryOpsCpBoOverrideClusterOverrideResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_overrides_using_get2**
-> list[ClusterOverrideResponse] get_overrides_using_get2(resource_name, resource_type, stack_name)
+# **get_resource_types**
+> list[str] get_resource_types(stack_name)
 
-getOverrides
+
 
 ### Example
 ```python
@@ -965,82 +1000,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getOverrides
-    api_response = api_instance.get_overrides_using_get2(resource_name, resource_type, stack_name)
+    api_response = api_instance.get_resource_types(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_overrides_using_get2: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_resource_types: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-[**list[ClusterOverrideResponse]**](ClusterOverrideResponse.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_resource_types_using_get**
-> list[str] get_resource_types_using_get(stack_name)
-
-getResourceTypes
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # getResourceTypes
-    api_response = api_instance.get_resource_types_using_get(stack_name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_resource_types_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -1048,19 +1028,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resources_by_types_using_get**
-> list[str] get_resources_by_types_using_get(resource_type, stack_name)
+# **get_resources_by_types**
+> list[str] get_resources_by_types(stack_name, resource_type)
 
-getResourcesByTypes
+
 
 ### Example
 ```python
@@ -1069,30 +1049,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getResourcesByTypes
-    api_response = api_instance.get_resources_by_types_using_get(resource_type, stack_name)
+    api_response = api_instance.get_resources_by_types(stack_name, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_resources_by_types_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_resources_by_types: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
 
 ### Return type
 
@@ -1100,19 +1079,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_running_base_clusters_using_get**
-> list[AbstractCluster] get_running_base_clusters_using_get()
+# **get_running_base_clusters**
+> list[ComCapillaryOpsCpBoAbstractCluster] get_running_base_clusters()
 
-getRunningBaseClusters
+
 
 ### Example
 ```python
@@ -1121,7 +1100,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -1130,11 +1109,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getRunningBaseClusters
-    api_response = api_instance.get_running_base_clusters_using_get()
+    api_response = api_instance.get_running_base_clusters()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_running_base_clusters_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_running_base_clusters: %s\n" % e)
 ```
 
 ### Parameters
@@ -1142,23 +1120,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[AbstractCluster]**](AbstractCluster.md)
+[**list[ComCapillaryOpsCpBoAbstractCluster]**](ComCapillaryOpsCpBoAbstractCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_stack_templates_using_get**
-> list[StackTemplate] get_stack_templates_using_get()
+# **get_stack**
+> ComCapillaryOpsCpBoStack get_stack(stack_name)
 
-getStackTemplates
+
 
 ### Example
 ```python
@@ -1167,7 +1145,56 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
+stack_name = 'stack_name_example' # str | 
+
+try:
+    api_response = api_instance.get_stack(stack_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiStackControllerApi->get_stack: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **stack_name** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_stack_templates**
+> list[ComCapillaryOpsCpBoStackTemplate] get_stack_templates()
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -1176,11 +1203,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getStackTemplates
-    api_response = api_instance.get_stack_templates_using_get()
+    api_response = api_instance.get_stack_templates()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_stack_templates_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_stack_templates: %s\n" % e)
 ```
 
 ### Parameters
@@ -1188,23 +1214,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[StackTemplate]**](StackTemplate.md)
+[**list[ComCapillaryOpsCpBoStackTemplate]**](ComCapillaryOpsCpBoStackTemplate.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_stack_using_get**
-> Stack get_stack_using_get(stack_name)
+# **get_stack_with_account**
+> ComCapillaryOpsCpBoStack get_stack_with_account(stack_name)
 
-getStack
+
 
 ### Example
 ```python
@@ -1213,48 +1239,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getStack
-    api_response = api_instance.get_stack_using_get(stack_name)
+    api_response = api_instance.get_stack_with_account(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_stack_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_stack_with_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_stack_with_account_using_get**
-> Stack get_stack_with_account_using_get(stack_name)
+# **get_stacks1**
+> list[ComCapillaryOpsCpBoStack] get_stacks1()
 
-getStackWithAccount
+
 
 ### Example
 ```python
@@ -1263,57 +1288,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # getStackWithAccount
-    api_response = api_instance.get_stack_with_account_using_get(stack_name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_stack_with_account_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-[**Stack**](Stack.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_stacks_using_get1**
-> list[Stack] get_stacks_using_get1()
-
-getStacks
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -1322,11 +1297,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getStacks
-    api_response = api_instance.get_stacks_using_get1()
+    api_response = api_instance.get_stacks1()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->get_stacks_using_get1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->get_stacks1: %s\n" % e)
 ```
 
 ### Parameters
@@ -1334,23 +1308,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[Stack]**](Stack.md)
+[**list[ComCapillaryOpsCpBoStack]**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **migrate_overrides_to_git_using_get**
-> migrate_overrides_to_git_using_get(stack_name)
+# **migrate_overrides_to_git**
+> migrate_overrides_to_git(stack_name)
 
-migrateOverridesToGit
+
 
 ### Example
 ```python
@@ -1359,27 +1333,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # migrateOverridesToGit
-    api_instance.migrate_overrides_to_git_using_get(stack_name)
+    api_instance.migrate_overrides_to_git(stack_name)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->migrate_overrides_to_git_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->migrate_overrides_to_git: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -1387,19 +1360,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **migrate_overrides_to_git_v2_using_post**
-> migrate_overrides_to_git_v2_using_post(body)
+# **migrate_overrides_to_git_v2**
+> migrate_overrides_to_git_v2(body)
 
-migrateOverridesToGitV2
+
 
 ### Example
 ```python
@@ -1408,27 +1381,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.MigrateOverridesRequest() # MigrateOverridesRequest | migrateOverridesRequest
+body = swagger_client.ComCapillaryOpsCpBoRequestsMigrateOverridesRequest() # ComCapillaryOpsCpBoRequestsMigrateOverridesRequest | 
 
 try:
-    # migrateOverridesToGitV2
-    api_instance.migrate_overrides_to_git_v2_using_post(body)
+    api_instance.migrate_overrides_to_git_v2(body)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->migrate_overrides_to_git_v2_using_post: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->migrate_overrides_to_git_v2: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MigrateOverridesRequest**](MigrateOverridesRequest.md)| migrateOverridesRequest | 
+ **body** | [**ComCapillaryOpsCpBoRequestsMigrateOverridesRequest**](ComCapillaryOpsCpBoRequestsMigrateOverridesRequest.md)|  | 
 
 ### Return type
 
@@ -1436,19 +1408,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reload_stack_using_get1**
-> Stack reload_stack_using_get1(stack_name)
+# **reload_stack1**
+> ComCapillaryOpsCpBoStack reload_stack1(stack_name)
 
-reloadStack
+
 
 ### Example
 ```python
@@ -1457,48 +1429,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # reloadStack
-    api_response = api_instance.reload_stack_using_get1(stack_name)
+    api_response = api_instance.reload_stack1(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->reload_stack_using_get1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->reload_stack1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_as_template_using_post**
-> Stack save_as_template_using_post(body, stack_name)
+# **save_as_template**
+> ComCapillaryOpsCpBoStack save_as_template(body, stack_name)
 
-saveAsTemplate
+
 
 ### Example
 ```python
@@ -1507,50 +1478,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.CreateTemplateRequest() # CreateTemplateRequest | createTemplateRequest
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ComCapillaryOpsCpBoStackCreateTemplateRequest() # ComCapillaryOpsCpBoStackCreateTemplateRequest | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # saveAsTemplate
-    api_response = api_instance.save_as_template_using_post(body, stack_name)
+    api_response = api_instance.save_as_template(body, stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->save_as_template_using_post: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->save_as_template: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateTemplateRequest**](CreateTemplateRequest.md)| createTemplateRequest | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ComCapillaryOpsCpBoStackCreateTemplateRequest**](ComCapillaryOpsCpBoStackCreateTemplateRequest.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_as_template_v2_using_post**
-> Stack save_as_template_v2_using_post(body, stack_name)
+# **save_as_template_v2**
+> ComCapillaryOpsCpBoStack save_as_template_v2(body, stack_name)
 
-saveAsTemplateV2
+
 
 ### Example
 ```python
@@ -1559,48 +1529,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.SaveAsTemplateRequest() # SaveAsTemplateRequest | saveAsTemplateRequest
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ComCapillaryOpsCpV2RegistryTemplateSaveAsTemplateRequest() # ComCapillaryOpsCpV2RegistryTemplateSaveAsTemplateRequest | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # saveAsTemplateV2
-    api_response = api_instance.save_as_template_v2_using_post(body, stack_name)
+    api_response = api_instance.save_as_template_v2(body, stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->save_as_template_v2_using_post: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->save_as_template_v2: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SaveAsTemplateRequest**](SaveAsTemplateRequest.md)| saveAsTemplateRequest | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ComCapillaryOpsCpV2RegistryTemplateSaveAsTemplateRequest**](ComCapillaryOpsCpV2RegistryTemplateSaveAsTemplateRequest.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **stack_sync_with_git_using_get**
-> stack_sync_with_git_using_get(stack_name)
+# **stack_sync_with_git**
+> stack_sync_with_git(stack_name)
 
 Sync stack with git
 
@@ -1613,27 +1582,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
     # Sync stack with git
-    api_instance.stack_sync_with_git_using_get(stack_name)
+    api_instance.stack_sync_with_git(stack_name)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->stack_sync_with_git_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->stack_sync_with_git: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -1641,19 +1610,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_resources_using_get**
-> sync_resources_using_get(stack_name)
+# **sync_resources**
+> sync_resources(stack_name)
 
-syncResources
+
 
 ### Example
 ```python
@@ -1662,27 +1631,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # syncResources
-    api_instance.sync_resources_using_get(stack_name)
+    api_instance.sync_resources(stack_name)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->sync_resources_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->sync_resources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -1690,19 +1658,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_stack_with_git_using_get**
-> sync_stack_with_git_using_get(stack_name)
+# **sync_stack_with_git**
+> sync_stack_with_git(stack_name)
 
-syncStackWithGit
+
 
 ### Example
 ```python
@@ -1711,27 +1679,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # syncStackWithGit
-    api_instance.sync_stack_with_git_using_get(stack_name)
+    api_instance.sync_stack_with_git(stack_name)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->sync_stack_with_git_using_get: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->sync_stack_with_git: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -1739,19 +1706,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **toggle_release_using_post1**
-> ToggleRelease toggle_release_using_post1(body, stack_name)
+# **toggle_release1**
+> ComCapillaryOpsCpBoToggleRelease toggle_release1(body, stack_name)
 
-toggleRelease
+
 
 ### Example
 ```python
@@ -1760,50 +1727,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ToggleRelease() # ToggleRelease | toggleRelease
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ComCapillaryOpsCpBoToggleRelease() # ComCapillaryOpsCpBoToggleRelease | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # toggleRelease
-    api_response = api_instance.toggle_release_using_post1(body, stack_name)
+    api_response = api_instance.toggle_release1(body, stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->toggle_release_using_post1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->toggle_release1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ToggleRelease**](ToggleRelease.md)| toggleRelease | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ComCapillaryOpsCpBoToggleRelease**](ComCapillaryOpsCpBoToggleRelease.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**ToggleRelease**](ToggleRelease.md)
+[**ComCapillaryOpsCpBoToggleRelease**](ComCapillaryOpsCpBoToggleRelease.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_stack_using_put1**
-> Stack update_stack_using_put1(body, stack_name)
+# **update_stack1**
+> ComCapillaryOpsCpBoStack update_stack1(body, stack_name)
 
-updateStack
+
 
 ### Example
 ```python
@@ -1812,43 +1778,42 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Stack() # Stack | stack
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ComCapillaryOpsCpBoStack() # ComCapillaryOpsCpBoStack | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # updateStack
-    api_response = api_instance.update_stack_using_put1(body, stack_name)
+    api_response = api_instance.update_stack1(body, stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiStackControllerApi->update_stack_using_put1: %s\n" % e)
+    print("Exception when calling UiStackControllerApi->update_stack1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Stack**](Stack.md)| stack | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**Stack**](Stack.md)
+[**ComCapillaryOpsCpBoStack**](ComCapillaryOpsCpBoStack.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

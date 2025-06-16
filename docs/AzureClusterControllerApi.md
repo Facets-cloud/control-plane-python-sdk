@@ -1,17 +1,17 @@
 # swagger_client.AzureClusterControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_cluster_using_post1**](AzureClusterControllerApi.md#create_cluster_using_post1) | **POST** /cc/v1/azure/clusters | createCluster
-[**get_cluster_using_get1**](AzureClusterControllerApi.md#get_cluster_using_get1) | **GET** /cc/v1/azure/clusters/{clusterId} | getCluster
-[**update_cluster_using_put1**](AzureClusterControllerApi.md#update_cluster_using_put1) | **PUT** /cc/v1/azure/clusters/{clusterId} | updateCluster
+[**create_cluster1**](AzureClusterControllerApi.md#create_cluster1) | **POST** /cc/v1/azure/clusters | 
+[**get_cluster1**](AzureClusterControllerApi.md#get_cluster1) | **GET** /cc/v1/azure/clusters/{clusterId} | 
+[**update_cluster1**](AzureClusterControllerApi.md#update_cluster1) | **PUT** /cc/v1/azure/clusters/{clusterId} | 
 
-# **create_cluster_using_post1**
-> AzureCluster create_cluster_using_post1(body)
+# **create_cluster1**
+> ComCapillaryOpsCpBoAzureCluster create_cluster1(body)
 
-createCluster
+
 
 ### Example
 ```python
@@ -20,48 +20,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.AzureClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
+body = swagger_client.ComCapillaryOpsCpBoRequestsAzureClusterRequest() # ComCapillaryOpsCpBoRequestsAzureClusterRequest | 
 
 try:
-    # createCluster
-    api_response = api_instance.create_cluster_using_post1(body)
+    api_response = api_instance.create_cluster1(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AzureClusterControllerApi->create_cluster_using_post1: %s\n" % e)
+    print("Exception when calling AzureClusterControllerApi->create_cluster1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
+ **body** | [**ComCapillaryOpsCpBoRequestsAzureClusterRequest**](ComCapillaryOpsCpBoRequestsAzureClusterRequest.md)|  | 
 
 ### Return type
 
-[**AzureCluster**](AzureCluster.md)
+[**ComCapillaryOpsCpBoAzureCluster**](ComCapillaryOpsCpBoAzureCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_cluster_using_get1**
-> AzureCluster get_cluster_using_get1(cluster_id)
+# **get_cluster1**
+> ComCapillaryOpsCpBoAzureCluster get_cluster1(cluster_id)
 
-getCluster
+
 
 ### Example
 ```python
@@ -70,48 +69,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.AzureClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getCluster
-    api_response = api_instance.get_cluster_using_get1(cluster_id)
+    api_response = api_instance.get_cluster1(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AzureClusterControllerApi->get_cluster_using_get1: %s\n" % e)
+    print("Exception when calling AzureClusterControllerApi->get_cluster1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**AzureCluster**](AzureCluster.md)
+[**ComCapillaryOpsCpBoAzureCluster**](ComCapillaryOpsCpBoAzureCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_cluster_using_put1**
-> AzureCluster update_cluster_using_put1(body, cluster_id)
+# **update_cluster1**
+> ComCapillaryOpsCpBoAzureCluster update_cluster1(body, cluster_id)
 
-updateCluster
+
 
 ### Example
 ```python
@@ -120,43 +118,42 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.AzureClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoRequestsAzureClusterRequest() # ComCapillaryOpsCpBoRequestsAzureClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # updateCluster
-    api_response = api_instance.update_cluster_using_put1(body, cluster_id)
+    api_response = api_instance.update_cluster1(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AzureClusterControllerApi->update_cluster_using_put1: %s\n" % e)
+    print("Exception when calling AzureClusterControllerApi->update_cluster1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoRequestsAzureClusterRequest**](ComCapillaryOpsCpBoRequestsAzureClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**AzureCluster**](AzureCluster.md)
+[**ComCapillaryOpsCpBoAzureCluster**](ComCapillaryOpsCpBoAzureCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

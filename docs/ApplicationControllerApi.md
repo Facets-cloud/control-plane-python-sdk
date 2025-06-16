@@ -1,83 +1,83 @@
 # swagger_client.ApplicationControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**build_using_post**](ApplicationControllerApi.md#build_using_post) | **POST** /api/{applicationFamily}/applications/{applicationId}/builds | build
-[**change_password_using_put**](ApplicationControllerApi.md#change_password_using_put) | **PUT** /api/users/{userId}/changePassword | changePassword
-[**create_app_secret_request_using_post**](ApplicationControllerApi.md#create_app_secret_request_using_post) | **POST** /api/{applicationFamily}/applications/{applicationId}/secretRequests | createAppSecretRequest
-[**create_application_using_post**](ApplicationControllerApi.md#create_application_using_post) | **POST** /api/{applicationFamily}/applications | createApplication
-[**create_ecr_registry_using_post**](ApplicationControllerApi.md#create_ecr_registry_using_post) | **POST** /api/ecrRegistry | createECRRegistry
-[**create_generic_action_using_post**](ApplicationControllerApi.md#create_generic_action_using_post) | **POST** /api/buildType/{buildType}/actions | createGenericAction
-[**create_user_cc_using_post**](ApplicationControllerApi.md#create_user_cc_using_post) | **POST** /api/cc-users | createUserCC
-[**create_user_using_post**](ApplicationControllerApi.md#create_user_using_post) | **POST** /api/users | createUser
-[**delete_application_secret_using_delete**](ApplicationControllerApi.md#delete_application_secret_using_delete) | **DELETE** /api/{applicationFamily}/{environment}/applications/{applicationId}/secrets/{secretName} | deleteApplicationSecret
-[**delete_application_using_delete**](ApplicationControllerApi.md#delete_application_using_delete) | **DELETE** /api/{applicationFamily}/applications/{applicationId} | deleteApplication
-[**deploy_using_post**](ApplicationControllerApi.md#deploy_using_post) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/deployments | deploy
-[**disable_alerting_using_delete**](ApplicationControllerApi.md#disable_alerting_using_delete) | **DELETE** /api/{applicationFamily}/{environment}/applications/{applicationId}/alerting | disableAlerting
-[**disable_monitoring_using_delete**](ApplicationControllerApi.md#disable_monitoring_using_delete) | **DELETE** /api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring | disableMonitoring
-[**download_dump_file_using_get**](ApplicationControllerApi.md#download_dump_file_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/dumps/download | downloadDumpFile
-[**download_test_report_using_get**](ApplicationControllerApi.md#download_test_report_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/downloadArtifacts | downloadTestReport
-[**enable_alerting_using_post**](ApplicationControllerApi.md#enable_alerting_using_post) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/alerting | enableAlerting
-[**enable_monitoring_using_post**](ApplicationControllerApi.md#enable_monitoring_using_post) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring | enableMonitoring
-[**execute_action_on_pod_using_post**](ApplicationControllerApi.md#execute_action_on_pod_using_post) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/pods/{podName}/actions/executeAction | executeActionOnPod
-[**get_actions_for_pod_using_get**](ApplicationControllerApi.md#get_actions_for_pod_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/pods/{podName}/actions | getActionsForPod
-[**get_alerting_details_using_get**](ApplicationControllerApi.md#get_alerting_details_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/alerting | getAlertingDetails
-[**get_all_application_metrics_using_get**](ApplicationControllerApi.md#get_all_application_metrics_using_get) | **GET** /api/{applicationFamily}/appmetrics | getAllApplicationMetrics
-[**get_all_registries_using_get**](ApplicationControllerApi.md#get_all_registries_using_get) | **GET** /api/getRegistries | getAllRegistries
-[**get_application_branches_using_get**](ApplicationControllerApi.md#get_application_branches_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/branches | getApplicationBranches
-[**get_application_families_using_get**](ApplicationControllerApi.md#get_application_families_using_get) | **GET** /api/applicationFamilies | getApplicationFamilies
-[**get_application_metric_summary_using_get**](ApplicationControllerApi.md#get_application_metric_summary_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/metrics | getApplicationMetricSummary
-[**get_application_pod_details_using_get**](ApplicationControllerApi.md#get_application_pod_details_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/podDetails | getApplicationPodDetails
-[**get_application_secret_requests_using_get**](ApplicationControllerApi.md#get_application_secret_requests_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/secretRequests | getApplicationSecretRequests
-[**get_application_secrets_using_get**](ApplicationControllerApi.md#get_application_secrets_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/secretRequests | getApplicationSecrets
-[**get_application_tags_using_get**](ApplicationControllerApi.md#get_application_tags_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/tags | getApplicationTags
-[**get_application_types_using_get**](ApplicationControllerApi.md#get_application_types_using_get) | **GET** /api/applicationTypes | getApplicationTypes
-[**get_application_using_get**](ApplicationControllerApi.md#get_application_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId} | getApplication
-[**get_applications_using_get**](ApplicationControllerApi.md#get_applications_using_get) | **GET** /api/{applicationFamily}/applications | getApplications
-[**get_build_logs_using_get**](ApplicationControllerApi.md#get_build_logs_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/logs | getBuildLogs
-[**get_build_using_get**](ApplicationControllerApi.md#get_build_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId} | getBuild
-[**get_builds_using_get**](ApplicationControllerApi.md#get_builds_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds | getBuilds
-[**get_cc_environment_meta_data_using_get**](ApplicationControllerApi.md#get_cc_environment_meta_data_using_get) | **GET** /api/cc/{applicationFamily}/environmentMetaData | getCCEnvironmentMetaData
-[**get_current_deployment_using_get**](ApplicationControllerApi.md#get_current_deployment_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/deployment/current | getCurrentDeployment
-[**get_deployment_status_using_get**](ApplicationControllerApi.md#get_deployment_status_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/deploymentStatus | getDeploymentStatus
-[**get_dump_file_list_using_get**](ApplicationControllerApi.md#get_dump_file_list_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/dumps | getDumpFileList
-[**get_ecr_token_using_get**](ApplicationControllerApi.md#get_ecr_token_using_get) | **GET** /api/getEcrLoginToken | getEcrToken
-[**get_environment_meta_data_using_get**](ApplicationControllerApi.md#get_environment_meta_data_using_get) | **GET** /api/{applicationFamily}/environmentMetaData | getEnvironmentMetaData
-[**get_environment_using_get**](ApplicationControllerApi.md#get_environment_using_get) | **GET** /api/{applicationFamily}/environments/{id} | getEnvironment
-[**get_environments_using_get**](ApplicationControllerApi.md#get_environments_using_get) | **GET** /api/{applicationFamily}/environments | getEnvironments
-[**get_executed_actions_for_application_using_get**](ApplicationControllerApi.md#get_executed_actions_for_application_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/executedActions | getExecutedActionsForApplication
-[**get_images_using_get**](ApplicationControllerApi.md#get_images_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/images | getImages
-[**get_monitoring_details_using_get**](ApplicationControllerApi.md#get_monitoring_details_using_get) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring | getMonitoringDetails
-[**get_test_build_details_using_get**](ApplicationControllerApi.md#get_test_build_details_using_get) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/testDetails | getTestBuildDetails
-[**get_users_using_get**](ApplicationControllerApi.md#get_users_using_get) | **GET** /api/users | getUsers
-[**global_stats_using_get**](ApplicationControllerApi.md#global_stats_using_get) | **GET** /api/stats | globalStats
-[**halt_application_using_post**](ApplicationControllerApi.md#halt_application_using_post) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/halt | haltApplication
-[**login_using_delete**](ApplicationControllerApi.md#login_using_delete) | **DELETE** /api/login | login
-[**login_using_get**](ApplicationControllerApi.md#login_using_get) | **GET** /api/login | login
-[**login_using_head**](ApplicationControllerApi.md#login_using_head) | **HEAD** /api/login | login
-[**login_using_options**](ApplicationControllerApi.md#login_using_options) | **OPTIONS** /api/login | login
-[**login_using_patch**](ApplicationControllerApi.md#login_using_patch) | **PATCH** /api/login | login
-[**login_using_post**](ApplicationControllerApi.md#login_using_post) | **POST** /api/login | login
-[**login_using_put**](ApplicationControllerApi.md#login_using_put) | **PUT** /api/login | login
-[**me_using_get**](ApplicationControllerApi.md#me_using_get) | **GET** /api/me | me
-[**process_webhook_pr_bitbucket_using_post**](ApplicationControllerApi.md#process_webhook_pr_bitbucket_using_post) | **POST** /api/{applicationFamily}/applications/{applicationId}/webhooks/pr/bitbucket | processWebhookPRBitbucket
-[**process_webhook_pr_github_using_post**](ApplicationControllerApi.md#process_webhook_pr_github_using_post) | **POST** /api/{applicationFamily}/applications/{applicationId}/webhooks/pr/github | processWebhookPRGithub
-[**redeploy_using_post**](ApplicationControllerApi.md#redeploy_using_post) | **POST** /api/{applicationFamily}/{environment}/redeployment | redeploy
-[**refresh_build_details_using_put**](ApplicationControllerApi.md#refresh_build_details_using_put) | **PUT** /api/codebuild/builds/{codeBuildId}/refresh | refreshBuildDetails
-[**resume_application_using_post**](ApplicationControllerApi.md#resume_application_using_post) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/resume | resumeApplication
-[**update_application_secrets_using_put**](ApplicationControllerApi.md#update_application_secrets_using_put) | **PUT** /api/{applicationFamily}/{environment}/applications/{applicationId}/secrets | updateApplicationSecrets
-[**update_application_using_put**](ApplicationControllerApi.md#update_application_using_put) | **PUT** /api/{applicationFamily}/applications | updateApplication
-[**update_build_using_put**](ApplicationControllerApi.md#update_build_using_put) | **PUT** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId} | updateBuild
-[**update_user_using_put**](ApplicationControllerApi.md#update_user_using_put) | **PUT** /api/users/{userId} | updateUser
-[**upsert_application_family_metadata_using_post**](ApplicationControllerApi.md#upsert_application_family_metadata_using_post) | **POST** /api/applicationFamilies/{applicationFamily}/metadata | upsertApplicationFamilyMetadata
-[**upsert_environment_using_post**](ApplicationControllerApi.md#upsert_environment_using_post) | **POST** /api/{applicationFamily}/environments | upsertEnvironment
+[**build**](ApplicationControllerApi.md#build) | **POST** /api/{applicationFamily}/applications/{applicationId}/builds | 
+[**change_password**](ApplicationControllerApi.md#change_password) | **PUT** /api/users/{userId}/changePassword | 
+[**create_app_secret_request**](ApplicationControllerApi.md#create_app_secret_request) | **POST** /api/{applicationFamily}/applications/{applicationId}/secretRequests | 
+[**create_application**](ApplicationControllerApi.md#create_application) | **POST** /api/{applicationFamily}/applications | 
+[**create_ecr_registry**](ApplicationControllerApi.md#create_ecr_registry) | **POST** /api/ecrRegistry | 
+[**create_generic_action**](ApplicationControllerApi.md#create_generic_action) | **POST** /api/buildType/{buildType}/actions | 
+[**create_user**](ApplicationControllerApi.md#create_user) | **POST** /api/users | 
+[**create_user_cc**](ApplicationControllerApi.md#create_user_cc) | **POST** /api/cc-users | 
+[**delete_application**](ApplicationControllerApi.md#delete_application) | **DELETE** /api/{applicationFamily}/applications/{applicationId} | 
+[**delete_application_secret**](ApplicationControllerApi.md#delete_application_secret) | **DELETE** /api/{applicationFamily}/{environment}/applications/{applicationId}/secrets/{secretName} | 
+[**deploy**](ApplicationControllerApi.md#deploy) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/deployments | 
+[**disable_alerting**](ApplicationControllerApi.md#disable_alerting) | **DELETE** /api/{applicationFamily}/{environment}/applications/{applicationId}/alerting | 
+[**disable_monitoring**](ApplicationControllerApi.md#disable_monitoring) | **DELETE** /api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring | 
+[**download_dump_file**](ApplicationControllerApi.md#download_dump_file) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/dumps/download | 
+[**download_test_report**](ApplicationControllerApi.md#download_test_report) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/downloadArtifacts | 
+[**enable_alerting**](ApplicationControllerApi.md#enable_alerting) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/alerting | 
+[**enable_monitoring**](ApplicationControllerApi.md#enable_monitoring) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring | 
+[**execute_action_on_pod**](ApplicationControllerApi.md#execute_action_on_pod) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/pods/{podName}/actions/executeAction | 
+[**get_actions_for_pod**](ApplicationControllerApi.md#get_actions_for_pod) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/pods/{podName}/actions | 
+[**get_alerting_details**](ApplicationControllerApi.md#get_alerting_details) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/alerting | 
+[**get_all_application_metrics**](ApplicationControllerApi.md#get_all_application_metrics) | **GET** /api/{applicationFamily}/appmetrics | 
+[**get_all_registries**](ApplicationControllerApi.md#get_all_registries) | **GET** /api/getRegistries | 
+[**get_application1**](ApplicationControllerApi.md#get_application1) | **GET** /api/{applicationFamily}/applications/{applicationId} | 
+[**get_application_branches**](ApplicationControllerApi.md#get_application_branches) | **GET** /api/{applicationFamily}/applications/{applicationId}/branches | 
+[**get_application_families**](ApplicationControllerApi.md#get_application_families) | **GET** /api/applicationFamilies | 
+[**get_application_metric_summary**](ApplicationControllerApi.md#get_application_metric_summary) | **GET** /api/{applicationFamily}/applications/{applicationId}/metrics | 
+[**get_application_pod_details**](ApplicationControllerApi.md#get_application_pod_details) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/podDetails | 
+[**get_application_secret_requests**](ApplicationControllerApi.md#get_application_secret_requests) | **GET** /api/{applicationFamily}/applications/{applicationId}/secretRequests | 
+[**get_application_secrets**](ApplicationControllerApi.md#get_application_secrets) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/secretRequests | 
+[**get_application_tags**](ApplicationControllerApi.md#get_application_tags) | **GET** /api/{applicationFamily}/applications/{applicationId}/tags | 
+[**get_application_types**](ApplicationControllerApi.md#get_application_types) | **GET** /api/applicationTypes | 
+[**get_applications**](ApplicationControllerApi.md#get_applications) | **GET** /api/{applicationFamily}/applications | 
+[**get_build**](ApplicationControllerApi.md#get_build) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId} | 
+[**get_build_logs**](ApplicationControllerApi.md#get_build_logs) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/logs | 
+[**get_builds**](ApplicationControllerApi.md#get_builds) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds | 
+[**get_cc_environment_meta_data**](ApplicationControllerApi.md#get_cc_environment_meta_data) | **GET** /api/cc/{applicationFamily}/environmentMetaData | 
+[**get_current_deployment**](ApplicationControllerApi.md#get_current_deployment) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/deployment/current | 
+[**get_deployment_status**](ApplicationControllerApi.md#get_deployment_status) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/deploymentStatus | 
+[**get_dump_file_list**](ApplicationControllerApi.md#get_dump_file_list) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/dumps | 
+[**get_ecr_token**](ApplicationControllerApi.md#get_ecr_token) | **GET** /api/getEcrLoginToken | 
+[**get_environment**](ApplicationControllerApi.md#get_environment) | **GET** /api/{applicationFamily}/environments/{id} | 
+[**get_environment_meta_data**](ApplicationControllerApi.md#get_environment_meta_data) | **GET** /api/{applicationFamily}/environmentMetaData | 
+[**get_environments**](ApplicationControllerApi.md#get_environments) | **GET** /api/{applicationFamily}/environments | 
+[**get_executed_actions_for_application**](ApplicationControllerApi.md#get_executed_actions_for_application) | **GET** /api/{applicationFamily}/applications/{applicationId}/executedActions | 
+[**get_images**](ApplicationControllerApi.md#get_images) | **GET** /api/{applicationFamily}/applications/{applicationId}/images | 
+[**get_monitoring_details**](ApplicationControllerApi.md#get_monitoring_details) | **GET** /api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring | 
+[**get_test_build_details**](ApplicationControllerApi.md#get_test_build_details) | **GET** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/testDetails | 
+[**get_users**](ApplicationControllerApi.md#get_users) | **GET** /api/users | 
+[**global_stats**](ApplicationControllerApi.md#global_stats) | **GET** /api/stats | 
+[**halt_application**](ApplicationControllerApi.md#halt_application) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/halt | 
+[**login**](ApplicationControllerApi.md#login) | **GET** /api/login | 
+[**login1**](ApplicationControllerApi.md#login1) | **HEAD** /api/login | 
+[**login2**](ApplicationControllerApi.md#login2) | **POST** /api/login | 
+[**login3**](ApplicationControllerApi.md#login3) | **PUT** /api/login | 
+[**login4**](ApplicationControllerApi.md#login4) | **PATCH** /api/login | 
+[**login5**](ApplicationControllerApi.md#login5) | **DELETE** /api/login | 
+[**login6**](ApplicationControllerApi.md#login6) | **OPTIONS** /api/login | 
+[**me**](ApplicationControllerApi.md#me) | **GET** /api/me | 
+[**process_webhook_pr_bitbucket**](ApplicationControllerApi.md#process_webhook_pr_bitbucket) | **POST** /api/{applicationFamily}/applications/{applicationId}/webhooks/pr/bitbucket | 
+[**process_webhook_pr_github**](ApplicationControllerApi.md#process_webhook_pr_github) | **POST** /api/{applicationFamily}/applications/{applicationId}/webhooks/pr/github | 
+[**redeploy**](ApplicationControllerApi.md#redeploy) | **POST** /api/{applicationFamily}/{environment}/redeployment | 
+[**refresh_build_details**](ApplicationControllerApi.md#refresh_build_details) | **PUT** /api/codebuild/builds/{codeBuildId}/refresh | 
+[**resume_application**](ApplicationControllerApi.md#resume_application) | **POST** /api/{applicationFamily}/{environment}/applications/{applicationId}/resume | 
+[**update_application**](ApplicationControllerApi.md#update_application) | **PUT** /api/{applicationFamily}/applications | 
+[**update_application_secrets**](ApplicationControllerApi.md#update_application_secrets) | **PUT** /api/{applicationFamily}/{environment}/applications/{applicationId}/secrets | 
+[**update_build**](ApplicationControllerApi.md#update_build) | **PUT** /api/{applicationFamily}/applications/{applicationId}/builds/{buildId} | 
+[**update_user**](ApplicationControllerApi.md#update_user) | **PUT** /api/users/{userId} | 
+[**upsert_application_family_metadata**](ApplicationControllerApi.md#upsert_application_family_metadata) | **POST** /api/applicationFamilies/{applicationFamily}/metadata | 
+[**upsert_environment**](ApplicationControllerApi.md#upsert_environment) | **POST** /api/{applicationFamily}/environments | 
 
-# **build_using_post**
-> Build build_using_post(body, application_family, application_id)
+# **build**
+> ComCapillaryOpsDeployerBoBuild build(body, application_family, application_id)
 
-build
+
 
 ### Example
 ```python
@@ -86,40 +86,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Build() # Build | build
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
+body = swagger_client.ComCapillaryOpsDeployerBoBuild() # ComCapillaryOpsDeployerBoBuild | 
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # build
-    api_response = api_instance.build_using_post(body, application_family, application_id)
+    api_response = api_instance.build(body, application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->build_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->build: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Build**](Build.md)| build | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
+ **body** | [**ComCapillaryOpsDeployerBoBuild**](ComCapillaryOpsDeployerBoBuild.md)|  | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**Build**](Build.md)
+[**ComCapillaryOpsDeployerBoBuild**](ComCapillaryOpsDeployerBoBuild.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -128,10 +127,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **change_password_using_put**
-> User change_password_using_put(body, user_id)
+# **change_password**
+> ComCapillaryOpsDeployerBoUser change_password(body, user_id)
 
-changePassword
+
 
 ### Example
 ```python
@@ -140,38 +139,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.PasswordChange() # PasswordChange | pwdChange
-user_id = 'user_id_example' # str | userId
+body = swagger_client.ComCapillaryOpsDeployerBoPasswordChange() # ComCapillaryOpsDeployerBoPasswordChange | 
+user_id = 'user_id_example' # str | 
 
 try:
-    # changePassword
-    api_response = api_instance.change_password_using_put(body, user_id)
+    api_response = api_instance.change_password(body, user_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->change_password_using_put: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->change_password: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PasswordChange**](PasswordChange.md)| pwdChange | 
- **user_id** | **str**| userId | 
+ **body** | [**ComCapillaryOpsDeployerBoPasswordChange**](ComCapillaryOpsDeployerBoPasswordChange.md)|  | 
+ **user_id** | **str**|  | 
 
 ### Return type
 
-[**User**](User.md)
+[**ComCapillaryOpsDeployerBoUser**](ComCapillaryOpsDeployerBoUser.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -180,64 +178,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_app_secret_request_using_post**
-> list[ApplicationSecretRequest] create_app_secret_request_using_post(body, application_family, application_id)
+# **create_app_secret_request**
+> list[ComCapillaryOpsDeployerBoApplicationSecretRequestSecretName] create_app_secret_request(body, application_family, application_id)
 
-createAppSecretRequest
 
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ApplicationSecretRequest()] # list[ApplicationSecretRequest] | applicationSecretRequests
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-
-try:
-    # createAppSecretRequest
-    api_response = api_instance.create_app_secret_request_using_post(body, application_family, application_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->create_app_secret_request_using_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**list[ApplicationSecretRequest]**](ApplicationSecretRequest.md)| applicationSecretRequests | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
-
-### Return type
-
-[**list[ApplicationSecretRequest]**](ApplicationSecretRequest.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_application_using_post**
-> Application create_application_using_post(body, application_family)
-
-createApplication
 
 ### Example
 ```python
@@ -246,38 +190,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Application() # Application | application
-application_family = 'application_family_example' # str | applicationFamily
+body = [swagger_client.ComCapillaryOpsDeployerBoApplicationSecretRequestSecretName()] # list[ComCapillaryOpsDeployerBoApplicationSecretRequestSecretName] | 
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # createApplication
-    api_response = api_instance.create_application_using_post(body, application_family)
+    api_response = api_instance.create_app_secret_request(body, application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->create_application_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->create_app_secret_request: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Application**](Application.md)| application | 
- **application_family** | **str**| applicationFamily | 
+ **body** | [**list[ComCapillaryOpsDeployerBoApplicationSecretRequestSecretName]**](ComCapillaryOpsDeployerBoApplicationSecretRequestSecretName.md)|  | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**Application**](Application.md)
+[**list[ComCapillaryOpsDeployerBoApplicationSecretRequestSecretName]**](ComCapillaryOpsDeployerBoApplicationSecretRequestSecretName.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -286,60 +231,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_ecr_registry_using_post**
-> ECRRegistry create_ecr_registry_using_post(body)
+# **create_application**
+> ComCapillaryOpsDeployerBoApplication create_application(body, application_family)
 
-createECRRegistry
 
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ECRRegistry() # ECRRegistry | ecrRegistry
-
-try:
-    # createECRRegistry
-    api_response = api_instance.create_ecr_registry_using_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->create_ecr_registry_using_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ECRRegistry**](ECRRegistry.md)| ecrRegistry | 
-
-### Return type
-
-[**ECRRegistry**](ECRRegistry.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_generic_action_using_post**
-> ApplicationAction create_generic_action_using_post(body, build_type)
-
-createGenericAction
 
 ### Example
 ```python
@@ -348,38 +243,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ApplicationAction() # ApplicationAction | applicationAction
-build_type = 'build_type_example' # str | buildType
+body = swagger_client.ComCapillaryOpsDeployerBoApplication() # ComCapillaryOpsDeployerBoApplication | 
+application_family = 'application_family_example' # str | 
 
 try:
-    # createGenericAction
-    api_response = api_instance.create_generic_action_using_post(body, build_type)
+    api_response = api_instance.create_application(body, application_family)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->create_generic_action_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->create_application: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApplicationAction**](ApplicationAction.md)| applicationAction | 
- **build_type** | **str**| buildType | 
+ **body** | [**ComCapillaryOpsDeployerBoApplication**](ComCapillaryOpsDeployerBoApplication.md)|  | 
+ **application_family** | **str**|  | 
 
 ### Return type
 
-[**ApplicationAction**](ApplicationAction.md)
+[**ComCapillaryOpsDeployerBoApplication**](ComCapillaryOpsDeployerBoApplication.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -388,10 +282,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_user_cc_using_post**
-> User create_user_cc_using_post(body)
+# **create_ecr_registry**
+> ComCapillaryOpsDeployerBoECRRegistry create_ecr_registry(body)
 
-createUserCC
+
 
 ### Example
 ```python
@@ -400,36 +294,35 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.User() # User | user
+body = swagger_client.ComCapillaryOpsDeployerBoECRRegistry() # ComCapillaryOpsDeployerBoECRRegistry | 
 
 try:
-    # createUserCC
-    api_response = api_instance.create_user_cc_using_post(body)
+    api_response = api_instance.create_ecr_registry(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->create_user_cc_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->create_ecr_registry: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)| user | 
+ **body** | [**ComCapillaryOpsDeployerBoECRRegistry**](ComCapillaryOpsDeployerBoECRRegistry.md)|  | 
 
 ### Return type
 
-[**User**](User.md)
+[**ComCapillaryOpsDeployerBoECRRegistry**](ComCapillaryOpsDeployerBoECRRegistry.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -438,10 +331,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_user_using_post**
-> User create_user_using_post(body)
+# **create_generic_action**
+> ComCapillaryOpsDeployerBoActionsApplicationAction create_generic_action(body, build_type)
 
-createUser
+
 
 ### Example
 ```python
@@ -450,36 +343,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.User() # User | user
+body = swagger_client.ComCapillaryOpsDeployerBoActionsApplicationAction() # ComCapillaryOpsDeployerBoActionsApplicationAction | 
+build_type = 'build_type_example' # str | 
 
 try:
-    # createUser
-    api_response = api_instance.create_user_using_post(body)
+    api_response = api_instance.create_generic_action(body, build_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->create_user_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->create_generic_action: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)| user | 
+ **body** | [**ComCapillaryOpsDeployerBoActionsApplicationAction**](ComCapillaryOpsDeployerBoActionsApplicationAction.md)|  | 
+ **build_type** | **str**|  | 
 
 ### Return type
 
-[**User**](User.md)
+[**ComCapillaryOpsDeployerBoActionsApplicationAction**](ComCapillaryOpsDeployerBoActionsApplicationAction.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -488,10 +382,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_application_secret_using_delete**
-> bool delete_application_secret_using_delete(application_family, application_id, environment, secret_name)
+# **create_user**
+> ComCapillaryOpsDeployerBoUser create_user(body)
 
-deleteApplicationSecret
+
 
 ### Example
 ```python
@@ -500,34 +394,127 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-secret_name = 'secret_name_example' # str | secretName
+body = swagger_client.ComCapillaryOpsDeployerBoUser() # ComCapillaryOpsDeployerBoUser | 
 
 try:
-    # deleteApplicationSecret
-    api_response = api_instance.delete_application_secret_using_delete(application_family, application_id, environment, secret_name)
+    api_response = api_instance.create_user(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->delete_application_secret_using_delete: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->create_user: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
- **secret_name** | **str**| secretName | 
+ **body** | [**ComCapillaryOpsDeployerBoUser**](ComCapillaryOpsDeployerBoUser.md)|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoUser**](ComCapillaryOpsDeployerBoUser.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_user_cc**
+> ComCapillaryOpsDeployerBoUser create_user_cc(body)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ComCapillaryOpsDeployerBoUser() # ComCapillaryOpsDeployerBoUser | 
+
+try:
+    api_response = api_instance.create_user_cc(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->create_user_cc: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ComCapillaryOpsDeployerBoUser**](ComCapillaryOpsDeployerBoUser.md)|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoUser**](ComCapillaryOpsDeployerBoUser.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_application**
+> bool delete_application(application_family, application_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+
+try:
+    api_response = api_instance.delete_application(application_family, application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->delete_application: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
@@ -535,59 +522,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_application_using_delete**
-> bool delete_application_using_delete(application_family, application_id)
-
-deleteApplication
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-
-try:
-    # deleteApplication
-    api_response = api_instance.delete_application_using_delete(application_family, application_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->delete_application_using_delete: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
-
-### Return type
-
-**bool**
-
-### Authorization
-
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -596,10 +531,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deploy_using_post**
-> Deployment deploy_using_post(body, application_family, application_id, environment)
+# **delete_application_secret**
+> bool delete_application_secret(application_family, environment, application_id, secret_name)
 
-deploy
+
 
 ### Example
 ```python
@@ -608,42 +543,96 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Deployment() # Deployment | deployment
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
+secret_name = 'secret_name_example' # str | 
 
 try:
-    # deploy
-    api_response = api_instance.deploy_using_post(body, application_family, application_id, environment)
+    api_response = api_instance.delete_application_secret(application_family, environment, application_id, secret_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->deploy_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->delete_application_secret: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Deployment**](Deployment.md)| deployment | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
+ **secret_name** | **str**|  | 
 
 ### Return type
 
-[**Deployment**](Deployment.md)
+**bool**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deploy**
+> ComCapillaryOpsDeployerBoDeployment deploy(body, application_family, environment, application_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ComCapillaryOpsDeployerBoDeployment() # ComCapillaryOpsDeployerBoDeployment | 
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
+
+try:
+    api_response = api_instance.deploy(body, application_family, environment, application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->deploy: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ComCapillaryOpsDeployerBoDeployment**](ComCapillaryOpsDeployerBoDeployment.md)|  | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoDeployment**](ComCapillaryOpsDeployerBoDeployment.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -652,10 +641,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disable_alerting_using_delete**
-> bool disable_alerting_using_delete(application_family, application_id, environment)
+# **disable_alerting**
+> bool disable_alerting(application_family, application_id, environment)
 
-disableAlerting
+
 
 ### Example
 ```python
@@ -664,32 +653,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # disableAlerting
-    api_response = api_instance.disable_alerting_using_delete(application_family, application_id, environment)
+    api_response = api_instance.disable_alerting(application_family, application_id, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->disable_alerting_using_delete: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->disable_alerting: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
@@ -697,7 +685,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -706,10 +694,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disable_monitoring_using_delete**
-> bool disable_monitoring_using_delete(application_family, application_id, environment)
+# **disable_monitoring**
+> bool disable_monitoring(application_family, application_id, environment)
 
-disableMonitoring
+
 
 ### Example
 ```python
@@ -718,32 +706,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # disableMonitoring
-    api_response = api_instance.disable_monitoring_using_delete(application_family, application_id, environment)
+    api_response = api_instance.disable_monitoring(application_family, application_id, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->disable_monitoring_using_delete: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->disable_monitoring: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
@@ -751,7 +738,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -760,66 +747,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **download_dump_file_using_get**
-> InputStreamResource download_dump_file_using_get(application_family, application_id, environment, path)
+# **download_dump_file**
+> str download_dump_file(application_family, environment, path, application_id)
 
-downloadDumpFile
 
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-path = 'path_example' # str | path
-
-try:
-    # downloadDumpFile
-    api_response = api_instance.download_dump_file_using_get(application_family, application_id, environment, path)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->download_dump_file_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
- **path** | **str**| path | 
-
-### Return type
-
-[**InputStreamResource**](InputStreamResource.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **download_test_report_using_get**
-> InputStreamResource download_test_report_using_get(application_family, application_id, build_id)
-
-downloadTestReport
 
 ### Example
 ```python
@@ -828,94 +759,41 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-build_id = 'build_id_example' # str | buildId
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+path = 'path_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # downloadTestReport
-    api_response = api_instance.download_test_report_using_get(application_family, application_id, build_id)
+    api_response = api_instance.download_dump_file(application_family, environment, path, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->download_test_report_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->download_dump_file: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **build_id** | **str**| buildId | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **path** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**InputStreamResource**](InputStreamResource.md)
+**str**
 
 ### Authorization
 
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **enable_alerting_using_post**
-> bool enable_alerting_using_post(application_family, application_id, environment)
-
-enableAlerting
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-
-try:
-    # enableAlerting
-    api_response = api_instance.enable_alerting_using_post(application_family, application_id, environment)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->enable_alerting_using_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
-
-### Return type
-
-**bool**
-
-### Authorization
-
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -924,10 +802,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **enable_monitoring_using_post**
-> bool enable_monitoring_using_post(application_family, application_id, environment)
+# **download_test_report**
+> str download_test_report(application_family, application_id, build_id)
 
-enableMonitoring
+
 
 ### Example
 ```python
@@ -936,40 +814,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+build_id = 'build_id_example' # str | 
 
 try:
-    # enableMonitoring
-    api_response = api_instance.enable_monitoring_using_post(application_family, application_id, environment)
+    api_response = api_instance.download_test_report(application_family, application_id, build_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->enable_monitoring_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->download_test_report: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **build_id** | **str**|  | 
 
 ### Return type
 
-**bool**
+**str**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -978,10 +855,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **execute_action_on_pod_using_post**
-> ActionExecution execute_action_on_pod_using_post(body, application_family, application_id, environment, pod_name)
+# **enable_alerting**
+> bool enable_alerting(application_family, application_id, environment)
 
-executeActionOnPod
+
 
 ### Example
 ```python
@@ -990,44 +867,149 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ApplicationAction() # ApplicationAction | applicationAction
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-pod_name = 'pod_name_example' # str | podName
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # executeActionOnPod
-    api_response = api_instance.execute_action_on_pod_using_post(body, application_family, application_id, environment, pod_name)
+    api_response = api_instance.enable_alerting(application_family, application_id, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->execute_action_on_pod_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->enable_alerting: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApplicationAction**](ApplicationAction.md)| applicationAction | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
- **pod_name** | **str**| podName | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
-[**ActionExecution**](ActionExecution.md)
+**bool**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **enable_monitoring**
+> bool enable_monitoring(application_family, application_id, environment)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
+
+try:
+    api_response = api_instance.enable_monitoring(application_family, application_id, environment)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->enable_monitoring: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **execute_action_on_pod**
+> ComCapillaryOpsDeployerBoActionsActionExecution execute_action_on_pod(body, application_family, environment, application_id, pod_name)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ComCapillaryOpsDeployerBoActionsApplicationAction() # ComCapillaryOpsDeployerBoActionsApplicationAction | 
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
+pod_name = 'pod_name_example' # str | 
+
+try:
+    api_response = api_instance.execute_action_on_pod(body, application_family, environment, application_id, pod_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->execute_action_on_pod: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ComCapillaryOpsDeployerBoActionsApplicationAction**](ComCapillaryOpsDeployerBoActionsApplicationAction.md)|  | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
+ **pod_name** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoActionsActionExecution**](ComCapillaryOpsDeployerBoActionsActionExecution.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1036,10 +1018,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_actions_for_pod_using_get**
-> list[ApplicationAction] get_actions_for_pod_using_get(application_family, application_id, environment, pod_name)
+# **get_actions_for_pod**
+> list[ComCapillaryOpsDeployerBoActionsApplicationAction] get_actions_for_pod(application_family, environment, application_id, pod_name)
 
-getActionsForPod
+
 
 ### Example
 ```python
@@ -1048,42 +1030,41 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-pod_name = 'pod_name_example' # str | podName
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
+pod_name = 'pod_name_example' # str | 
 
 try:
-    # getActionsForPod
-    api_response = api_instance.get_actions_for_pod_using_get(application_family, application_id, environment, pod_name)
+    api_response = api_instance.get_actions_for_pod(application_family, environment, application_id, pod_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_actions_for_pod_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_actions_for_pod: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
- **pod_name** | **str**| podName | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
+ **pod_name** | **str**|  | 
 
 ### Return type
 
-[**list[ApplicationAction]**](ApplicationAction.md)
+[**list[ComCapillaryOpsDeployerBoActionsApplicationAction]**](ComCapillaryOpsDeployerBoActionsApplicationAction.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1092,10 +1073,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_alerting_details_using_get**
-> Alerting get_alerting_details_using_get(application_family, application_id, environment)
+# **get_alerting_details**
+> ComCapillaryOpsDeployerBoAlerting get_alerting_details(application_family, application_id, environment)
 
-getAlertingDetails
+
 
 ### Example
 ```python
@@ -1104,40 +1085,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # getAlertingDetails
-    api_response = api_instance.get_alerting_details_using_get(application_family, application_id, environment)
+    api_response = api_instance.get_alerting_details(application_family, application_id, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_alerting_details_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_alerting_details: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
-[**Alerting**](Alerting.md)
+[**ComCapillaryOpsDeployerBoAlerting**](ComCapillaryOpsDeployerBoAlerting.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1146,10 +1126,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_application_metrics_using_get**
-> list[ApplicationMetricsWrapper] get_all_application_metrics_using_get(application_family)
+# **get_all_application_metrics**
+> list[ComCapillaryOpsDeployerBoApplicationMetricsWrapper] get_all_application_metrics(application_family)
 
-getAllApplicationMetrics
+
 
 ### Example
 ```python
@@ -1158,36 +1138,35 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
+application_family = 'application_family_example' # str | 
 
 try:
-    # getAllApplicationMetrics
-    api_response = api_instance.get_all_application_metrics_using_get(application_family)
+    api_response = api_instance.get_all_application_metrics(application_family)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_all_application_metrics_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_all_application_metrics: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
+ **application_family** | **str**|  | 
 
 ### Return type
 
-[**list[ApplicationMetricsWrapper]**](ApplicationMetricsWrapper.md)
+[**list[ComCapillaryOpsDeployerBoApplicationMetricsWrapper]**](ComCapillaryOpsDeployerBoApplicationMetricsWrapper.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1196,10 +1175,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_registries_using_get**
-> list[Registry] get_all_registries_using_get()
+# **get_all_registries**
+> list[ComCapillaryOpsDeployerBoRegistry] get_all_registries()
 
-getAllRegistries
+
 
 ### Example
 ```python
@@ -1208,7 +1187,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -1217,11 +1196,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllRegistries
-    api_response = api_instance.get_all_registries_using_get()
+    api_response = api_instance.get_all_registries()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_all_registries_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_all_registries: %s\n" % e)
 ```
 
 ### Parameters
@@ -1229,23 +1207,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[Registry]**](Registry.md)
+[**list[ComCapillaryOpsDeployerBoRegistry]**](ComCapillaryOpsDeployerBoRegistry.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_application_branches_using_get**
-> list[str] get_application_branches_using_get(application_family, application_id)
+# **get_application1**
+> ComCapillaryOpsDeployerBoApplication get_application1(application_family, application_id)
 
-getApplicationBranches
+
 
 ### Example
 ```python
@@ -1254,30 +1232,80 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # getApplicationBranches
-    api_response = api_instance.get_application_branches_using_get(application_family, application_id)
+    api_response = api_instance.get_application1(application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_branches_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoApplication**](ComCapillaryOpsDeployerBoApplication.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_application_branches**
+> list[str] get_application_branches(application_family, application_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+
+try:
+    api_response = api_instance.get_application_branches(application_family, application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_application_branches: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
@@ -1285,7 +1313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1294,56 +1322,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_application_families_using_get**
-> list[str] get_application_families_using_get()
+# **get_application_families**
+> list[str] get_application_families()
 
-getApplicationFamilies
 
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-
-try:
-    # getApplicationFamilies
-    api_response = api_instance.get_application_families_using_get()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_families_using_get: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**list[str]**
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_application_metric_summary_using_get**
-> dict(str, ApplicationMetrics) get_application_metric_summary_using_get(application_family, application_id)
-
-getApplicationMetricSummary
 
 ### Example
 ```python
@@ -1352,271 +1334,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-
-try:
-    # getApplicationMetricSummary
-    api_response = api_instance.get_application_metric_summary_using_get(application_family, application_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_metric_summary_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
-
-### Return type
-
-[**dict(str, ApplicationMetrics)**](ApplicationMetrics.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_application_pod_details_using_get**
-> list[ApplicationPodDetails] get_application_pod_details_using_get(application_family, application_id, environment)
-
-getApplicationPodDetails
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-
-try:
-    # getApplicationPodDetails
-    api_response = api_instance.get_application_pod_details_using_get(application_family, application_id, environment)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_pod_details_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
-
-### Return type
-
-[**list[ApplicationPodDetails]**](ApplicationPodDetails.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_application_secret_requests_using_get**
-> list[ApplicationSecretRequest] get_application_secret_requests_using_get(application_family, application_id)
-
-getApplicationSecretRequests
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-
-try:
-    # getApplicationSecretRequests
-    api_response = api_instance.get_application_secret_requests_using_get(application_family, application_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_secret_requests_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
-
-### Return type
-
-[**list[ApplicationSecretRequest]**](ApplicationSecretRequest.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_application_secrets_using_get**
-> list[ApplicationSecret] get_application_secrets_using_get(application_family, application_id, environment)
-
-getApplicationSecrets
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-
-try:
-    # getApplicationSecrets
-    api_response = api_instance.get_application_secrets_using_get(application_family, application_id, environment)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_secrets_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
-
-### Return type
-
-[**list[ApplicationSecret]**](ApplicationSecret.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_application_tags_using_get**
-> list[str] get_application_tags_using_get(application_family, application_id)
-
-getApplicationTags
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-
-try:
-    # getApplicationTags
-    api_response = api_instance.get_application_tags_using_get(application_family, application_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_tags_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
-
-### Return type
-
-**list[str]**
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_application_types_using_get**
-> list[str] get_application_types_using_get()
-
-getApplicationTypes
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -1625,11 +1343,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getApplicationTypes
-    api_response = api_instance.get_application_types_using_get()
+    api_response = api_instance.get_application_families()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_types_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application_families: %s\n" % e)
 ```
 
 ### Parameters
@@ -1641,7 +1358,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1650,10 +1367,10 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_application_using_get**
-> Application get_application_using_get(application_family, application_id)
+# **get_application_metric_summary**
+> dict(str, ComCapillaryOpsDeployerBoApplicationMetrics) get_application_metric_summary(application_family, application_id)
 
-getApplication
+
 
 ### Example
 ```python
@@ -1662,38 +1379,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # getApplication
-    api_response = api_instance.get_application_using_get(application_family, application_id)
+    api_response = api_instance.get_application_metric_summary(application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_application_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application_metric_summary: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**Application**](Application.md)
+[**dict(str, ComCapillaryOpsDeployerBoApplicationMetrics)**](ComCapillaryOpsDeployerBoApplicationMetrics.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1702,10 +1418,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_applications_using_get**
-> list[Application] get_applications_using_get(application_family)
+# **get_application_pod_details**
+> list[ComCapillaryOpsDeployerBoApplicationPodDetails] get_application_pod_details(application_family, environment, application_id)
 
-getApplications
+
 
 ### Example
 ```python
@@ -1714,36 +1430,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # getApplications
-    api_response = api_instance.get_applications_using_get(application_family)
+    api_response = api_instance.get_application_pod_details(application_family, environment, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_applications_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application_pod_details: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**list[Application]**](Application.md)
+[**list[ComCapillaryOpsDeployerBoApplicationPodDetails]**](ComCapillaryOpsDeployerBoApplicationPodDetails.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1752,10 +1471,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_build_logs_using_get**
-> TokenPaginatedResponseLogEvent get_build_logs_using_get(application_family, application_id, build_id, next_token=next_token)
+# **get_application_secret_requests**
+> list[ComCapillaryOpsDeployerBoApplicationSecretRequest] get_application_secret_requests(application_family, application_id)
 
-getBuildLogs
+
 
 ### Example
 ```python
@@ -1764,42 +1483,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-build_id = 'build_id_example' # str | buildId
-next_token = 'next_token_example' # str | nextToken (optional)
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # getBuildLogs
-    api_response = api_instance.get_build_logs_using_get(application_family, application_id, build_id, next_token=next_token)
+    api_response = api_instance.get_application_secret_requests(application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_build_logs_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application_secret_requests: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **build_id** | **str**| buildId | 
- **next_token** | **str**| nextToken | [optional] 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**TokenPaginatedResponseLogEvent**](TokenPaginatedResponseLogEvent.md)
+[**list[ComCapillaryOpsDeployerBoApplicationSecretRequest]**](ComCapillaryOpsDeployerBoApplicationSecretRequest.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1808,10 +1522,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_build_using_get**
-> Build get_build_using_get(application_family, application_id, build_id)
+# **get_application_secrets**
+> list[ComCapillaryOpsDeployerBoApplicationSecretSecretName] get_application_secrets(application_family, environment, application_id)
 
-getBuild
+
 
 ### Example
 ```python
@@ -1820,40 +1534,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-build_id = 'build_id_example' # str | buildId
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # getBuild
-    api_response = api_instance.get_build_using_get(application_family, application_id, build_id)
+    api_response = api_instance.get_application_secrets(application_family, environment, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_build_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application_secrets: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **build_id** | **str**| buildId | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**Build**](Build.md)
+[**list[ComCapillaryOpsDeployerBoApplicationSecretSecretName]**](ComCapillaryOpsDeployerBoApplicationSecretSecretName.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1862,10 +1575,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_builds_using_get**
-> list[Build] get_builds_using_get(application_family, application_id)
+# **get_application_tags**
+> list[str] get_application_tags(application_family, application_id)
 
-getBuilds
+
 
 ### Example
 ```python
@@ -1874,38 +1587,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # getBuilds
-    api_response = api_instance.get_builds_using_get(application_family, application_id)
+    api_response = api_instance.get_application_tags(application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_builds_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application_tags: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**list[Build]**](Build.md)
+**list[str]**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -1914,60 +1626,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_cc_environment_meta_data_using_get**
-> list[EnvironmentMetaData] get_cc_environment_meta_data_using_get(application_family)
+# **get_application_types**
+> list[str] get_application_types()
 
-getCCEnvironmentMetaData
 
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-
-try:
-    # getCCEnvironmentMetaData
-    api_response = api_instance.get_cc_environment_meta_data_using_get(application_family)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_cc_environment_meta_data_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
-
-### Return type
-
-[**list[EnvironmentMetaData]**](EnvironmentMetaData.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_current_deployment_using_get**
-> Deployment get_current_deployment_using_get(application_family, application_id, environment)
-
-getCurrentDeployment
 
 ### Example
 ```python
@@ -1976,40 +1638,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
 
 try:
-    # getCurrentDeployment
-    api_response = api_instance.get_current_deployment_using_get(application_family, application_id, environment)
+    api_response = api_instance.get_application_types()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_current_deployment_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_application_types: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**Deployment**](Deployment.md)
+**list[str]**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2018,10 +1671,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_deployment_status_using_get**
-> DeploymentStatusDetails get_deployment_status_using_get(application_family, application_id, environment)
+# **get_applications**
+> list[ComCapillaryOpsDeployerBoApplication] get_applications(application_family)
 
-getDeploymentStatus
+
 
 ### Example
 ```python
@@ -2030,40 +1683,35 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
 
 try:
-    # getDeploymentStatus
-    api_response = api_instance.get_deployment_status_using_get(application_family, application_id, environment)
+    api_response = api_instance.get_applications(application_family)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_deployment_status_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_applications: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
 
 ### Return type
 
-[**DeploymentStatusDetails**](DeploymentStatusDetails.md)
+[**list[ComCapillaryOpsDeployerBoApplication]**](ComCapillaryOpsDeployerBoApplication.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2072,10 +1720,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_dump_file_list_using_get**
-> dict(str, str) get_dump_file_list_using_get(application_family, application_id, environment, _date=_date)
+# **get_build**
+> ComCapillaryOpsDeployerBoBuild get_build(application_family, application_id, build_id)
 
-getDumpFileList
+
 
 ### Example
 ```python
@@ -2084,34 +1732,347 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-_date = '_date_example' # str | date (optional)
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+build_id = 'build_id_example' # str | 
 
 try:
-    # getDumpFileList
-    api_response = api_instance.get_dump_file_list_using_get(application_family, application_id, environment, _date=_date)
+    api_response = api_instance.get_build(application_family, application_id, build_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_dump_file_list_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_build: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
- **_date** | **str**| date | [optional] 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **build_id** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoBuild**](ComCapillaryOpsDeployerBoBuild.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_build_logs**
+> ComCapillaryOpsDeployerBoTokenPaginatedResponseComCapillaryOpsDeployerBoLogEvent get_build_logs(application_family, application_id, build_id, next_token=next_token)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+build_id = 'build_id_example' # str | 
+next_token = 'next_token_example' # str |  (optional)
+
+try:
+    api_response = api_instance.get_build_logs(application_family, application_id, build_id, next_token=next_token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_build_logs: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **build_id** | **str**|  | 
+ **next_token** | **str**|  | [optional] 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoTokenPaginatedResponseComCapillaryOpsDeployerBoLogEvent**](ComCapillaryOpsDeployerBoTokenPaginatedResponseComCapillaryOpsDeployerBoLogEvent.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_builds**
+> list[ComCapillaryOpsDeployerBoBuild] get_builds(application_family, application_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+
+try:
+    api_response = api_instance.get_builds(application_family, application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_builds: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+
+### Return type
+
+[**list[ComCapillaryOpsDeployerBoBuild]**](ComCapillaryOpsDeployerBoBuild.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_cc_environment_meta_data**
+> list[ComCapillaryOpsDeployerBoEnvironmentMetaData] get_cc_environment_meta_data(application_family)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+
+try:
+    api_response = api_instance.get_cc_environment_meta_data(application_family)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_cc_environment_meta_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+
+### Return type
+
+[**list[ComCapillaryOpsDeployerBoEnvironmentMetaData]**](ComCapillaryOpsDeployerBoEnvironmentMetaData.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_current_deployment**
+> ComCapillaryOpsDeployerBoDeployment get_current_deployment(application_family, application_id, environment)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
+
+try:
+    api_response = api_instance.get_current_deployment(application_family, application_id, environment)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_current_deployment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoDeployment**](ComCapillaryOpsDeployerBoDeployment.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_deployment_status**
+> ComCapillaryOpsDeployerBoDeploymentStatusDetails get_deployment_status(application_family, environment, application_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
+
+try:
+    api_response = api_instance.get_deployment_status(application_family, environment, application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_deployment_status: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoDeploymentStatusDetails**](ComCapillaryOpsDeployerBoDeploymentStatusDetails.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_dump_file_list**
+> dict(str, str) get_dump_file_list(application_family, environment, application_id, _date=_date)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
+_date = '_date_example' # str |  (optional)
+
+try:
+    api_response = api_instance.get_dump_file_list(application_family, environment, application_id, _date=_date)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_dump_file_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
+ **_date** | **str**|  | [optional] 
 
 ### Return type
 
@@ -2119,7 +2080,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2128,10 +2089,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ecr_token_using_get**
-> object get_ecr_token_using_get(host)
+# **get_ecr_token**
+> object get_ecr_token(host)
 
-getEcrToken
+
 
 ### Example
 ```python
@@ -2140,28 +2101,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-host = 'host_example' # str | Host
+host = 'host_example' # str | 
 
 try:
-    # getEcrToken
-    api_response = api_instance.get_ecr_token_using_get(host)
+    api_response = api_instance.get_ecr_token(host)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_ecr_token_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_ecr_token: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **host** | **str**| Host | 
+ **host** | **str**|  | 
 
 ### Return type
 
@@ -2169,7 +2129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2178,60 +2138,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_environment_meta_data_using_get**
-> list[EnvironmentMetaData] get_environment_meta_data_using_get(application_family)
+# **get_environment**
+> ComCapillaryOpsDeployerBoEnvironment get_environment(application_family, id)
 
-getEnvironmentMetaData
 
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-
-try:
-    # getEnvironmentMetaData
-    api_response = api_instance.get_environment_meta_data_using_get(application_family)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_environment_meta_data_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
-
-### Return type
-
-[**list[EnvironmentMetaData]**](EnvironmentMetaData.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_environment_using_get**
-> Environment get_environment_using_get(application_family, id)
-
-getEnvironment
 
 ### Example
 ```python
@@ -2240,140 +2150,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-id = 'id_example' # str | id
+application_family = 'application_family_example' # str | 
+id = 'id_example' # str | 
 
 try:
-    # getEnvironment
-    api_response = api_instance.get_environment_using_get(application_family, id)
+    api_response = api_instance.get_environment(application_family, id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_environment_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_environment: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **id** | **str**| id | 
+ **application_family** | **str**|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
-[**Environment**](Environment.md)
+[**ComCapillaryOpsDeployerBoEnvironment**](ComCapillaryOpsDeployerBoEnvironment.md)
 
 ### Authorization
 
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_environments_using_get**
-> list[Environment] get_environments_using_get(application_family)
-
-getEnvironments
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-
-try:
-    # getEnvironments
-    api_response = api_instance.get_environments_using_get(application_family)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_environments_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
-
-### Return type
-
-[**list[Environment]**](Environment.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_executed_actions_for_application_using_get**
-> list[ActionExecution] get_executed_actions_for_application_using_get(application_family, application_id)
-
-getExecutedActionsForApplication
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-
-try:
-    # getExecutedActionsForApplication
-    api_response = api_instance.get_executed_actions_for_application_using_get(application_family, application_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_executed_actions_for_application_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
-
-### Return type
-
-[**list[ActionExecution]**](ActionExecution.md)
-
-### Authorization
-
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2382,10 +2189,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_images_using_get**
-> list[str] get_images_using_get(application_family, application_id)
+# **get_environment_meta_data**
+> list[ComCapillaryOpsDeployerBoEnvironmentMetaData] get_environment_meta_data(application_family)
 
-getImages
+
 
 ### Example
 ```python
@@ -2394,30 +2201,178 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
+application_family = 'application_family_example' # str | 
 
 try:
-    # getImages
-    api_response = api_instance.get_images_using_get(application_family, application_id)
+    api_response = api_instance.get_environment_meta_data(application_family)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_images_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_environment_meta_data: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
+ **application_family** | **str**|  | 
+
+### Return type
+
+[**list[ComCapillaryOpsDeployerBoEnvironmentMetaData]**](ComCapillaryOpsDeployerBoEnvironmentMetaData.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_environments**
+> list[ComCapillaryOpsDeployerBoEnvironment] get_environments(application_family)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+
+try:
+    api_response = api_instance.get_environments(application_family)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_environments: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+
+### Return type
+
+[**list[ComCapillaryOpsDeployerBoEnvironment]**](ComCapillaryOpsDeployerBoEnvironment.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_executed_actions_for_application**
+> list[ComCapillaryOpsDeployerBoActionsActionExecution] get_executed_actions_for_application(application_family, application_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+
+try:
+    api_response = api_instance.get_executed_actions_for_application(application_family, application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_executed_actions_for_application: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+
+### Return type
+
+[**list[ComCapillaryOpsDeployerBoActionsActionExecution]**](ComCapillaryOpsDeployerBoActionsActionExecution.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_images**
+> list[str] get_images(application_family, application_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+
+try:
+    api_response = api_instance.get_images(application_family, application_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->get_images: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
@@ -2425,7 +2380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2434,10 +2389,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_monitoring_details_using_get**
-> Monitoring get_monitoring_details_using_get(application_family, application_id, environment)
+# **get_monitoring_details**
+> ComCapillaryOpsDeployerBoMonitoring get_monitoring_details(application_family, application_id, environment)
 
-getMonitoringDetails
+
 
 ### Example
 ```python
@@ -2446,40 +2401,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # getMonitoringDetails
-    api_response = api_instance.get_monitoring_details_using_get(application_family, application_id, environment)
+    api_response = api_instance.get_monitoring_details(application_family, application_id, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_monitoring_details_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_monitoring_details: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
-[**Monitoring**](Monitoring.md)
+[**ComCapillaryOpsDeployerBoMonitoring**](ComCapillaryOpsDeployerBoMonitoring.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2488,10 +2442,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_test_build_details_using_get**
-> TestBuildDetails get_test_build_details_using_get(application_family, application_id, build_id)
+# **get_test_build_details**
+> ComCapillaryOpsDeployerBoTestBuildDetails get_test_build_details(application_family, application_id, build_id)
 
-getTestBuildDetails
+
 
 ### Example
 ```python
@@ -2500,40 +2454,39 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-build_id = 'build_id_example' # str | buildId
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+build_id = 'build_id_example' # str | 
 
 try:
-    # getTestBuildDetails
-    api_response = api_instance.get_test_build_details_using_get(application_family, application_id, build_id)
+    api_response = api_instance.get_test_build_details(application_family, application_id, build_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_test_build_details_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_test_build_details: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **build_id** | **str**| buildId | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **build_id** | **str**|  | 
 
 ### Return type
 
-[**TestBuildDetails**](TestBuildDetails.md)
+[**ComCapillaryOpsDeployerBoTestBuildDetails**](ComCapillaryOpsDeployerBoTestBuildDetails.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2542,10 +2495,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_users_using_get**
-> list[User] get_users_using_get()
+# **get_users**
+> list[ComCapillaryOpsDeployerBoUser] get_users()
 
-getUsers
+
 
 ### Example
 ```python
@@ -2554,7 +2507,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2563,11 +2516,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getUsers
-    api_response = api_instance.get_users_using_get()
+    api_response = api_instance.get_users()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->get_users_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->get_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -2575,11 +2527,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[User]**](User.md)
+[**list[ComCapillaryOpsDeployerBoUser]**](ComCapillaryOpsDeployerBoUser.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2588,10 +2540,10 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **global_stats_using_get**
-> GlobalStats global_stats_using_get()
+# **global_stats**
+> ComCapillaryOpsDeployerBoGlobalStats global_stats()
 
-globalStats
+
 
 ### Example
 ```python
@@ -2600,7 +2552,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2609,11 +2561,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # globalStats
-    api_response = api_instance.global_stats_using_get()
+    api_response = api_instance.global_stats()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->global_stats_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->global_stats: %s\n" % e)
 ```
 
 ### Parameters
@@ -2621,23 +2572,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GlobalStats**](GlobalStats.md)
+[**ComCapillaryOpsDeployerBoGlobalStats**](ComCapillaryOpsDeployerBoGlobalStats.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **halt_application_using_post**
-> bool halt_application_using_post(application_family, application_id, environment)
+# **halt_application**
+> bool halt_application(application_family, application_id, environment)
 
-haltApplication
+
 
 ### Example
 ```python
@@ -2646,32 +2597,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # haltApplication
-    api_response = api_instance.halt_application_using_post(application_family, application_id, environment)
+    api_response = api_instance.halt_application(application_family, application_id, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->halt_application_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->halt_application: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
@@ -2679,7 +2629,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -2688,10 +2638,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **login_using_delete**
-> str login_using_delete()
+# **login**
+> str login()
 
-login
+
 
 ### Example
 ```python
@@ -2700,7 +2650,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2709,11 +2659,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # login
-    api_response = api_instance.login_using_delete()
+    api_response = api_instance.login()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->login_using_delete: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->login: %s\n" % e)
 ```
 
 ### Parameters
@@ -2725,19 +2674,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **login_using_get**
-> str login_using_get()
+# **login1**
+> str login1()
 
-login
+
 
 ### Example
 ```python
@@ -2746,7 +2695,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2755,11 +2704,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # login
-    api_response = api_instance.login_using_get()
+    api_response = api_instance.login1()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->login_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->login1: %s\n" % e)
 ```
 
 ### Parameters
@@ -2771,19 +2719,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **login_using_head**
-> str login_using_head()
+# **login2**
+> str login2()
 
-login
+
 
 ### Example
 ```python
@@ -2792,7 +2740,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2801,11 +2749,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # login
-    api_response = api_instance.login_using_head()
+    api_response = api_instance.login2()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->login_using_head: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->login2: %s\n" % e)
 ```
 
 ### Parameters
@@ -2817,19 +2764,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **login_using_options**
-> str login_using_options()
+# **login3**
+> str login3()
 
-login
+
 
 ### Example
 ```python
@@ -2838,7 +2785,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2847,11 +2794,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # login
-    api_response = api_instance.login_using_options()
+    api_response = api_instance.login3()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->login_using_options: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->login3: %s\n" % e)
 ```
 
 ### Parameters
@@ -2863,19 +2809,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **login_using_patch**
-> str login_using_patch()
+# **login4**
+> str login4()
 
-login
+
 
 ### Example
 ```python
@@ -2884,7 +2830,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2893,11 +2839,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # login
-    api_response = api_instance.login_using_patch()
+    api_response = api_instance.login4()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->login_using_patch: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->login4: %s\n" % e)
 ```
 
 ### Parameters
@@ -2909,19 +2854,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **login_using_post**
-> str login_using_post()
+# **login5**
+> str login5()
 
-login
+
 
 ### Example
 ```python
@@ -2930,7 +2875,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2939,11 +2884,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # login
-    api_response = api_instance.login_using_post()
+    api_response = api_instance.login5()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->login_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->login5: %s\n" % e)
 ```
 
 ### Parameters
@@ -2955,19 +2899,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **login_using_put**
-> str login_using_put()
+# **login6**
+> str login6()
 
-login
+
 
 ### Example
 ```python
@@ -2976,7 +2920,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -2985,11 +2929,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # login
-    api_response = api_instance.login_using_put()
+    api_response = api_instance.login6()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->login_using_put: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->login6: %s\n" % e)
 ```
 
 ### Parameters
@@ -3001,19 +2944,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **me_using_get**
-> SimpleOauth2User me_using_get()
+# **me**
+> ComCapillaryOpsDeployerServiceOAuth2UserServiceImplSimpleOauth2User me()
 
-me
+
 
 ### Example
 ```python
@@ -3022,7 +2965,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -3031,11 +2974,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # me
-    api_response = api_instance.me_using_get()
+    api_response = api_instance.me()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->me_using_get: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->me: %s\n" % e)
 ```
 
 ### Parameters
@@ -3043,23 +2985,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SimpleOauth2User**](SimpleOauth2User.md)
+[**ComCapillaryOpsDeployerServiceOAuth2UserServiceImplSimpleOauth2User**](ComCapillaryOpsDeployerServiceOAuth2UserServiceImplSimpleOauth2User.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **process_webhook_pr_bitbucket_using_post**
-> object process_webhook_pr_bitbucket_using_post(body, host, x_event_key, application_family, application_id)
+# **process_webhook_pr_bitbucket**
+> object process_webhook_pr_bitbucket(body, x_event_key, host, application_family, application_id)
 
-processWebhookPRBitbucket
+
 
 ### Example
 ```python
@@ -3068,36 +3010,35 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.BitbucketPREvent() # BitbucketPREvent | webhook
-host = 'host_example' # str | Host
-x_event_key = 'x_event_key_example' # str | X-Event-Key
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
+body = swagger_client.ComCapillaryOpsDeployerBoWebhookBitbucketBitbucketPREvent() # ComCapillaryOpsDeployerBoWebhookBitbucketBitbucketPREvent | 
+x_event_key = 'x_event_key_example' # str | 
+host = 'host_example' # str | 
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # processWebhookPRBitbucket
-    api_response = api_instance.process_webhook_pr_bitbucket_using_post(body, host, x_event_key, application_family, application_id)
+    api_response = api_instance.process_webhook_pr_bitbucket(body, x_event_key, host, application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->process_webhook_pr_bitbucket_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->process_webhook_pr_bitbucket: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BitbucketPREvent**](BitbucketPREvent.md)| webhook | 
- **host** | **str**| Host | 
- **x_event_key** | **str**| X-Event-Key | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
+ **body** | [**ComCapillaryOpsDeployerBoWebhookBitbucketBitbucketPREvent**](ComCapillaryOpsDeployerBoWebhookBitbucketBitbucketPREvent.md)|  | 
+ **x_event_key** | **str**|  | 
+ **host** | **str**|  | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
@@ -3105,7 +3046,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3114,10 +3055,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **process_webhook_pr_github_using_post**
-> object process_webhook_pr_github_using_post(body, host, application_family, application_id)
+# **process_webhook_pr_github**
+> object process_webhook_pr_github(body, host, application_family, application_id)
 
-processWebhookPRGithub
+
 
 ### Example
 ```python
@@ -3126,34 +3067,33 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GithubPREvent() # GithubPREvent | webhook
-host = 'host_example' # str | Host
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
+body = swagger_client.ComCapillaryOpsDeployerBoWebhookGithubGithubPREvent() # ComCapillaryOpsDeployerBoWebhookGithubGithubPREvent | 
+host = 'host_example' # str | 
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # processWebhookPRGithub
-    api_response = api_instance.process_webhook_pr_github_using_post(body, host, application_family, application_id)
+    api_response = api_instance.process_webhook_pr_github(body, host, application_family, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->process_webhook_pr_github_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->process_webhook_pr_github: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GithubPREvent**](GithubPREvent.md)| webhook | 
- **host** | **str**| Host | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
+ **body** | [**ComCapillaryOpsDeployerBoWebhookGithubGithubPREvent**](ComCapillaryOpsDeployerBoWebhookGithubGithubPREvent.md)|  | 
+ **host** | **str**|  | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
@@ -3161,7 +3101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3170,10 +3110,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **redeploy_using_post**
-> dict(str, bool) redeploy_using_post(application_family, environment)
+# **redeploy**
+> dict(str, bool) redeploy(application_family, environment)
 
-redeploy
+
 
 ### Example
 ```python
@@ -3182,30 +3122,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # redeploy
-    api_response = api_instance.redeploy_using_post(application_family, environment)
+    api_response = api_instance.redeploy(application_family, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->redeploy_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->redeploy: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
@@ -3213,7 +3152,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3222,10 +3161,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **refresh_build_details_using_put**
-> bool refresh_build_details_using_put(code_build_id)
+# **refresh_build_details**
+> bool refresh_build_details(code_build_id)
 
-refreshBuildDetails
+
 
 ### Example
 ```python
@@ -3234,28 +3173,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-code_build_id = 'code_build_id_example' # str | codeBuildId
+code_build_id = 'code_build_id_example' # str | 
 
 try:
-    # refreshBuildDetails
-    api_response = api_instance.refresh_build_details_using_put(code_build_id)
+    api_response = api_instance.refresh_build_details(code_build_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->refresh_build_details_using_put: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->refresh_build_details: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **code_build_id** | **str**| codeBuildId | 
+ **code_build_id** | **str**|  | 
 
 ### Return type
 
@@ -3263,7 +3201,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3272,10 +3210,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **resume_application_using_post**
-> bool resume_application_using_post(application_family, application_id, environment)
+# **resume_application**
+> bool resume_application(application_family, application_id, environment)
 
-resumeApplication
+
 
 ### Example
 ```python
@@ -3284,32 +3222,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+environment = 'environment_example' # str | 
 
 try:
-    # resumeApplication
-    api_response = api_instance.resume_application_using_post(application_family, application_id, environment)
+    api_response = api_instance.resume_application(application_family, application_id, environment)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->resume_application_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->resume_application: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **environment** | **str**|  | 
 
 ### Return type
 
@@ -3317,7 +3254,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3326,66 +3263,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_application_secrets_using_put**
-> list[ApplicationSecret] update_application_secrets_using_put(body, application_family, application_id, environment)
+# **update_application**
+> ComCapillaryOpsDeployerBoApplication update_application(body, application_family)
 
-updateApplicationSecrets
 
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ApplicationSecret()] # list[ApplicationSecret] | applicationSecrets
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-environment = 'environment_example' # str | environment
-
-try:
-    # updateApplicationSecrets
-    api_response = api_instance.update_application_secrets_using_put(body, application_family, application_id, environment)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->update_application_secrets_using_put: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**list[ApplicationSecret]**](ApplicationSecret.md)| applicationSecrets | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **environment** | **str**| environment | 
-
-### Return type
-
-[**list[ApplicationSecret]**](ApplicationSecret.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_application_using_put**
-> Application update_application_using_put(body, application_family)
-
-updateApplication
 
 ### Example
 ```python
@@ -3394,38 +3275,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Application() # Application | application
-application_family = 'application_family_example' # str | applicationFamily
+body = swagger_client.ComCapillaryOpsDeployerBoApplication() # ComCapillaryOpsDeployerBoApplication | 
+application_family = 'application_family_example' # str | 
 
 try:
-    # updateApplication
-    api_response = api_instance.update_application_using_put(body, application_family)
+    api_response = api_instance.update_application(body, application_family)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->update_application_using_put: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->update_application: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Application**](Application.md)| application | 
- **application_family** | **str**| applicationFamily | 
+ **body** | [**ComCapillaryOpsDeployerBoApplication**](ComCapillaryOpsDeployerBoApplication.md)|  | 
+ **application_family** | **str**|  | 
 
 ### Return type
 
-[**Application**](Application.md)
+[**ComCapillaryOpsDeployerBoApplication**](ComCapillaryOpsDeployerBoApplication.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3434,10 +3314,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_build_using_put**
-> Build update_build_using_put(body, application_family, application_id, build_id)
+# **update_application_secrets**
+> list[ComCapillaryOpsDeployerBoApplicationSecretSecretName] update_application_secrets(body, application_family, environment, application_id)
 
-updateBuild
+
 
 ### Example
 ```python
@@ -3446,42 +3326,41 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Build() # Build | build
-application_family = 'application_family_example' # str | applicationFamily
-application_id = 'application_id_example' # str | applicationId
-build_id = 'build_id_example' # str | buildId
+body = [swagger_client.ComCapillaryOpsDeployerBoApplicationSecretSecretName()] # list[ComCapillaryOpsDeployerBoApplicationSecretSecretName] | 
+application_family = 'application_family_example' # str | 
+environment = 'environment_example' # str | 
+application_id = 'application_id_example' # str | 
 
 try:
-    # updateBuild
-    api_response = api_instance.update_build_using_put(body, application_family, application_id, build_id)
+    api_response = api_instance.update_application_secrets(body, application_family, environment, application_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->update_build_using_put: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->update_application_secrets: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Build**](Build.md)| build | 
- **application_family** | **str**| applicationFamily | 
- **application_id** | **str**| applicationId | 
- **build_id** | **str**| buildId | 
+ **body** | [**list[ComCapillaryOpsDeployerBoApplicationSecretSecretName]**](ComCapillaryOpsDeployerBoApplicationSecretSecretName.md)|  | 
+ **application_family** | **str**|  | 
+ **environment** | **str**|  | 
+ **application_id** | **str**|  | 
 
 ### Return type
 
-[**Build**](Build.md)
+[**list[ComCapillaryOpsDeployerBoApplicationSecretSecretName]**](ComCapillaryOpsDeployerBoApplicationSecretSecretName.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3490,10 +3369,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_user_using_put**
-> User update_user_using_put(body, user_id)
+# **update_build**
+> ComCapillaryOpsDeployerBoBuild update_build(body, application_family, application_id, build_id)
 
-updateUser
+
 
 ### Example
 ```python
@@ -3502,38 +3381,41 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.User() # User | user
-user_id = 'user_id_example' # str | userId
+body = swagger_client.ComCapillaryOpsDeployerBoBuild() # ComCapillaryOpsDeployerBoBuild | 
+application_family = 'application_family_example' # str | 
+application_id = 'application_id_example' # str | 
+build_id = 'build_id_example' # str | 
 
 try:
-    # updateUser
-    api_response = api_instance.update_user_using_put(body, user_id)
+    api_response = api_instance.update_build(body, application_family, application_id, build_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->update_user_using_put: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->update_build: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)| user | 
- **user_id** | **str**| userId | 
+ **body** | [**ComCapillaryOpsDeployerBoBuild**](ComCapillaryOpsDeployerBoBuild.md)|  | 
+ **application_family** | **str**|  | 
+ **application_id** | **str**|  | 
+ **build_id** | **str**|  | 
 
 ### Return type
 
-[**User**](User.md)
+[**ComCapillaryOpsDeployerBoBuild**](ComCapillaryOpsDeployerBoBuild.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -3542,10 +3424,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upsert_application_family_metadata_using_post**
-> ApplicationFamilyMetadata upsert_application_family_metadata_using_post(body, application_family)
+# **update_user**
+> ComCapillaryOpsDeployerBoUser update_user(body, user_id)
 
-upsertApplicationFamilyMetadata
+
 
 ### Example
 ```python
@@ -3554,50 +3436,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ApplicationFamilyMetadata() # ApplicationFamilyMetadata | applicationFamilyMetadata
-application_family = 'application_family_example' # str | applicationFamily
+body = swagger_client.ComCapillaryOpsDeployerBoUser() # ComCapillaryOpsDeployerBoUser | 
+user_id = 'user_id_example' # str | 
 
 try:
-    # upsertApplicationFamilyMetadata
-    api_response = api_instance.upsert_application_family_metadata_using_post(body, application_family)
+    api_response = api_instance.update_user(body, user_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->upsert_application_family_metadata_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->update_user: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApplicationFamilyMetadata**](ApplicationFamilyMetadata.md)| applicationFamilyMetadata | 
- **application_family** | **str**| applicationFamily | 
+ **body** | [**ComCapillaryOpsDeployerBoUser**](ComCapillaryOpsDeployerBoUser.md)|  | 
+ **user_id** | **str**|  | 
 
 ### Return type
 
-[**ApplicationFamilyMetadata**](ApplicationFamilyMetadata.md)
+[**ComCapillaryOpsDeployerBoUser**](ComCapillaryOpsDeployerBoUser.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upsert_environment_using_post**
-> Environment upsert_environment_using_post(body, application_family)
+# **upsert_application_family_metadata**
+> ComCapillaryOpsDeployerBoApplicationFamilyMetadata upsert_application_family_metadata(body, application_family)
 
-upsertEnvironment
+
 
 ### Example
 ```python
@@ -3606,43 +3487,93 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Environment() # Environment | environment
-application_family = 'application_family_example' # str | applicationFamily
+body = swagger_client.ComCapillaryOpsDeployerBoApplicationFamilyMetadata() # ComCapillaryOpsDeployerBoApplicationFamilyMetadata | 
+application_family = 'application_family_example' # str | 
 
 try:
-    # upsertEnvironment
-    api_response = api_instance.upsert_environment_using_post(body, application_family)
+    api_response = api_instance.upsert_application_family_metadata(body, application_family)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ApplicationControllerApi->upsert_environment_using_post: %s\n" % e)
+    print("Exception when calling ApplicationControllerApi->upsert_application_family_metadata: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Environment**](Environment.md)| environment | 
- **application_family** | **str**| applicationFamily | 
+ **body** | [**ComCapillaryOpsDeployerBoApplicationFamilyMetadata**](ComCapillaryOpsDeployerBoApplicationFamilyMetadata.md)|  | 
+ **application_family** | **str**|  | 
 
 ### Return type
 
-[**Environment**](Environment.md)
+[**ComCapillaryOpsDeployerBoApplicationFamilyMetadata**](ComCapillaryOpsDeployerBoApplicationFamilyMetadata.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upsert_environment**
+> ComCapillaryOpsDeployerBoEnvironment upsert_environment(body, application_family)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.ApplicationControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.ComCapillaryOpsDeployerBoEnvironment() # ComCapillaryOpsDeployerBoEnvironment | 
+application_family = 'application_family_example' # str | 
+
+try:
+    api_response = api_instance.upsert_environment(body, application_family)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationControllerApi->upsert_environment: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ComCapillaryOpsDeployerBoEnvironment**](ComCapillaryOpsDeployerBoEnvironment.md)|  | 
+ **application_family** | **str**|  | 
+
+### Return type
+
+[**ComCapillaryOpsDeployerBoEnvironment**](ComCapillaryOpsDeployerBoEnvironment.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

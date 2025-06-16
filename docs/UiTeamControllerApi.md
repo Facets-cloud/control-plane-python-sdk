@@ -1,19 +1,19 @@
 # swagger_client.UiTeamControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_team_members_using_post**](UiTeamControllerApi.md#add_team_members_using_post) | **POST** /cc-ui/v1/teams/{teamId}/members | addTeamMembers
-[**get_team_members_using_get**](UiTeamControllerApi.md#get_team_members_using_get) | **GET** /cc-ui/v1/teams/{teamId}/members | getTeamMembers
-[**get_team_using_get**](UiTeamControllerApi.md#get_team_using_get) | **GET** /cc-ui/v1/teams/{teamId} | getTeam
-[**get_teams_using_get**](UiTeamControllerApi.md#get_teams_using_get) | **GET** /cc-ui/v1/teams/ | getTeams
-[**upsert_team_using_post**](UiTeamControllerApi.md#upsert_team_using_post) | **POST** /cc-ui/v1/teams/ | upsertTeam
+[**add_team_members**](UiTeamControllerApi.md#add_team_members) | **POST** /cc-ui/v1/teams/{teamId}/members | 
+[**get_team**](UiTeamControllerApi.md#get_team) | **GET** /cc-ui/v1/teams/{teamId} | 
+[**get_team_members**](UiTeamControllerApi.md#get_team_members) | **GET** /cc-ui/v1/teams/{teamId}/members | 
+[**get_teams**](UiTeamControllerApi.md#get_teams) | **GET** /cc-ui/v1/teams/ | 
+[**upsert_team**](UiTeamControllerApi.md#upsert_team) | **POST** /cc-ui/v1/teams/ | 
 
-# **add_team_members_using_post**
-> list[TeamMembership] add_team_members_using_post(body, team_id)
+# **add_team_members**
+> list[ComCapillaryOpsCpBoTeamMembership] add_team_members(body, team_id)
 
-addTeamMembers
+
 
 ### Example
 ```python
@@ -22,50 +22,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTeamControllerApi(swagger_client.ApiClient(configuration))
-body = ['body_example'] # list[str] | userNames
-team_id = 'team_id_example' # str | teamId
+body = ['body_example'] # list[str] | 
+team_id = 'team_id_example' # str | 
 
 try:
-    # addTeamMembers
-    api_response = api_instance.add_team_members_using_post(body, team_id)
+    api_response = api_instance.add_team_members(body, team_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTeamControllerApi->add_team_members_using_post: %s\n" % e)
+    print("Exception when calling UiTeamControllerApi->add_team_members: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[str]**](str.md)| userNames | 
- **team_id** | **str**| teamId | 
+ **body** | [**list[str]**](str.md)|  | 
+ **team_id** | **str**|  | 
 
 ### Return type
 
-[**list[TeamMembership]**](TeamMembership.md)
+[**list[ComCapillaryOpsCpBoTeamMembership]**](ComCapillaryOpsCpBoTeamMembership.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_team_members_using_get**
-> list[TeamMembership] get_team_members_using_get(team_id)
+# **get_team**
+> ComCapillaryOpsCpBoTeam get_team(team_id)
 
-getTeamMembers
+
 
 ### Example
 ```python
@@ -74,48 +73,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTeamControllerApi(swagger_client.ApiClient(configuration))
-team_id = 'team_id_example' # str | teamId
+team_id = 'team_id_example' # str | 
 
 try:
-    # getTeamMembers
-    api_response = api_instance.get_team_members_using_get(team_id)
+    api_response = api_instance.get_team(team_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTeamControllerApi->get_team_members_using_get: %s\n" % e)
+    print("Exception when calling UiTeamControllerApi->get_team: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team_id** | **str**| teamId | 
+ **team_id** | **str**|  | 
 
 ### Return type
 
-[**list[TeamMembership]**](TeamMembership.md)
+[**ComCapillaryOpsCpBoTeam**](ComCapillaryOpsCpBoTeam.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_team_using_get**
-> Team get_team_using_get(team_id)
+# **get_team_members**
+> list[ComCapillaryOpsCpBoTeamMembership] get_team_members(team_id)
 
-getTeam
+
 
 ### Example
 ```python
@@ -124,48 +122,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTeamControllerApi(swagger_client.ApiClient(configuration))
-team_id = 'team_id_example' # str | teamId
+team_id = 'team_id_example' # str | 
 
 try:
-    # getTeam
-    api_response = api_instance.get_team_using_get(team_id)
+    api_response = api_instance.get_team_members(team_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTeamControllerApi->get_team_using_get: %s\n" % e)
+    print("Exception when calling UiTeamControllerApi->get_team_members: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **team_id** | **str**| teamId | 
+ **team_id** | **str**|  | 
 
 ### Return type
 
-[**Team**](Team.md)
+[**list[ComCapillaryOpsCpBoTeamMembership]**](ComCapillaryOpsCpBoTeamMembership.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_teams_using_get**
-> list[Team] get_teams_using_get()
+# **get_teams**
+> list[ComCapillaryOpsCpBoTeam] get_teams()
 
-getTeams
+
 
 ### Example
 ```python
@@ -174,7 +171,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -183,11 +180,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiTeamControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getTeams
-    api_response = api_instance.get_teams_using_get()
+    api_response = api_instance.get_teams()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTeamControllerApi->get_teams_using_get: %s\n" % e)
+    print("Exception when calling UiTeamControllerApi->get_teams: %s\n" % e)
 ```
 
 ### Parameters
@@ -195,23 +191,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[Team]**](Team.md)
+[**list[ComCapillaryOpsCpBoTeam]**](ComCapillaryOpsCpBoTeam.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **upsert_team_using_post**
-> Team upsert_team_using_post(body)
+# **upsert_team**
+> ComCapillaryOpsCpBoTeam upsert_team(body)
 
-upsertTeam
+
 
 ### Example
 ```python
@@ -220,41 +216,40 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTeamControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.Team() # Team | team
+body = swagger_client.ComCapillaryOpsCpBoTeam() # ComCapillaryOpsCpBoTeam | 
 
 try:
-    # upsertTeam
-    api_response = api_instance.upsert_team_using_post(body)
+    api_response = api_instance.upsert_team(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTeamControllerApi->upsert_team_using_post: %s\n" % e)
+    print("Exception when calling UiTeamControllerApi->upsert_team: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Team**](Team.md)| team | 
+ **body** | [**ComCapillaryOpsCpBoTeam**](ComCapillaryOpsCpBoTeam.md)|  | 
 
 ### Return type
 
-[**Team**](Team.md)
+[**ComCapillaryOpsCpBoTeam**](ComCapillaryOpsCpBoTeam.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

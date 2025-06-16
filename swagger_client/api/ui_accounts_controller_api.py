@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiAccountsControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_aws_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createAwsAccount  # noqa: E501
+    def create_aws_account(self, body, **kwargs):  # noqa: E501
+        """create_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_aws_account_using_post(body, async_req=True)
+        >>> thread = api.create_aws_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsAccount body: awsAccountRequest (required)
-        :return: AwsAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_aws_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_aws_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_aws_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_aws_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_aws_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createAwsAccount  # noqa: E501
+    def create_aws_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_aws_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_aws_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsAccount body: awsAccountRequest (required)
-        :return: AwsAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_aws_account_using_post" % key
+                    " to method create_aws_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_aws_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_aws_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/aws/', 'POST',
@@ -121,7 +121,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AwsAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,38 +129,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_azure_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createAzureAccount  # noqa: E501
+    def create_azure_account(self, body, **kwargs):  # noqa: E501
+        """create_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_azure_account_using_post(body, async_req=True)
+        >>> thread = api.create_azure_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureAccount body: azureAccountRequest (required)
-        :return: AzureAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_azure_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_azure_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_azure_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_azure_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_azure_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createAzureAccount  # noqa: E501
+    def create_azure_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_azure_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_azure_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureAccount body: azureAccountRequest (required)
-        :return: AzureAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -176,14 +176,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_azure_account_using_post" % key
+                    " to method create_azure_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_azure_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_azure_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -201,14 +201,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/azure/', 'POST',
@@ -218,7 +218,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AzureAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -226,38 +226,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_bit_bucket_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createBitBucketAccount  # noqa: E501
+    def create_bit_bucket_account(self, body, **kwargs):  # noqa: E501
+        """create_bit_bucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_bit_bucket_account_using_post(body, async_req=True)
+        >>> thread = api.create_bit_bucket_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BitBucketAccount body: bitbucketAccountRequest (required)
-        :return: BitBucketAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_bit_bucket_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_bit_bucket_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_bit_bucket_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_bit_bucket_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_bit_bucket_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createBitBucketAccount  # noqa: E501
+    def create_bit_bucket_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_bit_bucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_bit_bucket_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_bit_bucket_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BitBucketAccount body: bitbucketAccountRequest (required)
-        :return: BitBucketAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -273,14 +273,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_bit_bucket_account_using_post" % key
+                    " to method create_bit_bucket_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_bit_bucket_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_bit_bucket_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -298,14 +298,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/bitbucket/', 'POST',
@@ -315,7 +315,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BitBucketAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -323,38 +323,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_coder_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createCoderAccount  # noqa: E501
+    def create_coder_account(self, body, **kwargs):  # noqa: E501
+        """create_coder_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_coder_account_using_post(body, async_req=True)
+        >>> thread = api.create_coder_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CoderAccount body: coderAccountRequest (required)
-        :return: CoderAccount
+        :param ComCapillaryOpsCpBoAccountsCoderCoderAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCoderCoderAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_coder_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_coder_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_coder_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_coder_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_coder_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createCoderAccount  # noqa: E501
+    def create_coder_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_coder_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_coder_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_coder_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CoderAccount body: coderAccountRequest (required)
-        :return: CoderAccount
+        :param ComCapillaryOpsCpBoAccountsCoderCoderAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCoderCoderAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -370,14 +370,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_coder_account_using_post" % key
+                    " to method create_coder_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_coder_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_coder_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -395,14 +395,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/coder/', 'POST',
@@ -412,7 +412,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CoderAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCoderCoderAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -420,38 +420,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_gcp_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createGcpAccount  # noqa: E501
+    def create_gcp_account(self, body, **kwargs):  # noqa: E501
+        """create_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_gcp_account_using_post(body, async_req=True)
+        >>> thread = api.create_gcp_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GcpAccount body: gcpAccountRequest (required)
-        :return: GcpAccount
+        :param ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_gcp_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_gcp_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_gcp_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_gcp_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_gcp_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createGcpAccount  # noqa: E501
+    def create_gcp_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_gcp_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_gcp_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GcpAccount body: gcpAccountRequest (required)
-        :return: GcpAccount
+        :param ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -467,14 +467,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_gcp_account_using_post" % key
+                    " to method create_gcp_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_gcp_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_gcp_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -492,14 +492,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/gcp/', 'POST',
@@ -509,7 +509,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GcpAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -517,38 +517,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_git_hub_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createGitHubAccount  # noqa: E501
+    def create_git_hub_account(self, body, **kwargs):  # noqa: E501
+        """create_git_hub_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_git_hub_account_using_post(body, async_req=True)
+        >>> thread = api.create_git_hub_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitHubAccount body: githubAccountRequest (required)
-        :return: GitHubAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_git_hub_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_git_hub_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_git_hub_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_git_hub_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_git_hub_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createGitHubAccount  # noqa: E501
+    def create_git_hub_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_git_hub_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_git_hub_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_git_hub_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitHubAccount body: githubAccountRequest (required)
-        :return: GitHubAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -564,14 +564,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_git_hub_account_using_post" % key
+                    " to method create_git_hub_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_git_hub_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_git_hub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -589,14 +589,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/github/', 'POST',
@@ -606,7 +606,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GitHubAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -614,38 +614,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_git_lab_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createGitLabAccount  # noqa: E501
+    def create_git_lab_account(self, body, **kwargs):  # noqa: E501
+        """create_git_lab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_git_lab_account_using_post(body, async_req=True)
+        >>> thread = api.create_git_lab_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitLabAccount body: gitlabAccountRequest (required)
-        :return: GitLabAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_git_lab_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_git_lab_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_git_lab_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_git_lab_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_git_lab_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createGitLabAccount  # noqa: E501
+    def create_git_lab_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_git_lab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_git_lab_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_git_lab_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitLabAccount body: gitlabAccountRequest (required)
-        :return: GitLabAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -661,14 +661,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_git_lab_account_using_post" % key
+                    " to method create_git_lab_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_git_lab_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_git_lab_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -686,14 +686,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/gitlab/', 'POST',
@@ -703,7 +703,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GitLabAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -711,38 +711,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_kubernetes_account_using_post(self, body, **kwargs):  # noqa: E501
-        """createKubernetesAccount  # noqa: E501
+    def create_kubernetes_account(self, body, **kwargs):  # noqa: E501
+        """create_kubernetes_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_kubernetes_account_using_post(body, async_req=True)
+        >>> thread = api.create_kubernetes_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KubernetesAccount body: k8sAccountRequest (required)
-        :return: KubernetesAccount
+        :param ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_kubernetes_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_kubernetes_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_kubernetes_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_kubernetes_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_kubernetes_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createKubernetesAccount  # noqa: E501
+    def create_kubernetes_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_kubernetes_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_kubernetes_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_kubernetes_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KubernetesAccount body: k8sAccountRequest (required)
-        :return: KubernetesAccount
+        :param ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -758,14 +758,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_kubernetes_account_using_post" % key
+                    " to method create_kubernetes_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_kubernetes_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_kubernetes_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -783,14 +783,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/kubernetes/', 'POST',
@@ -800,7 +800,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='KubernetesAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -808,37 +808,37 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_account_using_delete(self, id, **kwargs):  # noqa: E501
-        """deleteAccount  # noqa: E501
+    def delete_account(self, id, **kwargs):  # noqa: E501
+        """delete_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_account_using_delete(id, async_req=True)
+        >>> thread = api.delete_account(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_account_using_delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_account_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_account_using_delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_account_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_account_using_delete_with_http_info(self, id, **kwargs):  # noqa: E501
-        """deleteAccount  # noqa: E501
+    def delete_account_with_http_info(self, id, **kwargs):  # noqa: E501
+        """delete_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_account_using_delete_with_http_info(id, async_req=True)
+        >>> thread = api.delete_account_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -855,14 +855,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_account_using_delete" % key
+                    " to method delete_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete_account_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -880,10 +880,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/{id}', 'DELETE',
@@ -901,131 +901,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_account_by_name_using_get(self, name, **kwargs):  # noqa: E501
-        """getAccountByName  # noqa: E501
+    def get_account(self, id, **kwargs):  # noqa: E501
+        """get_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_account_by_name_using_get(name, async_req=True)
+        >>> thread = api.get_account(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: name (required)
-        :return: Account
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_account_by_name_using_get_with_http_info(name, **kwargs)  # noqa: E501
+            return self.get_account_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_account_by_name_using_get_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.get_account_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_account_by_name_using_get_with_http_info(self, name, **kwargs):  # noqa: E501
-        """getAccountByName  # noqa: E501
+    def get_account_with_http_info(self, id, **kwargs):  # noqa: E501
+        """get_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_account_by_name_using_get_with_http_info(name, async_req=True)
+        >>> thread = api.get_account_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: name (required)
-        :return: Account
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_account_by_name_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `get_account_by_name_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/accounts/name/{name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Account',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_account_using_get(self, id, **kwargs):  # noqa: E501
-        """getAccount  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_account_using_get(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str id: id (required)
-        :return: Account
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_account_using_get_with_http_info(id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_account_using_get_with_http_info(id, **kwargs)  # noqa: E501
-            return data
-
-    def get_account_using_get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """getAccount  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_account_using_get_with_http_info(id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str id: id (required)
-        :return: Account
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1041,14 +948,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_account_using_get" % key
+                    " to method get_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_account_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1066,10 +973,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/{id}', 'GET',
@@ -1079,7 +986,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Account',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1087,38 +994,131 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_accounts_by_type_using_get(self, type, **kwargs):  # noqa: E501
-        """getAccountsByType  # noqa: E501
+    def get_account_by_name(self, name, **kwargs):  # noqa: E501
+        """get_account_by_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_accounts_by_type_using_get(type, async_req=True)
+        >>> thread = api.get_account_by_name(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str type: type (required)
-        :return: list[Account]
+        :param str name: (required)
+        :return: ComCapillaryOpsCpBoAccountsAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_accounts_by_type_using_get_with_http_info(type, **kwargs)  # noqa: E501
+            return self.get_account_by_name_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_accounts_by_type_using_get_with_http_info(type, **kwargs)  # noqa: E501
+            (data) = self.get_account_by_name_with_http_info(name, **kwargs)  # noqa: E501
             return data
 
-    def get_accounts_by_type_using_get_with_http_info(self, type, **kwargs):  # noqa: E501
-        """getAccountsByType  # noqa: E501
+    def get_account_by_name_with_http_info(self, name, **kwargs):  # noqa: E501
+        """get_account_by_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_accounts_by_type_using_get_with_http_info(type, async_req=True)
+        >>> thread = api.get_account_by_name_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str type: type (required)
-        :return: list[Account]
+        :param str name: (required)
+        :return: ComCapillaryOpsCpBoAccountsAccount
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_account_by_name" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `get_account_by_name`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/accounts/name/{name}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ComCapillaryOpsCpBoAccountsAccount',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_accounts_by_type(self, type, **kwargs):  # noqa: E501
+        """get_accounts_by_type  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_accounts_by_type(type, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str type: (required)
+        :return: list[ComCapillaryOpsCpBoAccountsAccount]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_accounts_by_type_with_http_info(type, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_accounts_by_type_with_http_info(type, **kwargs)  # noqa: E501
+            return data
+
+    def get_accounts_by_type_with_http_info(self, type, **kwargs):  # noqa: E501
+        """get_accounts_by_type  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_accounts_by_type_with_http_info(type, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str type: (required)
+        :return: list[ComCapillaryOpsCpBoAccountsAccount]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1134,14 +1134,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_accounts_by_type_using_get" % key
+                    " to method get_accounts_by_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'type' is set
         if ('type' not in params or
                 params['type'] is None):
-            raise ValueError("Missing the required parameter `type` when calling `get_accounts_by_type_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `type` when calling `get_accounts_by_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1159,10 +1159,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/type/{type}', 'GET',
@@ -1172,7 +1172,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Account]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoAccountsAccount]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1180,36 +1180,36 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_accounts_using_get(self, **kwargs):  # noqa: E501
-        """getAllAccounts  # noqa: E501
+    def get_all_accounts(self, **kwargs):  # noqa: E501
+        """get_all_accounts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_accounts_using_get(async_req=True)
+        >>> thread = api.get_all_accounts(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Account]
+        :return: list[ComCapillaryOpsCpBoAccountsAccount]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_accounts_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_accounts_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_accounts_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_accounts_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_accounts_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllAccounts  # noqa: E501
+    def get_all_accounts_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_accounts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_accounts_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_accounts_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Account]
+        :return: list[ComCapillaryOpsCpBoAccountsAccount]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1225,7 +1225,7 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_accounts_using_get" % key
+                    " to method get_all_accounts" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1244,10 +1244,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/', 'GET',
@@ -1257,7 +1257,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Account]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoAccountsAccount]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1265,36 +1265,36 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_vcs_token_details_using_get(self, **kwargs):  # noqa: E501
-        """getAllVCSTokenDetails  # noqa: E501
+    def get_all_vcs_token_details(self, **kwargs):  # noqa: E501
+        """get_all_vcs_token_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_vcs_token_details_using_get(async_req=True)
+        >>> thread = api.get_all_vcs_token_details(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[VCSTokenDetailsResponse]
+        :return: list[ComCapillaryOpsCpBoAccountsVersioncontrolVCSTokenDetailsResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_vcs_token_details_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_vcs_token_details_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_vcs_token_details_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_vcs_token_details_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_vcs_token_details_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllVCSTokenDetails  # noqa: E501
+    def get_all_vcs_token_details_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_vcs_token_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_vcs_token_details_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_vcs_token_details_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[VCSTokenDetailsResponse]
+        :return: list[ComCapillaryOpsCpBoAccountsVersioncontrolVCSTokenDetailsResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1310,7 +1310,7 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_vcs_token_details_using_get" % key
+                    " to method get_all_vcs_token_details" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1329,10 +1329,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/token-details', 'GET',
@@ -1342,7 +1342,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[VCSTokenDetailsResponse]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoAccountsVersioncontrolVCSTokenDetailsResponse]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1350,39 +1350,39 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_bitbucket_projects_for_workspace_using_get(self, account_id, workspace, **kwargs):  # noqa: E501
-        """getBitbucketProjectsForWorkspace  # noqa: E501
+    def get_bitbucket_projects_for_workspace(self, account_id, workspace, **kwargs):  # noqa: E501
+        """get_bitbucket_projects_for_workspace  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_bitbucket_projects_for_workspace_using_get(account_id, workspace, async_req=True)
+        >>> thread = api.get_bitbucket_projects_for_workspace(account_id, workspace, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str workspace: workspace (required)
+        :param str account_id: (required)
+        :param str workspace: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_bitbucket_projects_for_workspace_using_get_with_http_info(account_id, workspace, **kwargs)  # noqa: E501
+            return self.get_bitbucket_projects_for_workspace_with_http_info(account_id, workspace, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_bitbucket_projects_for_workspace_using_get_with_http_info(account_id, workspace, **kwargs)  # noqa: E501
+            (data) = self.get_bitbucket_projects_for_workspace_with_http_info(account_id, workspace, **kwargs)  # noqa: E501
             return data
 
-    def get_bitbucket_projects_for_workspace_using_get_with_http_info(self, account_id, workspace, **kwargs):  # noqa: E501
-        """getBitbucketProjectsForWorkspace  # noqa: E501
+    def get_bitbucket_projects_for_workspace_with_http_info(self, account_id, workspace, **kwargs):  # noqa: E501
+        """get_bitbucket_projects_for_workspace  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_bitbucket_projects_for_workspace_using_get_with_http_info(account_id, workspace, async_req=True)
+        >>> thread = api.get_bitbucket_projects_for_workspace_with_http_info(account_id, workspace, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str workspace: workspace (required)
+        :param str account_id: (required)
+        :param str workspace: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1399,18 +1399,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_bitbucket_projects_for_workspace_using_get" % key
+                    " to method get_bitbucket_projects_for_workspace" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params or
                 params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `get_bitbucket_projects_for_workspace_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `account_id` when calling `get_bitbucket_projects_for_workspace`")  # noqa: E501
         # verify the required parameter 'workspace' is set
         if ('workspace' not in params or
                 params['workspace'] is None):
-            raise ValueError("Missing the required parameter `workspace` when calling `get_bitbucket_projects_for_workspace_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `workspace` when calling `get_bitbucket_projects_for_workspace`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1430,10 +1430,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/{accountId}/workspaces/{workspace}/projects', 'GET',
@@ -1451,37 +1451,37 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_vcs_organisations_using_post(self, body, **kwargs):  # noqa: E501
-        """getVCSOrganisations  # noqa: E501
+    def get_vcs_organisations(self, body, **kwargs):  # noqa: E501
+        """get_vcs_organisations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_organisations_using_post(body, async_req=True)
+        >>> thread = api.get_vcs_organisations(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param VCSOrganizationsRequest body: VCSOrganizationsRequest (required)
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolVCSOrganizationsRequest body: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_vcs_organisations_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.get_vcs_organisations_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_vcs_organisations_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.get_vcs_organisations_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def get_vcs_organisations_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """getVCSOrganisations  # noqa: E501
+    def get_vcs_organisations_with_http_info(self, body, **kwargs):  # noqa: E501
+        """get_vcs_organisations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_organisations_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.get_vcs_organisations_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param VCSOrganizationsRequest body: VCSOrganizationsRequest (required)
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolVCSOrganizationsRequest body: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1498,14 +1498,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_vcs_organisations_using_post" % key
+                    " to method get_vcs_organisations" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `get_vcs_organisations_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `get_vcs_organisations`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1523,14 +1523,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/get-organisations', 'POST',
@@ -1548,37 +1548,37 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_vcs_organizations_by_account_id_using_get(self, account_id, **kwargs):  # noqa: E501
-        """getVcsOrganizationsByAccountId  # noqa: E501
+    def get_vcs_organizations_by_account_id(self, account_id, **kwargs):  # noqa: E501
+        """get_vcs_organizations_by_account_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_organizations_by_account_id_using_get(account_id, async_req=True)
+        >>> thread = api.get_vcs_organizations_by_account_id(account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
+        :param str account_id: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_vcs_organizations_by_account_id_using_get_with_http_info(account_id, **kwargs)  # noqa: E501
+            return self.get_vcs_organizations_by_account_id_with_http_info(account_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_vcs_organizations_by_account_id_using_get_with_http_info(account_id, **kwargs)  # noqa: E501
+            (data) = self.get_vcs_organizations_by_account_id_with_http_info(account_id, **kwargs)  # noqa: E501
             return data
 
-    def get_vcs_organizations_by_account_id_using_get_with_http_info(self, account_id, **kwargs):  # noqa: E501
-        """getVcsOrganizationsByAccountId  # noqa: E501
+    def get_vcs_organizations_by_account_id_with_http_info(self, account_id, **kwargs):  # noqa: E501
+        """get_vcs_organizations_by_account_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_organizations_by_account_id_using_get_with_http_info(account_id, async_req=True)
+        >>> thread = api.get_vcs_organizations_by_account_id_with_http_info(account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
+        :param str account_id: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1595,14 +1595,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_vcs_organizations_by_account_id_using_get" % key
+                    " to method get_vcs_organizations_by_account_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'account_id' is set
         if ('account_id' not in params or
                 params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `get_vcs_organizations_by_account_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `account_id` when calling `get_vcs_organizations_by_account_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1620,10 +1620,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/vcs-orgs/{accountId}', 'GET',
@@ -1641,38 +1641,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_vcs_token_details_by_stack_name_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """getVCSTokenDetailsByStackName  # noqa: E501
+    def get_vcs_token_details_by_stack_name(self, stack_name, **kwargs):  # noqa: E501
+        """get_vcs_token_details_by_stack_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_token_details_by_stack_name_using_get(stack_name, async_req=True)
+        >>> thread = api.get_vcs_token_details_by_stack_name(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: VCSTokenDetailsResponse
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolVCSTokenDetailsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_vcs_token_details_by_stack_name_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.get_vcs_token_details_by_stack_name_with_http_info(stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_vcs_token_details_by_stack_name_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_vcs_token_details_by_stack_name_with_http_info(stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_vcs_token_details_by_stack_name_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getVCSTokenDetailsByStackName  # noqa: E501
+    def get_vcs_token_details_by_stack_name_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_vcs_token_details_by_stack_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vcs_token_details_by_stack_name_using_get_with_http_info(stack_name, async_req=True)
+        >>> thread = api.get_vcs_token_details_by_stack_name_with_http_info(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: VCSTokenDetailsResponse
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolVCSTokenDetailsResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1688,14 +1688,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_vcs_token_details_by_stack_name_using_get" % key
+                    " to method get_vcs_token_details_by_stack_name" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_vcs_token_details_by_stack_name_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_vcs_token_details_by_stack_name`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1713,10 +1713,10 @@ class UiAccountsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/stack/{stackName}/token-details', 'GET',
@@ -1726,7 +1726,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='VCSTokenDetailsResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolVCSTokenDetailsResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1734,12 +1734,12 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def refresh_all_vcs_token_details_using_post(self, **kwargs):  # noqa: E501
-        """refreshAllVCSTokenDetails  # noqa: E501
+    def refresh_all_vcs_token_details(self, **kwargs):  # noqa: E501
+        """refresh_all_vcs_token_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.refresh_all_vcs_token_details_using_post(async_req=True)
+        >>> thread = api.refresh_all_vcs_token_details(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1749,17 +1749,17 @@ class UiAccountsControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.refresh_all_vcs_token_details_using_post_with_http_info(**kwargs)  # noqa: E501
+            return self.refresh_all_vcs_token_details_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.refresh_all_vcs_token_details_using_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.refresh_all_vcs_token_details_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def refresh_all_vcs_token_details_using_post_with_http_info(self, **kwargs):  # noqa: E501
-        """refreshAllVCSTokenDetails  # noqa: E501
+    def refresh_all_vcs_token_details_with_http_info(self, **kwargs):  # noqa: E501
+        """refresh_all_vcs_token_details  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.refresh_all_vcs_token_details_using_post_with_http_info(async_req=True)
+        >>> thread = api.refresh_all_vcs_token_details_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1779,7 +1779,7 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method refresh_all_vcs_token_details_using_post" % key
+                    " to method refresh_all_vcs_token_details" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1796,8 +1796,12 @@ class UiAccountsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/token-details/refresh', 'POST',
@@ -1815,38 +1819,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def request_cloud_account_linking_using_post(self, body, **kwargs):  # noqa: E501
-        """requestCloudAccountLinking  # noqa: E501
+    def request_cloud_account_linking(self, body, **kwargs):  # noqa: E501
+        """request_cloud_account_linking  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.request_cloud_account_linking_using_post(body, async_req=True)
+        >>> thread = api.request_cloud_account_linking(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CloudLinkingRequest body: cloudLinkingRequest (required)
-        :return: OneTimeWebhook
+        :param ComCapillaryOpsCpBoAccountsCloudCloudLinkingRequest body: (required)
+        :return: ComCapillaryOpsCpBoWebhookOneTimeWebhook
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.request_cloud_account_linking_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.request_cloud_account_linking_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.request_cloud_account_linking_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.request_cloud_account_linking_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def request_cloud_account_linking_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """requestCloudAccountLinking  # noqa: E501
+    def request_cloud_account_linking_with_http_info(self, body, **kwargs):  # noqa: E501
+        """request_cloud_account_linking  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.request_cloud_account_linking_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.request_cloud_account_linking_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CloudLinkingRequest body: cloudLinkingRequest (required)
-        :return: OneTimeWebhook
+        :param ComCapillaryOpsCpBoAccountsCloudCloudLinkingRequest body: (required)
+        :return: ComCapillaryOpsCpBoWebhookOneTimeWebhook
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1862,14 +1866,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method request_cloud_account_linking_using_post" % key
+                    " to method request_cloud_account_linking" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `request_cloud_account_linking_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `request_cloud_account_linking`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1887,14 +1891,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/link-cloud', 'POST',
@@ -1904,7 +1908,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='OneTimeWebhook',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoWebhookOneTimeWebhook',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1912,38 +1916,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def request_vcs_linking_using_post(self, body, **kwargs):  # noqa: E501
-        """requestVCSLinking  # noqa: E501
+    def request_vcs_linking(self, body, **kwargs):  # noqa: E501
+        """request_vcs_linking  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.request_vcs_linking_using_post(body, async_req=True)
+        >>> thread = api.request_vcs_linking(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param VCSLinkingRequest body: vcsLinkingRequest (required)
-        :return: VCSLinkingResponse
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolVCSLinkingRequest body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolVCSLinkingResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.request_vcs_linking_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.request_vcs_linking_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.request_vcs_linking_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.request_vcs_linking_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def request_vcs_linking_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """requestVCSLinking  # noqa: E501
+    def request_vcs_linking_with_http_info(self, body, **kwargs):  # noqa: E501
+        """request_vcs_linking  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.request_vcs_linking_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.request_vcs_linking_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param VCSLinkingRequest body: vcsLinkingRequest (required)
-        :return: VCSLinkingResponse
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolVCSLinkingRequest body: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolVCSLinkingResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1959,14 +1963,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method request_vcs_linking_using_post" % key
+                    " to method request_vcs_linking" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `request_vcs_linking_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `request_vcs_linking`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1984,14 +1988,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/link-vcs', 'POST',
@@ -2001,7 +2005,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='VCSLinkingResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolVCSLinkingResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2009,40 +2013,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_aws_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateAwsAccount  # noqa: E501
+    def update_aws_account(self, body, id, **kwargs):  # noqa: E501
+        """update_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_aws_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_aws_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsAccount body: awsAccountRequest (required)
-        :param str id: id (required)
-        :return: AwsAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_aws_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_aws_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_aws_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_aws_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_aws_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateAwsAccount  # noqa: E501
+    def update_aws_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_aws_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_aws_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsAccount body: awsAccountRequest (required)
-        :param str id: id (required)
-        :return: AwsAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2058,18 +2062,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_aws_account_using_put" % key
+                    " to method update_aws_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_aws_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_aws_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_aws_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_aws_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2089,14 +2093,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/aws/{id}', 'PUT',
@@ -2106,7 +2110,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AwsAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2114,40 +2118,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_azure_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateAzureAccount  # noqa: E501
+    def update_azure_account(self, body, id, **kwargs):  # noqa: E501
+        """update_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_azure_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_azure_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureAccount body: azureAccountRequest (required)
-        :param str id: id (required)
-        :return: AzureAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_azure_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_azure_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_azure_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_azure_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_azure_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateAzureAccount  # noqa: E501
+    def update_azure_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_azure_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_azure_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureAccount body: azureAccountRequest (required)
-        :param str id: id (required)
-        :return: AzureAccount
+        :param ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2163,18 +2167,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_azure_account_using_put" % key
+                    " to method update_azure_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_azure_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_azure_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_azure_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_azure_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2194,14 +2198,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/azure/{id}', 'PUT',
@@ -2211,7 +2215,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AzureAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2219,40 +2223,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_bit_bucket_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateBitBucketAccount  # noqa: E501
+    def update_bit_bucket_account(self, body, id, **kwargs):  # noqa: E501
+        """update_bit_bucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_bit_bucket_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_bit_bucket_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BitBucketAccount body: bitbucketAccountRequest (required)
-        :param str id: id (required)
-        :return: BitBucketAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_bit_bucket_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_bit_bucket_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_bit_bucket_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_bit_bucket_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_bit_bucket_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateBitBucketAccount  # noqa: E501
+    def update_bit_bucket_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_bit_bucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_bit_bucket_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_bit_bucket_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BitBucketAccount body: bitbucketAccountRequest (required)
-        :param str id: id (required)
-        :return: BitBucketAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2268,18 +2272,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_bit_bucket_account_using_put" % key
+                    " to method update_bit_bucket_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_bit_bucket_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_bit_bucket_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_bit_bucket_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_bit_bucket_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2299,14 +2303,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/bitbucket/{id}', 'PUT',
@@ -2316,7 +2320,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BitBucketAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2324,40 +2328,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_coder_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateCoderAccount  # noqa: E501
+    def update_coder_account(self, body, id, **kwargs):  # noqa: E501
+        """update_coder_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_coder_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_coder_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CoderAccount body: coderAccount (required)
-        :param str id: id (required)
-        :return: CoderAccount
+        :param ComCapillaryOpsCpBoAccountsCoderCoderAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCoderCoderAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_coder_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_coder_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_coder_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_coder_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_coder_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateCoderAccount  # noqa: E501
+    def update_coder_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_coder_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_coder_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_coder_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CoderAccount body: coderAccount (required)
-        :param str id: id (required)
-        :return: CoderAccount
+        :param ComCapillaryOpsCpBoAccountsCoderCoderAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCoderCoderAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2373,18 +2377,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_coder_account_using_put" % key
+                    " to method update_coder_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_coder_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_coder_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_coder_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_coder_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2404,14 +2408,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/coder/{id}', 'PUT',
@@ -2421,7 +2425,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CoderAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCoderCoderAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2429,40 +2433,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_gcp_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateGcpAccount  # noqa: E501
+    def update_gcp_account(self, body, id, **kwargs):  # noqa: E501
+        """update_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_gcp_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_gcp_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GcpAccount body: gcpAccountRequest (required)
-        :param str id: id (required)
-        :return: GcpAccount
+        :param ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_gcp_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_gcp_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_gcp_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_gcp_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_gcp_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateGcpAccount  # noqa: E501
+    def update_gcp_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_gcp_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_gcp_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GcpAccount body: gcpAccountRequest (required)
-        :param str id: id (required)
-        :return: GcpAccount
+        :param ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2478,18 +2482,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_gcp_account_using_put" % key
+                    " to method update_gcp_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_gcp_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_gcp_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_gcp_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_gcp_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2509,14 +2513,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/gcp/{id}', 'PUT',
@@ -2526,7 +2530,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GcpAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2534,40 +2538,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_git_hub_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateGitHubAccount  # noqa: E501
+    def update_git_hub_account(self, body, id, **kwargs):  # noqa: E501
+        """update_git_hub_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_git_hub_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_git_hub_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitHubAccount body: githubAccountRequest (required)
-        :param str id: id (required)
-        :return: GitHubAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_git_hub_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_git_hub_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_git_hub_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_git_hub_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_git_hub_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateGitHubAccount  # noqa: E501
+    def update_git_hub_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_git_hub_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_git_hub_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_git_hub_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitHubAccount body: githubAccountRequest (required)
-        :param str id: id (required)
-        :return: GitHubAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2583,18 +2587,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_git_hub_account_using_put" % key
+                    " to method update_git_hub_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_git_hub_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_git_hub_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_git_hub_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_git_hub_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2614,14 +2618,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/github/{id}', 'PUT',
@@ -2631,7 +2635,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GitHubAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2639,40 +2643,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_git_lab_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateGitLabAccount  # noqa: E501
+    def update_git_lab_account(self, body, id, **kwargs):  # noqa: E501
+        """update_git_lab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_git_lab_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_git_lab_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitLabAccount body: gitlabAccountRequest (required)
-        :param str id: id (required)
-        :return: GitLabAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_git_lab_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_git_lab_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_git_lab_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_git_lab_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_git_lab_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateGitLabAccount  # noqa: E501
+    def update_git_lab_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_git_lab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_git_lab_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_git_lab_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitLabAccount body: gitlabAccountRequest (required)
-        :param str id: id (required)
-        :return: GitLabAccount
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2688,18 +2692,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_git_lab_account_using_put" % key
+                    " to method update_git_lab_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_git_lab_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_git_lab_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_git_lab_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_git_lab_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2719,14 +2723,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/gitlab/{id}', 'PUT',
@@ -2736,7 +2740,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GitLabAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2744,40 +2748,40 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_kubernetes_account_using_put(self, body, id, **kwargs):  # noqa: E501
-        """updateKubernetesAccount  # noqa: E501
+    def update_kubernetes_account(self, body, id, **kwargs):  # noqa: E501
+        """update_kubernetes_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_kubernetes_account_using_put(body, id, async_req=True)
+        >>> thread = api.update_kubernetes_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KubernetesAccount body: k8sAccountRequest (required)
-        :param str id: id (required)
-        :return: KubernetesAccount
+        :param ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_kubernetes_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_kubernetes_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_kubernetes_account_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_kubernetes_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_kubernetes_account_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateKubernetesAccount  # noqa: E501
+    def update_kubernetes_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_kubernetes_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_kubernetes_account_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_kubernetes_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KubernetesAccount body: k8sAccountRequest (required)
-        :param str id: id (required)
-        :return: KubernetesAccount
+        :param ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
+        :param str id: (required)
+        :return: ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2793,18 +2797,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_kubernetes_account_using_put" % key
+                    " to method update_kubernetes_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_kubernetes_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_kubernetes_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_kubernetes_account_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_kubernetes_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2824,14 +2828,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/kubernetes/{id}', 'PUT',
@@ -2841,7 +2845,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='KubernetesAccount',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2849,39 +2853,39 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_vcs_account_using_patch(self, body, id, **kwargs):  # noqa: E501
-        """updateVCSAccount  # noqa: E501
+    def update_vcs_account(self, body, id, **kwargs):  # noqa: E501
+        """update_vcs_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_vcs_account_using_patch(body, id, async_req=True)
+        >>> thread = api.update_vcs_account(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param VCSAccountUpdateRequest body: vcsAccountUpdateRequest (required)
-        :param str id: id (required)
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolVCSAccountUpdateRequest body: (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_vcs_account_using_patch_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_vcs_account_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_vcs_account_using_patch_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_vcs_account_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_vcs_account_using_patch_with_http_info(self, body, id, **kwargs):  # noqa: E501
-        """updateVCSAccount  # noqa: E501
+    def update_vcs_account_with_http_info(self, body, id, **kwargs):  # noqa: E501
+        """update_vcs_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_vcs_account_using_patch_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_vcs_account_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param VCSAccountUpdateRequest body: vcsAccountUpdateRequest (required)
-        :param str id: id (required)
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolVCSAccountUpdateRequest body: (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2898,18 +2902,18 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_vcs_account_using_patch" % key
+                    " to method update_vcs_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_vcs_account_using_patch`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_vcs_account`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_vcs_account_using_patch`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_vcs_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2927,12 +2931,16 @@ class UiAccountsControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/vcs/{id}', 'PATCH',
@@ -2950,38 +2958,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_aws_account_using_post(self, body, **kwargs):  # noqa: E501
-        """validateAwsAccount  # noqa: E501
+    def validate_aws_account(self, body, **kwargs):  # noqa: E501
+        """validate_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_aws_account_using_post(body, async_req=True)
+        >>> thread = api.validate_aws_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsAccount body: awsAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_aws_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_aws_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_aws_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_aws_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_aws_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateAwsAccount  # noqa: E501
+    def validate_aws_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_aws_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_aws_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_aws_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsAccount body: awsAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudAwsAwsAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2997,14 +3005,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_aws_account_using_post" % key
+                    " to method validate_aws_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_aws_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_aws_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3022,14 +3030,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/aws/validate', 'POST',
@@ -3039,7 +3047,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3047,38 +3055,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_azure_account_using_post(self, body, **kwargs):  # noqa: E501
-        """validateAzureAccount  # noqa: E501
+    def validate_azure_account(self, body, **kwargs):  # noqa: E501
+        """validate_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_azure_account_using_post(body, async_req=True)
+        >>> thread = api.validate_azure_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureAccount body: azureAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_azure_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_azure_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_azure_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_azure_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_azure_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateAzureAccount  # noqa: E501
+    def validate_azure_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_azure_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_azure_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_azure_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureAccount body: azureAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudAzureAzureAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3094,14 +3102,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_azure_account_using_post" % key
+                    " to method validate_azure_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_azure_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_azure_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3119,14 +3127,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/azure/validate', 'POST',
@@ -3136,7 +3144,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3144,38 +3152,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_bitbucket_account_using_post(self, body, **kwargs):  # noqa: E501
-        """validateBitbucketAccount  # noqa: E501
+    def validate_bitbucket_account(self, body, **kwargs):  # noqa: E501
+        """validate_bitbucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_bitbucket_account_using_post(body, async_req=True)
+        >>> thread = api.validate_bitbucket_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BitBucketAccount body: bitBucketAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_bitbucket_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_bitbucket_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_bitbucket_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_bitbucket_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_bitbucket_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateBitbucketAccount  # noqa: E501
+    def validate_bitbucket_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_bitbucket_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_bitbucket_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_bitbucket_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BitBucketAccount body: bitBucketAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolBitbucketBitBucketAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3191,14 +3199,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_bitbucket_account_using_post" % key
+                    " to method validate_bitbucket_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_bitbucket_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_bitbucket_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3216,14 +3224,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/bitbucket/validate', 'POST',
@@ -3233,7 +3241,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3241,38 +3249,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_gcp_account_using_post(self, body, **kwargs):  # noqa: E501
-        """validateGcpAccount  # noqa: E501
+    def validate_gcp_account(self, body, **kwargs):  # noqa: E501
+        """validate_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_gcp_account_using_post(body, async_req=True)
+        >>> thread = api.validate_gcp_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GcpAccount body: gcpAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_gcp_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_gcp_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_gcp_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_gcp_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_gcp_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateGcpAccount  # noqa: E501
+    def validate_gcp_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_gcp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_gcp_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_gcp_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GcpAccount body: gcpAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudGcpGcpAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3288,14 +3296,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_gcp_account_using_post" % key
+                    " to method validate_gcp_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_gcp_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_gcp_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3313,14 +3321,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/gcp/validate', 'POST',
@@ -3330,7 +3338,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3338,38 +3346,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_github_account_using_post(self, body, **kwargs):  # noqa: E501
-        """validateGithubAccount  # noqa: E501
+    def validate_github_account(self, body, **kwargs):  # noqa: E501
+        """validate_github_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_github_account_using_post(body, async_req=True)
+        >>> thread = api.validate_github_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitHubAccount body: gitHubAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_github_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_github_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_github_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_github_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_github_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateGithubAccount  # noqa: E501
+    def validate_github_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_github_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_github_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_github_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitHubAccount body: gitHubAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGithubGitHubAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3385,14 +3393,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_github_account_using_post" % key
+                    " to method validate_github_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_github_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_github_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3410,14 +3418,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/github/validate', 'POST',
@@ -3427,7 +3435,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3435,38 +3443,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_gitlab_account_using_post(self, body, **kwargs):  # noqa: E501
-        """validateGitlabAccount  # noqa: E501
+    def validate_gitlab_account(self, body, **kwargs):  # noqa: E501
+        """validate_gitlab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_gitlab_account_using_post(body, async_req=True)
+        >>> thread = api.validate_gitlab_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitLabAccount body: gitLabAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_gitlab_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_gitlab_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_gitlab_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_gitlab_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_gitlab_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateGitlabAccount  # noqa: E501
+    def validate_gitlab_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_gitlab_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_gitlab_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_gitlab_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GitLabAccount body: gitLabAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsVersioncontrolGitlabGitLabAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3482,14 +3490,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_gitlab_account_using_post" % key
+                    " to method validate_gitlab_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_gitlab_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_gitlab_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3507,14 +3515,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/gitlab/validate', 'POST',
@@ -3524,7 +3532,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3532,38 +3540,38 @@ class UiAccountsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_kubernetes_account_using_post(self, body, **kwargs):  # noqa: E501
-        """validateKubernetesAccount  # noqa: E501
+    def validate_kubernetes_account(self, body, **kwargs):  # noqa: E501
+        """validate_kubernetes_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_kubernetes_account_using_post(body, async_req=True)
+        >>> thread = api.validate_kubernetes_account(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KubernetesAccount body: kubernetesAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_kubernetes_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_kubernetes_account_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_kubernetes_account_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_kubernetes_account_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_kubernetes_account_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateKubernetesAccount  # noqa: E501
+    def validate_kubernetes_account_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_kubernetes_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_kubernetes_account_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_kubernetes_account_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param KubernetesAccount body: kubernetesAccount (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoAccountsCloudKubernetesKubernetesAccount body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3579,14 +3587,14 @@ class UiAccountsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_kubernetes_account_using_post" % key
+                    " to method validate_kubernetes_account" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_kubernetes_account_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_kubernetes_account`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3604,14 +3612,14 @@ class UiAccountsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/accounts/kubernetes/validate', 'POST',
@@ -3621,7 +3629,7 @@ class UiAccountsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

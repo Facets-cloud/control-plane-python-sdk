@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,40 +32,40 @@ class UiDropdownsControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_affected_resources_by_cluster_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """getAffectedResourcesByCluster  # noqa: E501
+    def get_affected_resources_by_cluster(self, body, cluster_id, **kwargs):  # noqa: E501
+        """get_affected_resources_by_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_affected_resources_by_cluster_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.get_affected_resources_by_cluster(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AffectedResourcesRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: ResourceAffectedResponse
+        :param ComCapillaryOpsCpBoRequestsAffectedResourcesRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoResoucesResourceAffectedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_affected_resources_by_cluster_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.get_affected_resources_by_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_affected_resources_by_cluster_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_affected_resources_by_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_affected_resources_by_cluster_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """getAffectedResourcesByCluster  # noqa: E501
+    def get_affected_resources_by_cluster_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """get_affected_resources_by_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_affected_resources_by_cluster_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.get_affected_resources_by_cluster_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AffectedResourcesRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: ResourceAffectedResponse
+        :param ComCapillaryOpsCpBoRequestsAffectedResourcesRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoResoucesResourceAffectedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -81,18 +81,18 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_affected_resources_by_cluster_using_post" % key
+                    " to method get_affected_resources_by_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `get_affected_resources_by_cluster_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `get_affected_resources_by_cluster`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_affected_resources_by_cluster_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_affected_resources_by_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -112,14 +112,14 @@ class UiDropdownsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/cluster/{clusterId}/affected-resources', 'POST',
@@ -129,7 +129,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ResourceAffectedResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResoucesResourceAffectedResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -137,40 +137,40 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_affected_resources_by_stack_using_post(self, body, stack_name, **kwargs):  # noqa: E501
-        """getAffectedResourcesByStack  # noqa: E501
+    def get_affected_resources_by_stack(self, body, stack_name, **kwargs):  # noqa: E501
+        """get_affected_resources_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_affected_resources_by_stack_using_post(body, stack_name, async_req=True)
+        >>> thread = api.get_affected_resources_by_stack(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AffectedResourcesRequest body: request (required)
-        :param str stack_name: stackName (required)
-        :return: ResourceAffectedResponse
+        :param ComCapillaryOpsCpBoRequestsAffectedResourcesRequest body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoResoucesResourceAffectedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_affected_resources_by_stack_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            return self.get_affected_resources_by_stack_with_http_info(body, stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_affected_resources_by_stack_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_affected_resources_by_stack_with_http_info(body, stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_affected_resources_by_stack_using_post_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
-        """getAffectedResourcesByStack  # noqa: E501
+    def get_affected_resources_by_stack_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
+        """get_affected_resources_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_affected_resources_by_stack_using_post_with_http_info(body, stack_name, async_req=True)
+        >>> thread = api.get_affected_resources_by_stack_with_http_info(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AffectedResourcesRequest body: request (required)
-        :param str stack_name: stackName (required)
-        :return: ResourceAffectedResponse
+        :param ComCapillaryOpsCpBoRequestsAffectedResourcesRequest body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoResoucesResourceAffectedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -186,18 +186,18 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_affected_resources_by_stack_using_post" % key
+                    " to method get_affected_resources_by_stack" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `get_affected_resources_by_stack_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `get_affected_resources_by_stack`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_affected_resources_by_stack_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_affected_resources_by_stack`")  # noqa: E501
 
         collection_formats = {}
 
@@ -217,14 +217,14 @@ class UiDropdownsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/stack/{stackName}/affected-resources', 'POST',
@@ -234,7 +234,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ResourceAffectedResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResoucesResourceAffectedResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -242,47 +242,47 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_cluster_resources_by_stack_using_get(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getAllClusterResourcesByStack  # noqa: E501
+    def get_all_cluster_resources_by_stack(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_all_cluster_resources_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_cluster_resources_by_stack_using_get(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_all_cluster_resources_by_stack(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[BlueprintFile]
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_cluster_resources_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            return self.get_all_cluster_resources_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_cluster_resources_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_all_cluster_resources_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def get_all_cluster_resources_by_stack_using_get_with_http_info(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getAllClusterResourcesByStack  # noqa: E501
+    def get_all_cluster_resources_by_stack_with_http_info(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_all_cluster_resources_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_cluster_resources_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_all_cluster_resources_by_stack_with_http_info(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[BlueprintFile]
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['resource_name', 'resource_type', 'stack_name']  # noqa: E501
+        all_params = ['stack_name', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -293,32 +293,32 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_cluster_resources_by_stack_using_get" % key
+                    " to method get_all_cluster_resources_by_stack" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_all_cluster_resources_by_stack_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_type' is set
-        if ('resource_type' not in params or
-                params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_all_cluster_resources_by_stack_using_get`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_cluster_resources_by_stack_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_cluster_resources_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_all_cluster_resources_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_all_cluster_resources_by_stack`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
-        if 'resource_type' in params:
-            path_params['resourceType'] = params['resource_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -330,10 +330,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/cluster-resources-info', 'GET',
@@ -343,7 +343,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[BlueprintFile]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoResoucesBlueprintFile]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -351,36 +351,36 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_permissions_using_get(self, **kwargs):  # noqa: E501
-        """getAllPermissions  # noqa: E501
+    def get_all_permissions(self, **kwargs):  # noqa: E501
+        """get_all_permissions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_permissions_using_get(async_req=True)
+        >>> thread = api.get_all_permissions(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[RBACEntity]
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_permissions_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_permissions_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_permissions_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_permissions_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_permissions_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllPermissions  # noqa: E501
+    def get_all_permissions_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_permissions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_permissions_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_permissions_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[RBACEntity]
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -396,7 +396,7 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_permissions_using_get" % key
+                    " to method get_all_permissions" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -415,10 +415,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/getAllPermissions', 'GET',
@@ -428,7 +428,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[RBACEntity]',  # noqa: E501
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -436,346 +436,39 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_resources_by_cluster_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllResourcesByCluster  # noqa: E501
+    def get_all_resources(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_resources  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_by_cluster_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_all_resources(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool exclude_add_ons: excludeAddOns
-        :param bool include_content: includeContent
-        :param bool include_substack: includeSubstack
-        :return: list[BlueprintFile]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_resources_by_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_all_resources_by_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_all_resources_by_cluster_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllResourcesByCluster  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_by_cluster_using_get_with_http_info(cluster_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool exclude_add_ons: excludeAddOns
-        :param bool include_content: includeContent
-        :param bool include_substack: includeSubstack
-        :return: list[BlueprintFile]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['cluster_id', 'exclude_add_ons', 'include_content', 'include_substack']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_all_resources_by_cluster_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'cluster_id' is set
-        if ('cluster_id' not in params or
-                params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_resources_by_cluster_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'cluster_id' in params:
-            path_params['clusterId'] = params['cluster_id']  # noqa: E501
-
-        query_params = []
-        if 'exclude_add_ons' in params:
-            query_params.append(('excludeAddOns', params['exclude_add_ons']))  # noqa: E501
-        if 'include_content' in params:
-            query_params.append(('includeContent', params['include_content']))  # noqa: E501
-        if 'include_substack' in params:
-            query_params.append(('includeSubstack', params['include_substack']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/dropdown/cluster/{clusterId}/resources-info', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[BlueprintFile]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_all_resources_by_stack_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """getAllResourcesByStack  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_by_stack_using_get(stack_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str stack_name: stackName (required)
-        :param str branch: branch
-        :param bool exclude_add_ons: excludeAddOns
-        :param bool include_content: includeContent
-        :return: list[BlueprintFile]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_resources_by_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_all_resources_by_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
-            return data
-
-    def get_all_resources_by_stack_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getAllResourcesByStack  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_by_stack_using_get_with_http_info(stack_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str stack_name: stackName (required)
-        :param str branch: branch
-        :param bool exclude_add_ons: excludeAddOns
-        :param bool include_content: includeContent
-        :return: list[BlueprintFile]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['stack_name', 'branch', 'exclude_add_ons', 'include_content']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_all_resources_by_stack_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'stack_name' is set
-        if ('stack_name' not in params or
-                params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_resources_by_stack_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'stack_name' in params:
-            path_params['stackName'] = params['stack_name']  # noqa: E501
-
-        query_params = []
-        if 'branch' in params:
-            query_params.append(('branch', params['branch']))  # noqa: E501
-        if 'exclude_add_ons' in params:
-            query_params.append(('excludeAddOns', params['exclude_add_ons']))  # noqa: E501
-        if 'include_content' in params:
-            query_params.append(('includeContent', params['include_content']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/dropdown/stack/{stackName}/resources-info', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[BlueprintFile]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_all_resources_for_all_cluster_of_stack_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """getAllResourcesForAllClusterOfStack  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_for_all_cluster_of_stack_using_get(stack_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str stack_name: stackName (required)
-        :param bool exclude_add_ons: excludeAddOns
-        :return: list[ClusterResourcesResponse]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_resources_for_all_cluster_of_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_all_resources_for_all_cluster_of_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
-            return data
-
-    def get_all_resources_for_all_cluster_of_stack_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getAllResourcesForAllClusterOfStack  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_for_all_cluster_of_stack_using_get_with_http_info(stack_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str stack_name: stackName (required)
-        :param bool exclude_add_ons: excludeAddOns
-        :return: list[ClusterResourcesResponse]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['stack_name', 'exclude_add_ons']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_all_resources_for_all_cluster_of_stack_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'stack_name' is set
-        if ('stack_name' not in params or
-                params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_resources_for_all_cluster_of_stack_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'stack_name' in params:
-            path_params['stackName'] = params['stack_name']  # noqa: E501
-
-        query_params = []
-        if 'exclude_add_ons' in params:
-            query_params.append(('excludeAddOns', params['exclude_add_ons']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/dropdown/stack/{stackName}/all-cluster-resources', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ClusterResourcesResponse]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_all_resources_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllResources  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_using_get(cluster_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool exclude_substack_resources: excludeSubstackResources
+        :param str cluster_id: (required)
+        :param bool exclude_substack_resources:
         :return: dict(str, list[str])
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_resources_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_all_resources_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_resources_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_all_resources_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_all_resources_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllResources  # noqa: E501
+    def get_all_resources_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_resources  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_resources_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_all_resources_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool exclude_substack_resources: excludeSubstackResources
+        :param str cluster_id: (required)
+        :param bool exclude_substack_resources:
         :return: dict(str, list[str])
                  If the method is called asynchronously,
                  returns the request thread.
@@ -792,14 +485,14 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_resources_using_get" % key
+                    " to method get_all_resources" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_resources_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_resources`")  # noqa: E501
 
         collection_formats = {}
 
@@ -819,10 +512,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/cluster/{clusterId}/resources', 'GET',
@@ -840,12 +533,319 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_vcs_using_get(self, **kwargs):  # noqa: E501
-        """getAllVCS  # noqa: E501
+    def get_all_resources_by_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_resources_by_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_vcs_using_get(async_req=True)
+        >>> thread = api.get_all_resources_by_cluster(cluster_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param bool include_content:
+        :param bool include_substack:
+        :param bool exclude_add_ons:
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_all_resources_by_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_all_resources_by_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_resources_by_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_resources_by_cluster  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_resources_by_cluster_with_http_info(cluster_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param bool include_content:
+        :param bool include_substack:
+        :param bool exclude_add_ons:
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cluster_id', 'include_content', 'include_substack', 'exclude_add_ons']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_resources_by_cluster" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'cluster_id' is set
+        if ('cluster_id' not in params or
+                params['cluster_id'] is None):
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_resources_by_cluster`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'cluster_id' in params:
+            path_params['clusterId'] = params['cluster_id']  # noqa: E501
+
+        query_params = []
+        if 'include_content' in params:
+            query_params.append(('includeContent', params['include_content']))  # noqa: E501
+        if 'include_substack' in params:
+            query_params.append(('includeSubstack', params['include_substack']))  # noqa: E501
+        if 'exclude_add_ons' in params:
+            query_params.append(('excludeAddOns', params['exclude_add_ons']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/dropdown/cluster/{clusterId}/resources-info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ComCapillaryOpsCpBoResoucesBlueprintFile]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_all_resources_by_stack(self, stack_name, **kwargs):  # noqa: E501
+        """get_all_resources_by_stack  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_resources_by_stack(stack_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str stack_name: (required)
+        :param bool include_content:
+        :param str branch:
+        :param bool exclude_add_ons:
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_all_resources_by_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_all_resources_by_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_resources_by_stack_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_all_resources_by_stack  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_resources_by_stack_with_http_info(stack_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str stack_name: (required)
+        :param bool include_content:
+        :param str branch:
+        :param bool exclude_add_ons:
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['stack_name', 'include_content', 'branch', 'exclude_add_ons']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_resources_by_stack" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'stack_name' is set
+        if ('stack_name' not in params or
+                params['stack_name'] is None):
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_resources_by_stack`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'stack_name' in params:
+            path_params['stackName'] = params['stack_name']  # noqa: E501
+
+        query_params = []
+        if 'include_content' in params:
+            query_params.append(('includeContent', params['include_content']))  # noqa: E501
+        if 'branch' in params:
+            query_params.append(('branch', params['branch']))  # noqa: E501
+        if 'exclude_add_ons' in params:
+            query_params.append(('excludeAddOns', params['exclude_add_ons']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/dropdown/stack/{stackName}/resources-info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ComCapillaryOpsCpBoResoucesBlueprintFile]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_all_resources_for_all_cluster_of_stack(self, stack_name, **kwargs):  # noqa: E501
+        """get_all_resources_for_all_cluster_of_stack  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_resources_for_all_cluster_of_stack(stack_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str stack_name: (required)
+        :param bool exclude_add_ons:
+        :return: list[ComCapillaryOpsCpBoResoucesClusterResourcesResponse]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_all_resources_for_all_cluster_of_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_all_resources_for_all_cluster_of_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return data
+
+    def get_all_resources_for_all_cluster_of_stack_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_all_resources_for_all_cluster_of_stack  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_resources_for_all_cluster_of_stack_with_http_info(stack_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str stack_name: (required)
+        :param bool exclude_add_ons:
+        :return: list[ComCapillaryOpsCpBoResoucesClusterResourcesResponse]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['stack_name', 'exclude_add_ons']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_resources_for_all_cluster_of_stack" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'stack_name' is set
+        if ('stack_name' not in params or
+                params['stack_name'] is None):
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_resources_for_all_cluster_of_stack`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'stack_name' in params:
+            path_params['stackName'] = params['stack_name']  # noqa: E501
+
+        query_params = []
+        if 'exclude_add_ons' in params:
+            query_params.append(('excludeAddOns', params['exclude_add_ons']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/dropdown/stack/{stackName}/all-cluster-resources', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ComCapillaryOpsCpBoResoucesClusterResourcesResponse]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_all_vcs(self, **kwargs):  # noqa: E501
+        """get_all_vcs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_vcs(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -855,17 +855,17 @@ class UiDropdownsControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_vcs_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_vcs_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_vcs_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_vcs_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_vcs_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllVCS  # noqa: E501
+    def get_all_vcs_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_vcs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_vcs_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_vcs_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -885,7 +885,7 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_vcs_using_get" % key
+                    " to method get_all_vcs" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -904,10 +904,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/vcs', 'GET',
@@ -925,39 +925,39 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_application_list_by_cluster_id_and_resource_name_using_get(self, cluster_id, resource_type, **kwargs):  # noqa: E501
-        """getApplicationListByClusterIdAndResourceName  # noqa: E501
+    def get_application_list_by_cluster_id_and_resource_name(self, cluster_id, resource_type, **kwargs):  # noqa: E501
+        """get_application_list_by_cluster_id_and_resource_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_list_by_cluster_id_and_resource_name_using_get(cluster_id, resource_type, async_req=True)
+        >>> thread = api.get_application_list_by_cluster_id_and_resource_name(cluster_id, resource_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_application_list_by_cluster_id_and_resource_name_using_get_with_http_info(cluster_id, resource_type, **kwargs)  # noqa: E501
+            return self.get_application_list_by_cluster_id_and_resource_name_with_http_info(cluster_id, resource_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_application_list_by_cluster_id_and_resource_name_using_get_with_http_info(cluster_id, resource_type, **kwargs)  # noqa: E501
+            (data) = self.get_application_list_by_cluster_id_and_resource_name_with_http_info(cluster_id, resource_type, **kwargs)  # noqa: E501
             return data
 
-    def get_application_list_by_cluster_id_and_resource_name_using_get_with_http_info(self, cluster_id, resource_type, **kwargs):  # noqa: E501
-        """getApplicationListByClusterIdAndResourceName  # noqa: E501
+    def get_application_list_by_cluster_id_and_resource_name_with_http_info(self, cluster_id, resource_type, **kwargs):  # noqa: E501
+        """get_application_list_by_cluster_id_and_resource_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_list_by_cluster_id_and_resource_name_using_get_with_http_info(cluster_id, resource_type, async_req=True)
+        >>> thread = api.get_application_list_by_cluster_id_and_resource_name_with_http_info(cluster_id, resource_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -974,18 +974,18 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_application_list_by_cluster_id_and_resource_name_using_get" % key
+                    " to method get_application_list_by_cluster_id_and_resource_name" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_application_list_by_cluster_id_and_resource_name_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_application_list_by_cluster_id_and_resource_name`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_application_list_by_cluster_id_and_resource_name_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_application_list_by_cluster_id_and_resource_name`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1005,10 +1005,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{clusterId}/{resourceType}', 'GET',
@@ -1026,39 +1026,39 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_az_for_region_by_cloud_using_get(self, cloud, region, **kwargs):  # noqa: E501
-        """getAzForRegionByCloud  # noqa: E501
+    def get_az_for_region_by_cloud(self, cloud, region, **kwargs):  # noqa: E501
+        """get_az_for_region_by_cloud  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_az_for_region_by_cloud_using_get(cloud, region, async_req=True)
+        >>> thread = api.get_az_for_region_by_cloud(cloud, region, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :param str region: region (required)
+        :param str cloud: (required)
+        :param str region: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_az_for_region_by_cloud_using_get_with_http_info(cloud, region, **kwargs)  # noqa: E501
+            return self.get_az_for_region_by_cloud_with_http_info(cloud, region, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_az_for_region_by_cloud_using_get_with_http_info(cloud, region, **kwargs)  # noqa: E501
+            (data) = self.get_az_for_region_by_cloud_with_http_info(cloud, region, **kwargs)  # noqa: E501
             return data
 
-    def get_az_for_region_by_cloud_using_get_with_http_info(self, cloud, region, **kwargs):  # noqa: E501
-        """getAzForRegionByCloud  # noqa: E501
+    def get_az_for_region_by_cloud_with_http_info(self, cloud, region, **kwargs):  # noqa: E501
+        """get_az_for_region_by_cloud  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_az_for_region_by_cloud_using_get_with_http_info(cloud, region, async_req=True)
+        >>> thread = api.get_az_for_region_by_cloud_with_http_info(cloud, region, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :param str region: region (required)
+        :param str cloud: (required)
+        :param str region: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1075,18 +1075,18 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_az_for_region_by_cloud_using_get" % key
+                    " to method get_az_for_region_by_cloud" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cloud' is set
         if ('cloud' not in params or
                 params['cloud'] is None):
-            raise ValueError("Missing the required parameter `cloud` when calling `get_az_for_region_by_cloud_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cloud` when calling `get_az_for_region_by_cloud`")  # noqa: E501
         # verify the required parameter 'region' is set
         if ('region' not in params or
                 params['region'] is None):
-            raise ValueError("Missing the required parameter `region` when calling `get_az_for_region_by_cloud_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `region` when calling `get_az_for_region_by_cloud`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1106,10 +1106,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{cloud}/region/{region}/availability-zones', 'GET',
@@ -1127,45 +1127,45 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_file_from_facets_modules_using_get(self, file_name, path, **kwargs):  # noqa: E501
-        """getFileFromFacetsModules  # noqa: E501
+    def get_file_from_facets_modules(self, path, file_name, **kwargs):  # noqa: E501
+        """get_file_from_facets_modules  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_file_from_facets_modules_using_get(file_name, path, async_req=True)
+        >>> thread = api.get_file_from_facets_modules(path, file_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str file_name: fileName (required)
-        :param str path: path (required)
-        :return: JsonNode
+        :param str path: (required)
+        :param str file_name: (required)
+        :return: ComFasterxmlJacksonDatabindJsonNode
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_file_from_facets_modules_using_get_with_http_info(file_name, path, **kwargs)  # noqa: E501
+            return self.get_file_from_facets_modules_with_http_info(path, file_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_file_from_facets_modules_using_get_with_http_info(file_name, path, **kwargs)  # noqa: E501
+            (data) = self.get_file_from_facets_modules_with_http_info(path, file_name, **kwargs)  # noqa: E501
             return data
 
-    def get_file_from_facets_modules_using_get_with_http_info(self, file_name, path, **kwargs):  # noqa: E501
-        """getFileFromFacetsModules  # noqa: E501
+    def get_file_from_facets_modules_with_http_info(self, path, file_name, **kwargs):  # noqa: E501
+        """get_file_from_facets_modules  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_file_from_facets_modules_using_get_with_http_info(file_name, path, async_req=True)
+        >>> thread = api.get_file_from_facets_modules_with_http_info(path, file_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str file_name: fileName (required)
-        :param str path: path (required)
-        :return: JsonNode
+        :param str path: (required)
+        :param str file_name: (required)
+        :return: ComFasterxmlJacksonDatabindJsonNode
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['file_name', 'path']  # noqa: E501
+        all_params = ['path', 'file_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1176,28 +1176,28 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_file_from_facets_modules_using_get" % key
+                    " to method get_file_from_facets_modules" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'file_name' is set
-        if ('file_name' not in params or
-                params['file_name'] is None):
-            raise ValueError("Missing the required parameter `file_name` when calling `get_file_from_facets_modules_using_get`")  # noqa: E501
         # verify the required parameter 'path' is set
         if ('path' not in params or
                 params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `get_file_from_facets_modules_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `path` when calling `get_file_from_facets_modules`")  # noqa: E501
+        # verify the required parameter 'file_name' is set
+        if ('file_name' not in params or
+                params['file_name'] is None):
+            raise ValueError("Missing the required parameter `file_name` when calling `get_file_from_facets_modules`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'file_name' in params:
-            query_params.append(('fileName', params['file_name']))  # noqa: E501
         if 'path' in params:
             query_params.append(('path', params['path']))  # noqa: E501
+        if 'file_name' in params:
+            query_params.append(('fileName', params['file_name']))  # noqa: E501
 
         header_params = {}
 
@@ -1207,10 +1207,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/file', 'GET',
@@ -1220,7 +1220,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonNode',  # noqa: E501
+            response_type='ComFasterxmlJacksonDatabindJsonNode',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1228,42 +1228,42 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_git_history_for_resource_using_get(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getGitHistoryForResource  # noqa: E501
+    def get_git_history_for_resource(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
+        """get_git_history_for_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_git_history_for_resource_using_get(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_git_history_for_resource(cluster_id, resource_name, resource_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :return: StackGitLog
+        :param str cluster_id: (required)
+        :param str resource_name: (required)
+        :param str resource_type: (required)
+        :return: ComCapillaryOpsCpBoStackGitLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_git_history_for_resource_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.get_git_history_for_resource_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_git_history_for_resource_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.get_git_history_for_resource_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
             return data
 
-    def get_git_history_for_resource_using_get_with_http_info(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getGitHistoryForResource  # noqa: E501
+    def get_git_history_for_resource_with_http_info(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
+        """get_git_history_for_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_git_history_for_resource_using_get_with_http_info(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_git_history_for_resource_with_http_info(cluster_id, resource_name, resource_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :return: StackGitLog
+        :param str cluster_id: (required)
+        :param str resource_name: (required)
+        :param str resource_type: (required)
+        :return: ComCapillaryOpsCpBoStackGitLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1279,22 +1279,22 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_git_history_for_resource_using_get" % key
+                    " to method get_git_history_for_resource" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_git_history_for_resource_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_git_history_for_resource`")  # noqa: E501
         # verify the required parameter 'resource_name' is set
         if ('resource_name' not in params or
                 params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_git_history_for_resource_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_git_history_for_resource`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_git_history_for_resource_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_git_history_for_resource`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1316,10 +1316,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/logs/cluster/{clusterId}/resourceName/{resourceName}/resourceType/{resourceType}', 'GET',
@@ -1329,7 +1329,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='StackGitLog',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoStackGitLog',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1337,49 +1337,49 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_launch_dag_using_get(self, cloud, cluster_id, **kwargs):  # noqa: E501
-        """getLaunchDAG  # noqa: E501
+    def get_launch_dag(self, cluster_id, cloud, **kwargs):  # noqa: E501
+        """get_launch_dag  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_launch_dag_using_get(cloud, cluster_id, async_req=True)
+        >>> thread = api.get_launch_dag(cluster_id, cloud, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :param str cluster_id: clusterId (required)
-        :param bool is_dependent: isDependent
-        :param bool is_provided_k8s: isProvidedK8s
-        :return: list[BlueprintFile]
+        :param str cluster_id: (required)
+        :param str cloud: (required)
+        :param bool is_provided_k8s:
+        :param bool is_dependent:
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_launch_dag_using_get_with_http_info(cloud, cluster_id, **kwargs)  # noqa: E501
+            return self.get_launch_dag_with_http_info(cluster_id, cloud, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_launch_dag_using_get_with_http_info(cloud, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_launch_dag_with_http_info(cluster_id, cloud, **kwargs)  # noqa: E501
             return data
 
-    def get_launch_dag_using_get_with_http_info(self, cloud, cluster_id, **kwargs):  # noqa: E501
-        """getLaunchDAG  # noqa: E501
+    def get_launch_dag_with_http_info(self, cluster_id, cloud, **kwargs):  # noqa: E501
+        """get_launch_dag  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_launch_dag_using_get_with_http_info(cloud, cluster_id, async_req=True)
+        >>> thread = api.get_launch_dag_with_http_info(cluster_id, cloud, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :param str cluster_id: clusterId (required)
-        :param bool is_dependent: isDependent
-        :param bool is_provided_k8s: isProvidedK8s
-        :return: list[BlueprintFile]
+        :param str cluster_id: (required)
+        :param str cloud: (required)
+        :param bool is_provided_k8s:
+        :param bool is_dependent:
+        :return: list[ComCapillaryOpsCpBoResoucesBlueprintFile]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cloud', 'cluster_id', 'is_dependent', 'is_provided_k8s']  # noqa: E501
+        all_params = ['cluster_id', 'cloud', 'is_provided_k8s', 'is_dependent']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1390,32 +1390,32 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_launch_dag_using_get" % key
+                    " to method get_launch_dag" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'cloud' is set
-        if ('cloud' not in params or
-                params['cloud'] is None):
-            raise ValueError("Missing the required parameter `cloud` when calling `get_launch_dag_using_get`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_launch_dag_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_launch_dag`")  # noqa: E501
+        # verify the required parameter 'cloud' is set
+        if ('cloud' not in params or
+                params['cloud'] is None):
+            raise ValueError("Missing the required parameter `cloud` when calling `get_launch_dag`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'cloud' in params:
-            path_params['cloud'] = params['cloud']  # noqa: E501
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
+        if 'cloud' in params:
+            path_params['cloud'] = params['cloud']  # noqa: E501
 
         query_params = []
-        if 'is_dependent' in params:
-            query_params.append(('isDependent', params['is_dependent']))  # noqa: E501
         if 'is_provided_k8s' in params:
             query_params.append(('isProvidedK8s', params['is_provided_k8s']))  # noqa: E501
+        if 'is_dependent' in params:
+            query_params.append(('isDependent', params['is_dependent']))  # noqa: E501
 
         header_params = {}
 
@@ -1425,10 +1425,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{clusterId}/cloud/{cloud}/launch-dag', 'GET',
@@ -1438,7 +1438,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[BlueprintFile]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoResoucesBlueprintFile]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1446,49 +1446,49 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_output_references_using_get(self, output_type, stack_name, **kwargs):  # noqa: E501
-        """getOutputReferences  # noqa: E501
+    def get_output_references(self, stack_name, output_type, **kwargs):  # noqa: E501
+        """get_output_references  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_output_references_using_get(output_type, stack_name, async_req=True)
+        >>> thread = api.get_output_references(stack_name, output_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str output_type: outputType (required)
-        :param str stack_name: stackName (required)
-        :param str resource_name: resourceName
-        :param str resource_type: resourceType
-        :return: list[OutputReference]
+        :param str stack_name: (required)
+        :param str output_type: (required)
+        :param str resource_type:
+        :param str resource_name:
+        :return: list[ComCapillaryOpsCpV2RegistryOutputOutputReference]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_output_references_using_get_with_http_info(output_type, stack_name, **kwargs)  # noqa: E501
+            return self.get_output_references_with_http_info(stack_name, output_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_output_references_using_get_with_http_info(output_type, stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_output_references_with_http_info(stack_name, output_type, **kwargs)  # noqa: E501
             return data
 
-    def get_output_references_using_get_with_http_info(self, output_type, stack_name, **kwargs):  # noqa: E501
-        """getOutputReferences  # noqa: E501
+    def get_output_references_with_http_info(self, stack_name, output_type, **kwargs):  # noqa: E501
+        """get_output_references  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_output_references_using_get_with_http_info(output_type, stack_name, async_req=True)
+        >>> thread = api.get_output_references_with_http_info(stack_name, output_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str output_type: outputType (required)
-        :param str stack_name: stackName (required)
-        :param str resource_name: resourceName
-        :param str resource_type: resourceType
-        :return: list[OutputReference]
+        :param str stack_name: (required)
+        :param str output_type: (required)
+        :param str resource_type:
+        :param str resource_name:
+        :return: list[ComCapillaryOpsCpV2RegistryOutputOutputReference]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['output_type', 'stack_name', 'resource_name', 'resource_type']  # noqa: E501
+        all_params = ['stack_name', 'output_type', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1499,32 +1499,32 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_output_references_using_get" % key
+                    " to method get_output_references" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'output_type' is set
-        if ('output_type' not in params or
-                params['output_type'] is None):
-            raise ValueError("Missing the required parameter `output_type` when calling `get_output_references_using_get`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_output_references_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_output_references`")  # noqa: E501
+        # verify the required parameter 'output_type' is set
+        if ('output_type' not in params or
+                params['output_type'] is None):
+            raise ValueError("Missing the required parameter `output_type` when calling `get_output_references`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'output_type' in params:
-            path_params['outputType'] = params['output_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'output_type' in params:
+            path_params['outputType'] = params['output_type']  # noqa: E501
 
         query_params = []
-        if 'resource_name' in params:
-            query_params.append(('resourceName', params['resource_name']))  # noqa: E501
         if 'resource_type' in params:
             query_params.append(('resourceType', params['resource_type']))  # noqa: E501
+        if 'resource_name' in params:
+            query_params.append(('resourceName', params['resource_name']))  # noqa: E501
 
         header_params = {}
 
@@ -1534,10 +1534,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{stackName}/output/{outputType}/references', 'GET',
@@ -1547,7 +1547,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[OutputReference]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpV2RegistryOutputOutputReference]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1555,38 +1555,147 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_regions_using_get(self, cloud, **kwargs):  # noqa: E501
-        """getRegions  # noqa: E501
+    def get_output_references_by_type(self, stack_name, output_type, **kwargs):  # noqa: E501
+        """get_output_references_by_type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_regions_using_get(cloud, async_req=True)
+        >>> thread = api.get_output_references_by_type(stack_name, output_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :return: list[AllRegionsAndAZ]
+        :param str stack_name: (required)
+        :param str output_type: (required)
+        :param str resource_type:
+        :param str resource_name:
+        :return: list[ComCapillaryOpsCpV2RegistryOutputOutputReference]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_regions_using_get_with_http_info(cloud, **kwargs)  # noqa: E501
+            return self.get_output_references_by_type_with_http_info(stack_name, output_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_regions_using_get_with_http_info(cloud, **kwargs)  # noqa: E501
+            (data) = self.get_output_references_by_type_with_http_info(stack_name, output_type, **kwargs)  # noqa: E501
             return data
 
-    def get_regions_using_get_with_http_info(self, cloud, **kwargs):  # noqa: E501
-        """getRegions  # noqa: E501
+    def get_output_references_by_type_with_http_info(self, stack_name, output_type, **kwargs):  # noqa: E501
+        """get_output_references_by_type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_regions_using_get_with_http_info(cloud, async_req=True)
+        >>> thread = api.get_output_references_by_type_with_http_info(stack_name, output_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :return: list[AllRegionsAndAZ]
+        :param str stack_name: (required)
+        :param str output_type: (required)
+        :param str resource_type:
+        :param str resource_name:
+        :return: list[ComCapillaryOpsCpV2RegistryOutputOutputReference]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['stack_name', 'output_type', 'resource_type', 'resource_name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_output_references_by_type" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'stack_name' is set
+        if ('stack_name' not in params or
+                params['stack_name'] is None):
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_output_references_by_type`")  # noqa: E501
+        # verify the required parameter 'output_type' is set
+        if ('output_type' not in params or
+                params['output_type'] is None):
+            raise ValueError("Missing the required parameter `output_type` when calling `get_output_references_by_type`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'stack_name' in params:
+            path_params['stackName'] = params['stack_name']  # noqa: E501
+
+        query_params = []
+        if 'output_type' in params:
+            query_params.append(('outputType', params['output_type']))  # noqa: E501
+        if 'resource_type' in params:
+            query_params.append(('resourceType', params['resource_type']))  # noqa: E501
+        if 'resource_name' in params:
+            query_params.append(('resourceName', params['resource_name']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/dropdown/{stackName}/output-references', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ComCapillaryOpsCpV2RegistryOutputOutputReference]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_regions(self, cloud, **kwargs):  # noqa: E501
+        """get_regions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_regions(cloud, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cloud: (required)
+        :return: list[ComCapillaryOpsCpBoHistoryAllRegionsAndAZ]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_regions_with_http_info(cloud, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_regions_with_http_info(cloud, **kwargs)  # noqa: E501
+            return data
+
+    def get_regions_with_http_info(self, cloud, **kwargs):  # noqa: E501
+        """get_regions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_regions_with_http_info(cloud, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cloud: (required)
+        :return: list[ComCapillaryOpsCpBoHistoryAllRegionsAndAZ]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1602,14 +1711,14 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_regions_using_get" % key
+                    " to method get_regions" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cloud' is set
         if ('cloud' not in params or
                 params['cloud'] is None):
-            raise ValueError("Missing the required parameter `cloud` when calling `get_regions_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cloud` when calling `get_regions`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1627,10 +1736,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{cloud}/regions', 'GET',
@@ -1640,7 +1749,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AllRegionsAndAZ]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoHistoryAllRegionsAndAZ]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1648,38 +1757,38 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_regions_v2_using_get(self, cloud, **kwargs):  # noqa: E501
-        """getRegionsV2  # noqa: E501
+    def get_regions_v2(self, cloud, **kwargs):  # noqa: E501
+        """get_regions_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_regions_v2_using_get(cloud, async_req=True)
+        >>> thread = api.get_regions_v2(cloud, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :return: AllRegionsAndAZ
+        :param str cloud: (required)
+        :return: ComCapillaryOpsCpBoHistoryAllRegionsAndAZ
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_regions_v2_using_get_with_http_info(cloud, **kwargs)  # noqa: E501
+            return self.get_regions_v2_with_http_info(cloud, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_regions_v2_using_get_with_http_info(cloud, **kwargs)  # noqa: E501
+            (data) = self.get_regions_v2_with_http_info(cloud, **kwargs)  # noqa: E501
             return data
 
-    def get_regions_v2_using_get_with_http_info(self, cloud, **kwargs):  # noqa: E501
-        """getRegionsV2  # noqa: E501
+    def get_regions_v2_with_http_info(self, cloud, **kwargs):  # noqa: E501
+        """get_regions_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_regions_v2_using_get_with_http_info(cloud, async_req=True)
+        >>> thread = api.get_regions_v2_with_http_info(cloud, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cloud: cloud (required)
-        :return: AllRegionsAndAZ
+        :param str cloud: (required)
+        :return: ComCapillaryOpsCpBoHistoryAllRegionsAndAZ
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1695,14 +1804,14 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_regions_v2_using_get" % key
+                    " to method get_regions_v2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cloud' is set
         if ('cloud' not in params or
                 params['cloud'] is None):
-            raise ValueError("Missing the required parameter `cloud` when calling `get_regions_v2_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cloud` when calling `get_regions_v2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1720,10 +1829,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{cloud}/regions-v2', 'GET',
@@ -1733,7 +1842,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AllRegionsAndAZ',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoHistoryAllRegionsAndAZ',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1741,12 +1850,12 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_release_streams_using_get(self, **kwargs):  # noqa: E501
-        """getReleaseStreams  # noqa: E501
+    def get_release_streams(self, **kwargs):  # noqa: E501
+        """get_release_streams  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_release_streams_using_get(async_req=True)
+        >>> thread = api.get_release_streams(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1756,17 +1865,17 @@ class UiDropdownsControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_release_streams_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_release_streams_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_release_streams_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_release_streams_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_release_streams_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getReleaseStreams  # noqa: E501
+    def get_release_streams_with_http_info(self, **kwargs):  # noqa: E501
+        """get_release_streams  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_release_streams_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_release_streams_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1786,7 +1895,7 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_release_streams_using_get" % key
+                    " to method get_release_streams" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1805,10 +1914,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/releaseStreams', 'GET',
@@ -1826,49 +1935,49 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resource_by_cluster_id_using_get(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getResourceByClusterId  # noqa: E501
+    def get_resource_by_cluster_id(self, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_by_cluster_id_using_get(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_resource_by_cluster_id(cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param bool include_content: includeContent
-        :return: BlueprintFile
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param bool include_content:
+        :return: ComCapillaryOpsCpBoResoucesBlueprintFile
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_resource_by_cluster_id_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.get_resource_by_cluster_id_with_http_info(cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_resource_by_cluster_id_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.get_resource_by_cluster_id_with_http_info(cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def get_resource_by_cluster_id_using_get_with_http_info(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getResourceByClusterId  # noqa: E501
+    def get_resource_by_cluster_id_with_http_info(self, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_by_cluster_id_using_get_with_http_info(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_resource_by_cluster_id_with_http_info(cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param bool include_content: includeContent
-        :return: BlueprintFile
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param bool include_content:
+        :return: ComCapillaryOpsCpBoResoucesBlueprintFile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'resource_name', 'resource_type', 'include_content']  # noqa: E501
+        all_params = ['cluster_id', 'resource_type', 'resource_name', 'include_content']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1879,32 +1988,32 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_resource_by_cluster_id_using_get" % key
+                    " to method get_resource_by_cluster_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_resource_by_cluster_id_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_by_cluster_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_resource_by_cluster_id`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_by_cluster_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_by_cluster_id`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_by_cluster_id`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
         if 'include_content' in params:
@@ -1918,10 +2027,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/cluster/{clusterId}/{resourceType}/{resourceName}/resource-info', 'GET',
@@ -1931,7 +2040,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BlueprintFile',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResoucesBlueprintFile',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1939,49 +2048,49 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resource_by_stack_using_get(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getResourceByStack  # noqa: E501
+    def get_resource_by_stack(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_by_stack_using_get(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_resource_by_stack(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :param str branch: branch
-        :return: BlueprintFile
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param str branch:
+        :return: ComCapillaryOpsCpBoResoucesBlueprintFile
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_resource_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            return self.get_resource_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_resource_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_resource_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def get_resource_by_stack_using_get_with_http_info(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getResourceByStack  # noqa: E501
+    def get_resource_by_stack_with_http_info(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_resource_by_stack_with_http_info(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :param str branch: branch
-        :return: BlueprintFile
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param str branch:
+        :return: ComCapillaryOpsCpBoResoucesBlueprintFile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['resource_name', 'resource_type', 'stack_name', 'branch']  # noqa: E501
+        all_params = ['stack_name', 'resource_type', 'resource_name', 'branch']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1992,32 +2101,32 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_resource_by_stack_using_get" % key
+                    " to method get_resource_by_stack" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_by_stack_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_type' is set
-        if ('resource_type' not in params or
-                params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_by_stack_using_get`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_resource_by_stack_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_resource_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_by_stack`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
-        if 'resource_type' in params:
-            path_params['resourceType'] = params['resource_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
         if 'branch' in params:
@@ -2031,10 +2140,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/stack/{stackName}/{resourceType}/{resourceName}/resource-info', 'GET',
@@ -2044,7 +2153,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='BlueprintFile',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResoucesBlueprintFile',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2052,47 +2161,47 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resource_histories_by_stack_using_get(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getResourceHistoriesByStack  # noqa: E501
+    def get_resource_histories_by_stack(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_histories_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_histories_by_stack_using_get(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_resource_histories_by_stack(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[ResourceHistory]
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoHistoryResourceHistory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_resource_histories_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            return self.get_resource_histories_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_resource_histories_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_resource_histories_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def get_resource_histories_by_stack_using_get_with_http_info(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getResourceHistoriesByStack  # noqa: E501
+    def get_resource_histories_by_stack_with_http_info(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_histories_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_histories_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_resource_histories_by_stack_with_http_info(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[ResourceHistory]
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoHistoryResourceHistory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['resource_name', 'resource_type', 'stack_name']  # noqa: E501
+        all_params = ['stack_name', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2103,32 +2212,32 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_resource_histories_by_stack_using_get" % key
+                    " to method get_resource_histories_by_stack" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_histories_by_stack_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_type' is set
-        if ('resource_type' not in params or
-                params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_histories_by_stack_using_get`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_resource_histories_by_stack_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_resource_histories_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_histories_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_histories_by_stack`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
-        if 'resource_type' in params:
-            path_params['resourceType'] = params['resource_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -2140,10 +2249,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history', 'GET',
@@ -2153,7 +2262,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ResourceHistory]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoHistoryResourceHistory]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2161,47 +2270,47 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resource_history_overview_by_stack_using_get(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getResourceHistoryOverviewByStack  # noqa: E501
+    def get_resource_history_overview_by_stack(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_history_overview_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_history_overview_by_stack_using_get(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_resource_history_overview_by_stack(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[ResourceHistoryOverview]
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoHistoryResourceHistoryOverview]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_resource_history_overview_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            return self.get_resource_history_overview_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_resource_history_overview_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_resource_history_overview_by_stack_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def get_resource_history_overview_by_stack_using_get_with_http_info(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getResourceHistoryOverviewByStack  # noqa: E501
+    def get_resource_history_overview_by_stack_with_http_info(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_resource_history_overview_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_history_overview_by_stack_using_get_with_http_info(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.get_resource_history_overview_by_stack_with_http_info(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[ResourceHistoryOverview]
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoHistoryResourceHistoryOverview]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['resource_name', 'resource_type', 'stack_name']  # noqa: E501
+        all_params = ['stack_name', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2212,32 +2321,32 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_resource_history_overview_by_stack_using_get" % key
+                    " to method get_resource_history_overview_by_stack" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_history_overview_by_stack_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_type' is set
-        if ('resource_type' not in params or
-                params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_history_overview_by_stack_using_get`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_resource_history_overview_by_stack_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_resource_history_overview_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_resource_history_overview_by_stack`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_resource_history_overview_by_stack`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
-        if 'resource_type' in params:
-            path_params['resourceType'] = params['resource_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -2249,10 +2358,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history-overview', 'GET',
@@ -2262,7 +2371,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ResourceHistoryOverview]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoHistoryResourceHistoryOverview]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2270,38 +2379,38 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_role_permissions_using_get(self, role, **kwargs):  # noqa: E501
-        """getRolePermissions  # noqa: E501
+    def get_role_permissions(self, role, **kwargs):  # noqa: E501
+        """get_role_permissions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_role_permissions_using_get(role, async_req=True)
+        >>> thread = api.get_role_permissions(role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str role: role (required)
-        :return: list[RBACEntity]
+        :param str role: (required)
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_role_permissions_using_get_with_http_info(role, **kwargs)  # noqa: E501
+            return self.get_role_permissions_with_http_info(role, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_role_permissions_using_get_with_http_info(role, **kwargs)  # noqa: E501
+            (data) = self.get_role_permissions_with_http_info(role, **kwargs)  # noqa: E501
             return data
 
-    def get_role_permissions_using_get_with_http_info(self, role, **kwargs):  # noqa: E501
-        """getRolePermissions  # noqa: E501
+    def get_role_permissions_with_http_info(self, role, **kwargs):  # noqa: E501
+        """get_role_permissions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_role_permissions_using_get_with_http_info(role, async_req=True)
+        >>> thread = api.get_role_permissions_with_http_info(role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str role: role (required)
-        :return: list[RBACEntity]
+        :param str role: (required)
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2317,14 +2426,14 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_role_permissions_using_get" % key
+                    " to method get_role_permissions" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'role' is set
         if ('role' not in params or
                 params['role'] is None):
-            raise ValueError("Missing the required parameter `role` when calling `get_role_permissions_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `role` when calling `get_role_permissions`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2342,10 +2451,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/rolePermissions/{role}', 'GET',
@@ -2355,7 +2464,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[RBACEntity]',  # noqa: E501
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2363,45 +2472,45 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_service_overview_using_get(self, service_name, stack_name, **kwargs):  # noqa: E501
-        """getServiceOverview  # noqa: E501
+    def get_service_overview(self, stack_name, service_name, **kwargs):  # noqa: E501
+        """get_service_overview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service_overview_using_get(service_name, stack_name, async_req=True)
+        >>> thread = api.get_service_overview(stack_name, service_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str service_name: serviceName (required)
-        :param str stack_name: stackName (required)
-        :return: ServiceOverview
+        :param str stack_name: (required)
+        :param str service_name: (required)
+        :return: ComCapillaryOpsCpBoResoucesServiceOverview
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_service_overview_using_get_with_http_info(service_name, stack_name, **kwargs)  # noqa: E501
+            return self.get_service_overview_with_http_info(stack_name, service_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_service_overview_using_get_with_http_info(service_name, stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_service_overview_with_http_info(stack_name, service_name, **kwargs)  # noqa: E501
             return data
 
-    def get_service_overview_using_get_with_http_info(self, service_name, stack_name, **kwargs):  # noqa: E501
-        """getServiceOverview  # noqa: E501
+    def get_service_overview_with_http_info(self, stack_name, service_name, **kwargs):  # noqa: E501
+        """get_service_overview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service_overview_using_get_with_http_info(service_name, stack_name, async_req=True)
+        >>> thread = api.get_service_overview_with_http_info(stack_name, service_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str service_name: serviceName (required)
-        :param str stack_name: stackName (required)
-        :return: ServiceOverview
+        :param str stack_name: (required)
+        :param str service_name: (required)
+        :return: ComCapillaryOpsCpBoResoucesServiceOverview
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['service_name', 'stack_name']  # noqa: E501
+        all_params = ['stack_name', 'service_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2412,26 +2521,26 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_service_overview_using_get" % key
+                    " to method get_service_overview" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'service_name' is set
-        if ('service_name' not in params or
-                params['service_name'] is None):
-            raise ValueError("Missing the required parameter `service_name` when calling `get_service_overview_using_get`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_service_overview_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_service_overview`")  # noqa: E501
+        # verify the required parameter 'service_name' is set
+        if ('service_name' not in params or
+                params['service_name'] is None):
+            raise ValueError("Missing the required parameter `service_name` when calling `get_service_overview`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'service_name' in params:
-            path_params['serviceName'] = params['service_name']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'service_name' in params:
+            path_params['serviceName'] = params['service_name']  # noqa: E501
 
         query_params = []
 
@@ -2443,10 +2552,10 @@ class UiDropdownsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/stack/{stackName}/service/{serviceName}/overview', 'GET',
@@ -2456,7 +2565,7 @@ class UiDropdownsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ServiceOverview',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResoucesServiceOverview',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2464,39 +2573,39 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def sync_cluster_history_using_post(self, cluster_id, **kwargs):  # noqa: E501
-        """syncClusterHistory  # noqa: E501
+    def sync_cluster_history(self, cluster_id, **kwargs):  # noqa: E501
+        """sync_cluster_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_cluster_history_using_post(cluster_id, async_req=True)
+        >>> thread = api.sync_cluster_history(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool force: force
+        :param str cluster_id: (required)
+        :param bool force:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.sync_cluster_history_using_post_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.sync_cluster_history_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.sync_cluster_history_using_post_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.sync_cluster_history_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def sync_cluster_history_using_post_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """syncClusterHistory  # noqa: E501
+    def sync_cluster_history_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """sync_cluster_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_cluster_history_using_post_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.sync_cluster_history_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool force: force
+        :param str cluster_id: (required)
+        :param bool force:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2513,14 +2622,14 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method sync_cluster_history_using_post" % key
+                    " to method sync_cluster_history" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `sync_cluster_history_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `sync_cluster_history`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2538,8 +2647,12 @@ class UiDropdownsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/logs/cluster/{clusterId}', 'POST',
@@ -2557,45 +2670,45 @@ class UiDropdownsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def sync_substack_git_history_using_post(self, force_sync, substack_name, **kwargs):  # noqa: E501
-        """syncSubstackGitHistory  # noqa: E501
+    def sync_substack_git_history(self, substack_name, force_sync, **kwargs):  # noqa: E501
+        """sync_substack_git_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_substack_git_history_using_post(force_sync, substack_name, async_req=True)
+        >>> thread = api.sync_substack_git_history(substack_name, force_sync, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param bool force_sync: forceSync (required)
-        :param str substack_name: substackName (required)
+        :param str substack_name: (required)
+        :param bool force_sync: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.sync_substack_git_history_using_post_with_http_info(force_sync, substack_name, **kwargs)  # noqa: E501
+            return self.sync_substack_git_history_with_http_info(substack_name, force_sync, **kwargs)  # noqa: E501
         else:
-            (data) = self.sync_substack_git_history_using_post_with_http_info(force_sync, substack_name, **kwargs)  # noqa: E501
+            (data) = self.sync_substack_git_history_with_http_info(substack_name, force_sync, **kwargs)  # noqa: E501
             return data
 
-    def sync_substack_git_history_using_post_with_http_info(self, force_sync, substack_name, **kwargs):  # noqa: E501
-        """syncSubstackGitHistory  # noqa: E501
+    def sync_substack_git_history_with_http_info(self, substack_name, force_sync, **kwargs):  # noqa: E501
+        """sync_substack_git_history  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_substack_git_history_using_post_with_http_info(force_sync, substack_name, async_req=True)
+        >>> thread = api.sync_substack_git_history_with_http_info(substack_name, force_sync, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param bool force_sync: forceSync (required)
-        :param str substack_name: substackName (required)
+        :param str substack_name: (required)
+        :param bool force_sync: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['force_sync', 'substack_name']  # noqa: E501
+        all_params = ['substack_name', 'force_sync']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2606,28 +2719,28 @@ class UiDropdownsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method sync_substack_git_history_using_post" % key
+                    " to method sync_substack_git_history" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'force_sync' is set
-        if ('force_sync' not in params or
-                params['force_sync'] is None):
-            raise ValueError("Missing the required parameter `force_sync` when calling `sync_substack_git_history_using_post`")  # noqa: E501
         # verify the required parameter 'substack_name' is set
         if ('substack_name' not in params or
                 params['substack_name'] is None):
-            raise ValueError("Missing the required parameter `substack_name` when calling `sync_substack_git_history_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `substack_name` when calling `sync_substack_git_history`")  # noqa: E501
+        # verify the required parameter 'force_sync' is set
+        if ('force_sync' not in params or
+                params['force_sync'] is None):
+            raise ValueError("Missing the required parameter `force_sync` when calling `sync_substack_git_history`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'force_sync' in params:
-            query_params.append(('forceSync', params['force_sync']))  # noqa: E501
         if 'substack_name' in params:
             query_params.append(('substackName', params['substack_name']))  # noqa: E501
+        if 'force_sync' in params:
+            query_params.append(('forceSync', params['force_sync']))  # noqa: E501
 
         header_params = {}
 
@@ -2635,8 +2748,12 @@ class UiDropdownsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/dropdown/logs/substack', 'POST',

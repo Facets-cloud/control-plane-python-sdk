@@ -1,18 +1,18 @@
 # swagger_client.UiCiCdControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**attach_rule_and_workflow_using_put**](UiCiCdControllerApi.md#attach_rule_and_workflow_using_put) | **PUT** /cc-ui/v1/ci-cd/attach | Attach Rule and Workflow
-[**detach_rule_and_workflow_using_put**](UiCiCdControllerApi.md#detach_rule_and_workflow_using_put) | **PUT** /cc-ui/v1/ci-cd/detach | Detach Rule and Workflow
-[**generate_artifact_push_credentials_using_post1**](UiCiCdControllerApi.md#generate_artifact_push_credentials_using_post1) | **POST** /cc-ui/v1/ci-cd/pushCredentials | Generate Artifact Push Credentials
-[**get_ci_cd_details_using_get**](UiCiCdControllerApi.md#get_ci_cd_details_using_get) | **GET** /cc-ui/v1/ci-cd/{stackName} | Get CI/CD Details
-[**register_artifact_saas_using_post1**](UiCiCdControllerApi.md#register_artifact_saas_using_post1) | **POST** /cc-ui/v1/ci-cd/register | Register Artifact SaaS
-[**save_ci_cd_details_using_post**](UiCiCdControllerApi.md#save_ci_cd_details_using_post) | **POST** /cc-ui/v1/ci-cd | Save CI/CD Details
+[**attach_rule_and_workflow**](UiCiCdControllerApi.md#attach_rule_and_workflow) | **PUT** /cc-ui/v1/ci-cd/attach | Attach Rule and Workflow
+[**detach_rule_and_workflow**](UiCiCdControllerApi.md#detach_rule_and_workflow) | **PUT** /cc-ui/v1/ci-cd/detach | Detach Rule and Workflow
+[**generate_artifact_push_credentials**](UiCiCdControllerApi.md#generate_artifact_push_credentials) | **POST** /cc-ui/v1/ci-cd/pushCredentials | Generate Artifact Push Credentials
+[**get_ci_cd_details**](UiCiCdControllerApi.md#get_ci_cd_details) | **GET** /cc-ui/v1/ci-cd/{stackName} | Get CI/CD Details
+[**register_artifact_saas**](UiCiCdControllerApi.md#register_artifact_saas) | **POST** /cc-ui/v1/ci-cd/register | Register Artifact SaaS
+[**save_ci_cd_details**](UiCiCdControllerApi.md#save_ci_cd_details) | **POST** /cc-ui/v1/ci-cd | Save CI/CD Details
 
-# **attach_rule_and_workflow_using_put**
-> attach_rule_and_workflow_using_put(body)
+# **attach_rule_and_workflow**
+> attach_rule_and_workflow(body)
 
 Attach Rule and Workflow
 
@@ -25,27 +25,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCiCdControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AttachDetachCiRequest() # AttachDetachCiRequest | attachDetachCiRequest
+body = swagger_client.ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest() # ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest | 
 
 try:
     # Attach Rule and Workflow
-    api_instance.attach_rule_and_workflow_using_put(body)
+    api_instance.attach_rule_and_workflow(body)
 except ApiException as e:
-    print("Exception when calling UiCiCdControllerApi->attach_rule_and_workflow_using_put: %s\n" % e)
+    print("Exception when calling UiCiCdControllerApi->attach_rule_and_workflow: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AttachDetachCiRequest**](AttachDetachCiRequest.md)| attachDetachCiRequest | 
+ **body** | [**ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest**](ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest.md)|  | 
 
 ### Return type
 
@@ -53,17 +53,17 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **detach_rule_and_workflow_using_put**
-> detach_rule_and_workflow_using_put(body)
+# **detach_rule_and_workflow**
+> detach_rule_and_workflow(body)
 
 Detach Rule and Workflow
 
@@ -76,27 +76,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCiCdControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AttachDetachCiRequest() # AttachDetachCiRequest | attachDetachCiRequest
+body = swagger_client.ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest() # ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest | 
 
 try:
     # Detach Rule and Workflow
-    api_instance.detach_rule_and_workflow_using_put(body)
+    api_instance.detach_rule_and_workflow(body)
 except ApiException as e:
-    print("Exception when calling UiCiCdControllerApi->detach_rule_and_workflow_using_put: %s\n" % e)
+    print("Exception when calling UiCiCdControllerApi->detach_rule_and_workflow: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AttachDetachCiRequest**](AttachDetachCiRequest.md)| attachDetachCiRequest | 
+ **body** | [**ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest**](ComCapillaryOpsCpV2ArtifactAttachDetachCiRequest.md)|  | 
 
 ### Return type
 
@@ -104,17 +104,17 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generate_artifact_push_credentials_using_post1**
-> PushCredentialsResponse generate_artifact_push_credentials_using_post1(body)
+# **generate_artifact_push_credentials**
+> ComCapillaryOpsCpV2ArtifactPushCredentialsResponse generate_artifact_push_credentials(body)
 
 Generate Artifact Push Credentials
 
@@ -127,46 +127,46 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCiCdControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.PushCredentialsRequest() # PushCredentialsRequest | pushCredentialsRequest
+body = swagger_client.ComCapillaryOpsCpV2ArtifactPushCredentialsRequest() # ComCapillaryOpsCpV2ArtifactPushCredentialsRequest | 
 
 try:
     # Generate Artifact Push Credentials
-    api_response = api_instance.generate_artifact_push_credentials_using_post1(body)
+    api_response = api_instance.generate_artifact_push_credentials(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCiCdControllerApi->generate_artifact_push_credentials_using_post1: %s\n" % e)
+    print("Exception when calling UiCiCdControllerApi->generate_artifact_push_credentials: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PushCredentialsRequest**](PushCredentialsRequest.md)| pushCredentialsRequest | 
+ **body** | [**ComCapillaryOpsCpV2ArtifactPushCredentialsRequest**](ComCapillaryOpsCpV2ArtifactPushCredentialsRequest.md)|  | 
 
 ### Return type
 
-[**PushCredentialsResponse**](PushCredentialsResponse.md)
+[**ComCapillaryOpsCpV2ArtifactPushCredentialsResponse**](ComCapillaryOpsCpV2ArtifactPushCredentialsResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ci_cd_details_using_get**
-> CiCdDto get_ci_cd_details_using_get(stack_name)
+# **get_ci_cd_details**
+> ComCapillaryOpsCpV2ArtifactCiCdDto get_ci_cd_details(stack_name)
 
 Get CI/CD Details
 
@@ -179,46 +179,46 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCiCdControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
     # Get CI/CD Details
-    api_response = api_instance.get_ci_cd_details_using_get(stack_name)
+    api_response = api_instance.get_ci_cd_details(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCiCdControllerApi->get_ci_cd_details_using_get: %s\n" % e)
+    print("Exception when calling UiCiCdControllerApi->get_ci_cd_details: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-[**CiCdDto**](CiCdDto.md)
+[**ComCapillaryOpsCpV2ArtifactCiCdDto**](ComCapillaryOpsCpV2ArtifactCiCdDto.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **register_artifact_saas_using_post1**
-> register_artifact_saas_using_post1(body)
+# **register_artifact_saas**
+> register_artifact_saas(body)
 
 Register Artifact SaaS
 
@@ -231,27 +231,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCiCdControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.SaasArtifactRequest() # SaasArtifactRequest | artifactRequest
+body = swagger_client.ComCapillaryOpsCpV2ArtifactSaasArtifactRequest() # ComCapillaryOpsCpV2ArtifactSaasArtifactRequest | 
 
 try:
     # Register Artifact SaaS
-    api_instance.register_artifact_saas_using_post1(body)
+    api_instance.register_artifact_saas(body)
 except ApiException as e:
-    print("Exception when calling UiCiCdControllerApi->register_artifact_saas_using_post1: %s\n" % e)
+    print("Exception when calling UiCiCdControllerApi->register_artifact_saas: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SaasArtifactRequest**](SaasArtifactRequest.md)| artifactRequest | 
+ **body** | [**ComCapillaryOpsCpV2ArtifactSaasArtifactRequest**](ComCapillaryOpsCpV2ArtifactSaasArtifactRequest.md)|  | 
 
 ### Return type
 
@@ -259,17 +259,17 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **save_ci_cd_details_using_post**
-> save_ci_cd_details_using_post(body)
+# **save_ci_cd_details**
+> save_ci_cd_details(body)
 
 Save CI/CD Details
 
@@ -282,27 +282,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCiCdControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.CiCdDto() # CiCdDto | ciCdDto
+body = swagger_client.ComCapillaryOpsCpV2ArtifactCiCdDto() # ComCapillaryOpsCpV2ArtifactCiCdDto | 
 
 try:
     # Save CI/CD Details
-    api_instance.save_ci_cd_details_using_post(body)
+    api_instance.save_ci_cd_details(body)
 except ApiException as e:
-    print("Exception when calling UiCiCdControllerApi->save_ci_cd_details_using_post: %s\n" % e)
+    print("Exception when calling UiCiCdControllerApi->save_ci_cd_details: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CiCdDto**](CiCdDto.md)| ciCdDto | 
+ **body** | [**ComCapillaryOpsCpV2ArtifactCiCdDto**](ComCapillaryOpsCpV2ArtifactCiCdDto.md)|  | 
 
 ### Return type
 
@@ -310,12 +310,12 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

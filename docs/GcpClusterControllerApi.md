@@ -1,17 +1,17 @@
 # swagger_client.GcpClusterControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_cluster_using_post2**](GcpClusterControllerApi.md#create_cluster_using_post2) | **POST** /cc/v1/gcp/clusters | createCluster
-[**get_cluster_using_get2**](GcpClusterControllerApi.md#get_cluster_using_get2) | **GET** /cc/v1/gcp/clusters/{clusterId} | getCluster
-[**update_cluster_using_put2**](GcpClusterControllerApi.md#update_cluster_using_put2) | **PUT** /cc/v1/gcp/clusters/{clusterId} | updateCluster
+[**create_cluster**](GcpClusterControllerApi.md#create_cluster) | **POST** /cc/v1/gcp/clusters | 
+[**get_cluster**](GcpClusterControllerApi.md#get_cluster) | **GET** /cc/v1/gcp/clusters/{clusterId} | 
+[**update_cluster**](GcpClusterControllerApi.md#update_cluster) | **PUT** /cc/v1/gcp/clusters/{clusterId} | 
 
-# **create_cluster_using_post2**
-> GCPCluster create_cluster_using_post2(body)
+# **create_cluster**
+> ComCapillaryOpsCpBoGCPCluster create_cluster(body)
 
-createCluster
+
 
 ### Example
 ```python
@@ -20,48 +20,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.GcpClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
+body = swagger_client.ComCapillaryOpsCpBoRequestsGCPClusterRequest() # ComCapillaryOpsCpBoRequestsGCPClusterRequest | 
 
 try:
-    # createCluster
-    api_response = api_instance.create_cluster_using_post2(body)
+    api_response = api_instance.create_cluster(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GcpClusterControllerApi->create_cluster_using_post2: %s\n" % e)
+    print("Exception when calling GcpClusterControllerApi->create_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
+ **body** | [**ComCapillaryOpsCpBoRequestsGCPClusterRequest**](ComCapillaryOpsCpBoRequestsGCPClusterRequest.md)|  | 
 
 ### Return type
 
-[**GCPCluster**](GCPCluster.md)
+[**ComCapillaryOpsCpBoGCPCluster**](ComCapillaryOpsCpBoGCPCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_cluster_using_get2**
-> GCPCluster get_cluster_using_get2(cluster_id)
+# **get_cluster**
+> ComCapillaryOpsCpBoGCPCluster get_cluster(cluster_id)
 
-getCluster
+
 
 ### Example
 ```python
@@ -70,48 +69,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.GcpClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getCluster
-    api_response = api_instance.get_cluster_using_get2(cluster_id)
+    api_response = api_instance.get_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GcpClusterControllerApi->get_cluster_using_get2: %s\n" % e)
+    print("Exception when calling GcpClusterControllerApi->get_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**GCPCluster**](GCPCluster.md)
+[**ComCapillaryOpsCpBoGCPCluster**](ComCapillaryOpsCpBoGCPCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_cluster_using_put2**
-> GCPCluster update_cluster_using_put2(body, cluster_id)
+# **update_cluster**
+> ComCapillaryOpsCpBoGCPCluster update_cluster(body, cluster_id)
 
-updateCluster
+
 
 ### Example
 ```python
@@ -120,43 +118,42 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.GcpClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoRequestsGCPClusterRequest() # ComCapillaryOpsCpBoRequestsGCPClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # updateCluster
-    api_response = api_instance.update_cluster_using_put2(body, cluster_id)
+    api_response = api_instance.update_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GcpClusterControllerApi->update_cluster_using_put2: %s\n" % e)
+    print("Exception when calling GcpClusterControllerApi->update_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoRequestsGCPClusterRequest**](ComCapillaryOpsCpBoRequestsGCPClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**GCPCluster**](GCPCluster.md)
+[**ComCapillaryOpsCpBoGCPCluster**](ComCapillaryOpsCpBoGCPCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

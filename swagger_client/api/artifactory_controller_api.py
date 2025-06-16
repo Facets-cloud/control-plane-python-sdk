@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class ArtifactoryControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_ecr_artifactory_using_post(self, body, **kwargs):  # noqa: E501
-        """createECRArtifactory  # noqa: E501
+    def create_ecr_artifactory(self, body, **kwargs):  # noqa: E501
+        """create_ecr_artifactory  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_ecr_artifactory_using_post(body, async_req=True)
+        >>> thread = api.create_ecr_artifactory(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ECRArtifactory body: ecrArtifactory (required)
-        :return: ECRArtifactory
+        :param ComCapillaryOpsCpBoECRArtifactory body: (required)
+        :return: ComCapillaryOpsCpBoECRArtifactory
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_ecr_artifactory_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_ecr_artifactory_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_ecr_artifactory_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_ecr_artifactory_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_ecr_artifactory_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createECRArtifactory  # noqa: E501
+    def create_ecr_artifactory_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_ecr_artifactory  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_ecr_artifactory_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_ecr_artifactory_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ECRArtifactory body: ecrArtifactory (required)
-        :return: ECRArtifactory
+        :param ComCapillaryOpsCpBoECRArtifactory body: (required)
+        :return: ComCapillaryOpsCpBoECRArtifactory
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class ArtifactoryControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_ecr_artifactory_using_post" % key
+                    " to method create_ecr_artifactory" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_ecr_artifactory_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_ecr_artifactory`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class ArtifactoryControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/artifactories', 'POST',
@@ -121,7 +121,7 @@ class ArtifactoryControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ECRArtifactory',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoECRArtifactory',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,36 +129,36 @@ class ArtifactoryControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_artifactories_using_get(self, **kwargs):  # noqa: E501
-        """getAllArtifactories  # noqa: E501
+    def get_all_artifactories(self, **kwargs):  # noqa: E501
+        """get_all_artifactories  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_artifactories_using_get(async_req=True)
+        >>> thread = api.get_all_artifactories(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Artifactory]
+        :return: list[ComCapillaryOpsCpBoArtifactory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_artifactories_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_artifactories_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_artifactories_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_artifactories_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_artifactories_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllArtifactories  # noqa: E501
+    def get_all_artifactories_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_artifactories  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_artifactories_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_artifactories_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Artifactory]
+        :return: list[ComCapillaryOpsCpBoArtifactory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -174,7 +174,7 @@ class ArtifactoryControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_artifactories_using_get" % key
+                    " to method get_all_artifactories" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -193,10 +193,10 @@ class ArtifactoryControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/artifactories', 'GET',
@@ -206,7 +206,7 @@ class ArtifactoryControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Artifactory]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoArtifactory]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -214,40 +214,40 @@ class ArtifactoryControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_ecr_artifactory_using_put(self, body, artifactory_id, **kwargs):  # noqa: E501
-        """updateECRArtifactory  # noqa: E501
+    def update_ecr_artifactory(self, body, artifactory_id, **kwargs):  # noqa: E501
+        """update_ecr_artifactory  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_ecr_artifactory_using_put(body, artifactory_id, async_req=True)
+        >>> thread = api.update_ecr_artifactory(body, artifactory_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ECRArtifactory body: ecrArtifactory (required)
-        :param str artifactory_id: artifactoryId (required)
-        :return: ECRArtifactory
+        :param ComCapillaryOpsCpBoECRArtifactory body: (required)
+        :param str artifactory_id: (required)
+        :return: ComCapillaryOpsCpBoECRArtifactory
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_ecr_artifactory_using_put_with_http_info(body, artifactory_id, **kwargs)  # noqa: E501
+            return self.update_ecr_artifactory_with_http_info(body, artifactory_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_ecr_artifactory_using_put_with_http_info(body, artifactory_id, **kwargs)  # noqa: E501
+            (data) = self.update_ecr_artifactory_with_http_info(body, artifactory_id, **kwargs)  # noqa: E501
             return data
 
-    def update_ecr_artifactory_using_put_with_http_info(self, body, artifactory_id, **kwargs):  # noqa: E501
-        """updateECRArtifactory  # noqa: E501
+    def update_ecr_artifactory_with_http_info(self, body, artifactory_id, **kwargs):  # noqa: E501
+        """update_ecr_artifactory  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_ecr_artifactory_using_put_with_http_info(body, artifactory_id, async_req=True)
+        >>> thread = api.update_ecr_artifactory_with_http_info(body, artifactory_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ECRArtifactory body: ecrArtifactory (required)
-        :param str artifactory_id: artifactoryId (required)
-        :return: ECRArtifactory
+        :param ComCapillaryOpsCpBoECRArtifactory body: (required)
+        :param str artifactory_id: (required)
+        :return: ComCapillaryOpsCpBoECRArtifactory
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -263,18 +263,18 @@ class ArtifactoryControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_ecr_artifactory_using_put" % key
+                    " to method update_ecr_artifactory" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_ecr_artifactory_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_ecr_artifactory`")  # noqa: E501
         # verify the required parameter 'artifactory_id' is set
         if ('artifactory_id' not in params or
                 params['artifactory_id'] is None):
-            raise ValueError("Missing the required parameter `artifactory_id` when calling `update_ecr_artifactory_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `artifactory_id` when calling `update_ecr_artifactory`")  # noqa: E501
 
         collection_formats = {}
 
@@ -294,14 +294,14 @@ class ArtifactoryControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/artifactories/{artifactoryId}', 'PUT',
@@ -311,7 +311,7 @@ class ArtifactoryControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ECRArtifactory',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoECRArtifactory',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

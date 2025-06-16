@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,12 +32,12 @@ class UiAlertsControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete_all_using_delete(self, **kwargs):  # noqa: E501
-        """deleteAll  # noqa: E501
+    def delete_all(self, **kwargs):  # noqa: E501
+        """delete_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_all_using_delete(async_req=True)
+        >>> thread = api.delete_all(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -47,17 +47,17 @@ class UiAlertsControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_all_using_delete_with_http_info(**kwargs)  # noqa: E501
+            return self.delete_all_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.delete_all_using_delete_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.delete_all_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_all_using_delete_with_http_info(self, **kwargs):  # noqa: E501
-        """deleteAll  # noqa: E501
+    def delete_all_with_http_info(self, **kwargs):  # noqa: E501
+        """delete_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_all_using_delete_with_http_info(async_req=True)
+        >>> thread = api.delete_all_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -77,7 +77,7 @@ class UiAlertsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_all_using_delete" % key
+                    " to method delete_all" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -94,8 +94,12 @@ class UiAlertsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/alerts', 'DELETE',
@@ -113,12 +117,12 @@ class UiAlertsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_alerts_count_using_get(self, **kwargs):  # noqa: E501
-        """getAlertsCount  # noqa: E501
+    def get_alerts_count(self, **kwargs):  # noqa: E501
+        """get_alerts_count  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_alerts_count_using_get(async_req=True)
+        >>> thread = api.get_alerts_count(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -128,17 +132,17 @@ class UiAlertsControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alerts_count_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_alerts_count_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_alerts_count_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_alerts_count_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_alerts_count_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAlertsCount  # noqa: E501
+    def get_alerts_count_with_http_info(self, **kwargs):  # noqa: E501
+        """get_alerts_count  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_alerts_count_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_alerts_count_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -158,7 +162,7 @@ class UiAlertsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_alerts_count_using_get" % key
+                    " to method get_alerts_count" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -177,10 +181,10 @@ class UiAlertsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/alerts/firing/count', 'GET',
@@ -198,36 +202,36 @@ class UiAlertsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_alerts_overview_using_get(self, **kwargs):  # noqa: E501
-        """getAlertsOverview  # noqa: E501
+    def get_alerts_overview(self, **kwargs):  # noqa: E501
+        """get_alerts_overview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_alerts_overview_using_get(async_req=True)
+        >>> thread = api.get_alerts_overview(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[AlertOverview]
+        :return: list[ComCapillaryOpsCpBoAlertsAlertOverview]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_alerts_overview_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_alerts_overview_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_alerts_overview_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_alerts_overview_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_alerts_overview_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAlertsOverview  # noqa: E501
+    def get_alerts_overview_with_http_info(self, **kwargs):  # noqa: E501
+        """get_alerts_overview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_alerts_overview_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_alerts_overview_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[AlertOverview]
+        :return: list[ComCapillaryOpsCpBoAlertsAlertOverview]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -243,7 +247,7 @@ class UiAlertsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_alerts_overview_using_get" % key
+                    " to method get_alerts_overview" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -262,10 +266,10 @@ class UiAlertsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/alerts/firing/overview', 'GET',
@@ -275,7 +279,7 @@ class UiAlertsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AlertOverview]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoAlertsAlertOverview]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -283,38 +287,38 @@ class UiAlertsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_cluster_alerts_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getClusterAlerts  # noqa: E501
+    def get_cluster_alerts(self, cluster_id, **kwargs):  # noqa: E501
+        """get_cluster_alerts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cluster_alerts_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_cluster_alerts(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: ClusterFiringAlertsDTO
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoAlertsClusterFiringAlertsDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_cluster_alerts_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_cluster_alerts_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_cluster_alerts_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_cluster_alerts_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_cluster_alerts_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getClusterAlerts  # noqa: E501
+    def get_cluster_alerts_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_cluster_alerts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cluster_alerts_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_cluster_alerts_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: ClusterFiringAlertsDTO
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoAlertsClusterFiringAlertsDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -330,14 +334,14 @@ class UiAlertsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_cluster_alerts_using_get" % key
+                    " to method get_cluster_alerts" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_cluster_alerts_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_cluster_alerts`")  # noqa: E501
 
         collection_formats = {}
 
@@ -355,10 +359,10 @@ class UiAlertsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/alerts/{clusterId}/all', 'GET',
@@ -368,7 +372,7 @@ class UiAlertsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ClusterFiringAlertsDTO',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoAlertsClusterFiringAlertsDTO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -376,36 +380,36 @@ class UiAlertsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_firing_alerts_using_get(self, **kwargs):  # noqa: E501
-        """getFiringAlerts  # noqa: E501
+    def get_firing_alerts(self, **kwargs):  # noqa: E501
+        """get_firing_alerts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_firing_alerts_using_get(async_req=True)
+        >>> thread = api.get_firing_alerts(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[AlertGroup]
+        :return: list[ComCapillaryOpsCpBoAlertsAlertGroup]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_firing_alerts_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_firing_alerts_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_firing_alerts_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_firing_alerts_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_firing_alerts_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getFiringAlerts  # noqa: E501
+    def get_firing_alerts_with_http_info(self, **kwargs):  # noqa: E501
+        """get_firing_alerts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_firing_alerts_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_firing_alerts_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[AlertGroup]
+        :return: list[ComCapillaryOpsCpBoAlertsAlertGroup]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -421,7 +425,7 @@ class UiAlertsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_firing_alerts_using_get" % key
+                    " to method get_firing_alerts" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -440,10 +444,10 @@ class UiAlertsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/alerts/firing', 'GET',
@@ -453,7 +457,7 @@ class UiAlertsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AlertGroup]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoAlertsAlertGroup]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

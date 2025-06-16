@@ -1,21 +1,21 @@
 # swagger_client.UiArtifactRoutingRuleControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_artifact_routing_rule_using_post**](UiArtifactRoutingRuleControllerApi.md#add_artifact_routing_rule_using_post) | **POST** /cc-ui/v1/artifact-routing-rule | addArtifactRoutingRule
-[**delete_artifact_routing_rule_using_delete**](UiArtifactRoutingRuleControllerApi.md#delete_artifact_routing_rule_using_delete) | **DELETE** /cc-ui/v1/artifact-routing-rule/{ruleId} | deleteArtifactRoutingRule
-[**get_all_artifact_routing_rules_using_get**](UiArtifactRoutingRuleControllerApi.md#get_all_artifact_routing_rules_using_get) | **GET** /cc-ui/v1/artifact-routing-rule | getAllArtifactRoutingRules
-[**get_all_operators_using_get**](UiArtifactRoutingRuleControllerApi.md#get_all_operators_using_get) | **GET** /cc-ui/v1/artifact-routing-rule/operators | getAllOperators
-[**get_artifact_routing_rule_using_get**](UiArtifactRoutingRuleControllerApi.md#get_artifact_routing_rule_using_get) | **GET** /cc-ui/v1/artifact-routing-rule/{ruleId} | getArtifactRoutingRule
-[**test_rule_for_branch_name_using_post**](UiArtifactRoutingRuleControllerApi.md#test_rule_for_branch_name_using_post) | **POST** /cc-ui/v1/artifact-routing-rule/test | testRuleForBranchName
-[**update_artifact_routing_rule_using_put**](UiArtifactRoutingRuleControllerApi.md#update_artifact_routing_rule_using_put) | **PUT** /cc-ui/v1/artifact-routing-rule | updateArtifactRoutingRule
+[**add_artifact_routing_rule**](UiArtifactRoutingRuleControllerApi.md#add_artifact_routing_rule) | **POST** /cc-ui/v1/artifact-routing-rule | 
+[**delete_artifact_routing_rule**](UiArtifactRoutingRuleControllerApi.md#delete_artifact_routing_rule) | **DELETE** /cc-ui/v1/artifact-routing-rule/{ruleId} | 
+[**get_all_artifact_routing_rules**](UiArtifactRoutingRuleControllerApi.md#get_all_artifact_routing_rules) | **GET** /cc-ui/v1/artifact-routing-rule | 
+[**get_all_operators**](UiArtifactRoutingRuleControllerApi.md#get_all_operators) | **GET** /cc-ui/v1/artifact-routing-rule/operators | 
+[**get_artifact_routing_rule**](UiArtifactRoutingRuleControllerApi.md#get_artifact_routing_rule) | **GET** /cc-ui/v1/artifact-routing-rule/{ruleId} | 
+[**test_rule_for_branch_name**](UiArtifactRoutingRuleControllerApi.md#test_rule_for_branch_name) | **POST** /cc-ui/v1/artifact-routing-rule/test | 
+[**update_artifact_routing_rule**](UiArtifactRoutingRuleControllerApi.md#update_artifact_routing_rule) | **PUT** /cc-ui/v1/artifact-routing-rule | 
 
-# **add_artifact_routing_rule_using_post**
-> ArtifactRoutingRuleResponse add_artifact_routing_rule_using_post(body)
+# **add_artifact_routing_rule**
+> ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse add_artifact_routing_rule(body)
 
-addArtifactRoutingRule
+
 
 ### Example
 ```python
@@ -24,48 +24,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ArtifactRoutingRuleRequest() # ArtifactRoutingRuleRequest | artifactRoutingRuleRequest
+body = swagger_client.ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest() # ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest | 
 
 try:
-    # addArtifactRoutingRule
-    api_response = api_instance.add_artifact_routing_rule_using_post(body)
+    api_response = api_instance.add_artifact_routing_rule(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactRoutingRuleControllerApi->add_artifact_routing_rule_using_post: %s\n" % e)
+    print("Exception when calling UiArtifactRoutingRuleControllerApi->add_artifact_routing_rule: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ArtifactRoutingRuleRequest**](ArtifactRoutingRuleRequest.md)| artifactRoutingRuleRequest | 
+ **body** | [**ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest**](ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest.md)|  | 
 
 ### Return type
 
-[**ArtifactRoutingRuleResponse**](ArtifactRoutingRuleResponse.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse**](ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_artifact_routing_rule_using_delete**
-> delete_artifact_routing_rule_using_delete(rule_id)
+# **delete_artifact_routing_rule**
+> delete_artifact_routing_rule(rule_id)
 
-deleteArtifactRoutingRule
+
 
 ### Example
 ```python
@@ -74,27 +73,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-rule_id = 'rule_id_example' # str | ruleId
+rule_id = 'rule_id_example' # str | 
 
 try:
-    # deleteArtifactRoutingRule
-    api_instance.delete_artifact_routing_rule_using_delete(rule_id)
+    api_instance.delete_artifact_routing_rule(rule_id)
 except ApiException as e:
-    print("Exception when calling UiArtifactRoutingRuleControllerApi->delete_artifact_routing_rule_using_delete: %s\n" % e)
+    print("Exception when calling UiArtifactRoutingRuleControllerApi->delete_artifact_routing_rule: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rule_id** | **str**| ruleId | 
+ **rule_id** | **str**|  | 
 
 ### Return type
 
@@ -102,19 +100,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_artifact_routing_rules_using_get**
-> list[ArtifactRoutingRuleResponse] get_all_artifact_routing_rules_using_get(stack_name, registration_type=registration_type)
+# **get_all_artifact_routing_rules**
+> list[ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse] get_all_artifact_routing_rules(stack_name, registration_type=registration_type)
 
-getAllArtifactRoutingRules
+
 
 ### Example
 ```python
@@ -123,50 +121,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-registration_type = 'registration_type_example' # str | registrationType (optional)
+stack_name = 'stack_name_example' # str | 
+registration_type = 'registration_type_example' # str |  (optional)
 
 try:
-    # getAllArtifactRoutingRules
-    api_response = api_instance.get_all_artifact_routing_rules_using_get(stack_name, registration_type=registration_type)
+    api_response = api_instance.get_all_artifact_routing_rules(stack_name, registration_type=registration_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactRoutingRuleControllerApi->get_all_artifact_routing_rules_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactRoutingRuleControllerApi->get_all_artifact_routing_rules: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
- **registration_type** | **str**| registrationType | [optional] 
+ **stack_name** | **str**|  | 
+ **registration_type** | **str**|  | [optional] 
 
 ### Return type
 
-[**list[ArtifactRoutingRuleResponse]**](ArtifactRoutingRuleResponse.md)
+[**list[ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse]**](ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_operators_using_get**
-> list[str] get_all_operators_using_get()
+# **get_all_operators**
+> list[str] get_all_operators()
 
-getAllOperators
+
 
 ### Example
 ```python
@@ -175,7 +172,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -184,11 +181,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllOperators
-    api_response = api_instance.get_all_operators_using_get()
+    api_response = api_instance.get_all_operators()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactRoutingRuleControllerApi->get_all_operators_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactRoutingRuleControllerApi->get_all_operators: %s\n" % e)
 ```
 
 ### Parameters
@@ -200,19 +196,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_artifact_routing_rule_using_get**
-> ArtifactRoutingRuleResponse get_artifact_routing_rule_using_get(rule_id)
+# **get_artifact_routing_rule**
+> ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse get_artifact_routing_rule(rule_id)
 
-getArtifactRoutingRule
+
 
 ### Example
 ```python
@@ -221,48 +217,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-rule_id = 'rule_id_example' # str | ruleId
+rule_id = 'rule_id_example' # str | 
 
 try:
-    # getArtifactRoutingRule
-    api_response = api_instance.get_artifact_routing_rule_using_get(rule_id)
+    api_response = api_instance.get_artifact_routing_rule(rule_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactRoutingRuleControllerApi->get_artifact_routing_rule_using_get: %s\n" % e)
+    print("Exception when calling UiArtifactRoutingRuleControllerApi->get_artifact_routing_rule: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rule_id** | **str**| ruleId | 
+ **rule_id** | **str**|  | 
 
 ### Return type
 
-[**ArtifactRoutingRuleResponse**](ArtifactRoutingRuleResponse.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse**](ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **test_rule_for_branch_name_using_post**
-> TestRuleResponse test_rule_for_branch_name_using_post(body, metadata)
+# **test_rule_for_branch_name**
+> ComCapillaryOpsCpBoArtifactsTestRuleResponse test_rule_for_branch_name(body, metadata)
 
-testRuleForBranchName
+
 
 ### Example
 ```python
@@ -271,50 +266,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.Criterion()] # list[Criterion] | criteria
-metadata = NULL # object | metadata
+body = [swagger_client.ComCapillaryOpsCpBoArtifactsCriterion()] # list[ComCapillaryOpsCpBoArtifactsCriterion] | 
+metadata = {'key': 'metadata_example'} # dict(str, str) | 
 
 try:
-    # testRuleForBranchName
-    api_response = api_instance.test_rule_for_branch_name_using_post(body, metadata)
+    api_response = api_instance.test_rule_for_branch_name(body, metadata)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactRoutingRuleControllerApi->test_rule_for_branch_name_using_post: %s\n" % e)
+    print("Exception when calling UiArtifactRoutingRuleControllerApi->test_rule_for_branch_name: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[Criterion]**](Criterion.md)| criteria | 
- **metadata** | [**object**](.md)| metadata | 
+ **body** | [**list[ComCapillaryOpsCpBoArtifactsCriterion]**](ComCapillaryOpsCpBoArtifactsCriterion.md)|  | 
+ **metadata** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
-[**TestRuleResponse**](TestRuleResponse.md)
+[**ComCapillaryOpsCpBoArtifactsTestRuleResponse**](ComCapillaryOpsCpBoArtifactsTestRuleResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_artifact_routing_rule_using_put**
-> ArtifactRoutingRuleResponse update_artifact_routing_rule_using_put(body)
+# **update_artifact_routing_rule**
+> ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse update_artifact_routing_rule(body)
 
-updateArtifactRoutingRule
+
 
 ### Example
 ```python
@@ -323,41 +317,40 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiArtifactRoutingRuleControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ArtifactRoutingRuleRequest() # ArtifactRoutingRuleRequest | artifactRoutingRuleRequest
+body = swagger_client.ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest() # ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest | 
 
 try:
-    # updateArtifactRoutingRule
-    api_response = api_instance.update_artifact_routing_rule_using_put(body)
+    api_response = api_instance.update_artifact_routing_rule(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiArtifactRoutingRuleControllerApi->update_artifact_routing_rule_using_put: %s\n" % e)
+    print("Exception when calling UiArtifactRoutingRuleControllerApi->update_artifact_routing_rule: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ArtifactRoutingRuleRequest**](ArtifactRoutingRuleRequest.md)| artifactRoutingRuleRequest | 
+ **body** | [**ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest**](ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest.md)|  | 
 
 ### Return type
 
-[**ArtifactRoutingRuleResponse**](ArtifactRoutingRuleResponse.md)
+[**ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse**](ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

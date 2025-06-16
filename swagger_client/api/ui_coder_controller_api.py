@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,45 +32,49 @@ class UiCoderControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_workspace_with_existing_branch_using_post(self, body, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithExistingBranch  # noqa: E501
+    def create_workspace_with_existing_branch(self, body, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """create_workspace_with_existing_branch  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_existing_branch_using_post(body, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_existing_branch(body, stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateWorkspaceExistingBranchRequest body: createWorkspaceExistingBranchRequest (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceExistingBranchRequest body: (required)
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_workspace_with_existing_branch_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            return self.create_workspace_with_existing_branch_with_http_info(body, stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_workspace_with_existing_branch_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            (data) = self.create_workspace_with_existing_branch_with_http_info(body, stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def create_workspace_with_existing_branch_using_post_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithExistingBranch  # noqa: E501
+    def create_workspace_with_existing_branch_with_http_info(self, body, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """create_workspace_with_existing_branch  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_existing_branch_using_post_with_http_info(body, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_existing_branch_with_http_info(body, stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateWorkspaceExistingBranchRequest body: createWorkspaceExistingBranchRequest (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceExistingBranchRequest body: (required)
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'stack_name']  # noqa: E501
+        all_params = ['body', 'stack_name', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -81,145 +85,36 @@ class UiCoderControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_workspace_with_existing_branch_using_post" % key
+                    " to method create_workspace_with_existing_branch" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_existing_branch_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_existing_branch`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_existing_branch_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'stack_name' in params:
-            path_params['stackName'] = params['stack_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/coder/stack/{stackName}/existing-branch', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='CoderWorkspaceResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_workspace_with_existing_branch_using_post1(self, body, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithExistingBranch  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_existing_branch_using_post1(body, resource_name, resource_type, stack_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param CreateWorkspaceExistingBranchRequest body: createWorkspaceExistingBranchRequest (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_workspace_with_existing_branch_using_post1_with_http_info(body, resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_workspace_with_existing_branch_using_post1_with_http_info(body, resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
-            return data
-
-    def create_workspace_with_existing_branch_using_post1_with_http_info(self, body, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithExistingBranch  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_existing_branch_using_post1_with_http_info(body, resource_name, resource_type, stack_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param CreateWorkspaceExistingBranchRequest body: createWorkspaceExistingBranchRequest (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'resource_name', 'resource_type', 'stack_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_workspace_with_existing_branch_using_post1" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_existing_branch_using_post1`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `create_workspace_with_existing_branch_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_existing_branch`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `create_workspace_with_existing_branch_using_post1`")  # noqa: E501
-        # verify the required parameter 'stack_name' is set
-        if ('stack_name' not in params or
-                params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_existing_branch_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `create_workspace_with_existing_branch`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `create_workspace_with_existing_branch`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
-        if 'resource_type' in params:
-            path_params['resourceType'] = params['resource_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -233,14 +128,14 @@ class UiCoderControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/coder/stack/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/existing-branch', 'POST',
@@ -250,7 +145,7 @@ class UiCoderControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CoderWorkspaceResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoCoderCoderWorkspaceResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -258,40 +153,40 @@ class UiCoderControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_workspace_with_new_branch_using_post(self, body, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithNewBranch  # noqa: E501
+    def create_workspace_with_existing_branch1(self, body, stack_name, **kwargs):  # noqa: E501
+        """create_workspace_with_existing_branch1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_new_branch_using_post(body, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_existing_branch1(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateWorkspaceNewBranchRequest body: createWorkspaceNewBranchRequest (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceExistingBranchRequest body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_workspace_with_new_branch_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            return self.create_workspace_with_existing_branch1_with_http_info(body, stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_workspace_with_new_branch_using_post_with_http_info(body, stack_name, **kwargs)  # noqa: E501
+            (data) = self.create_workspace_with_existing_branch1_with_http_info(body, stack_name, **kwargs)  # noqa: E501
             return data
 
-    def create_workspace_with_new_branch_using_post_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithNewBranch  # noqa: E501
+    def create_workspace_with_existing_branch1_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
+        """create_workspace_with_existing_branch1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_new_branch_using_post_with_http_info(body, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_existing_branch1_with_http_info(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateWorkspaceNewBranchRequest body: createWorkspaceNewBranchRequest (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceExistingBranchRequest body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -307,18 +202,18 @@ class UiCoderControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_workspace_with_new_branch_using_post" % key
+                    " to method create_workspace_with_existing_branch1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_new_branch_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_existing_branch1`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_new_branch_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_existing_branch1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -338,24 +233,24 @@ class UiCoderControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/cc-ui/v1/coder/stack/{stackName}/new-branch', 'POST',
+            '/cc-ui/v1/coder/stack/{stackName}/existing-branch', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CoderWorkspaceResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoCoderCoderWorkspaceResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -363,49 +258,49 @@ class UiCoderControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_workspace_with_new_branch_using_post1(self, body, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithNewBranch  # noqa: E501
+    def create_workspace_with_new_branch(self, body, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """create_workspace_with_new_branch  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_new_branch_using_post1(body, resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_new_branch(body, stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateWorkspaceNewBranchRequest body: createWorkspaceNewBranchRequest (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceNewBranchRequest body: (required)
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_workspace_with_new_branch_using_post1_with_http_info(body, resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            return self.create_workspace_with_new_branch_with_http_info(body, stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_workspace_with_new_branch_using_post1_with_http_info(body, resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            (data) = self.create_workspace_with_new_branch_with_http_info(body, stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def create_workspace_with_new_branch_using_post1_with_http_info(self, body, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """createWorkspaceWithNewBranch  # noqa: E501
+    def create_workspace_with_new_branch_with_http_info(self, body, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """create_workspace_with_new_branch  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workspace_with_new_branch_using_post1_with_http_info(body, resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_new_branch_with_http_info(body, stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CreateWorkspaceNewBranchRequest body: createWorkspaceNewBranchRequest (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: CoderWorkspaceResponse
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceNewBranchRequest body: (required)
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'resource_name', 'resource_type', 'stack_name']  # noqa: E501
+        all_params = ['body', 'stack_name', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -416,36 +311,36 @@ class UiCoderControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_workspace_with_new_branch_using_post1" % key
+                    " to method create_workspace_with_new_branch" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_new_branch_using_post1`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `create_workspace_with_new_branch_using_post1`")  # noqa: E501
-        # verify the required parameter 'resource_type' is set
-        if ('resource_type' not in params or
-                params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `create_workspace_with_new_branch_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_new_branch`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_new_branch_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_new_branch`")  # noqa: E501
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `create_workspace_with_new_branch`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `create_workspace_with_new_branch`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
-        if 'resource_type' in params:
-            path_params['resourceType'] = params['resource_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -459,14 +354,14 @@ class UiCoderControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/coder/stack/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/new-branch', 'POST',
@@ -476,7 +371,7 @@ class UiCoderControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CoderWorkspaceResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoCoderCoderWorkspaceResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -484,47 +379,45 @@ class UiCoderControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_using_get1(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def create_workspace_with_new_branch1(self, body, stack_name, **kwargs):  # noqa: E501
+        """create_workspace_with_new_branch1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get1(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_new_branch1(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[CoderWorkspaceResponse]
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceNewBranchRequest body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_using_get1_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            return self.create_workspace_with_new_branch1_with_http_info(body, stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_using_get1_with_http_info(resource_name, resource_type, stack_name, **kwargs)  # noqa: E501
+            (data) = self.create_workspace_with_new_branch1_with_http_info(body, stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_all_using_get1_with_http_info(self, resource_name, resource_type, stack_name, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def create_workspace_with_new_branch1_with_http_info(self, body, stack_name, **kwargs):  # noqa: E501
+        """create_workspace_with_new_branch1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get1_with_http_info(resource_name, resource_type, stack_name, async_req=True)
+        >>> thread = api.create_workspace_with_new_branch1_with_http_info(body, stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str stack_name: stackName (required)
-        :return: list[CoderWorkspaceResponse]
+        :param ComCapillaryOpsCpBoCoderCreateWorkspaceNewBranchRequest body: (required)
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderWorkspaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['resource_name', 'resource_type', 'stack_name']  # noqa: E501
+        all_params = ['body', 'stack_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -535,30 +428,22 @@ class UiCoderControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_using_get1" % key
+                    " to method create_workspace_with_new_branch1" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_all_using_get1`")  # noqa: E501
-        # verify the required parameter 'resource_type' is set
-        if ('resource_type' not in params or
-                params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_all_using_get1`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_workspace_with_new_branch1`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_using_get1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `create_workspace_with_new_branch1`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
-        if 'resource_type' in params:
-            path_params['resourceType'] = params['resource_type']  # noqa: E501
         if 'stack_name' in params:
             path_params['stackName'] = params['stack_name']  # noqa: E501
 
@@ -570,22 +455,28 @@ class UiCoderControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/cc-ui/v1/coder/stack/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/workspaces', 'GET',
+            '/cc-ui/v1/coder/stack/{stackName}/new-branch', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CoderWorkspaceResponse]',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoCoderCoderWorkspaceResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -593,38 +484,38 @@ class UiCoderControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_using_get2(self, stack_name, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all3(self, stack_name, **kwargs):  # noqa: E501
+        """get_all3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get2(stack_name, async_req=True)
+        >>> thread = api.get_all3(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[CoderWorkspaceResponse]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoCoderCoderWorkspaceResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_using_get2_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.get_all3_with_http_info(stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_using_get2_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_all3_with_http_info(stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_all_using_get2_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all3_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_all3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get2_with_http_info(stack_name, async_req=True)
+        >>> thread = api.get_all3_with_http_info(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[CoderWorkspaceResponse]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoCoderCoderWorkspaceResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -640,14 +531,14 @@ class UiCoderControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_using_get2" % key
+                    " to method get_all3" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_using_get2`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_all3`")  # noqa: E501
 
         collection_formats = {}
 
@@ -665,10 +556,10 @@ class UiCoderControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/coder/stack/{stackName}/workspaces', 'GET',
@@ -678,7 +569,7 @@ class UiCoderControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CoderWorkspaceResponse]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoCoderCoderWorkspaceResponse]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -686,38 +577,147 @@ class UiCoderControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def identify_coder_launch_eligible_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """identifyCoderLaunchEligible  # noqa: E501
+    def get_all4(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_all4  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.identify_coder_launch_eligible_using_get(stack_name, async_req=True)
+        >>> thread = api.get_all4(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: CoderLaunchEligibilityResponse
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoCoderCoderWorkspaceResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.identify_coder_launch_eligible_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.get_all4_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.identify_coder_launch_eligible_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_all4_with_http_info(stack_name, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def identify_coder_launch_eligible_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """identifyCoderLaunchEligible  # noqa: E501
+    def get_all4_with_http_info(self, stack_name, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_all4  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.identify_coder_launch_eligible_using_get_with_http_info(stack_name, async_req=True)
+        >>> thread = api.get_all4_with_http_info(stack_name, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: CoderLaunchEligibilityResponse
+        :param str stack_name: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :return: list[ComCapillaryOpsCpBoCoderCoderWorkspaceResponse]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['stack_name', 'resource_type', 'resource_name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all4" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'stack_name' is set
+        if ('stack_name' not in params or
+                params['stack_name'] is None):
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_all4`")  # noqa: E501
+        # verify the required parameter 'resource_type' is set
+        if ('resource_type' not in params or
+                params['resource_type'] is None):
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_all4`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_all4`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'stack_name' in params:
+            path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'resource_type' in params:
+            path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/coder/stack/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/workspaces', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ComCapillaryOpsCpBoCoderCoderWorkspaceResponse]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def identify_coder_launch_eligible(self, stack_name, **kwargs):  # noqa: E501
+        """identify_coder_launch_eligible  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.identify_coder_launch_eligible(stack_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderLaunchEligibilityResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.identify_coder_launch_eligible_with_http_info(stack_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.identify_coder_launch_eligible_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return data
+
+    def identify_coder_launch_eligible_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """identify_coder_launch_eligible  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.identify_coder_launch_eligible_with_http_info(stack_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str stack_name: (required)
+        :return: ComCapillaryOpsCpBoCoderCoderLaunchEligibilityResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -733,14 +733,14 @@ class UiCoderControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method identify_coder_launch_eligible_using_get" % key
+                    " to method identify_coder_launch_eligible" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `identify_coder_launch_eligible_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `identify_coder_launch_eligible`")  # noqa: E501
 
         collection_formats = {}
 
@@ -758,10 +758,10 @@ class UiCoderControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/coder/stack/{stackName}/coder-eligibility', 'GET',
@@ -771,7 +771,7 @@ class UiCoderControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CoderLaunchEligibilityResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoCoderCoderLaunchEligibilityResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,42 +32,42 @@ class BuildControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_image_from_deployer_using_get(self, application_id, strategy, **kwargs):  # noqa: E501
-        """getImageFromDeployer  # noqa: E501
+    def get_image_from_deployer(self, application_id, strategy, **kwargs):  # noqa: E501
+        """get_image_from_deployer  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_image_from_deployer_using_get(application_id, strategy, async_req=True)
+        >>> thread = api.get_image_from_deployer(application_id, strategy, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application_id: applicationId (required)
-        :param str strategy: strategy (required)
-        :param str release_type: releaseType
-        :return: Build
+        :param str application_id: (required)
+        :param str strategy: (required)
+        :param str release_type:
+        :return: ComCapillaryOpsDeployerBoBuild
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_image_from_deployer_using_get_with_http_info(application_id, strategy, **kwargs)  # noqa: E501
+            return self.get_image_from_deployer_with_http_info(application_id, strategy, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_image_from_deployer_using_get_with_http_info(application_id, strategy, **kwargs)  # noqa: E501
+            (data) = self.get_image_from_deployer_with_http_info(application_id, strategy, **kwargs)  # noqa: E501
             return data
 
-    def get_image_from_deployer_using_get_with_http_info(self, application_id, strategy, **kwargs):  # noqa: E501
-        """getImageFromDeployer  # noqa: E501
+    def get_image_from_deployer_with_http_info(self, application_id, strategy, **kwargs):  # noqa: E501
+        """get_image_from_deployer  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_image_from_deployer_using_get_with_http_info(application_id, strategy, async_req=True)
+        >>> thread = api.get_image_from_deployer_with_http_info(application_id, strategy, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application_id: applicationId (required)
-        :param str strategy: strategy (required)
-        :param str release_type: releaseType
-        :return: Build
+        :param str application_id: (required)
+        :param str strategy: (required)
+        :param str release_type:
+        :return: ComCapillaryOpsDeployerBoBuild
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -83,18 +83,18 @@ class BuildControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_image_from_deployer_using_get" % key
+                    " to method get_image_from_deployer" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'application_id' is set
         if ('application_id' not in params or
                 params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_image_from_deployer_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `application_id` when calling `get_image_from_deployer`")  # noqa: E501
         # verify the required parameter 'strategy' is set
         if ('strategy' not in params or
                 params['strategy'] is None):
-            raise ValueError("Missing the required parameter `strategy` when calling `get_image_from_deployer_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `strategy` when calling `get_image_from_deployer`")  # noqa: E501
 
         collection_formats = {}
 
@@ -103,10 +103,10 @@ class BuildControllerApi(object):
             path_params['applicationId'] = params['application_id']  # noqa: E501
 
         query_params = []
-        if 'release_type' in params:
-            query_params.append(('releaseType', params['release_type']))  # noqa: E501
         if 'strategy' in params:
             query_params.append(('strategy', params['strategy']))  # noqa: E501
+        if 'release_type' in params:
+            query_params.append(('releaseType', params['release_type']))  # noqa: E501
 
         header_params = {}
 
@@ -116,10 +116,10 @@ class BuildControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/build/deployer/{applicationId}', 'GET',
@@ -129,7 +129,7 @@ class BuildControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Build',  # noqa: E501
+            response_type='ComCapillaryOpsDeployerBoBuild',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

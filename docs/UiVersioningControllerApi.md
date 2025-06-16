@@ -1,23 +1,23 @@
 # swagger_client.UiVersioningControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_all_soft_delete_entities_using_delete**](UiVersioningControllerApi.md#delete_all_soft_delete_entities_using_delete) | **DELETE** /cc-ui/v1/versions/softDeletedEntities/all | deleteAllSoftDeleteEntities
-[**delete_soft_delete_entity_using_delete**](UiVersioningControllerApi.md#delete_soft_delete_entity_using_delete) | **DELETE** /cc-ui/v1/versions/softDeletedEntities | deleteSoftDeleteEntity
-[**get_version_by_id_using_get**](UiVersioningControllerApi.md#get_version_by_id_using_get) | **GET** /cc-ui/v1/versions/id/{id} | getVersionById
-[**get_versions_paginated_using_get**](UiVersioningControllerApi.md#get_versions_paginated_using_get) | **GET** /cc-ui/v1/versions/{versioningKey}/paginated | getVersionsPaginated
-[**get_versions_using_get**](UiVersioningControllerApi.md#get_versions_using_get) | **GET** /cc-ui/v1/versions/{versioningKey} | getVersions
-[**restore_soft_delete_using_post**](UiVersioningControllerApi.md#restore_soft_delete_using_post) | **POST** /cc-ui/v1/versions/softDeletedEntities/{entityId} | restoreSoftDelete
-[**restore_using_post**](UiVersioningControllerApi.md#restore_using_post) | **POST** /cc-ui/v1/versions/{versionId}/restore | restore
-[**soft_deleted_entities_by_type_using_get**](UiVersioningControllerApi.md#soft_deleted_entities_by_type_using_get) | **GET** /cc-ui/v1/versions/softDeletedEntities/{entityType} | softDeletedEntitiesByType
-[**soft_deleted_entities_using_get**](UiVersioningControllerApi.md#soft_deleted_entities_using_get) | **GET** /cc-ui/v1/versions/softDeletedEntities | softDeletedEntities
+[**delete_all_soft_delete_entities**](UiVersioningControllerApi.md#delete_all_soft_delete_entities) | **DELETE** /cc-ui/v1/versions/softDeletedEntities/all | 
+[**delete_soft_delete_entity**](UiVersioningControllerApi.md#delete_soft_delete_entity) | **DELETE** /cc-ui/v1/versions/softDeletedEntities | 
+[**get_version_by_id**](UiVersioningControllerApi.md#get_version_by_id) | **GET** /cc-ui/v1/versions/id/{id} | 
+[**get_versions**](UiVersioningControllerApi.md#get_versions) | **GET** /cc-ui/v1/versions/{versioningKey} | 
+[**get_versions_paginated**](UiVersioningControllerApi.md#get_versions_paginated) | **GET** /cc-ui/v1/versions/{versioningKey}/paginated | 
+[**restore**](UiVersioningControllerApi.md#restore) | **POST** /cc-ui/v1/versions/{versionId}/restore | 
+[**restore_soft_delete**](UiVersioningControllerApi.md#restore_soft_delete) | **POST** /cc-ui/v1/versions/softDeletedEntities/{entityId} | 
+[**soft_deleted_entities**](UiVersioningControllerApi.md#soft_deleted_entities) | **GET** /cc-ui/v1/versions/softDeletedEntities | 
+[**soft_deleted_entities_by_type**](UiVersioningControllerApi.md#soft_deleted_entities_by_type) | **GET** /cc-ui/v1/versions/softDeletedEntities/{entityType} | 
 
-# **delete_all_soft_delete_entities_using_delete**
-> delete_all_soft_delete_entities_using_delete()
+# **delete_all_soft_delete_entities**
+> delete_all_soft_delete_entities()
 
-deleteAllSoftDeleteEntities
+
 
 ### Example
 ```python
@@ -26,7 +26,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -35,10 +35,9 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # deleteAllSoftDeleteEntities
-    api_instance.delete_all_soft_delete_entities_using_delete()
+    api_instance.delete_all_soft_delete_entities()
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->delete_all_soft_delete_entities_using_delete: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->delete_all_soft_delete_entities: %s\n" % e)
 ```
 
 ### Parameters
@@ -50,19 +49,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_soft_delete_entity_using_delete**
-> delete_soft_delete_entity_using_delete(id)
+# **delete_soft_delete_entity**
+> delete_soft_delete_entity(id)
 
-deleteSoftDeleteEntity
+
 
 ### Example
 ```python
@@ -71,27 +70,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-id = ['id_example'] # list[str] | id
+id = ['id_example'] # list[str] | 
 
 try:
-    # deleteSoftDeleteEntity
-    api_instance.delete_soft_delete_entity_using_delete(id)
+    api_instance.delete_soft_delete_entity(id)
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->delete_soft_delete_entity_using_delete: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->delete_soft_delete_entity: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**list[str]**](str.md)| id | 
+ **id** | [**list[str]**](str.md)|  | 
 
 ### Return type
 
@@ -99,19 +97,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_version_by_id_using_get**
-> Version get_version_by_id_using_get(id)
+# **get_version_by_id**
+> ComCapillaryOpsCpBoHistoryVersion get_version_by_id(id)
 
-getVersionById
+
 
 ### Example
 ```python
@@ -120,48 +118,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | id
+id = 'id_example' # str | 
 
 try:
-    # getVersionById
-    api_response = api_instance.get_version_by_id_using_get(id)
+    api_response = api_instance.get_version_by_id(id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->get_version_by_id_using_get: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->get_version_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| id | 
+ **id** | **str**|  | 
 
 ### Return type
 
-[**Version**](Version.md)
+[**ComCapillaryOpsCpBoHistoryVersion**](ComCapillaryOpsCpBoHistoryVersion.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_versions_paginated_using_get**
-> PageVersion get_versions_paginated_using_get(versioning_key, page=page, per_page=per_page)
+# **get_versions**
+> list[ComCapillaryOpsCpBoHistoryVersionComCapillaryOpsCpBoHistoryVersioned] get_versions(versioning_key, page=page, per_page=per_page)
 
-getVersionsPaginated
+
 
 ### Example
 ```python
@@ -170,52 +167,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-versioning_key = 'versioning_key_example' # str | versioningKey
-page = 0 # int | page (optional) (default to 0)
-per_page = 10 # int | perPage (optional) (default to 10)
+versioning_key = 'versioning_key_example' # str | 
+page = 0 # int |  (optional) (default to 0)
+per_page = 10 # int |  (optional) (default to 10)
 
 try:
-    # getVersionsPaginated
-    api_response = api_instance.get_versions_paginated_using_get(versioning_key, page=page, per_page=per_page)
+    api_response = api_instance.get_versions(versioning_key, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->get_versions_paginated_using_get: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->get_versions: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **versioning_key** | **str**| versioningKey | 
- **page** | **int**| page | [optional] [default to 0]
- **per_page** | **int**| perPage | [optional] [default to 10]
+ **versioning_key** | **str**|  | 
+ **page** | **int**|  | [optional] [default to 0]
+ **per_page** | **int**|  | [optional] [default to 10]
 
 ### Return type
 
-[**PageVersion**](PageVersion.md)
+[**list[ComCapillaryOpsCpBoHistoryVersionComCapillaryOpsCpBoHistoryVersioned]**](ComCapillaryOpsCpBoHistoryVersionComCapillaryOpsCpBoHistoryVersioned.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_versions_using_get**
-> list[Version] get_versions_using_get(versioning_key, page=page, per_page=per_page)
+# **get_versions_paginated**
+> OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoHistoryVersionComCapillaryOpsCpBoHistoryVersioned get_versions_paginated(versioning_key, page=page, per_page=per_page)
 
-getVersions
+
 
 ### Example
 ```python
@@ -224,52 +220,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-versioning_key = 'versioning_key_example' # str | versioningKey
-page = 0 # int | page (optional) (default to 0)
-per_page = 10 # int | perPage (optional) (default to 10)
+versioning_key = 'versioning_key_example' # str | 
+page = 0 # int |  (optional) (default to 0)
+per_page = 10 # int |  (optional) (default to 10)
 
 try:
-    # getVersions
-    api_response = api_instance.get_versions_using_get(versioning_key, page=page, per_page=per_page)
+    api_response = api_instance.get_versions_paginated(versioning_key, page=page, per_page=per_page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->get_versions_using_get: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->get_versions_paginated: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **versioning_key** | **str**| versioningKey | 
- **page** | **int**| page | [optional] [default to 0]
- **per_page** | **int**| perPage | [optional] [default to 10]
+ **versioning_key** | **str**|  | 
+ **page** | **int**|  | [optional] [default to 0]
+ **per_page** | **int**|  | [optional] [default to 10]
 
 ### Return type
 
-[**list[Version]**](Version.md)
+[**OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoHistoryVersionComCapillaryOpsCpBoHistoryVersioned**](OrgSpringframeworkDataDomainPageComCapillaryOpsCpBoHistoryVersionComCapillaryOpsCpBoHistoryVersioned.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **restore_soft_delete_using_post**
-> str restore_soft_delete_using_post(entity_id)
+# **restore**
+> object restore(version_id)
 
-restoreSoftDelete
+
 
 ### Example
 ```python
@@ -278,78 +273,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-entity_id = 'entity_id_example' # str | entityId
+version_id = 'version_id_example' # str | 
 
 try:
-    # restoreSoftDelete
-    api_response = api_instance.restore_soft_delete_using_post(entity_id)
+    api_response = api_instance.restore(version_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->restore_soft_delete_using_post: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->restore: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entity_id** | **str**| entityId | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **restore_using_post**
-> object restore_using_post(version_id)
-
-restore
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-version_id = 'version_id_example' # str | versionId
-
-try:
-    # restore
-    api_response = api_instance.restore_using_post(version_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->restore_using_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **version_id** | **str**| versionId | 
+ **version_id** | **str**|  | 
 
 ### Return type
 
@@ -357,19 +301,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **soft_deleted_entities_by_type_using_get**
-> list[DeletedEntity] soft_deleted_entities_by_type_using_get(entity_type, page=page, per_page=per_page, sort_by=sort_by)
+# **restore_soft_delete**
+> str restore_soft_delete(entity_id)
 
-softDeletedEntitiesByType
+
 
 ### Example
 ```python
@@ -378,54 +322,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-entity_type = 'entity_type_example' # str | entityType
-page = 0 # int | page (optional) (default to 0)
-per_page = 10 # int | perPage (optional) (default to 10)
-sort_by = 'lastModifiedDate' # str | sortBy (optional) (default to lastModifiedDate)
+entity_id = 'entity_id_example' # str | 
 
 try:
-    # softDeletedEntitiesByType
-    api_response = api_instance.soft_deleted_entities_by_type_using_get(entity_type, page=page, per_page=per_page, sort_by=sort_by)
+    api_response = api_instance.restore_soft_delete(entity_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->soft_deleted_entities_by_type_using_get: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->restore_soft_delete: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **entity_type** | **str**| entityType | 
- **page** | **int**| page | [optional] [default to 0]
- **per_page** | **int**| perPage | [optional] [default to 10]
- **sort_by** | **str**| sortBy | [optional] [default to lastModifiedDate]
+ **entity_id** | **str**|  | 
 
 ### Return type
 
-[**list[DeletedEntity]**](DeletedEntity.md)
+**str**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **soft_deleted_entities_using_get**
-> list[DeletedEntity] soft_deleted_entities_using_get(page=page, per_page=per_page, sort_by=sort_by)
+# **soft_deleted_entities**
+> list[ComCapillaryOpsCpBoHistoryDeletedEntityComCapillaryOpsCpBoHistorySoftDelete] soft_deleted_entities(page=page, per_page=per_page, sort_by=sort_by)
 
-softDeletedEntities
+
 
 ### Example
 ```python
@@ -434,45 +371,99 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
-page = 0 # int | page (optional) (default to 0)
-per_page = 10 # int | perPage (optional) (default to 10)
-sort_by = 'lastModifiedDate' # str | sortBy (optional) (default to lastModifiedDate)
+page = 0 # int |  (optional) (default to 0)
+per_page = 10 # int |  (optional) (default to 10)
+sort_by = 'lastModifiedDate' # str |  (optional) (default to lastModifiedDate)
 
 try:
-    # softDeletedEntities
-    api_response = api_instance.soft_deleted_entities_using_get(page=page, per_page=per_page, sort_by=sort_by)
+    api_response = api_instance.soft_deleted_entities(page=page, per_page=per_page, sort_by=sort_by)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiVersioningControllerApi->soft_deleted_entities_using_get: %s\n" % e)
+    print("Exception when calling UiVersioningControllerApi->soft_deleted_entities: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| page | [optional] [default to 0]
- **per_page** | **int**| perPage | [optional] [default to 10]
- **sort_by** | **str**| sortBy | [optional] [default to lastModifiedDate]
+ **page** | **int**|  | [optional] [default to 0]
+ **per_page** | **int**|  | [optional] [default to 10]
+ **sort_by** | **str**|  | [optional] [default to lastModifiedDate]
 
 ### Return type
 
-[**list[DeletedEntity]**](DeletedEntity.md)
+[**list[ComCapillaryOpsCpBoHistoryDeletedEntityComCapillaryOpsCpBoHistorySoftDelete]**](ComCapillaryOpsCpBoHistoryDeletedEntityComCapillaryOpsCpBoHistorySoftDelete.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **soft_deleted_entities_by_type**
+> list[ComCapillaryOpsCpBoHistoryDeletedEntityComCapillaryOpsCpBoHistorySoftDelete] soft_deleted_entities_by_type(entity_type, page=page, per_page=per_page, sort_by=sort_by)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
+entity_type = 'entity_type_example' # str | 
+page = 0 # int |  (optional) (default to 0)
+per_page = 10 # int |  (optional) (default to 10)
+sort_by = 'lastModifiedDate' # str |  (optional) (default to lastModifiedDate)
+
+try:
+    api_response = api_instance.soft_deleted_entities_by_type(entity_type, page=page, per_page=per_page, sort_by=sort_by)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiVersioningControllerApi->soft_deleted_entities_by_type: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entity_type** | **str**|  | 
+ **page** | **int**|  | [optional] [default to 0]
+ **per_page** | **int**|  | [optional] [default to 10]
+ **sort_by** | **str**|  | [optional] [default to lastModifiedDate]
+
+### Return type
+
+[**list[ComCapillaryOpsCpBoHistoryDeletedEntityComCapillaryOpsCpBoHistorySoftDelete]**](ComCapillaryOpsCpBoHistoryDeletedEntityComCapillaryOpsCpBoHistorySoftDelete.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

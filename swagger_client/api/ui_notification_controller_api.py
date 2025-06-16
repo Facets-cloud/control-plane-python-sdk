@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiNotificationControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_notification_channel_using_post(self, body, **kwargs):  # noqa: E501
-        """createNotificationChannel  # noqa: E501
+    def create_notification_channel(self, body, **kwargs):  # noqa: E501
+        """create_notification_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_notification_channel_using_post(body, async_req=True)
+        >>> thread = api.create_notification_channel(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationChannel body: nc (required)
-        :return: list[NotificationChannel]
+        :param ComCapillaryOpsCpBoNotificationsNotificationChannel body: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_notification_channel_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_notification_channel_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_notification_channel_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_notification_channel_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_notification_channel_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createNotificationChannel  # noqa: E501
+    def create_notification_channel_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_notification_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_notification_channel_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_notification_channel_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationChannel body: nc (required)
-        :return: list[NotificationChannel]
+        :param ComCapillaryOpsCpBoNotificationsNotificationChannel body: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_notification_channel_using_post" % key
+                    " to method create_notification_channel" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_notification_channel_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_notification_channel`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiNotificationControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/channels', 'POST',
@@ -121,7 +121,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[NotificationChannel]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsNotificationChannel]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,38 +129,38 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_subscription_using_post(self, body, **kwargs):  # noqa: E501
-        """createSubscription  # noqa: E501
+    def create_subscription1(self, body, **kwargs):  # noqa: E501
+        """create_subscription1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_subscription_using_post(body, async_req=True)
+        >>> thread = api.create_subscription1(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Subscription body: subscription (required)
-        :return: list[Subscription]
+        :param ComCapillaryOpsCpBoNotificationsSubscription body: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_subscription_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_subscription1_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_subscription_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_subscription1_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_subscription_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createSubscription  # noqa: E501
+    def create_subscription1_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_subscription1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_subscription_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_subscription1_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Subscription body: subscription (required)
-        :return: list[Subscription]
+        :param ComCapillaryOpsCpBoNotificationsSubscription body: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -176,14 +176,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_subscription_using_post" % key
+                    " to method create_subscription1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_subscription_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_subscription1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -201,14 +201,14 @@ class UiNotificationControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/subscriptions', 'POST',
@@ -218,7 +218,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Subscription]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsSubscription]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -226,38 +226,38 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_notification_channel_using_delete(self, channel_id, **kwargs):  # noqa: E501
-        """deleteNotificationChannel  # noqa: E501
+    def delete_notification_channel(self, channel_id, **kwargs):  # noqa: E501
+        """delete_notification_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_notification_channel_using_delete(channel_id, async_req=True)
+        >>> thread = api.delete_notification_channel(channel_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str channel_id: channelId (required)
-        :return: list[NotificationChannel]
+        :param str channel_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_notification_channel_using_delete_with_http_info(channel_id, **kwargs)  # noqa: E501
+            return self.delete_notification_channel_with_http_info(channel_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_notification_channel_using_delete_with_http_info(channel_id, **kwargs)  # noqa: E501
+            (data) = self.delete_notification_channel_with_http_info(channel_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_notification_channel_using_delete_with_http_info(self, channel_id, **kwargs):  # noqa: E501
-        """deleteNotificationChannel  # noqa: E501
+    def delete_notification_channel_with_http_info(self, channel_id, **kwargs):  # noqa: E501
+        """delete_notification_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_notification_channel_using_delete_with_http_info(channel_id, async_req=True)
+        >>> thread = api.delete_notification_channel_with_http_info(channel_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str channel_id: channelId (required)
-        :return: list[NotificationChannel]
+        :param str channel_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -273,14 +273,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_notification_channel_using_delete" % key
+                    " to method delete_notification_channel" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'channel_id' is set
         if ('channel_id' not in params or
                 params['channel_id'] is None):
-            raise ValueError("Missing the required parameter `channel_id` when calling `delete_notification_channel_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `channel_id` when calling `delete_notification_channel`")  # noqa: E501
 
         collection_formats = {}
 
@@ -298,10 +298,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/channels/{channelId}', 'DELETE',
@@ -311,7 +311,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[NotificationChannel]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsNotificationChannel]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -319,38 +319,38 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_subscription_using_delete(self, subscription_id, **kwargs):  # noqa: E501
-        """deleteSubscription  # noqa: E501
+    def delete_subscription(self, subscription_id, **kwargs):  # noqa: E501
+        """delete_subscription  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_subscription_using_delete(subscription_id, async_req=True)
+        >>> thread = api.delete_subscription(subscription_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str subscription_id: subscriptionId (required)
-        :return: list[Subscription]
+        :param str subscription_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_subscription_using_delete_with_http_info(subscription_id, **kwargs)  # noqa: E501
+            return self.delete_subscription_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_subscription_using_delete_with_http_info(subscription_id, **kwargs)  # noqa: E501
+            (data) = self.delete_subscription_with_http_info(subscription_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_subscription_using_delete_with_http_info(self, subscription_id, **kwargs):  # noqa: E501
-        """deleteSubscription  # noqa: E501
+    def delete_subscription_with_http_info(self, subscription_id, **kwargs):  # noqa: E501
+        """delete_subscription  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_subscription_using_delete_with_http_info(subscription_id, async_req=True)
+        >>> thread = api.delete_subscription_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str subscription_id: subscriptionId (required)
-        :return: list[Subscription]
+        :param str subscription_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -366,14 +366,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_subscription_using_delete" % key
+                    " to method delete_subscription" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'subscription_id' is set
         if ('subscription_id' not in params or
                 params['subscription_id'] is None):
-            raise ValueError("Missing the required parameter `subscription_id` when calling `delete_subscription_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `subscription_id` when calling `delete_subscription`")  # noqa: E501
 
         collection_formats = {}
 
@@ -391,10 +391,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/subscriptions/{subscriptionId}', 'DELETE',
@@ -404,7 +404,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Subscription]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsSubscription]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -412,40 +412,40 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def edit_notification_channel_using_put(self, body, channel_id, **kwargs):  # noqa: E501
-        """editNotificationChannel  # noqa: E501
+    def edit_notification_channel(self, body, channel_id, **kwargs):  # noqa: E501
+        """edit_notification_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_notification_channel_using_put(body, channel_id, async_req=True)
+        >>> thread = api.edit_notification_channel(body, channel_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationChannel body: nc (required)
-        :param str channel_id: channelId (required)
-        :return: list[NotificationChannel]
+        :param ComCapillaryOpsCpBoNotificationsNotificationChannel body: (required)
+        :param str channel_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.edit_notification_channel_using_put_with_http_info(body, channel_id, **kwargs)  # noqa: E501
+            return self.edit_notification_channel_with_http_info(body, channel_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.edit_notification_channel_using_put_with_http_info(body, channel_id, **kwargs)  # noqa: E501
+            (data) = self.edit_notification_channel_with_http_info(body, channel_id, **kwargs)  # noqa: E501
             return data
 
-    def edit_notification_channel_using_put_with_http_info(self, body, channel_id, **kwargs):  # noqa: E501
-        """editNotificationChannel  # noqa: E501
+    def edit_notification_channel_with_http_info(self, body, channel_id, **kwargs):  # noqa: E501
+        """edit_notification_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_notification_channel_using_put_with_http_info(body, channel_id, async_req=True)
+        >>> thread = api.edit_notification_channel_with_http_info(body, channel_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationChannel body: nc (required)
-        :param str channel_id: channelId (required)
-        :return: list[NotificationChannel]
+        :param ComCapillaryOpsCpBoNotificationsNotificationChannel body: (required)
+        :param str channel_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -461,18 +461,18 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method edit_notification_channel_using_put" % key
+                    " to method edit_notification_channel" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `edit_notification_channel_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `edit_notification_channel`")  # noqa: E501
         # verify the required parameter 'channel_id' is set
         if ('channel_id' not in params or
                 params['channel_id'] is None):
-            raise ValueError("Missing the required parameter `channel_id` when calling `edit_notification_channel_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `channel_id` when calling `edit_notification_channel`")  # noqa: E501
 
         collection_formats = {}
 
@@ -492,14 +492,14 @@ class UiNotificationControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/channels/{channelId}', 'PUT',
@@ -509,7 +509,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[NotificationChannel]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsNotificationChannel]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -517,40 +517,40 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def edit_subscription_using_put(self, body, subscription_id, **kwargs):  # noqa: E501
-        """editSubscription  # noqa: E501
+    def edit_subscription(self, body, subscription_id, **kwargs):  # noqa: E501
+        """edit_subscription  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_subscription_using_put(body, subscription_id, async_req=True)
+        >>> thread = api.edit_subscription(body, subscription_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Subscription body: subscription (required)
-        :param str subscription_id: subscriptionId (required)
-        :return: list[Subscription]
+        :param ComCapillaryOpsCpBoNotificationsSubscription body: (required)
+        :param str subscription_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.edit_subscription_using_put_with_http_info(body, subscription_id, **kwargs)  # noqa: E501
+            return self.edit_subscription_with_http_info(body, subscription_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.edit_subscription_using_put_with_http_info(body, subscription_id, **kwargs)  # noqa: E501
+            (data) = self.edit_subscription_with_http_info(body, subscription_id, **kwargs)  # noqa: E501
             return data
 
-    def edit_subscription_using_put_with_http_info(self, body, subscription_id, **kwargs):  # noqa: E501
-        """editSubscription  # noqa: E501
+    def edit_subscription_with_http_info(self, body, subscription_id, **kwargs):  # noqa: E501
+        """edit_subscription  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_subscription_using_put_with_http_info(body, subscription_id, async_req=True)
+        >>> thread = api.edit_subscription_with_http_info(body, subscription_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Subscription body: subscription (required)
-        :param str subscription_id: subscriptionId (required)
-        :return: list[Subscription]
+        :param ComCapillaryOpsCpBoNotificationsSubscription body: (required)
+        :param str subscription_id: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -566,18 +566,18 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method edit_subscription_using_put" % key
+                    " to method edit_subscription" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `edit_subscription_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `edit_subscription`")  # noqa: E501
         # verify the required parameter 'subscription_id' is set
         if ('subscription_id' not in params or
                 params['subscription_id'] is None):
-            raise ValueError("Missing the required parameter `subscription_id` when calling `edit_subscription_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `subscription_id` when calling `edit_subscription`")  # noqa: E501
 
         collection_formats = {}
 
@@ -597,14 +597,14 @@ class UiNotificationControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/subscriptions/{subscriptionId}', 'PUT',
@@ -614,7 +614,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Subscription]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsSubscription]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -622,36 +622,36 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_channel_types_using_get(self, **kwargs):  # noqa: E501
-        """getAllChannelTypes  # noqa: E501
+    def get_all_channel_types(self, **kwargs):  # noqa: E501
+        """get_all_channel_types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_channel_types_using_get(async_req=True)
+        >>> thread = api.get_all_channel_types(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[ChannelTypePayload]
+        :return: list[ComCapillaryOpsCpBoNotificationsChannelTypeChannelTypePayload]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_channel_types_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_channel_types_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_channel_types_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_channel_types_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_channel_types_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllChannelTypes  # noqa: E501
+    def get_all_channel_types_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_channel_types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_channel_types_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_channel_types_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[ChannelTypePayload]
+        :return: list[ComCapillaryOpsCpBoNotificationsChannelTypeChannelTypePayload]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -667,7 +667,7 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_channel_types_using_get" % key
+                    " to method get_all_channel_types" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -686,10 +686,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/channelTypes', 'GET',
@@ -699,7 +699,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ChannelTypePayload]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsChannelTypeChannelTypePayload]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -707,36 +707,36 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_channels_using_get(self, **kwargs):  # noqa: E501
-        """getAllChannels  # noqa: E501
+    def get_all_channels(self, **kwargs):  # noqa: E501
+        """get_all_channels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_channels_using_get(async_req=True)
+        >>> thread = api.get_all_channels(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[NotificationChannel]
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_channels_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_channels_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_channels_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_channels_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_channels_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllChannels  # noqa: E501
+    def get_all_channels_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_channels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_channels_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_channels_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[NotificationChannel]
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationChannel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -752,7 +752,7 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_channels_using_get" % key
+                    " to method get_all_channels" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -771,10 +771,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/channels', 'GET',
@@ -784,7 +784,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[NotificationChannel]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsNotificationChannel]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -792,36 +792,36 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_notification_tags_using_get(self, **kwargs):  # noqa: E501
-        """getAllNotificationTags  # noqa: E501
+    def get_all_notification_tags(self, **kwargs):  # noqa: E501
+        """get_all_notification_tags  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_notification_tags_using_get(async_req=True)
+        >>> thread = api.get_all_notification_tags(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[NotificationTagPayload]
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationTagNotificationTagPayload]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_notification_tags_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_notification_tags_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_notification_tags_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_notification_tags_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_notification_tags_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllNotificationTags  # noqa: E501
+    def get_all_notification_tags_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_notification_tags  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_notification_tags_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_notification_tags_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[NotificationTagPayload]
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationTagNotificationTagPayload]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -837,7 +837,7 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_notification_tags_using_get" % key
+                    " to method get_all_notification_tags" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -856,10 +856,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/notificationTags', 'GET',
@@ -869,7 +869,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[NotificationTagPayload]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsNotificationTagNotificationTagPayload]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -877,36 +877,36 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_notification_types_using_get(self, **kwargs):  # noqa: E501
-        """getAllNotificationTypes  # noqa: E501
+    def get_all_notification_types(self, **kwargs):  # noqa: E501
+        """get_all_notification_types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_notification_types_using_get(async_req=True)
+        >>> thread = api.get_all_notification_types(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[NotificationTypeResponse]
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationTypeNotificationTypeResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_notification_types_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_notification_types_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_notification_types_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_notification_types_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_notification_types_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllNotificationTypes  # noqa: E501
+    def get_all_notification_types_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_notification_types  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_notification_types_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_notification_types_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[NotificationTypeResponse]
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationTypeNotificationTypeResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -922,7 +922,7 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_notification_types_using_get" % key
+                    " to method get_all_notification_types" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -941,10 +941,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/notificationTypes', 'GET',
@@ -954,7 +954,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[NotificationTypeResponse]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsNotificationTypeNotificationTypeResponse]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -962,36 +962,36 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_subscriptions_using_get(self, **kwargs):  # noqa: E501
-        """getAllSubscriptions  # noqa: E501
+    def get_all_subscriptions1(self, **kwargs):  # noqa: E501
+        """get_all_subscriptions1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_subscriptions_using_get(async_req=True)
+        >>> thread = api.get_all_subscriptions1(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Subscription]
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_subscriptions_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_subscriptions1_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_subscriptions_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_subscriptions1_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_subscriptions_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllSubscriptions  # noqa: E501
+    def get_all_subscriptions1_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_subscriptions1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_subscriptions_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_subscriptions1_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Subscription]
+        :return: list[ComCapillaryOpsCpBoNotificationsSubscription]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1007,7 +1007,7 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_subscriptions_using_get" % key
+                    " to method get_all_subscriptions1" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1026,10 +1026,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/subscriptions', 'GET',
@@ -1039,7 +1039,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Subscription]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsSubscription]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1047,38 +1047,38 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_channel_using_get(self, channel_id, **kwargs):  # noqa: E501
-        """getChannel  # noqa: E501
+    def get_channel(self, channel_id, **kwargs):  # noqa: E501
+        """get_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_channel_using_get(channel_id, async_req=True)
+        >>> thread = api.get_channel(channel_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str channel_id: channelId (required)
-        :return: NotificationChannel
+        :param str channel_id: (required)
+        :return: ComCapillaryOpsCpBoNotificationsNotificationChannel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_channel_using_get_with_http_info(channel_id, **kwargs)  # noqa: E501
+            return self.get_channel_with_http_info(channel_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_channel_using_get_with_http_info(channel_id, **kwargs)  # noqa: E501
+            (data) = self.get_channel_with_http_info(channel_id, **kwargs)  # noqa: E501
             return data
 
-    def get_channel_using_get_with_http_info(self, channel_id, **kwargs):  # noqa: E501
-        """getChannel  # noqa: E501
+    def get_channel_with_http_info(self, channel_id, **kwargs):  # noqa: E501
+        """get_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_channel_using_get_with_http_info(channel_id, async_req=True)
+        >>> thread = api.get_channel_with_http_info(channel_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str channel_id: channelId (required)
-        :return: NotificationChannel
+        :param str channel_id: (required)
+        :return: ComCapillaryOpsCpBoNotificationsNotificationChannel
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1094,14 +1094,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_channel_using_get" % key
+                    " to method get_channel" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'channel_id' is set
         if ('channel_id' not in params or
                 params['channel_id'] is None):
-            raise ValueError("Missing the required parameter `channel_id` when calling `get_channel_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `channel_id` when calling `get_channel`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1119,10 +1119,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/channels/{channelId}', 'GET',
@@ -1132,7 +1132,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='NotificationChannel',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoNotificationsNotificationChannel',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1140,42 +1140,42 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_filters_for_subscriptions_using_post(self, body, notification_type, tag_name, **kwargs):  # noqa: E501
-        """getFiltersForSubscriptions  # noqa: E501
+    def get_filters_for_subscriptions(self, body, notification_type, tag_name, **kwargs):  # noqa: E501
+        """get_filters_for_subscriptions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_filters_for_subscriptions_using_post(body, notification_type, tag_name, async_req=True)
+        >>> thread = api.get_filters_for_subscriptions(body, notification_type, tag_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, list[str]) body: filterParams (required)
-        :param str notification_type: notificationType (required)
-        :param str tag_name: tagName (required)
-        :return: TagDataModel
+        :param dict(str, list[str]) body: (required)
+        :param str notification_type: (required)
+        :param str tag_name: (required)
+        :return: ComCapillaryOpsCpBoNotificationsTagsModelTagDataModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_filters_for_subscriptions_using_post_with_http_info(body, notification_type, tag_name, **kwargs)  # noqa: E501
+            return self.get_filters_for_subscriptions_with_http_info(body, notification_type, tag_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_filters_for_subscriptions_using_post_with_http_info(body, notification_type, tag_name, **kwargs)  # noqa: E501
+            (data) = self.get_filters_for_subscriptions_with_http_info(body, notification_type, tag_name, **kwargs)  # noqa: E501
             return data
 
-    def get_filters_for_subscriptions_using_post_with_http_info(self, body, notification_type, tag_name, **kwargs):  # noqa: E501
-        """getFiltersForSubscriptions  # noqa: E501
+    def get_filters_for_subscriptions_with_http_info(self, body, notification_type, tag_name, **kwargs):  # noqa: E501
+        """get_filters_for_subscriptions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_filters_for_subscriptions_using_post_with_http_info(body, notification_type, tag_name, async_req=True)
+        >>> thread = api.get_filters_for_subscriptions_with_http_info(body, notification_type, tag_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, list[str]) body: filterParams (required)
-        :param str notification_type: notificationType (required)
-        :param str tag_name: tagName (required)
-        :return: TagDataModel
+        :param dict(str, list[str]) body: (required)
+        :param str notification_type: (required)
+        :param str tag_name: (required)
+        :return: ComCapillaryOpsCpBoNotificationsTagsModelTagDataModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1191,22 +1191,22 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_filters_for_subscriptions_using_post" % key
+                    " to method get_filters_for_subscriptions" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `get_filters_for_subscriptions_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `get_filters_for_subscriptions`")  # noqa: E501
         # verify the required parameter 'notification_type' is set
         if ('notification_type' not in params or
                 params['notification_type'] is None):
-            raise ValueError("Missing the required parameter `notification_type` when calling `get_filters_for_subscriptions_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `notification_type` when calling `get_filters_for_subscriptions`")  # noqa: E501
         # verify the required parameter 'tag_name' is set
         if ('tag_name' not in params or
                 params['tag_name'] is None):
-            raise ValueError("Missing the required parameter `tag_name` when calling `get_filters_for_subscriptions_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `tag_name` when calling `get_filters_for_subscriptions`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1228,14 +1228,14 @@ class UiNotificationControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/{notificationType}/tag/{tagName}/values/', 'POST',
@@ -1245,7 +1245,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TagDataModel',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoNotificationsTagsModelTagDataModel',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1253,38 +1253,38 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_notification_tags_for_notification_type_using_get(self, notification_type, **kwargs):  # noqa: E501
-        """getNotificationTagsForNotificationType  # noqa: E501
+    def get_notification_tags_for_notification_type(self, notification_type, **kwargs):  # noqa: E501
+        """get_notification_tags_for_notification_type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_notification_tags_for_notification_type_using_get(notification_type, async_req=True)
+        >>> thread = api.get_notification_tags_for_notification_type(notification_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str notification_type: notificationType (required)
-        :return: list[NotificationTagsForTypeResult]
+        :param str notification_type: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationTagsForTypeResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_notification_tags_for_notification_type_using_get_with_http_info(notification_type, **kwargs)  # noqa: E501
+            return self.get_notification_tags_for_notification_type_with_http_info(notification_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_notification_tags_for_notification_type_using_get_with_http_info(notification_type, **kwargs)  # noqa: E501
+            (data) = self.get_notification_tags_for_notification_type_with_http_info(notification_type, **kwargs)  # noqa: E501
             return data
 
-    def get_notification_tags_for_notification_type_using_get_with_http_info(self, notification_type, **kwargs):  # noqa: E501
-        """getNotificationTagsForNotificationType  # noqa: E501
+    def get_notification_tags_for_notification_type_with_http_info(self, notification_type, **kwargs):  # noqa: E501
+        """get_notification_tags_for_notification_type  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_notification_tags_for_notification_type_using_get_with_http_info(notification_type, async_req=True)
+        >>> thread = api.get_notification_tags_for_notification_type_with_http_info(notification_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str notification_type: notificationType (required)
-        :return: list[NotificationTagsForTypeResult]
+        :param str notification_type: (required)
+        :return: list[ComCapillaryOpsCpBoNotificationsNotificationTagsForTypeResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1300,14 +1300,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_notification_tags_for_notification_type_using_get" % key
+                    " to method get_notification_tags_for_notification_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'notification_type' is set
         if ('notification_type' not in params or
                 params['notification_type'] is None):
-            raise ValueError("Missing the required parameter `notification_type` when calling `get_notification_tags_for_notification_type_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `notification_type` when calling `get_notification_tags_for_notification_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1325,10 +1325,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/{notificationType}/tags', 'GET',
@@ -1338,7 +1338,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[NotificationTagsForTypeResult]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoNotificationsNotificationTagsForTypeResult]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1346,131 +1346,38 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_subscription_attributes_using_get(self, notification_type, **kwargs):  # noqa: E501
-        """getSubscriptionAttributes  # noqa: E501
+    def get_subscription(self, subscription_id, **kwargs):  # noqa: E501
+        """get_subscription  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_subscription_attributes_using_get(notification_type, async_req=True)
+        >>> thread = api.get_subscription(subscription_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str notification_type: notificationType (required)
-        :return: list[str]
+        :param str subscription_id: (required)
+        :return: ComCapillaryOpsCpBoNotificationsSubscription
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_subscription_attributes_using_get_with_http_info(notification_type, **kwargs)  # noqa: E501
+            return self.get_subscription_with_http_info(subscription_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_subscription_attributes_using_get_with_http_info(notification_type, **kwargs)  # noqa: E501
+            (data) = self.get_subscription_with_http_info(subscription_id, **kwargs)  # noqa: E501
             return data
 
-    def get_subscription_attributes_using_get_with_http_info(self, notification_type, **kwargs):  # noqa: E501
-        """getSubscriptionAttributes  # noqa: E501
+    def get_subscription_with_http_info(self, subscription_id, **kwargs):  # noqa: E501
+        """get_subscription  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_subscription_attributes_using_get_with_http_info(notification_type, async_req=True)
+        >>> thread = api.get_subscription_with_http_info(subscription_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str notification_type: notificationType (required)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['notification_type']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_subscription_attributes_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'notification_type' is set
-        if ('notification_type' not in params or
-                params['notification_type'] is None):
-            raise ValueError("Missing the required parameter `notification_type` when calling `get_subscription_attributes_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'notification_type' in params:
-            path_params['notificationType'] = params['notification_type']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/notification/notificationType/{notificationType}/attributes', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[str]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_subscription_using_get(self, subscription_id, **kwargs):  # noqa: E501
-        """getSubscription  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_subscription_using_get(subscription_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str subscription_id: subscriptionId (required)
-        :return: Subscription
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_subscription_using_get_with_http_info(subscription_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_subscription_using_get_with_http_info(subscription_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_subscription_using_get_with_http_info(self, subscription_id, **kwargs):  # noqa: E501
-        """getSubscription  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_subscription_using_get_with_http_info(subscription_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str subscription_id: subscriptionId (required)
-        :return: Subscription
+        :param str subscription_id: (required)
+        :return: ComCapillaryOpsCpBoNotificationsSubscription
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1486,14 +1393,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_subscription_using_get" % key
+                    " to method get_subscription" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'subscription_id' is set
         if ('subscription_id' not in params or
                 params['subscription_id'] is None):
-            raise ValueError("Missing the required parameter `subscription_id` when calling `get_subscription_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `subscription_id` when calling `get_subscription`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1511,10 +1418,10 @@ class UiNotificationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/subscriptions/{subscriptionId}', 'GET',
@@ -1524,7 +1431,7 @@ class UiNotificationControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Subscription',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoNotificationsSubscription',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1532,37 +1439,130 @@ class UiNotificationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def test_notification_channel_using_post(self, body, **kwargs):  # noqa: E501
-        """testNotificationChannel  # noqa: E501
+    def get_subscription_attributes(self, notification_type, **kwargs):  # noqa: E501
+        """get_subscription_attributes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.test_notification_channel_using_post(body, async_req=True)
+        >>> thread = api.get_subscription_attributes(notification_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TestNotificationRequest body: testNotificationRequest (required)
+        :param str notification_type: (required)
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_subscription_attributes_with_http_info(notification_type, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_subscription_attributes_with_http_info(notification_type, **kwargs)  # noqa: E501
+            return data
+
+    def get_subscription_attributes_with_http_info(self, notification_type, **kwargs):  # noqa: E501
+        """get_subscription_attributes  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subscription_attributes_with_http_info(notification_type, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str notification_type: (required)
+        :return: list[str]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['notification_type']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_subscription_attributes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'notification_type' is set
+        if ('notification_type' not in params or
+                params['notification_type'] is None):
+            raise ValueError("Missing the required parameter `notification_type` when calling `get_subscription_attributes`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'notification_type' in params:
+            path_params['notificationType'] = params['notification_type']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/notification/notificationType/{notificationType}/attributes', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[str]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def test_notification_channel(self, body, **kwargs):  # noqa: E501
+        """test_notification_channel  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.test_notification_channel(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param ComCapillaryOpsCpBoRequestsTestNotificationRequest body: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.test_notification_channel_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.test_notification_channel_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.test_notification_channel_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.test_notification_channel_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def test_notification_channel_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """testNotificationChannel  # noqa: E501
+    def test_notification_channel_with_http_info(self, body, **kwargs):  # noqa: E501
+        """test_notification_channel  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.test_notification_channel_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.test_notification_channel_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TestNotificationRequest body: testNotificationRequest (required)
+        :param ComCapillaryOpsCpBoRequestsTestNotificationRequest body: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1579,14 +1579,14 @@ class UiNotificationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method test_notification_channel_using_post" % key
+                    " to method test_notification_channel" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `test_notification_channel_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `test_notification_channel`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1604,14 +1604,14 @@ class UiNotificationControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/notification/channels/test', 'POST',

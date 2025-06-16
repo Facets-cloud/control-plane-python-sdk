@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiTfVersionControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete_tf_stream_for_cluster_using_delete(self, cluster_id, **kwargs):  # noqa: E501
-        """deleteTfStreamForCluster  # noqa: E501
+    def delete_tf_stream_for_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """delete_tf_stream_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_tf_stream_for_cluster_using_delete(cluster_id, async_req=True)
+        >>> thread = api.delete_tf_stream_for_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_tf_stream_for_cluster_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.delete_tf_stream_for_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_tf_stream_for_cluster_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.delete_tf_stream_for_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_tf_stream_for_cluster_using_delete_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """deleteTfStreamForCluster  # noqa: E501
+    def delete_tf_stream_for_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """delete_tf_stream_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_tf_stream_for_cluster_using_delete_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.delete_tf_stream_for_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiTfVersionControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_tf_stream_for_cluster_using_delete" % key
+                    " to method delete_tf_stream_for_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_tf_stream_for_cluster_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_tf_stream_for_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,10 +104,10 @@ class UiTfVersionControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/terraform/cluster/{clusterId}', 'DELETE',
@@ -125,36 +125,36 @@ class UiTfVersionControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_versions_using_get(self, **kwargs):  # noqa: E501
-        """getAllVersions  # noqa: E501
+    def get_all_versions(self, **kwargs):  # noqa: E501
+        """get_all_versions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_versions_using_get(async_req=True)
+        >>> thread = api.get_all_versions(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[TfVersion]
+        :return: list[ComCapillaryOpsCpBoTfVersion]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_versions_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_versions_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_versions_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_versions_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_versions_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllVersions  # noqa: E501
+    def get_all_versions_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_versions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_versions_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_versions_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[TfVersion]
+        :return: list[ComCapillaryOpsCpBoTfVersion]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -170,7 +170,7 @@ class UiTfVersionControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_versions_using_get" % key
+                    " to method get_all_versions" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -189,10 +189,10 @@ class UiTfVersionControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/terraform/versions', 'GET',
@@ -202,7 +202,7 @@ class UiTfVersionControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[TfVersion]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoTfVersion]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -210,38 +210,38 @@ class UiTfVersionControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_pending_migration_scripts_by_cluster_id_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getPendingMigrationScriptsByClusterId  # noqa: E501
+    def get_pending_migration_scripts_by_cluster_id(self, cluster_id, **kwargs):  # noqa: E501
+        """get_pending_migration_scripts_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pending_migration_scripts_by_cluster_id_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_pending_migration_scripts_by_cluster_id(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: PendingMigrationDetails
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoPendingMigrationDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_pending_migration_scripts_by_cluster_id_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_pending_migration_scripts_by_cluster_id_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_pending_migration_scripts_by_cluster_id_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_pending_migration_scripts_by_cluster_id_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_pending_migration_scripts_by_cluster_id_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getPendingMigrationScriptsByClusterId  # noqa: E501
+    def get_pending_migration_scripts_by_cluster_id_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_pending_migration_scripts_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pending_migration_scripts_by_cluster_id_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_pending_migration_scripts_by_cluster_id_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: PendingMigrationDetails
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoPendingMigrationDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -257,14 +257,14 @@ class UiTfVersionControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_pending_migration_scripts_by_cluster_id_using_get" % key
+                    " to method get_pending_migration_scripts_by_cluster_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_pending_migration_scripts_by_cluster_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_pending_migration_scripts_by_cluster_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -282,10 +282,10 @@ class UiTfVersionControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/terraform/cluster/{clusterId}/pending-migration-scripts', 'GET',
@@ -295,7 +295,7 @@ class UiTfVersionControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PendingMigrationDetails',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoPendingMigrationDetails',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -303,38 +303,38 @@ class UiTfVersionControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tf_stream_for_cluster_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getTfStreamForCluster  # noqa: E501
+    def get_tf_stream_for_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """get_tf_stream_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tf_stream_for_cluster_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_tf_stream_for_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: ClusterTfVersionMapping
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoClusterTfVersionMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_tf_stream_for_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_tf_stream_for_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_tf_stream_for_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_tf_stream_for_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_tf_stream_for_cluster_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getTfStreamForCluster  # noqa: E501
+    def get_tf_stream_for_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_tf_stream_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tf_stream_for_cluster_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_tf_stream_for_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: ClusterTfVersionMapping
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoClusterTfVersionMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -350,14 +350,14 @@ class UiTfVersionControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_tf_stream_for_cluster_using_get" % key
+                    " to method get_tf_stream_for_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_tf_stream_for_cluster_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_tf_stream_for_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -375,10 +375,10 @@ class UiTfVersionControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/terraform/cluster/{clusterId}', 'GET',
@@ -388,7 +388,7 @@ class UiTfVersionControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ClusterTfVersionMapping',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoClusterTfVersionMapping',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -396,38 +396,38 @@ class UiTfVersionControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tf_versions_for_stream_using_get(self, tf_stream, **kwargs):  # noqa: E501
-        """getTfVersionsForStream  # noqa: E501
+    def get_tf_versions_for_stream(self, tf_stream, **kwargs):  # noqa: E501
+        """get_tf_versions_for_stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tf_versions_for_stream_using_get(tf_stream, async_req=True)
+        >>> thread = api.get_tf_versions_for_stream(tf_stream, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str tf_stream: tfStream (required)
-        :return: list[TfVersion]
+        :param str tf_stream: (required)
+        :return: list[ComCapillaryOpsCpBoTfVersion]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_tf_versions_for_stream_using_get_with_http_info(tf_stream, **kwargs)  # noqa: E501
+            return self.get_tf_versions_for_stream_with_http_info(tf_stream, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_tf_versions_for_stream_using_get_with_http_info(tf_stream, **kwargs)  # noqa: E501
+            (data) = self.get_tf_versions_for_stream_with_http_info(tf_stream, **kwargs)  # noqa: E501
             return data
 
-    def get_tf_versions_for_stream_using_get_with_http_info(self, tf_stream, **kwargs):  # noqa: E501
-        """getTfVersionsForStream  # noqa: E501
+    def get_tf_versions_for_stream_with_http_info(self, tf_stream, **kwargs):  # noqa: E501
+        """get_tf_versions_for_stream  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_tf_versions_for_stream_using_get_with_http_info(tf_stream, async_req=True)
+        >>> thread = api.get_tf_versions_for_stream_with_http_info(tf_stream, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str tf_stream: tfStream (required)
-        :return: list[TfVersion]
+        :param str tf_stream: (required)
+        :return: list[ComCapillaryOpsCpBoTfVersion]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -443,14 +443,14 @@ class UiTfVersionControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_tf_versions_for_stream_using_get" % key
+                    " to method get_tf_versions_for_stream" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'tf_stream' is set
         if ('tf_stream' not in params or
                 params['tf_stream'] is None):
-            raise ValueError("Missing the required parameter `tf_stream` when calling `get_tf_versions_for_stream_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `tf_stream` when calling `get_tf_versions_for_stream`")  # noqa: E501
 
         collection_formats = {}
 
@@ -468,10 +468,10 @@ class UiTfVersionControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/terraform/stream/{tfStream}/versions', 'GET',
@@ -481,7 +481,7 @@ class UiTfVersionControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[TfVersion]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoTfVersion]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -489,12 +489,12 @@ class UiTfVersionControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def populate_release_stream_tf_version_mapping_using_post(self, **kwargs):  # noqa: E501
-        """populateReleaseStreamTfVersionMapping  # noqa: E501
+    def populate_release_stream_tf_version_mapping(self, **kwargs):  # noqa: E501
+        """populate_release_stream_tf_version_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.populate_release_stream_tf_version_mapping_using_post(async_req=True)
+        >>> thread = api.populate_release_stream_tf_version_mapping(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -504,17 +504,17 @@ class UiTfVersionControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.populate_release_stream_tf_version_mapping_using_post_with_http_info(**kwargs)  # noqa: E501
+            return self.populate_release_stream_tf_version_mapping_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.populate_release_stream_tf_version_mapping_using_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.populate_release_stream_tf_version_mapping_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def populate_release_stream_tf_version_mapping_using_post_with_http_info(self, **kwargs):  # noqa: E501
-        """populateReleaseStreamTfVersionMapping  # noqa: E501
+    def populate_release_stream_tf_version_mapping_with_http_info(self, **kwargs):  # noqa: E501
+        """populate_release_stream_tf_version_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.populate_release_stream_tf_version_mapping_using_post_with_http_info(async_req=True)
+        >>> thread = api.populate_release_stream_tf_version_mapping_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -534,7 +534,7 @@ class UiTfVersionControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method populate_release_stream_tf_version_mapping_using_post" % key
+                    " to method populate_release_stream_tf_version_mapping" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -551,8 +551,12 @@ class UiTfVersionControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/terraform/sync-release-stream-mapping', 'POST',
@@ -570,40 +574,40 @@ class UiTfVersionControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_tf_version_for_cluster_using_put(self, body, cluster_id, **kwargs):  # noqa: E501
-        """setTfVersionForCluster  # noqa: E501
+    def set_tf_version_for_cluster(self, body, cluster_id, **kwargs):  # noqa: E501
+        """set_tf_version_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_tf_version_for_cluster_using_put(body, cluster_id, async_req=True)
+        >>> thread = api.set_tf_version_for_cluster(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TfVersion body: tfVersion (required)
-        :param str cluster_id: clusterId (required)
-        :return: ClusterTfVersionMapping
+        :param ComCapillaryOpsCpBoTfVersion body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoClusterTfVersionMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.set_tf_version_for_cluster_using_put_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.set_tf_version_for_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.set_tf_version_for_cluster_using_put_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.set_tf_version_for_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def set_tf_version_for_cluster_using_put_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """setTfVersionForCluster  # noqa: E501
+    def set_tf_version_for_cluster_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """set_tf_version_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_tf_version_for_cluster_using_put_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.set_tf_version_for_cluster_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TfVersion body: tfVersion (required)
-        :param str cluster_id: clusterId (required)
-        :return: ClusterTfVersionMapping
+        :param ComCapillaryOpsCpBoTfVersion body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoClusterTfVersionMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -619,18 +623,18 @@ class UiTfVersionControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_tf_version_for_cluster_using_put" % key
+                    " to method set_tf_version_for_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `set_tf_version_for_cluster_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `set_tf_version_for_cluster`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `set_tf_version_for_cluster_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `set_tf_version_for_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -650,14 +654,14 @@ class UiTfVersionControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/terraform/cluster/{clusterId}', 'PUT',
@@ -667,7 +671,7 @@ class UiTfVersionControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ClusterTfVersionMapping',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoClusterTfVersionMapping',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

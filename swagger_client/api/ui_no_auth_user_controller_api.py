@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiNoAuthUserControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def reset_password_request_using_post(self, body, **kwargs):  # noqa: E501
-        """resetPasswordRequest  # noqa: E501
+    def reset_password_request(self, body, **kwargs):  # noqa: E501
+        """reset_password_request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reset_password_request_using_post(body, async_req=True)
+        >>> thread = api.reset_password_request(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResetPasswordRequest body: resetPasswordRequest (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoResetpasswordResetPasswordRequest body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.reset_password_request_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.reset_password_request_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.reset_password_request_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.reset_password_request_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def reset_password_request_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """resetPasswordRequest  # noqa: E501
+    def reset_password_request_with_http_info(self, body, **kwargs):  # noqa: E501
+        """reset_password_request  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reset_password_request_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.reset_password_request_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResetPasswordRequest body: resetPasswordRequest (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoResetpasswordResetPasswordRequest body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiNoAuthUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method reset_password_request_using_post" % key
+                    " to method reset_password_request" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `reset_password_request_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `reset_password_request`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiNoAuthUserControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public-ui/v1/user/resetPassword', 'POST',
@@ -121,7 +121,7 @@ class UiNoAuthUserControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,38 +129,38 @@ class UiNoAuthUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def save_password_using_post(self, body, **kwargs):  # noqa: E501
-        """savePassword  # noqa: E501
+    def save_password(self, body, **kwargs):  # noqa: E501
+        """save_password  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.save_password_using_post(body, async_req=True)
+        >>> thread = api.save_password(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param SavePasswordResetPasswordRequest body: savePasswordResetPasswordRequest (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoResetpasswordSavePasswordResetPasswordRequest body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.save_password_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.save_password_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.save_password_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.save_password_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def save_password_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """savePassword  # noqa: E501
+    def save_password_with_http_info(self, body, **kwargs):  # noqa: E501
+        """save_password  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.save_password_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.save_password_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param SavePasswordResetPasswordRequest body: savePasswordResetPasswordRequest (required)
-        :return: Response
+        :param ComCapillaryOpsCpBoResetpasswordSavePasswordResetPasswordRequest body: (required)
+        :return: ComCapillaryOpsCpBoResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -176,14 +176,14 @@ class UiNoAuthUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method save_password_using_post" % key
+                    " to method save_password" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `save_password_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `save_password`")  # noqa: E501
 
         collection_formats = {}
 
@@ -201,14 +201,14 @@ class UiNoAuthUserControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public-ui/v1/user/savePassword', 'POST',
@@ -218,7 +218,7 @@ class UiNoAuthUserControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Response',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -226,38 +226,38 @@ class UiNoAuthUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_token_using_post(self, body, **kwargs):  # noqa: E501
-        """validateToken  # noqa: E501
+    def validate_token(self, body, **kwargs):  # noqa: E501
+        """validate_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_token_using_post(body, async_req=True)
+        >>> thread = api.validate_token(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TokenValidationRequest body: validationRequest (required)
-        :return: TokenValidity
+        :param ComCapillaryOpsCpBoResetpasswordTokenValidationRequest body: (required)
+        :return: ComCapillaryOpsCpBoResetpasswordTokenValidity
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_token_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.validate_token_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_token_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.validate_token_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def validate_token_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """validateToken  # noqa: E501
+    def validate_token_with_http_info(self, body, **kwargs):  # noqa: E501
+        """validate_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_token_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.validate_token_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param TokenValidationRequest body: validationRequest (required)
-        :return: TokenValidity
+        :param ComCapillaryOpsCpBoResetpasswordTokenValidationRequest body: (required)
+        :return: ComCapillaryOpsCpBoResetpasswordTokenValidity
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -273,14 +273,14 @@ class UiNoAuthUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_token_using_post" % key
+                    " to method validate_token" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `validate_token_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `validate_token`")  # noqa: E501
 
         collection_formats = {}
 
@@ -298,14 +298,14 @@ class UiNoAuthUserControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/public-ui/v1/user/token/validate', 'POST',
@@ -315,7 +315,7 @@ class UiNoAuthUserControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TokenValidity',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoResetpasswordTokenValidity',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

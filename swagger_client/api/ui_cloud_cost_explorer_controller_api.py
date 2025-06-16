@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,49 +32,49 @@ class UiCloudCostExplorerControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_daily_cloud_cost_using_get(self, end, stack_name, start, **kwargs):  # noqa: E501
-        """getDailyCloudCost  # noqa: E501
+    def get_daily_cloud_cost(self, stack_name, start, end, **kwargs):  # noqa: E501
+        """get_daily_cloud_cost  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_daily_cloud_cost_using_get(end, stack_name, start, async_req=True)
+        >>> thread = api.get_daily_cloud_cost(stack_name, start, end, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param date end: end (required)
-        :param str stack_name: stackName (required)
-        :param date start: start (required)
-        :param list[str] cluster_ids: clusterIds
-        :return: DailyCloudCostDTO
+        :param str stack_name: (required)
+        :param date start: (required)
+        :param date end: (required)
+        :param list[str] cluster_ids:
+        :return: ComCapillaryOpsCpBoCostDtoDailyCloudCostDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_daily_cloud_cost_using_get_with_http_info(end, stack_name, start, **kwargs)  # noqa: E501
+            return self.get_daily_cloud_cost_with_http_info(stack_name, start, end, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_daily_cloud_cost_using_get_with_http_info(end, stack_name, start, **kwargs)  # noqa: E501
+            (data) = self.get_daily_cloud_cost_with_http_info(stack_name, start, end, **kwargs)  # noqa: E501
             return data
 
-    def get_daily_cloud_cost_using_get_with_http_info(self, end, stack_name, start, **kwargs):  # noqa: E501
-        """getDailyCloudCost  # noqa: E501
+    def get_daily_cloud_cost_with_http_info(self, stack_name, start, end, **kwargs):  # noqa: E501
+        """get_daily_cloud_cost  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_daily_cloud_cost_using_get_with_http_info(end, stack_name, start, async_req=True)
+        >>> thread = api.get_daily_cloud_cost_with_http_info(stack_name, start, end, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param date end: end (required)
-        :param str stack_name: stackName (required)
-        :param date start: start (required)
-        :param list[str] cluster_ids: clusterIds
-        :return: DailyCloudCostDTO
+        :param str stack_name: (required)
+        :param date start: (required)
+        :param date end: (required)
+        :param list[str] cluster_ids:
+        :return: ComCapillaryOpsCpBoCostDtoDailyCloudCostDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['end', 'stack_name', 'start', 'cluster_ids']  # noqa: E501
+        all_params = ['stack_name', 'start', 'end', 'cluster_ids']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -85,22 +85,22 @@ class UiCloudCostExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_daily_cloud_cost_using_get" % key
+                    " to method get_daily_cloud_cost" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'end' is set
-        if ('end' not in params or
-                params['end'] is None):
-            raise ValueError("Missing the required parameter `end` when calling `get_daily_cloud_cost_using_get`")  # noqa: E501
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_daily_cloud_cost_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_daily_cloud_cost`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_daily_cloud_cost_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `get_daily_cloud_cost`")  # noqa: E501
+        # verify the required parameter 'end' is set
+        if ('end' not in params or
+                params['end'] is None):
+            raise ValueError("Missing the required parameter `end` when calling `get_daily_cloud_cost`")  # noqa: E501
 
         collection_formats = {}
 
@@ -109,13 +109,13 @@ class UiCloudCostExplorerControllerApi(object):
             path_params['stackName'] = params['stack_name']  # noqa: E501
 
         query_params = []
+        if 'start' in params:
+            query_params.append(('start', params['start']))  # noqa: E501
+        if 'end' in params:
+            query_params.append(('end', params['end']))  # noqa: E501
         if 'cluster_ids' in params:
             query_params.append(('clusterIds', params['cluster_ids']))  # noqa: E501
             collection_formats['clusterIds'] = 'multi'  # noqa: E501
-        if 'end' in params:
-            query_params.append(('end', params['end']))  # noqa: E501
-        if 'start' in params:
-            query_params.append(('start', params['start']))  # noqa: E501
 
         header_params = {}
 
@@ -125,10 +125,10 @@ class UiCloudCostExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/cost-explorer/stack/{stackName}/daily-cost', 'GET',
@@ -138,7 +138,7 @@ class UiCloudCostExplorerControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DailyCloudCostDTO',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoCostDtoDailyCloudCostDTO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -146,47 +146,47 @@ class UiCloudCostExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_service_wise_cost_using_get(self, cluster_id, end, start, **kwargs):  # noqa: E501
-        """getServiceWiseCost  # noqa: E501
+    def get_service_wise_cost(self, cluster_id, start, end, **kwargs):  # noqa: E501
+        """get_service_wise_cost  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service_wise_cost_using_get(cluster_id, end, start, async_req=True)
+        >>> thread = api.get_service_wise_cost(cluster_id, start, end, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param date end: end (required)
-        :param date start: start (required)
-        :return: list[DailyCost]
+        :param str cluster_id: (required)
+        :param date start: (required)
+        :param date end: (required)
+        :return: list[ComCapillaryOpsCpBoCostDailyCost]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_service_wise_cost_using_get_with_http_info(cluster_id, end, start, **kwargs)  # noqa: E501
+            return self.get_service_wise_cost_with_http_info(cluster_id, start, end, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_service_wise_cost_using_get_with_http_info(cluster_id, end, start, **kwargs)  # noqa: E501
+            (data) = self.get_service_wise_cost_with_http_info(cluster_id, start, end, **kwargs)  # noqa: E501
             return data
 
-    def get_service_wise_cost_using_get_with_http_info(self, cluster_id, end, start, **kwargs):  # noqa: E501
-        """getServiceWiseCost  # noqa: E501
+    def get_service_wise_cost_with_http_info(self, cluster_id, start, end, **kwargs):  # noqa: E501
+        """get_service_wise_cost  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service_wise_cost_using_get_with_http_info(cluster_id, end, start, async_req=True)
+        >>> thread = api.get_service_wise_cost_with_http_info(cluster_id, start, end, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param date end: end (required)
-        :param date start: start (required)
-        :return: list[DailyCost]
+        :param str cluster_id: (required)
+        :param date start: (required)
+        :param date end: (required)
+        :return: list[ComCapillaryOpsCpBoCostDailyCost]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'end', 'start']  # noqa: E501
+        all_params = ['cluster_id', 'start', 'end']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -197,22 +197,22 @@ class UiCloudCostExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_service_wise_cost_using_get" % key
+                    " to method get_service_wise_cost" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_service_wise_cost_using_get`")  # noqa: E501
-        # verify the required parameter 'end' is set
-        if ('end' not in params or
-                params['end'] is None):
-            raise ValueError("Missing the required parameter `end` when calling `get_service_wise_cost_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_service_wise_cost`")  # noqa: E501
         # verify the required parameter 'start' is set
         if ('start' not in params or
                 params['start'] is None):
-            raise ValueError("Missing the required parameter `start` when calling `get_service_wise_cost_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `start` when calling `get_service_wise_cost`")  # noqa: E501
+        # verify the required parameter 'end' is set
+        if ('end' not in params or
+                params['end'] is None):
+            raise ValueError("Missing the required parameter `end` when calling `get_service_wise_cost`")  # noqa: E501
 
         collection_formats = {}
 
@@ -221,10 +221,10 @@ class UiCloudCostExplorerControllerApi(object):
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
 
         query_params = []
-        if 'end' in params:
-            query_params.append(('end', params['end']))  # noqa: E501
         if 'start' in params:
             query_params.append(('start', params['start']))  # noqa: E501
+        if 'end' in params:
+            query_params.append(('end', params['end']))  # noqa: E501
 
         header_params = {}
 
@@ -234,10 +234,10 @@ class UiCloudCostExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/cost-explorer/service-wise-cost/{clusterId}', 'GET',
@@ -247,7 +247,7 @@ class UiCloudCostExplorerControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[DailyCost]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoCostDailyCost]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -255,12 +255,12 @@ class UiCloudCostExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def is_aws_cost_explorer_enabled_using_get(self, **kwargs):  # noqa: E501
-        """isAwsCostExplorerEnabled  # noqa: E501
+    def is_aws_cost_explorer_enabled(self, **kwargs):  # noqa: E501
+        """is_aws_cost_explorer_enabled  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.is_aws_cost_explorer_enabled_using_get(async_req=True)
+        >>> thread = api.is_aws_cost_explorer_enabled(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -270,17 +270,17 @@ class UiCloudCostExplorerControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.is_aws_cost_explorer_enabled_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.is_aws_cost_explorer_enabled_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.is_aws_cost_explorer_enabled_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.is_aws_cost_explorer_enabled_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def is_aws_cost_explorer_enabled_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """isAwsCostExplorerEnabled  # noqa: E501
+    def is_aws_cost_explorer_enabled_with_http_info(self, **kwargs):  # noqa: E501
+        """is_aws_cost_explorer_enabled  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.is_aws_cost_explorer_enabled_using_get_with_http_info(async_req=True)
+        >>> thread = api.is_aws_cost_explorer_enabled_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -300,7 +300,7 @@ class UiCloudCostExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method is_aws_cost_explorer_enabled_using_get" % key
+                    " to method is_aws_cost_explorer_enabled" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -319,10 +319,10 @@ class UiCloudCostExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/cost-explorer/aws/enabled', 'GET',
@@ -340,12 +340,12 @@ class UiCloudCostExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def sync_cloud_cost_using_get(self, **kwargs):  # noqa: E501
-        """syncCloudCost  # noqa: E501
+    def sync_cloud_cost(self, **kwargs):  # noqa: E501
+        """sync_cloud_cost  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_cloud_cost_using_get(async_req=True)
+        >>> thread = api.sync_cloud_cost(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -355,17 +355,17 @@ class UiCloudCostExplorerControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.sync_cloud_cost_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.sync_cloud_cost_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.sync_cloud_cost_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.sync_cloud_cost_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def sync_cloud_cost_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """syncCloudCost  # noqa: E501
+    def sync_cloud_cost_with_http_info(self, **kwargs):  # noqa: E501
+        """sync_cloud_cost  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sync_cloud_cost_using_get_with_http_info(async_req=True)
+        >>> thread = api.sync_cloud_cost_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -385,7 +385,7 @@ class UiCloudCostExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method sync_cloud_cost_using_get" % key
+                    " to method sync_cloud_cost" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -402,8 +402,12 @@ class UiCloudCostExplorerControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/cost-explorer/sync-cost', 'GET',

@@ -1,18 +1,18 @@
 # swagger_client.UiK8sClusterControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_draft_cluster_using_post1**](UiK8sClusterControllerApi.md#create_draft_cluster_using_post1) | **POST** /cc-ui/v1/kubernetes/clusters/configure/{clusterId} | createDraftCluster
-[**create_k8s_cluster_using_post**](UiK8sClusterControllerApi.md#create_k8s_cluster_using_post) | **POST** /cc-ui/v1/kubernetes/clusters | createK8sCluster
-[**get_k8s_cluster_using_get**](UiK8sClusterControllerApi.md#get_k8s_cluster_using_get) | **GET** /cc-ui/v1/kubernetes/clusters/{clusterId} | getK8sCluster
-[**update_k8s_cluster_using_put**](UiK8sClusterControllerApi.md#update_k8s_cluster_using_put) | **PUT** /cc-ui/v1/kubernetes/clusters/{clusterId} | updateK8sCluster
+[**create_draft_cluster**](UiK8sClusterControllerApi.md#create_draft_cluster) | **POST** /cc-ui/v1/kubernetes/clusters/configure/{clusterId} | 
+[**create_k8s_cluster**](UiK8sClusterControllerApi.md#create_k8s_cluster) | **POST** /cc-ui/v1/kubernetes/clusters | 
+[**get_k8s_cluster**](UiK8sClusterControllerApi.md#get_k8s_cluster) | **GET** /cc-ui/v1/kubernetes/clusters/{clusterId} | 
+[**update_k8s_cluster**](UiK8sClusterControllerApi.md#update_k8s_cluster) | **PUT** /cc-ui/v1/kubernetes/clusters/{clusterId} | 
 
-# **create_draft_cluster_using_post1**
-> KubernetesCluster create_draft_cluster_using_post1(body, cluster_id)
+# **create_draft_cluster**
+> ComCapillaryOpsCpBoKubernetesCluster create_draft_cluster(body, cluster_id)
 
-createDraftCluster
+
 
 ### Example
 ```python
@@ -21,50 +21,49 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiK8sClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoRequestsKubernetesClusterRequest() # ComCapillaryOpsCpBoRequestsKubernetesClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # createDraftCluster
-    api_response = api_instance.create_draft_cluster_using_post1(body, cluster_id)
+    api_response = api_instance.create_draft_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiK8sClusterControllerApi->create_draft_cluster_using_post1: %s\n" % e)
+    print("Exception when calling UiK8sClusterControllerApi->create_draft_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoRequestsKubernetesClusterRequest**](ComCapillaryOpsCpBoRequestsKubernetesClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**KubernetesCluster**](KubernetesCluster.md)
+[**ComCapillaryOpsCpBoKubernetesCluster**](ComCapillaryOpsCpBoKubernetesCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_k8s_cluster_using_post**
-> KubernetesCluster create_k8s_cluster_using_post(body)
+# **create_k8s_cluster**
+> ComCapillaryOpsCpBoKubernetesCluster create_k8s_cluster(body)
 
-createK8sCluster
+
 
 ### Example
 ```python
@@ -73,48 +72,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiK8sClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
+body = swagger_client.ComCapillaryOpsCpBoRequestsKubernetesClusterRequest() # ComCapillaryOpsCpBoRequestsKubernetesClusterRequest | 
 
 try:
-    # createK8sCluster
-    api_response = api_instance.create_k8s_cluster_using_post(body)
+    api_response = api_instance.create_k8s_cluster(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiK8sClusterControllerApi->create_k8s_cluster_using_post: %s\n" % e)
+    print("Exception when calling UiK8sClusterControllerApi->create_k8s_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
+ **body** | [**ComCapillaryOpsCpBoRequestsKubernetesClusterRequest**](ComCapillaryOpsCpBoRequestsKubernetesClusterRequest.md)|  | 
 
 ### Return type
 
-[**KubernetesCluster**](KubernetesCluster.md)
+[**ComCapillaryOpsCpBoKubernetesCluster**](ComCapillaryOpsCpBoKubernetesCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_k8s_cluster_using_get**
-> KubernetesCluster get_k8s_cluster_using_get(cluster_id)
+# **get_k8s_cluster**
+> ComCapillaryOpsCpBoKubernetesCluster get_k8s_cluster(cluster_id)
 
-getK8sCluster
+
 
 ### Example
 ```python
@@ -123,48 +121,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiK8sClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getK8sCluster
-    api_response = api_instance.get_k8s_cluster_using_get(cluster_id)
+    api_response = api_instance.get_k8s_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiK8sClusterControllerApi->get_k8s_cluster_using_get: %s\n" % e)
+    print("Exception when calling UiK8sClusterControllerApi->get_k8s_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**KubernetesCluster**](KubernetesCluster.md)
+[**ComCapillaryOpsCpBoKubernetesCluster**](ComCapillaryOpsCpBoKubernetesCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_k8s_cluster_using_put**
-> KubernetesCluster update_k8s_cluster_using_put(body, cluster_id)
+# **update_k8s_cluster**
+> ComCapillaryOpsCpBoKubernetesCluster update_k8s_cluster(body, cluster_id)
 
-updateK8sCluster
+
 
 ### Example
 ```python
@@ -173,43 +170,42 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiK8sClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.KubernetesClusterRequest() # KubernetesClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.ComCapillaryOpsCpBoRequestsKubernetesClusterRequest() # ComCapillaryOpsCpBoRequestsKubernetesClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # updateK8sCluster
-    api_response = api_instance.update_k8s_cluster_using_put(body, cluster_id)
+    api_response = api_instance.update_k8s_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiK8sClusterControllerApi->update_k8s_cluster_using_put: %s\n" % e)
+    print("Exception when calling UiK8sClusterControllerApi->update_k8s_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**KubernetesClusterRequest**](KubernetesClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**ComCapillaryOpsCpBoRequestsKubernetesClusterRequest**](ComCapillaryOpsCpBoRequestsKubernetesClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
-[**KubernetesCluster**](KubernetesCluster.md)
+[**ComCapillaryOpsCpBoKubernetesCluster**](ComCapillaryOpsCpBoKubernetesCluster.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,16 +1,16 @@
 # swagger_client.UiOneTimeWebhookControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**poll_webhook_using_get**](UiOneTimeWebhookControllerApi.md#poll_webhook_using_get) | **GET** /cc-ui/v1/onetime-webhook/poll/{webhookId} | pollWebhook
-[**register_webhook_using_post**](UiOneTimeWebhookControllerApi.md#register_webhook_using_post) | **POST** /cc-ui/v1/onetime-webhook/register | registerWebhook
+[**poll_webhook**](UiOneTimeWebhookControllerApi.md#poll_webhook) | **GET** /cc-ui/v1/onetime-webhook/poll/{webhookId} | 
+[**register_webhook**](UiOneTimeWebhookControllerApi.md#register_webhook) | **POST** /cc-ui/v1/onetime-webhook/register | 
 
-# **poll_webhook_using_get**
-> OneTimeWebhook poll_webhook_using_get(webhook_id)
+# **poll_webhook**
+> ComCapillaryOpsCpBoWebhookOneTimeWebhook poll_webhook(webhook_id)
 
-pollWebhook
+
 
 ### Example
 ```python
@@ -19,48 +19,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOneTimeWebhookControllerApi(swagger_client.ApiClient(configuration))
-webhook_id = 'webhook_id_example' # str | webhookId
+webhook_id = 'webhook_id_example' # str | 
 
 try:
-    # pollWebhook
-    api_response = api_instance.poll_webhook_using_get(webhook_id)
+    api_response = api_instance.poll_webhook(webhook_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiOneTimeWebhookControllerApi->poll_webhook_using_get: %s\n" % e)
+    print("Exception when calling UiOneTimeWebhookControllerApi->poll_webhook: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook_id** | **str**| webhookId | 
+ **webhook_id** | **str**|  | 
 
 ### Return type
 
-[**OneTimeWebhook**](OneTimeWebhook.md)
+[**ComCapillaryOpsCpBoWebhookOneTimeWebhook**](ComCapillaryOpsCpBoWebhookOneTimeWebhook.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **register_webhook_using_post**
-> OneTimeWebhook register_webhook_using_post(body)
+# **register_webhook**
+> ComCapillaryOpsCpBoWebhookOneTimeWebhook register_webhook(body)
 
-registerWebhook
+
 
 ### Example
 ```python
@@ -69,41 +68,40 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiOneTimeWebhookControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimeWebhook() # OneTimeWebhook | webhook
+body = swagger_client.ComCapillaryOpsCpBoWebhookOneTimeWebhook() # ComCapillaryOpsCpBoWebhookOneTimeWebhook | 
 
 try:
-    # registerWebhook
-    api_response = api_instance.register_webhook_using_post(body)
+    api_response = api_instance.register_webhook(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiOneTimeWebhookControllerApi->register_webhook_using_post: %s\n" % e)
+    print("Exception when calling UiOneTimeWebhookControllerApi->register_webhook: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimeWebhook**](OneTimeWebhook.md)| webhook | 
+ **body** | [**ComCapillaryOpsCpBoWebhookOneTimeWebhook**](ComCapillaryOpsCpBoWebhookOneTimeWebhook.md)|  | 
 
 ### Return type
 
-[**OneTimeWebhook**](OneTimeWebhook.md)
+[**ComCapillaryOpsCpBoWebhookOneTimeWebhook**](ComCapillaryOpsCpBoWebhookOneTimeWebhook.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

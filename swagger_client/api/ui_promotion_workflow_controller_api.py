@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiPromotionWorkflowControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_workflow_using_post(self, body, **kwargs):  # noqa: E501
-        """createWorkflow  # noqa: E501
+    def create_workflow(self, body, **kwargs):  # noqa: E501
+        """create_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workflow_using_post(body, async_req=True)
+        >>> thread = api.create_workflow(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param PromotionWorkflow body: promotionWorkflow (required)
-        :return: PromotionWorkflow
+        :param ComCapillaryOpsCpBoArtifactsPromotionWorkflow body: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_workflow_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_workflow_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_workflow_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_workflow_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_workflow_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createWorkflow  # noqa: E501
+    def create_workflow_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_workflow_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_workflow_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param PromotionWorkflow body: promotionWorkflow (required)
-        :return: PromotionWorkflow
+        :param ComCapillaryOpsCpBoArtifactsPromotionWorkflow body: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_workflow_using_post" % key
+                    " to method create_workflow" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_workflow_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_workflow`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiPromotionWorkflowControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow', 'POST',
@@ -121,7 +121,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PromotionWorkflow',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsPromotionWorkflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,38 +129,38 @@ class UiPromotionWorkflowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_workflow_using_delete(self, workflow_id, **kwargs):  # noqa: E501
-        """deleteWorkflow  # noqa: E501
+    def delete_workflow(self, workflow_id, **kwargs):  # noqa: E501
+        """delete_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_workflow_using_delete(workflow_id, async_req=True)
+        >>> thread = api.delete_workflow(workflow_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str workflow_id: workflowId (required)
-        :return: PromotionWorkflow
+        :param str workflow_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_workflow_using_delete_with_http_info(workflow_id, **kwargs)  # noqa: E501
+            return self.delete_workflow_with_http_info(workflow_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_workflow_using_delete_with_http_info(workflow_id, **kwargs)  # noqa: E501
+            (data) = self.delete_workflow_with_http_info(workflow_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_workflow_using_delete_with_http_info(self, workflow_id, **kwargs):  # noqa: E501
-        """deleteWorkflow  # noqa: E501
+    def delete_workflow_with_http_info(self, workflow_id, **kwargs):  # noqa: E501
+        """delete_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_workflow_using_delete_with_http_info(workflow_id, async_req=True)
+        >>> thread = api.delete_workflow_with_http_info(workflow_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str workflow_id: workflowId (required)
-        :return: PromotionWorkflow
+        :param str workflow_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -176,14 +176,14 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_workflow_using_delete" % key
+                    " to method delete_workflow" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'workflow_id' is set
         if ('workflow_id' not in params or
                 params['workflow_id'] is None):
-            raise ValueError("Missing the required parameter `workflow_id` when calling `delete_workflow_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `workflow_id` when calling `delete_workflow`")  # noqa: E501
 
         collection_formats = {}
 
@@ -201,10 +201,10 @@ class UiPromotionWorkflowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow/{workflowId}', 'DELETE',
@@ -214,7 +214,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PromotionWorkflow',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsPromotionWorkflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -222,36 +222,36 @@ class UiPromotionWorkflowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_workflows_using_get(self, **kwargs):  # noqa: E501
-        """getAllWorkflows  # noqa: E501
+    def get_all_workflows(self, **kwargs):  # noqa: E501
+        """get_all_workflows  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_workflows_using_get(async_req=True)
+        >>> thread = api.get_all_workflows(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[PromotionWorkflow]
+        :return: list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_workflows_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_workflows_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_workflows_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_workflows_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_workflows_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllWorkflows  # noqa: E501
+    def get_all_workflows_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_workflows  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_workflows_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_workflows_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[PromotionWorkflow]
+        :return: list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -267,7 +267,7 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_workflows_using_get" % key
+                    " to method get_all_workflows" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -286,10 +286,10 @@ class UiPromotionWorkflowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow', 'GET',
@@ -299,7 +299,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PromotionWorkflow]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -307,40 +307,40 @@ class UiPromotionWorkflowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_default_workflow_using_get(self, registration_type, **kwargs):  # noqa: E501
-        """getDefaultWorkflow  # noqa: E501
+    def get_default_workflow(self, registration_type, **kwargs):  # noqa: E501
+        """get_default_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_default_workflow_using_get(registration_type, async_req=True)
+        >>> thread = api.get_default_workflow(registration_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str registration_type: registrationType (required)
-        :param str stack_name: stackName
-        :return: PromotionWorkflow
+        :param str registration_type: (required)
+        :param str stack_name:
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_default_workflow_using_get_with_http_info(registration_type, **kwargs)  # noqa: E501
+            return self.get_default_workflow_with_http_info(registration_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_default_workflow_using_get_with_http_info(registration_type, **kwargs)  # noqa: E501
+            (data) = self.get_default_workflow_with_http_info(registration_type, **kwargs)  # noqa: E501
             return data
 
-    def get_default_workflow_using_get_with_http_info(self, registration_type, **kwargs):  # noqa: E501
-        """getDefaultWorkflow  # noqa: E501
+    def get_default_workflow_with_http_info(self, registration_type, **kwargs):  # noqa: E501
+        """get_default_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_default_workflow_using_get_with_http_info(registration_type, async_req=True)
+        >>> thread = api.get_default_workflow_with_http_info(registration_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str registration_type: registrationType (required)
-        :param str stack_name: stackName
-        :return: PromotionWorkflow
+        :param str registration_type: (required)
+        :param str stack_name:
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -356,14 +356,14 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_default_workflow_using_get" % key
+                    " to method get_default_workflow" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'registration_type' is set
         if ('registration_type' not in params or
                 params['registration_type'] is None):
-            raise ValueError("Missing the required parameter `registration_type` when calling `get_default_workflow_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `registration_type` when calling `get_default_workflow`")  # noqa: E501
 
         collection_formats = {}
 
@@ -383,10 +383,10 @@ class UiPromotionWorkflowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow/default-workflow/registration-type/{registrationType}', 'GET',
@@ -396,7 +396,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PromotionWorkflow',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsPromotionWorkflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -404,40 +404,40 @@ class UiPromotionWorkflowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_registration_specific_workflows_using_get(self, registration_type, **kwargs):  # noqa: E501
-        """getRegistrationSpecificWorkflows  # noqa: E501
+    def get_registration_specific_workflows(self, registration_type, **kwargs):  # noqa: E501
+        """get_registration_specific_workflows  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_registration_specific_workflows_using_get(registration_type, async_req=True)
+        >>> thread = api.get_registration_specific_workflows(registration_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str registration_type: registrationType (required)
-        :param str stack_name: stackName
-        :return: list[PromotionWorkflow]
+        :param str registration_type: (required)
+        :param str stack_name:
+        :return: list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_registration_specific_workflows_using_get_with_http_info(registration_type, **kwargs)  # noqa: E501
+            return self.get_registration_specific_workflows_with_http_info(registration_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_registration_specific_workflows_using_get_with_http_info(registration_type, **kwargs)  # noqa: E501
+            (data) = self.get_registration_specific_workflows_with_http_info(registration_type, **kwargs)  # noqa: E501
             return data
 
-    def get_registration_specific_workflows_using_get_with_http_info(self, registration_type, **kwargs):  # noqa: E501
-        """getRegistrationSpecificWorkflows  # noqa: E501
+    def get_registration_specific_workflows_with_http_info(self, registration_type, **kwargs):  # noqa: E501
+        """get_registration_specific_workflows  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_registration_specific_workflows_using_get_with_http_info(registration_type, async_req=True)
+        >>> thread = api.get_registration_specific_workflows_with_http_info(registration_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str registration_type: registrationType (required)
-        :param str stack_name: stackName
-        :return: list[PromotionWorkflow]
+        :param str registration_type: (required)
+        :param str stack_name:
+        :return: list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -453,14 +453,14 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_registration_specific_workflows_using_get" % key
+                    " to method get_registration_specific_workflows" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'registration_type' is set
         if ('registration_type' not in params or
                 params['registration_type'] is None):
-            raise ValueError("Missing the required parameter `registration_type` when calling `get_registration_specific_workflows_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `registration_type` when calling `get_registration_specific_workflows`")  # noqa: E501
 
         collection_formats = {}
 
@@ -480,10 +480,10 @@ class UiPromotionWorkflowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow/registration-specific', 'GET',
@@ -493,7 +493,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PromotionWorkflow]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -501,38 +501,38 @@ class UiPromotionWorkflowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_workflow_using_get(self, workflow_id, **kwargs):  # noqa: E501
-        """getWorkflow  # noqa: E501
+    def get_workflow(self, workflow_id, **kwargs):  # noqa: E501
+        """get_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_using_get(workflow_id, async_req=True)
+        >>> thread = api.get_workflow(workflow_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str workflow_id: workflowId (required)
-        :return: PromotionWorkflow
+        :param str workflow_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_workflow_using_get_with_http_info(workflow_id, **kwargs)  # noqa: E501
+            return self.get_workflow_with_http_info(workflow_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_workflow_using_get_with_http_info(workflow_id, **kwargs)  # noqa: E501
+            (data) = self.get_workflow_with_http_info(workflow_id, **kwargs)  # noqa: E501
             return data
 
-    def get_workflow_using_get_with_http_info(self, workflow_id, **kwargs):  # noqa: E501
-        """getWorkflow  # noqa: E501
+    def get_workflow_with_http_info(self, workflow_id, **kwargs):  # noqa: E501
+        """get_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflow_using_get_with_http_info(workflow_id, async_req=True)
+        >>> thread = api.get_workflow_with_http_info(workflow_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str workflow_id: workflowId (required)
-        :return: PromotionWorkflow
+        :param str workflow_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -548,14 +548,14 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_workflow_using_get" % key
+                    " to method get_workflow" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'workflow_id' is set
         if ('workflow_id' not in params or
                 params['workflow_id'] is None):
-            raise ValueError("Missing the required parameter `workflow_id` when calling `get_workflow_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `workflow_id` when calling `get_workflow`")  # noqa: E501
 
         collection_formats = {}
 
@@ -573,10 +573,10 @@ class UiPromotionWorkflowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow/{workflowId}', 'GET',
@@ -586,7 +586,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PromotionWorkflow',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsPromotionWorkflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -594,38 +594,38 @@ class UiPromotionWorkflowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_workflows_by_stack_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """getWorkflowsByStack  # noqa: E501
+    def get_workflows_by_stack(self, stack_name, **kwargs):  # noqa: E501
+        """get_workflows_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflows_by_stack_using_get(stack_name, async_req=True)
+        >>> thread = api.get_workflows_by_stack(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[PromotionWorkflow]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_workflows_by_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.get_workflows_by_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_workflows_by_stack_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_workflows_by_stack_with_http_info(stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_workflows_by_stack_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getWorkflowsByStack  # noqa: E501
+    def get_workflows_by_stack_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_workflows_by_stack  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_workflows_by_stack_using_get_with_http_info(stack_name, async_req=True)
+        >>> thread = api.get_workflows_by_stack_with_http_info(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :return: list[PromotionWorkflow]
+        :param str stack_name: (required)
+        :return: list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -641,14 +641,14 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_workflows_by_stack_using_get" % key
+                    " to method get_workflows_by_stack" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_workflows_by_stack_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_workflows_by_stack`")  # noqa: E501
 
         collection_formats = {}
 
@@ -666,10 +666,10 @@ class UiPromotionWorkflowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow/blueprint/{stackName}', 'GET',
@@ -679,7 +679,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PromotionWorkflow]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoArtifactsPromotionWorkflow]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -687,40 +687,40 @@ class UiPromotionWorkflowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_workflow_using_put(self, body, workflow_id, **kwargs):  # noqa: E501
-        """updateWorkflow  # noqa: E501
+    def update_workflow(self, body, workflow_id, **kwargs):  # noqa: E501
+        """update_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_workflow_using_put(body, workflow_id, async_req=True)
+        >>> thread = api.update_workflow(body, workflow_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param PromotionWorkflow body: promotionWorkflow (required)
-        :param str workflow_id: workflowId (required)
-        :return: PromotionWorkflow
+        :param ComCapillaryOpsCpBoArtifactsPromotionWorkflow body: (required)
+        :param str workflow_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_workflow_using_put_with_http_info(body, workflow_id, **kwargs)  # noqa: E501
+            return self.update_workflow_with_http_info(body, workflow_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_workflow_using_put_with_http_info(body, workflow_id, **kwargs)  # noqa: E501
+            (data) = self.update_workflow_with_http_info(body, workflow_id, **kwargs)  # noqa: E501
             return data
 
-    def update_workflow_using_put_with_http_info(self, body, workflow_id, **kwargs):  # noqa: E501
-        """updateWorkflow  # noqa: E501
+    def update_workflow_with_http_info(self, body, workflow_id, **kwargs):  # noqa: E501
+        """update_workflow  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_workflow_using_put_with_http_info(body, workflow_id, async_req=True)
+        >>> thread = api.update_workflow_with_http_info(body, workflow_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param PromotionWorkflow body: promotionWorkflow (required)
-        :param str workflow_id: workflowId (required)
-        :return: PromotionWorkflow
+        :param ComCapillaryOpsCpBoArtifactsPromotionWorkflow body: (required)
+        :param str workflow_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsPromotionWorkflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -736,18 +736,18 @@ class UiPromotionWorkflowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_workflow_using_put" % key
+                    " to method update_workflow" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_workflow_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_workflow`")  # noqa: E501
         # verify the required parameter 'workflow_id' is set
         if ('workflow_id' not in params or
                 params['workflow_id'] is None):
-            raise ValueError("Missing the required parameter `workflow_id` when calling `update_workflow_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `workflow_id` when calling `update_workflow`")  # noqa: E501
 
         collection_formats = {}
 
@@ -767,14 +767,14 @@ class UiPromotionWorkflowControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/workflow/{workflowId}', 'PUT',
@@ -784,7 +784,7 @@ class UiPromotionWorkflowControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PromotionWorkflow',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsPromotionWorkflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiReleaseStreamControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_using_post(self, body, **kwargs):  # noqa: E501
-        """add  # noqa: E501
+    def add1(self, body, **kwargs):  # noqa: E501
+        """add1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_using_post(body, async_req=True)
+        >>> thread = api.add1(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReleaseStreamRequest body: releaseStreamRequest (required)
-        :return: ReleaseStream
+        :param ComCapillaryOpsCpBoReleasestreamReleaseStreamRequest body: (required)
+        :return: ComCapillaryOpsCpBoReleasestreamReleaseStream
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.add1_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.add1_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def add_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """add  # noqa: E501
+    def add1_with_http_info(self, body, **kwargs):  # noqa: E501
+        """add1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.add1_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReleaseStreamRequest body: releaseStreamRequest (required)
-        :return: ReleaseStream
+        :param ComCapillaryOpsCpBoReleasestreamReleaseStreamRequest body: (required)
+        :return: ComCapillaryOpsCpBoReleasestreamReleaseStream
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiReleaseStreamControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_using_post" % key
+                    " to method add1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiReleaseStreamControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/release-stream', 'POST',
@@ -121,7 +121,7 @@ class UiReleaseStreamControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ReleaseStream',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoReleasestreamReleaseStream',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,37 +129,37 @@ class UiReleaseStreamControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_using_delete(self, name, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete2(self, name, **kwargs):  # noqa: E501
+        """delete2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_using_delete(name, async_req=True)
+        >>> thread = api.delete2(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: name (required)
+        :param str name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_using_delete_with_http_info(name, **kwargs)  # noqa: E501
+            return self.delete2_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_using_delete_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.delete2_with_http_info(name, **kwargs)  # noqa: E501
             return data
 
-    def delete_using_delete_with_http_info(self, name, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete2_with_http_info(self, name, **kwargs):  # noqa: E501
+        """delete2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_using_delete_with_http_info(name, async_req=True)
+        >>> thread = api.delete2_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: name (required)
+        :param str name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiReleaseStreamControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_using_delete" % key
+                    " to method delete2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `delete2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -199,8 +199,12 @@ class UiReleaseStreamControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/release-stream/{name}', 'DELETE',
@@ -218,38 +222,38 @@ class UiReleaseStreamControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_using_get3(self, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all1(self, **kwargs):  # noqa: E501
+        """get_all1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get3(async_req=True)
+        >>> thread = api.get_all1(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName
-        :return: list[ReleaseStreamResponse]
+        :param str stack_name:
+        :return: list[ComCapillaryOpsCpBoReleasestreamReleaseStreamResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_using_get3_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all1_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_using_get3_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all1_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_using_get3_with_http_info(self, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all1_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get3_with_http_info(async_req=True)
+        >>> thread = api.get_all1_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName
-        :return: list[ReleaseStreamResponse]
+        :param str stack_name:
+        :return: list[ComCapillaryOpsCpBoReleasestreamReleaseStreamResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -265,7 +269,7 @@ class UiReleaseStreamControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_using_get3" % key
+                    " to method get_all1" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -286,10 +290,10 @@ class UiReleaseStreamControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/release-stream', 'GET',
@@ -299,7 +303,7 @@ class UiReleaseStreamControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ReleaseStreamResponse]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoReleasestreamReleaseStreamResponse]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

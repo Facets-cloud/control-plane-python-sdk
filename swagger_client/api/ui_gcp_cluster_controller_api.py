@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,40 +32,40 @@ class UiGcpClusterControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def configure_draft_cluster_using_post2(self, body, cluster_id, **kwargs):  # noqa: E501
-        """configureDraftCluster  # noqa: E501
+    def configure_draft_cluster(self, body, cluster_id, **kwargs):  # noqa: E501
+        """configure_draft_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configure_draft_cluster_using_post2(body, cluster_id, async_req=True)
+        >>> thread = api.configure_draft_cluster(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GCPClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: GCPCluster
+        :param ComCapillaryOpsCpBoRequestsGCPClusterRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.configure_draft_cluster_using_post2_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.configure_draft_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.configure_draft_cluster_using_post2_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.configure_draft_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def configure_draft_cluster_using_post2_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """configureDraftCluster  # noqa: E501
+    def configure_draft_cluster_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """configure_draft_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configure_draft_cluster_using_post2_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.configure_draft_cluster_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GCPClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: GCPCluster
+        :param ComCapillaryOpsCpBoRequestsGCPClusterRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -81,18 +81,18 @@ class UiGcpClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method configure_draft_cluster_using_post2" % key
+                    " to method configure_draft_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `configure_draft_cluster_using_post2`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `configure_draft_cluster`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `configure_draft_cluster_using_post2`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `configure_draft_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -112,14 +112,14 @@ class UiGcpClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/gcp/clusters/configure/{clusterId}', 'POST',
@@ -129,7 +129,7 @@ class UiGcpClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GCPCluster',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoGCPCluster',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -137,38 +137,38 @@ class UiGcpClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_gcp_cluster_using_post(self, body, **kwargs):  # noqa: E501
-        """createGCPCluster  # noqa: E501
+    def create_gcp_cluster(self, body, **kwargs):  # noqa: E501
+        """create_gcp_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_gcp_cluster_using_post(body, async_req=True)
+        >>> thread = api.create_gcp_cluster(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GCPClusterRequest body: request (required)
-        :return: GCPCluster
+        :param ComCapillaryOpsCpBoRequestsGCPClusterRequest body: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_gcp_cluster_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_gcp_cluster_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_gcp_cluster_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_gcp_cluster_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_gcp_cluster_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createGCPCluster  # noqa: E501
+    def create_gcp_cluster_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_gcp_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_gcp_cluster_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_gcp_cluster_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GCPClusterRequest body: request (required)
-        :return: GCPCluster
+        :param ComCapillaryOpsCpBoRequestsGCPClusterRequest body: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -184,14 +184,14 @@ class UiGcpClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_gcp_cluster_using_post" % key
+                    " to method create_gcp_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_gcp_cluster_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_gcp_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -209,14 +209,14 @@ class UiGcpClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/gcp/clusters', 'POST',
@@ -226,7 +226,7 @@ class UiGcpClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GCPCluster',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoGCPCluster',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -234,38 +234,38 @@ class UiGcpClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_gcp_cluster_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getGCPCluster  # noqa: E501
+    def get_gcp_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """get_gcp_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_gcp_cluster_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_gcp_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: GCPCluster
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_gcp_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_gcp_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_gcp_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_gcp_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_gcp_cluster_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getGCPCluster  # noqa: E501
+    def get_gcp_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_gcp_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_gcp_cluster_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_gcp_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: GCPCluster
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -281,14 +281,14 @@ class UiGcpClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_gcp_cluster_using_get" % key
+                    " to method get_gcp_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_gcp_cluster_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_gcp_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -306,10 +306,10 @@ class UiGcpClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/gcp/clusters/{clusterId}', 'GET',
@@ -319,7 +319,7 @@ class UiGcpClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GCPCluster',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoGCPCluster',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -327,40 +327,40 @@ class UiGcpClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_gcp_cluster_using_put(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateGCPCluster  # noqa: E501
+    def update_gcp_cluster(self, body, cluster_id, **kwargs):  # noqa: E501
+        """update_gcp_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_gcp_cluster_using_put(body, cluster_id, async_req=True)
+        >>> thread = api.update_gcp_cluster(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GCPClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: GCPCluster
+        :param ComCapillaryOpsCpBoRequestsGCPClusterRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_gcp_cluster_using_put_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.update_gcp_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_gcp_cluster_using_put_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.update_gcp_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def update_gcp_cluster_using_put_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateGCPCluster  # noqa: E501
+    def update_gcp_cluster_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """update_gcp_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_gcp_cluster_using_put_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.update_gcp_cluster_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GCPClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: GCPCluster
+        :param ComCapillaryOpsCpBoRequestsGCPClusterRequest body: (required)
+        :param str cluster_id: (required)
+        :return: ComCapillaryOpsCpBoGCPCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -376,18 +376,18 @@ class UiGcpClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_gcp_cluster_using_put" % key
+                    " to method update_gcp_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_gcp_cluster_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_gcp_cluster`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `update_gcp_cluster_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `update_gcp_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -407,14 +407,14 @@ class UiGcpClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/gcp/clusters/{clusterId}', 'PUT',
@@ -424,7 +424,7 @@ class UiGcpClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GCPCluster',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoGCPCluster',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -432,45 +432,45 @@ class UiGcpClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_vpc_id_using_get1(self, account_id, vpc_id, **kwargs):  # noqa: E501
-        """validateVpcId  # noqa: E501
+    def validate_vpc_id(self, vpc_id, account_id, **kwargs):  # noqa: E501
+        """validate_vpc_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_vpc_id_using_get1(account_id, vpc_id, async_req=True)
+        >>> thread = api.validate_vpc_id(vpc_id, account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str vpc_id: vpcId (required)
+        :param str vpc_id: (required)
+        :param str account_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_vpc_id_using_get1_with_http_info(account_id, vpc_id, **kwargs)  # noqa: E501
+            return self.validate_vpc_id_with_http_info(vpc_id, account_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_vpc_id_using_get1_with_http_info(account_id, vpc_id, **kwargs)  # noqa: E501
+            (data) = self.validate_vpc_id_with_http_info(vpc_id, account_id, **kwargs)  # noqa: E501
             return data
 
-    def validate_vpc_id_using_get1_with_http_info(self, account_id, vpc_id, **kwargs):  # noqa: E501
-        """validateVpcId  # noqa: E501
+    def validate_vpc_id_with_http_info(self, vpc_id, account_id, **kwargs):  # noqa: E501
+        """validate_vpc_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_vpc_id_using_get1_with_http_info(account_id, vpc_id, async_req=True)
+        >>> thread = api.validate_vpc_id_with_http_info(vpc_id, account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str vpc_id: vpcId (required)
+        :param str vpc_id: (required)
+        :param str account_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'vpc_id']  # noqa: E501
+        all_params = ['vpc_id', 'account_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -481,28 +481,28 @@ class UiGcpClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_vpc_id_using_get1" % key
+                    " to method validate_vpc_id" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params or
-                params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `validate_vpc_id_using_get1`")  # noqa: E501
         # verify the required parameter 'vpc_id' is set
         if ('vpc_id' not in params or
                 params['vpc_id'] is None):
-            raise ValueError("Missing the required parameter `vpc_id` when calling `validate_vpc_id_using_get1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vpc_id` when calling `validate_vpc_id`")  # noqa: E501
+        # verify the required parameter 'account_id' is set
+        if ('account_id' not in params or
+                params['account_id'] is None):
+            raise ValueError("Missing the required parameter `account_id` when calling `validate_vpc_id`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'account_id' in params:
-            query_params.append(('accountId', params['account_id']))  # noqa: E501
         if 'vpc_id' in params:
             query_params.append(('vpcId', params['vpc_id']))  # noqa: E501
+        if 'account_id' in params:
+            query_params.append(('accountId', params['account_id']))  # noqa: E501
 
         header_params = {}
 
@@ -512,10 +512,10 @@ class UiGcpClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/gcp/clusters/validate-vpcId', 'GET',

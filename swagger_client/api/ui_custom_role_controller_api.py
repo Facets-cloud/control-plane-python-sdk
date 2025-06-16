@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiCustomRoleControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_custom_role_using_post(self, body, **kwargs):  # noqa: E501
-        """createCustomRole  # noqa: E501
+    def create_custom_role(self, body, **kwargs):  # noqa: E501
+        """create_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_custom_role_using_post(body, async_req=True)
+        >>> thread = api.create_custom_role(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomRoleRequest body: request (required)
-        :return: RoleMapping
+        :param ComCapillaryOpsCpBoRequestsCustomRoleRequest body: (required)
+        :return: ComCapillaryOpsCpBoUserRoleMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_custom_role_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_custom_role_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_custom_role_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_custom_role_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_custom_role_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createCustomRole  # noqa: E501
+    def create_custom_role_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_custom_role_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_custom_role_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomRoleRequest body: request (required)
-        :return: RoleMapping
+        :param ComCapillaryOpsCpBoRequestsCustomRoleRequest body: (required)
+        :return: ComCapillaryOpsCpBoUserRoleMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiCustomRoleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_custom_role_using_post" % key
+                    " to method create_custom_role" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_custom_role_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_custom_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiCustomRoleControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/custom-role', 'POST',
@@ -121,7 +121,7 @@ class UiCustomRoleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RoleMapping',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoUserRoleMapping',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,37 +129,37 @@ class UiCustomRoleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_custom_role_using_delete(self, role_name, **kwargs):  # noqa: E501
-        """deleteCustomRole  # noqa: E501
+    def delete_custom_role(self, role_name, **kwargs):  # noqa: E501
+        """delete_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_custom_role_using_delete(role_name, async_req=True)
+        >>> thread = api.delete_custom_role(role_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str role_name: roleName (required)
+        :param str role_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_custom_role_using_delete_with_http_info(role_name, **kwargs)  # noqa: E501
+            return self.delete_custom_role_with_http_info(role_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_custom_role_using_delete_with_http_info(role_name, **kwargs)  # noqa: E501
+            (data) = self.delete_custom_role_with_http_info(role_name, **kwargs)  # noqa: E501
             return data
 
-    def delete_custom_role_using_delete_with_http_info(self, role_name, **kwargs):  # noqa: E501
-        """deleteCustomRole  # noqa: E501
+    def delete_custom_role_with_http_info(self, role_name, **kwargs):  # noqa: E501
+        """delete_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_custom_role_using_delete_with_http_info(role_name, async_req=True)
+        >>> thread = api.delete_custom_role_with_http_info(role_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str role_name: roleName (required)
+        :param str role_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiCustomRoleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_custom_role_using_delete" % key
+                    " to method delete_custom_role" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'role_name' is set
         if ('role_name' not in params or
                 params['role_name'] is None):
-            raise ValueError("Missing the required parameter `role_name` when calling `delete_custom_role_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `role_name` when calling `delete_custom_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -199,8 +199,12 @@ class UiCustomRoleControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/custom-role/{roleName}', 'DELETE',
@@ -218,36 +222,36 @@ class UiCustomRoleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_custom_roles_using_get(self, **kwargs):  # noqa: E501
-        """getAllCustomRoles  # noqa: E501
+    def get_all_custom_roles(self, **kwargs):  # noqa: E501
+        """get_all_custom_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_custom_roles_using_get(async_req=True)
+        >>> thread = api.get_all_custom_roles(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[RoleMapping]
+        :return: list[ComCapillaryOpsCpBoUserRoleMapping]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_custom_roles_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_custom_roles_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_custom_roles_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_custom_roles_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_custom_roles_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllCustomRoles  # noqa: E501
+    def get_all_custom_roles_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_custom_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_custom_roles_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_custom_roles_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[RoleMapping]
+        :return: list[ComCapillaryOpsCpBoUserRoleMapping]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -263,7 +267,7 @@ class UiCustomRoleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_custom_roles_using_get" % key
+                    " to method get_all_custom_roles" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -282,10 +286,10 @@ class UiCustomRoleControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/custom-role', 'GET',
@@ -295,7 +299,7 @@ class UiCustomRoleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[RoleMapping]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoUserRoleMapping]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -303,36 +307,36 @@ class UiCustomRoleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_roles_using_get(self, **kwargs):  # noqa: E501
-        """getAllRoles  # noqa: E501
+    def get_all_roles(self, **kwargs):  # noqa: E501
+        """get_all_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_roles_using_get(async_req=True)
+        >>> thread = api.get_all_roles(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[RoleMapping]
+        :return: list[ComCapillaryOpsCpBoUserRoleMapping]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_roles_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_roles_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_roles_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_roles_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_roles_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllRoles  # noqa: E501
+    def get_all_roles_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_roles_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_roles_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[RoleMapping]
+        :return: list[ComCapillaryOpsCpBoUserRoleMapping]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -348,7 +352,7 @@ class UiCustomRoleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_roles_using_get" % key
+                    " to method get_all_roles" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -367,10 +371,10 @@ class UiCustomRoleControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/custom-role/roles', 'GET',
@@ -380,7 +384,7 @@ class UiCustomRoleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[RoleMapping]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoUserRoleMapping]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -388,38 +392,38 @@ class UiCustomRoleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_custom_role_using_get(self, role_name, **kwargs):  # noqa: E501
-        """getCustomRole  # noqa: E501
+    def get_custom_role(self, role_name, **kwargs):  # noqa: E501
+        """get_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_custom_role_using_get(role_name, async_req=True)
+        >>> thread = api.get_custom_role(role_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str role_name: roleName (required)
-        :return: RoleMapping
+        :param str role_name: (required)
+        :return: ComCapillaryOpsCpBoUserRoleMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_custom_role_using_get_with_http_info(role_name, **kwargs)  # noqa: E501
+            return self.get_custom_role_with_http_info(role_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_custom_role_using_get_with_http_info(role_name, **kwargs)  # noqa: E501
+            (data) = self.get_custom_role_with_http_info(role_name, **kwargs)  # noqa: E501
             return data
 
-    def get_custom_role_using_get_with_http_info(self, role_name, **kwargs):  # noqa: E501
-        """getCustomRole  # noqa: E501
+    def get_custom_role_with_http_info(self, role_name, **kwargs):  # noqa: E501
+        """get_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_custom_role_using_get_with_http_info(role_name, async_req=True)
+        >>> thread = api.get_custom_role_with_http_info(role_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str role_name: roleName (required)
-        :return: RoleMapping
+        :param str role_name: (required)
+        :return: ComCapillaryOpsCpBoUserRoleMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -435,14 +439,14 @@ class UiCustomRoleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_custom_role_using_get" % key
+                    " to method get_custom_role" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'role_name' is set
         if ('role_name' not in params or
                 params['role_name'] is None):
-            raise ValueError("Missing the required parameter `role_name` when calling `get_custom_role_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `role_name` when calling `get_custom_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -460,10 +464,10 @@ class UiCustomRoleControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/custom-role/{roleName}', 'GET',
@@ -473,7 +477,7 @@ class UiCustomRoleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RoleMapping',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoUserRoleMapping',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -481,40 +485,40 @@ class UiCustomRoleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_custom_role_using_put(self, body, role_name, **kwargs):  # noqa: E501
-        """updateCustomRole  # noqa: E501
+    def update_custom_role(self, body, role_name, **kwargs):  # noqa: E501
+        """update_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_custom_role_using_put(body, role_name, async_req=True)
+        >>> thread = api.update_custom_role(body, role_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomRoleRequest body: request (required)
-        :param str role_name: roleName (required)
-        :return: RoleMapping
+        :param ComCapillaryOpsCpBoRequestsCustomRoleRequest body: (required)
+        :param str role_name: (required)
+        :return: ComCapillaryOpsCpBoUserRoleMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_custom_role_using_put_with_http_info(body, role_name, **kwargs)  # noqa: E501
+            return self.update_custom_role_with_http_info(body, role_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_custom_role_using_put_with_http_info(body, role_name, **kwargs)  # noqa: E501
+            (data) = self.update_custom_role_with_http_info(body, role_name, **kwargs)  # noqa: E501
             return data
 
-    def update_custom_role_using_put_with_http_info(self, body, role_name, **kwargs):  # noqa: E501
-        """updateCustomRole  # noqa: E501
+    def update_custom_role_with_http_info(self, body, role_name, **kwargs):  # noqa: E501
+        """update_custom_role  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_custom_role_using_put_with_http_info(body, role_name, async_req=True)
+        >>> thread = api.update_custom_role_with_http_info(body, role_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomRoleRequest body: request (required)
-        :param str role_name: roleName (required)
-        :return: RoleMapping
+        :param ComCapillaryOpsCpBoRequestsCustomRoleRequest body: (required)
+        :param str role_name: (required)
+        :return: ComCapillaryOpsCpBoUserRoleMapping
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -530,18 +534,18 @@ class UiCustomRoleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_custom_role_using_put" % key
+                    " to method update_custom_role" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_custom_role_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_custom_role`")  # noqa: E501
         # verify the required parameter 'role_name' is set
         if ('role_name' not in params or
                 params['role_name'] is None):
-            raise ValueError("Missing the required parameter `role_name` when calling `update_custom_role_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `role_name` when calling `update_custom_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -561,14 +565,14 @@ class UiCustomRoleControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/custom-role/{roleName}', 'PUT',
@@ -578,7 +582,7 @@ class UiCustomRoleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RoleMapping',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoUserRoleMapping',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

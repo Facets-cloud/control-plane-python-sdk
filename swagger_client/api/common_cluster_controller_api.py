@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,39 +32,39 @@ class CommonClusterControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_cluster_k8s_credentials_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """addClusterK8sCredentials  # noqa: E501
+    def add_cluster_k8s_credentials(self, body, cluster_id, **kwargs):  # noqa: E501
+        """add_cluster_k8s_credentials  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_cluster_k8s_credentials_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.add_cluster_k8s_credentials(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param K8sCredentials body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param ComCapillaryOpsCpBoK8sCredentials body: (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_cluster_k8s_credentials_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.add_cluster_k8s_credentials_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_cluster_k8s_credentials_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.add_cluster_k8s_credentials_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def add_cluster_k8s_credentials_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """addClusterK8sCredentials  # noqa: E501
+    def add_cluster_k8s_credentials_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """add_cluster_k8s_credentials  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_cluster_k8s_credentials_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.add_cluster_k8s_credentials_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param K8sCredentials body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param ComCapillaryOpsCpBoK8sCredentials body: (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,18 +81,18 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_cluster_k8s_credentials_using_post" % key
+                    " to method add_cluster_k8s_credentials" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_cluster_k8s_credentials_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add_cluster_k8s_credentials`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `add_cluster_k8s_credentials_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `add_cluster_k8s_credentials`")  # noqa: E501
 
         collection_formats = {}
 
@@ -112,14 +112,14 @@ class CommonClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/credentials', 'POST',
@@ -137,37 +137,37 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_cluster_using_delete(self, cluster_id, **kwargs):  # noqa: E501
-        """deleteCluster  # noqa: E501
+    def delete_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """delete_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_cluster_using_delete(cluster_id, async_req=True)
+        >>> thread = api.delete_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_cluster_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.delete_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_cluster_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.delete_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_cluster_using_delete_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """deleteCluster  # noqa: E501
+    def delete_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """delete_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_cluster_using_delete_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.delete_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -184,14 +184,14 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_cluster_using_delete" % key
+                    " to method delete_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_cluster_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -209,10 +209,10 @@ class CommonClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}', 'DELETE',
@@ -230,38 +230,38 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_overrides_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getOverrides  # noqa: E501
+    def get_overrides(self, cluster_id, **kwargs):  # noqa: E501
+        """get_overrides  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_overrides_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_overrides(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: list[OverrideObject]
+        :param str cluster_id: (required)
+        :return: list[ComCapillaryOpsCpBoOverrideObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_overrides_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_overrides_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_overrides_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_overrides_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_overrides_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getOverrides  # noqa: E501
+    def get_overrides_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_overrides  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_overrides_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_overrides_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: list[OverrideObject]
+        :param str cluster_id: (required)
+        :return: list[ComCapillaryOpsCpBoOverrideObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -277,14 +277,14 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_overrides_using_get" % key
+                    " to method get_overrides" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_overrides_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_overrides`")  # noqa: E501
 
         collection_formats = {}
 
@@ -302,10 +302,10 @@ class CommonClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/overrides', 'GET',
@@ -315,7 +315,7 @@ class CommonClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[OverrideObject]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoOverrideObject]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -323,47 +323,47 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_pinned_snapshot_using_get(self, cluster_id, instance_name, resource_type, **kwargs):  # noqa: E501
-        """getPinnedSnapshot  # noqa: E501
+    def get_pinned_snapshot(self, cluster_id, resource_type, instance_name, **kwargs):  # noqa: E501
+        """get_pinned_snapshot  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pinned_snapshot_using_get(cluster_id, instance_name, resource_type, async_req=True)
+        >>> thread = api.get_pinned_snapshot(cluster_id, resource_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str instance_name: instanceName (required)
-        :param str resource_type: resourceType (required)
-        :return: SnapshotInfo
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str instance_name: (required)
+        :return: ComCapillaryOpsCpBoSnapshotInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_pinned_snapshot_using_get_with_http_info(cluster_id, instance_name, resource_type, **kwargs)  # noqa: E501
+            return self.get_pinned_snapshot_with_http_info(cluster_id, resource_type, instance_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_pinned_snapshot_using_get_with_http_info(cluster_id, instance_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.get_pinned_snapshot_with_http_info(cluster_id, resource_type, instance_name, **kwargs)  # noqa: E501
             return data
 
-    def get_pinned_snapshot_using_get_with_http_info(self, cluster_id, instance_name, resource_type, **kwargs):  # noqa: E501
-        """getPinnedSnapshot  # noqa: E501
+    def get_pinned_snapshot_with_http_info(self, cluster_id, resource_type, instance_name, **kwargs):  # noqa: E501
+        """get_pinned_snapshot  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pinned_snapshot_using_get_with_http_info(cluster_id, instance_name, resource_type, async_req=True)
+        >>> thread = api.get_pinned_snapshot_with_http_info(cluster_id, resource_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str instance_name: instanceName (required)
-        :param str resource_type: resourceType (required)
-        :return: SnapshotInfo
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str instance_name: (required)
+        :return: ComCapillaryOpsCpBoSnapshotInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'instance_name', 'resource_type']  # noqa: E501
+        all_params = ['cluster_id', 'resource_type', 'instance_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -374,32 +374,32 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_pinned_snapshot_using_get" % key
+                    " to method get_pinned_snapshot" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_pinned_snapshot_using_get`")  # noqa: E501
-        # verify the required parameter 'instance_name' is set
-        if ('instance_name' not in params or
-                params['instance_name'] is None):
-            raise ValueError("Missing the required parameter `instance_name` when calling `get_pinned_snapshot_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_pinned_snapshot`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_pinned_snapshot_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_pinned_snapshot`")  # noqa: E501
+        # verify the required parameter 'instance_name' is set
+        if ('instance_name' not in params or
+                params['instance_name'] is None):
+            raise ValueError("Missing the required parameter `instance_name` when calling `get_pinned_snapshot`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'instance_name' in params:
-            path_params['instanceName'] = params['instance_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'instance_name' in params:
+            path_params['instanceName'] = params['instance_name']  # noqa: E501
 
         query_params = []
 
@@ -411,10 +411,10 @@ class CommonClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/dr/{resourceType}/snapshots/{instanceName}/pinnedSnapshot', 'GET',
@@ -424,7 +424,7 @@ class CommonClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SnapshotInfo',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoSnapshotInfo',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -432,47 +432,47 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_snapshots_using_get(self, cluster_id, instance_name, resource_type, **kwargs):  # noqa: E501
-        """listSnapshots  # noqa: E501
+    def list_snapshots(self, cluster_id, resource_type, instance_name, **kwargs):  # noqa: E501
+        """list_snapshots  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_snapshots_using_get(cluster_id, instance_name, resource_type, async_req=True)
+        >>> thread = api.list_snapshots(cluster_id, resource_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str instance_name: instanceName (required)
-        :param str resource_type: resourceType (required)
-        :return: list[SnapshotInfo]
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str instance_name: (required)
+        :return: list[ComCapillaryOpsCpBoSnapshotInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_snapshots_using_get_with_http_info(cluster_id, instance_name, resource_type, **kwargs)  # noqa: E501
+            return self.list_snapshots_with_http_info(cluster_id, resource_type, instance_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_snapshots_using_get_with_http_info(cluster_id, instance_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.list_snapshots_with_http_info(cluster_id, resource_type, instance_name, **kwargs)  # noqa: E501
             return data
 
-    def list_snapshots_using_get_with_http_info(self, cluster_id, instance_name, resource_type, **kwargs):  # noqa: E501
-        """listSnapshots  # noqa: E501
+    def list_snapshots_with_http_info(self, cluster_id, resource_type, instance_name, **kwargs):  # noqa: E501
+        """list_snapshots  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_snapshots_using_get_with_http_info(cluster_id, instance_name, resource_type, async_req=True)
+        >>> thread = api.list_snapshots_with_http_info(cluster_id, resource_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str instance_name: instanceName (required)
-        :param str resource_type: resourceType (required)
-        :return: list[SnapshotInfo]
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str instance_name: (required)
+        :return: list[ComCapillaryOpsCpBoSnapshotInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'instance_name', 'resource_type']  # noqa: E501
+        all_params = ['cluster_id', 'resource_type', 'instance_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -483,32 +483,32 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_snapshots_using_get" % key
+                    " to method list_snapshots" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_snapshots_using_get`")  # noqa: E501
-        # verify the required parameter 'instance_name' is set
-        if ('instance_name' not in params or
-                params['instance_name'] is None):
-            raise ValueError("Missing the required parameter `instance_name` when calling `list_snapshots_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_snapshots`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `list_snapshots_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `list_snapshots`")  # noqa: E501
+        # verify the required parameter 'instance_name' is set
+        if ('instance_name' not in params or
+                params['instance_name'] is None):
+            raise ValueError("Missing the required parameter `instance_name` when calling `list_snapshots`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'instance_name' in params:
-            path_params['instanceName'] = params['instance_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'instance_name' in params:
+            path_params['instanceName'] = params['instance_name']  # noqa: E501
 
         query_params = []
 
@@ -520,10 +520,10 @@ class CommonClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/dr/{resourceType}/snapshots/{instanceName}', 'GET',
@@ -533,7 +533,7 @@ class CommonClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[SnapshotInfo]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoSnapshotInfo]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -541,39 +541,39 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def notify_alerts_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """notifyAlerts  # noqa: E501
+    def notify_alerts(self, body, cluster_id, **kwargs):  # noqa: E501
+        """notify_alerts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.notify_alerts_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.notify_alerts(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Response body: alerts (required)
-        :param str cluster_id: clusterId (required)
+        :param ComCapillaryOpsCpBoAlertManagerPayloadResponse body: (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.notify_alerts_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.notify_alerts_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.notify_alerts_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.notify_alerts_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def notify_alerts_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """notifyAlerts  # noqa: E501
+    def notify_alerts_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """notify_alerts  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.notify_alerts_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.notify_alerts_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Response body: alerts (required)
-        :param str cluster_id: clusterId (required)
+        :param ComCapillaryOpsCpBoAlertManagerPayloadResponse body: (required)
+        :param str cluster_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -590,18 +590,18 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method notify_alerts_using_post" % key
+                    " to method notify_alerts" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `notify_alerts_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `notify_alerts`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `notify_alerts_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `notify_alerts`")  # noqa: E501
 
         collection_formats = {}
 
@@ -621,14 +621,14 @@ class CommonClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/alerts', 'POST',
@@ -646,49 +646,49 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def notify_application_deployment_complete_using_post(self, app_name, cluster_id, **kwargs):  # noqa: E501
-        """notifyApplicationDeploymentComplete  # noqa: E501
+    def notify_application_deployment_complete(self, cluster_id, app_name, **kwargs):  # noqa: E501
+        """notify_application_deployment_complete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.notify_application_deployment_complete_using_post(app_name, cluster_id, async_req=True)
+        >>> thread = api.notify_application_deployment_complete(cluster_id, app_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_name: appName (required)
-        :param str cluster_id: clusterId (required)
-        :param str build_id: buildId
-        :param str deployment_status: deploymentStatus
+        :param str cluster_id: (required)
+        :param str app_name: (required)
+        :param str deployment_status:
+        :param str build_id:
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.notify_application_deployment_complete_using_post_with_http_info(app_name, cluster_id, **kwargs)  # noqa: E501
+            return self.notify_application_deployment_complete_with_http_info(cluster_id, app_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.notify_application_deployment_complete_using_post_with_http_info(app_name, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.notify_application_deployment_complete_with_http_info(cluster_id, app_name, **kwargs)  # noqa: E501
             return data
 
-    def notify_application_deployment_complete_using_post_with_http_info(self, app_name, cluster_id, **kwargs):  # noqa: E501
-        """notifyApplicationDeploymentComplete  # noqa: E501
+    def notify_application_deployment_complete_with_http_info(self, cluster_id, app_name, **kwargs):  # noqa: E501
+        """notify_application_deployment_complete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.notify_application_deployment_complete_using_post_with_http_info(app_name, cluster_id, async_req=True)
+        >>> thread = api.notify_application_deployment_complete_with_http_info(cluster_id, app_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_name: appName (required)
-        :param str cluster_id: clusterId (required)
-        :param str build_id: buildId
-        :param str deployment_status: deploymentStatus
+        :param str cluster_id: (required)
+        :param str app_name: (required)
+        :param str deployment_status:
+        :param str build_id:
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['app_name', 'cluster_id', 'build_id', 'deployment_status']  # noqa: E501
+        all_params = ['cluster_id', 'app_name', 'deployment_status', 'build_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -699,32 +699,32 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method notify_application_deployment_complete_using_post" % key
+                    " to method notify_application_deployment_complete" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'app_name' is set
-        if ('app_name' not in params or
-                params['app_name'] is None):
-            raise ValueError("Missing the required parameter `app_name` when calling `notify_application_deployment_complete_using_post`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `notify_application_deployment_complete_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `notify_application_deployment_complete`")  # noqa: E501
+        # verify the required parameter 'app_name' is set
+        if ('app_name' not in params or
+                params['app_name'] is None):
+            raise ValueError("Missing the required parameter `app_name` when calling `notify_application_deployment_complete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'app_name' in params:
-            path_params['appName'] = params['app_name']  # noqa: E501
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
+        if 'app_name' in params:
+            path_params['appName'] = params['app_name']  # noqa: E501
 
         query_params = []
-        if 'build_id' in params:
-            query_params.append(('buildId', params['build_id']))  # noqa: E501
         if 'deployment_status' in params:
             query_params.append(('deploymentStatus', params['deployment_status']))  # noqa: E501
+        if 'build_id' in params:
+            query_params.append(('buildId', params['build_id']))  # noqa: E501
 
         header_params = {}
 
@@ -734,10 +734,10 @@ class CommonClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/app-name/{appName}/application-deployment-completed', 'POST',
@@ -755,51 +755,51 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def notify_resource_deployment_complete_using_post(self, cluster_id, deployment_status, resource_name, resource_type, **kwargs):  # noqa: E501
-        """notifyResourceDeploymentComplete  # noqa: E501
+    def notify_resource_deployment_complete(self, cluster_id, resource_type, resource_name, deployment_status, **kwargs):  # noqa: E501
+        """notify_resource_deployment_complete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.notify_resource_deployment_complete_using_post(cluster_id, deployment_status, resource_name, resource_type, async_req=True)
+        >>> thread = api.notify_resource_deployment_complete(cluster_id, resource_type, resource_name, deployment_status, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_status: deploymentStatus (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str build_id: buildId
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param str deployment_status: (required)
+        :param str build_id:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.notify_resource_deployment_complete_using_post_with_http_info(cluster_id, deployment_status, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.notify_resource_deployment_complete_with_http_info(cluster_id, resource_type, resource_name, deployment_status, **kwargs)  # noqa: E501
         else:
-            (data) = self.notify_resource_deployment_complete_using_post_with_http_info(cluster_id, deployment_status, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.notify_resource_deployment_complete_with_http_info(cluster_id, resource_type, resource_name, deployment_status, **kwargs)  # noqa: E501
             return data
 
-    def notify_resource_deployment_complete_using_post_with_http_info(self, cluster_id, deployment_status, resource_name, resource_type, **kwargs):  # noqa: E501
-        """notifyResourceDeploymentComplete  # noqa: E501
+    def notify_resource_deployment_complete_with_http_info(self, cluster_id, resource_type, resource_name, deployment_status, **kwargs):  # noqa: E501
+        """notify_resource_deployment_complete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.notify_resource_deployment_complete_using_post_with_http_info(cluster_id, deployment_status, resource_name, resource_type, async_req=True)
+        >>> thread = api.notify_resource_deployment_complete_with_http_info(cluster_id, resource_type, resource_name, deployment_status, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_status: deploymentStatus (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
-        :param str build_id: buildId
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param str deployment_status: (required)
+        :param str build_id:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'deployment_status', 'resource_name', 'resource_type', 'build_id']  # noqa: E501
+        all_params = ['cluster_id', 'resource_type', 'resource_name', 'deployment_status', 'build_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -810,42 +810,42 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method notify_resource_deployment_complete_using_post" % key
+                    " to method notify_resource_deployment_complete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `notify_resource_deployment_complete_using_post`")  # noqa: E501
-        # verify the required parameter 'deployment_status' is set
-        if ('deployment_status' not in params or
-                params['deployment_status'] is None):
-            raise ValueError("Missing the required parameter `deployment_status` when calling `notify_resource_deployment_complete_using_post`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `notify_resource_deployment_complete_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `notify_resource_deployment_complete`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `notify_resource_deployment_complete_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `notify_resource_deployment_complete`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `notify_resource_deployment_complete`")  # noqa: E501
+        # verify the required parameter 'deployment_status' is set
+        if ('deployment_status' not in params or
+                params['deployment_status'] is None):
+            raise ValueError("Missing the required parameter `deployment_status` when calling `notify_resource_deployment_complete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
-        if 'build_id' in params:
-            query_params.append(('buildId', params['build_id']))  # noqa: E501
         if 'deployment_status' in params:
             query_params.append(('deploymentStatus', params['deployment_status']))  # noqa: E501
+        if 'build_id' in params:
+            query_params.append(('buildId', params['build_id']))  # noqa: E501
 
         header_params = {}
 
@@ -853,8 +853,12 @@ class CommonClusterControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/resource-type/{resourceType}/resource-name/{resourceName}/resource-deployment-completed', 'POST',
@@ -872,40 +876,40 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def override_sizing_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """overrideSizing  # noqa: E501
+    def override_sizing(self, body, cluster_id, **kwargs):  # noqa: E501
+        """override_sizing  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.override_sizing_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.override_sizing(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[OverrideRequest] body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: list[OverrideObject]
+        :param list[ComCapillaryOpsCpBoRequestsOverrideRequest] body: (required)
+        :param str cluster_id: (required)
+        :return: list[ComCapillaryOpsCpBoOverrideObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.override_sizing_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.override_sizing_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.override_sizing_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.override_sizing_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def override_sizing_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """overrideSizing  # noqa: E501
+    def override_sizing_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """override_sizing  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.override_sizing_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.override_sizing_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[OverrideRequest] body: request (required)
-        :param str cluster_id: clusterId (required)
-        :return: list[OverrideObject]
+        :param list[ComCapillaryOpsCpBoRequestsOverrideRequest] body: (required)
+        :param str cluster_id: (required)
+        :return: list[ComCapillaryOpsCpBoOverrideObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -921,18 +925,18 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method override_sizing_using_post" % key
+                    " to method override_sizing" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `override_sizing_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `override_sizing`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `override_sizing_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `override_sizing`")  # noqa: E501
 
         collection_formats = {}
 
@@ -952,14 +956,14 @@ class CommonClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/overrides', 'POST',
@@ -969,7 +973,7 @@ class CommonClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[OverrideObject]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoOverrideObject]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -977,49 +981,49 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def pin_snapshot_using_post(self, body, cluster_id, instance_name, resource_type, **kwargs):  # noqa: E501
-        """pinSnapshot  # noqa: E501
+    def pin_snapshot(self, body, cluster_id, resource_type, instance_name, **kwargs):  # noqa: E501
+        """pin_snapshot  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.pin_snapshot_using_post(body, cluster_id, instance_name, resource_type, async_req=True)
+        >>> thread = api.pin_snapshot(body, cluster_id, resource_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param SnapshotInfo body: snapshotInfo (required)
-        :param str cluster_id: clusterId (required)
-        :param str instance_name: instanceName (required)
-        :param str resource_type: resourceType (required)
-        :return: SnapshotInfo
+        :param ComCapillaryOpsCpBoSnapshotInfo body: (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str instance_name: (required)
+        :return: ComCapillaryOpsCpBoSnapshotInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.pin_snapshot_using_post_with_http_info(body, cluster_id, instance_name, resource_type, **kwargs)  # noqa: E501
+            return self.pin_snapshot_with_http_info(body, cluster_id, resource_type, instance_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.pin_snapshot_using_post_with_http_info(body, cluster_id, instance_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.pin_snapshot_with_http_info(body, cluster_id, resource_type, instance_name, **kwargs)  # noqa: E501
             return data
 
-    def pin_snapshot_using_post_with_http_info(self, body, cluster_id, instance_name, resource_type, **kwargs):  # noqa: E501
-        """pinSnapshot  # noqa: E501
+    def pin_snapshot_with_http_info(self, body, cluster_id, resource_type, instance_name, **kwargs):  # noqa: E501
+        """pin_snapshot  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.pin_snapshot_using_post_with_http_info(body, cluster_id, instance_name, resource_type, async_req=True)
+        >>> thread = api.pin_snapshot_with_http_info(body, cluster_id, resource_type, instance_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param SnapshotInfo body: snapshotInfo (required)
-        :param str cluster_id: clusterId (required)
-        :param str instance_name: instanceName (required)
-        :param str resource_type: resourceType (required)
-        :return: SnapshotInfo
+        :param ComCapillaryOpsCpBoSnapshotInfo body: (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str instance_name: (required)
+        :return: ComCapillaryOpsCpBoSnapshotInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'cluster_id', 'instance_name', 'resource_type']  # noqa: E501
+        all_params = ['body', 'cluster_id', 'resource_type', 'instance_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1030,36 +1034,36 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method pin_snapshot_using_post" % key
+                    " to method pin_snapshot" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `pin_snapshot_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `pin_snapshot`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `pin_snapshot_using_post`")  # noqa: E501
-        # verify the required parameter 'instance_name' is set
-        if ('instance_name' not in params or
-                params['instance_name'] is None):
-            raise ValueError("Missing the required parameter `instance_name` when calling `pin_snapshot_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `pin_snapshot`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `pin_snapshot_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `pin_snapshot`")  # noqa: E501
+        # verify the required parameter 'instance_name' is set
+        if ('instance_name' not in params or
+                params['instance_name'] is None):
+            raise ValueError("Missing the required parameter `instance_name` when calling `pin_snapshot`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'instance_name' in params:
-            path_params['instanceName'] = params['instance_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'instance_name' in params:
+            path_params['instanceName'] = params['instance_name']  # noqa: E501
 
         query_params = []
 
@@ -1073,14 +1077,14 @@ class CommonClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/dr/{resourceType}/snapshots/{instanceName}/pinnedSnapshot', 'POST',
@@ -1090,7 +1094,7 @@ class CommonClusterControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='SnapshotInfo',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoSnapshotInfo',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1098,39 +1102,39 @@ class CommonClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upsert_vars_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """upsertVars  # noqa: E501
+    def upsert_vars(self, body, cluster_id, **kwargs):  # noqa: E501
+        """upsert_vars  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upsert_vars_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.upsert_vars(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, str) body: clusterVars (required)
-        :param str cluster_id: clusterId (required)
+        :param dict(str, str) body: (required)
+        :param str cluster_id: (required)
         :return: dict(str, str)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.upsert_vars_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.upsert_vars_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.upsert_vars_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.upsert_vars_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def upsert_vars_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """upsertVars  # noqa: E501
+    def upsert_vars_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """upsert_vars  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upsert_vars_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.upsert_vars_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, str) body: clusterVars (required)
-        :param str cluster_id: clusterId (required)
+        :param dict(str, str) body: (required)
+        :param str cluster_id: (required)
         :return: dict(str, str)
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1147,18 +1151,18 @@ class CommonClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method upsert_vars_using_post" % key
+                    " to method upsert_vars" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `upsert_vars_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `upsert_vars`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `upsert_vars_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `upsert_vars`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1178,14 +1182,14 @@ class CommonClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc/v1/clusters/{clusterId}/vars/upsert', 'POST',

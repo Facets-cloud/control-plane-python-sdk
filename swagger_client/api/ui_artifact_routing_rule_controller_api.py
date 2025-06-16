@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,38 +32,38 @@ class UiArtifactRoutingRuleControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_artifact_routing_rule_using_post(self, body, **kwargs):  # noqa: E501
-        """addArtifactRoutingRule  # noqa: E501
+    def add_artifact_routing_rule(self, body, **kwargs):  # noqa: E501
+        """add_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_artifact_routing_rule_using_post(body, async_req=True)
+        >>> thread = api.add_artifact_routing_rule(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactRoutingRuleRequest body: artifactRoutingRuleRequest (required)
-        :return: ArtifactRoutingRuleResponse
+        :param ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest body: (required)
+        :return: ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_artifact_routing_rule_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.add_artifact_routing_rule_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_artifact_routing_rule_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.add_artifact_routing_rule_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def add_artifact_routing_rule_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """addArtifactRoutingRule  # noqa: E501
+    def add_artifact_routing_rule_with_http_info(self, body, **kwargs):  # noqa: E501
+        """add_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_artifact_routing_rule_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.add_artifact_routing_rule_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactRoutingRuleRequest body: artifactRoutingRuleRequest (required)
-        :return: ArtifactRoutingRuleResponse
+        :param ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest body: (required)
+        :return: ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -79,14 +79,14 @@ class UiArtifactRoutingRuleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_artifact_routing_rule_using_post" % key
+                    " to method add_artifact_routing_rule" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_artifact_routing_rule_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add_artifact_routing_rule`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiArtifactRoutingRuleControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifact-routing-rule', 'POST',
@@ -121,7 +121,7 @@ class UiArtifactRoutingRuleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ArtifactRoutingRuleResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -129,37 +129,37 @@ class UiArtifactRoutingRuleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_artifact_routing_rule_using_delete(self, rule_id, **kwargs):  # noqa: E501
-        """deleteArtifactRoutingRule  # noqa: E501
+    def delete_artifact_routing_rule(self, rule_id, **kwargs):  # noqa: E501
+        """delete_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_artifact_routing_rule_using_delete(rule_id, async_req=True)
+        >>> thread = api.delete_artifact_routing_rule(rule_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str rule_id: ruleId (required)
+        :param str rule_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_artifact_routing_rule_using_delete_with_http_info(rule_id, **kwargs)  # noqa: E501
+            return self.delete_artifact_routing_rule_with_http_info(rule_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_artifact_routing_rule_using_delete_with_http_info(rule_id, **kwargs)  # noqa: E501
+            (data) = self.delete_artifact_routing_rule_with_http_info(rule_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_artifact_routing_rule_using_delete_with_http_info(self, rule_id, **kwargs):  # noqa: E501
-        """deleteArtifactRoutingRule  # noqa: E501
+    def delete_artifact_routing_rule_with_http_info(self, rule_id, **kwargs):  # noqa: E501
+        """delete_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_artifact_routing_rule_using_delete_with_http_info(rule_id, async_req=True)
+        >>> thread = api.delete_artifact_routing_rule_with_http_info(rule_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str rule_id: ruleId (required)
+        :param str rule_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiArtifactRoutingRuleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_artifact_routing_rule_using_delete" % key
+                    " to method delete_artifact_routing_rule" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'rule_id' is set
         if ('rule_id' not in params or
                 params['rule_id'] is None):
-            raise ValueError("Missing the required parameter `rule_id` when calling `delete_artifact_routing_rule_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `rule_id` when calling `delete_artifact_routing_rule`")  # noqa: E501
 
         collection_formats = {}
 
@@ -199,8 +199,12 @@ class UiArtifactRoutingRuleControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifact-routing-rule/{ruleId}', 'DELETE',
@@ -218,40 +222,40 @@ class UiArtifactRoutingRuleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_artifact_routing_rules_using_get(self, stack_name, **kwargs):  # noqa: E501
-        """getAllArtifactRoutingRules  # noqa: E501
+    def get_all_artifact_routing_rules(self, stack_name, **kwargs):  # noqa: E501
+        """get_all_artifact_routing_rules  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_artifact_routing_rules_using_get(stack_name, async_req=True)
+        >>> thread = api.get_all_artifact_routing_rules(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :param str registration_type: registrationType
-        :return: list[ArtifactRoutingRuleResponse]
+        :param str stack_name: (required)
+        :param str registration_type:
+        :return: list[ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_artifact_routing_rules_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            return self.get_all_artifact_routing_rules_with_http_info(stack_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_artifact_routing_rules_using_get_with_http_info(stack_name, **kwargs)  # noqa: E501
+            (data) = self.get_all_artifact_routing_rules_with_http_info(stack_name, **kwargs)  # noqa: E501
             return data
 
-    def get_all_artifact_routing_rules_using_get_with_http_info(self, stack_name, **kwargs):  # noqa: E501
-        """getAllArtifactRoutingRules  # noqa: E501
+    def get_all_artifact_routing_rules_with_http_info(self, stack_name, **kwargs):  # noqa: E501
+        """get_all_artifact_routing_rules  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_artifact_routing_rules_using_get_with_http_info(stack_name, async_req=True)
+        >>> thread = api.get_all_artifact_routing_rules_with_http_info(stack_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str stack_name: stackName (required)
-        :param str registration_type: registrationType
-        :return: list[ArtifactRoutingRuleResponse]
+        :param str stack_name: (required)
+        :param str registration_type:
+        :return: list[ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -267,24 +271,24 @@ class UiArtifactRoutingRuleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_artifact_routing_rules_using_get" % key
+                    " to method get_all_artifact_routing_rules" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'stack_name' is set
         if ('stack_name' not in params or
                 params['stack_name'] is None):
-            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_artifact_routing_rules_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `stack_name` when calling `get_all_artifact_routing_rules`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'registration_type' in params:
-            query_params.append(('registrationType', params['registration_type']))  # noqa: E501
         if 'stack_name' in params:
             query_params.append(('stackName', params['stack_name']))  # noqa: E501
+        if 'registration_type' in params:
+            query_params.append(('registrationType', params['registration_type']))  # noqa: E501
 
         header_params = {}
 
@@ -294,10 +298,10 @@ class UiArtifactRoutingRuleControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifact-routing-rule', 'GET',
@@ -307,7 +311,7 @@ class UiArtifactRoutingRuleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ArtifactRoutingRuleResponse]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -315,12 +319,12 @@ class UiArtifactRoutingRuleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_operators_using_get(self, **kwargs):  # noqa: E501
-        """getAllOperators  # noqa: E501
+    def get_all_operators(self, **kwargs):  # noqa: E501
+        """get_all_operators  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_operators_using_get(async_req=True)
+        >>> thread = api.get_all_operators(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -330,17 +334,17 @@ class UiArtifactRoutingRuleControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_operators_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_operators_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_operators_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_operators_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_operators_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllOperators  # noqa: E501
+    def get_all_operators_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_operators  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_operators_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_operators_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -360,7 +364,7 @@ class UiArtifactRoutingRuleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_operators_using_get" % key
+                    " to method get_all_operators" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -379,10 +383,10 @@ class UiArtifactRoutingRuleControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifact-routing-rule/operators', 'GET',
@@ -400,38 +404,38 @@ class UiArtifactRoutingRuleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_artifact_routing_rule_using_get(self, rule_id, **kwargs):  # noqa: E501
-        """getArtifactRoutingRule  # noqa: E501
+    def get_artifact_routing_rule(self, rule_id, **kwargs):  # noqa: E501
+        """get_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_routing_rule_using_get(rule_id, async_req=True)
+        >>> thread = api.get_artifact_routing_rule(rule_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str rule_id: ruleId (required)
-        :return: ArtifactRoutingRuleResponse
+        :param str rule_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_artifact_routing_rule_using_get_with_http_info(rule_id, **kwargs)  # noqa: E501
+            return self.get_artifact_routing_rule_with_http_info(rule_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_artifact_routing_rule_using_get_with_http_info(rule_id, **kwargs)  # noqa: E501
+            (data) = self.get_artifact_routing_rule_with_http_info(rule_id, **kwargs)  # noqa: E501
             return data
 
-    def get_artifact_routing_rule_using_get_with_http_info(self, rule_id, **kwargs):  # noqa: E501
-        """getArtifactRoutingRule  # noqa: E501
+    def get_artifact_routing_rule_with_http_info(self, rule_id, **kwargs):  # noqa: E501
+        """get_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_artifact_routing_rule_using_get_with_http_info(rule_id, async_req=True)
+        >>> thread = api.get_artifact_routing_rule_with_http_info(rule_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str rule_id: ruleId (required)
-        :return: ArtifactRoutingRuleResponse
+        :param str rule_id: (required)
+        :return: ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -447,14 +451,14 @@ class UiArtifactRoutingRuleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_artifact_routing_rule_using_get" % key
+                    " to method get_artifact_routing_rule" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'rule_id' is set
         if ('rule_id' not in params or
                 params['rule_id'] is None):
-            raise ValueError("Missing the required parameter `rule_id` when calling `get_artifact_routing_rule_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `rule_id` when calling `get_artifact_routing_rule`")  # noqa: E501
 
         collection_formats = {}
 
@@ -472,10 +476,10 @@ class UiArtifactRoutingRuleControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifact-routing-rule/{ruleId}', 'GET',
@@ -485,7 +489,7 @@ class UiArtifactRoutingRuleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ArtifactRoutingRuleResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -493,40 +497,40 @@ class UiArtifactRoutingRuleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def test_rule_for_branch_name_using_post(self, body, metadata, **kwargs):  # noqa: E501
-        """testRuleForBranchName  # noqa: E501
+    def test_rule_for_branch_name(self, body, metadata, **kwargs):  # noqa: E501
+        """test_rule_for_branch_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.test_rule_for_branch_name_using_post(body, metadata, async_req=True)
+        >>> thread = api.test_rule_for_branch_name(body, metadata, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Criterion] body: criteria (required)
-        :param object metadata: metadata (required)
-        :return: TestRuleResponse
+        :param list[ComCapillaryOpsCpBoArtifactsCriterion] body: (required)
+        :param dict(str, str) metadata: (required)
+        :return: ComCapillaryOpsCpBoArtifactsTestRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.test_rule_for_branch_name_using_post_with_http_info(body, metadata, **kwargs)  # noqa: E501
+            return self.test_rule_for_branch_name_with_http_info(body, metadata, **kwargs)  # noqa: E501
         else:
-            (data) = self.test_rule_for_branch_name_using_post_with_http_info(body, metadata, **kwargs)  # noqa: E501
+            (data) = self.test_rule_for_branch_name_with_http_info(body, metadata, **kwargs)  # noqa: E501
             return data
 
-    def test_rule_for_branch_name_using_post_with_http_info(self, body, metadata, **kwargs):  # noqa: E501
-        """testRuleForBranchName  # noqa: E501
+    def test_rule_for_branch_name_with_http_info(self, body, metadata, **kwargs):  # noqa: E501
+        """test_rule_for_branch_name  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.test_rule_for_branch_name_using_post_with_http_info(body, metadata, async_req=True)
+        >>> thread = api.test_rule_for_branch_name_with_http_info(body, metadata, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[Criterion] body: criteria (required)
-        :param object metadata: metadata (required)
-        :return: TestRuleResponse
+        :param list[ComCapillaryOpsCpBoArtifactsCriterion] body: (required)
+        :param dict(str, str) metadata: (required)
+        :return: ComCapillaryOpsCpBoArtifactsTestRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -542,18 +546,18 @@ class UiArtifactRoutingRuleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method test_rule_for_branch_name_using_post" % key
+                    " to method test_rule_for_branch_name" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `test_rule_for_branch_name_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `test_rule_for_branch_name`")  # noqa: E501
         # verify the required parameter 'metadata' is set
         if ('metadata' not in params or
                 params['metadata'] is None):
-            raise ValueError("Missing the required parameter `metadata` when calling `test_rule_for_branch_name_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `metadata` when calling `test_rule_for_branch_name`")  # noqa: E501
 
         collection_formats = {}
 
@@ -573,14 +577,14 @@ class UiArtifactRoutingRuleControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifact-routing-rule/test', 'POST',
@@ -590,7 +594,7 @@ class UiArtifactRoutingRuleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='TestRuleResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsTestRuleResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -598,38 +602,38 @@ class UiArtifactRoutingRuleControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_artifact_routing_rule_using_put(self, body, **kwargs):  # noqa: E501
-        """updateArtifactRoutingRule  # noqa: E501
+    def update_artifact_routing_rule(self, body, **kwargs):  # noqa: E501
+        """update_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_artifact_routing_rule_using_put(body, async_req=True)
+        >>> thread = api.update_artifact_routing_rule(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactRoutingRuleRequest body: artifactRoutingRuleRequest (required)
-        :return: ArtifactRoutingRuleResponse
+        :param ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest body: (required)
+        :return: ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_artifact_routing_rule_using_put_with_http_info(body, **kwargs)  # noqa: E501
+            return self.update_artifact_routing_rule_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_artifact_routing_rule_using_put_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.update_artifact_routing_rule_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def update_artifact_routing_rule_using_put_with_http_info(self, body, **kwargs):  # noqa: E501
-        """updateArtifactRoutingRule  # noqa: E501
+    def update_artifact_routing_rule_with_http_info(self, body, **kwargs):  # noqa: E501
+        """update_artifact_routing_rule  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_artifact_routing_rule_using_put_with_http_info(body, async_req=True)
+        >>> thread = api.update_artifact_routing_rule_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ArtifactRoutingRuleRequest body: artifactRoutingRuleRequest (required)
-        :return: ArtifactRoutingRuleResponse
+        :param ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleRequest body: (required)
+        :return: ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -645,14 +649,14 @@ class UiArtifactRoutingRuleControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_artifact_routing_rule_using_put" % key
+                    " to method update_artifact_routing_rule" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_artifact_routing_rule_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_artifact_routing_rule`")  # noqa: E501
 
         collection_formats = {}
 
@@ -670,14 +674,14 @@ class UiArtifactRoutingRuleControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifact-routing-rule', 'PUT',
@@ -687,7 +691,7 @@ class UiArtifactRoutingRuleControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ArtifactRoutingRuleResponse',  # noqa: E501
+            response_type='ComCapillaryOpsCpBoArtifactsArtifactRoutingRuleResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

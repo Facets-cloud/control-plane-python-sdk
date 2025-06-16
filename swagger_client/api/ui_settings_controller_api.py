@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,42 +32,42 @@ class UiSettingsControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_setting_value_using_put(self, body, entity_id, entity_type, **kwargs):  # noqa: E501
-        """addSettingValue  # noqa: E501
+    def add_setting_value(self, body, entity_id, entity_type, **kwargs):  # noqa: E501
+        """add_setting_value  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_setting_value_using_put(body, entity_id, entity_type, async_req=True)
+        >>> thread = api.add_setting_value(body, entity_id, entity_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param object body: settingValueRequest (required)
-        :param str entity_id: entityId (required)
-        :param str entity_type: entityType (required)
-        :return: object
+        :param dict(str, object) body: (required)
+        :param str entity_id: (required)
+        :param str entity_type: (required)
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_setting_value_using_put_with_http_info(body, entity_id, entity_type, **kwargs)  # noqa: E501
+            return self.add_setting_value_with_http_info(body, entity_id, entity_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_setting_value_using_put_with_http_info(body, entity_id, entity_type, **kwargs)  # noqa: E501
+            (data) = self.add_setting_value_with_http_info(body, entity_id, entity_type, **kwargs)  # noqa: E501
             return data
 
-    def add_setting_value_using_put_with_http_info(self, body, entity_id, entity_type, **kwargs):  # noqa: E501
-        """addSettingValue  # noqa: E501
+    def add_setting_value_with_http_info(self, body, entity_id, entity_type, **kwargs):  # noqa: E501
+        """add_setting_value  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_setting_value_using_put_with_http_info(body, entity_id, entity_type, async_req=True)
+        >>> thread = api.add_setting_value_with_http_info(body, entity_id, entity_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param object body: settingValueRequest (required)
-        :param str entity_id: entityId (required)
-        :param str entity_type: entityType (required)
-        :return: object
+        :param dict(str, object) body: (required)
+        :param str entity_id: (required)
+        :param str entity_type: (required)
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -83,22 +83,22 @@ class UiSettingsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_setting_value_using_put" % key
+                    " to method add_setting_value" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_setting_value_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add_setting_value`")  # noqa: E501
         # verify the required parameter 'entity_id' is set
         if ('entity_id' not in params or
                 params['entity_id'] is None):
-            raise ValueError("Missing the required parameter `entity_id` when calling `add_setting_value_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `entity_id` when calling `add_setting_value`")  # noqa: E501
         # verify the required parameter 'entity_type' is set
         if ('entity_type' not in params or
                 params['entity_type'] is None):
-            raise ValueError("Missing the required parameter `entity_type` when calling `add_setting_value_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `entity_type` when calling `add_setting_value`")  # noqa: E501
 
         collection_formats = {}
 
@@ -120,14 +120,14 @@ class UiSettingsControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/settings/value/{entityType}/{entityId}', 'PUT',
@@ -137,7 +137,7 @@ class UiSettingsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -145,38 +145,38 @@ class UiSettingsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_settings_for_entity_using_get(self, entity, **kwargs):  # noqa: E501
-        """getAllSettingsForEntity  # noqa: E501
+    def get_all_settings_for_entity(self, entity, **kwargs):  # noqa: E501
+        """get_all_settings_for_entity  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_settings_for_entity_using_get(entity, async_req=True)
+        >>> thread = api.get_all_settings_for_entity(entity, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str entity: entity (required)
-        :return: list[Setting]
+        :param str entity: (required)
+        :return: list[ComCapillaryOpsCpBoSetting]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_settings_for_entity_using_get_with_http_info(entity, **kwargs)  # noqa: E501
+            return self.get_all_settings_for_entity_with_http_info(entity, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_settings_for_entity_using_get_with_http_info(entity, **kwargs)  # noqa: E501
+            (data) = self.get_all_settings_for_entity_with_http_info(entity, **kwargs)  # noqa: E501
             return data
 
-    def get_all_settings_for_entity_using_get_with_http_info(self, entity, **kwargs):  # noqa: E501
-        """getAllSettingsForEntity  # noqa: E501
+    def get_all_settings_for_entity_with_http_info(self, entity, **kwargs):  # noqa: E501
+        """get_all_settings_for_entity  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_settings_for_entity_using_get_with_http_info(entity, async_req=True)
+        >>> thread = api.get_all_settings_for_entity_with_http_info(entity, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str entity: entity (required)
-        :return: list[Setting]
+        :param str entity: (required)
+        :return: list[ComCapillaryOpsCpBoSetting]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -192,14 +192,14 @@ class UiSettingsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_settings_for_entity_using_get" % key
+                    " to method get_all_settings_for_entity" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'entity' is set
         if ('entity' not in params or
                 params['entity'] is None):
-            raise ValueError("Missing the required parameter `entity` when calling `get_all_settings_for_entity_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `entity` when calling `get_all_settings_for_entity`")  # noqa: E501
 
         collection_formats = {}
 
@@ -217,10 +217,10 @@ class UiSettingsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/settings/entity/{entity}', 'GET',
@@ -230,7 +230,7 @@ class UiSettingsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Setting]',  # noqa: E501
+            response_type='list[ComCapillaryOpsCpBoSetting]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -238,36 +238,36 @@ class UiSettingsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_settings_yaml_using_get(self, **kwargs):  # noqa: E501
-        """getAllSettingsYaml  # noqa: E501
+    def get_all_settings_yaml(self, **kwargs):  # noqa: E501
+        """get_all_settings_yaml  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_settings_yaml_using_get(async_req=True)
+        >>> thread = api.get_all_settings_yaml(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: JsonNode
+        :return: ComFasterxmlJacksonDatabindJsonNode
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_settings_yaml_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_settings_yaml_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_settings_yaml_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_settings_yaml_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_settings_yaml_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllSettingsYaml  # noqa: E501
+    def get_all_settings_yaml_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_settings_yaml  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_settings_yaml_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_settings_yaml_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: JsonNode
+        :return: ComFasterxmlJacksonDatabindJsonNode
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -283,7 +283,7 @@ class UiSettingsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_settings_yaml_using_get" % key
+                    " to method get_all_settings_yaml" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -302,10 +302,10 @@ class UiSettingsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/settings/ui-yaml', 'GET',
@@ -315,7 +315,7 @@ class UiSettingsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='JsonNode',  # noqa: E501
+            response_type='ComFasterxmlJacksonDatabindJsonNode',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -323,45 +323,45 @@ class UiSettingsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_setting_value_using_get(self, entity_id, entity_type, **kwargs):  # noqa: E501
-        """getSettingValue  # noqa: E501
+    def get_setting_value(self, entity_type, entity_id, **kwargs):  # noqa: E501
+        """get_setting_value  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_setting_value_using_get(entity_id, entity_type, async_req=True)
+        >>> thread = api.get_setting_value(entity_type, entity_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str entity_id: entityId (required)
-        :param str entity_type: entityType (required)
-        :return: object
+        :param str entity_type: (required)
+        :param str entity_id: (required)
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_setting_value_using_get_with_http_info(entity_id, entity_type, **kwargs)  # noqa: E501
+            return self.get_setting_value_with_http_info(entity_type, entity_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_setting_value_using_get_with_http_info(entity_id, entity_type, **kwargs)  # noqa: E501
+            (data) = self.get_setting_value_with_http_info(entity_type, entity_id, **kwargs)  # noqa: E501
             return data
 
-    def get_setting_value_using_get_with_http_info(self, entity_id, entity_type, **kwargs):  # noqa: E501
-        """getSettingValue  # noqa: E501
+    def get_setting_value_with_http_info(self, entity_type, entity_id, **kwargs):  # noqa: E501
+        """get_setting_value  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_setting_value_using_get_with_http_info(entity_id, entity_type, async_req=True)
+        >>> thread = api.get_setting_value_with_http_info(entity_type, entity_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str entity_id: entityId (required)
-        :param str entity_type: entityType (required)
-        :return: object
+        :param str entity_type: (required)
+        :param str entity_id: (required)
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['entity_id', 'entity_type']  # noqa: E501
+        all_params = ['entity_type', 'entity_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -372,26 +372,26 @@ class UiSettingsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_setting_value_using_get" % key
+                    " to method get_setting_value" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'entity_id' is set
-        if ('entity_id' not in params or
-                params['entity_id'] is None):
-            raise ValueError("Missing the required parameter `entity_id` when calling `get_setting_value_using_get`")  # noqa: E501
         # verify the required parameter 'entity_type' is set
         if ('entity_type' not in params or
                 params['entity_type'] is None):
-            raise ValueError("Missing the required parameter `entity_type` when calling `get_setting_value_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `entity_type` when calling `get_setting_value`")  # noqa: E501
+        # verify the required parameter 'entity_id' is set
+        if ('entity_id' not in params or
+                params['entity_id'] is None):
+            raise ValueError("Missing the required parameter `entity_id` when calling `get_setting_value`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'entity_id' in params:
-            path_params['entityId'] = params['entity_id']  # noqa: E501
         if 'entity_type' in params:
             path_params['entityType'] = params['entity_type']  # noqa: E501
+        if 'entity_id' in params:
+            path_params['entityId'] = params['entity_id']  # noqa: E501
 
         query_params = []
 
@@ -403,10 +403,10 @@ class UiSettingsControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/settings/value/{entityType}/{entityId}', 'GET',
@@ -416,7 +416,7 @@ class UiSettingsControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -424,37 +424,37 @@ class UiSettingsControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_onboarding_display_using_put(self, value, **kwargs):  # noqa: E501
-        """setOnboardingDisplay  # noqa: E501
+    def set_onboarding_display(self, value, **kwargs):  # noqa: E501
+        """set_onboarding_display  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_onboarding_display_using_put(value, async_req=True)
+        >>> thread = api.set_onboarding_display(value, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param bool value: value (required)
+        :param bool value: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.set_onboarding_display_using_put_with_http_info(value, **kwargs)  # noqa: E501
+            return self.set_onboarding_display_with_http_info(value, **kwargs)  # noqa: E501
         else:
-            (data) = self.set_onboarding_display_using_put_with_http_info(value, **kwargs)  # noqa: E501
+            (data) = self.set_onboarding_display_with_http_info(value, **kwargs)  # noqa: E501
             return data
 
-    def set_onboarding_display_using_put_with_http_info(self, value, **kwargs):  # noqa: E501
-        """setOnboardingDisplay  # noqa: E501
+    def set_onboarding_display_with_http_info(self, value, **kwargs):  # noqa: E501
+        """set_onboarding_display  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_onboarding_display_using_put_with_http_info(value, async_req=True)
+        >>> thread = api.set_onboarding_display_with_http_info(value, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param bool value: value (required)
+        :param bool value: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -471,14 +471,14 @@ class UiSettingsControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_onboarding_display_using_put" % key
+                    " to method set_onboarding_display" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'value' is set
         if ('value' not in params or
                 params['value'] is None):
-            raise ValueError("Missing the required parameter `value` when calling `set_onboarding_display_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `value` when calling `set_onboarding_display`")  # noqa: E501
 
         collection_formats = {}
 
@@ -494,8 +494,12 @@ class UiSettingsControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/settings/onboarding-display/{value}', 'PUT',
