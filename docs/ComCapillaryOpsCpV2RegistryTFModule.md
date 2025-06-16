@@ -1,0 +1,44 @@
+# ComCapillaryOpsCpV2RegistryTFModule
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **str** |  | [optional] 
+**created_by** | **str** |  | [optional] 
+**creation_date** | **datetime** |  | [optional] 
+**last_modified_date** | **datetime** |  | [optional] 
+**last_modified_by** | **str** |  | [optional] 
+**intent** | **str** | Intent of the TF Module | [optional] 
+**flavor** | **str** | Flavor of the TF Module | [optional] 
+**alias_flavors** | **list[str]** | Alias flavors for the module | [optional] 
+**version** | **str** | Version of the TF Module | [optional] 
+**git_url** | **str** | URL of the GIT repository | [optional] 
+**git_ref** | **str** | Reference to a specific GIT branch or commit | [optional] 
+**relative_path** | **str** | Relative path within the repository | [optional] 
+**account_id** | **str** | Account identifier | [optional] 
+**facets_yaml** | **str** | Facets YAML content | [optional] 
+**clouds** | **list[str]** | Supported cloud providers for this module | [optional] 
+**sample_json** | **str** | Sample JSON configuration | [optional] 
+**spec** | **str** | Specification details of the module | [optional] 
+**metadata** | **str** |  | [optional] 
+**type** | **str** | Type of the TF Module | [optional] 
+**source** | **str** | Source of the module | [optional] 
+**inputs** | [**dict(str, ComCapillaryOpsCpV2RegistryInput)**](ComCapillaryOpsCpV2RegistryInput.md) | Input parameters for this module | [optional] 
+**outputs** | [**list[ComCapillaryOpsCpV2RegistryIntentIntentOutput]**](ComCapillaryOpsCpV2RegistryIntentIntentOutput.md) |  | [optional] 
+**path** | [**ComCapillaryOpsCpV2RegistryTFModulePath**](ComCapillaryOpsCpV2RegistryTFModulePath.md) |  | [optional] 
+**stage** | **str** | Stage of the TF Module in its lifecycle | [optional] 
+**allowed_test_projects** | **list[str]** | List of test projects where this module will be available. If absent, it is available globally. | [optional] 
+**description** | **str** |  | [optional] 
+**readme_md** | **str** |  | [optional] 
+**contains_overridable_fields** | **bool** |  | [optional] 
+**tags** | **list[str]** |  | [optional] 
+**iac_tool** | **list[str]** |  | [optional] 
+**module_group_id** | **str** |  | [optional] 
+**feature_branch** | **bool** |  | [optional] 
+**change_log** | **str** |  | [optional] 
+**spec_modeled** | **bool** |  | [optional] 
+**number_of_versions** | **int** |  | [optional] 
+**versioning_key** | **str** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
