@@ -49,7 +49,7 @@ jobs:
 
       - name: Generate updated SDK
         run: |
-          java -jar swagger-codegen-cli.jar generate -i api-docs-fixed.json -l python -o . -c swagger-config.json -s
+          java -jar swagger-codegen-cli.jar generate -i api-docs-fixed.json -l python -o . -c swagger-config.json -s true
 
       - name: Create VERSION file if it doesn't exist
         run: |
