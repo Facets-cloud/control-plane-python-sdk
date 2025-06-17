@@ -47,6 +47,10 @@ jobs:
         run: |
           jq . api-docs-raw.json > api-docs-fixed.json
 
+      - name: Clean previously generated SDK directories
+        run: |
+          rm -rf docs swagger_client test
+
       - name: Generate updated SDK
         run: |
           java -jar swagger-codegen-cli.jar generate -i api-docs-fixed.json -l python -o . -c swagger-config.json
