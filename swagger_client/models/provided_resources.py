@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,65 +28,44 @@ class ProvidedResources(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
         'id': 'str',
+        'cluster_id': 'str',
+        'provided_unauthenticated_resources': 'list[ProvidedUnauthenticatedResource]',
         'provided_authenticated_resources': 'list[ProvidedAuthenticatedResource]',
-        'provided_cloud_resources': 'list[ProvidedCloudResource]',
         'provided_sharded_resources': 'list[ProvidedShardedService]',
-        'provided_unauthenticated_resources': 'list[ProvidedUnauthenticatedResource]'
+        'provided_cloud_resources': 'list[ProvidedCloudResource]'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
         'id': 'id',
+        'cluster_id': 'clusterId',
+        'provided_unauthenticated_resources': 'providedUnauthenticatedResources',
         'provided_authenticated_resources': 'providedAuthenticatedResources',
-        'provided_cloud_resources': 'providedCloudResources',
         'provided_sharded_resources': 'providedShardedResources',
-        'provided_unauthenticated_resources': 'providedUnauthenticatedResources'
+        'provided_cloud_resources': 'providedCloudResources'
     }
 
-    def __init__(self, cluster_id=None, id=None, provided_authenticated_resources=None, provided_cloud_resources=None, provided_sharded_resources=None, provided_unauthenticated_resources=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, provided_unauthenticated_resources=None, provided_authenticated_resources=None, provided_sharded_resources=None, provided_cloud_resources=None):  # noqa: E501
         """ProvidedResources - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
         self._id = None
-        self._provided_authenticated_resources = None
-        self._provided_cloud_resources = None
-        self._provided_sharded_resources = None
+        self._cluster_id = None
         self._provided_unauthenticated_resources = None
+        self._provided_authenticated_resources = None
+        self._provided_sharded_resources = None
+        self._provided_cloud_resources = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
         if id is not None:
             self.id = id
-        if provided_authenticated_resources is not None:
-            self.provided_authenticated_resources = provided_authenticated_resources
-        if provided_cloud_resources is not None:
-            self.provided_cloud_resources = provided_cloud_resources
-        if provided_sharded_resources is not None:
-            self.provided_sharded_resources = provided_sharded_resources
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if provided_unauthenticated_resources is not None:
             self.provided_unauthenticated_resources = provided_unauthenticated_resources
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ProvidedResources.  # noqa: E501
-
-
-        :return: The cluster_id of this ProvidedResources.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ProvidedResources.
-
-
-        :param cluster_id: The cluster_id of this ProvidedResources.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
+        if provided_authenticated_resources is not None:
+            self.provided_authenticated_resources = provided_authenticated_resources
+        if provided_sharded_resources is not None:
+            self.provided_sharded_resources = provided_sharded_resources
+        if provided_cloud_resources is not None:
+            self.provided_cloud_resources = provided_cloud_resources
 
     @property
     def id(self):
@@ -110,6 +89,48 @@ class ProvidedResources(object):
         self._id = id
 
     @property
+    def cluster_id(self):
+        """Gets the cluster_id of this ProvidedResources.  # noqa: E501
+
+
+        :return: The cluster_id of this ProvidedResources.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ProvidedResources.
+
+
+        :param cluster_id: The cluster_id of this ProvidedResources.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
+
+    @property
+    def provided_unauthenticated_resources(self):
+        """Gets the provided_unauthenticated_resources of this ProvidedResources.  # noqa: E501
+
+
+        :return: The provided_unauthenticated_resources of this ProvidedResources.  # noqa: E501
+        :rtype: list[ProvidedUnauthenticatedResource]
+        """
+        return self._provided_unauthenticated_resources
+
+    @provided_unauthenticated_resources.setter
+    def provided_unauthenticated_resources(self, provided_unauthenticated_resources):
+        """Sets the provided_unauthenticated_resources of this ProvidedResources.
+
+
+        :param provided_unauthenticated_resources: The provided_unauthenticated_resources of this ProvidedResources.  # noqa: E501
+        :type: list[ProvidedUnauthenticatedResource]
+        """
+
+        self._provided_unauthenticated_resources = provided_unauthenticated_resources
+
+    @property
     def provided_authenticated_resources(self):
         """Gets the provided_authenticated_resources of this ProvidedResources.  # noqa: E501
 
@@ -129,27 +150,6 @@ class ProvidedResources(object):
         """
 
         self._provided_authenticated_resources = provided_authenticated_resources
-
-    @property
-    def provided_cloud_resources(self):
-        """Gets the provided_cloud_resources of this ProvidedResources.  # noqa: E501
-
-
-        :return: The provided_cloud_resources of this ProvidedResources.  # noqa: E501
-        :rtype: list[ProvidedCloudResource]
-        """
-        return self._provided_cloud_resources
-
-    @provided_cloud_resources.setter
-    def provided_cloud_resources(self, provided_cloud_resources):
-        """Sets the provided_cloud_resources of this ProvidedResources.
-
-
-        :param provided_cloud_resources: The provided_cloud_resources of this ProvidedResources.  # noqa: E501
-        :type: list[ProvidedCloudResource]
-        """
-
-        self._provided_cloud_resources = provided_cloud_resources
 
     @property
     def provided_sharded_resources(self):
@@ -173,25 +173,25 @@ class ProvidedResources(object):
         self._provided_sharded_resources = provided_sharded_resources
 
     @property
-    def provided_unauthenticated_resources(self):
-        """Gets the provided_unauthenticated_resources of this ProvidedResources.  # noqa: E501
+    def provided_cloud_resources(self):
+        """Gets the provided_cloud_resources of this ProvidedResources.  # noqa: E501
 
 
-        :return: The provided_unauthenticated_resources of this ProvidedResources.  # noqa: E501
-        :rtype: list[ProvidedUnauthenticatedResource]
+        :return: The provided_cloud_resources of this ProvidedResources.  # noqa: E501
+        :rtype: list[ProvidedCloudResource]
         """
-        return self._provided_unauthenticated_resources
+        return self._provided_cloud_resources
 
-    @provided_unauthenticated_resources.setter
-    def provided_unauthenticated_resources(self, provided_unauthenticated_resources):
-        """Sets the provided_unauthenticated_resources of this ProvidedResources.
+    @provided_cloud_resources.setter
+    def provided_cloud_resources(self, provided_cloud_resources):
+        """Sets the provided_cloud_resources of this ProvidedResources.
 
 
-        :param provided_unauthenticated_resources: The provided_unauthenticated_resources of this ProvidedResources.  # noqa: E501
-        :type: list[ProvidedUnauthenticatedResource]
+        :param provided_cloud_resources: The provided_cloud_resources of this ProvidedResources.  # noqa: E501
+        :type: list[ProvidedCloudResource]
         """
 
-        self._provided_unauthenticated_resources = provided_unauthenticated_resources
+        self._provided_cloud_resources = provided_cloud_resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

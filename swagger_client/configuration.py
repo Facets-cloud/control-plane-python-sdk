@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -46,7 +46,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "//facetsdemo.console.facets.cloud/"
+        self.host = "https://facetsdemo.console.facets.cloud"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -232,7 +232,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         :return: The Auth Settings information dict.
         """
         return {
-            'main':
+            'basicAuth':
                 {
                     'type': 'basic',
                     'in': 'header',

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,40 +32,40 @@ class UiArtifactHubControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_helm_values_using_get(self, package_id, version, **kwargs):  # noqa: E501
-        """getHelmValues  # noqa: E501
+    def get_helm_values(self, package_id, version, **kwargs):  # noqa: E501
+        """get_helm_values  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_helm_values_using_get(package_id, version, async_req=True)
+        >>> thread = api.get_helm_values(package_id, version, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str package_id: packageId (required)
-        :param str version: version (required)
-        :return: object
+        :param str package_id: (required)
+        :param str version: (required)
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_helm_values_using_get_with_http_info(package_id, version, **kwargs)  # noqa: E501
+            return self.get_helm_values_with_http_info(package_id, version, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_helm_values_using_get_with_http_info(package_id, version, **kwargs)  # noqa: E501
+            (data) = self.get_helm_values_with_http_info(package_id, version, **kwargs)  # noqa: E501
             return data
 
-    def get_helm_values_using_get_with_http_info(self, package_id, version, **kwargs):  # noqa: E501
-        """getHelmValues  # noqa: E501
+    def get_helm_values_with_http_info(self, package_id, version, **kwargs):  # noqa: E501
+        """get_helm_values  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_helm_values_using_get_with_http_info(package_id, version, async_req=True)
+        >>> thread = api.get_helm_values_with_http_info(package_id, version, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str package_id: packageId (required)
-        :param str version: version (required)
-        :return: object
+        :param str package_id: (required)
+        :param str version: (required)
+        :return: dict(str, object)
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -81,18 +81,18 @@ class UiArtifactHubControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_helm_values_using_get" % key
+                    " to method get_helm_values" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'package_id' is set
         if ('package_id' not in params or
                 params['package_id'] is None):
-            raise ValueError("Missing the required parameter `package_id` when calling `get_helm_values_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `package_id` when calling `get_helm_values`")  # noqa: E501
         # verify the required parameter 'version' is set
         if ('version' not in params or
                 params['version'] is None):
-            raise ValueError("Missing the required parameter `version` when calling `get_helm_values_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `version` when calling `get_helm_values`")  # noqa: E501
 
         collection_formats = {}
 
@@ -112,10 +112,10 @@ class UiArtifactHubControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifactHub/packages/{packageId}/values', 'GET',
@@ -125,7 +125,7 @@ class UiArtifactHubControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -133,55 +133,55 @@ class UiArtifactHubControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_packages_using_get(self, **kwargs):  # noqa: E501
-        """searchPackages  # noqa: E501
+    def search_packages(self, **kwargs):  # noqa: E501
+        """search_packages  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_packages_using_get(async_req=True)
+        >>> thread = api.search_packages(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param int category: category
-        :param bool facets: facets
-        :param int limit: limit
-        :param int offset: offset
-        :param str sort: sort
-        :param str ts_query_web: tsQueryWeb
-        :param bool verified: verified
+        :param int offset:
+        :param int limit:
+        :param bool facets:
+        :param str ts_query_web:
+        :param int category:
+        :param bool verified:
+        :param str sort:
         :return: PackageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_packages_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.search_packages_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.search_packages_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.search_packages_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def search_packages_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """searchPackages  # noqa: E501
+    def search_packages_with_http_info(self, **kwargs):  # noqa: E501
+        """search_packages  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_packages_using_get_with_http_info(async_req=True)
+        >>> thread = api.search_packages_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param int category: category
-        :param bool facets: facets
-        :param int limit: limit
-        :param int offset: offset
-        :param str sort: sort
-        :param str ts_query_web: tsQueryWeb
-        :param bool verified: verified
+        :param int offset:
+        :param int limit:
+        :param bool facets:
+        :param str ts_query_web:
+        :param int category:
+        :param bool verified:
+        :param str sort:
         :return: PackageResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['category', 'facets', 'limit', 'offset', 'sort', 'ts_query_web', 'verified']  # noqa: E501
+        all_params = ['offset', 'limit', 'facets', 'ts_query_web', 'category', 'verified', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -192,7 +192,7 @@ class UiArtifactHubControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search_packages_using_get" % key
+                    " to method search_packages" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -202,20 +202,20 @@ class UiArtifactHubControllerApi(object):
         path_params = {}
 
         query_params = []
-        if 'category' in params:
-            query_params.append(('category', params['category']))  # noqa: E501
-        if 'facets' in params:
-            query_params.append(('facets', params['facets']))  # noqa: E501
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))  # noqa: E501
         if 'offset' in params:
             query_params.append(('offset', params['offset']))  # noqa: E501
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'facets' in params:
+            query_params.append(('facets', params['facets']))  # noqa: E501
         if 'ts_query_web' in params:
             query_params.append(('tsQueryWeb', params['ts_query_web']))  # noqa: E501
+        if 'category' in params:
+            query_params.append(('category', params['category']))  # noqa: E501
         if 'verified' in params:
             query_params.append(('verified', params['verified']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
 
         header_params = {}
 
@@ -225,10 +225,10 @@ class UiArtifactHubControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/artifactHub/search-packages', 'GET',

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,55 @@ class RawError(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
+        'stack_trace': 'str',
         'error_message': 'str',
-        'resolution': 'str',
-        'stack_trace': 'str'
+        'description': 'str',
+        'resolution': 'str'
     }
 
     attribute_map = {
-        'description': 'description',
+        'stack_trace': 'stackTrace',
         'error_message': 'errorMessage',
-        'resolution': 'resolution',
-        'stack_trace': 'stackTrace'
+        'description': 'description',
+        'resolution': 'resolution'
     }
 
-    def __init__(self, description=None, error_message=None, resolution=None, stack_trace=None):  # noqa: E501
+    def __init__(self, stack_trace=None, error_message=None, description=None, resolution=None):  # noqa: E501
         """RawError - a model defined in Swagger"""  # noqa: E501
-        self._description = None
-        self._error_message = None
-        self._resolution = None
         self._stack_trace = None
+        self._error_message = None
+        self._description = None
+        self._resolution = None
         self.discriminator = None
-        if description is not None:
-            self.description = description
-        if error_message is not None:
-            self.error_message = error_message
-        if resolution is not None:
-            self.resolution = resolution
         if stack_trace is not None:
             self.stack_trace = stack_trace
+        if error_message is not None:
+            self.error_message = error_message
+        if description is not None:
+            self.description = description
+        if resolution is not None:
+            self.resolution = resolution
 
     @property
-    def description(self):
-        """Gets the description of this RawError.  # noqa: E501
+    def stack_trace(self):
+        """Gets the stack_trace of this RawError.  # noqa: E501
 
 
-        :return: The description of this RawError.  # noqa: E501
+        :return: The stack_trace of this RawError.  # noqa: E501
         :rtype: str
         """
-        return self._description
+        return self._stack_trace
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this RawError.
+    @stack_trace.setter
+    def stack_trace(self, stack_trace):
+        """Sets the stack_trace of this RawError.
 
 
-        :param description: The description of this RawError.  # noqa: E501
+        :param stack_trace: The stack_trace of this RawError.  # noqa: E501
         :type: str
         """
 
-        self._description = description
+        self._stack_trace = stack_trace
 
     @property
     def error_message(self):
@@ -100,6 +100,27 @@ class RawError(object):
         self._error_message = error_message
 
     @property
+    def description(self):
+        """Gets the description of this RawError.  # noqa: E501
+
+
+        :return: The description of this RawError.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this RawError.
+
+
+        :param description: The description of this RawError.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def resolution(self):
         """Gets the resolution of this RawError.  # noqa: E501
 
@@ -119,27 +140,6 @@ class RawError(object):
         """
 
         self._resolution = resolution
-
-    @property
-    def stack_trace(self):
-        """Gets the stack_trace of this RawError.  # noqa: E501
-
-
-        :return: The stack_trace of this RawError.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_trace
-
-    @stack_trace.setter
-    def stack_trace(self, stack_trace):
-        """Sets the stack_trace of this RawError.
-
-
-        :param stack_trace: The stack_trace of this RawError.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_trace = stack_trace
 
     def to_dict(self):
         """Returns the model properties as a dict"""

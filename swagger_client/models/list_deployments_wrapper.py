@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,56 +29,56 @@ class ListDeploymentsWrapper(object):
     """
     swagger_types = {
         'cluster_id': 'str',
-        'current_signed_off_deployment': 'DeploymentLog',
         'deployments': 'list[DeploymentLog]',
         'deployments_full': 'list[DeploymentLog]',
-        'deployments_stats': 'DeploymentsStats',
         'down_stream_cluster_names': 'list[str]',
-        'next_execution_time': 'str',
+        'current_signed_off_deployment': 'DeploymentLog',
         'stack': 'Stack',
+        'deployments_stats': 'DeploymentsStats',
+        'next_execution_time': 'str',
         'time_to_next_execution': 'str'
     }
 
     attribute_map = {
         'cluster_id': 'clusterId',
-        'current_signed_off_deployment': 'currentSignedOffDeployment',
         'deployments': 'deployments',
         'deployments_full': 'deploymentsFull',
-        'deployments_stats': 'deploymentsStats',
         'down_stream_cluster_names': 'downStreamClusterNames',
-        'next_execution_time': 'nextExecutionTime',
+        'current_signed_off_deployment': 'currentSignedOffDeployment',
         'stack': 'stack',
+        'deployments_stats': 'deploymentsStats',
+        'next_execution_time': 'nextExecutionTime',
         'time_to_next_execution': 'timeToNextExecution'
     }
 
-    def __init__(self, cluster_id=None, current_signed_off_deployment=None, deployments=None, deployments_full=None, deployments_stats=None, down_stream_cluster_names=None, next_execution_time=None, stack=None, time_to_next_execution=None):  # noqa: E501
+    def __init__(self, cluster_id=None, deployments=None, deployments_full=None, down_stream_cluster_names=None, current_signed_off_deployment=None, stack=None, deployments_stats=None, next_execution_time=None, time_to_next_execution=None):  # noqa: E501
         """ListDeploymentsWrapper - a model defined in Swagger"""  # noqa: E501
         self._cluster_id = None
-        self._current_signed_off_deployment = None
         self._deployments = None
         self._deployments_full = None
-        self._deployments_stats = None
         self._down_stream_cluster_names = None
-        self._next_execution_time = None
+        self._current_signed_off_deployment = None
         self._stack = None
+        self._deployments_stats = None
+        self._next_execution_time = None
         self._time_to_next_execution = None
         self.discriminator = None
         if cluster_id is not None:
             self.cluster_id = cluster_id
-        if current_signed_off_deployment is not None:
-            self.current_signed_off_deployment = current_signed_off_deployment
         if deployments is not None:
             self.deployments = deployments
         if deployments_full is not None:
             self.deployments_full = deployments_full
-        if deployments_stats is not None:
-            self.deployments_stats = deployments_stats
         if down_stream_cluster_names is not None:
             self.down_stream_cluster_names = down_stream_cluster_names
-        if next_execution_time is not None:
-            self.next_execution_time = next_execution_time
+        if current_signed_off_deployment is not None:
+            self.current_signed_off_deployment = current_signed_off_deployment
         if stack is not None:
             self.stack = stack
+        if deployments_stats is not None:
+            self.deployments_stats = deployments_stats
+        if next_execution_time is not None:
+            self.next_execution_time = next_execution_time
         if time_to_next_execution is not None:
             self.time_to_next_execution = time_to_next_execution
 
@@ -102,27 +102,6 @@ class ListDeploymentsWrapper(object):
         """
 
         self._cluster_id = cluster_id
-
-    @property
-    def current_signed_off_deployment(self):
-        """Gets the current_signed_off_deployment of this ListDeploymentsWrapper.  # noqa: E501
-
-
-        :return: The current_signed_off_deployment of this ListDeploymentsWrapper.  # noqa: E501
-        :rtype: DeploymentLog
-        """
-        return self._current_signed_off_deployment
-
-    @current_signed_off_deployment.setter
-    def current_signed_off_deployment(self, current_signed_off_deployment):
-        """Sets the current_signed_off_deployment of this ListDeploymentsWrapper.
-
-
-        :param current_signed_off_deployment: The current_signed_off_deployment of this ListDeploymentsWrapper.  # noqa: E501
-        :type: DeploymentLog
-        """
-
-        self._current_signed_off_deployment = current_signed_off_deployment
 
     @property
     def deployments(self):
@@ -167,27 +146,6 @@ class ListDeploymentsWrapper(object):
         self._deployments_full = deployments_full
 
     @property
-    def deployments_stats(self):
-        """Gets the deployments_stats of this ListDeploymentsWrapper.  # noqa: E501
-
-
-        :return: The deployments_stats of this ListDeploymentsWrapper.  # noqa: E501
-        :rtype: DeploymentsStats
-        """
-        return self._deployments_stats
-
-    @deployments_stats.setter
-    def deployments_stats(self, deployments_stats):
-        """Sets the deployments_stats of this ListDeploymentsWrapper.
-
-
-        :param deployments_stats: The deployments_stats of this ListDeploymentsWrapper.  # noqa: E501
-        :type: DeploymentsStats
-        """
-
-        self._deployments_stats = deployments_stats
-
-    @property
     def down_stream_cluster_names(self):
         """Gets the down_stream_cluster_names of this ListDeploymentsWrapper.  # noqa: E501
 
@@ -209,25 +167,25 @@ class ListDeploymentsWrapper(object):
         self._down_stream_cluster_names = down_stream_cluster_names
 
     @property
-    def next_execution_time(self):
-        """Gets the next_execution_time of this ListDeploymentsWrapper.  # noqa: E501
+    def current_signed_off_deployment(self):
+        """Gets the current_signed_off_deployment of this ListDeploymentsWrapper.  # noqa: E501
 
 
-        :return: The next_execution_time of this ListDeploymentsWrapper.  # noqa: E501
-        :rtype: str
+        :return: The current_signed_off_deployment of this ListDeploymentsWrapper.  # noqa: E501
+        :rtype: DeploymentLog
         """
-        return self._next_execution_time
+        return self._current_signed_off_deployment
 
-    @next_execution_time.setter
-    def next_execution_time(self, next_execution_time):
-        """Sets the next_execution_time of this ListDeploymentsWrapper.
+    @current_signed_off_deployment.setter
+    def current_signed_off_deployment(self, current_signed_off_deployment):
+        """Sets the current_signed_off_deployment of this ListDeploymentsWrapper.
 
 
-        :param next_execution_time: The next_execution_time of this ListDeploymentsWrapper.  # noqa: E501
-        :type: str
+        :param current_signed_off_deployment: The current_signed_off_deployment of this ListDeploymentsWrapper.  # noqa: E501
+        :type: DeploymentLog
         """
 
-        self._next_execution_time = next_execution_time
+        self._current_signed_off_deployment = current_signed_off_deployment
 
     @property
     def stack(self):
@@ -249,6 +207,48 @@ class ListDeploymentsWrapper(object):
         """
 
         self._stack = stack
+
+    @property
+    def deployments_stats(self):
+        """Gets the deployments_stats of this ListDeploymentsWrapper.  # noqa: E501
+
+
+        :return: The deployments_stats of this ListDeploymentsWrapper.  # noqa: E501
+        :rtype: DeploymentsStats
+        """
+        return self._deployments_stats
+
+    @deployments_stats.setter
+    def deployments_stats(self, deployments_stats):
+        """Sets the deployments_stats of this ListDeploymentsWrapper.
+
+
+        :param deployments_stats: The deployments_stats of this ListDeploymentsWrapper.  # noqa: E501
+        :type: DeploymentsStats
+        """
+
+        self._deployments_stats = deployments_stats
+
+    @property
+    def next_execution_time(self):
+        """Gets the next_execution_time of this ListDeploymentsWrapper.  # noqa: E501
+
+
+        :return: The next_execution_time of this ListDeploymentsWrapper.  # noqa: E501
+        :rtype: str
+        """
+        return self._next_execution_time
+
+    @next_execution_time.setter
+    def next_execution_time(self, next_execution_time):
+        """Sets the next_execution_time of this ListDeploymentsWrapper.
+
+
+        :param next_execution_time: The next_execution_time of this ListDeploymentsWrapper.  # noqa: E501
+        :type: str
+        """
+
+        self._next_execution_time = next_execution_time
 
     @property
     def time_to_next_execution(self):

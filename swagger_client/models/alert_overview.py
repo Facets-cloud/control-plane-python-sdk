@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -30,32 +30,32 @@ class AlertOverview(object):
     swagger_types = {
         'cluster_id': 'str',
         'cluster_name': 'str',
-        'severity_counts': 'dict(str, int)',
-        'stack_name': 'str'
+        'stack_name': 'str',
+        'severity_counts': 'dict(str, int)'
     }
 
     attribute_map = {
         'cluster_id': 'clusterId',
         'cluster_name': 'clusterName',
-        'severity_counts': 'severityCounts',
-        'stack_name': 'stackName'
+        'stack_name': 'stackName',
+        'severity_counts': 'severityCounts'
     }
 
-    def __init__(self, cluster_id=None, cluster_name=None, severity_counts=None, stack_name=None):  # noqa: E501
+    def __init__(self, cluster_id=None, cluster_name=None, stack_name=None, severity_counts=None):  # noqa: E501
         """AlertOverview - a model defined in Swagger"""  # noqa: E501
         self._cluster_id = None
         self._cluster_name = None
-        self._severity_counts = None
         self._stack_name = None
+        self._severity_counts = None
         self.discriminator = None
         if cluster_id is not None:
             self.cluster_id = cluster_id
         if cluster_name is not None:
             self.cluster_name = cluster_name
-        if severity_counts is not None:
-            self.severity_counts = severity_counts
         if stack_name is not None:
             self.stack_name = stack_name
+        if severity_counts is not None:
+            self.severity_counts = severity_counts
 
     @property
     def cluster_id(self):
@@ -100,27 +100,6 @@ class AlertOverview(object):
         self._cluster_name = cluster_name
 
     @property
-    def severity_counts(self):
-        """Gets the severity_counts of this AlertOverview.  # noqa: E501
-
-
-        :return: The severity_counts of this AlertOverview.  # noqa: E501
-        :rtype: dict(str, int)
-        """
-        return self._severity_counts
-
-    @severity_counts.setter
-    def severity_counts(self, severity_counts):
-        """Sets the severity_counts of this AlertOverview.
-
-
-        :param severity_counts: The severity_counts of this AlertOverview.  # noqa: E501
-        :type: dict(str, int)
-        """
-
-        self._severity_counts = severity_counts
-
-    @property
     def stack_name(self):
         """Gets the stack_name of this AlertOverview.  # noqa: E501
 
@@ -140,6 +119,27 @@ class AlertOverview(object):
         """
 
         self._stack_name = stack_name
+
+    @property
+    def severity_counts(self):
+        """Gets the severity_counts of this AlertOverview.  # noqa: E501
+
+
+        :return: The severity_counts of this AlertOverview.  # noqa: E501
+        :rtype: dict(str, int)
+        """
+        return self._severity_counts
+
+    @severity_counts.setter
+    def severity_counts(self, severity_counts):
+        """Sets the severity_counts of this AlertOverview.
+
+
+        :param severity_counts: The severity_counts of this AlertOverview.  # noqa: E501
+        :type: dict(str, int)
+        """
+
+        self._severity_counts = severity_counts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

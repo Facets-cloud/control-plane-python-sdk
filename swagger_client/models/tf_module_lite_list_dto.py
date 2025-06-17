@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,55 @@ class TFModuleLiteListDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
+        'modules': 'list[TFModuleLiteDTO]',
         'display_name': 'str',
-        'icon_url': 'str',
-        'modules': 'list[TFModuleLiteDTO]'
+        'description': 'str',
+        'icon_url': 'str'
     }
 
     attribute_map = {
-        'description': 'description',
+        'modules': 'modules',
         'display_name': 'displayName',
-        'icon_url': 'iconUrl',
-        'modules': 'modules'
+        'description': 'description',
+        'icon_url': 'iconUrl'
     }
 
-    def __init__(self, description=None, display_name=None, icon_url=None, modules=None):  # noqa: E501
+    def __init__(self, modules=None, display_name=None, description=None, icon_url=None):  # noqa: E501
         """TFModuleLiteListDTO - a model defined in Swagger"""  # noqa: E501
-        self._description = None
-        self._display_name = None
-        self._icon_url = None
         self._modules = None
+        self._display_name = None
+        self._description = None
+        self._icon_url = None
         self.discriminator = None
-        if description is not None:
-            self.description = description
-        if display_name is not None:
-            self.display_name = display_name
-        if icon_url is not None:
-            self.icon_url = icon_url
         if modules is not None:
             self.modules = modules
+        if display_name is not None:
+            self.display_name = display_name
+        if description is not None:
+            self.description = description
+        if icon_url is not None:
+            self.icon_url = icon_url
 
     @property
-    def description(self):
-        """Gets the description of this TFModuleLiteListDTO.  # noqa: E501
+    def modules(self):
+        """Gets the modules of this TFModuleLiteListDTO.  # noqa: E501
 
 
-        :return: The description of this TFModuleLiteListDTO.  # noqa: E501
-        :rtype: str
+        :return: The modules of this TFModuleLiteListDTO.  # noqa: E501
+        :rtype: list[TFModuleLiteDTO]
         """
-        return self._description
+        return self._modules
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this TFModuleLiteListDTO.
+    @modules.setter
+    def modules(self, modules):
+        """Sets the modules of this TFModuleLiteListDTO.
 
 
-        :param description: The description of this TFModuleLiteListDTO.  # noqa: E501
-        :type: str
+        :param modules: The modules of this TFModuleLiteListDTO.  # noqa: E501
+        :type: list[TFModuleLiteDTO]
         """
 
-        self._description = description
+        self._modules = modules
 
     @property
     def display_name(self):
@@ -100,6 +100,27 @@ class TFModuleLiteListDTO(object):
         self._display_name = display_name
 
     @property
+    def description(self):
+        """Gets the description of this TFModuleLiteListDTO.  # noqa: E501
+
+
+        :return: The description of this TFModuleLiteListDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this TFModuleLiteListDTO.
+
+
+        :param description: The description of this TFModuleLiteListDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def icon_url(self):
         """Gets the icon_url of this TFModuleLiteListDTO.  # noqa: E501
 
@@ -119,27 +140,6 @@ class TFModuleLiteListDTO(object):
         """
 
         self._icon_url = icon_url
-
-    @property
-    def modules(self):
-        """Gets the modules of this TFModuleLiteListDTO.  # noqa: E501
-
-
-        :return: The modules of this TFModuleLiteListDTO.  # noqa: E501
-        :rtype: list[TFModuleLiteDTO]
-        """
-        return self._modules
-
-    @modules.setter
-    def modules(self, modules):
-        """Sets the modules of this TFModuleLiteListDTO.
-
-
-        :param modules: The modules of this TFModuleLiteListDTO.  # noqa: E501
-        :type: list[TFModuleLiteDTO]
-        """
-
-        self._modules = modules
 
     def to_dict(self):
         """Returns the model properties as a dict"""

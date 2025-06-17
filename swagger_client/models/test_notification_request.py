@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,70 +28,49 @@ class TestNotificationRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'authorization_header': 'str',
         'channel_address': 'str',
         'channel_type': 'str',
-        'email_addresses': 'list[str]',
-        'integration_key': 'str',
         'notification_type': 'str',
-        'payload': 'str'
+        'payload': 'str',
+        'integration_key': 'str',
+        'email_addresses': 'list[str]',
+        'authorization_header': 'str'
     }
 
     attribute_map = {
-        'authorization_header': 'authorizationHeader',
         'channel_address': 'channelAddress',
         'channel_type': 'channelType',
-        'email_addresses': 'emailAddresses',
-        'integration_key': 'integrationKey',
         'notification_type': 'notificationType',
-        'payload': 'payload'
+        'payload': 'payload',
+        'integration_key': 'integrationKey',
+        'email_addresses': 'emailAddresses',
+        'authorization_header': 'authorizationHeader'
     }
 
-    def __init__(self, authorization_header=None, channel_address=None, channel_type=None, email_addresses=None, integration_key=None, notification_type=None, payload=None):  # noqa: E501
+    def __init__(self, channel_address=None, channel_type=None, notification_type=None, payload=None, integration_key=None, email_addresses=None, authorization_header=None):  # noqa: E501
         """TestNotificationRequest - a model defined in Swagger"""  # noqa: E501
-        self._authorization_header = None
         self._channel_address = None
         self._channel_type = None
-        self._email_addresses = None
-        self._integration_key = None
         self._notification_type = None
         self._payload = None
+        self._integration_key = None
+        self._email_addresses = None
+        self._authorization_header = None
         self.discriminator = None
-        if authorization_header is not None:
-            self.authorization_header = authorization_header
         if channel_address is not None:
             self.channel_address = channel_address
         if channel_type is not None:
             self.channel_type = channel_type
-        if email_addresses is not None:
-            self.email_addresses = email_addresses
-        if integration_key is not None:
-            self.integration_key = integration_key
         if notification_type is not None:
             self.notification_type = notification_type
         if payload is not None:
             self.payload = payload
-
-    @property
-    def authorization_header(self):
-        """Gets the authorization_header of this TestNotificationRequest.  # noqa: E501
-
-
-        :return: The authorization_header of this TestNotificationRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._authorization_header
-
-    @authorization_header.setter
-    def authorization_header(self, authorization_header):
-        """Sets the authorization_header of this TestNotificationRequest.
-
-
-        :param authorization_header: The authorization_header of this TestNotificationRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._authorization_header = authorization_header
+        if integration_key is not None:
+            self.integration_key = integration_key
+        if email_addresses is not None:
+            self.email_addresses = email_addresses
+        if authorization_header is not None:
+            self.authorization_header = authorization_header
 
     @property
     def channel_address(self):
@@ -142,48 +121,6 @@ class TestNotificationRequest(object):
         self._channel_type = channel_type
 
     @property
-    def email_addresses(self):
-        """Gets the email_addresses of this TestNotificationRequest.  # noqa: E501
-
-
-        :return: The email_addresses of this TestNotificationRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._email_addresses
-
-    @email_addresses.setter
-    def email_addresses(self, email_addresses):
-        """Sets the email_addresses of this TestNotificationRequest.
-
-
-        :param email_addresses: The email_addresses of this TestNotificationRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._email_addresses = email_addresses
-
-    @property
-    def integration_key(self):
-        """Gets the integration_key of this TestNotificationRequest.  # noqa: E501
-
-
-        :return: The integration_key of this TestNotificationRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._integration_key
-
-    @integration_key.setter
-    def integration_key(self, integration_key):
-        """Sets the integration_key of this TestNotificationRequest.
-
-
-        :param integration_key: The integration_key of this TestNotificationRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._integration_key = integration_key
-
-    @property
     def notification_type(self):
         """Gets the notification_type of this TestNotificationRequest.  # noqa: E501
 
@@ -230,6 +167,69 @@ class TestNotificationRequest(object):
         """
 
         self._payload = payload
+
+    @property
+    def integration_key(self):
+        """Gets the integration_key of this TestNotificationRequest.  # noqa: E501
+
+
+        :return: The integration_key of this TestNotificationRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._integration_key
+
+    @integration_key.setter
+    def integration_key(self, integration_key):
+        """Sets the integration_key of this TestNotificationRequest.
+
+
+        :param integration_key: The integration_key of this TestNotificationRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._integration_key = integration_key
+
+    @property
+    def email_addresses(self):
+        """Gets the email_addresses of this TestNotificationRequest.  # noqa: E501
+
+
+        :return: The email_addresses of this TestNotificationRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._email_addresses
+
+    @email_addresses.setter
+    def email_addresses(self, email_addresses):
+        """Sets the email_addresses of this TestNotificationRequest.
+
+
+        :param email_addresses: The email_addresses of this TestNotificationRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._email_addresses = email_addresses
+
+    @property
+    def authorization_header(self):
+        """Gets the authorization_header of this TestNotificationRequest.  # noqa: E501
+
+
+        :return: The authorization_header of this TestNotificationRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._authorization_header
+
+    @authorization_header.setter
+    def authorization_header(self, authorization_header):
+        """Sets the authorization_header of this TestNotificationRequest.
+
+
+        :param authorization_header: The authorization_header of this TestNotificationRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._authorization_header = authorization_header
 
     def to_dict(self):
         """Returns the model properties as a dict"""

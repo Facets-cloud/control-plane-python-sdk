@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | **str** |  | [optional] 
 **api_version** | **str** |  | [optional] 
+**kind** | **str** |  | [optional] 
+**metadata** | [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
+**action** | **str** |  | [optional] 
 **count** | **int** |  | [optional] 
 **event_time** | [**MicroTime**](MicroTime.md) |  | [optional] 
 **first_timestamp** | **str** |  | [optional] 
 **involved_object** | [**ObjectReference**](ObjectReference.md) |  | [optional] 
-**kind** | **str** |  | [optional] 
 **last_timestamp** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
-**metadata** | [**ObjectMeta**](ObjectMeta.md) |  | [optional] 
 **reason** | **str** |  | [optional] 
 **related** | [**ObjectReference**](ObjectReference.md) |  | [optional] 
 **reporting_component** | **str** |  | [optional] 

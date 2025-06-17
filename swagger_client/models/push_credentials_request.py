@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,51 +28,51 @@ class PushCredentialsRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'application_name': 'str',
+        'blueprint_name': 'str',
         'artifactory': 'str',
-        'blueprint_name': 'str'
+        'application_name': 'str'
     }
 
     attribute_map = {
-        'application_name': 'applicationName',
+        'blueprint_name': 'blueprintName',
         'artifactory': 'artifactory',
-        'blueprint_name': 'blueprintName'
+        'application_name': 'applicationName'
     }
 
-    def __init__(self, application_name=None, artifactory=None, blueprint_name=None):  # noqa: E501
+    def __init__(self, blueprint_name=None, artifactory=None, application_name=None):  # noqa: E501
         """PushCredentialsRequest - a model defined in Swagger"""  # noqa: E501
-        self._application_name = None
-        self._artifactory = None
         self._blueprint_name = None
+        self._artifactory = None
+        self._application_name = None
         self.discriminator = None
-        self.application_name = application_name
-        self.artifactory = artifactory
         self.blueprint_name = blueprint_name
+        self.artifactory = artifactory
+        self.application_name = application_name
 
     @property
-    def application_name(self):
-        """Gets the application_name of this PushCredentialsRequest.  # noqa: E501
+    def blueprint_name(self):
+        """Gets the blueprint_name of this PushCredentialsRequest.  # noqa: E501
 
-        Application name associated with the request.  # noqa: E501
+        Blueprint name for which credentials are requested.  # noqa: E501
 
-        :return: The application_name of this PushCredentialsRequest.  # noqa: E501
+        :return: The blueprint_name of this PushCredentialsRequest.  # noqa: E501
         :rtype: str
         """
-        return self._application_name
+        return self._blueprint_name
 
-    @application_name.setter
-    def application_name(self, application_name):
-        """Sets the application_name of this PushCredentialsRequest.
+    @blueprint_name.setter
+    def blueprint_name(self, blueprint_name):
+        """Sets the blueprint_name of this PushCredentialsRequest.
 
-        Application name associated with the request.  # noqa: E501
+        Blueprint name for which credentials are requested.  # noqa: E501
 
-        :param application_name: The application_name of this PushCredentialsRequest.  # noqa: E501
+        :param blueprint_name: The blueprint_name of this PushCredentialsRequest.  # noqa: E501
         :type: str
         """
-        if application_name is None:
-            raise ValueError("Invalid value for `application_name`, must not be `None`")  # noqa: E501
+        if blueprint_name is None:
+            raise ValueError("Invalid value for `blueprint_name`, must not be `None`")  # noqa: E501
 
-        self._application_name = application_name
+        self._blueprint_name = blueprint_name
 
     @property
     def artifactory(self):
@@ -100,29 +100,29 @@ class PushCredentialsRequest(object):
         self._artifactory = artifactory
 
     @property
-    def blueprint_name(self):
-        """Gets the blueprint_name of this PushCredentialsRequest.  # noqa: E501
+    def application_name(self):
+        """Gets the application_name of this PushCredentialsRequest.  # noqa: E501
 
-        Blueprint name for which credentials are requested.  # noqa: E501
+        Application name associated with the request.  # noqa: E501
 
-        :return: The blueprint_name of this PushCredentialsRequest.  # noqa: E501
+        :return: The application_name of this PushCredentialsRequest.  # noqa: E501
         :rtype: str
         """
-        return self._blueprint_name
+        return self._application_name
 
-    @blueprint_name.setter
-    def blueprint_name(self, blueprint_name):
-        """Sets the blueprint_name of this PushCredentialsRequest.
+    @application_name.setter
+    def application_name(self, application_name):
+        """Sets the application_name of this PushCredentialsRequest.
 
-        Blueprint name for which credentials are requested.  # noqa: E501
+        Application name associated with the request.  # noqa: E501
 
-        :param blueprint_name: The blueprint_name of this PushCredentialsRequest.  # noqa: E501
+        :param application_name: The application_name of this PushCredentialsRequest.  # noqa: E501
         :type: str
         """
-        if blueprint_name is None:
-            raise ValueError("Invalid value for `blueprint_name`, must not be `None`")  # noqa: E501
+        if application_name is None:
+            raise ValueError("Invalid value for `application_name`, must not be `None`")  # noqa: E501
 
-        self._blueprint_name = blueprint_name
+        self._application_name = application_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

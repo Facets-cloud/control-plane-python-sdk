@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,105 +28,100 @@ class Setting(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allowed_values': 'list[str]',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
+        'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'name': 'str',
+        'allowed_values': 'list[str]',
         'default_value': 'object',
+        'supported_for_clouds': 'list[str]',
         'description': 'str',
         'entity': 'str',
-        'id': 'str',
-        'last_modified_by': 'str',
-        'last_modified_date': 'datetime',
-        'max': 'int',
-        'min': 'int',
-        'name': 'str',
         'setting_type': 'str',
-        'supported_for_clouds': 'list[str]'
+        'min': 'int',
+        'max': 'int'
     }
 
     attribute_map = {
-        'allowed_values': 'allowedValues',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
+        'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'name': 'name',
+        'allowed_values': 'allowedValues',
         'default_value': 'defaultValue',
+        'supported_for_clouds': 'supportedForClouds',
         'description': 'description',
         'entity': 'entity',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
-        'last_modified_date': 'lastModifiedDate',
-        'max': 'max',
-        'min': 'min',
-        'name': 'name',
         'setting_type': 'settingType',
-        'supported_for_clouds': 'supportedForClouds'
+        'min': 'min',
+        'max': 'max'
     }
 
-    def __init__(self, allowed_values=None, created_by=None, creation_date=None, default_value=None, description=None, entity=None, id=None, last_modified_by=None, last_modified_date=None, max=None, min=None, name=None, setting_type=None, supported_for_clouds=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, allowed_values=None, default_value=None, supported_for_clouds=None, description=None, entity=None, setting_type=None, min=None, max=None):  # noqa: E501
         """Setting - a model defined in Swagger"""  # noqa: E501
-        self._allowed_values = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
+        self._last_modified_date = None
+        self._last_modified_by = None
+        self._name = None
+        self._allowed_values = None
         self._default_value = None
+        self._supported_for_clouds = None
         self._description = None
         self._entity = None
-        self._id = None
-        self._last_modified_by = None
-        self._last_modified_date = None
-        self._max = None
-        self._min = None
-        self._name = None
         self._setting_type = None
-        self._supported_for_clouds = None
+        self._min = None
+        self._max = None
         self.discriminator = None
-        if allowed_values is not None:
-            self.allowed_values = allowed_values
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if default_value is not None:
-            self.default_value = default_value
-        if description is not None:
-            self.description = description
-        if entity is not None:
-            self.entity = entity
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if max is not None:
-            self.max = max
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.name = name
+        if allowed_values is not None:
+            self.allowed_values = allowed_values
+        self.default_value = default_value
+        self.supported_for_clouds = supported_for_clouds
+        if description is not None:
+            self.description = description
+        self.entity = entity
+        self.setting_type = setting_type
         if min is not None:
             self.min = min
-        if name is not None:
-            self.name = name
-        if setting_type is not None:
-            self.setting_type = setting_type
-        if supported_for_clouds is not None:
-            self.supported_for_clouds = supported_for_clouds
+        if max is not None:
+            self.max = max
 
     @property
-    def allowed_values(self):
-        """Gets the allowed_values of this Setting.  # noqa: E501
+    def id(self):
+        """Gets the id of this Setting.  # noqa: E501
 
 
-        :return: The allowed_values of this Setting.  # noqa: E501
-        :rtype: list[str]
+        :return: The id of this Setting.  # noqa: E501
+        :rtype: str
         """
-        return self._allowed_values
+        return self._id
 
-    @allowed_values.setter
-    def allowed_values(self, allowed_values):
-        """Sets the allowed_values of this Setting.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Setting.
 
 
-        :param allowed_values: The allowed_values of this Setting.  # noqa: E501
-        :type: list[str]
+        :param id: The id of this Setting.  # noqa: E501
+        :type: str
         """
 
-        self._allowed_values = allowed_values
+        self._id = id
 
     @property
     def created_by(self):
@@ -171,6 +166,92 @@ class Setting(object):
         self._creation_date = creation_date
 
     @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this Setting.  # noqa: E501
+
+
+        :return: The last_modified_date of this Setting.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this Setting.
+
+
+        :param last_modified_date: The last_modified_date of this Setting.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this Setting.  # noqa: E501
+
+
+        :return: The last_modified_by of this Setting.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this Setting.
+
+
+        :param last_modified_by: The last_modified_by of this Setting.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def name(self):
+        """Gets the name of this Setting.  # noqa: E501
+
+
+        :return: The name of this Setting.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Setting.
+
+
+        :param name: The name of this Setting.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def allowed_values(self):
+        """Gets the allowed_values of this Setting.  # noqa: E501
+
+
+        :return: The allowed_values of this Setting.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_values
+
+    @allowed_values.setter
+    def allowed_values(self, allowed_values):
+        """Sets the allowed_values of this Setting.
+
+
+        :param allowed_values: The allowed_values of this Setting.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_values = allowed_values
+
+    @property
     def default_value(self):
         """Gets the default_value of this Setting.  # noqa: E501
 
@@ -188,8 +269,40 @@ class Setting(object):
         :param default_value: The default_value of this Setting.  # noqa: E501
         :type: object
         """
+        if default_value is None:
+            raise ValueError("Invalid value for `default_value`, must not be `None`")  # noqa: E501
 
         self._default_value = default_value
+
+    @property
+    def supported_for_clouds(self):
+        """Gets the supported_for_clouds of this Setting.  # noqa: E501
+
+
+        :return: The supported_for_clouds of this Setting.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._supported_for_clouds
+
+    @supported_for_clouds.setter
+    def supported_for_clouds(self, supported_for_clouds):
+        """Sets the supported_for_clouds of this Setting.
+
+
+        :param supported_for_clouds: The supported_for_clouds of this Setting.  # noqa: E501
+        :type: list[str]
+        """
+        if supported_for_clouds is None:
+            raise ValueError("Invalid value for `supported_for_clouds`, must not be `None`")  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if not set(supported_for_clouds).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `supported_for_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(supported_for_clouds) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._supported_for_clouds = supported_for_clouds
 
     @property
     def description(self):
@@ -230,6 +343,8 @@ class Setting(object):
         :param entity: The entity of this Setting.  # noqa: E501
         :type: str
         """
+        if entity is None:
+            raise ValueError("Invalid value for `entity`, must not be `None`")  # noqa: E501
         allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
         if entity not in allowed_values:
             raise ValueError(
@@ -240,88 +355,33 @@ class Setting(object):
         self._entity = entity
 
     @property
-    def id(self):
-        """Gets the id of this Setting.  # noqa: E501
+    def setting_type(self):
+        """Gets the setting_type of this Setting.  # noqa: E501
 
 
-        :return: The id of this Setting.  # noqa: E501
+        :return: The setting_type of this Setting.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._setting_type
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Setting.
+    @setting_type.setter
+    def setting_type(self, setting_type):
+        """Sets the setting_type of this Setting.
 
 
-        :param id: The id of this Setting.  # noqa: E501
+        :param setting_type: The setting_type of this Setting.  # noqa: E501
         :type: str
         """
+        if setting_type is None:
+            raise ValueError("Invalid value for `setting_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["NUMBER", "STRING", "ENUM", "BOOLEAN", "FLOAT"]  # noqa: E501
+        if setting_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `setting_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(setting_type, allowed_values)
+            )
 
-        self._id = id
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this Setting.  # noqa: E501
-
-
-        :return: The last_modified_by of this Setting.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this Setting.
-
-
-        :param last_modified_by: The last_modified_by of this Setting.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this Setting.  # noqa: E501
-
-
-        :return: The last_modified_date of this Setting.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this Setting.
-
-
-        :param last_modified_date: The last_modified_date of this Setting.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def max(self):
-        """Gets the max of this Setting.  # noqa: E501
-
-
-        :return: The max of this Setting.  # noqa: E501
-        :rtype: int
-        """
-        return self._max
-
-    @max.setter
-    def max(self, max):
-        """Sets the max of this Setting.
-
-
-        :param max: The max of this Setting.  # noqa: E501
-        :type: int
-        """
-
-        self._max = max
+        self._setting_type = setting_type
 
     @property
     def min(self):
@@ -345,80 +405,25 @@ class Setting(object):
         self._min = min
 
     @property
-    def name(self):
-        """Gets the name of this Setting.  # noqa: E501
+    def max(self):
+        """Gets the max of this Setting.  # noqa: E501
 
 
-        :return: The name of this Setting.  # noqa: E501
-        :rtype: str
+        :return: The max of this Setting.  # noqa: E501
+        :rtype: int
         """
-        return self._name
+        return self._max
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Setting.
+    @max.setter
+    def max(self, max):
+        """Sets the max of this Setting.
 
 
-        :param name: The name of this Setting.  # noqa: E501
-        :type: str
+        :param max: The max of this Setting.  # noqa: E501
+        :type: int
         """
 
-        self._name = name
-
-    @property
-    def setting_type(self):
-        """Gets the setting_type of this Setting.  # noqa: E501
-
-
-        :return: The setting_type of this Setting.  # noqa: E501
-        :rtype: str
-        """
-        return self._setting_type
-
-    @setting_type.setter
-    def setting_type(self, setting_type):
-        """Sets the setting_type of this Setting.
-
-
-        :param setting_type: The setting_type of this Setting.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["NUMBER", "STRING", "ENUM", "BOOLEAN", "FLOAT"]  # noqa: E501
-        if setting_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `setting_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(setting_type, allowed_values)
-            )
-
-        self._setting_type = setting_type
-
-    @property
-    def supported_for_clouds(self):
-        """Gets the supported_for_clouds of this Setting.  # noqa: E501
-
-
-        :return: The supported_for_clouds of this Setting.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._supported_for_clouds
-
-    @supported_for_clouds.setter
-    def supported_for_clouds(self, supported_for_clouds):
-        """Sets the supported_for_clouds of this Setting.
-
-
-        :param supported_for_clouds: The supported_for_clouds of this Setting.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if not set(supported_for_clouds).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `supported_for_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(supported_for_clouds) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._supported_for_clouds = supported_for_clouds
+        self._max = max
 
     def to_dict(self):
         """Returns the model properties as a dict"""

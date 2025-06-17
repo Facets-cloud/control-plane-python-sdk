@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,751 +28,234 @@ class Stack(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'allowed_clouds': 'list[str]',
-        'alpha_blueprint': 'bool',
-        'app_password': 'str',
-        'artifactories': 'list[str]',
-        'auto_enabled_sub_stacks': 'list[str]',
-        'branch': 'str',
-        'change_log': 'str',
-        'child_stacks': 'list[str]',
-        'cluster_variables_meta': 'dict(str, VariableDetails)',
-        'coder_account_id': 'str',
-        'component_versions': 'dict(str, str)',
-        'config_modules_disabled': 'bool',
-        'description': 'str',
-        'entity_type': 'str',
-        'git_ops_enabled': 'bool',
-        'git_overrides_enabled': 'bool',
-        'github_organization_name': 'str',
-        'id': 'str',
-        'imported_project': 'bool',
-        'label': 'str',
-        'last_modified_by': 'str',
-        'last_modified_date': 'datetime',
-        'mono_repo': 'bool',
         'name': 'str',
-        'number_of_versions': 'int',
-        'override_config': 'OverrideConfig',
-        'pause_releases': 'bool',
-        'preview_modules_allowed': 'bool',
-        'primary_cloud': 'str',
-        'project_type_id': 'str',
-        'project_type_name': 'str',
-        'provided_resources': 'list[FacetsResource]',
+        'vcs_url': 'str',
+        'vcs': 'str',
         'relative_path': 'str',
-        'stack_vars': 'dict(str, str)',
-        'starter_project': 'bool',
-        'template': 'bool',
         'template_id': 'str',
         'template_name': 'str',
-        'user': 'str',
-        'vcs': 'str',
-        'vcs_url': 'str',
+        'label': 'str',
+        'change_log': 'str',
+        'branch': 'str',
+        'primary_cloud': 'str',
+        'allowed_clouds': 'list[str]',
+        'component_versions': 'dict(str, str)',
+        'pause_releases': 'bool',
+        'stack_vars': 'dict(str, str)',
+        'cluster_variables_meta': 'dict(str, VariableDetails)',
+        'child_stacks': 'list[str]',
+        'artifactories': 'list[str]',
+        'provided_resources': 'list[FacetsResource]',
+        'account_id': 'str',
+        'auto_enabled_sub_stacks': 'list[str]',
         'version_control_account_id': 'str',
-        'versioning_key': 'str'
+        'user': 'str',
+        'app_password': 'str',
+        'description': 'str',
+        'git_ops_enabled': 'bool',
+        'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'github_organization_name': 'str',
+        'coder_account_id': 'str',
+        'git_overrides_enabled': 'bool',
+        'override_config': 'OverrideConfig',
+        'config_modules_disabled': 'bool',
+        'project_type_id': 'str',
+        'project_type_name': 'str',
+        'preview_modules_allowed': 'bool',
+        'template': 'bool',
+        'mono_repo': 'bool',
+        'imported_project': 'bool',
+        'starter_project': 'bool',
+        'alpha_blueprint': 'bool',
+        'entity_type': 'str',
+        'id': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'account_id': 'accountId',
-        'allowed_clouds': 'allowedClouds',
-        'alpha_blueprint': 'alphaBlueprint',
-        'app_password': 'appPassword',
-        'artifactories': 'artifactories',
-        'auto_enabled_sub_stacks': 'autoEnabledSubStacks',
-        'branch': 'branch',
-        'change_log': 'changeLog',
-        'child_stacks': 'childStacks',
-        'cluster_variables_meta': 'clusterVariablesMeta',
-        'coder_account_id': 'coderAccountId',
-        'component_versions': 'componentVersions',
-        'config_modules_disabled': 'configModulesDisabled',
-        'description': 'description',
-        'entity_type': 'entityType',
-        'git_ops_enabled': 'gitOpsEnabled',
-        'git_overrides_enabled': 'gitOverridesEnabled',
-        'github_organization_name': 'githubOrganizationName',
-        'id': 'id',
-        'imported_project': 'importedProject',
-        'label': 'label',
-        'last_modified_by': 'lastModifiedBy',
-        'last_modified_date': 'lastModifiedDate',
-        'mono_repo': 'monoRepo',
         'name': 'name',
-        'number_of_versions': 'numberOfVersions',
-        'override_config': 'overrideConfig',
-        'pause_releases': 'pauseReleases',
-        'preview_modules_allowed': 'previewModulesAllowed',
-        'primary_cloud': 'primaryCloud',
-        'project_type_id': 'projectTypeId',
-        'project_type_name': 'projectTypeName',
-        'provided_resources': 'providedResources',
+        'vcs_url': 'vcsUrl',
+        'vcs': 'vcs',
         'relative_path': 'relativePath',
-        'stack_vars': 'stackVars',
-        'starter_project': 'starterProject',
-        'template': 'template',
         'template_id': 'templateId',
         'template_name': 'templateName',
-        'user': 'user',
-        'vcs': 'vcs',
-        'vcs_url': 'vcsUrl',
+        'label': 'label',
+        'change_log': 'changeLog',
+        'branch': 'branch',
+        'primary_cloud': 'primaryCloud',
+        'allowed_clouds': 'allowedClouds',
+        'component_versions': 'componentVersions',
+        'pause_releases': 'pauseReleases',
+        'stack_vars': 'stackVars',
+        'cluster_variables_meta': 'clusterVariablesMeta',
+        'child_stacks': 'childStacks',
+        'artifactories': 'artifactories',
+        'provided_resources': 'providedResources',
+        'account_id': 'accountId',
+        'auto_enabled_sub_stacks': 'autoEnabledSubStacks',
         'version_control_account_id': 'versionControlAccountId',
-        'versioning_key': 'versioningKey'
+        'user': 'user',
+        'app_password': 'appPassword',
+        'description': 'description',
+        'git_ops_enabled': 'gitOpsEnabled',
+        'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'github_organization_name': 'githubOrganizationName',
+        'coder_account_id': 'coderAccountId',
+        'git_overrides_enabled': 'gitOverridesEnabled',
+        'override_config': 'overrideConfig',
+        'config_modules_disabled': 'configModulesDisabled',
+        'project_type_id': 'projectTypeId',
+        'project_type_name': 'projectTypeName',
+        'preview_modules_allowed': 'previewModulesAllowed',
+        'template': 'template',
+        'mono_repo': 'monoRepo',
+        'imported_project': 'importedProject',
+        'starter_project': 'starterProject',
+        'alpha_blueprint': 'alphaBlueprint',
+        'entity_type': 'entityType',
+        'id': 'id',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, account_id=None, allowed_clouds=None, alpha_blueprint=None, app_password=None, artifactories=None, auto_enabled_sub_stacks=None, branch=None, change_log=None, child_stacks=None, cluster_variables_meta=None, coder_account_id=None, component_versions=None, config_modules_disabled=None, description=None, entity_type=None, git_ops_enabled=None, git_overrides_enabled=None, github_organization_name=None, id=None, imported_project=None, label=None, last_modified_by=None, last_modified_date=None, mono_repo=None, name=None, number_of_versions=None, override_config=None, pause_releases=None, preview_modules_allowed=None, primary_cloud=None, project_type_id=None, project_type_name=None, provided_resources=None, relative_path=None, stack_vars=None, starter_project=None, template=None, template_id=None, template_name=None, user=None, vcs=None, vcs_url=None, version_control_account_id=None, versioning_key=None):  # noqa: E501
+    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, template_id=None, template_name=None, label=None, change_log=None, branch=None, primary_cloud=None, allowed_clouds=None, component_versions=None, pause_releases=None, stack_vars=None, cluster_variables_meta=None, child_stacks=None, artifactories=None, provided_resources=None, account_id=None, auto_enabled_sub_stacks=None, version_control_account_id=None, user=None, app_password=None, description=None, git_ops_enabled=None, last_modified_date=None, last_modified_by=None, github_organization_name=None, coder_account_id=None, git_overrides_enabled=None, override_config=None, config_modules_disabled=None, project_type_id=None, project_type_name=None, preview_modules_allowed=None, template=None, mono_repo=None, imported_project=None, starter_project=None, alpha_blueprint=None, entity_type=None, id=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Stack - a model defined in Swagger"""  # noqa: E501
-        self._account_id = None
-        self._allowed_clouds = None
-        self._alpha_blueprint = None
-        self._app_password = None
-        self._artifactories = None
-        self._auto_enabled_sub_stacks = None
-        self._branch = None
-        self._change_log = None
-        self._child_stacks = None
-        self._cluster_variables_meta = None
-        self._coder_account_id = None
-        self._component_versions = None
-        self._config_modules_disabled = None
-        self._description = None
-        self._entity_type = None
-        self._git_ops_enabled = None
-        self._git_overrides_enabled = None
-        self._github_organization_name = None
-        self._id = None
-        self._imported_project = None
-        self._label = None
-        self._last_modified_by = None
-        self._last_modified_date = None
-        self._mono_repo = None
         self._name = None
-        self._number_of_versions = None
-        self._override_config = None
-        self._pause_releases = None
-        self._preview_modules_allowed = None
-        self._primary_cloud = None
-        self._project_type_id = None
-        self._project_type_name = None
-        self._provided_resources = None
+        self._vcs_url = None
+        self._vcs = None
         self._relative_path = None
-        self._stack_vars = None
-        self._starter_project = None
-        self._template = None
         self._template_id = None
         self._template_name = None
-        self._user = None
-        self._vcs = None
-        self._vcs_url = None
+        self._label = None
+        self._change_log = None
+        self._branch = None
+        self._primary_cloud = None
+        self._allowed_clouds = None
+        self._component_versions = None
+        self._pause_releases = None
+        self._stack_vars = None
+        self._cluster_variables_meta = None
+        self._child_stacks = None
+        self._artifactories = None
+        self._provided_resources = None
+        self._account_id = None
+        self._auto_enabled_sub_stacks = None
         self._version_control_account_id = None
+        self._user = None
+        self._app_password = None
+        self._description = None
+        self._git_ops_enabled = None
+        self._last_modified_date = None
+        self._last_modified_by = None
+        self._github_organization_name = None
+        self._coder_account_id = None
+        self._git_overrides_enabled = None
+        self._override_config = None
+        self._config_modules_disabled = None
+        self._project_type_id = None
+        self._project_type_name = None
+        self._preview_modules_allowed = None
+        self._template = None
+        self._mono_repo = None
+        self._imported_project = None
+        self._starter_project = None
+        self._alpha_blueprint = None
+        self._entity_type = None
+        self._id = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if account_id is not None:
-            self.account_id = account_id
-        if allowed_clouds is not None:
-            self.allowed_clouds = allowed_clouds
-        if alpha_blueprint is not None:
-            self.alpha_blueprint = alpha_blueprint
-        if app_password is not None:
-            self.app_password = app_password
-        if artifactories is not None:
-            self.artifactories = artifactories
-        if auto_enabled_sub_stacks is not None:
-            self.auto_enabled_sub_stacks = auto_enabled_sub_stacks
-        if branch is not None:
-            self.branch = branch
-        if change_log is not None:
-            self.change_log = change_log
-        if child_stacks is not None:
-            self.child_stacks = child_stacks
-        if cluster_variables_meta is not None:
-            self.cluster_variables_meta = cluster_variables_meta
-        if coder_account_id is not None:
-            self.coder_account_id = coder_account_id
-        if component_versions is not None:
-            self.component_versions = component_versions
-        if config_modules_disabled is not None:
-            self.config_modules_disabled = config_modules_disabled
-        if description is not None:
-            self.description = description
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if git_ops_enabled is not None:
-            self.git_ops_enabled = git_ops_enabled
-        if git_overrides_enabled is not None:
-            self.git_overrides_enabled = git_overrides_enabled
-        if github_organization_name is not None:
-            self.github_organization_name = github_organization_name
-        if id is not None:
-            self.id = id
-        if imported_project is not None:
-            self.imported_project = imported_project
-        if label is not None:
-            self.label = label
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
-        if last_modified_date is not None:
-            self.last_modified_date = last_modified_date
-        if mono_repo is not None:
-            self.mono_repo = mono_repo
         if name is not None:
             self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if override_config is not None:
-            self.override_config = override_config
-        if pause_releases is not None:
-            self.pause_releases = pause_releases
-        if preview_modules_allowed is not None:
-            self.preview_modules_allowed = preview_modules_allowed
-        if primary_cloud is not None:
-            self.primary_cloud = primary_cloud
-        if project_type_id is not None:
-            self.project_type_id = project_type_id
-        if project_type_name is not None:
-            self.project_type_name = project_type_name
-        if provided_resources is not None:
-            self.provided_resources = provided_resources
+        if vcs_url is not None:
+            self.vcs_url = vcs_url
+        if vcs is not None:
+            self.vcs = vcs
         if relative_path is not None:
             self.relative_path = relative_path
-        if stack_vars is not None:
-            self.stack_vars = stack_vars
-        if starter_project is not None:
-            self.starter_project = starter_project
-        if template is not None:
-            self.template = template
         if template_id is not None:
             self.template_id = template_id
         if template_name is not None:
             self.template_name = template_name
-        if user is not None:
-            self.user = user
-        if vcs is not None:
-            self.vcs = vcs
-        if vcs_url is not None:
-            self.vcs_url = vcs_url
+        if label is not None:
+            self.label = label
+        if change_log is not None:
+            self.change_log = change_log
+        if branch is not None:
+            self.branch = branch
+        if primary_cloud is not None:
+            self.primary_cloud = primary_cloud
+        if allowed_clouds is not None:
+            self.allowed_clouds = allowed_clouds
+        if component_versions is not None:
+            self.component_versions = component_versions
+        if pause_releases is not None:
+            self.pause_releases = pause_releases
+        if stack_vars is not None:
+            self.stack_vars = stack_vars
+        if cluster_variables_meta is not None:
+            self.cluster_variables_meta = cluster_variables_meta
+        if child_stacks is not None:
+            self.child_stacks = child_stacks
+        if artifactories is not None:
+            self.artifactories = artifactories
+        if provided_resources is not None:
+            self.provided_resources = provided_resources
+        if account_id is not None:
+            self.account_id = account_id
+        if auto_enabled_sub_stacks is not None:
+            self.auto_enabled_sub_stacks = auto_enabled_sub_stacks
         if version_control_account_id is not None:
             self.version_control_account_id = version_control_account_id
+        if user is not None:
+            self.user = user
+        if app_password is not None:
+            self.app_password = app_password
+        if description is not None:
+            self.description = description
+        if git_ops_enabled is not None:
+            self.git_ops_enabled = git_ops_enabled
+        if last_modified_date is not None:
+            self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if github_organization_name is not None:
+            self.github_organization_name = github_organization_name
+        if coder_account_id is not None:
+            self.coder_account_id = coder_account_id
+        if git_overrides_enabled is not None:
+            self.git_overrides_enabled = git_overrides_enabled
+        if override_config is not None:
+            self.override_config = override_config
+        if config_modules_disabled is not None:
+            self.config_modules_disabled = config_modules_disabled
+        if project_type_id is not None:
+            self.project_type_id = project_type_id
+        if project_type_name is not None:
+            self.project_type_name = project_type_name
+        if preview_modules_allowed is not None:
+            self.preview_modules_allowed = preview_modules_allowed
+        if template is not None:
+            self.template = template
+        if mono_repo is not None:
+            self.mono_repo = mono_repo
+        if imported_project is not None:
+            self.imported_project = imported_project
+        if starter_project is not None:
+            self.starter_project = starter_project
+        if alpha_blueprint is not None:
+            self.alpha_blueprint = alpha_blueprint
+        if entity_type is not None:
+            self.entity_type = entity_type
+        if id is not None:
+            self.id = id
         if versioning_key is not None:
             self.versioning_key = versioning_key
-
-    @property
-    def account_id(self):
-        """Gets the account_id of this Stack.  # noqa: E501
-
-
-        :return: The account_id of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_id
-
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this Stack.
-
-
-        :param account_id: The account_id of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._account_id = account_id
-
-    @property
-    def allowed_clouds(self):
-        """Gets the allowed_clouds of this Stack.  # noqa: E501
-
-
-        :return: The allowed_clouds of this Stack.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._allowed_clouds
-
-    @allowed_clouds.setter
-    def allowed_clouds(self, allowed_clouds):
-        """Sets the allowed_clouds of this Stack.
-
-
-        :param allowed_clouds: The allowed_clouds of this Stack.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if not set(allowed_clouds).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(allowed_clouds) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._allowed_clouds = allowed_clouds
-
-    @property
-    def alpha_blueprint(self):
-        """Gets the alpha_blueprint of this Stack.  # noqa: E501
-
-
-        :return: The alpha_blueprint of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._alpha_blueprint
-
-    @alpha_blueprint.setter
-    def alpha_blueprint(self, alpha_blueprint):
-        """Sets the alpha_blueprint of this Stack.
-
-
-        :param alpha_blueprint: The alpha_blueprint of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._alpha_blueprint = alpha_blueprint
-
-    @property
-    def app_password(self):
-        """Gets the app_password of this Stack.  # noqa: E501
-
-
-        :return: The app_password of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._app_password
-
-    @app_password.setter
-    def app_password(self, app_password):
-        """Sets the app_password of this Stack.
-
-
-        :param app_password: The app_password of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._app_password = app_password
-
-    @property
-    def artifactories(self):
-        """Gets the artifactories of this Stack.  # noqa: E501
-
-
-        :return: The artifactories of this Stack.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._artifactories
-
-    @artifactories.setter
-    def artifactories(self, artifactories):
-        """Sets the artifactories of this Stack.
-
-
-        :param artifactories: The artifactories of this Stack.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._artifactories = artifactories
-
-    @property
-    def auto_enabled_sub_stacks(self):
-        """Gets the auto_enabled_sub_stacks of this Stack.  # noqa: E501
-
-
-        :return: The auto_enabled_sub_stacks of this Stack.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._auto_enabled_sub_stacks
-
-    @auto_enabled_sub_stacks.setter
-    def auto_enabled_sub_stacks(self, auto_enabled_sub_stacks):
-        """Sets the auto_enabled_sub_stacks of this Stack.
-
-
-        :param auto_enabled_sub_stacks: The auto_enabled_sub_stacks of this Stack.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._auto_enabled_sub_stacks = auto_enabled_sub_stacks
-
-    @property
-    def branch(self):
-        """Gets the branch of this Stack.  # noqa: E501
-
-
-        :return: The branch of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch
-
-    @branch.setter
-    def branch(self, branch):
-        """Sets the branch of this Stack.
-
-
-        :param branch: The branch of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._branch = branch
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this Stack.  # noqa: E501
-
-
-        :return: The change_log of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this Stack.
-
-
-        :param change_log: The change_log of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._change_log = change_log
-
-    @property
-    def child_stacks(self):
-        """Gets the child_stacks of this Stack.  # noqa: E501
-
-
-        :return: The child_stacks of this Stack.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._child_stacks
-
-    @child_stacks.setter
-    def child_stacks(self, child_stacks):
-        """Sets the child_stacks of this Stack.
-
-
-        :param child_stacks: The child_stacks of this Stack.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._child_stacks = child_stacks
-
-    @property
-    def cluster_variables_meta(self):
-        """Gets the cluster_variables_meta of this Stack.  # noqa: E501
-
-
-        :return: The cluster_variables_meta of this Stack.  # noqa: E501
-        :rtype: dict(str, VariableDetails)
-        """
-        return self._cluster_variables_meta
-
-    @cluster_variables_meta.setter
-    def cluster_variables_meta(self, cluster_variables_meta):
-        """Sets the cluster_variables_meta of this Stack.
-
-
-        :param cluster_variables_meta: The cluster_variables_meta of this Stack.  # noqa: E501
-        :type: dict(str, VariableDetails)
-        """
-
-        self._cluster_variables_meta = cluster_variables_meta
-
-    @property
-    def coder_account_id(self):
-        """Gets the coder_account_id of this Stack.  # noqa: E501
-
-
-        :return: The coder_account_id of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._coder_account_id
-
-    @coder_account_id.setter
-    def coder_account_id(self, coder_account_id):
-        """Sets the coder_account_id of this Stack.
-
-
-        :param coder_account_id: The coder_account_id of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._coder_account_id = coder_account_id
-
-    @property
-    def component_versions(self):
-        """Gets the component_versions of this Stack.  # noqa: E501
-
-
-        :return: The component_versions of this Stack.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._component_versions
-
-    @component_versions.setter
-    def component_versions(self, component_versions):
-        """Sets the component_versions of this Stack.
-
-
-        :param component_versions: The component_versions of this Stack.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._component_versions = component_versions
-
-    @property
-    def config_modules_disabled(self):
-        """Gets the config_modules_disabled of this Stack.  # noqa: E501
-
-
-        :return: The config_modules_disabled of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._config_modules_disabled
-
-    @config_modules_disabled.setter
-    def config_modules_disabled(self, config_modules_disabled):
-        """Sets the config_modules_disabled of this Stack.
-
-
-        :param config_modules_disabled: The config_modules_disabled of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._config_modules_disabled = config_modules_disabled
-
-    @property
-    def description(self):
-        """Gets the description of this Stack.  # noqa: E501
-
-
-        :return: The description of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Stack.
-
-
-        :param description: The description of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def entity_type(self):
-        """Gets the entity_type of this Stack.  # noqa: E501
-
-
-        :return: The entity_type of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._entity_type
-
-    @entity_type.setter
-    def entity_type(self, entity_type):
-        """Sets the entity_type of this Stack.
-
-
-        :param entity_type: The entity_type of this Stack.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
-        if entity_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(entity_type, allowed_values)
-            )
-
-        self._entity_type = entity_type
-
-    @property
-    def git_ops_enabled(self):
-        """Gets the git_ops_enabled of this Stack.  # noqa: E501
-
-
-        :return: The git_ops_enabled of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._git_ops_enabled
-
-    @git_ops_enabled.setter
-    def git_ops_enabled(self, git_ops_enabled):
-        """Sets the git_ops_enabled of this Stack.
-
-
-        :param git_ops_enabled: The git_ops_enabled of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._git_ops_enabled = git_ops_enabled
-
-    @property
-    def git_overrides_enabled(self):
-        """Gets the git_overrides_enabled of this Stack.  # noqa: E501
-
-
-        :return: The git_overrides_enabled of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._git_overrides_enabled
-
-    @git_overrides_enabled.setter
-    def git_overrides_enabled(self, git_overrides_enabled):
-        """Sets the git_overrides_enabled of this Stack.
-
-
-        :param git_overrides_enabled: The git_overrides_enabled of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._git_overrides_enabled = git_overrides_enabled
-
-    @property
-    def github_organization_name(self):
-        """Gets the github_organization_name of this Stack.  # noqa: E501
-
-
-        :return: The github_organization_name of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._github_organization_name
-
-    @github_organization_name.setter
-    def github_organization_name(self, github_organization_name):
-        """Sets the github_organization_name of this Stack.
-
-
-        :param github_organization_name: The github_organization_name of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._github_organization_name = github_organization_name
-
-    @property
-    def id(self):
-        """Gets the id of this Stack.  # noqa: E501
-
-
-        :return: The id of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Stack.
-
-
-        :param id: The id of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def imported_project(self):
-        """Gets the imported_project of this Stack.  # noqa: E501
-
-
-        :return: The imported_project of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._imported_project
-
-    @imported_project.setter
-    def imported_project(self, imported_project):
-        """Sets the imported_project of this Stack.
-
-
-        :param imported_project: The imported_project of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._imported_project = imported_project
-
-    @property
-    def label(self):
-        """Gets the label of this Stack.  # noqa: E501
-
-
-        :return: The label of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._label
-
-    @label.setter
-    def label(self, label):
-        """Sets the label of this Stack.
-
-
-        :param label: The label of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._label = label
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this Stack.  # noqa: E501
-
-
-        :return: The last_modified_by of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this Stack.
-
-
-        :param last_modified_by: The last_modified_by of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this Stack.  # noqa: E501
-
-
-        :return: The last_modified_date of this Stack.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this Stack.
-
-
-        :param last_modified_date: The last_modified_date of this Stack.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def mono_repo(self):
-        """Gets the mono_repo of this Stack.  # noqa: E501
-
-
-        :return: The mono_repo of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._mono_repo
-
-    @mono_repo.setter
-    def mono_repo(self, mono_repo):
-        """Sets the mono_repo of this Stack.
-
-
-        :param mono_repo: The mono_repo of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._mono_repo = mono_repo
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
     def name(self):
@@ -796,178 +279,52 @@ class Stack(object):
         self._name = name
 
     @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this Stack.  # noqa: E501
+    def vcs_url(self):
+        """Gets the vcs_url of this Stack.  # noqa: E501
 
 
-        :return: The number_of_versions of this Stack.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this Stack.
-
-
-        :param number_of_versions: The number_of_versions of this Stack.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
-
-    @property
-    def override_config(self):
-        """Gets the override_config of this Stack.  # noqa: E501
-
-
-        :return: The override_config of this Stack.  # noqa: E501
-        :rtype: OverrideConfig
-        """
-        return self._override_config
-
-    @override_config.setter
-    def override_config(self, override_config):
-        """Sets the override_config of this Stack.
-
-
-        :param override_config: The override_config of this Stack.  # noqa: E501
-        :type: OverrideConfig
-        """
-
-        self._override_config = override_config
-
-    @property
-    def pause_releases(self):
-        """Gets the pause_releases of this Stack.  # noqa: E501
-
-
-        :return: The pause_releases of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._pause_releases
-
-    @pause_releases.setter
-    def pause_releases(self, pause_releases):
-        """Sets the pause_releases of this Stack.
-
-
-        :param pause_releases: The pause_releases of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._pause_releases = pause_releases
-
-    @property
-    def preview_modules_allowed(self):
-        """Gets the preview_modules_allowed of this Stack.  # noqa: E501
-
-
-        :return: The preview_modules_allowed of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._preview_modules_allowed
-
-    @preview_modules_allowed.setter
-    def preview_modules_allowed(self, preview_modules_allowed):
-        """Sets the preview_modules_allowed of this Stack.
-
-
-        :param preview_modules_allowed: The preview_modules_allowed of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._preview_modules_allowed = preview_modules_allowed
-
-    @property
-    def primary_cloud(self):
-        """Gets the primary_cloud of this Stack.  # noqa: E501
-
-
-        :return: The primary_cloud of this Stack.  # noqa: E501
+        :return: The vcs_url of this Stack.  # noqa: E501
         :rtype: str
         """
-        return self._primary_cloud
+        return self._vcs_url
 
-    @primary_cloud.setter
-    def primary_cloud(self, primary_cloud):
-        """Sets the primary_cloud of this Stack.
+    @vcs_url.setter
+    def vcs_url(self, vcs_url):
+        """Sets the vcs_url of this Stack.
 
 
-        :param primary_cloud: The primary_cloud of this Stack.  # noqa: E501
+        :param vcs_url: The vcs_url of this Stack.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if primary_cloud not in allowed_values:
+
+        self._vcs_url = vcs_url
+
+    @property
+    def vcs(self):
+        """Gets the vcs of this Stack.  # noqa: E501
+
+
+        :return: The vcs of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._vcs
+
+    @vcs.setter
+    def vcs(self, vcs):
+        """Sets the vcs of this Stack.
+
+
+        :param vcs: The vcs of this Stack.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB"]  # noqa: E501
+        if vcs not in allowed_values:
             raise ValueError(
-                "Invalid value for `primary_cloud` ({0}), must be one of {1}"  # noqa: E501
-                .format(primary_cloud, allowed_values)
+                "Invalid value for `vcs` ({0}), must be one of {1}"  # noqa: E501
+                .format(vcs, allowed_values)
             )
 
-        self._primary_cloud = primary_cloud
-
-    @property
-    def project_type_id(self):
-        """Gets the project_type_id of this Stack.  # noqa: E501
-
-
-        :return: The project_type_id of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_type_id
-
-    @project_type_id.setter
-    def project_type_id(self, project_type_id):
-        """Sets the project_type_id of this Stack.
-
-
-        :param project_type_id: The project_type_id of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._project_type_id = project_type_id
-
-    @property
-    def project_type_name(self):
-        """Gets the project_type_name of this Stack.  # noqa: E501
-
-
-        :return: The project_type_name of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_type_name
-
-    @project_type_name.setter
-    def project_type_name(self, project_type_name):
-        """Sets the project_type_name of this Stack.
-
-
-        :param project_type_name: The project_type_name of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._project_type_name = project_type_name
-
-    @property
-    def provided_resources(self):
-        """Gets the provided_resources of this Stack.  # noqa: E501
-
-
-        :return: The provided_resources of this Stack.  # noqa: E501
-        :rtype: list[FacetsResource]
-        """
-        return self._provided_resources
-
-    @provided_resources.setter
-    def provided_resources(self, provided_resources):
-        """Sets the provided_resources of this Stack.
-
-
-        :param provided_resources: The provided_resources of this Stack.  # noqa: E501
-        :type: list[FacetsResource]
-        """
-
-        self._provided_resources = provided_resources
+        self._vcs = vcs
 
     @property
     def relative_path(self):
@@ -989,69 +346,6 @@ class Stack(object):
         """
 
         self._relative_path = relative_path
-
-    @property
-    def stack_vars(self):
-        """Gets the stack_vars of this Stack.  # noqa: E501
-
-
-        :return: The stack_vars of this Stack.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._stack_vars
-
-    @stack_vars.setter
-    def stack_vars(self, stack_vars):
-        """Sets the stack_vars of this Stack.
-
-
-        :param stack_vars: The stack_vars of this Stack.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._stack_vars = stack_vars
-
-    @property
-    def starter_project(self):
-        """Gets the starter_project of this Stack.  # noqa: E501
-
-
-        :return: The starter_project of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._starter_project
-
-    @starter_project.setter
-    def starter_project(self, starter_project):
-        """Sets the starter_project of this Stack.
-
-
-        :param starter_project: The starter_project of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._starter_project = starter_project
-
-    @property
-    def template(self):
-        """Gets the template of this Stack.  # noqa: E501
-
-
-        :return: The template of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._template
-
-    @template.setter
-    def template(self, template):
-        """Sets the template of this Stack.
-
-
-        :param template: The template of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._template = template
 
     @property
     def template_id(self):
@@ -1096,73 +390,311 @@ class Stack(object):
         self._template_name = template_name
 
     @property
-    def user(self):
-        """Gets the user of this Stack.  # noqa: E501
+    def label(self):
+        """Gets the label of this Stack.  # noqa: E501
 
 
-        :return: The user of this Stack.  # noqa: E501
+        :return: The label of this Stack.  # noqa: E501
         :rtype: str
         """
-        return self._user
+        return self._label
 
-    @user.setter
-    def user(self, user):
-        """Sets the user of this Stack.
+    @label.setter
+    def label(self, label):
+        """Sets the label of this Stack.
 
 
-        :param user: The user of this Stack.  # noqa: E501
+        :param label: The label of this Stack.  # noqa: E501
         :type: str
         """
 
-        self._user = user
+        self._label = label
 
     @property
-    def vcs(self):
-        """Gets the vcs of this Stack.  # noqa: E501
+    def change_log(self):
+        """Gets the change_log of this Stack.  # noqa: E501
 
 
-        :return: The vcs of this Stack.  # noqa: E501
+        :return: The change_log of this Stack.  # noqa: E501
         :rtype: str
         """
-        return self._vcs
+        return self._change_log
 
-    @vcs.setter
-    def vcs(self, vcs):
-        """Sets the vcs of this Stack.
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this Stack.
 
 
-        :param vcs: The vcs of this Stack.  # noqa: E501
+        :param change_log: The change_log of this Stack.  # noqa: E501
         :type: str
         """
-        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB"]  # noqa: E501
-        if vcs not in allowed_values:
+
+        self._change_log = change_log
+
+    @property
+    def branch(self):
+        """Gets the branch of this Stack.  # noqa: E501
+
+
+        :return: The branch of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._branch
+
+    @branch.setter
+    def branch(self, branch):
+        """Sets the branch of this Stack.
+
+
+        :param branch: The branch of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._branch = branch
+
+    @property
+    def primary_cloud(self):
+        """Gets the primary_cloud of this Stack.  # noqa: E501
+
+
+        :return: The primary_cloud of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._primary_cloud
+
+    @primary_cloud.setter
+    def primary_cloud(self, primary_cloud):
+        """Sets the primary_cloud of this Stack.
+
+
+        :param primary_cloud: The primary_cloud of this Stack.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if primary_cloud not in allowed_values:
             raise ValueError(
-                "Invalid value for `vcs` ({0}), must be one of {1}"  # noqa: E501
-                .format(vcs, allowed_values)
+                "Invalid value for `primary_cloud` ({0}), must be one of {1}"  # noqa: E501
+                .format(primary_cloud, allowed_values)
             )
 
-        self._vcs = vcs
+        self._primary_cloud = primary_cloud
 
     @property
-    def vcs_url(self):
-        """Gets the vcs_url of this Stack.  # noqa: E501
+    def allowed_clouds(self):
+        """Gets the allowed_clouds of this Stack.  # noqa: E501
 
 
-        :return: The vcs_url of this Stack.  # noqa: E501
+        :return: The allowed_clouds of this Stack.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_clouds
+
+    @allowed_clouds.setter
+    def allowed_clouds(self, allowed_clouds):
+        """Sets the allowed_clouds of this Stack.
+
+
+        :param allowed_clouds: The allowed_clouds of this Stack.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if not set(allowed_clouds).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(allowed_clouds) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._allowed_clouds = allowed_clouds
+
+    @property
+    def component_versions(self):
+        """Gets the component_versions of this Stack.  # noqa: E501
+
+
+        :return: The component_versions of this Stack.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._component_versions
+
+    @component_versions.setter
+    def component_versions(self, component_versions):
+        """Sets the component_versions of this Stack.
+
+
+        :param component_versions: The component_versions of this Stack.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._component_versions = component_versions
+
+    @property
+    def pause_releases(self):
+        """Gets the pause_releases of this Stack.  # noqa: E501
+
+
+        :return: The pause_releases of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pause_releases
+
+    @pause_releases.setter
+    def pause_releases(self, pause_releases):
+        """Sets the pause_releases of this Stack.
+
+
+        :param pause_releases: The pause_releases of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._pause_releases = pause_releases
+
+    @property
+    def stack_vars(self):
+        """Gets the stack_vars of this Stack.  # noqa: E501
+
+
+        :return: The stack_vars of this Stack.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._stack_vars
+
+    @stack_vars.setter
+    def stack_vars(self, stack_vars):
+        """Sets the stack_vars of this Stack.
+
+
+        :param stack_vars: The stack_vars of this Stack.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._stack_vars = stack_vars
+
+    @property
+    def cluster_variables_meta(self):
+        """Gets the cluster_variables_meta of this Stack.  # noqa: E501
+
+
+        :return: The cluster_variables_meta of this Stack.  # noqa: E501
+        :rtype: dict(str, VariableDetails)
+        """
+        return self._cluster_variables_meta
+
+    @cluster_variables_meta.setter
+    def cluster_variables_meta(self, cluster_variables_meta):
+        """Sets the cluster_variables_meta of this Stack.
+
+
+        :param cluster_variables_meta: The cluster_variables_meta of this Stack.  # noqa: E501
+        :type: dict(str, VariableDetails)
+        """
+
+        self._cluster_variables_meta = cluster_variables_meta
+
+    @property
+    def child_stacks(self):
+        """Gets the child_stacks of this Stack.  # noqa: E501
+
+
+        :return: The child_stacks of this Stack.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._child_stacks
+
+    @child_stacks.setter
+    def child_stacks(self, child_stacks):
+        """Sets the child_stacks of this Stack.
+
+
+        :param child_stacks: The child_stacks of this Stack.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._child_stacks = child_stacks
+
+    @property
+    def artifactories(self):
+        """Gets the artifactories of this Stack.  # noqa: E501
+
+
+        :return: The artifactories of this Stack.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._artifactories
+
+    @artifactories.setter
+    def artifactories(self, artifactories):
+        """Sets the artifactories of this Stack.
+
+
+        :param artifactories: The artifactories of this Stack.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._artifactories = artifactories
+
+    @property
+    def provided_resources(self):
+        """Gets the provided_resources of this Stack.  # noqa: E501
+
+
+        :return: The provided_resources of this Stack.  # noqa: E501
+        :rtype: list[FacetsResource]
+        """
+        return self._provided_resources
+
+    @provided_resources.setter
+    def provided_resources(self, provided_resources):
+        """Sets the provided_resources of this Stack.
+
+
+        :param provided_resources: The provided_resources of this Stack.  # noqa: E501
+        :type: list[FacetsResource]
+        """
+
+        self._provided_resources = provided_resources
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this Stack.  # noqa: E501
+
+
+        :return: The account_id of this Stack.  # noqa: E501
         :rtype: str
         """
-        return self._vcs_url
+        return self._account_id
 
-    @vcs_url.setter
-    def vcs_url(self, vcs_url):
-        """Sets the vcs_url of this Stack.
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this Stack.
 
 
-        :param vcs_url: The vcs_url of this Stack.  # noqa: E501
+        :param account_id: The account_id of this Stack.  # noqa: E501
         :type: str
         """
 
-        self._vcs_url = vcs_url
+        self._account_id = account_id
+
+    @property
+    def auto_enabled_sub_stacks(self):
+        """Gets the auto_enabled_sub_stacks of this Stack.  # noqa: E501
+
+
+        :return: The auto_enabled_sub_stacks of this Stack.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._auto_enabled_sub_stacks
+
+    @auto_enabled_sub_stacks.setter
+    def auto_enabled_sub_stacks(self, auto_enabled_sub_stacks):
+        """Sets the auto_enabled_sub_stacks of this Stack.
+
+
+        :param auto_enabled_sub_stacks: The auto_enabled_sub_stacks of this Stack.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._auto_enabled_sub_stacks = auto_enabled_sub_stacks
 
     @property
     def version_control_account_id(self):
@@ -1186,6 +718,453 @@ class Stack(object):
         self._version_control_account_id = version_control_account_id
 
     @property
+    def user(self):
+        """Gets the user of this Stack.  # noqa: E501
+
+
+        :return: The user of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user):
+        """Sets the user of this Stack.
+
+
+        :param user: The user of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._user = user
+
+    @property
+    def app_password(self):
+        """Gets the app_password of this Stack.  # noqa: E501
+
+
+        :return: The app_password of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._app_password
+
+    @app_password.setter
+    def app_password(self, app_password):
+        """Sets the app_password of this Stack.
+
+
+        :param app_password: The app_password of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._app_password = app_password
+
+    @property
+    def description(self):
+        """Gets the description of this Stack.  # noqa: E501
+
+
+        :return: The description of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Stack.
+
+
+        :param description: The description of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def git_ops_enabled(self):
+        """Gets the git_ops_enabled of this Stack.  # noqa: E501
+
+
+        :return: The git_ops_enabled of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._git_ops_enabled
+
+    @git_ops_enabled.setter
+    def git_ops_enabled(self, git_ops_enabled):
+        """Sets the git_ops_enabled of this Stack.
+
+
+        :param git_ops_enabled: The git_ops_enabled of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._git_ops_enabled = git_ops_enabled
+
+    @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this Stack.  # noqa: E501
+
+
+        :return: The last_modified_date of this Stack.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this Stack.
+
+
+        :param last_modified_date: The last_modified_date of this Stack.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this Stack.  # noqa: E501
+
+
+        :return: The last_modified_by of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this Stack.
+
+
+        :param last_modified_by: The last_modified_by of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def github_organization_name(self):
+        """Gets the github_organization_name of this Stack.  # noqa: E501
+
+
+        :return: The github_organization_name of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_organization_name
+
+    @github_organization_name.setter
+    def github_organization_name(self, github_organization_name):
+        """Sets the github_organization_name of this Stack.
+
+
+        :param github_organization_name: The github_organization_name of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._github_organization_name = github_organization_name
+
+    @property
+    def coder_account_id(self):
+        """Gets the coder_account_id of this Stack.  # noqa: E501
+
+
+        :return: The coder_account_id of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._coder_account_id
+
+    @coder_account_id.setter
+    def coder_account_id(self, coder_account_id):
+        """Sets the coder_account_id of this Stack.
+
+
+        :param coder_account_id: The coder_account_id of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._coder_account_id = coder_account_id
+
+    @property
+    def git_overrides_enabled(self):
+        """Gets the git_overrides_enabled of this Stack.  # noqa: E501
+
+
+        :return: The git_overrides_enabled of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._git_overrides_enabled
+
+    @git_overrides_enabled.setter
+    def git_overrides_enabled(self, git_overrides_enabled):
+        """Sets the git_overrides_enabled of this Stack.
+
+
+        :param git_overrides_enabled: The git_overrides_enabled of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._git_overrides_enabled = git_overrides_enabled
+
+    @property
+    def override_config(self):
+        """Gets the override_config of this Stack.  # noqa: E501
+
+
+        :return: The override_config of this Stack.  # noqa: E501
+        :rtype: OverrideConfig
+        """
+        return self._override_config
+
+    @override_config.setter
+    def override_config(self, override_config):
+        """Sets the override_config of this Stack.
+
+
+        :param override_config: The override_config of this Stack.  # noqa: E501
+        :type: OverrideConfig
+        """
+
+        self._override_config = override_config
+
+    @property
+    def config_modules_disabled(self):
+        """Gets the config_modules_disabled of this Stack.  # noqa: E501
+
+
+        :return: The config_modules_disabled of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._config_modules_disabled
+
+    @config_modules_disabled.setter
+    def config_modules_disabled(self, config_modules_disabled):
+        """Sets the config_modules_disabled of this Stack.
+
+
+        :param config_modules_disabled: The config_modules_disabled of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._config_modules_disabled = config_modules_disabled
+
+    @property
+    def project_type_id(self):
+        """Gets the project_type_id of this Stack.  # noqa: E501
+
+
+        :return: The project_type_id of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._project_type_id
+
+    @project_type_id.setter
+    def project_type_id(self, project_type_id):
+        """Sets the project_type_id of this Stack.
+
+
+        :param project_type_id: The project_type_id of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._project_type_id = project_type_id
+
+    @property
+    def project_type_name(self):
+        """Gets the project_type_name of this Stack.  # noqa: E501
+
+
+        :return: The project_type_name of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._project_type_name
+
+    @project_type_name.setter
+    def project_type_name(self, project_type_name):
+        """Sets the project_type_name of this Stack.
+
+
+        :param project_type_name: The project_type_name of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._project_type_name = project_type_name
+
+    @property
+    def preview_modules_allowed(self):
+        """Gets the preview_modules_allowed of this Stack.  # noqa: E501
+
+
+        :return: The preview_modules_allowed of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._preview_modules_allowed
+
+    @preview_modules_allowed.setter
+    def preview_modules_allowed(self, preview_modules_allowed):
+        """Sets the preview_modules_allowed of this Stack.
+
+
+        :param preview_modules_allowed: The preview_modules_allowed of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._preview_modules_allowed = preview_modules_allowed
+
+    @property
+    def template(self):
+        """Gets the template of this Stack.  # noqa: E501
+
+
+        :return: The template of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._template
+
+    @template.setter
+    def template(self, template):
+        """Sets the template of this Stack.
+
+
+        :param template: The template of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._template = template
+
+    @property
+    def mono_repo(self):
+        """Gets the mono_repo of this Stack.  # noqa: E501
+
+
+        :return: The mono_repo of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mono_repo
+
+    @mono_repo.setter
+    def mono_repo(self, mono_repo):
+        """Sets the mono_repo of this Stack.
+
+
+        :param mono_repo: The mono_repo of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._mono_repo = mono_repo
+
+    @property
+    def imported_project(self):
+        """Gets the imported_project of this Stack.  # noqa: E501
+
+
+        :return: The imported_project of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._imported_project
+
+    @imported_project.setter
+    def imported_project(self, imported_project):
+        """Sets the imported_project of this Stack.
+
+
+        :param imported_project: The imported_project of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._imported_project = imported_project
+
+    @property
+    def starter_project(self):
+        """Gets the starter_project of this Stack.  # noqa: E501
+
+
+        :return: The starter_project of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._starter_project
+
+    @starter_project.setter
+    def starter_project(self, starter_project):
+        """Sets the starter_project of this Stack.
+
+
+        :param starter_project: The starter_project of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._starter_project = starter_project
+
+    @property
+    def alpha_blueprint(self):
+        """Gets the alpha_blueprint of this Stack.  # noqa: E501
+
+
+        :return: The alpha_blueprint of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._alpha_blueprint
+
+    @alpha_blueprint.setter
+    def alpha_blueprint(self, alpha_blueprint):
+        """Sets the alpha_blueprint of this Stack.
+
+
+        :param alpha_blueprint: The alpha_blueprint of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._alpha_blueprint = alpha_blueprint
+
+    @property
+    def entity_type(self):
+        """Gets the entity_type of this Stack.  # noqa: E501
+
+
+        :return: The entity_type of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._entity_type
+
+    @entity_type.setter
+    def entity_type(self, entity_type):
+        """Sets the entity_type of this Stack.
+
+
+        :param entity_type: The entity_type of this Stack.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
+        if entity_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(entity_type, allowed_values)
+            )
+
+        self._entity_type = entity_type
+
+    @property
+    def id(self):
+        """Gets the id of this Stack.  # noqa: E501
+
+
+        :return: The id of this Stack.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Stack.
+
+
+        :param id: The id of this Stack.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
     def versioning_key(self):
         """Gets the versioning_key of this Stack.  # noqa: E501
 
@@ -1205,6 +1184,27 @@ class Stack(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this Stack.  # noqa: E501
+
+
+        :return: The number_of_versions of this Stack.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this Stack.
+
+
+        :param number_of_versions: The number_of_versions of this Stack.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

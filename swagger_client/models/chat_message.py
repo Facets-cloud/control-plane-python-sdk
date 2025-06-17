@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,82 +28,34 @@ class ChatMessage(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'chat_state': 'str',
-        'content': 'str',
         'role': 'str',
+        'content': 'str',
+        'chat_state': 'str',
         'token': 'int'
     }
 
     attribute_map = {
-        'chat_state': 'chatState',
-        'content': 'content',
         'role': 'role',
+        'content': 'content',
+        'chat_state': 'chatState',
         'token': 'token'
     }
 
-    def __init__(self, chat_state=None, content=None, role=None, token=None):  # noqa: E501
+    def __init__(self, role=None, content=None, chat_state=None, token=None):  # noqa: E501
         """ChatMessage - a model defined in Swagger"""  # noqa: E501
-        self._chat_state = None
-        self._content = None
         self._role = None
+        self._content = None
+        self._chat_state = None
         self._token = None
         self.discriminator = None
-        if chat_state is not None:
-            self.chat_state = chat_state
-        if content is not None:
-            self.content = content
         if role is not None:
             self.role = role
+        if content is not None:
+            self.content = content
+        if chat_state is not None:
+            self.chat_state = chat_state
         if token is not None:
             self.token = token
-
-    @property
-    def chat_state(self):
-        """Gets the chat_state of this ChatMessage.  # noqa: E501
-
-
-        :return: The chat_state of this ChatMessage.  # noqa: E501
-        :rtype: str
-        """
-        return self._chat_state
-
-    @chat_state.setter
-    def chat_state(self, chat_state):
-        """Sets the chat_state of this ChatMessage.
-
-
-        :param chat_state: The chat_state of this ChatMessage.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["KEEP_ALIVE", "COMPLETE"]  # noqa: E501
-        if chat_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `chat_state` ({0}), must be one of {1}"  # noqa: E501
-                .format(chat_state, allowed_values)
-            )
-
-        self._chat_state = chat_state
-
-    @property
-    def content(self):
-        """Gets the content of this ChatMessage.  # noqa: E501
-
-
-        :return: The content of this ChatMessage.  # noqa: E501
-        :rtype: str
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this ChatMessage.
-
-
-        :param content: The content of this ChatMessage.  # noqa: E501
-        :type: str
-        """
-
-        self._content = content
 
     @property
     def role(self):
@@ -131,6 +83,54 @@ class ChatMessage(object):
             )
 
         self._role = role
+
+    @property
+    def content(self):
+        """Gets the content of this ChatMessage.  # noqa: E501
+
+
+        :return: The content of this ChatMessage.  # noqa: E501
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this ChatMessage.
+
+
+        :param content: The content of this ChatMessage.  # noqa: E501
+        :type: str
+        """
+
+        self._content = content
+
+    @property
+    def chat_state(self):
+        """Gets the chat_state of this ChatMessage.  # noqa: E501
+
+
+        :return: The chat_state of this ChatMessage.  # noqa: E501
+        :rtype: str
+        """
+        return self._chat_state
+
+    @chat_state.setter
+    def chat_state(self, chat_state):
+        """Sets the chat_state of this ChatMessage.
+
+
+        :param chat_state: The chat_state of this ChatMessage.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["KEEP_ALIVE", "COMPLETE"]  # noqa: E501
+        if chat_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `chat_state` ({0}), must be one of {1}"  # noqa: E501
+                .format(chat_state, allowed_values)
+            )
+
+        self._chat_state = chat_state
 
     @property
     def token(self):

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,44 +28,65 @@ class Alert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'status': 'str',
         'annotations': 'dict(str, str)',
-        'ends_at': 'datetime',
-        'fingerprint': 'str',
         'labels': 'dict(str, str)',
         'starts_at': 'datetime',
-        'status': 'str'
+        'ends_at': 'datetime',
+        'fingerprint': 'str'
     }
 
     attribute_map = {
+        'status': 'status',
         'annotations': 'annotations',
-        'ends_at': 'endsAt',
-        'fingerprint': 'fingerprint',
         'labels': 'labels',
         'starts_at': 'startsAt',
-        'status': 'status'
+        'ends_at': 'endsAt',
+        'fingerprint': 'fingerprint'
     }
 
-    def __init__(self, annotations=None, ends_at=None, fingerprint=None, labels=None, starts_at=None, status=None):  # noqa: E501
+    def __init__(self, status=None, annotations=None, labels=None, starts_at=None, ends_at=None, fingerprint=None):  # noqa: E501
         """Alert - a model defined in Swagger"""  # noqa: E501
+        self._status = None
         self._annotations = None
-        self._ends_at = None
-        self._fingerprint = None
         self._labels = None
         self._starts_at = None
-        self._status = None
+        self._ends_at = None
+        self._fingerprint = None
         self.discriminator = None
+        if status is not None:
+            self.status = status
         if annotations is not None:
             self.annotations = annotations
-        if ends_at is not None:
-            self.ends_at = ends_at
-        if fingerprint is not None:
-            self.fingerprint = fingerprint
         if labels is not None:
             self.labels = labels
         if starts_at is not None:
             self.starts_at = starts_at
-        if status is not None:
-            self.status = status
+        if ends_at is not None:
+            self.ends_at = ends_at
+        if fingerprint is not None:
+            self.fingerprint = fingerprint
+
+    @property
+    def status(self):
+        """Gets the status of this Alert.  # noqa: E501
+
+
+        :return: The status of this Alert.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this Alert.
+
+
+        :param status: The status of this Alert.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
 
     @property
     def annotations(self):
@@ -87,48 +108,6 @@ class Alert(object):
         """
 
         self._annotations = annotations
-
-    @property
-    def ends_at(self):
-        """Gets the ends_at of this Alert.  # noqa: E501
-
-
-        :return: The ends_at of this Alert.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._ends_at
-
-    @ends_at.setter
-    def ends_at(self, ends_at):
-        """Sets the ends_at of this Alert.
-
-
-        :param ends_at: The ends_at of this Alert.  # noqa: E501
-        :type: datetime
-        """
-
-        self._ends_at = ends_at
-
-    @property
-    def fingerprint(self):
-        """Gets the fingerprint of this Alert.  # noqa: E501
-
-
-        :return: The fingerprint of this Alert.  # noqa: E501
-        :rtype: str
-        """
-        return self._fingerprint
-
-    @fingerprint.setter
-    def fingerprint(self, fingerprint):
-        """Sets the fingerprint of this Alert.
-
-
-        :param fingerprint: The fingerprint of this Alert.  # noqa: E501
-        :type: str
-        """
-
-        self._fingerprint = fingerprint
 
     @property
     def labels(self):
@@ -173,25 +152,46 @@ class Alert(object):
         self._starts_at = starts_at
 
     @property
-    def status(self):
-        """Gets the status of this Alert.  # noqa: E501
+    def ends_at(self):
+        """Gets the ends_at of this Alert.  # noqa: E501
 
 
-        :return: The status of this Alert.  # noqa: E501
+        :return: The ends_at of this Alert.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._ends_at
+
+    @ends_at.setter
+    def ends_at(self, ends_at):
+        """Sets the ends_at of this Alert.
+
+
+        :param ends_at: The ends_at of this Alert.  # noqa: E501
+        :type: datetime
+        """
+
+        self._ends_at = ends_at
+
+    @property
+    def fingerprint(self):
+        """Gets the fingerprint of this Alert.  # noqa: E501
+
+
+        :return: The fingerprint of this Alert.  # noqa: E501
         :rtype: str
         """
-        return self._status
+        return self._fingerprint
 
-    @status.setter
-    def status(self, status):
-        """Sets the status of this Alert.
+    @fingerprint.setter
+    def fingerprint(self, fingerprint):
+        """Sets the fingerprint of this Alert.
 
 
-        :param status: The status of this Alert.  # noqa: E501
+        :param fingerprint: The fingerprint of this Alert.  # noqa: E501
         :type: str
         """
 
-        self._status = status
+        self._fingerprint = fingerprint
 
     def to_dict(self):
         """Returns the model properties as a dict"""

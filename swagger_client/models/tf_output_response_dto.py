@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,59 +28,101 @@ class TFOutputResponseDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'facets_yaml': 'str',
         'id': 'str',
+        'name': 'str',
+        'facets_yaml': 'str',
+        'source': 'str',
         'inferred_from_module': 'bool',
         'lookup_tree': 'str',
-        'name': 'str',
-        'namespace': 'str',
         'properties': 'JsonNode',
-        'providers': 'list[TFProvider]',
-        'source': 'str'
+        'namespace': 'str',
+        'providers': 'list[TFProvider]'
     }
 
     attribute_map = {
-        'facets_yaml': 'facetsYaml',
         'id': 'id',
+        'name': 'name',
+        'facets_yaml': 'facetsYaml',
+        'source': 'source',
         'inferred_from_module': 'inferredFromModule',
         'lookup_tree': 'lookupTree',
-        'name': 'name',
-        'namespace': 'namespace',
         'properties': 'properties',
-        'providers': 'providers',
-        'source': 'source'
+        'namespace': 'namespace',
+        'providers': 'providers'
     }
 
-    def __init__(self, facets_yaml=None, id=None, inferred_from_module=None, lookup_tree=None, name=None, namespace=None, properties=None, providers=None, source=None):  # noqa: E501
+    def __init__(self, id=None, name=None, facets_yaml=None, source=None, inferred_from_module=None, lookup_tree=None, properties=None, namespace=None, providers=None):  # noqa: E501
         """TFOutputResponseDTO - a model defined in Swagger"""  # noqa: E501
-        self._facets_yaml = None
         self._id = None
+        self._name = None
+        self._facets_yaml = None
+        self._source = None
         self._inferred_from_module = None
         self._lookup_tree = None
-        self._name = None
-        self._namespace = None
         self._properties = None
+        self._namespace = None
         self._providers = None
-        self._source = None
         self.discriminator = None
-        if facets_yaml is not None:
-            self.facets_yaml = facets_yaml
         if id is not None:
             self.id = id
+        if name is not None:
+            self.name = name
+        if facets_yaml is not None:
+            self.facets_yaml = facets_yaml
+        if source is not None:
+            self.source = source
         if inferred_from_module is not None:
             self.inferred_from_module = inferred_from_module
         if lookup_tree is not None:
             self.lookup_tree = lookup_tree
-        if name is not None:
-            self.name = name
-        if namespace is not None:
-            self.namespace = namespace
         if properties is not None:
             self.properties = properties
+        if namespace is not None:
+            self.namespace = namespace
         if providers is not None:
             self.providers = providers
-        if source is not None:
-            self.source = source
+
+    @property
+    def id(self):
+        """Gets the id of this TFOutputResponseDTO.  # noqa: E501
+
+
+        :return: The id of this TFOutputResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this TFOutputResponseDTO.
+
+
+        :param id: The id of this TFOutputResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this TFOutputResponseDTO.  # noqa: E501
+
+
+        :return: The name of this TFOutputResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this TFOutputResponseDTO.
+
+
+        :param name: The name of this TFOutputResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def facets_yaml(self):
@@ -104,25 +146,31 @@ class TFOutputResponseDTO(object):
         self._facets_yaml = facets_yaml
 
     @property
-    def id(self):
-        """Gets the id of this TFOutputResponseDTO.  # noqa: E501
+    def source(self):
+        """Gets the source of this TFOutputResponseDTO.  # noqa: E501
 
 
-        :return: The id of this TFOutputResponseDTO.  # noqa: E501
+        :return: The source of this TFOutputResponseDTO.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._source
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this TFOutputResponseDTO.
+    @source.setter
+    def source(self, source):
+        """Sets the source of this TFOutputResponseDTO.
 
 
-        :param id: The id of this TFOutputResponseDTO.  # noqa: E501
+        :param source: The source of this TFOutputResponseDTO.  # noqa: E501
         :type: str
         """
+        allowed_values = ["BUILT_IN", "CUSTOM"]  # noqa: E501
+        if source not in allowed_values:
+            raise ValueError(
+                "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501
+                .format(source, allowed_values)
+            )
 
-        self._id = id
+        self._source = source
 
     @property
     def inferred_from_module(self):
@@ -167,25 +215,25 @@ class TFOutputResponseDTO(object):
         self._lookup_tree = lookup_tree
 
     @property
-    def name(self):
-        """Gets the name of this TFOutputResponseDTO.  # noqa: E501
+    def properties(self):
+        """Gets the properties of this TFOutputResponseDTO.  # noqa: E501
 
 
-        :return: The name of this TFOutputResponseDTO.  # noqa: E501
-        :rtype: str
+        :return: The properties of this TFOutputResponseDTO.  # noqa: E501
+        :rtype: JsonNode
         """
-        return self._name
+        return self._properties
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this TFOutputResponseDTO.
+    @properties.setter
+    def properties(self, properties):
+        """Sets the properties of this TFOutputResponseDTO.
 
 
-        :param name: The name of this TFOutputResponseDTO.  # noqa: E501
-        :type: str
+        :param properties: The properties of this TFOutputResponseDTO.  # noqa: E501
+        :type: JsonNode
         """
 
-        self._name = name
+        self._properties = properties
 
     @property
     def namespace(self):
@@ -209,27 +257,6 @@ class TFOutputResponseDTO(object):
         self._namespace = namespace
 
     @property
-    def properties(self):
-        """Gets the properties of this TFOutputResponseDTO.  # noqa: E501
-
-
-        :return: The properties of this TFOutputResponseDTO.  # noqa: E501
-        :rtype: JsonNode
-        """
-        return self._properties
-
-    @properties.setter
-    def properties(self, properties):
-        """Sets the properties of this TFOutputResponseDTO.
-
-
-        :param properties: The properties of this TFOutputResponseDTO.  # noqa: E501
-        :type: JsonNode
-        """
-
-        self._properties = properties
-
-    @property
     def providers(self):
         """Gets the providers of this TFOutputResponseDTO.  # noqa: E501
 
@@ -249,33 +276,6 @@ class TFOutputResponseDTO(object):
         """
 
         self._providers = providers
-
-    @property
-    def source(self):
-        """Gets the source of this TFOutputResponseDTO.  # noqa: E501
-
-
-        :return: The source of this TFOutputResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._source
-
-    @source.setter
-    def source(self, source):
-        """Sets the source of this TFOutputResponseDTO.
-
-
-        :param source: The source of this TFOutputResponseDTO.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["BUILT_IN", "CUSTOM"]  # noqa: E501
-        if source not in allowed_values:
-            raise ValueError(
-                "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501
-                .format(source, allowed_values)
-            )
-
-        self._source = source
 
     def to_dict(self):
         """Returns the model properties as a dict"""

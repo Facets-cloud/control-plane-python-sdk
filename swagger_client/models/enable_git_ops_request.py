@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,76 @@ class EnableGitOpsRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'branch': 'str',
-        'relative_path': 'str',
+        'vcs_url': 'str',
         'vcs_account_id': 'str',
-        'vcs_url': 'str'
+        'branch': 'str',
+        'relative_path': 'str'
     }
 
     attribute_map = {
-        'branch': 'branch',
-        'relative_path': 'relativePath',
+        'vcs_url': 'vcsUrl',
         'vcs_account_id': 'vcsAccountId',
-        'vcs_url': 'vcsUrl'
+        'branch': 'branch',
+        'relative_path': 'relativePath'
     }
 
-    def __init__(self, branch=None, relative_path=None, vcs_account_id=None, vcs_url=None):  # noqa: E501
+    def __init__(self, vcs_url=None, vcs_account_id=None, branch=None, relative_path=None):  # noqa: E501
         """EnableGitOpsRequest - a model defined in Swagger"""  # noqa: E501
+        self._vcs_url = None
+        self._vcs_account_id = None
         self._branch = None
         self._relative_path = None
-        self._vcs_account_id = None
-        self._vcs_url = None
         self.discriminator = None
+        if vcs_url is not None:
+            self.vcs_url = vcs_url
+        if vcs_account_id is not None:
+            self.vcs_account_id = vcs_account_id
         if branch is not None:
             self.branch = branch
         if relative_path is not None:
             self.relative_path = relative_path
-        if vcs_account_id is not None:
-            self.vcs_account_id = vcs_account_id
-        if vcs_url is not None:
-            self.vcs_url = vcs_url
+
+    @property
+    def vcs_url(self):
+        """Gets the vcs_url of this EnableGitOpsRequest.  # noqa: E501
+
+
+        :return: The vcs_url of this EnableGitOpsRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._vcs_url
+
+    @vcs_url.setter
+    def vcs_url(self, vcs_url):
+        """Sets the vcs_url of this EnableGitOpsRequest.
+
+
+        :param vcs_url: The vcs_url of this EnableGitOpsRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._vcs_url = vcs_url
+
+    @property
+    def vcs_account_id(self):
+        """Gets the vcs_account_id of this EnableGitOpsRequest.  # noqa: E501
+
+
+        :return: The vcs_account_id of this EnableGitOpsRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._vcs_account_id
+
+    @vcs_account_id.setter
+    def vcs_account_id(self, vcs_account_id):
+        """Sets the vcs_account_id of this EnableGitOpsRequest.
+
+
+        :param vcs_account_id: The vcs_account_id of this EnableGitOpsRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._vcs_account_id = vcs_account_id
 
     @property
     def branch(self):
@@ -98,48 +140,6 @@ class EnableGitOpsRequest(object):
         """
 
         self._relative_path = relative_path
-
-    @property
-    def vcs_account_id(self):
-        """Gets the vcs_account_id of this EnableGitOpsRequest.  # noqa: E501
-
-
-        :return: The vcs_account_id of this EnableGitOpsRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._vcs_account_id
-
-    @vcs_account_id.setter
-    def vcs_account_id(self, vcs_account_id):
-        """Sets the vcs_account_id of this EnableGitOpsRequest.
-
-
-        :param vcs_account_id: The vcs_account_id of this EnableGitOpsRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._vcs_account_id = vcs_account_id
-
-    @property
-    def vcs_url(self):
-        """Gets the vcs_url of this EnableGitOpsRequest.  # noqa: E501
-
-
-        :return: The vcs_url of this EnableGitOpsRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._vcs_url
-
-    @vcs_url.setter
-    def vcs_url(self, vcs_url):
-        """Sets the vcs_url of this EnableGitOpsRequest.
-
-
-        :param vcs_url: The vcs_url of this EnableGitOpsRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._vcs_url = vcs_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

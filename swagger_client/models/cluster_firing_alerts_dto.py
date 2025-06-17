@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,76 +28,55 @@ class ClusterFiringAlertsDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alerts': 'list[Alert]',
-        'cluster_id': 'str',
+        'stack_name': 'str',
         'cluster_name': 'str',
-        'stack_name': 'str'
+        'cluster_id': 'str',
+        'alerts': 'list[Alert]'
     }
 
     attribute_map = {
-        'alerts': 'alerts',
-        'cluster_id': 'clusterId',
+        'stack_name': 'stackName',
         'cluster_name': 'clusterName',
-        'stack_name': 'stackName'
+        'cluster_id': 'clusterId',
+        'alerts': 'alerts'
     }
 
-    def __init__(self, alerts=None, cluster_id=None, cluster_name=None, stack_name=None):  # noqa: E501
+    def __init__(self, stack_name=None, cluster_name=None, cluster_id=None, alerts=None):  # noqa: E501
         """ClusterFiringAlertsDTO - a model defined in Swagger"""  # noqa: E501
-        self._alerts = None
-        self._cluster_id = None
-        self._cluster_name = None
         self._stack_name = None
+        self._cluster_name = None
+        self._cluster_id = None
+        self._alerts = None
         self.discriminator = None
-        if alerts is not None:
-            self.alerts = alerts
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
         if stack_name is not None:
             self.stack_name = stack_name
+        if cluster_name is not None:
+            self.cluster_name = cluster_name
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if alerts is not None:
+            self.alerts = alerts
 
     @property
-    def alerts(self):
-        """Gets the alerts of this ClusterFiringAlertsDTO.  # noqa: E501
+    def stack_name(self):
+        """Gets the stack_name of this ClusterFiringAlertsDTO.  # noqa: E501
 
 
-        :return: The alerts of this ClusterFiringAlertsDTO.  # noqa: E501
-        :rtype: list[Alert]
-        """
-        return self._alerts
-
-    @alerts.setter
-    def alerts(self, alerts):
-        """Sets the alerts of this ClusterFiringAlertsDTO.
-
-
-        :param alerts: The alerts of this ClusterFiringAlertsDTO.  # noqa: E501
-        :type: list[Alert]
-        """
-
-        self._alerts = alerts
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ClusterFiringAlertsDTO.  # noqa: E501
-
-
-        :return: The cluster_id of this ClusterFiringAlertsDTO.  # noqa: E501
+        :return: The stack_name of this ClusterFiringAlertsDTO.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_id
+        return self._stack_name
 
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ClusterFiringAlertsDTO.
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this ClusterFiringAlertsDTO.
 
 
-        :param cluster_id: The cluster_id of this ClusterFiringAlertsDTO.  # noqa: E501
+        :param stack_name: The stack_name of this ClusterFiringAlertsDTO.  # noqa: E501
         :type: str
         """
 
-        self._cluster_id = cluster_id
+        self._stack_name = stack_name
 
     @property
     def cluster_name(self):
@@ -121,25 +100,46 @@ class ClusterFiringAlertsDTO(object):
         self._cluster_name = cluster_name
 
     @property
-    def stack_name(self):
-        """Gets the stack_name of this ClusterFiringAlertsDTO.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this ClusterFiringAlertsDTO.  # noqa: E501
 
 
-        :return: The stack_name of this ClusterFiringAlertsDTO.  # noqa: E501
+        :return: The cluster_id of this ClusterFiringAlertsDTO.  # noqa: E501
         :rtype: str
         """
-        return self._stack_name
+        return self._cluster_id
 
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this ClusterFiringAlertsDTO.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ClusterFiringAlertsDTO.
 
 
-        :param stack_name: The stack_name of this ClusterFiringAlertsDTO.  # noqa: E501
+        :param cluster_id: The cluster_id of this ClusterFiringAlertsDTO.  # noqa: E501
         :type: str
         """
 
-        self._stack_name = stack_name
+        self._cluster_id = cluster_id
+
+    @property
+    def alerts(self):
+        """Gets the alerts of this ClusterFiringAlertsDTO.  # noqa: E501
+
+
+        :return: The alerts of this ClusterFiringAlertsDTO.  # noqa: E501
+        :rtype: list[Alert]
+        """
+        return self._alerts
+
+    @alerts.setter
+    def alerts(self, alerts):
+        """Sets the alerts of this ClusterFiringAlertsDTO.
+
+
+        :param alerts: The alerts of this ClusterFiringAlertsDTO.  # noqa: E501
+        :type: list[Alert]
+        """
+
+        self._alerts = alerts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

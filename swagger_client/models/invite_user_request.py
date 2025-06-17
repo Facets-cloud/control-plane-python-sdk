@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class InviteUserRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group_id': 'str',
-        'users_email_list': 'list[str]'
+        'users_email_list': 'list[str]',
+        'group_id': 'str'
     }
 
     attribute_map = {
-        'group_id': 'groupId',
-        'users_email_list': 'usersEmailList'
+        'users_email_list': 'usersEmailList',
+        'group_id': 'groupId'
     }
 
-    def __init__(self, group_id=None, users_email_list=None):  # noqa: E501
+    def __init__(self, users_email_list=None, group_id=None):  # noqa: E501
         """InviteUserRequest - a model defined in Swagger"""  # noqa: E501
-        self._group_id = None
         self._users_email_list = None
+        self._group_id = None
         self.discriminator = None
-        if group_id is not None:
-            self.group_id = group_id
         if users_email_list is not None:
             self.users_email_list = users_email_list
-
-    @property
-    def group_id(self):
-        """Gets the group_id of this InviteUserRequest.  # noqa: E501
-
-
-        :return: The group_id of this InviteUserRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_id
-
-    @group_id.setter
-    def group_id(self, group_id):
-        """Sets the group_id of this InviteUserRequest.
-
-
-        :param group_id: The group_id of this InviteUserRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._group_id = group_id
+        if group_id is not None:
+            self.group_id = group_id
 
     @property
     def users_email_list(self):
@@ -88,6 +67,27 @@ class InviteUserRequest(object):
         """
 
         self._users_email_list = users_email_list
+
+    @property
+    def group_id(self):
+        """Gets the group_id of this InviteUserRequest.  # noqa: E501
+
+
+        :return: The group_id of this InviteUserRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this InviteUserRequest.
+
+
+        :param group_id: The group_id of this InviteUserRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._group_id = group_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

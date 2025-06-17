@@ -1,16 +1,16 @@
 # swagger_client.UiQueuedReleaseControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_by_id_using_delete**](UiQueuedReleaseControllerApi.md#delete_by_id_using_delete) | **DELETE** /cc-ui/v1/clusters/{clusterId}/queued-releases/{queuedReleaseId} | deleteById
-[**get_all_queued_releases_using_get**](UiQueuedReleaseControllerApi.md#get_all_queued_releases_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/queued-releases/ | getAllQueuedReleases
+[**delete_by_id**](UiQueuedReleaseControllerApi.md#delete_by_id) | **DELETE** /cc-ui/v1/clusters/{clusterId}/queued-releases/{queuedReleaseId} | 
+[**get_all_queued_releases**](UiQueuedReleaseControllerApi.md#get_all_queued_releases) | **GET** /cc-ui/v1/clusters/{clusterId}/queued-releases/ | 
 
-# **delete_by_id_using_delete**
-> delete_by_id_using_delete(cluster_id, queued_release_id)
+# **delete_by_id**
+> delete_by_id(cluster_id, queued_release_id)
 
-deleteById
+
 
 ### Example
 ```python
@@ -19,29 +19,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiQueuedReleaseControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-queued_release_id = 'queued_release_id_example' # str | queuedReleaseId
+cluster_id = 'cluster_id_example' # str | 
+queued_release_id = 'queued_release_id_example' # str | 
 
 try:
-    # deleteById
-    api_instance.delete_by_id_using_delete(cluster_id, queued_release_id)
+    api_instance.delete_by_id(cluster_id, queued_release_id)
 except ApiException as e:
-    print("Exception when calling UiQueuedReleaseControllerApi->delete_by_id_using_delete: %s\n" % e)
+    print("Exception when calling UiQueuedReleaseControllerApi->delete_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **queued_release_id** | **str**| queuedReleaseId | 
+ **cluster_id** | **str**|  | 
+ **queued_release_id** | **str**|  | 
 
 ### Return type
 
@@ -49,19 +48,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_queued_releases_using_get**
-> list[QueuedRelease] get_all_queued_releases_using_get(cluster_id)
+# **get_all_queued_releases**
+> list[QueuedRelease] get_all_queued_releases(cluster_id)
 
-getAllQueuedReleases
+
 
 ### Example
 ```python
@@ -70,28 +69,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiQueuedReleaseControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getAllQueuedReleases
-    api_response = api_instance.get_all_queued_releases_using_get(cluster_id)
+    api_response = api_instance.get_all_queued_releases(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiQueuedReleaseControllerApi->get_all_queued_releases_using_get: %s\n" % e)
+    print("Exception when calling UiQueuedReleaseControllerApi->get_all_queued_releases: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -99,12 +97,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

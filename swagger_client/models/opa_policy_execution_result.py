@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class OpaPolicyExecutionResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'error_details': 'object',
-        'server_response': 'object',
-        'status': 'bool'
+        'status': 'bool',
+        'error_details': 'dict(str, object)',
+        'server_response': 'object'
     }
 
     attribute_map = {
+        'status': 'status',
         'error_details': 'errorDetails',
-        'server_response': 'serverResponse',
-        'status': 'status'
+        'server_response': 'serverResponse'
     }
 
-    def __init__(self, error_details=None, server_response=None, status=None):  # noqa: E501
+    def __init__(self, status=None, error_details=None, server_response=None):  # noqa: E501
         """OpaPolicyExecutionResult - a model defined in Swagger"""  # noqa: E501
+        self._status = None
         self._error_details = None
         self._server_response = None
-        self._status = None
         self.discriminator = None
+        if status is not None:
+            self.status = status
         if error_details is not None:
             self.error_details = error_details
         if server_response is not None:
             self.server_response = server_response
-        if status is not None:
-            self.status = status
+
+    @property
+    def status(self):
+        """Gets the status of this OpaPolicyExecutionResult.  # noqa: E501
+
+
+        :return: The status of this OpaPolicyExecutionResult.  # noqa: E501
+        :rtype: bool
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this OpaPolicyExecutionResult.
+
+
+        :param status: The status of this OpaPolicyExecutionResult.  # noqa: E501
+        :type: bool
+        """
+
+        self._status = status
 
     @property
     def error_details(self):
@@ -58,7 +79,7 @@ class OpaPolicyExecutionResult(object):
 
 
         :return: The error_details of this OpaPolicyExecutionResult.  # noqa: E501
-        :rtype: object
+        :rtype: dict(str, object)
         """
         return self._error_details
 
@@ -68,7 +89,7 @@ class OpaPolicyExecutionResult(object):
 
 
         :param error_details: The error_details of this OpaPolicyExecutionResult.  # noqa: E501
-        :type: object
+        :type: dict(str, object)
         """
 
         self._error_details = error_details
@@ -93,27 +114,6 @@ class OpaPolicyExecutionResult(object):
         """
 
         self._server_response = server_response
-
-    @property
-    def status(self):
-        """Gets the status of this OpaPolicyExecutionResult.  # noqa: E501
-
-
-        :return: The status of this OpaPolicyExecutionResult.  # noqa: E501
-        :rtype: bool
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this OpaPolicyExecutionResult.
-
-
-        :param status: The status of this OpaPolicyExecutionResult.  # noqa: E501
-        :type: bool
-        """
-
-        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

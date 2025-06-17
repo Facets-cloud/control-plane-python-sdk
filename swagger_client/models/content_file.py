@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,64 +28,85 @@ class ContentFile(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
-        'md_content': 'str',
-        'required_payload': 'list[str]',
-        'selectors': 'Selectors',
+        'last_modified_by': 'str',
+        'type': 'str',
         'title': 'str',
-        'type': 'str'
+        'selectors': 'Selectors',
+        'md_content': 'str',
+        'required_payload': 'list[str]'
     }
 
     attribute_map = {
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
-        'md_content': 'mdContent',
-        'required_payload': 'requiredPayload',
-        'selectors': 'selectors',
+        'last_modified_by': 'lastModifiedBy',
+        'type': 'type',
         'title': 'title',
-        'type': 'type'
+        'selectors': 'selectors',
+        'md_content': 'mdContent',
+        'required_payload': 'requiredPayload'
     }
 
-    def __init__(self, created_by=None, creation_date=None, id=None, last_modified_by=None, last_modified_date=None, md_content=None, required_payload=None, selectors=None, title=None, type=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, type=None, title=None, selectors=None, md_content=None, required_payload=None):  # noqa: E501
         """ContentFile - a model defined in Swagger"""  # noqa: E501
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
+        self._type = None
+        self._title = None
+        self._selectors = None
         self._md_content = None
         self._required_payload = None
-        self._selectors = None
-        self._title = None
-        self._type = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if type is not None:
+            self.type = type
+        if title is not None:
+            self.title = title
+        if selectors is not None:
+            self.selectors = selectors
         if md_content is not None:
             self.md_content = md_content
         if required_payload is not None:
             self.required_payload = required_payload
-        if selectors is not None:
-            self.selectors = selectors
-        if title is not None:
-            self.title = title
-        if type is not None:
-            self.type = type
+
+    @property
+    def id(self):
+        """Gets the id of this ContentFile.  # noqa: E501
+
+
+        :return: The id of this ContentFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ContentFile.
+
+
+        :param id: The id of this ContentFile.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def created_by(self):
@@ -130,25 +151,25 @@ class ContentFile(object):
         self._creation_date = creation_date
 
     @property
-    def id(self):
-        """Gets the id of this ContentFile.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this ContentFile.  # noqa: E501
 
 
-        :return: The id of this ContentFile.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this ContentFile.  # noqa: E501
+        :rtype: datetime
         """
-        return self._id
+        return self._last_modified_date
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ContentFile.
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this ContentFile.
 
 
-        :param id: The id of this ContentFile.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this ContentFile.  # noqa: E501
+        :type: datetime
         """
 
-        self._id = id
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -172,25 +193,73 @@ class ContentFile(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this ContentFile.  # noqa: E501
+    def type(self):
+        """Gets the type of this ContentFile.  # noqa: E501
 
 
-        :return: The last_modified_date of this ContentFile.  # noqa: E501
-        :rtype: datetime
+        :return: The type of this ContentFile.  # noqa: E501
+        :rtype: str
         """
-        return self._last_modified_date
+        return self._type
 
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this ContentFile.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ContentFile.
 
 
-        :param last_modified_date: The last_modified_date of this ContentFile.  # noqa: E501
-        :type: datetime
+        :param type: The type of this ContentFile.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CI", "DOCUMENTATION"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
+
+        self._type = type
+
+    @property
+    def title(self):
+        """Gets the title of this ContentFile.  # noqa: E501
+
+
+        :return: The title of this ContentFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this ContentFile.
+
+
+        :param title: The title of this ContentFile.  # noqa: E501
+        :type: str
         """
 
-        self._last_modified_date = last_modified_date
+        self._title = title
+
+    @property
+    def selectors(self):
+        """Gets the selectors of this ContentFile.  # noqa: E501
+
+
+        :return: The selectors of this ContentFile.  # noqa: E501
+        :rtype: Selectors
+        """
+        return self._selectors
+
+    @selectors.setter
+    def selectors(self, selectors):
+        """Sets the selectors of this ContentFile.
+
+
+        :param selectors: The selectors of this ContentFile.  # noqa: E501
+        :type: Selectors
+        """
+
+        self._selectors = selectors
 
     @property
     def md_content(self):
@@ -233,75 +302,6 @@ class ContentFile(object):
         """
 
         self._required_payload = required_payload
-
-    @property
-    def selectors(self):
-        """Gets the selectors of this ContentFile.  # noqa: E501
-
-
-        :return: The selectors of this ContentFile.  # noqa: E501
-        :rtype: Selectors
-        """
-        return self._selectors
-
-    @selectors.setter
-    def selectors(self, selectors):
-        """Sets the selectors of this ContentFile.
-
-
-        :param selectors: The selectors of this ContentFile.  # noqa: E501
-        :type: Selectors
-        """
-
-        self._selectors = selectors
-
-    @property
-    def title(self):
-        """Gets the title of this ContentFile.  # noqa: E501
-
-
-        :return: The title of this ContentFile.  # noqa: E501
-        :rtype: str
-        """
-        return self._title
-
-    @title.setter
-    def title(self, title):
-        """Sets the title of this ContentFile.
-
-
-        :param title: The title of this ContentFile.  # noqa: E501
-        :type: str
-        """
-
-        self._title = title
-
-    @property
-    def type(self):
-        """Gets the type of this ContentFile.  # noqa: E501
-
-
-        :return: The type of this ContentFile.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this ContentFile.
-
-
-        :param type: The type of this ContentFile.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["CI", "DOCUMENTATION"]  # noqa: E501
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
-
-        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

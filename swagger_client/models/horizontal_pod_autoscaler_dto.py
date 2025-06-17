@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,76 +28,34 @@ class HorizontalPodAutoscalerDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'metric': 'Metric',
         'name': 'str',
-        'replica_status': 'ReplicaStatus'
+        'replica_status': 'ReplicaStatus',
+        'metric': 'Metric',
+        'age_in_seconds': 'int'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'metric': 'metric',
         'name': 'name',
-        'replica_status': 'replicaStatus'
+        'replica_status': 'replicaStatus',
+        'metric': 'metric',
+        'age_in_seconds': 'ageInSeconds'
     }
 
-    def __init__(self, age_in_seconds=None, metric=None, name=None, replica_status=None):  # noqa: E501
+    def __init__(self, name=None, replica_status=None, metric=None, age_in_seconds=None):  # noqa: E501
         """HorizontalPodAutoscalerDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._metric = None
         self._name = None
         self._replica_status = None
+        self._metric = None
+        self._age_in_seconds = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if metric is not None:
-            self.metric = metric
         if name is not None:
             self.name = name
         if replica_status is not None:
             self.replica_status = replica_status
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this HorizontalPodAutoscalerDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this HorizontalPodAutoscalerDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this HorizontalPodAutoscalerDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this HorizontalPodAutoscalerDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def metric(self):
-        """Gets the metric of this HorizontalPodAutoscalerDTO.  # noqa: E501
-
-
-        :return: The metric of this HorizontalPodAutoscalerDTO.  # noqa: E501
-        :rtype: Metric
-        """
-        return self._metric
-
-    @metric.setter
-    def metric(self, metric):
-        """Sets the metric of this HorizontalPodAutoscalerDTO.
-
-
-        :param metric: The metric of this HorizontalPodAutoscalerDTO.  # noqa: E501
-        :type: Metric
-        """
-
-        self._metric = metric
+        if metric is not None:
+            self.metric = metric
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
 
     @property
     def name(self):
@@ -140,6 +98,48 @@ class HorizontalPodAutoscalerDTO(object):
         """
 
         self._replica_status = replica_status
+
+    @property
+    def metric(self):
+        """Gets the metric of this HorizontalPodAutoscalerDTO.  # noqa: E501
+
+
+        :return: The metric of this HorizontalPodAutoscalerDTO.  # noqa: E501
+        :rtype: Metric
+        """
+        return self._metric
+
+    @metric.setter
+    def metric(self, metric):
+        """Sets the metric of this HorizontalPodAutoscalerDTO.
+
+
+        :param metric: The metric of this HorizontalPodAutoscalerDTO.  # noqa: E501
+        :type: Metric
+        """
+
+        self._metric = metric
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this HorizontalPodAutoscalerDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this HorizontalPodAutoscalerDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this HorizontalPodAutoscalerDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this HorizontalPodAutoscalerDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

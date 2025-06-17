@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,107 +28,44 @@ class ReplicasetDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'current': 'int',
-        'desired': 'int',
         'name': 'str',
+        'desired': 'int',
         'ready': 'int',
+        'current': 'int',
+        'age_in_seconds': 'int',
         'role': 'str'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'current': 'current',
-        'desired': 'desired',
         'name': 'name',
+        'desired': 'desired',
         'ready': 'ready',
+        'current': 'current',
+        'age_in_seconds': 'ageInSeconds',
         'role': 'role'
     }
 
-    def __init__(self, age_in_seconds=None, current=None, desired=None, name=None, ready=None, role=None):  # noqa: E501
+    def __init__(self, name=None, desired=None, ready=None, current=None, age_in_seconds=None, role=None):  # noqa: E501
         """ReplicasetDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._current = None
-        self._desired = None
         self._name = None
+        self._desired = None
         self._ready = None
+        self._current = None
+        self._age_in_seconds = None
         self._role = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if current is not None:
-            self.current = current
-        if desired is not None:
-            self.desired = desired
         if name is not None:
             self.name = name
+        if desired is not None:
+            self.desired = desired
         if ready is not None:
             self.ready = ready
+        if current is not None:
+            self.current = current
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
         if role is not None:
             self.role = role
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this ReplicasetDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this ReplicasetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this ReplicasetDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this ReplicasetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def current(self):
-        """Gets the current of this ReplicasetDTO.  # noqa: E501
-
-
-        :return: The current of this ReplicasetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._current
-
-    @current.setter
-    def current(self, current):
-        """Sets the current of this ReplicasetDTO.
-
-
-        :param current: The current of this ReplicasetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._current = current
-
-    @property
-    def desired(self):
-        """Gets the desired of this ReplicasetDTO.  # noqa: E501
-
-
-        :return: The desired of this ReplicasetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._desired
-
-    @desired.setter
-    def desired(self, desired):
-        """Sets the desired of this ReplicasetDTO.
-
-
-        :param desired: The desired of this ReplicasetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._desired = desired
 
     @property
     def name(self):
@@ -152,6 +89,27 @@ class ReplicasetDTO(object):
         self._name = name
 
     @property
+    def desired(self):
+        """Gets the desired of this ReplicasetDTO.  # noqa: E501
+
+
+        :return: The desired of this ReplicasetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._desired
+
+    @desired.setter
+    def desired(self, desired):
+        """Sets the desired of this ReplicasetDTO.
+
+
+        :param desired: The desired of this ReplicasetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._desired = desired
+
+    @property
     def ready(self):
         """Gets the ready of this ReplicasetDTO.  # noqa: E501
 
@@ -171,6 +129,48 @@ class ReplicasetDTO(object):
         """
 
         self._ready = ready
+
+    @property
+    def current(self):
+        """Gets the current of this ReplicasetDTO.  # noqa: E501
+
+
+        :return: The current of this ReplicasetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._current
+
+    @current.setter
+    def current(self, current):
+        """Sets the current of this ReplicasetDTO.
+
+
+        :param current: The current of this ReplicasetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._current = current
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this ReplicasetDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this ReplicasetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this ReplicasetDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this ReplicasetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     @property
     def role(self):

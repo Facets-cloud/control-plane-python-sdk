@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,84 +28,126 @@ class ProjectTypeResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
+        'name': 'str',
         'allowed_clouds': 'list[str]',
-        'associated_blueprints': 'list[str]',
-        'base_project_name': 'str',
+        'description': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'description': 'str',
+        'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'template_git_details': 'TemplateGitDetails',
+        'mapped_resources': 'list[ProjectTypeMappedResource]',
+        'associated_blueprints': 'list[str]',
         'iac_tool': 'str',
         'iac_tool_version': 'str',
-        'id': 'str',
-        'last_modified_by': 'str',
-        'last_modified_date': 'datetime',
-        'mapped_resources': 'list[ProjectTypeMappedResource]',
-        'name': 'str',
-        'template_git_details': 'TemplateGitDetails'
+        'base_project_name': 'str'
     }
 
     attribute_map = {
+        'id': 'id',
+        'name': 'name',
         'allowed_clouds': 'allowedClouds',
-        'associated_blueprints': 'associatedBlueprints',
-        'base_project_name': 'baseProjectName',
+        'description': 'description',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'description': 'description',
+        'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'template_git_details': 'templateGitDetails',
+        'mapped_resources': 'mappedResources',
+        'associated_blueprints': 'associatedBlueprints',
         'iac_tool': 'iacTool',
         'iac_tool_version': 'iacToolVersion',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
-        'last_modified_date': 'lastModifiedDate',
-        'mapped_resources': 'mappedResources',
-        'name': 'name',
-        'template_git_details': 'templateGitDetails'
+        'base_project_name': 'baseProjectName'
     }
 
-    def __init__(self, allowed_clouds=None, associated_blueprints=None, base_project_name=None, created_by=None, creation_date=None, description=None, iac_tool=None, iac_tool_version=None, id=None, last_modified_by=None, last_modified_date=None, mapped_resources=None, name=None, template_git_details=None):  # noqa: E501
+    def __init__(self, id=None, name=None, allowed_clouds=None, description=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, template_git_details=None, mapped_resources=None, associated_blueprints=None, iac_tool=None, iac_tool_version=None, base_project_name=None):  # noqa: E501
         """ProjectTypeResponse - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._name = None
         self._allowed_clouds = None
-        self._associated_blueprints = None
-        self._base_project_name = None
+        self._description = None
         self._created_by = None
         self._creation_date = None
-        self._description = None
+        self._last_modified_date = None
+        self._last_modified_by = None
+        self._template_git_details = None
+        self._mapped_resources = None
+        self._associated_blueprints = None
         self._iac_tool = None
         self._iac_tool_version = None
-        self._id = None
-        self._last_modified_by = None
-        self._last_modified_date = None
-        self._mapped_resources = None
-        self._name = None
-        self._template_git_details = None
+        self._base_project_name = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
         if allowed_clouds is not None:
             self.allowed_clouds = allowed_clouds
-        if associated_blueprints is not None:
-            self.associated_blueprints = associated_blueprints
-        if base_project_name is not None:
-            self.base_project_name = base_project_name
+        if description is not None:
+            self.description = description
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if description is not None:
-            self.description = description
+        if last_modified_date is not None:
+            self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if template_git_details is not None:
+            self.template_git_details = template_git_details
+        if mapped_resources is not None:
+            self.mapped_resources = mapped_resources
+        if associated_blueprints is not None:
+            self.associated_blueprints = associated_blueprints
         if iac_tool is not None:
             self.iac_tool = iac_tool
         if iac_tool_version is not None:
             self.iac_tool_version = iac_tool_version
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
-        if last_modified_date is not None:
-            self.last_modified_date = last_modified_date
-        if mapped_resources is not None:
-            self.mapped_resources = mapped_resources
-        if name is not None:
-            self.name = name
-        if template_git_details is not None:
-            self.template_git_details = template_git_details
+        if base_project_name is not None:
+            self.base_project_name = base_project_name
+
+    @property
+    def id(self):
+        """Gets the id of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The id of this ProjectTypeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ProjectTypeResponse.
+
+
+        :param id: The id of this ProjectTypeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The name of this ProjectTypeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ProjectTypeResponse.
+
+
+        :param name: The name of this ProjectTypeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def allowed_clouds(self):
@@ -136,46 +178,25 @@ class ProjectTypeResponse(object):
         self._allowed_clouds = allowed_clouds
 
     @property
-    def associated_blueprints(self):
-        """Gets the associated_blueprints of this ProjectTypeResponse.  # noqa: E501
+    def description(self):
+        """Gets the description of this ProjectTypeResponse.  # noqa: E501
 
 
-        :return: The associated_blueprints of this ProjectTypeResponse.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._associated_blueprints
-
-    @associated_blueprints.setter
-    def associated_blueprints(self, associated_blueprints):
-        """Sets the associated_blueprints of this ProjectTypeResponse.
-
-
-        :param associated_blueprints: The associated_blueprints of this ProjectTypeResponse.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._associated_blueprints = associated_blueprints
-
-    @property
-    def base_project_name(self):
-        """Gets the base_project_name of this ProjectTypeResponse.  # noqa: E501
-
-
-        :return: The base_project_name of this ProjectTypeResponse.  # noqa: E501
+        :return: The description of this ProjectTypeResponse.  # noqa: E501
         :rtype: str
         """
-        return self._base_project_name
+        return self._description
 
-    @base_project_name.setter
-    def base_project_name(self, base_project_name):
-        """Sets the base_project_name of this ProjectTypeResponse.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ProjectTypeResponse.
 
 
-        :param base_project_name: The base_project_name of this ProjectTypeResponse.  # noqa: E501
+        :param description: The description of this ProjectTypeResponse.  # noqa: E501
         :type: str
         """
 
-        self._base_project_name = base_project_name
+        self._description = description
 
     @property
     def created_by(self):
@@ -220,25 +241,109 @@ class ProjectTypeResponse(object):
         self._creation_date = creation_date
 
     @property
-    def description(self):
-        """Gets the description of this ProjectTypeResponse.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this ProjectTypeResponse.  # noqa: E501
 
 
-        :return: The description of this ProjectTypeResponse.  # noqa: E501
+        :return: The last_modified_date of this ProjectTypeResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this ProjectTypeResponse.
+
+
+        :param last_modified_date: The last_modified_date of this ProjectTypeResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The last_modified_by of this ProjectTypeResponse.  # noqa: E501
         :rtype: str
         """
-        return self._description
+        return self._last_modified_by
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ProjectTypeResponse.
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this ProjectTypeResponse.
 
 
-        :param description: The description of this ProjectTypeResponse.  # noqa: E501
+        :param last_modified_by: The last_modified_by of this ProjectTypeResponse.  # noqa: E501
         :type: str
         """
 
-        self._description = description
+        self._last_modified_by = last_modified_by
+
+    @property
+    def template_git_details(self):
+        """Gets the template_git_details of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The template_git_details of this ProjectTypeResponse.  # noqa: E501
+        :rtype: TemplateGitDetails
+        """
+        return self._template_git_details
+
+    @template_git_details.setter
+    def template_git_details(self, template_git_details):
+        """Sets the template_git_details of this ProjectTypeResponse.
+
+
+        :param template_git_details: The template_git_details of this ProjectTypeResponse.  # noqa: E501
+        :type: TemplateGitDetails
+        """
+
+        self._template_git_details = template_git_details
+
+    @property
+    def mapped_resources(self):
+        """Gets the mapped_resources of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The mapped_resources of this ProjectTypeResponse.  # noqa: E501
+        :rtype: list[ProjectTypeMappedResource]
+        """
+        return self._mapped_resources
+
+    @mapped_resources.setter
+    def mapped_resources(self, mapped_resources):
+        """Sets the mapped_resources of this ProjectTypeResponse.
+
+
+        :param mapped_resources: The mapped_resources of this ProjectTypeResponse.  # noqa: E501
+        :type: list[ProjectTypeMappedResource]
+        """
+
+        self._mapped_resources = mapped_resources
+
+    @property
+    def associated_blueprints(self):
+        """Gets the associated_blueprints of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The associated_blueprints of this ProjectTypeResponse.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._associated_blueprints
+
+    @associated_blueprints.setter
+    def associated_blueprints(self, associated_blueprints):
+        """Sets the associated_blueprints of this ProjectTypeResponse.
+
+
+        :param associated_blueprints: The associated_blueprints of this ProjectTypeResponse.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._associated_blueprints = associated_blueprints
 
     @property
     def iac_tool(self):
@@ -289,130 +394,25 @@ class ProjectTypeResponse(object):
         self._iac_tool_version = iac_tool_version
 
     @property
-    def id(self):
-        """Gets the id of this ProjectTypeResponse.  # noqa: E501
+    def base_project_name(self):
+        """Gets the base_project_name of this ProjectTypeResponse.  # noqa: E501
 
 
-        :return: The id of this ProjectTypeResponse.  # noqa: E501
+        :return: The base_project_name of this ProjectTypeResponse.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._base_project_name
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ProjectTypeResponse.
+    @base_project_name.setter
+    def base_project_name(self, base_project_name):
+        """Sets the base_project_name of this ProjectTypeResponse.
 
 
-        :param id: The id of this ProjectTypeResponse.  # noqa: E501
+        :param base_project_name: The base_project_name of this ProjectTypeResponse.  # noqa: E501
         :type: str
         """
 
-        self._id = id
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this ProjectTypeResponse.  # noqa: E501
-
-
-        :return: The last_modified_by of this ProjectTypeResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this ProjectTypeResponse.
-
-
-        :param last_modified_by: The last_modified_by of this ProjectTypeResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this ProjectTypeResponse.  # noqa: E501
-
-
-        :return: The last_modified_date of this ProjectTypeResponse.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this ProjectTypeResponse.
-
-
-        :param last_modified_date: The last_modified_date of this ProjectTypeResponse.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def mapped_resources(self):
-        """Gets the mapped_resources of this ProjectTypeResponse.  # noqa: E501
-
-
-        :return: The mapped_resources of this ProjectTypeResponse.  # noqa: E501
-        :rtype: list[ProjectTypeMappedResource]
-        """
-        return self._mapped_resources
-
-    @mapped_resources.setter
-    def mapped_resources(self, mapped_resources):
-        """Sets the mapped_resources of this ProjectTypeResponse.
-
-
-        :param mapped_resources: The mapped_resources of this ProjectTypeResponse.  # noqa: E501
-        :type: list[ProjectTypeMappedResource]
-        """
-
-        self._mapped_resources = mapped_resources
-
-    @property
-    def name(self):
-        """Gets the name of this ProjectTypeResponse.  # noqa: E501
-
-
-        :return: The name of this ProjectTypeResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ProjectTypeResponse.
-
-
-        :param name: The name of this ProjectTypeResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def template_git_details(self):
-        """Gets the template_git_details of this ProjectTypeResponse.  # noqa: E501
-
-
-        :return: The template_git_details of this ProjectTypeResponse.  # noqa: E501
-        :rtype: TemplateGitDetails
-        """
-        return self._template_git_details
-
-    @template_git_details.setter
-    def template_git_details(self, template_git_details):
-        """Sets the template_git_details of this ProjectTypeResponse.
-
-
-        :param template_git_details: The template_git_details of this ProjectTypeResponse.  # noqa: E501
-        :type: TemplateGitDetails
-        """
-
-        self._template_git_details = template_git_details
+        self._base_project_name = base_project_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

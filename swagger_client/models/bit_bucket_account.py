@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,235 +28,145 @@ class BitBucketAccount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'access_token': 'str',
-        'account_type': 'str',
-        'app': 'bool',
-        'associated_to': 'list[AccountAssociationInfo]',
-        'change_log': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'entity_type': 'str',
-        'host': 'str',
-        'id': 'str',
-        'in_use': 'bool',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
-        'number_of_versions': 'int',
+        'account_type': 'str',
+        'provider': 'str',
+        'change_log': 'str',
+        'system_defined': 'bool',
+        'in_use': 'bool',
+        'associated_to': 'list[AccountAssociationInfo]',
+        'user_name': 'str',
+        'access_token': 'str',
         'org_name': 'str',
         'project_key': 'str',
-        'provider': 'str',
+        'host': 'str',
+        'app': 'bool',
+        'entity_type': 'str',
         'secrets_uid': 'str',
-        'system_defined': 'bool',
-        'user_name': 'str',
-        'versioning_key': 'str'
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'access_token': 'accessToken',
-        'account_type': 'accountType',
-        'app': 'app',
-        'associated_to': 'associatedTo',
-        'change_log': 'changeLog',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'entity_type': 'entityType',
-        'host': 'host',
-        'id': 'id',
-        'in_use': 'inUse',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
-        'number_of_versions': 'numberOfVersions',
+        'account_type': 'accountType',
+        'provider': 'provider',
+        'change_log': 'changeLog',
+        'system_defined': 'systemDefined',
+        'in_use': 'inUse',
+        'associated_to': 'associatedTo',
+        'user_name': 'userName',
+        'access_token': 'accessToken',
         'org_name': 'orgName',
         'project_key': 'projectKey',
-        'provider': 'provider',
+        'host': 'host',
+        'app': 'app',
+        'entity_type': 'entityType',
         'secrets_uid': 'secretsUid',
-        'system_defined': 'systemDefined',
-        'user_name': 'userName',
-        'versioning_key': 'versioningKey'
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, access_token=None, account_type=None, app=None, associated_to=None, change_log=None, created_by=None, creation_date=None, entity_type=None, host=None, id=None, in_use=None, last_modified_by=None, last_modified_date=None, name=None, number_of_versions=None, org_name=None, project_key=None, provider=None, secrets_uid=None, system_defined=None, user_name=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, account_type=None, provider=None, change_log=None, system_defined=None, in_use=None, associated_to=None, user_name=None, access_token=None, org_name=None, project_key=None, host=None, app=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """BitBucketAccount - a model defined in Swagger"""  # noqa: E501
-        self._access_token = None
-        self._account_type = None
-        self._app = None
-        self._associated_to = None
-        self._change_log = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._entity_type = None
-        self._host = None
-        self._id = None
-        self._in_use = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
-        self._number_of_versions = None
+        self._account_type = None
+        self._provider = None
+        self._change_log = None
+        self._system_defined = None
+        self._in_use = None
+        self._associated_to = None
+        self._user_name = None
+        self._access_token = None
         self._org_name = None
         self._project_key = None
-        self._provider = None
+        self._host = None
+        self._app = None
+        self._entity_type = None
         self._secrets_uid = None
-        self._system_defined = None
-        self._user_name = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if access_token is not None:
-            self.access_token = access_token
-        if account_type is not None:
-            self.account_type = account_type
-        if app is not None:
-            self.app = app
-        if associated_to is not None:
-            self.associated_to = associated_to
-        if change_log is not None:
-            self.change_log = change_log
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if host is not None:
-            self.host = host
-        if id is not None:
-            self.id = id
-        if in_use is not None:
-            self.in_use = in_use
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
         if name is not None:
             self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
+        if account_type is not None:
+            self.account_type = account_type
+        if provider is not None:
+            self.provider = provider
+        if change_log is not None:
+            self.change_log = change_log
+        if system_defined is not None:
+            self.system_defined = system_defined
+        if in_use is not None:
+            self.in_use = in_use
+        if associated_to is not None:
+            self.associated_to = associated_to
+        if user_name is not None:
+            self.user_name = user_name
+        if access_token is not None:
+            self.access_token = access_token
         if org_name is not None:
             self.org_name = org_name
         if project_key is not None:
             self.project_key = project_key
-        if provider is not None:
-            self.provider = provider
+        if host is not None:
+            self.host = host
+        if app is not None:
+            self.app = app
+        if entity_type is not None:
+            self.entity_type = entity_type
         if secrets_uid is not None:
             self.secrets_uid = secrets_uid
-        if system_defined is not None:
-            self.system_defined = system_defined
-        if user_name is not None:
-            self.user_name = user_name
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def access_token(self):
-        """Gets the access_token of this BitBucketAccount.  # noqa: E501
+    def id(self):
+        """Gets the id of this BitBucketAccount.  # noqa: E501
 
 
-        :return: The access_token of this BitBucketAccount.  # noqa: E501
+        :return: The id of this BitBucketAccount.  # noqa: E501
         :rtype: str
         """
-        return self._access_token
+        return self._id
 
-    @access_token.setter
-    def access_token(self, access_token):
-        """Sets the access_token of this BitBucketAccount.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this BitBucketAccount.
 
 
-        :param access_token: The access_token of this BitBucketAccount.  # noqa: E501
+        :param id: The id of this BitBucketAccount.  # noqa: E501
         :type: str
         """
 
-        self._access_token = access_token
-
-    @property
-    def account_type(self):
-        """Gets the account_type of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The account_type of this BitBucketAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_type
-
-    @account_type.setter
-    def account_type(self, account_type):
-        """Sets the account_type of this BitBucketAccount.
-
-
-        :param account_type: The account_type of this BitBucketAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
-        if account_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(account_type, allowed_values)
-            )
-
-        self._account_type = account_type
-
-    @property
-    def app(self):
-        """Gets the app of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The app of this BitBucketAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._app
-
-    @app.setter
-    def app(self, app):
-        """Sets the app of this BitBucketAccount.
-
-
-        :param app: The app of this BitBucketAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._app = app
-
-    @property
-    def associated_to(self):
-        """Gets the associated_to of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The associated_to of this BitBucketAccount.  # noqa: E501
-        :rtype: list[AccountAssociationInfo]
-        """
-        return self._associated_to
-
-    @associated_to.setter
-    def associated_to(self, associated_to):
-        """Sets the associated_to of this BitBucketAccount.
-
-
-        :param associated_to: The associated_to of this BitBucketAccount.  # noqa: E501
-        :type: list[AccountAssociationInfo]
-        """
-
-        self._associated_to = associated_to
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The change_log of this BitBucketAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this BitBucketAccount.
-
-
-        :param change_log: The change_log of this BitBucketAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._change_log = change_log
+        self._id = id
 
     @property
     def created_by(self):
@@ -301,94 +211,25 @@ class BitBucketAccount(object):
         self._creation_date = creation_date
 
     @property
-    def entity_type(self):
-        """Gets the entity_type of this BitBucketAccount.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this BitBucketAccount.  # noqa: E501
 
 
-        :return: The entity_type of this BitBucketAccount.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this BitBucketAccount.  # noqa: E501
+        :rtype: datetime
         """
-        return self._entity_type
+        return self._last_modified_date
 
-    @entity_type.setter
-    def entity_type(self, entity_type):
-        """Sets the entity_type of this BitBucketAccount.
-
-
-        :param entity_type: The entity_type of this BitBucketAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
-        if entity_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(entity_type, allowed_values)
-            )
-
-        self._entity_type = entity_type
-
-    @property
-    def host(self):
-        """Gets the host of this BitBucketAccount.  # noqa: E501
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this BitBucketAccount.
 
 
-        :return: The host of this BitBucketAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._host
-
-    @host.setter
-    def host(self, host):
-        """Sets the host of this BitBucketAccount.
-
-
-        :param host: The host of this BitBucketAccount.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this BitBucketAccount.  # noqa: E501
+        :type: datetime
         """
 
-        self._host = host
-
-    @property
-    def id(self):
-        """Gets the id of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The id of this BitBucketAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this BitBucketAccount.
-
-
-        :param id: The id of this BitBucketAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def in_use(self):
-        """Gets the in_use of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The in_use of this BitBucketAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._in_use
-
-    @in_use.setter
-    def in_use(self, in_use):
-        """Sets the in_use of this BitBucketAccount.
-
-
-        :param in_use: The in_use of this BitBucketAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._in_use = in_use
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -412,27 +253,6 @@ class BitBucketAccount(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The last_modified_date of this BitBucketAccount.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this BitBucketAccount.
-
-
-        :param last_modified_date: The last_modified_date of this BitBucketAccount.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
     def name(self):
         """Gets the name of this BitBucketAccount.  # noqa: E501
 
@@ -454,25 +274,184 @@ class BitBucketAccount(object):
         self._name = name
 
     @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this BitBucketAccount.  # noqa: E501
+    def account_type(self):
+        """Gets the account_type of this BitBucketAccount.  # noqa: E501
 
 
-        :return: The number_of_versions of this BitBucketAccount.  # noqa: E501
-        :rtype: int
+        :return: The account_type of this BitBucketAccount.  # noqa: E501
+        :rtype: str
         """
-        return self._number_of_versions
+        return self._account_type
 
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this BitBucketAccount.
+    @account_type.setter
+    def account_type(self, account_type):
+        """Sets the account_type of this BitBucketAccount.
 
 
-        :param number_of_versions: The number_of_versions of this BitBucketAccount.  # noqa: E501
-        :type: int
+        :param account_type: The account_type of this BitBucketAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
+        if account_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(account_type, allowed_values)
+            )
+
+        self._account_type = account_type
+
+    @property
+    def provider(self):
+        """Gets the provider of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The provider of this BitBucketAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this BitBucketAccount.
+
+
+        :param provider: The provider of this BitBucketAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB", "AWS", "AZURE", "GCP", "KUBERNETES", "CODER"]  # noqa: E501
+        if provider not in allowed_values:
+            raise ValueError(
+                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
+                .format(provider, allowed_values)
+            )
+
+        self._provider = provider
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The change_log of this BitBucketAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this BitBucketAccount.
+
+
+        :param change_log: The change_log of this BitBucketAccount.  # noqa: E501
+        :type: str
         """
 
-        self._number_of_versions = number_of_versions
+        self._change_log = change_log
+
+    @property
+    def system_defined(self):
+        """Gets the system_defined of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The system_defined of this BitBucketAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._system_defined
+
+    @system_defined.setter
+    def system_defined(self, system_defined):
+        """Sets the system_defined of this BitBucketAccount.
+
+
+        :param system_defined: The system_defined of this BitBucketAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._system_defined = system_defined
+
+    @property
+    def in_use(self):
+        """Gets the in_use of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The in_use of this BitBucketAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_use
+
+    @in_use.setter
+    def in_use(self, in_use):
+        """Sets the in_use of this BitBucketAccount.
+
+
+        :param in_use: The in_use of this BitBucketAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_use = in_use
+
+    @property
+    def associated_to(self):
+        """Gets the associated_to of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The associated_to of this BitBucketAccount.  # noqa: E501
+        :rtype: list[AccountAssociationInfo]
+        """
+        return self._associated_to
+
+    @associated_to.setter
+    def associated_to(self, associated_to):
+        """Sets the associated_to of this BitBucketAccount.
+
+
+        :param associated_to: The associated_to of this BitBucketAccount.  # noqa: E501
+        :type: list[AccountAssociationInfo]
+        """
+
+        self._associated_to = associated_to
+
+    @property
+    def user_name(self):
+        """Gets the user_name of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The user_name of this BitBucketAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_name
+
+    @user_name.setter
+    def user_name(self, user_name):
+        """Sets the user_name of this BitBucketAccount.
+
+
+        :param user_name: The user_name of this BitBucketAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._user_name = user_name
+
+    @property
+    def access_token(self):
+        """Gets the access_token of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The access_token of this BitBucketAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_token
+
+    @access_token.setter
+    def access_token(self, access_token):
+        """Sets the access_token of this BitBucketAccount.
+
+
+        :param access_token: The access_token of this BitBucketAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._access_token = access_token
 
     @property
     def org_name(self):
@@ -517,31 +496,73 @@ class BitBucketAccount(object):
         self._project_key = project_key
 
     @property
-    def provider(self):
-        """Gets the provider of this BitBucketAccount.  # noqa: E501
+    def host(self):
+        """Gets the host of this BitBucketAccount.  # noqa: E501
 
 
-        :return: The provider of this BitBucketAccount.  # noqa: E501
+        :return: The host of this BitBucketAccount.  # noqa: E501
         :rtype: str
         """
-        return self._provider
+        return self._host
 
-    @provider.setter
-    def provider(self, provider):
-        """Sets the provider of this BitBucketAccount.
+    @host.setter
+    def host(self, host):
+        """Sets the host of this BitBucketAccount.
 
 
-        :param provider: The provider of this BitBucketAccount.  # noqa: E501
+        :param host: The host of this BitBucketAccount.  # noqa: E501
         :type: str
         """
-        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB", "AWS", "AZURE", "GCP", "KUBERNETES", "CODER"]  # noqa: E501
-        if provider not in allowed_values:
+
+        self._host = host
+
+    @property
+    def app(self):
+        """Gets the app of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The app of this BitBucketAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._app
+
+    @app.setter
+    def app(self, app):
+        """Sets the app of this BitBucketAccount.
+
+
+        :param app: The app of this BitBucketAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._app = app
+
+    @property
+    def entity_type(self):
+        """Gets the entity_type of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The entity_type of this BitBucketAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._entity_type
+
+    @entity_type.setter
+    def entity_type(self, entity_type):
+        """Sets the entity_type of this BitBucketAccount.
+
+
+        :param entity_type: The entity_type of this BitBucketAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
+        if entity_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
-                .format(provider, allowed_values)
+                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(entity_type, allowed_values)
             )
 
-        self._provider = provider
+        self._entity_type = entity_type
 
     @property
     def secrets_uid(self):
@@ -565,48 +586,6 @@ class BitBucketAccount(object):
         self._secrets_uid = secrets_uid
 
     @property
-    def system_defined(self):
-        """Gets the system_defined of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The system_defined of this BitBucketAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._system_defined
-
-    @system_defined.setter
-    def system_defined(self, system_defined):
-        """Sets the system_defined of this BitBucketAccount.
-
-
-        :param system_defined: The system_defined of this BitBucketAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._system_defined = system_defined
-
-    @property
-    def user_name(self):
-        """Gets the user_name of this BitBucketAccount.  # noqa: E501
-
-
-        :return: The user_name of this BitBucketAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_name
-
-    @user_name.setter
-    def user_name(self, user_name):
-        """Sets the user_name of this BitBucketAccount.
-
-
-        :param user_name: The user_name of this BitBucketAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._user_name = user_name
-
-    @property
     def versioning_key(self):
         """Gets the versioning_key of this BitBucketAccount.  # noqa: E501
 
@@ -626,6 +605,27 @@ class BitBucketAccount(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this BitBucketAccount.  # noqa: E501
+
+
+        :return: The number_of_versions of this BitBucketAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this BitBucketAccount.
+
+
+        :param number_of_versions: The number_of_versions of this BitBucketAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class AutocompleteResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'out_properties': 'dict(str, JsonNode)',
-        'resources': 'dict(str, list[str])'
+        'resources': 'dict(str, list[str])',
+        'out_properties': 'dict(str, JsonNode)'
     }
 
     attribute_map = {
-        'out_properties': 'outProperties',
-        'resources': 'resources'
+        'resources': 'resources',
+        'out_properties': 'outProperties'
     }
 
-    def __init__(self, out_properties=None, resources=None):  # noqa: E501
+    def __init__(self, resources=None, out_properties=None):  # noqa: E501
         """AutocompleteResponse - a model defined in Swagger"""  # noqa: E501
-        self._out_properties = None
         self._resources = None
+        self._out_properties = None
         self.discriminator = None
-        if out_properties is not None:
-            self.out_properties = out_properties
         if resources is not None:
             self.resources = resources
-
-    @property
-    def out_properties(self):
-        """Gets the out_properties of this AutocompleteResponse.  # noqa: E501
-
-
-        :return: The out_properties of this AutocompleteResponse.  # noqa: E501
-        :rtype: dict(str, JsonNode)
-        """
-        return self._out_properties
-
-    @out_properties.setter
-    def out_properties(self, out_properties):
-        """Sets the out_properties of this AutocompleteResponse.
-
-
-        :param out_properties: The out_properties of this AutocompleteResponse.  # noqa: E501
-        :type: dict(str, JsonNode)
-        """
-
-        self._out_properties = out_properties
+        if out_properties is not None:
+            self.out_properties = out_properties
 
     @property
     def resources(self):
@@ -88,6 +67,27 @@ class AutocompleteResponse(object):
         """
 
         self._resources = resources
+
+    @property
+    def out_properties(self):
+        """Gets the out_properties of this AutocompleteResponse.  # noqa: E501
+
+
+        :return: The out_properties of this AutocompleteResponse.  # noqa: E501
+        :rtype: dict(str, JsonNode)
+        """
+        return self._out_properties
+
+    @out_properties.setter
+    def out_properties(self, out_properties):
+        """Sets the out_properties of this AutocompleteResponse.
+
+
+        :param out_properties: The out_properties of this AutocompleteResponse.  # noqa: E501
+        :type: dict(str, JsonNode)
+        """
+
+        self._out_properties = out_properties
 
     def to_dict(self):
         """Returns the model properties as a dict"""

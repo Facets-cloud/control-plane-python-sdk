@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,70 @@ class SecretsContextDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'provided_secrets_id': 'str',
         'cloud_account_secrets_id': 'str',
         'cp_cloud': 'str',
         'gcp_secret_manager_enabled': 'bool',
-        'gcp_secret_manager_mode': 'str',
+        'secret_manager_region': 'str',
         'gcp_secret_manager_project_id': 'str',
-        'provided_secrets_id': 'str',
-        'secret_manager_region': 'str'
+        'gcp_secret_manager_mode': 'str'
     }
 
     attribute_map = {
+        'provided_secrets_id': 'providedSecretsId',
         'cloud_account_secrets_id': 'cloudAccountSecretsId',
         'cp_cloud': 'cpCloud',
         'gcp_secret_manager_enabled': 'gcpSecretManagerEnabled',
-        'gcp_secret_manager_mode': 'gcpSecretManagerMode',
+        'secret_manager_region': 'secretManagerRegion',
         'gcp_secret_manager_project_id': 'gcpSecretManagerProjectId',
-        'provided_secrets_id': 'providedSecretsId',
-        'secret_manager_region': 'secretManagerRegion'
+        'gcp_secret_manager_mode': 'gcpSecretManagerMode'
     }
 
-    def __init__(self, cloud_account_secrets_id=None, cp_cloud=None, gcp_secret_manager_enabled=None, gcp_secret_manager_mode=None, gcp_secret_manager_project_id=None, provided_secrets_id=None, secret_manager_region=None):  # noqa: E501
+    def __init__(self, provided_secrets_id=None, cloud_account_secrets_id=None, cp_cloud=None, gcp_secret_manager_enabled=None, secret_manager_region=None, gcp_secret_manager_project_id=None, gcp_secret_manager_mode=None):  # noqa: E501
         """SecretsContextDTO - a model defined in Swagger"""  # noqa: E501
+        self._provided_secrets_id = None
         self._cloud_account_secrets_id = None
         self._cp_cloud = None
         self._gcp_secret_manager_enabled = None
-        self._gcp_secret_manager_mode = None
-        self._gcp_secret_manager_project_id = None
-        self._provided_secrets_id = None
         self._secret_manager_region = None
+        self._gcp_secret_manager_project_id = None
+        self._gcp_secret_manager_mode = None
         self.discriminator = None
+        if provided_secrets_id is not None:
+            self.provided_secrets_id = provided_secrets_id
         if cloud_account_secrets_id is not None:
             self.cloud_account_secrets_id = cloud_account_secrets_id
         if cp_cloud is not None:
             self.cp_cloud = cp_cloud
         if gcp_secret_manager_enabled is not None:
             self.gcp_secret_manager_enabled = gcp_secret_manager_enabled
-        if gcp_secret_manager_mode is not None:
-            self.gcp_secret_manager_mode = gcp_secret_manager_mode
-        if gcp_secret_manager_project_id is not None:
-            self.gcp_secret_manager_project_id = gcp_secret_manager_project_id
-        if provided_secrets_id is not None:
-            self.provided_secrets_id = provided_secrets_id
         if secret_manager_region is not None:
             self.secret_manager_region = secret_manager_region
+        if gcp_secret_manager_project_id is not None:
+            self.gcp_secret_manager_project_id = gcp_secret_manager_project_id
+        if gcp_secret_manager_mode is not None:
+            self.gcp_secret_manager_mode = gcp_secret_manager_mode
+
+    @property
+    def provided_secrets_id(self):
+        """Gets the provided_secrets_id of this SecretsContextDTO.  # noqa: E501
+
+
+        :return: The provided_secrets_id of this SecretsContextDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._provided_secrets_id
+
+    @provided_secrets_id.setter
+    def provided_secrets_id(self, provided_secrets_id):
+        """Sets the provided_secrets_id of this SecretsContextDTO.
+
+
+        :param provided_secrets_id: The provided_secrets_id of this SecretsContextDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._provided_secrets_id = provided_secrets_id
 
     @property
     def cloud_account_secrets_id(self):
@@ -136,6 +157,48 @@ class SecretsContextDTO(object):
         self._gcp_secret_manager_enabled = gcp_secret_manager_enabled
 
     @property
+    def secret_manager_region(self):
+        """Gets the secret_manager_region of this SecretsContextDTO.  # noqa: E501
+
+
+        :return: The secret_manager_region of this SecretsContextDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._secret_manager_region
+
+    @secret_manager_region.setter
+    def secret_manager_region(self, secret_manager_region):
+        """Sets the secret_manager_region of this SecretsContextDTO.
+
+
+        :param secret_manager_region: The secret_manager_region of this SecretsContextDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._secret_manager_region = secret_manager_region
+
+    @property
+    def gcp_secret_manager_project_id(self):
+        """Gets the gcp_secret_manager_project_id of this SecretsContextDTO.  # noqa: E501
+
+
+        :return: The gcp_secret_manager_project_id of this SecretsContextDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._gcp_secret_manager_project_id
+
+    @gcp_secret_manager_project_id.setter
+    def gcp_secret_manager_project_id(self, gcp_secret_manager_project_id):
+        """Sets the gcp_secret_manager_project_id of this SecretsContextDTO.
+
+
+        :param gcp_secret_manager_project_id: The gcp_secret_manager_project_id of this SecretsContextDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._gcp_secret_manager_project_id = gcp_secret_manager_project_id
+
+    @property
     def gcp_secret_manager_mode(self):
         """Gets the gcp_secret_manager_mode of this SecretsContextDTO.  # noqa: E501
 
@@ -161,69 +224,6 @@ class SecretsContextDTO(object):
             )
 
         self._gcp_secret_manager_mode = gcp_secret_manager_mode
-
-    @property
-    def gcp_secret_manager_project_id(self):
-        """Gets the gcp_secret_manager_project_id of this SecretsContextDTO.  # noqa: E501
-
-
-        :return: The gcp_secret_manager_project_id of this SecretsContextDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._gcp_secret_manager_project_id
-
-    @gcp_secret_manager_project_id.setter
-    def gcp_secret_manager_project_id(self, gcp_secret_manager_project_id):
-        """Sets the gcp_secret_manager_project_id of this SecretsContextDTO.
-
-
-        :param gcp_secret_manager_project_id: The gcp_secret_manager_project_id of this SecretsContextDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._gcp_secret_manager_project_id = gcp_secret_manager_project_id
-
-    @property
-    def provided_secrets_id(self):
-        """Gets the provided_secrets_id of this SecretsContextDTO.  # noqa: E501
-
-
-        :return: The provided_secrets_id of this SecretsContextDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._provided_secrets_id
-
-    @provided_secrets_id.setter
-    def provided_secrets_id(self, provided_secrets_id):
-        """Sets the provided_secrets_id of this SecretsContextDTO.
-
-
-        :param provided_secrets_id: The provided_secrets_id of this SecretsContextDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._provided_secrets_id = provided_secrets_id
-
-    @property
-    def secret_manager_region(self):
-        """Gets the secret_manager_region of this SecretsContextDTO.  # noqa: E501
-
-
-        :return: The secret_manager_region of this SecretsContextDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._secret_manager_region
-
-    @secret_manager_region.setter
-    def secret_manager_region(self, secret_manager_region):
-        """Sets the secret_manager_region of this SecretsContextDTO.
-
-
-        :param secret_manager_region: The secret_manager_region of this SecretsContextDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._secret_manager_region = secret_manager_region
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,76 @@ class OutputReference(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'output_name': 'str',
-        'output_title': 'str',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'output_name': 'str',
+        'output_title': 'str'
     }
 
     attribute_map = {
-        'output_name': 'outputName',
-        'output_title': 'outputTitle',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'output_name': 'outputName',
+        'output_title': 'outputTitle'
     }
 
-    def __init__(self, output_name=None, output_title=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, output_name=None, output_title=None):  # noqa: E501
         """OutputReference - a model defined in Swagger"""  # noqa: E501
+        self._resource_type = None
+        self._resource_name = None
         self._output_name = None
         self._output_title = None
-        self._resource_name = None
-        self._resource_type = None
         self.discriminator = None
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
         if output_name is not None:
             self.output_name = output_name
         if output_title is not None:
             self.output_title = output_title
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this OutputReference.  # noqa: E501
+
+
+        :return: The resource_type of this OutputReference.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this OutputReference.
+
+
+        :param resource_type: The resource_type of this OutputReference.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_type = resource_type
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this OutputReference.  # noqa: E501
+
+
+        :return: The resource_name of this OutputReference.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this OutputReference.
+
+
+        :param resource_name: The resource_name of this OutputReference.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
 
     @property
     def output_name(self):
@@ -98,48 +140,6 @@ class OutputReference(object):
         """
 
         self._output_title = output_title
-
-    @property
-    def resource_name(self):
-        """Gets the resource_name of this OutputReference.  # noqa: E501
-
-
-        :return: The resource_name of this OutputReference.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_name
-
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this OutputReference.
-
-
-        :param resource_name: The resource_name of this OutputReference.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_name = resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this OutputReference.  # noqa: E501
-
-
-        :return: The resource_type of this OutputReference.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this OutputReference.
-
-
-        :param resource_type: The resource_type of this OutputReference.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

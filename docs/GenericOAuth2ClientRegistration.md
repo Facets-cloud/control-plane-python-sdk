@@ -3,20 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**authorization_uri** | **str** |  | [optional] 
-**client_authentication_method** | [**ClientAuthenticationMethod**](ClientAuthenticationMethod.md) |  | [optional] 
-**client_id** | **str** |  | [optional] 
-**client_secret** | **str** |  | [optional] 
+**registration_id** | **str** |  | 
+**provider** | **str** |  | 
 **issuer_url** | **str** |  | [optional] 
-**jwk_set_uri** | **str** |  | [optional] 
-**login_button_text** | **str** |  | [optional] 
-**provider** | **str** |  | [optional] 
-**registration_id** | **str** |  | [optional] 
-**scope** | **str** |  | [optional] 
-**secrets_uid** | **str** |  | [optional] 
+**client_id** | **str** |  | 
+**client_secret** | **str** |  | 
+**scope** | **str** |  | 
+**is_system_configured** | **bool** |  | [optional] 
+**login_button_text** | **str** |  | 
+**token_uri** | **str** |  | 
+**authorization_uri** | **str** |  | 
+**user_info_uri** | **str** |  | 
+**jwk_set_uri** | **str** |  | 
+**client_authentication_method** | [**ClientAuthenticationMethod**](ClientAuthenticationMethod.md) |  | [optional] 
 **system_configured** | **bool** |  | [optional] 
-**token_uri** | **str** |  | [optional] 
-**user_info_uri** | **str** |  | [optional] 
+**secrets_uid** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

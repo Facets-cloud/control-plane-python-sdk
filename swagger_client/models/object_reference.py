@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,8 +29,8 @@ class ObjectReference(object):
     """
     swagger_types = {
         'api_version': 'str',
-        'field_path': 'str',
         'kind': 'str',
+        'field_path': 'str',
         'name': 'str',
         'namespace': 'str',
         'resource_version': 'str',
@@ -39,19 +39,19 @@ class ObjectReference(object):
 
     attribute_map = {
         'api_version': 'apiVersion',
-        'field_path': 'fieldPath',
         'kind': 'kind',
+        'field_path': 'fieldPath',
         'name': 'name',
         'namespace': 'namespace',
         'resource_version': 'resourceVersion',
         'uid': 'uid'
     }
 
-    def __init__(self, api_version=None, field_path=None, kind=None, name=None, namespace=None, resource_version=None, uid=None):  # noqa: E501
+    def __init__(self, api_version=None, kind=None, field_path=None, name=None, namespace=None, resource_version=None, uid=None):  # noqa: E501
         """ObjectReference - a model defined in Swagger"""  # noqa: E501
         self._api_version = None
-        self._field_path = None
         self._kind = None
+        self._field_path = None
         self._name = None
         self._namespace = None
         self._resource_version = None
@@ -59,10 +59,10 @@ class ObjectReference(object):
         self.discriminator = None
         if api_version is not None:
             self.api_version = api_version
-        if field_path is not None:
-            self.field_path = field_path
         if kind is not None:
             self.kind = kind
+        if field_path is not None:
+            self.field_path = field_path
         if name is not None:
             self.name = name
         if namespace is not None:
@@ -94,27 +94,6 @@ class ObjectReference(object):
         self._api_version = api_version
 
     @property
-    def field_path(self):
-        """Gets the field_path of this ObjectReference.  # noqa: E501
-
-
-        :return: The field_path of this ObjectReference.  # noqa: E501
-        :rtype: str
-        """
-        return self._field_path
-
-    @field_path.setter
-    def field_path(self, field_path):
-        """Sets the field_path of this ObjectReference.
-
-
-        :param field_path: The field_path of this ObjectReference.  # noqa: E501
-        :type: str
-        """
-
-        self._field_path = field_path
-
-    @property
     def kind(self):
         """Gets the kind of this ObjectReference.  # noqa: E501
 
@@ -134,6 +113,27 @@ class ObjectReference(object):
         """
 
         self._kind = kind
+
+    @property
+    def field_path(self):
+        """Gets the field_path of this ObjectReference.  # noqa: E501
+
+
+        :return: The field_path of this ObjectReference.  # noqa: E501
+        :rtype: str
+        """
+        return self._field_path
+
+    @field_path.setter
+    def field_path(self, field_path):
+        """Sets the field_path of this ObjectReference.
+
+
+        :param field_path: The field_path of this ObjectReference.  # noqa: E501
+        :type: str
+        """
+
+        self._field_path = field_path
 
     @property
     def name(self):

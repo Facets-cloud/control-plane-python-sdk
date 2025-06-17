@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,76 +28,55 @@ class ReleasePreviewResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'changed_resources': 'list[ResourceStatus]',
-        'cluster_id': 'str',
+        'project_name': 'str',
         'environment_name': 'str',
-        'project_name': 'str'
+        'cluster_id': 'str',
+        'changed_resources': 'list[ResourceStatus]'
     }
 
     attribute_map = {
-        'changed_resources': 'changedResources',
-        'cluster_id': 'clusterId',
+        'project_name': 'projectName',
         'environment_name': 'environmentName',
-        'project_name': 'projectName'
+        'cluster_id': 'clusterId',
+        'changed_resources': 'changedResources'
     }
 
-    def __init__(self, changed_resources=None, cluster_id=None, environment_name=None, project_name=None):  # noqa: E501
+    def __init__(self, project_name=None, environment_name=None, cluster_id=None, changed_resources=None):  # noqa: E501
         """ReleasePreviewResponse - a model defined in Swagger"""  # noqa: E501
-        self._changed_resources = None
-        self._cluster_id = None
-        self._environment_name = None
         self._project_name = None
+        self._environment_name = None
+        self._cluster_id = None
+        self._changed_resources = None
         self.discriminator = None
-        if changed_resources is not None:
-            self.changed_resources = changed_resources
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if environment_name is not None:
-            self.environment_name = environment_name
         if project_name is not None:
             self.project_name = project_name
+        if environment_name is not None:
+            self.environment_name = environment_name
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if changed_resources is not None:
+            self.changed_resources = changed_resources
 
     @property
-    def changed_resources(self):
-        """Gets the changed_resources of this ReleasePreviewResponse.  # noqa: E501
+    def project_name(self):
+        """Gets the project_name of this ReleasePreviewResponse.  # noqa: E501
 
 
-        :return: The changed_resources of this ReleasePreviewResponse.  # noqa: E501
-        :rtype: list[ResourceStatus]
-        """
-        return self._changed_resources
-
-    @changed_resources.setter
-    def changed_resources(self, changed_resources):
-        """Sets the changed_resources of this ReleasePreviewResponse.
-
-
-        :param changed_resources: The changed_resources of this ReleasePreviewResponse.  # noqa: E501
-        :type: list[ResourceStatus]
-        """
-
-        self._changed_resources = changed_resources
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ReleasePreviewResponse.  # noqa: E501
-
-
-        :return: The cluster_id of this ReleasePreviewResponse.  # noqa: E501
+        :return: The project_name of this ReleasePreviewResponse.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_id
+        return self._project_name
 
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ReleasePreviewResponse.
+    @project_name.setter
+    def project_name(self, project_name):
+        """Sets the project_name of this ReleasePreviewResponse.
 
 
-        :param cluster_id: The cluster_id of this ReleasePreviewResponse.  # noqa: E501
+        :param project_name: The project_name of this ReleasePreviewResponse.  # noqa: E501
         :type: str
         """
 
-        self._cluster_id = cluster_id
+        self._project_name = project_name
 
     @property
     def environment_name(self):
@@ -121,25 +100,46 @@ class ReleasePreviewResponse(object):
         self._environment_name = environment_name
 
     @property
-    def project_name(self):
-        """Gets the project_name of this ReleasePreviewResponse.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this ReleasePreviewResponse.  # noqa: E501
 
 
-        :return: The project_name of this ReleasePreviewResponse.  # noqa: E501
+        :return: The cluster_id of this ReleasePreviewResponse.  # noqa: E501
         :rtype: str
         """
-        return self._project_name
+        return self._cluster_id
 
-    @project_name.setter
-    def project_name(self, project_name):
-        """Sets the project_name of this ReleasePreviewResponse.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ReleasePreviewResponse.
 
 
-        :param project_name: The project_name of this ReleasePreviewResponse.  # noqa: E501
+        :param cluster_id: The cluster_id of this ReleasePreviewResponse.  # noqa: E501
         :type: str
         """
 
-        self._project_name = project_name
+        self._cluster_id = cluster_id
+
+    @property
+    def changed_resources(self):
+        """Gets the changed_resources of this ReleasePreviewResponse.  # noqa: E501
+
+
+        :return: The changed_resources of this ReleasePreviewResponse.  # noqa: E501
+        :rtype: list[ResourceStatus]
+        """
+        return self._changed_resources
+
+    @changed_resources.setter
+    def changed_resources(self, changed_resources):
+        """Sets the changed_resources of this ReleasePreviewResponse.
+
+
+        :param changed_resources: The changed_resources of this ReleasePreviewResponse.  # noqa: E501
+        :type: list[ResourceStatus]
+        """
+
+        self._changed_resources = changed_resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,7 +28,7 @@ class ModuleDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'facets_yaml': 'object',
+        'facets_yaml': 'dict(str, object)',
         'tf_module_path': 'TFModulePath'
     }
 
@@ -53,7 +53,7 @@ class ModuleDTO(object):
 
 
         :return: The facets_yaml of this ModuleDTO.  # noqa: E501
-        :rtype: object
+        :rtype: dict(str, object)
         """
         return self._facets_yaml
 
@@ -63,7 +63,7 @@ class ModuleDTO(object):
 
 
         :param facets_yaml: The facets_yaml of this ModuleDTO.  # noqa: E501
-        :type: object
+        :type: dict(str, object)
         """
 
         self._facets_yaml = facets_yaml

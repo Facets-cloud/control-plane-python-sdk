@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,50 @@ class TeamResource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'resource_name': 'str',
+        'stack_name': 'str',
         'resource_type': 'str',
-        'stack_name': 'str'
+        'resource_name': 'str'
     }
 
     attribute_map = {
-        'resource_name': 'resourceName',
+        'stack_name': 'stackName',
         'resource_type': 'resourceType',
-        'stack_name': 'stackName'
+        'resource_name': 'resourceName'
     }
 
-    def __init__(self, resource_name=None, resource_type=None, stack_name=None):  # noqa: E501
+    def __init__(self, stack_name=None, resource_type=None, resource_name=None):  # noqa: E501
         """TeamResource - a model defined in Swagger"""  # noqa: E501
-        self._resource_name = None
-        self._resource_type = None
         self._stack_name = None
+        self._resource_type = None
+        self._resource_name = None
         self.discriminator = None
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
         if stack_name is not None:
             self.stack_name = stack_name
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
 
     @property
-    def resource_name(self):
-        """Gets the resource_name of this TeamResource.  # noqa: E501
+    def stack_name(self):
+        """Gets the stack_name of this TeamResource.  # noqa: E501
 
 
-        :return: The resource_name of this TeamResource.  # noqa: E501
+        :return: The stack_name of this TeamResource.  # noqa: E501
         :rtype: str
         """
-        return self._resource_name
+        return self._stack_name
 
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this TeamResource.
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this TeamResource.
 
 
-        :param resource_name: The resource_name of this TeamResource.  # noqa: E501
+        :param stack_name: The stack_name of this TeamResource.  # noqa: E501
         :type: str
         """
 
-        self._resource_name = resource_name
+        self._stack_name = stack_name
 
     @property
     def resource_type(self):
@@ -95,25 +95,25 @@ class TeamResource(object):
         self._resource_type = resource_type
 
     @property
-    def stack_name(self):
-        """Gets the stack_name of this TeamResource.  # noqa: E501
+    def resource_name(self):
+        """Gets the resource_name of this TeamResource.  # noqa: E501
 
 
-        :return: The stack_name of this TeamResource.  # noqa: E501
+        :return: The resource_name of this TeamResource.  # noqa: E501
         :rtype: str
         """
-        return self._stack_name
+        return self._resource_name
 
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this TeamResource.
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this TeamResource.
 
 
-        :param stack_name: The stack_name of this TeamResource.  # noqa: E501
+        :param resource_name: The resource_name of this TeamResource.  # noqa: E501
         :type: str
         """
 
-        self._stack_name = stack_name
+        self._resource_name = resource_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

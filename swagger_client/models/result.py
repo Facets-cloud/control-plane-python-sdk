@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,39 @@ class Result(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'details': 'str',
         'error': 'list[Error]',
         'kind': 'str',
         'name': 'str',
+        'details': 'str',
         'parent_object': 'str'
     }
 
     attribute_map = {
-        'details': 'details',
         'error': 'error',
         'kind': 'kind',
         'name': 'name',
+        'details': 'details',
         'parent_object': 'parentObject'
     }
 
-    def __init__(self, details=None, error=None, kind=None, name=None, parent_object=None):  # noqa: E501
+    def __init__(self, error=None, kind=None, name=None, details=None, parent_object=None):  # noqa: E501
         """Result - a model defined in Swagger"""  # noqa: E501
-        self._details = None
         self._error = None
         self._kind = None
         self._name = None
+        self._details = None
         self._parent_object = None
         self.discriminator = None
-        if details is not None:
-            self.details = details
         if error is not None:
             self.error = error
         if kind is not None:
             self.kind = kind
         if name is not None:
             self.name = name
+        if details is not None:
+            self.details = details
         if parent_object is not None:
             self.parent_object = parent_object
-
-    @property
-    def details(self):
-        """Gets the details of this Result.  # noqa: E501
-
-
-        :return: The details of this Result.  # noqa: E501
-        :rtype: str
-        """
-        return self._details
-
-    @details.setter
-    def details(self, details):
-        """Sets the details of this Result.
-
-
-        :param details: The details of this Result.  # noqa: E501
-        :type: str
-        """
-
-        self._details = details
 
     @property
     def error(self):
@@ -145,6 +124,27 @@ class Result(object):
         """
 
         self._name = name
+
+    @property
+    def details(self):
+        """Gets the details of this Result.  # noqa: E501
+
+
+        :return: The details of this Result.  # noqa: E501
+        :rtype: str
+        """
+        return self._details
+
+    @details.setter
+    def details(self, details):
+        """Sets the details of this Result.
+
+
+        :param details: The details of this Result.  # noqa: E501
+        :type: str
+        """
+
+        self._details = details
 
     @property
     def parent_object(self):

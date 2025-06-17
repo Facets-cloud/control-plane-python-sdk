@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,39 +32,39 @@ class UiAzureClusterControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def configure_draft_cluster_using_post1(self, body, cluster_id, **kwargs):  # noqa: E501
-        """configureDraftCluster  # noqa: E501
+    def configure_draft_cluster1(self, body, cluster_id, **kwargs):  # noqa: E501
+        """configure_draft_cluster1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configure_draft_cluster_using_post1(body, cluster_id, async_req=True)
+        >>> thread = api.configure_draft_cluster1(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AzureClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.configure_draft_cluster_using_post1_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.configure_draft_cluster1_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.configure_draft_cluster_using_post1_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.configure_draft_cluster1_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def configure_draft_cluster_using_post1_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """configureDraftCluster  # noqa: E501
+    def configure_draft_cluster1_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """configure_draft_cluster1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configure_draft_cluster_using_post1_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.configure_draft_cluster1_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AzureClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,18 +81,18 @@ class UiAzureClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method configure_draft_cluster_using_post1" % key
+                    " to method configure_draft_cluster1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `configure_draft_cluster_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `configure_draft_cluster1`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `configure_draft_cluster_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `configure_draft_cluster1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -112,14 +112,14 @@ class UiAzureClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/azure/clusters/configure/{clusterId}', 'POST',
@@ -137,37 +137,37 @@ class UiAzureClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_azure_cluster_using_post(self, body, **kwargs):  # noqa: E501
-        """createAzureCluster  # noqa: E501
+    def create_azure_cluster(self, body, **kwargs):  # noqa: E501
+        """create_azure_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_azure_cluster_using_post(body, async_req=True)
+        >>> thread = api.create_azure_cluster(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureClusterRequest body: request (required)
+        :param AzureClusterRequest body: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_azure_cluster_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_azure_cluster_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_azure_cluster_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_azure_cluster_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_azure_cluster_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createAzureCluster  # noqa: E501
+    def create_azure_cluster_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_azure_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_azure_cluster_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_azure_cluster_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureClusterRequest body: request (required)
+        :param AzureClusterRequest body: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -184,14 +184,14 @@ class UiAzureClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_azure_cluster_using_post" % key
+                    " to method create_azure_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_azure_cluster_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_azure_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -209,14 +209,14 @@ class UiAzureClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/azure/clusters', 'POST',
@@ -234,37 +234,37 @@ class UiAzureClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_azure_cluster_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getAzureCluster  # noqa: E501
+    def get_azure_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """get_azure_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_azure_cluster_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_azure_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_azure_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_azure_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_azure_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_azure_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_azure_cluster_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getAzureCluster  # noqa: E501
+    def get_azure_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_azure_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_azure_cluster_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_azure_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -281,14 +281,14 @@ class UiAzureClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_azure_cluster_using_get" % key
+                    " to method get_azure_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_azure_cluster_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_azure_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -306,10 +306,10 @@ class UiAzureClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/azure/clusters/{clusterId}', 'GET',
@@ -327,39 +327,39 @@ class UiAzureClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_azure_cluster_using_put(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateAzureCluster  # noqa: E501
+    def update_azure_cluster(self, body, cluster_id, **kwargs):  # noqa: E501
+        """update_azure_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_azure_cluster_using_put(body, cluster_id, async_req=True)
+        >>> thread = api.update_azure_cluster(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AzureClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_azure_cluster_using_put_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.update_azure_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_azure_cluster_using_put_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.update_azure_cluster_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def update_azure_cluster_using_put_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateAzureCluster  # noqa: E501
+    def update_azure_cluster_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """update_azure_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_azure_cluster_using_put_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.update_azure_cluster_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AzureClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AzureClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AzureCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -376,18 +376,18 @@ class UiAzureClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_azure_cluster_using_put" % key
+                    " to method update_azure_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_azure_cluster_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_azure_cluster`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `update_azure_cluster_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `update_azure_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -407,14 +407,14 @@ class UiAzureClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/azure/clusters/{clusterId}', 'PUT',
@@ -432,47 +432,47 @@ class UiAzureClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_vnet_using_get(self, account_id, resource_group, vnet, **kwargs):  # noqa: E501
-        """validateVnet  # noqa: E501
+    def validate_vnet(self, vnet, resource_group, account_id, **kwargs):  # noqa: E501
+        """validate_vnet  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_vnet_using_get(account_id, resource_group, vnet, async_req=True)
+        >>> thread = api.validate_vnet(vnet, resource_group, account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str resource_group: resourceGroup (required)
-        :param str vnet: vnet (required)
+        :param str vnet: (required)
+        :param str resource_group: (required)
+        :param str account_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_vnet_using_get_with_http_info(account_id, resource_group, vnet, **kwargs)  # noqa: E501
+            return self.validate_vnet_with_http_info(vnet, resource_group, account_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_vnet_using_get_with_http_info(account_id, resource_group, vnet, **kwargs)  # noqa: E501
+            (data) = self.validate_vnet_with_http_info(vnet, resource_group, account_id, **kwargs)  # noqa: E501
             return data
 
-    def validate_vnet_using_get_with_http_info(self, account_id, resource_group, vnet, **kwargs):  # noqa: E501
-        """validateVnet  # noqa: E501
+    def validate_vnet_with_http_info(self, vnet, resource_group, account_id, **kwargs):  # noqa: E501
+        """validate_vnet  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_vnet_using_get_with_http_info(account_id, resource_group, vnet, async_req=True)
+        >>> thread = api.validate_vnet_with_http_info(vnet, resource_group, account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str resource_group: resourceGroup (required)
-        :param str vnet: vnet (required)
+        :param str vnet: (required)
+        :param str resource_group: (required)
+        :param str account_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'resource_group', 'vnet']  # noqa: E501
+        all_params = ['vnet', 'resource_group', 'account_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -483,34 +483,34 @@ class UiAzureClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_vnet_using_get" % key
+                    " to method validate_vnet" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params or
-                params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `validate_vnet_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_group' is set
-        if ('resource_group' not in params or
-                params['resource_group'] is None):
-            raise ValueError("Missing the required parameter `resource_group` when calling `validate_vnet_using_get`")  # noqa: E501
         # verify the required parameter 'vnet' is set
         if ('vnet' not in params or
                 params['vnet'] is None):
-            raise ValueError("Missing the required parameter `vnet` when calling `validate_vnet_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vnet` when calling `validate_vnet`")  # noqa: E501
+        # verify the required parameter 'resource_group' is set
+        if ('resource_group' not in params or
+                params['resource_group'] is None):
+            raise ValueError("Missing the required parameter `resource_group` when calling `validate_vnet`")  # noqa: E501
+        # verify the required parameter 'account_id' is set
+        if ('account_id' not in params or
+                params['account_id'] is None):
+            raise ValueError("Missing the required parameter `account_id` when calling `validate_vnet`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'account_id' in params:
-            query_params.append(('accountId', params['account_id']))  # noqa: E501
-        if 'resource_group' in params:
-            query_params.append(('resourceGroup', params['resource_group']))  # noqa: E501
         if 'vnet' in params:
             query_params.append(('vnet', params['vnet']))  # noqa: E501
+        if 'resource_group' in params:
+            query_params.append(('resourceGroup', params['resource_group']))  # noqa: E501
+        if 'account_id' in params:
+            query_params.append(('accountId', params['account_id']))  # noqa: E501
 
         header_params = {}
 
@@ -520,10 +520,10 @@ class UiAzureClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/azure/clusters/validate-vnet', 'GET',

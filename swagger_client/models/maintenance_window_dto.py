@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,79 +28,95 @@ class MaintenanceWindowDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'cluster_id': 'str',
+        'day_of_week': 'str',
+        'start_time': 'LocalTime',
+        'end_time': 'LocalTime',
+        'time_zone': 'MaintenanceWindowDTOTimeZone',
+        'cron': 'str',
+        'disabled': 'bool',
+        'triggered': 'bool',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'cron': 'str',
-        'day_of_week': 'str',
-        'disabled': 'bool',
-        'end_time': 'LocalTime',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
-        'start_time': 'LocalTime',
-        'time_zone': 'TimeZone',
-        'triggered': 'bool'
+        'last_modified_by': 'str'
     }
 
     attribute_map = {
+        'id': 'id',
         'cluster_id': 'clusterId',
+        'day_of_week': 'dayOfWeek',
+        'start_time': 'startTime',
+        'end_time': 'endTime',
+        'time_zone': 'timeZone',
+        'cron': 'cron',
+        'disabled': 'disabled',
+        'triggered': 'triggered',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'cron': 'cron',
-        'day_of_week': 'dayOfWeek',
-        'disabled': 'disabled',
-        'end_time': 'endTime',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
-        'start_time': 'startTime',
-        'time_zone': 'timeZone',
-        'triggered': 'triggered'
+        'last_modified_by': 'lastModifiedBy'
     }
 
-    def __init__(self, cluster_id=None, created_by=None, creation_date=None, cron=None, day_of_week=None, disabled=None, end_time=None, id=None, last_modified_by=None, last_modified_date=None, start_time=None, time_zone=None, triggered=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, day_of_week=None, start_time=None, end_time=None, time_zone=None, cron=None, disabled=None, triggered=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None):  # noqa: E501
         """MaintenanceWindowDTO - a model defined in Swagger"""  # noqa: E501
+        self._id = None
         self._cluster_id = None
+        self._day_of_week = None
+        self._start_time = None
+        self._end_time = None
+        self._time_zone = None
+        self._cron = None
+        self._disabled = None
+        self._triggered = None
         self._created_by = None
         self._creation_date = None
-        self._cron = None
-        self._day_of_week = None
-        self._disabled = None
-        self._end_time = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
-        self._start_time = None
-        self._time_zone = None
-        self._triggered = None
+        self._last_modified_by = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
+        if id is not None:
+            self.id = id
+        self.cluster_id = cluster_id
+        self.day_of_week = day_of_week
+        self.start_time = start_time
+        self.end_time = end_time
+        self.time_zone = time_zone
+        if cron is not None:
+            self.cron = cron
+        if disabled is not None:
+            self.disabled = disabled
+        if triggered is not None:
+            self.triggered = triggered
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if cron is not None:
-            self.cron = cron
-        if day_of_week is not None:
-            self.day_of_week = day_of_week
-        if disabled is not None:
-            self.disabled = disabled
-        if end_time is not None:
-            self.end_time = end_time
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if start_time is not None:
-            self.start_time = start_time
-        if time_zone is not None:
-            self.time_zone = time_zone
-        if triggered is not None:
-            self.triggered = triggered
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+
+    @property
+    def id(self):
+        """Gets the id of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The id of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this MaintenanceWindowDTO.
+
+
+        :param id: The id of this MaintenanceWindowDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def cluster_id(self):
@@ -120,8 +136,171 @@ class MaintenanceWindowDTO(object):
         :param cluster_id: The cluster_id of this MaintenanceWindowDTO.  # noqa: E501
         :type: str
         """
+        if cluster_id is None:
+            raise ValueError("Invalid value for `cluster_id`, must not be `None`")  # noqa: E501
 
         self._cluster_id = cluster_id
+
+    @property
+    def day_of_week(self):
+        """Gets the day_of_week of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The day_of_week of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._day_of_week
+
+    @day_of_week.setter
+    def day_of_week(self, day_of_week):
+        """Sets the day_of_week of this MaintenanceWindowDTO.
+
+
+        :param day_of_week: The day_of_week of this MaintenanceWindowDTO.  # noqa: E501
+        :type: str
+        """
+        if day_of_week is None:
+            raise ValueError("Invalid value for `day_of_week`, must not be `None`")  # noqa: E501
+        allowed_values = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]  # noqa: E501
+        if day_of_week not in allowed_values:
+            raise ValueError(
+                "Invalid value for `day_of_week` ({0}), must be one of {1}"  # noqa: E501
+                .format(day_of_week, allowed_values)
+            )
+
+        self._day_of_week = day_of_week
+
+    @property
+    def start_time(self):
+        """Gets the start_time of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The start_time of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: LocalTime
+        """
+        return self._start_time
+
+    @start_time.setter
+    def start_time(self, start_time):
+        """Sets the start_time of this MaintenanceWindowDTO.
+
+
+        :param start_time: The start_time of this MaintenanceWindowDTO.  # noqa: E501
+        :type: LocalTime
+        """
+        if start_time is None:
+            raise ValueError("Invalid value for `start_time`, must not be `None`")  # noqa: E501
+
+        self._start_time = start_time
+
+    @property
+    def end_time(self):
+        """Gets the end_time of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The end_time of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: LocalTime
+        """
+        return self._end_time
+
+    @end_time.setter
+    def end_time(self, end_time):
+        """Sets the end_time of this MaintenanceWindowDTO.
+
+
+        :param end_time: The end_time of this MaintenanceWindowDTO.  # noqa: E501
+        :type: LocalTime
+        """
+        if end_time is None:
+            raise ValueError("Invalid value for `end_time`, must not be `None`")  # noqa: E501
+
+        self._end_time = end_time
+
+    @property
+    def time_zone(self):
+        """Gets the time_zone of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The time_zone of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: MaintenanceWindowDTOTimeZone
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """Sets the time_zone of this MaintenanceWindowDTO.
+
+
+        :param time_zone: The time_zone of this MaintenanceWindowDTO.  # noqa: E501
+        :type: MaintenanceWindowDTOTimeZone
+        """
+        if time_zone is None:
+            raise ValueError("Invalid value for `time_zone`, must not be `None`")  # noqa: E501
+
+        self._time_zone = time_zone
+
+    @property
+    def cron(self):
+        """Gets the cron of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The cron of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._cron
+
+    @cron.setter
+    def cron(self, cron):
+        """Sets the cron of this MaintenanceWindowDTO.
+
+
+        :param cron: The cron of this MaintenanceWindowDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._cron = cron
+
+    @property
+    def disabled(self):
+        """Gets the disabled of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The disabled of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this MaintenanceWindowDTO.
+
+
+        :param disabled: The disabled of this MaintenanceWindowDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._disabled = disabled
+
+    @property
+    def triggered(self):
+        """Gets the triggered of this MaintenanceWindowDTO.  # noqa: E501
+
+
+        :return: The triggered of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._triggered
+
+    @triggered.setter
+    def triggered(self, triggered):
+        """Sets the triggered of this MaintenanceWindowDTO.
+
+
+        :param triggered: The triggered of this MaintenanceWindowDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._triggered = triggered
 
     @property
     def created_by(self):
@@ -166,138 +345,6 @@ class MaintenanceWindowDTO(object):
         self._creation_date = creation_date
 
     @property
-    def cron(self):
-        """Gets the cron of this MaintenanceWindowDTO.  # noqa: E501
-
-
-        :return: The cron of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._cron
-
-    @cron.setter
-    def cron(self, cron):
-        """Sets the cron of this MaintenanceWindowDTO.
-
-
-        :param cron: The cron of this MaintenanceWindowDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._cron = cron
-
-    @property
-    def day_of_week(self):
-        """Gets the day_of_week of this MaintenanceWindowDTO.  # noqa: E501
-
-
-        :return: The day_of_week of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._day_of_week
-
-    @day_of_week.setter
-    def day_of_week(self, day_of_week):
-        """Sets the day_of_week of this MaintenanceWindowDTO.
-
-
-        :param day_of_week: The day_of_week of this MaintenanceWindowDTO.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]  # noqa: E501
-        if day_of_week not in allowed_values:
-            raise ValueError(
-                "Invalid value for `day_of_week` ({0}), must be one of {1}"  # noqa: E501
-                .format(day_of_week, allowed_values)
-            )
-
-        self._day_of_week = day_of_week
-
-    @property
-    def disabled(self):
-        """Gets the disabled of this MaintenanceWindowDTO.  # noqa: E501
-
-
-        :return: The disabled of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: bool
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this MaintenanceWindowDTO.
-
-
-        :param disabled: The disabled of this MaintenanceWindowDTO.  # noqa: E501
-        :type: bool
-        """
-
-        self._disabled = disabled
-
-    @property
-    def end_time(self):
-        """Gets the end_time of this MaintenanceWindowDTO.  # noqa: E501
-
-
-        :return: The end_time of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: LocalTime
-        """
-        return self._end_time
-
-    @end_time.setter
-    def end_time(self, end_time):
-        """Sets the end_time of this MaintenanceWindowDTO.
-
-
-        :param end_time: The end_time of this MaintenanceWindowDTO.  # noqa: E501
-        :type: LocalTime
-        """
-
-        self._end_time = end_time
-
-    @property
-    def id(self):
-        """Gets the id of this MaintenanceWindowDTO.  # noqa: E501
-
-
-        :return: The id of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this MaintenanceWindowDTO.
-
-
-        :param id: The id of this MaintenanceWindowDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this MaintenanceWindowDTO.  # noqa: E501
-
-
-        :return: The last_modified_by of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this MaintenanceWindowDTO.
-
-
-        :param last_modified_by: The last_modified_by of this MaintenanceWindowDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
     def last_modified_date(self):
         """Gets the last_modified_date of this MaintenanceWindowDTO.  # noqa: E501
 
@@ -319,67 +366,25 @@ class MaintenanceWindowDTO(object):
         self._last_modified_date = last_modified_date
 
     @property
-    def start_time(self):
-        """Gets the start_time of this MaintenanceWindowDTO.  # noqa: E501
+    def last_modified_by(self):
+        """Gets the last_modified_by of this MaintenanceWindowDTO.  # noqa: E501
 
 
-        :return: The start_time of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: LocalTime
+        :return: The last_modified_by of this MaintenanceWindowDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._start_time
+        return self._last_modified_by
 
-    @start_time.setter
-    def start_time(self, start_time):
-        """Sets the start_time of this MaintenanceWindowDTO.
-
-
-        :param start_time: The start_time of this MaintenanceWindowDTO.  # noqa: E501
-        :type: LocalTime
-        """
-
-        self._start_time = start_time
-
-    @property
-    def time_zone(self):
-        """Gets the time_zone of this MaintenanceWindowDTO.  # noqa: E501
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this MaintenanceWindowDTO.
 
 
-        :return: The time_zone of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: TimeZone
-        """
-        return self._time_zone
-
-    @time_zone.setter
-    def time_zone(self, time_zone):
-        """Sets the time_zone of this MaintenanceWindowDTO.
-
-
-        :param time_zone: The time_zone of this MaintenanceWindowDTO.  # noqa: E501
-        :type: TimeZone
+        :param last_modified_by: The last_modified_by of this MaintenanceWindowDTO.  # noqa: E501
+        :type: str
         """
 
-        self._time_zone = time_zone
-
-    @property
-    def triggered(self):
-        """Gets the triggered of this MaintenanceWindowDTO.  # noqa: E501
-
-
-        :return: The triggered of this MaintenanceWindowDTO.  # noqa: E501
-        :rtype: bool
-        """
-        return self._triggered
-
-    @triggered.setter
-    def triggered(self, triggered):
-        """Sets the triggered of this MaintenanceWindowDTO.
-
-
-        :param triggered: The triggered of this MaintenanceWindowDTO.  # noqa: E501
-        :type: bool
-        """
-
-        self._triggered = triggered
+        self._last_modified_by = last_modified_by
 
     def to_dict(self):
         """Returns the model properties as a dict"""

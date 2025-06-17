@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,12 +32,12 @@ class UiMetaControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_cp_account_using_get(self, **kwargs):  # noqa: E501
-        """getCPAccount  # noqa: E501
+    def get_cp_account(self, **kwargs):  # noqa: E501
+        """get_cp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cp_account_using_get(async_req=True)
+        >>> thread = api.get_cp_account(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -47,17 +47,17 @@ class UiMetaControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_cp_account_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_cp_account_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_cp_account_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_cp_account_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_cp_account_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getCPAccount  # noqa: E501
+    def get_cp_account_with_http_info(self, **kwargs):  # noqa: E501
+        """get_cp_account  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cp_account_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_cp_account_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -77,7 +77,7 @@ class UiMetaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_cp_account_using_get" % key
+                    " to method get_cp_account" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -96,10 +96,10 @@ class UiMetaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/meta/cpAccount', 'GET',
@@ -117,37 +117,37 @@ class UiMetaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_supported_component_version_using_get1(self, component_type, **kwargs):  # noqa: E501
-        """getSupportedComponentVersion  # noqa: E501
+    def get_supported_component_version(self, component_type, **kwargs):  # noqa: E501
+        """get_supported_component_version  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_version_using_get1(component_type, async_req=True)
+        >>> thread = api.get_supported_component_version(component_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str component_type: componentType (required)
+        :param str component_type: (required)
         :return: SupportedVersions
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_supported_component_version_using_get1_with_http_info(component_type, **kwargs)  # noqa: E501
+            return self.get_supported_component_version_with_http_info(component_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_supported_component_version_using_get1_with_http_info(component_type, **kwargs)  # noqa: E501
+            (data) = self.get_supported_component_version_with_http_info(component_type, **kwargs)  # noqa: E501
             return data
 
-    def get_supported_component_version_using_get1_with_http_info(self, component_type, **kwargs):  # noqa: E501
-        """getSupportedComponentVersion  # noqa: E501
+    def get_supported_component_version_with_http_info(self, component_type, **kwargs):  # noqa: E501
+        """get_supported_component_version  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_version_using_get1_with_http_info(component_type, async_req=True)
+        >>> thread = api.get_supported_component_version_with_http_info(component_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str component_type: componentType (required)
+        :param str component_type: (required)
         :return: SupportedVersions
                  If the method is called asynchronously,
                  returns the request thread.
@@ -164,14 +164,14 @@ class UiMetaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_supported_component_version_using_get1" % key
+                    " to method get_supported_component_version" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'component_type' is set
         if ('component_type' not in params or
                 params['component_type'] is None):
-            raise ValueError("Missing the required parameter `component_type` when calling `get_supported_component_version_using_get1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `component_type` when calling `get_supported_component_version`")  # noqa: E501
 
         collection_formats = {}
 
@@ -189,10 +189,10 @@ class UiMetaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/meta/components/{componentType}/supportedVersion', 'GET',
@@ -210,12 +210,12 @@ class UiMetaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_supported_component_versions_using_get1(self, **kwargs):  # noqa: E501
-        """getSupportedComponentVersions  # noqa: E501
+    def get_supported_component_versions(self, **kwargs):  # noqa: E501
+        """get_supported_component_versions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_versions_using_get1(async_req=True)
+        >>> thread = api.get_supported_component_versions(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -225,17 +225,17 @@ class UiMetaControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_supported_component_versions_using_get1_with_http_info(**kwargs)  # noqa: E501
+            return self.get_supported_component_versions_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_supported_component_versions_using_get1_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_supported_component_versions_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_supported_component_versions_using_get1_with_http_info(self, **kwargs):  # noqa: E501
-        """getSupportedComponentVersions  # noqa: E501
+    def get_supported_component_versions_with_http_info(self, **kwargs):  # noqa: E501
+        """get_supported_component_versions  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_supported_component_versions_using_get1_with_http_info(async_req=True)
+        >>> thread = api.get_supported_component_versions_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -255,7 +255,7 @@ class UiMetaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_supported_component_versions_using_get1" % key
+                    " to method get_supported_component_versions" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -274,10 +274,10 @@ class UiMetaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/meta/components/supportedVersion', 'GET',

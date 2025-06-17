@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,185 @@ class ArtifactRoutingRuleRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ci_system': 'str',
-        'criteria': 'list[Criterion]',
         'id': 'str',
-        'is_default': 'bool',
-        'registration_type': 'str',
         'rule_name': 'str',
-        'stack_name': 'str'
+        'registration_type': 'str',
+        'criteria': 'list[Criterion]',
+        'stack_name': 'str',
+        'is_default': 'bool',
+        'ci_system': 'str'
     }
 
     attribute_map = {
-        'ci_system': 'ciSystem',
-        'criteria': 'criteria',
         'id': 'id',
-        'is_default': 'isDefault',
-        'registration_type': 'registrationType',
         'rule_name': 'ruleName',
-        'stack_name': 'stackName'
+        'registration_type': 'registrationType',
+        'criteria': 'criteria',
+        'stack_name': 'stackName',
+        'is_default': 'isDefault',
+        'ci_system': 'ciSystem'
     }
 
-    def __init__(self, ci_system=None, criteria=None, id=None, is_default=None, registration_type=None, rule_name=None, stack_name=None):  # noqa: E501
+    def __init__(self, id=None, rule_name=None, registration_type=None, criteria=None, stack_name=None, is_default=None, ci_system=None):  # noqa: E501
         """ArtifactRoutingRuleRequest - a model defined in Swagger"""  # noqa: E501
-        self._ci_system = None
-        self._criteria = None
         self._id = None
-        self._is_default = None
-        self._registration_type = None
         self._rule_name = None
+        self._registration_type = None
+        self._criteria = None
         self._stack_name = None
+        self._is_default = None
+        self._ci_system = None
         self.discriminator = None
-        if ci_system is not None:
-            self.ci_system = ci_system
-        if criteria is not None:
-            self.criteria = criteria
         if id is not None:
             self.id = id
+        self.rule_name = rule_name
+        self.registration_type = registration_type
+        self.criteria = criteria
+        self.stack_name = stack_name
         if is_default is not None:
             self.is_default = is_default
-        if registration_type is not None:
-            self.registration_type = registration_type
-        if rule_name is not None:
-            self.rule_name = rule_name
-        if stack_name is not None:
-            self.stack_name = stack_name
+        if ci_system is not None:
+            self.ci_system = ci_system
+
+    @property
+    def id(self):
+        """Gets the id of this ArtifactRoutingRuleRequest.  # noqa: E501
+
+
+        :return: The id of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ArtifactRoutingRuleRequest.
+
+
+        :param id: The id of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def rule_name(self):
+        """Gets the rule_name of this ArtifactRoutingRuleRequest.  # noqa: E501
+
+
+        :return: The rule_name of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._rule_name
+
+    @rule_name.setter
+    def rule_name(self, rule_name):
+        """Sets the rule_name of this ArtifactRoutingRuleRequest.
+
+
+        :param rule_name: The rule_name of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :type: str
+        """
+        if rule_name is None:
+            raise ValueError("Invalid value for `rule_name`, must not be `None`")  # noqa: E501
+
+        self._rule_name = rule_name
+
+    @property
+    def registration_type(self):
+        """Gets the registration_type of this ArtifactRoutingRuleRequest.  # noqa: E501
+
+
+        :return: The registration_type of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_type
+
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """Sets the registration_type of this ArtifactRoutingRuleRequest.
+
+
+        :param registration_type: The registration_type of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :type: str
+        """
+        if registration_type is None:
+            raise ValueError("Invalid value for `registration_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
+        if registration_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(registration_type, allowed_values)
+            )
+
+        self._registration_type = registration_type
+
+    @property
+    def criteria(self):
+        """Gets the criteria of this ArtifactRoutingRuleRequest.  # noqa: E501
+
+
+        :return: The criteria of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :rtype: list[Criterion]
+        """
+        return self._criteria
+
+    @criteria.setter
+    def criteria(self, criteria):
+        """Sets the criteria of this ArtifactRoutingRuleRequest.
+
+
+        :param criteria: The criteria of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :type: list[Criterion]
+        """
+        if criteria is None:
+            raise ValueError("Invalid value for `criteria`, must not be `None`")  # noqa: E501
+
+        self._criteria = criteria
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this ArtifactRoutingRuleRequest.  # noqa: E501
+
+
+        :return: The stack_name of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this ArtifactRoutingRuleRequest.
+
+
+        :param stack_name: The stack_name of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :type: str
+        """
+        if stack_name is None:
+            raise ValueError("Invalid value for `stack_name`, must not be `None`")  # noqa: E501
+
+        self._stack_name = stack_name
+
+    @property
+    def is_default(self):
+        """Gets the is_default of this ArtifactRoutingRuleRequest.  # noqa: E501
+
+
+        :return: The is_default of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_default
+
+    @is_default.setter
+    def is_default(self, is_default):
+        """Sets the is_default of this ArtifactRoutingRuleRequest.
+
+
+        :param is_default: The is_default of this ArtifactRoutingRuleRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_default = is_default
 
     @property
     def ci_system(self):
@@ -98,138 +234,6 @@ class ArtifactRoutingRuleRequest(object):
             )
 
         self._ci_system = ci_system
-
-    @property
-    def criteria(self):
-        """Gets the criteria of this ArtifactRoutingRuleRequest.  # noqa: E501
-
-
-        :return: The criteria of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :rtype: list[Criterion]
-        """
-        return self._criteria
-
-    @criteria.setter
-    def criteria(self, criteria):
-        """Sets the criteria of this ArtifactRoutingRuleRequest.
-
-
-        :param criteria: The criteria of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :type: list[Criterion]
-        """
-
-        self._criteria = criteria
-
-    @property
-    def id(self):
-        """Gets the id of this ArtifactRoutingRuleRequest.  # noqa: E501
-
-
-        :return: The id of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ArtifactRoutingRuleRequest.
-
-
-        :param id: The id of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def is_default(self):
-        """Gets the is_default of this ArtifactRoutingRuleRequest.  # noqa: E501
-
-
-        :return: The is_default of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_default
-
-    @is_default.setter
-    def is_default(self, is_default):
-        """Sets the is_default of this ArtifactRoutingRuleRequest.
-
-
-        :param is_default: The is_default of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_default = is_default
-
-    @property
-    def registration_type(self):
-        """Gets the registration_type of this ArtifactRoutingRuleRequest.  # noqa: E501
-
-
-        :return: The registration_type of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._registration_type
-
-    @registration_type.setter
-    def registration_type(self, registration_type):
-        """Sets the registration_type of this ArtifactRoutingRuleRequest.
-
-
-        :param registration_type: The registration_type of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
-        if registration_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(registration_type, allowed_values)
-            )
-
-        self._registration_type = registration_type
-
-    @property
-    def rule_name(self):
-        """Gets the rule_name of this ArtifactRoutingRuleRequest.  # noqa: E501
-
-
-        :return: The rule_name of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._rule_name
-
-    @rule_name.setter
-    def rule_name(self, rule_name):
-        """Sets the rule_name of this ArtifactRoutingRuleRequest.
-
-
-        :param rule_name: The rule_name of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._rule_name = rule_name
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this ArtifactRoutingRuleRequest.  # noqa: E501
-
-
-        :return: The stack_name of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this ArtifactRoutingRuleRequest.
-
-
-        :param stack_name: The stack_name of this ArtifactRoutingRuleRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

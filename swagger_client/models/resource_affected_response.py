@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class ResourceAffectedResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'affected_resources': 'list[AffectedResource]',
         'cluster_id': 'str',
+        'affected_resources': 'list[AffectedResource]',
         'target_resources': 'list[TargetResource]'
     }
 
     attribute_map = {
-        'affected_resources': 'affectedResources',
         'cluster_id': 'clusterId',
+        'affected_resources': 'affectedResources',
         'target_resources': 'targetResources'
     }
 
-    def __init__(self, affected_resources=None, cluster_id=None, target_resources=None):  # noqa: E501
+    def __init__(self, cluster_id=None, affected_resources=None, target_resources=None):  # noqa: E501
         """ResourceAffectedResponse - a model defined in Swagger"""  # noqa: E501
-        self._affected_resources = None
         self._cluster_id = None
+        self._affected_resources = None
         self._target_resources = None
         self.discriminator = None
-        if affected_resources is not None:
-            self.affected_resources = affected_resources
         if cluster_id is not None:
             self.cluster_id = cluster_id
+        if affected_resources is not None:
+            self.affected_resources = affected_resources
         if target_resources is not None:
             self.target_resources = target_resources
-
-    @property
-    def affected_resources(self):
-        """Gets the affected_resources of this ResourceAffectedResponse.  # noqa: E501
-
-
-        :return: The affected_resources of this ResourceAffectedResponse.  # noqa: E501
-        :rtype: list[AffectedResource]
-        """
-        return self._affected_resources
-
-    @affected_resources.setter
-    def affected_resources(self, affected_resources):
-        """Sets the affected_resources of this ResourceAffectedResponse.
-
-
-        :param affected_resources: The affected_resources of this ResourceAffectedResponse.  # noqa: E501
-        :type: list[AffectedResource]
-        """
-
-        self._affected_resources = affected_resources
 
     @property
     def cluster_id(self):
@@ -93,6 +72,27 @@ class ResourceAffectedResponse(object):
         """
 
         self._cluster_id = cluster_id
+
+    @property
+    def affected_resources(self):
+        """Gets the affected_resources of this ResourceAffectedResponse.  # noqa: E501
+
+
+        :return: The affected_resources of this ResourceAffectedResponse.  # noqa: E501
+        :rtype: list[AffectedResource]
+        """
+        return self._affected_resources
+
+    @affected_resources.setter
+    def affected_resources(self, affected_resources):
+        """Sets the affected_resources of this ResourceAffectedResponse.
+
+
+        :param affected_resources: The affected_resources of this ResourceAffectedResponse.  # noqa: E501
+        :type: list[AffectedResource]
+        """
+
+        self._affected_resources = affected_resources
 
     @property
     def target_resources(self):

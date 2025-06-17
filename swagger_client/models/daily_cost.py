@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,33 +29,33 @@ class DailyCost(object):
     """
     swagger_types = {
         'amount': 'float',
+        'unit': 'str',
         '_date': 'date',
-        'per_service_cost': 'list[ServiceCost]',
-        'unit': 'str'
+        'per_service_cost': 'list[ServiceCost]'
     }
 
     attribute_map = {
         'amount': 'amount',
+        'unit': 'unit',
         '_date': 'date',
-        'per_service_cost': 'perServiceCost',
-        'unit': 'unit'
+        'per_service_cost': 'perServiceCost'
     }
 
-    def __init__(self, amount=None, _date=None, per_service_cost=None, unit=None):  # noqa: E501
+    def __init__(self, amount=None, unit=None, _date=None, per_service_cost=None):  # noqa: E501
         """DailyCost - a model defined in Swagger"""  # noqa: E501
         self._amount = None
+        self._unit = None
         self.__date = None
         self._per_service_cost = None
-        self._unit = None
         self.discriminator = None
         if amount is not None:
             self.amount = amount
+        if unit is not None:
+            self.unit = unit
         if _date is not None:
             self._date = _date
         if per_service_cost is not None:
             self.per_service_cost = per_service_cost
-        if unit is not None:
-            self.unit = unit
 
     @property
     def amount(self):
@@ -77,6 +77,27 @@ class DailyCost(object):
         """
 
         self._amount = amount
+
+    @property
+    def unit(self):
+        """Gets the unit of this DailyCost.  # noqa: E501
+
+
+        :return: The unit of this DailyCost.  # noqa: E501
+        :rtype: str
+        """
+        return self._unit
+
+    @unit.setter
+    def unit(self, unit):
+        """Sets the unit of this DailyCost.
+
+
+        :param unit: The unit of this DailyCost.  # noqa: E501
+        :type: str
+        """
+
+        self._unit = unit
 
     @property
     def _date(self):
@@ -119,27 +140,6 @@ class DailyCost(object):
         """
 
         self._per_service_cost = per_service_cost
-
-    @property
-    def unit(self):
-        """Gets the unit of this DailyCost.  # noqa: E501
-
-
-        :return: The unit of this DailyCost.  # noqa: E501
-        :rtype: str
-        """
-        return self._unit
-
-    @unit.setter
-    def unit(self, unit):
-        """Sets the unit of this DailyCost.
-
-
-        :param unit: The unit of this DailyCost.  # noqa: E501
-        :type: str
-        """
-
-        self._unit = unit
 
     def to_dict(self):
         """Returns the model properties as a dict"""

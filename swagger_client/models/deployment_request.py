@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,103 +28,176 @@ class DeploymentRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allow_destroy': 'bool',
-        'alpha': 'bool',
-        'approved_release': 'bool',
-        'can_queue': 'bool',
+        'release_type': 'str',
         'extra_env': 'dict(str, str)',
+        'override_build_steps': 'list[str]',
+        'allow_destroy': 'bool',
+        'with_refresh': 'bool',
         'force_release': 'bool',
+        'tf_version': 'TfVersion',
+        'release_comment': 'str',
+        'plan_code_build_id': 'str',
         'hotfix_resources': 'list[FacetsResource]',
         'lock_id': 'str',
-        'override_build_steps': 'list[str]',
+        'can_queue': 'bool',
         'parallel_release': 'bool',
-        'plan_code_build_id': 'str',
-        'queued_release_id': 'str',
-        'release_comment': 'str',
         'release_trace_id': 'str',
-        'release_type': 'str',
+        'queued_release_id': 'str',
         'rollback_deployment_id': 'str',
-        'tf_version': 'TfVersion',
-        'with_refresh': 'bool'
+        'alpha': 'bool',
+        'approved_release': 'bool'
     }
 
     attribute_map = {
-        'allow_destroy': 'allowDestroy',
-        'alpha': 'alpha',
-        'approved_release': 'approvedRelease',
-        'can_queue': 'canQueue',
+        'release_type': 'releaseType',
         'extra_env': 'extraEnv',
+        'override_build_steps': 'overrideBuildSteps',
+        'allow_destroy': 'allowDestroy',
+        'with_refresh': 'withRefresh',
         'force_release': 'forceRelease',
+        'tf_version': 'tfVersion',
+        'release_comment': 'releaseComment',
+        'plan_code_build_id': 'planCodeBuildId',
         'hotfix_resources': 'hotfixResources',
         'lock_id': 'lockId',
-        'override_build_steps': 'overrideBuildSteps',
+        'can_queue': 'canQueue',
         'parallel_release': 'parallelRelease',
-        'plan_code_build_id': 'planCodeBuildId',
-        'queued_release_id': 'queuedReleaseId',
-        'release_comment': 'releaseComment',
         'release_trace_id': 'releaseTraceId',
-        'release_type': 'releaseType',
+        'queued_release_id': 'queuedReleaseId',
         'rollback_deployment_id': 'rollbackDeploymentId',
-        'tf_version': 'tfVersion',
-        'with_refresh': 'withRefresh'
+        'alpha': 'alpha',
+        'approved_release': 'approvedRelease'
     }
 
-    def __init__(self, allow_destroy=None, alpha=None, approved_release=None, can_queue=None, extra_env=None, force_release=None, hotfix_resources=None, lock_id=None, override_build_steps=None, parallel_release=None, plan_code_build_id=None, queued_release_id=None, release_comment=None, release_trace_id=None, release_type=None, rollback_deployment_id=None, tf_version=None, with_refresh=None):  # noqa: E501
+    def __init__(self, release_type=None, extra_env=None, override_build_steps=None, allow_destroy=None, with_refresh=None, force_release=None, tf_version=None, release_comment=None, plan_code_build_id=None, hotfix_resources=None, lock_id=None, can_queue=None, parallel_release=None, release_trace_id=None, queued_release_id=None, rollback_deployment_id=None, alpha=None, approved_release=None):  # noqa: E501
         """DeploymentRequest - a model defined in Swagger"""  # noqa: E501
-        self._allow_destroy = None
-        self._alpha = None
-        self._approved_release = None
-        self._can_queue = None
+        self._release_type = None
         self._extra_env = None
+        self._override_build_steps = None
+        self._allow_destroy = None
+        self._with_refresh = None
         self._force_release = None
+        self._tf_version = None
+        self._release_comment = None
+        self._plan_code_build_id = None
         self._hotfix_resources = None
         self._lock_id = None
-        self._override_build_steps = None
+        self._can_queue = None
         self._parallel_release = None
-        self._plan_code_build_id = None
-        self._queued_release_id = None
-        self._release_comment = None
         self._release_trace_id = None
-        self._release_type = None
+        self._queued_release_id = None
         self._rollback_deployment_id = None
-        self._tf_version = None
-        self._with_refresh = None
+        self._alpha = None
+        self._approved_release = None
         self.discriminator = None
-        if allow_destroy is not None:
-            self.allow_destroy = allow_destroy
-        if alpha is not None:
-            self.alpha = alpha
-        if approved_release is not None:
-            self.approved_release = approved_release
-        if can_queue is not None:
-            self.can_queue = can_queue
+        if release_type is not None:
+            self.release_type = release_type
         if extra_env is not None:
             self.extra_env = extra_env
+        self.override_build_steps = override_build_steps
+        if allow_destroy is not None:
+            self.allow_destroy = allow_destroy
+        if with_refresh is not None:
+            self.with_refresh = with_refresh
         if force_release is not None:
             self.force_release = force_release
+        if tf_version is not None:
+            self.tf_version = tf_version
+        if release_comment is not None:
+            self.release_comment = release_comment
+        if plan_code_build_id is not None:
+            self.plan_code_build_id = plan_code_build_id
         if hotfix_resources is not None:
             self.hotfix_resources = hotfix_resources
         if lock_id is not None:
             self.lock_id = lock_id
-        self.override_build_steps = override_build_steps
+        if can_queue is not None:
+            self.can_queue = can_queue
         if parallel_release is not None:
             self.parallel_release = parallel_release
-        if plan_code_build_id is not None:
-            self.plan_code_build_id = plan_code_build_id
-        if queued_release_id is not None:
-            self.queued_release_id = queued_release_id
-        if release_comment is not None:
-            self.release_comment = release_comment
         if release_trace_id is not None:
             self.release_trace_id = release_trace_id
-        if release_type is not None:
-            self.release_type = release_type
+        if queued_release_id is not None:
+            self.queued_release_id = queued_release_id
         if rollback_deployment_id is not None:
             self.rollback_deployment_id = rollback_deployment_id
-        if tf_version is not None:
-            self.tf_version = tf_version
-        if with_refresh is not None:
-            self.with_refresh = with_refresh
+        if alpha is not None:
+            self.alpha = alpha
+        if approved_release is not None:
+            self.approved_release = approved_release
+
+    @property
+    def release_type(self):
+        """Gets the release_type of this DeploymentRequest.  # noqa: E501
+
+        CUSTOM  # noqa: E501
+
+        :return: The release_type of this DeploymentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_type
+
+    @release_type.setter
+    def release_type(self, release_type):
+        """Sets the release_type of this DeploymentRequest.
+
+        CUSTOM  # noqa: E501
+
+        :param release_type: The release_type of this DeploymentRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
+        if release_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(release_type, allowed_values)
+            )
+
+        self._release_type = release_type
+
+    @property
+    def extra_env(self):
+        """Gets the extra_env of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The extra_env of this DeploymentRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._extra_env
+
+    @extra_env.setter
+    def extra_env(self, extra_env):
+        """Sets the extra_env of this DeploymentRequest.
+
+
+        :param extra_env: The extra_env of this DeploymentRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._extra_env = extra_env
+
+    @property
+    def override_build_steps(self):
+        """Gets the override_build_steps of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The override_build_steps of this DeploymentRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._override_build_steps
+
+    @override_build_steps.setter
+    def override_build_steps(self, override_build_steps):
+        """Sets the override_build_steps of this DeploymentRequest.
+
+
+        :param override_build_steps: The override_build_steps of this DeploymentRequest.  # noqa: E501
+        :type: list[str]
+        """
+        if override_build_steps is None:
+            raise ValueError("Invalid value for `override_build_steps`, must not be `None`")  # noqa: E501
+
+        self._override_build_steps = override_build_steps
 
     @property
     def allow_destroy(self):
@@ -150,88 +223,27 @@ class DeploymentRequest(object):
         self._allow_destroy = allow_destroy
 
     @property
-    def alpha(self):
-        """Gets the alpha of this DeploymentRequest.  # noqa: E501
+    def with_refresh(self):
+        """Gets the with_refresh of this DeploymentRequest.  # noqa: E501
 
+        false  # noqa: E501
 
-        :return: The alpha of this DeploymentRequest.  # noqa: E501
+        :return: The with_refresh of this DeploymentRequest.  # noqa: E501
         :rtype: bool
         """
-        return self._alpha
+        return self._with_refresh
 
-    @alpha.setter
-    def alpha(self, alpha):
-        """Sets the alpha of this DeploymentRequest.
+    @with_refresh.setter
+    def with_refresh(self, with_refresh):
+        """Sets the with_refresh of this DeploymentRequest.
 
+        false  # noqa: E501
 
-        :param alpha: The alpha of this DeploymentRequest.  # noqa: E501
+        :param with_refresh: The with_refresh of this DeploymentRequest.  # noqa: E501
         :type: bool
         """
 
-        self._alpha = alpha
-
-    @property
-    def approved_release(self):
-        """Gets the approved_release of this DeploymentRequest.  # noqa: E501
-
-
-        :return: The approved_release of this DeploymentRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._approved_release
-
-    @approved_release.setter
-    def approved_release(self, approved_release):
-        """Sets the approved_release of this DeploymentRequest.
-
-
-        :param approved_release: The approved_release of this DeploymentRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._approved_release = approved_release
-
-    @property
-    def can_queue(self):
-        """Gets the can_queue of this DeploymentRequest.  # noqa: E501
-
-
-        :return: The can_queue of this DeploymentRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._can_queue
-
-    @can_queue.setter
-    def can_queue(self, can_queue):
-        """Sets the can_queue of this DeploymentRequest.
-
-
-        :param can_queue: The can_queue of this DeploymentRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._can_queue = can_queue
-
-    @property
-    def extra_env(self):
-        """Gets the extra_env of this DeploymentRequest.  # noqa: E501
-
-
-        :return: The extra_env of this DeploymentRequest.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._extra_env
-
-    @extra_env.setter
-    def extra_env(self, extra_env):
-        """Sets the extra_env of this DeploymentRequest.
-
-
-        :param extra_env: The extra_env of this DeploymentRequest.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._extra_env = extra_env
+        self._with_refresh = with_refresh
 
     @property
     def force_release(self):
@@ -255,6 +267,69 @@ class DeploymentRequest(object):
         """
 
         self._force_release = force_release
+
+    @property
+    def tf_version(self):
+        """Gets the tf_version of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The tf_version of this DeploymentRequest.  # noqa: E501
+        :rtype: TfVersion
+        """
+        return self._tf_version
+
+    @tf_version.setter
+    def tf_version(self, tf_version):
+        """Sets the tf_version of this DeploymentRequest.
+
+
+        :param tf_version: The tf_version of this DeploymentRequest.  # noqa: E501
+        :type: TfVersion
+        """
+
+        self._tf_version = tf_version
+
+    @property
+    def release_comment(self):
+        """Gets the release_comment of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The release_comment of this DeploymentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_comment
+
+    @release_comment.setter
+    def release_comment(self, release_comment):
+        """Sets the release_comment of this DeploymentRequest.
+
+
+        :param release_comment: The release_comment of this DeploymentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._release_comment = release_comment
+
+    @property
+    def plan_code_build_id(self):
+        """Gets the plan_code_build_id of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The plan_code_build_id of this DeploymentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._plan_code_build_id
+
+    @plan_code_build_id.setter
+    def plan_code_build_id(self, plan_code_build_id):
+        """Sets the plan_code_build_id of this DeploymentRequest.
+
+
+        :param plan_code_build_id: The plan_code_build_id of this DeploymentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._plan_code_build_id = plan_code_build_id
 
     @property
     def hotfix_resources(self):
@@ -299,27 +374,25 @@ class DeploymentRequest(object):
         self._lock_id = lock_id
 
     @property
-    def override_build_steps(self):
-        """Gets the override_build_steps of this DeploymentRequest.  # noqa: E501
+    def can_queue(self):
+        """Gets the can_queue of this DeploymentRequest.  # noqa: E501
 
 
-        :return: The override_build_steps of this DeploymentRequest.  # noqa: E501
-        :rtype: list[str]
+        :return: The can_queue of this DeploymentRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._override_build_steps
+        return self._can_queue
 
-    @override_build_steps.setter
-    def override_build_steps(self, override_build_steps):
-        """Sets the override_build_steps of this DeploymentRequest.
+    @can_queue.setter
+    def can_queue(self, can_queue):
+        """Sets the can_queue of this DeploymentRequest.
 
 
-        :param override_build_steps: The override_build_steps of this DeploymentRequest.  # noqa: E501
-        :type: list[str]
+        :param can_queue: The can_queue of this DeploymentRequest.  # noqa: E501
+        :type: bool
         """
-        if override_build_steps is None:
-            raise ValueError("Invalid value for `override_build_steps`, must not be `None`")  # noqa: E501
 
-        self._override_build_steps = override_build_steps
+        self._can_queue = can_queue
 
     @property
     def parallel_release(self):
@@ -343,25 +416,25 @@ class DeploymentRequest(object):
         self._parallel_release = parallel_release
 
     @property
-    def plan_code_build_id(self):
-        """Gets the plan_code_build_id of this DeploymentRequest.  # noqa: E501
+    def release_trace_id(self):
+        """Gets the release_trace_id of this DeploymentRequest.  # noqa: E501
 
 
-        :return: The plan_code_build_id of this DeploymentRequest.  # noqa: E501
+        :return: The release_trace_id of this DeploymentRequest.  # noqa: E501
         :rtype: str
         """
-        return self._plan_code_build_id
+        return self._release_trace_id
 
-    @plan_code_build_id.setter
-    def plan_code_build_id(self, plan_code_build_id):
-        """Sets the plan_code_build_id of this DeploymentRequest.
+    @release_trace_id.setter
+    def release_trace_id(self, release_trace_id):
+        """Sets the release_trace_id of this DeploymentRequest.
 
 
-        :param plan_code_build_id: The plan_code_build_id of this DeploymentRequest.  # noqa: E501
+        :param release_trace_id: The release_trace_id of this DeploymentRequest.  # noqa: E501
         :type: str
         """
 
-        self._plan_code_build_id = plan_code_build_id
+        self._release_trace_id = release_trace_id
 
     @property
     def queued_release_id(self):
@@ -385,77 +458,6 @@ class DeploymentRequest(object):
         self._queued_release_id = queued_release_id
 
     @property
-    def release_comment(self):
-        """Gets the release_comment of this DeploymentRequest.  # noqa: E501
-
-
-        :return: The release_comment of this DeploymentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_comment
-
-    @release_comment.setter
-    def release_comment(self, release_comment):
-        """Sets the release_comment of this DeploymentRequest.
-
-
-        :param release_comment: The release_comment of this DeploymentRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._release_comment = release_comment
-
-    @property
-    def release_trace_id(self):
-        """Gets the release_trace_id of this DeploymentRequest.  # noqa: E501
-
-
-        :return: The release_trace_id of this DeploymentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_trace_id
-
-    @release_trace_id.setter
-    def release_trace_id(self, release_trace_id):
-        """Sets the release_trace_id of this DeploymentRequest.
-
-
-        :param release_trace_id: The release_trace_id of this DeploymentRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._release_trace_id = release_trace_id
-
-    @property
-    def release_type(self):
-        """Gets the release_type of this DeploymentRequest.  # noqa: E501
-
-        CUSTOM  # noqa: E501
-
-        :return: The release_type of this DeploymentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_type
-
-    @release_type.setter
-    def release_type(self, release_type):
-        """Sets the release_type of this DeploymentRequest.
-
-        CUSTOM  # noqa: E501
-
-        :param release_type: The release_type of this DeploymentRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
-        if release_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(release_type, allowed_values)
-            )
-
-        self._release_type = release_type
-
-    @property
     def rollback_deployment_id(self):
         """Gets the rollback_deployment_id of this DeploymentRequest.  # noqa: E501
 
@@ -477,48 +479,46 @@ class DeploymentRequest(object):
         self._rollback_deployment_id = rollback_deployment_id
 
     @property
-    def tf_version(self):
-        """Gets the tf_version of this DeploymentRequest.  # noqa: E501
+    def alpha(self):
+        """Gets the alpha of this DeploymentRequest.  # noqa: E501
 
 
-        :return: The tf_version of this DeploymentRequest.  # noqa: E501
-        :rtype: TfVersion
-        """
-        return self._tf_version
-
-    @tf_version.setter
-    def tf_version(self, tf_version):
-        """Sets the tf_version of this DeploymentRequest.
-
-
-        :param tf_version: The tf_version of this DeploymentRequest.  # noqa: E501
-        :type: TfVersion
-        """
-
-        self._tf_version = tf_version
-
-    @property
-    def with_refresh(self):
-        """Gets the with_refresh of this DeploymentRequest.  # noqa: E501
-
-        false  # noqa: E501
-
-        :return: The with_refresh of this DeploymentRequest.  # noqa: E501
+        :return: The alpha of this DeploymentRequest.  # noqa: E501
         :rtype: bool
         """
-        return self._with_refresh
+        return self._alpha
 
-    @with_refresh.setter
-    def with_refresh(self, with_refresh):
-        """Sets the with_refresh of this DeploymentRequest.
+    @alpha.setter
+    def alpha(self, alpha):
+        """Sets the alpha of this DeploymentRequest.
 
-        false  # noqa: E501
 
-        :param with_refresh: The with_refresh of this DeploymentRequest.  # noqa: E501
+        :param alpha: The alpha of this DeploymentRequest.  # noqa: E501
         :type: bool
         """
 
-        self._with_refresh = with_refresh
+        self._alpha = alpha
+
+    @property
+    def approved_release(self):
+        """Gets the approved_release of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The approved_release of this DeploymentRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._approved_release
+
+    @approved_release.setter
+    def approved_release(self, approved_release):
+        """Sets the approved_release of this DeploymentRequest.
+
+
+        :param approved_release: The approved_release of this DeploymentRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._approved_release = approved_release
 
     def to_dict(self):
         """Returns the model properties as a dict"""

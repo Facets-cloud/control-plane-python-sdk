@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_version** | **str** |  | [optional] 
+**kind** | **str** |  | [optional] 
 **block_owner_deletion** | **bool** |  | [optional] 
 **controller** | **bool** |  | [optional] 
-**kind** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **uid** | **str** |  | [optional] 
 

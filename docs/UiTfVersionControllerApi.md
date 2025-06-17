@@ -1,21 +1,21 @@
 # swagger_client.UiTfVersionControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_tf_stream_for_cluster_using_delete**](UiTfVersionControllerApi.md#delete_tf_stream_for_cluster_using_delete) | **DELETE** /cc-ui/v1/terraform/cluster/{clusterId} | deleteTfStreamForCluster
-[**get_all_versions_using_get**](UiTfVersionControllerApi.md#get_all_versions_using_get) | **GET** /cc-ui/v1/terraform/versions | getAllVersions
-[**get_pending_migration_scripts_by_cluster_id_using_get**](UiTfVersionControllerApi.md#get_pending_migration_scripts_by_cluster_id_using_get) | **GET** /cc-ui/v1/terraform/cluster/{clusterId}/pending-migration-scripts | getPendingMigrationScriptsByClusterId
-[**get_tf_stream_for_cluster_using_get**](UiTfVersionControllerApi.md#get_tf_stream_for_cluster_using_get) | **GET** /cc-ui/v1/terraform/cluster/{clusterId} | getTfStreamForCluster
-[**get_tf_versions_for_stream_using_get**](UiTfVersionControllerApi.md#get_tf_versions_for_stream_using_get) | **GET** /cc-ui/v1/terraform/stream/{tfStream}/versions | getTfVersionsForStream
-[**populate_release_stream_tf_version_mapping_using_post**](UiTfVersionControllerApi.md#populate_release_stream_tf_version_mapping_using_post) | **POST** /cc-ui/v1/terraform/sync-release-stream-mapping | populateReleaseStreamTfVersionMapping
-[**set_tf_version_for_cluster_using_put**](UiTfVersionControllerApi.md#set_tf_version_for_cluster_using_put) | **PUT** /cc-ui/v1/terraform/cluster/{clusterId} | setTfVersionForCluster
+[**delete_tf_stream_for_cluster**](UiTfVersionControllerApi.md#delete_tf_stream_for_cluster) | **DELETE** /cc-ui/v1/terraform/cluster/{clusterId} | 
+[**get_all_versions**](UiTfVersionControllerApi.md#get_all_versions) | **GET** /cc-ui/v1/terraform/versions | 
+[**get_pending_migration_scripts_by_cluster_id**](UiTfVersionControllerApi.md#get_pending_migration_scripts_by_cluster_id) | **GET** /cc-ui/v1/terraform/cluster/{clusterId}/pending-migration-scripts | 
+[**get_tf_stream_for_cluster**](UiTfVersionControllerApi.md#get_tf_stream_for_cluster) | **GET** /cc-ui/v1/terraform/cluster/{clusterId} | 
+[**get_tf_versions_for_stream**](UiTfVersionControllerApi.md#get_tf_versions_for_stream) | **GET** /cc-ui/v1/terraform/stream/{tfStream}/versions | 
+[**populate_release_stream_tf_version_mapping**](UiTfVersionControllerApi.md#populate_release_stream_tf_version_mapping) | **POST** /cc-ui/v1/terraform/sync-release-stream-mapping | 
+[**set_tf_version_for_cluster**](UiTfVersionControllerApi.md#set_tf_version_for_cluster) | **PUT** /cc-ui/v1/terraform/cluster/{clusterId} | 
 
-# **delete_tf_stream_for_cluster_using_delete**
-> bool delete_tf_stream_for_cluster_using_delete(cluster_id)
+# **delete_tf_stream_for_cluster**
+> bool delete_tf_stream_for_cluster(cluster_id)
 
-deleteTfStreamForCluster
+
 
 ### Example
 ```python
@@ -24,28 +24,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # deleteTfStreamForCluster
-    api_response = api_instance.delete_tf_stream_for_cluster_using_delete(cluster_id)
+    api_response = api_instance.delete_tf_stream_for_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTfVersionControllerApi->delete_tf_stream_for_cluster_using_delete: %s\n" % e)
+    print("Exception when calling UiTfVersionControllerApi->delete_tf_stream_for_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -53,19 +52,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_versions_using_get**
-> list[TfVersion] get_all_versions_using_get()
+# **get_all_versions**
+> list[TfVersion] get_all_versions()
 
-getAllVersions
+
 
 ### Example
 ```python
@@ -74,7 +73,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -83,11 +82,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllVersions
-    api_response = api_instance.get_all_versions_using_get()
+    api_response = api_instance.get_all_versions()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTfVersionControllerApi->get_all_versions_using_get: %s\n" % e)
+    print("Exception when calling UiTfVersionControllerApi->get_all_versions: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,19 +97,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_pending_migration_scripts_by_cluster_id_using_get**
-> PendingMigrationDetails get_pending_migration_scripts_by_cluster_id_using_get(cluster_id)
+# **get_pending_migration_scripts_by_cluster_id**
+> PendingMigrationDetails get_pending_migration_scripts_by_cluster_id(cluster_id)
 
-getPendingMigrationScriptsByClusterId
+
 
 ### Example
 ```python
@@ -120,28 +118,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getPendingMigrationScriptsByClusterId
-    api_response = api_instance.get_pending_migration_scripts_by_cluster_id_using_get(cluster_id)
+    api_response = api_instance.get_pending_migration_scripts_by_cluster_id(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTfVersionControllerApi->get_pending_migration_scripts_by_cluster_id_using_get: %s\n" % e)
+    print("Exception when calling UiTfVersionControllerApi->get_pending_migration_scripts_by_cluster_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -149,19 +146,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tf_stream_for_cluster_using_get**
-> ClusterTfVersionMapping get_tf_stream_for_cluster_using_get(cluster_id)
+# **get_tf_stream_for_cluster**
+> ClusterTfVersionMapping get_tf_stream_for_cluster(cluster_id)
 
-getTfStreamForCluster
+
 
 ### Example
 ```python
@@ -170,28 +167,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getTfStreamForCluster
-    api_response = api_instance.get_tf_stream_for_cluster_using_get(cluster_id)
+    api_response = api_instance.get_tf_stream_for_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTfVersionControllerApi->get_tf_stream_for_cluster_using_get: %s\n" % e)
+    print("Exception when calling UiTfVersionControllerApi->get_tf_stream_for_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -199,19 +195,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tf_versions_for_stream_using_get**
-> list[TfVersion] get_tf_versions_for_stream_using_get(tf_stream)
+# **get_tf_versions_for_stream**
+> list[TfVersion] get_tf_versions_for_stream(tf_stream)
 
-getTfVersionsForStream
+
 
 ### Example
 ```python
@@ -220,28 +216,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
-tf_stream = 'tf_stream_example' # str | tfStream
+tf_stream = 'tf_stream_example' # str | 
 
 try:
-    # getTfVersionsForStream
-    api_response = api_instance.get_tf_versions_for_stream_using_get(tf_stream)
+    api_response = api_instance.get_tf_versions_for_stream(tf_stream)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTfVersionControllerApi->get_tf_versions_for_stream_using_get: %s\n" % e)
+    print("Exception when calling UiTfVersionControllerApi->get_tf_versions_for_stream: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tf_stream** | **str**| tfStream | 
+ **tf_stream** | **str**|  | 
 
 ### Return type
 
@@ -249,19 +244,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **populate_release_stream_tf_version_mapping_using_post**
-> populate_release_stream_tf_version_mapping_using_post()
+# **populate_release_stream_tf_version_mapping**
+> populate_release_stream_tf_version_mapping()
 
-populateReleaseStreamTfVersionMapping
+
 
 ### Example
 ```python
@@ -270,7 +265,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -279,10 +274,9 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # populateReleaseStreamTfVersionMapping
-    api_instance.populate_release_stream_tf_version_mapping_using_post()
+    api_instance.populate_release_stream_tf_version_mapping()
 except ApiException as e:
-    print("Exception when calling UiTfVersionControllerApi->populate_release_stream_tf_version_mapping_using_post: %s\n" % e)
+    print("Exception when calling UiTfVersionControllerApi->populate_release_stream_tf_version_mapping: %s\n" % e)
 ```
 
 ### Parameters
@@ -294,19 +288,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_tf_version_for_cluster_using_put**
-> ClusterTfVersionMapping set_tf_version_for_cluster_using_put(body, cluster_id)
+# **set_tf_version_for_cluster**
+> ClusterTfVersionMapping set_tf_version_for_cluster(body, cluster_id)
 
-setTfVersionForCluster
+
 
 ### Example
 ```python
@@ -315,30 +309,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiTfVersionControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.TfVersion() # TfVersion | tfVersion
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.TfVersion() # TfVersion | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # setTfVersionForCluster
-    api_response = api_instance.set_tf_version_for_cluster_using_put(body, cluster_id)
+    api_response = api_instance.set_tf_version_for_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiTfVersionControllerApi->set_tf_version_for_cluster_using_put: %s\n" % e)
+    print("Exception when calling UiTfVersionControllerApi->set_tf_version_for_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TfVersion**](TfVersion.md)| tfVersion | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**TfVersion**](TfVersion.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -346,12 +339,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

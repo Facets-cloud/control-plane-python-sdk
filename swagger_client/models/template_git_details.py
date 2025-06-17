@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,80 +28,30 @@ class TemplateGitDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'git_ref': 'str',
         'git_url': 'str',
-        'path': 'str'
+        'git_ref': 'str',
+        'path': 'str',
+        'account_id': 'str'
     }
 
     attribute_map = {
-        'account_id': 'accountId',
-        'git_ref': 'gitRef',
         'git_url': 'gitUrl',
-        'path': 'path'
+        'git_ref': 'gitRef',
+        'path': 'path',
+        'account_id': 'accountId'
     }
 
-    def __init__(self, account_id=None, git_ref=None, git_url=None, path=None):  # noqa: E501
+    def __init__(self, git_url=None, git_ref=None, path=None, account_id=None):  # noqa: E501
         """TemplateGitDetails - a model defined in Swagger"""  # noqa: E501
-        self._account_id = None
-        self._git_ref = None
         self._git_url = None
+        self._git_ref = None
         self._path = None
+        self._account_id = None
         self.discriminator = None
-        self.account_id = account_id
-        self.git_ref = git_ref
         self.git_url = git_url
+        self.git_ref = git_ref
         self.path = path
-
-    @property
-    def account_id(self):
-        """Gets the account_id of this TemplateGitDetails.  # noqa: E501
-
-        Account ID associated with the Git repository  # noqa: E501
-
-        :return: The account_id of this TemplateGitDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_id
-
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this TemplateGitDetails.
-
-        Account ID associated with the Git repository  # noqa: E501
-
-        :param account_id: The account_id of this TemplateGitDetails.  # noqa: E501
-        :type: str
-        """
-        if account_id is None:
-            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
-
-        self._account_id = account_id
-
-    @property
-    def git_ref(self):
-        """Gets the git_ref of this TemplateGitDetails.  # noqa: E501
-
-        Git reference (branch or tag)  # noqa: E501
-
-        :return: The git_ref of this TemplateGitDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_ref
-
-    @git_ref.setter
-    def git_ref(self, git_ref):
-        """Sets the git_ref of this TemplateGitDetails.
-
-        Git reference (branch or tag)  # noqa: E501
-
-        :param git_ref: The git_ref of this TemplateGitDetails.  # noqa: E501
-        :type: str
-        """
-        if git_ref is None:
-            raise ValueError("Invalid value for `git_ref`, must not be `None`")  # noqa: E501
-
-        self._git_ref = git_ref
+        self.account_id = account_id
 
     @property
     def git_url(self):
@@ -129,6 +79,31 @@ class TemplateGitDetails(object):
         self._git_url = git_url
 
     @property
+    def git_ref(self):
+        """Gets the git_ref of this TemplateGitDetails.  # noqa: E501
+
+        Git reference (branch or tag)  # noqa: E501
+
+        :return: The git_ref of this TemplateGitDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_ref
+
+    @git_ref.setter
+    def git_ref(self, git_ref):
+        """Sets the git_ref of this TemplateGitDetails.
+
+        Git reference (branch or tag)  # noqa: E501
+
+        :param git_ref: The git_ref of this TemplateGitDetails.  # noqa: E501
+        :type: str
+        """
+        if git_ref is None:
+            raise ValueError("Invalid value for `git_ref`, must not be `None`")  # noqa: E501
+
+        self._git_ref = git_ref
+
+    @property
     def path(self):
         """Gets the path of this TemplateGitDetails.  # noqa: E501
 
@@ -152,6 +127,31 @@ class TemplateGitDetails(object):
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
 
         self._path = path
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this TemplateGitDetails.  # noqa: E501
+
+        Account ID associated with the Git repository  # noqa: E501
+
+        :return: The account_id of this TemplateGitDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this TemplateGitDetails.
+
+        Account ID associated with the Git repository  # noqa: E501
+
+        :param account_id: The account_id of this TemplateGitDetails.  # noqa: E501
+        :type: str
+        """
+        if account_id is None:
+            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
+
+        self._account_id = account_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

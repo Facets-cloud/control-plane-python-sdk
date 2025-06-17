@@ -1,19 +1,19 @@
 # swagger_client.UiAzureClusterControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**configure_draft_cluster_using_post1**](UiAzureClusterControllerApi.md#configure_draft_cluster_using_post1) | **POST** /cc-ui/v1/azure/clusters/configure/{clusterId} | configureDraftCluster
-[**create_azure_cluster_using_post**](UiAzureClusterControllerApi.md#create_azure_cluster_using_post) | **POST** /cc-ui/v1/azure/clusters | createAzureCluster
-[**get_azure_cluster_using_get**](UiAzureClusterControllerApi.md#get_azure_cluster_using_get) | **GET** /cc-ui/v1/azure/clusters/{clusterId} | getAzureCluster
-[**update_azure_cluster_using_put**](UiAzureClusterControllerApi.md#update_azure_cluster_using_put) | **PUT** /cc-ui/v1/azure/clusters/{clusterId} | updateAzureCluster
-[**validate_vnet_using_get**](UiAzureClusterControllerApi.md#validate_vnet_using_get) | **GET** /cc-ui/v1/azure/clusters/validate-vnet | validateVnet
+[**configure_draft_cluster1**](UiAzureClusterControllerApi.md#configure_draft_cluster1) | **POST** /cc-ui/v1/azure/clusters/configure/{clusterId} | 
+[**create_azure_cluster**](UiAzureClusterControllerApi.md#create_azure_cluster) | **POST** /cc-ui/v1/azure/clusters | 
+[**get_azure_cluster**](UiAzureClusterControllerApi.md#get_azure_cluster) | **GET** /cc-ui/v1/azure/clusters/{clusterId} | 
+[**update_azure_cluster**](UiAzureClusterControllerApi.md#update_azure_cluster) | **PUT** /cc-ui/v1/azure/clusters/{clusterId} | 
+[**validate_vnet**](UiAzureClusterControllerApi.md#validate_vnet) | **GET** /cc-ui/v1/azure/clusters/validate-vnet | 
 
-# **configure_draft_cluster_using_post1**
-> AzureCluster configure_draft_cluster_using_post1(body, cluster_id)
+# **configure_draft_cluster1**
+> AzureCluster configure_draft_cluster1(body, cluster_id)
 
-configureDraftCluster
+
 
 ### Example
 ```python
@@ -22,30 +22,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.AzureClusterRequest() # AzureClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # configureDraftCluster
-    api_response = api_instance.configure_draft_cluster_using_post1(body, cluster_id)
+    api_response = api_instance.configure_draft_cluster1(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAzureClusterControllerApi->configure_draft_cluster_using_post1: %s\n" % e)
+    print("Exception when calling UiAzureClusterControllerApi->configure_draft_cluster1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**AzureClusterRequest**](AzureClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -53,19 +52,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_azure_cluster_using_post**
-> AzureCluster create_azure_cluster_using_post(body)
+# **create_azure_cluster**
+> AzureCluster create_azure_cluster(body)
 
-createAzureCluster
+
 
 ### Example
 ```python
@@ -74,28 +73,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
+body = swagger_client.AzureClusterRequest() # AzureClusterRequest | 
 
 try:
-    # createAzureCluster
-    api_response = api_instance.create_azure_cluster_using_post(body)
+    api_response = api_instance.create_azure_cluster(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAzureClusterControllerApi->create_azure_cluster_using_post: %s\n" % e)
+    print("Exception when calling UiAzureClusterControllerApi->create_azure_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
+ **body** | [**AzureClusterRequest**](AzureClusterRequest.md)|  | 
 
 ### Return type
 
@@ -103,19 +101,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_azure_cluster_using_get**
-> AzureCluster get_azure_cluster_using_get(cluster_id)
+# **get_azure_cluster**
+> AzureCluster get_azure_cluster(cluster_id)
 
-getAzureCluster
+
 
 ### Example
 ```python
@@ -124,28 +122,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getAzureCluster
-    api_response = api_instance.get_azure_cluster_using_get(cluster_id)
+    api_response = api_instance.get_azure_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAzureClusterControllerApi->get_azure_cluster_using_get: %s\n" % e)
+    print("Exception when calling UiAzureClusterControllerApi->get_azure_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -153,19 +150,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_azure_cluster_using_put**
-> AzureCluster update_azure_cluster_using_put(body, cluster_id)
+# **update_azure_cluster**
+> AzureCluster update_azure_cluster(body, cluster_id)
 
-updateAzureCluster
+
 
 ### Example
 ```python
@@ -174,30 +171,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.AzureClusterRequest() # AzureClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.AzureClusterRequest() # AzureClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # updateAzureCluster
-    api_response = api_instance.update_azure_cluster_using_put(body, cluster_id)
+    api_response = api_instance.update_azure_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAzureClusterControllerApi->update_azure_cluster_using_put: %s\n" % e)
+    print("Exception when calling UiAzureClusterControllerApi->update_azure_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AzureClusterRequest**](AzureClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**AzureClusterRequest**](AzureClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -205,19 +201,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **validate_vnet_using_get**
-> bool validate_vnet_using_get(account_id, resource_group, vnet)
+# **validate_vnet**
+> bool validate_vnet(vnet, resource_group, account_id)
 
-validateVnet
+
 
 ### Example
 ```python
@@ -226,32 +222,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiAzureClusterControllerApi(swagger_client.ApiClient(configuration))
-account_id = 'account_id_example' # str | accountId
-resource_group = 'resource_group_example' # str | resourceGroup
-vnet = 'vnet_example' # str | vnet
+vnet = 'vnet_example' # str | 
+resource_group = 'resource_group_example' # str | 
+account_id = 'account_id_example' # str | 
 
 try:
-    # validateVnet
-    api_response = api_instance.validate_vnet_using_get(account_id, resource_group, vnet)
+    api_response = api_instance.validate_vnet(vnet, resource_group, account_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiAzureClusterControllerApi->validate_vnet_using_get: %s\n" % e)
+    print("Exception when calling UiAzureClusterControllerApi->validate_vnet: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| accountId | 
- **resource_group** | **str**| resourceGroup | 
- **vnet** | **str**| vnet | 
+ **vnet** | **str**|  | 
+ **resource_group** | **str**|  | 
+ **account_id** | **str**|  | 
 
 ### Return type
 
@@ -259,12 +254,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

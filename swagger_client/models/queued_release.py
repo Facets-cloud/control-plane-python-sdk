@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,236 +28,89 @@ class QueuedRelease(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allow_destroy': 'bool',
-        'can_queue': 'bool',
-        'cluster_id': 'str',
-        'comment': 'str',
-        'creation_date': 'datetime',
-        'force_release': 'bool',
-        'hotfix_resources': 'list[FacetsResource]',
         'id': 'str',
-        'override_build_steps': 'list[str]',
-        'parallel_release': 'bool',
-        'release_trace_id': 'str',
+        'cluster_id': 'str',
         'release_type': 'str',
-        'tf_version': 'TfVersion',
+        'hotfix_resources': 'list[FacetsResource]',
+        'with_refresh': 'bool',
+        'force_release': 'bool',
+        'allow_destroy': 'bool',
+        'comment': 'str',
+        'override_build_steps': 'list[str]',
+        'can_queue': 'bool',
         'triggered_by': 'str',
-        'with_refresh': 'bool'
+        'creation_date': 'datetime',
+        'release_trace_id': 'str',
+        'tf_version': 'TfVersion',
+        'parallel_release': 'bool'
     }
 
     attribute_map = {
-        'allow_destroy': 'allowDestroy',
-        'can_queue': 'canQueue',
-        'cluster_id': 'clusterId',
-        'comment': 'comment',
-        'creation_date': 'creationDate',
-        'force_release': 'forceRelease',
-        'hotfix_resources': 'hotfixResources',
         'id': 'id',
-        'override_build_steps': 'overrideBuildSteps',
-        'parallel_release': 'parallelRelease',
-        'release_trace_id': 'releaseTraceId',
+        'cluster_id': 'clusterId',
         'release_type': 'releaseType',
-        'tf_version': 'tfVersion',
+        'hotfix_resources': 'hotfixResources',
+        'with_refresh': 'withRefresh',
+        'force_release': 'forceRelease',
+        'allow_destroy': 'allowDestroy',
+        'comment': 'comment',
+        'override_build_steps': 'overrideBuildSteps',
+        'can_queue': 'canQueue',
         'triggered_by': 'triggeredBy',
-        'with_refresh': 'withRefresh'
+        'creation_date': 'creationDate',
+        'release_trace_id': 'releaseTraceId',
+        'tf_version': 'tfVersion',
+        'parallel_release': 'parallelRelease'
     }
 
-    def __init__(self, allow_destroy=None, can_queue=None, cluster_id=None, comment=None, creation_date=None, force_release=None, hotfix_resources=None, id=None, override_build_steps=None, parallel_release=None, release_trace_id=None, release_type=None, tf_version=None, triggered_by=None, with_refresh=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, release_type=None, hotfix_resources=None, with_refresh=None, force_release=None, allow_destroy=None, comment=None, override_build_steps=None, can_queue=None, triggered_by=None, creation_date=None, release_trace_id=None, tf_version=None, parallel_release=None):  # noqa: E501
         """QueuedRelease - a model defined in Swagger"""  # noqa: E501
-        self._allow_destroy = None
-        self._can_queue = None
-        self._cluster_id = None
-        self._comment = None
-        self._creation_date = None
-        self._force_release = None
-        self._hotfix_resources = None
         self._id = None
-        self._override_build_steps = None
-        self._parallel_release = None
-        self._release_trace_id = None
+        self._cluster_id = None
         self._release_type = None
-        self._tf_version = None
-        self._triggered_by = None
+        self._hotfix_resources = None
         self._with_refresh = None
+        self._force_release = None
+        self._allow_destroy = None
+        self._comment = None
+        self._override_build_steps = None
+        self._can_queue = None
+        self._triggered_by = None
+        self._creation_date = None
+        self._release_trace_id = None
+        self._tf_version = None
+        self._parallel_release = None
         self.discriminator = None
-        if allow_destroy is not None:
-            self.allow_destroy = allow_destroy
-        if can_queue is not None:
-            self.can_queue = can_queue
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if comment is not None:
-            self.comment = comment
-        if creation_date is not None:
-            self.creation_date = creation_date
-        if force_release is not None:
-            self.force_release = force_release
-        if hotfix_resources is not None:
-            self.hotfix_resources = hotfix_resources
         if id is not None:
             self.id = id
-        if override_build_steps is not None:
-            self.override_build_steps = override_build_steps
-        if parallel_release is not None:
-            self.parallel_release = parallel_release
-        if release_trace_id is not None:
-            self.release_trace_id = release_trace_id
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if release_type is not None:
             self.release_type = release_type
-        if tf_version is not None:
-            self.tf_version = tf_version
-        if triggered_by is not None:
-            self.triggered_by = triggered_by
+        if hotfix_resources is not None:
+            self.hotfix_resources = hotfix_resources
         if with_refresh is not None:
             self.with_refresh = with_refresh
-
-    @property
-    def allow_destroy(self):
-        """Gets the allow_destroy of this QueuedRelease.  # noqa: E501
-
-
-        :return: The allow_destroy of this QueuedRelease.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_destroy
-
-    @allow_destroy.setter
-    def allow_destroy(self, allow_destroy):
-        """Sets the allow_destroy of this QueuedRelease.
-
-
-        :param allow_destroy: The allow_destroy of this QueuedRelease.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_destroy = allow_destroy
-
-    @property
-    def can_queue(self):
-        """Gets the can_queue of this QueuedRelease.  # noqa: E501
-
-
-        :return: The can_queue of this QueuedRelease.  # noqa: E501
-        :rtype: bool
-        """
-        return self._can_queue
-
-    @can_queue.setter
-    def can_queue(self, can_queue):
-        """Sets the can_queue of this QueuedRelease.
-
-
-        :param can_queue: The can_queue of this QueuedRelease.  # noqa: E501
-        :type: bool
-        """
-
-        self._can_queue = can_queue
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this QueuedRelease.  # noqa: E501
-
-
-        :return: The cluster_id of this QueuedRelease.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this QueuedRelease.
-
-
-        :param cluster_id: The cluster_id of this QueuedRelease.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
-
-    @property
-    def comment(self):
-        """Gets the comment of this QueuedRelease.  # noqa: E501
-
-
-        :return: The comment of this QueuedRelease.  # noqa: E501
-        :rtype: str
-        """
-        return self._comment
-
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this QueuedRelease.
-
-
-        :param comment: The comment of this QueuedRelease.  # noqa: E501
-        :type: str
-        """
-
-        self._comment = comment
-
-    @property
-    def creation_date(self):
-        """Gets the creation_date of this QueuedRelease.  # noqa: E501
-
-
-        :return: The creation_date of this QueuedRelease.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._creation_date
-
-    @creation_date.setter
-    def creation_date(self, creation_date):
-        """Sets the creation_date of this QueuedRelease.
-
-
-        :param creation_date: The creation_date of this QueuedRelease.  # noqa: E501
-        :type: datetime
-        """
-
-        self._creation_date = creation_date
-
-    @property
-    def force_release(self):
-        """Gets the force_release of this QueuedRelease.  # noqa: E501
-
-
-        :return: The force_release of this QueuedRelease.  # noqa: E501
-        :rtype: bool
-        """
-        return self._force_release
-
-    @force_release.setter
-    def force_release(self, force_release):
-        """Sets the force_release of this QueuedRelease.
-
-
-        :param force_release: The force_release of this QueuedRelease.  # noqa: E501
-        :type: bool
-        """
-
-        self._force_release = force_release
-
-    @property
-    def hotfix_resources(self):
-        """Gets the hotfix_resources of this QueuedRelease.  # noqa: E501
-
-
-        :return: The hotfix_resources of this QueuedRelease.  # noqa: E501
-        :rtype: list[FacetsResource]
-        """
-        return self._hotfix_resources
-
-    @hotfix_resources.setter
-    def hotfix_resources(self, hotfix_resources):
-        """Sets the hotfix_resources of this QueuedRelease.
-
-
-        :param hotfix_resources: The hotfix_resources of this QueuedRelease.  # noqa: E501
-        :type: list[FacetsResource]
-        """
-
-        self._hotfix_resources = hotfix_resources
+        if force_release is not None:
+            self.force_release = force_release
+        if allow_destroy is not None:
+            self.allow_destroy = allow_destroy
+        if comment is not None:
+            self.comment = comment
+        if override_build_steps is not None:
+            self.override_build_steps = override_build_steps
+        if can_queue is not None:
+            self.can_queue = can_queue
+        if triggered_by is not None:
+            self.triggered_by = triggered_by
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if release_trace_id is not None:
+            self.release_trace_id = release_trace_id
+        if tf_version is not None:
+            self.tf_version = tf_version
+        if parallel_release is not None:
+            self.parallel_release = parallel_release
 
     @property
     def id(self):
@@ -281,67 +134,25 @@ class QueuedRelease(object):
         self._id = id
 
     @property
-    def override_build_steps(self):
-        """Gets the override_build_steps of this QueuedRelease.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this QueuedRelease.  # noqa: E501
 
 
-        :return: The override_build_steps of this QueuedRelease.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._override_build_steps
-
-    @override_build_steps.setter
-    def override_build_steps(self, override_build_steps):
-        """Sets the override_build_steps of this QueuedRelease.
-
-
-        :param override_build_steps: The override_build_steps of this QueuedRelease.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._override_build_steps = override_build_steps
-
-    @property
-    def parallel_release(self):
-        """Gets the parallel_release of this QueuedRelease.  # noqa: E501
-
-
-        :return: The parallel_release of this QueuedRelease.  # noqa: E501
-        :rtype: bool
-        """
-        return self._parallel_release
-
-    @parallel_release.setter
-    def parallel_release(self, parallel_release):
-        """Sets the parallel_release of this QueuedRelease.
-
-
-        :param parallel_release: The parallel_release of this QueuedRelease.  # noqa: E501
-        :type: bool
-        """
-
-        self._parallel_release = parallel_release
-
-    @property
-    def release_trace_id(self):
-        """Gets the release_trace_id of this QueuedRelease.  # noqa: E501
-
-
-        :return: The release_trace_id of this QueuedRelease.  # noqa: E501
+        :return: The cluster_id of this QueuedRelease.  # noqa: E501
         :rtype: str
         """
-        return self._release_trace_id
+        return self._cluster_id
 
-    @release_trace_id.setter
-    def release_trace_id(self, release_trace_id):
-        """Sets the release_trace_id of this QueuedRelease.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this QueuedRelease.
 
 
-        :param release_trace_id: The release_trace_id of this QueuedRelease.  # noqa: E501
+        :param cluster_id: The cluster_id of this QueuedRelease.  # noqa: E501
         :type: str
         """
 
-        self._release_trace_id = release_trace_id
+        self._cluster_id = cluster_id
 
     @property
     def release_type(self):
@@ -371,25 +182,151 @@ class QueuedRelease(object):
         self._release_type = release_type
 
     @property
-    def tf_version(self):
-        """Gets the tf_version of this QueuedRelease.  # noqa: E501
+    def hotfix_resources(self):
+        """Gets the hotfix_resources of this QueuedRelease.  # noqa: E501
 
 
-        :return: The tf_version of this QueuedRelease.  # noqa: E501
-        :rtype: TfVersion
+        :return: The hotfix_resources of this QueuedRelease.  # noqa: E501
+        :rtype: list[FacetsResource]
         """
-        return self._tf_version
+        return self._hotfix_resources
 
-    @tf_version.setter
-    def tf_version(self, tf_version):
-        """Sets the tf_version of this QueuedRelease.
+    @hotfix_resources.setter
+    def hotfix_resources(self, hotfix_resources):
+        """Sets the hotfix_resources of this QueuedRelease.
 
 
-        :param tf_version: The tf_version of this QueuedRelease.  # noqa: E501
-        :type: TfVersion
+        :param hotfix_resources: The hotfix_resources of this QueuedRelease.  # noqa: E501
+        :type: list[FacetsResource]
         """
 
-        self._tf_version = tf_version
+        self._hotfix_resources = hotfix_resources
+
+    @property
+    def with_refresh(self):
+        """Gets the with_refresh of this QueuedRelease.  # noqa: E501
+
+
+        :return: The with_refresh of this QueuedRelease.  # noqa: E501
+        :rtype: bool
+        """
+        return self._with_refresh
+
+    @with_refresh.setter
+    def with_refresh(self, with_refresh):
+        """Sets the with_refresh of this QueuedRelease.
+
+
+        :param with_refresh: The with_refresh of this QueuedRelease.  # noqa: E501
+        :type: bool
+        """
+
+        self._with_refresh = with_refresh
+
+    @property
+    def force_release(self):
+        """Gets the force_release of this QueuedRelease.  # noqa: E501
+
+
+        :return: The force_release of this QueuedRelease.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_release
+
+    @force_release.setter
+    def force_release(self, force_release):
+        """Sets the force_release of this QueuedRelease.
+
+
+        :param force_release: The force_release of this QueuedRelease.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_release = force_release
+
+    @property
+    def allow_destroy(self):
+        """Gets the allow_destroy of this QueuedRelease.  # noqa: E501
+
+
+        :return: The allow_destroy of this QueuedRelease.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_destroy
+
+    @allow_destroy.setter
+    def allow_destroy(self, allow_destroy):
+        """Sets the allow_destroy of this QueuedRelease.
+
+
+        :param allow_destroy: The allow_destroy of this QueuedRelease.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_destroy = allow_destroy
+
+    @property
+    def comment(self):
+        """Gets the comment of this QueuedRelease.  # noqa: E501
+
+
+        :return: The comment of this QueuedRelease.  # noqa: E501
+        :rtype: str
+        """
+        return self._comment
+
+    @comment.setter
+    def comment(self, comment):
+        """Sets the comment of this QueuedRelease.
+
+
+        :param comment: The comment of this QueuedRelease.  # noqa: E501
+        :type: str
+        """
+
+        self._comment = comment
+
+    @property
+    def override_build_steps(self):
+        """Gets the override_build_steps of this QueuedRelease.  # noqa: E501
+
+
+        :return: The override_build_steps of this QueuedRelease.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._override_build_steps
+
+    @override_build_steps.setter
+    def override_build_steps(self, override_build_steps):
+        """Sets the override_build_steps of this QueuedRelease.
+
+
+        :param override_build_steps: The override_build_steps of this QueuedRelease.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._override_build_steps = override_build_steps
+
+    @property
+    def can_queue(self):
+        """Gets the can_queue of this QueuedRelease.  # noqa: E501
+
+
+        :return: The can_queue of this QueuedRelease.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_queue
+
+    @can_queue.setter
+    def can_queue(self, can_queue):
+        """Sets the can_queue of this QueuedRelease.
+
+
+        :param can_queue: The can_queue of this QueuedRelease.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_queue = can_queue
 
     @property
     def triggered_by(self):
@@ -413,25 +350,88 @@ class QueuedRelease(object):
         self._triggered_by = triggered_by
 
     @property
-    def with_refresh(self):
-        """Gets the with_refresh of this QueuedRelease.  # noqa: E501
+    def creation_date(self):
+        """Gets the creation_date of this QueuedRelease.  # noqa: E501
 
 
-        :return: The with_refresh of this QueuedRelease.  # noqa: E501
+        :return: The creation_date of this QueuedRelease.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this QueuedRelease.
+
+
+        :param creation_date: The creation_date of this QueuedRelease.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def release_trace_id(self):
+        """Gets the release_trace_id of this QueuedRelease.  # noqa: E501
+
+
+        :return: The release_trace_id of this QueuedRelease.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_trace_id
+
+    @release_trace_id.setter
+    def release_trace_id(self, release_trace_id):
+        """Sets the release_trace_id of this QueuedRelease.
+
+
+        :param release_trace_id: The release_trace_id of this QueuedRelease.  # noqa: E501
+        :type: str
+        """
+
+        self._release_trace_id = release_trace_id
+
+    @property
+    def tf_version(self):
+        """Gets the tf_version of this QueuedRelease.  # noqa: E501
+
+
+        :return: The tf_version of this QueuedRelease.  # noqa: E501
+        :rtype: TfVersion
+        """
+        return self._tf_version
+
+    @tf_version.setter
+    def tf_version(self, tf_version):
+        """Sets the tf_version of this QueuedRelease.
+
+
+        :param tf_version: The tf_version of this QueuedRelease.  # noqa: E501
+        :type: TfVersion
+        """
+
+        self._tf_version = tf_version
+
+    @property
+    def parallel_release(self):
+        """Gets the parallel_release of this QueuedRelease.  # noqa: E501
+
+
+        :return: The parallel_release of this QueuedRelease.  # noqa: E501
         :rtype: bool
         """
-        return self._with_refresh
+        return self._parallel_release
 
-    @with_refresh.setter
-    def with_refresh(self, with_refresh):
-        """Sets the with_refresh of this QueuedRelease.
+    @parallel_release.setter
+    def parallel_release(self, parallel_release):
+        """Sets the parallel_release of this QueuedRelease.
 
 
-        :param with_refresh: The with_refresh of this QueuedRelease.  # noqa: E501
+        :param parallel_release: The parallel_release of this QueuedRelease.  # noqa: E501
         :type: bool
         """
 
-        self._with_refresh = with_refresh
+        self._parallel_release = parallel_release
 
     def to_dict(self):
         """Returns the model properties as a dict"""

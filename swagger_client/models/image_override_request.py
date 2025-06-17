@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,69 +28,176 @@ class ImageOverrideRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_type': 'str',
-        'artifact_uri': 'str',
-        'artifactory': 'str',
-        'blueprint_name': 'str',
-        'ci_name': 'str',
-        'registration_type': 'str',
-        'registration_value': 'str',
-        'repository_name': 'str',
         'resource_name': 'str',
         'resource_type': 'str',
-        'tag': 'str'
+        'artifactory': 'str',
+        'repository_name': 'str',
+        'tag': 'str',
+        'artifact_type': 'str',
+        'artifact_uri': 'str',
+        'registration_type': 'str',
+        'registration_value': 'str',
+        'blueprint_name': 'str',
+        'ci_name': 'str'
     }
 
     attribute_map = {
-        'artifact_type': 'artifactType',
-        'artifact_uri': 'artifactUri',
-        'artifactory': 'artifactory',
-        'blueprint_name': 'blueprintName',
-        'ci_name': 'ciName',
-        'registration_type': 'registrationType',
-        'registration_value': 'registrationValue',
-        'repository_name': 'repositoryName',
         'resource_name': 'resourceName',
         'resource_type': 'resourceType',
-        'tag': 'tag'
+        'artifactory': 'artifactory',
+        'repository_name': 'repositoryName',
+        'tag': 'tag',
+        'artifact_type': 'artifactType',
+        'artifact_uri': 'artifactUri',
+        'registration_type': 'registrationType',
+        'registration_value': 'registrationValue',
+        'blueprint_name': 'blueprintName',
+        'ci_name': 'ciName'
     }
 
-    def __init__(self, artifact_type=None, artifact_uri=None, artifactory=None, blueprint_name=None, ci_name=None, registration_type=None, registration_value=None, repository_name=None, resource_name=None, resource_type=None, tag=None):  # noqa: E501
+    def __init__(self, resource_name=None, resource_type=None, artifactory=None, repository_name=None, tag=None, artifact_type=None, artifact_uri=None, registration_type=None, registration_value=None, blueprint_name=None, ci_name=None):  # noqa: E501
         """ImageOverrideRequest - a model defined in Swagger"""  # noqa: E501
-        self._artifact_type = None
-        self._artifact_uri = None
-        self._artifactory = None
-        self._blueprint_name = None
-        self._ci_name = None
-        self._registration_type = None
-        self._registration_value = None
-        self._repository_name = None
         self._resource_name = None
         self._resource_type = None
+        self._artifactory = None
+        self._repository_name = None
         self._tag = None
+        self._artifact_type = None
+        self._artifact_uri = None
+        self._registration_type = None
+        self._registration_value = None
+        self._blueprint_name = None
+        self._ci_name = None
         self.discriminator = None
+        self.resource_name = resource_name
+        self.resource_type = resource_type
+        if artifactory is not None:
+            self.artifactory = artifactory
+        if repository_name is not None:
+            self.repository_name = repository_name
+        if tag is not None:
+            self.tag = tag
         if artifact_type is not None:
             self.artifact_type = artifact_type
         if artifact_uri is not None:
             self.artifact_uri = artifact_uri
-        if artifactory is not None:
-            self.artifactory = artifactory
-        if blueprint_name is not None:
-            self.blueprint_name = blueprint_name
-        if ci_name is not None:
-            self.ci_name = ci_name
         if registration_type is not None:
             self.registration_type = registration_type
         if registration_value is not None:
             self.registration_value = registration_value
-        if repository_name is not None:
-            self.repository_name = repository_name
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
-        if tag is not None:
-            self.tag = tag
+        if blueprint_name is not None:
+            self.blueprint_name = blueprint_name
+        if ci_name is not None:
+            self.ci_name = ci_name
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this ImageOverrideRequest.  # noqa: E501
+
+
+        :return: The resource_name of this ImageOverrideRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this ImageOverrideRequest.
+
+
+        :param resource_name: The resource_name of this ImageOverrideRequest.  # noqa: E501
+        :type: str
+        """
+        if resource_name is None:
+            raise ValueError("Invalid value for `resource_name`, must not be `None`")  # noqa: E501
+
+        self._resource_name = resource_name
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this ImageOverrideRequest.  # noqa: E501
+
+
+        :return: The resource_type of this ImageOverrideRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ImageOverrideRequest.
+
+
+        :param resource_type: The resource_type of this ImageOverrideRequest.  # noqa: E501
+        :type: str
+        """
+        if resource_type is None:
+            raise ValueError("Invalid value for `resource_type`, must not be `None`")  # noqa: E501
+
+        self._resource_type = resource_type
+
+    @property
+    def artifactory(self):
+        """Gets the artifactory of this ImageOverrideRequest.  # noqa: E501
+
+
+        :return: The artifactory of this ImageOverrideRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory
+
+    @artifactory.setter
+    def artifactory(self, artifactory):
+        """Sets the artifactory of this ImageOverrideRequest.
+
+
+        :param artifactory: The artifactory of this ImageOverrideRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._artifactory = artifactory
+
+    @property
+    def repository_name(self):
+        """Gets the repository_name of this ImageOverrideRequest.  # noqa: E501
+
+
+        :return: The repository_name of this ImageOverrideRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._repository_name
+
+    @repository_name.setter
+    def repository_name(self, repository_name):
+        """Sets the repository_name of this ImageOverrideRequest.
+
+
+        :param repository_name: The repository_name of this ImageOverrideRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._repository_name = repository_name
+
+    @property
+    def tag(self):
+        """Gets the tag of this ImageOverrideRequest.  # noqa: E501
+
+
+        :return: The tag of this ImageOverrideRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._tag
+
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ImageOverrideRequest.
+
+
+        :param tag: The tag of this ImageOverrideRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._tag = tag
 
     @property
     def artifact_type(self):
@@ -141,69 +248,6 @@ class ImageOverrideRequest(object):
         self._artifact_uri = artifact_uri
 
     @property
-    def artifactory(self):
-        """Gets the artifactory of this ImageOverrideRequest.  # noqa: E501
-
-
-        :return: The artifactory of this ImageOverrideRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifactory
-
-    @artifactory.setter
-    def artifactory(self, artifactory):
-        """Sets the artifactory of this ImageOverrideRequest.
-
-
-        :param artifactory: The artifactory of this ImageOverrideRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._artifactory = artifactory
-
-    @property
-    def blueprint_name(self):
-        """Gets the blueprint_name of this ImageOverrideRequest.  # noqa: E501
-
-
-        :return: The blueprint_name of this ImageOverrideRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._blueprint_name
-
-    @blueprint_name.setter
-    def blueprint_name(self, blueprint_name):
-        """Sets the blueprint_name of this ImageOverrideRequest.
-
-
-        :param blueprint_name: The blueprint_name of this ImageOverrideRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._blueprint_name = blueprint_name
-
-    @property
-    def ci_name(self):
-        """Gets the ci_name of this ImageOverrideRequest.  # noqa: E501
-
-
-        :return: The ci_name of this ImageOverrideRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._ci_name
-
-    @ci_name.setter
-    def ci_name(self, ci_name):
-        """Sets the ci_name of this ImageOverrideRequest.
-
-
-        :param ci_name: The ci_name of this ImageOverrideRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._ci_name = ci_name
-
-    @property
     def registration_type(self):
         """Gets the registration_type of this ImageOverrideRequest.  # noqa: E501
 
@@ -252,88 +296,46 @@ class ImageOverrideRequest(object):
         self._registration_value = registration_value
 
     @property
-    def repository_name(self):
-        """Gets the repository_name of this ImageOverrideRequest.  # noqa: E501
+    def blueprint_name(self):
+        """Gets the blueprint_name of this ImageOverrideRequest.  # noqa: E501
 
 
-        :return: The repository_name of this ImageOverrideRequest.  # noqa: E501
+        :return: The blueprint_name of this ImageOverrideRequest.  # noqa: E501
         :rtype: str
         """
-        return self._repository_name
+        return self._blueprint_name
 
-    @repository_name.setter
-    def repository_name(self, repository_name):
-        """Sets the repository_name of this ImageOverrideRequest.
+    @blueprint_name.setter
+    def blueprint_name(self, blueprint_name):
+        """Sets the blueprint_name of this ImageOverrideRequest.
 
 
-        :param repository_name: The repository_name of this ImageOverrideRequest.  # noqa: E501
+        :param blueprint_name: The blueprint_name of this ImageOverrideRequest.  # noqa: E501
         :type: str
         """
 
-        self._repository_name = repository_name
+        self._blueprint_name = blueprint_name
 
     @property
-    def resource_name(self):
-        """Gets the resource_name of this ImageOverrideRequest.  # noqa: E501
+    def ci_name(self):
+        """Gets the ci_name of this ImageOverrideRequest.  # noqa: E501
 
 
-        :return: The resource_name of this ImageOverrideRequest.  # noqa: E501
+        :return: The ci_name of this ImageOverrideRequest.  # noqa: E501
         :rtype: str
         """
-        return self._resource_name
+        return self._ci_name
 
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this ImageOverrideRequest.
+    @ci_name.setter
+    def ci_name(self, ci_name):
+        """Sets the ci_name of this ImageOverrideRequest.
 
 
-        :param resource_name: The resource_name of this ImageOverrideRequest.  # noqa: E501
+        :param ci_name: The ci_name of this ImageOverrideRequest.  # noqa: E501
         :type: str
         """
 
-        self._resource_name = resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this ImageOverrideRequest.  # noqa: E501
-
-
-        :return: The resource_type of this ImageOverrideRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ImageOverrideRequest.
-
-
-        :param resource_type: The resource_type of this ImageOverrideRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
-
-    @property
-    def tag(self):
-        """Gets the tag of this ImageOverrideRequest.  # noqa: E501
-
-
-        :return: The tag of this ImageOverrideRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._tag
-
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ImageOverrideRequest.
-
-
-        :param tag: The tag of this ImageOverrideRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._tag = tag
+        self._ci_name = ci_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

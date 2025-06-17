@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,28 +29,28 @@ class ResourceStatusMetadata(object):
     """
     swagger_types = {
         'live_version': 'str',
-        'pending_version': 'str',
-        'preview_version': 'str'
+        'preview_version': 'str',
+        'pending_version': 'str'
     }
 
     attribute_map = {
         'live_version': 'liveVersion',
-        'pending_version': 'pendingVersion',
-        'preview_version': 'previewVersion'
+        'preview_version': 'previewVersion',
+        'pending_version': 'pendingVersion'
     }
 
-    def __init__(self, live_version=None, pending_version=None, preview_version=None):  # noqa: E501
+    def __init__(self, live_version=None, preview_version=None, pending_version=None):  # noqa: E501
         """ResourceStatusMetadata - a model defined in Swagger"""  # noqa: E501
         self._live_version = None
-        self._pending_version = None
         self._preview_version = None
+        self._pending_version = None
         self.discriminator = None
         if live_version is not None:
             self.live_version = live_version
-        if pending_version is not None:
-            self.pending_version = pending_version
         if preview_version is not None:
             self.preview_version = preview_version
+        if pending_version is not None:
+            self.pending_version = pending_version
 
     @property
     def live_version(self):
@@ -74,27 +74,6 @@ class ResourceStatusMetadata(object):
         self._live_version = live_version
 
     @property
-    def pending_version(self):
-        """Gets the pending_version of this ResourceStatusMetadata.  # noqa: E501
-
-
-        :return: The pending_version of this ResourceStatusMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._pending_version
-
-    @pending_version.setter
-    def pending_version(self, pending_version):
-        """Sets the pending_version of this ResourceStatusMetadata.
-
-
-        :param pending_version: The pending_version of this ResourceStatusMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._pending_version = pending_version
-
-    @property
     def preview_version(self):
         """Gets the preview_version of this ResourceStatusMetadata.  # noqa: E501
 
@@ -114,6 +93,27 @@ class ResourceStatusMetadata(object):
         """
 
         self._preview_version = preview_version
+
+    @property
+    def pending_version(self):
+        """Gets the pending_version of this ResourceStatusMetadata.  # noqa: E501
+
+
+        :return: The pending_version of this ResourceStatusMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._pending_version
+
+    @pending_version.setter
+    def pending_version(self, pending_version):
+        """Sets the pending_version of this ResourceStatusMetadata.
+
+
+        :param pending_version: The pending_version of this ResourceStatusMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._pending_version = pending_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

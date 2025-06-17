@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class AssistantResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'thread_id': 'str',
         'messages': 'list[AssistantMessage]',
-        'next_actions': 'list[AssistantRequest]',
-        'thread_id': 'str'
+        'next_actions': 'list[AssistantRequest]'
     }
 
     attribute_map = {
+        'thread_id': 'threadId',
         'messages': 'messages',
-        'next_actions': 'nextActions',
-        'thread_id': 'threadId'
+        'next_actions': 'nextActions'
     }
 
-    def __init__(self, messages=None, next_actions=None, thread_id=None):  # noqa: E501
+    def __init__(self, thread_id=None, messages=None, next_actions=None):  # noqa: E501
         """AssistantResponse - a model defined in Swagger"""  # noqa: E501
+        self._thread_id = None
         self._messages = None
         self._next_actions = None
-        self._thread_id = None
         self.discriminator = None
+        if thread_id is not None:
+            self.thread_id = thread_id
         if messages is not None:
             self.messages = messages
         if next_actions is not None:
             self.next_actions = next_actions
-        if thread_id is not None:
-            self.thread_id = thread_id
+
+    @property
+    def thread_id(self):
+        """Gets the thread_id of this AssistantResponse.  # noqa: E501
+
+
+        :return: The thread_id of this AssistantResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._thread_id
+
+    @thread_id.setter
+    def thread_id(self, thread_id):
+        """Sets the thread_id of this AssistantResponse.
+
+
+        :param thread_id: The thread_id of this AssistantResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._thread_id = thread_id
 
     @property
     def messages(self):
@@ -93,27 +114,6 @@ class AssistantResponse(object):
         """
 
         self._next_actions = next_actions
-
-    @property
-    def thread_id(self):
-        """Gets the thread_id of this AssistantResponse.  # noqa: E501
-
-
-        :return: The thread_id of this AssistantResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._thread_id
-
-    @thread_id.setter
-    def thread_id(self, thread_id):
-        """Sets the thread_id of this AssistantResponse.
-
-
-        :param thread_id: The thread_id of this AssistantResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._thread_id = thread_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **api_version** | **str** |  | [optional] 
-**field_path** | **str** |  | [optional] 
 **kind** | **str** |  | [optional] 
+**field_path** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **namespace** | **str** |  | [optional] 
 **resource_version** | **str** |  | [optional] 

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,152 +32,39 @@ class ApplicationControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def build_using_post(self, body, application_family, application_id, **kwargs):  # noqa: E501
-        """build  # noqa: E501
+    def change_password(self, body, user_id, **kwargs):  # noqa: E501
+        """change_password  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.build_using_post(body, application_family, application_id, async_req=True)
+        >>> thread = api.change_password(body, user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Build body: build (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.build_using_post_with_http_info(body, application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.build_using_post_with_http_info(body, application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def build_using_post_with_http_info(self, body, application_family, application_id, **kwargs):  # noqa: E501
-        """build  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.build_using_post_with_http_info(body, application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Build body: build (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method build_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `build_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `build_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `build_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/builds', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Build',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def change_password_using_put(self, body, user_id, **kwargs):  # noqa: E501
-        """changePassword  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_password_using_put(body, user_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param PasswordChange body: pwdChange (required)
-        :param str user_id: userId (required)
+        :param PasswordChange body: (required)
+        :param str user_id: (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.change_password_using_put_with_http_info(body, user_id, **kwargs)  # noqa: E501
+            return self.change_password_with_http_info(body, user_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.change_password_using_put_with_http_info(body, user_id, **kwargs)  # noqa: E501
+            (data) = self.change_password_with_http_info(body, user_id, **kwargs)  # noqa: E501
             return data
 
-    def change_password_using_put_with_http_info(self, body, user_id, **kwargs):  # noqa: E501
-        """changePassword  # noqa: E501
+    def change_password_with_http_info(self, body, user_id, **kwargs):  # noqa: E501
+        """change_password  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.change_password_using_put_with_http_info(body, user_id, async_req=True)
+        >>> thread = api.change_password_with_http_info(body, user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param PasswordChange body: pwdChange (required)
-        :param str user_id: userId (required)
+        :param PasswordChange body: (required)
+        :param str user_id: (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -194,18 +81,18 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method change_password_using_put" % key
+                    " to method change_password" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `change_password_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `change_password`")  # noqa: E501
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params or
                 params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `change_password_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `user_id` when calling `change_password`")  # noqa: E501
 
         collection_formats = {}
 
@@ -232,7 +119,7 @@ class ApplicationControllerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/users/{userId}/changePassword', 'PUT',
@@ -250,457 +137,37 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_app_secret_request_using_post(self, body, application_family, application_id, **kwargs):  # noqa: E501
-        """createAppSecretRequest  # noqa: E501
+    def create_user(self, body, **kwargs):  # noqa: E501
+        """create_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_app_secret_request_using_post(body, application_family, application_id, async_req=True)
+        >>> thread = api.create_user(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ApplicationSecretRequest] body: applicationSecretRequests (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[ApplicationSecretRequest]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_app_secret_request_using_post_with_http_info(body, application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_app_secret_request_using_post_with_http_info(body, application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def create_app_secret_request_using_post_with_http_info(self, body, application_family, application_id, **kwargs):  # noqa: E501
-        """createAppSecretRequest  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_app_secret_request_using_post_with_http_info(body, application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[ApplicationSecretRequest] body: applicationSecretRequests (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[ApplicationSecretRequest]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_app_secret_request_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_app_secret_request_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `create_app_secret_request_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `create_app_secret_request_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/secretRequests', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ApplicationSecretRequest]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_application_using_post(self, body, application_family, **kwargs):  # noqa: E501
-        """createApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_application_using_post(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Application body: application (required)
-        :param str application_family: applicationFamily (required)
-        :return: Application
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_application_using_post_with_http_info(body, application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_application_using_post_with_http_info(body, application_family, **kwargs)  # noqa: E501
-            return data
-
-    def create_application_using_post_with_http_info(self, body, application_family, **kwargs):  # noqa: E501
-        """createApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_application_using_post_with_http_info(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Application body: application (required)
-        :param str application_family: applicationFamily (required)
-        :return: Application
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_application_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_application_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `create_application_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Application',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_ecr_registry_using_post(self, body, **kwargs):  # noqa: E501
-        """createECRRegistry  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_ecr_registry_using_post(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ECRRegistry body: ecrRegistry (required)
-        :return: ECRRegistry
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_ecr_registry_using_post_with_http_info(body, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_ecr_registry_using_post_with_http_info(body, **kwargs)  # noqa: E501
-            return data
-
-    def create_ecr_registry_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createECRRegistry  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_ecr_registry_using_post_with_http_info(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ECRRegistry body: ecrRegistry (required)
-        :return: ECRRegistry
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_ecr_registry_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_ecr_registry_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/ecrRegistry', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ECRRegistry',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_generic_action_using_post(self, body, build_type, **kwargs):  # noqa: E501
-        """createGenericAction  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_generic_action_using_post(body, build_type, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ApplicationAction body: applicationAction (required)
-        :param str build_type: buildType (required)
-        :return: ApplicationAction
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_generic_action_using_post_with_http_info(body, build_type, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_generic_action_using_post_with_http_info(body, build_type, **kwargs)  # noqa: E501
-            return data
-
-    def create_generic_action_using_post_with_http_info(self, body, build_type, **kwargs):  # noqa: E501
-        """createGenericAction  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_generic_action_using_post_with_http_info(body, build_type, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ApplicationAction body: applicationAction (required)
-        :param str build_type: buildType (required)
-        :return: ApplicationAction
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'build_type']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_generic_action_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_generic_action_using_post`")  # noqa: E501
-        # verify the required parameter 'build_type' is set
-        if ('build_type' not in params or
-                params['build_type'] is None):
-            raise ValueError("Missing the required parameter `build_type` when calling `create_generic_action_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'build_type' in params:
-            path_params['buildType'] = params['build_type']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/buildType/{buildType}/actions', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ApplicationAction',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_user_cc_using_post(self, body, **kwargs):  # noqa: E501
-        """createUserCC  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_user_cc_using_post(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param User body: user (required)
+        :param User body: (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_user_cc_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_user_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_user_cc_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_user_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_user_cc_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createUserCC  # noqa: E501
+    def create_user_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_user_cc_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_user_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param User body: user (required)
+        :param User body: (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -717,14 +184,14 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_user_cc_using_post" % key
+                    " to method create_user" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_user_cc_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_user`")  # noqa: E501
 
         collection_formats = {}
 
@@ -749,104 +216,7 @@ class ApplicationControllerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/cc-users', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='User',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def create_user_using_post(self, body, **kwargs):  # noqa: E501
-        """createUser  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_user_using_post(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param User body: user (required)
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_user_using_post_with_http_info(body, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_user_using_post_with_http_info(body, **kwargs)  # noqa: E501
-            return data
-
-    def create_user_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createUser  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_user_using_post_with_http_info(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param User body: user (required)
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_user_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_user_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/users', 'POST',
@@ -864,49 +234,43 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_application_secret_using_delete(self, application_family, application_id, environment, secret_name, **kwargs):  # noqa: E501
-        """deleteApplicationSecret  # noqa: E501
+    def create_user_cc(self, body, **kwargs):  # noqa: E501
+        """create_user_cc  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_application_secret_using_delete(application_family, application_id, environment, secret_name, async_req=True)
+        >>> thread = api.create_user_cc(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str secret_name: secretName (required)
-        :return: bool
+        :param User body: (required)
+        :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_application_secret_using_delete_with_http_info(application_family, application_id, environment, secret_name, **kwargs)  # noqa: E501
+            return self.create_user_cc_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_application_secret_using_delete_with_http_info(application_family, application_id, environment, secret_name, **kwargs)  # noqa: E501
+            (data) = self.create_user_cc_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def delete_application_secret_using_delete_with_http_info(self, application_family, application_id, environment, secret_name, **kwargs):  # noqa: E501
-        """deleteApplicationSecret  # noqa: E501
+    def create_user_cc_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_user_cc  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_application_secret_using_delete_with_http_info(application_family, application_id, environment, secret_name, async_req=True)
+        >>> thread = api.create_user_cc_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str secret_name: secretName (required)
-        :return: bool
+        :param User body: (required)
+        :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['application_family', 'application_id', 'environment', 'secret_name']  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -917,254 +281,18 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_application_secret_using_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `delete_application_secret_using_delete`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `delete_application_secret_using_delete`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `delete_application_secret_using_delete`")  # noqa: E501
-        # verify the required parameter 'secret_name' is set
-        if ('secret_name' not in params or
-                params['secret_name'] is None):
-            raise ValueError("Missing the required parameter `secret_name` when calling `delete_application_secret_using_delete`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-        if 'secret_name' in params:
-            path_params['secretName'] = params['secret_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/secrets/{secretName}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def delete_application_using_delete(self, application_family, application_id, **kwargs):  # noqa: E501
-        """deleteApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_application_using_delete(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.delete_application_using_delete_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.delete_application_using_delete_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def delete_application_using_delete_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """deleteApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_application_using_delete_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_application_using_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `delete_application_using_delete`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `delete_application_using_delete`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def deploy_using_post(self, body, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """deploy  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.deploy_using_post(body, application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Deployment body: deployment (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Deployment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.deploy_using_post_with_http_info(body, application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.deploy_using_post_with_http_info(body, application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def deploy_using_post_with_http_info(self, body, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """deploy  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.deploy_using_post_with_http_info(body, application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Deployment body: deployment (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Deployment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method deploy_using_post" % key
+                    " to method create_user_cc" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `deploy_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `deploy_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `deploy_using_post`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `deploy_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_user_cc`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
 
         query_params = []
 
@@ -1185,17 +313,17 @@ class ApplicationControllerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/deployments', 'POST',
+            '/api/cc-users', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Deployment',  # noqa: E501
+            response_type='User',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1203,3740 +331,12 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def disable_alerting_using_delete(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """disableAlerting  # noqa: E501
+    def get_users(self, **kwargs):  # noqa: E501
+        """get_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.disable_alerting_using_delete(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.disable_alerting_using_delete_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.disable_alerting_using_delete_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def disable_alerting_using_delete_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """disableAlerting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.disable_alerting_using_delete_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method disable_alerting_using_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `disable_alerting_using_delete`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `disable_alerting_using_delete`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `disable_alerting_using_delete`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/alerting', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def disable_monitoring_using_delete(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """disableMonitoring  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.disable_monitoring_using_delete(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.disable_monitoring_using_delete_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.disable_monitoring_using_delete_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def disable_monitoring_using_delete_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """disableMonitoring  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.disable_monitoring_using_delete_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method disable_monitoring_using_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `disable_monitoring_using_delete`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `disable_monitoring_using_delete`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `disable_monitoring_using_delete`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def download_dump_file_using_get(self, application_family, application_id, environment, path, **kwargs):  # noqa: E501
-        """downloadDumpFile  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_dump_file_using_get(application_family, application_id, environment, path, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str path: path (required)
-        :return: InputStreamResource
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.download_dump_file_using_get_with_http_info(application_family, application_id, environment, path, **kwargs)  # noqa: E501
-        else:
-            (data) = self.download_dump_file_using_get_with_http_info(application_family, application_id, environment, path, **kwargs)  # noqa: E501
-            return data
-
-    def download_dump_file_using_get_with_http_info(self, application_family, application_id, environment, path, **kwargs):  # noqa: E501
-        """downloadDumpFile  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_dump_file_using_get_with_http_info(application_family, application_id, environment, path, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str path: path (required)
-        :return: InputStreamResource
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment', 'path']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method download_dump_file_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `download_dump_file_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `download_dump_file_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `download_dump_file_using_get`")  # noqa: E501
-        # verify the required parameter 'path' is set
-        if ('path' not in params or
-                params['path'] is None):
-            raise ValueError("Missing the required parameter `path` when calling `download_dump_file_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-        if 'path' in params:
-            query_params.append(('path', params['path']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/dumps/download', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InputStreamResource',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def download_test_report_using_get(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """downloadTestReport  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_test_report_using_get(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: InputStreamResource
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.download_test_report_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.download_test_report_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-            return data
-
-    def download_test_report_using_get_with_http_info(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """downloadTestReport  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_test_report_using_get_with_http_info(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: InputStreamResource
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'build_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method download_test_report_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `download_test_report_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `download_test_report_using_get`")  # noqa: E501
-        # verify the required parameter 'build_id' is set
-        if ('build_id' not in params or
-                params['build_id'] is None):
-            raise ValueError("Missing the required parameter `build_id` when calling `download_test_report_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'build_id' in params:
-            path_params['buildId'] = params['build_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/downloadArtifacts', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InputStreamResource',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def enable_alerting_using_post(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """enableAlerting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.enable_alerting_using_post(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.enable_alerting_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.enable_alerting_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def enable_alerting_using_post_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """enableAlerting  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.enable_alerting_using_post_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method enable_alerting_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `enable_alerting_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `enable_alerting_using_post`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `enable_alerting_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/alerting', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def enable_monitoring_using_post(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """enableMonitoring  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.enable_monitoring_using_post(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.enable_monitoring_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.enable_monitoring_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def enable_monitoring_using_post_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """enableMonitoring  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.enable_monitoring_using_post_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method enable_monitoring_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `enable_monitoring_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `enable_monitoring_using_post`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `enable_monitoring_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def execute_action_on_pod_using_post(self, body, application_family, application_id, environment, pod_name, **kwargs):  # noqa: E501
-        """executeActionOnPod  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.execute_action_on_pod_using_post(body, application_family, application_id, environment, pod_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ApplicationAction body: applicationAction (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str pod_name: podName (required)
-        :return: ActionExecution
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.execute_action_on_pod_using_post_with_http_info(body, application_family, application_id, environment, pod_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.execute_action_on_pod_using_post_with_http_info(body, application_family, application_id, environment, pod_name, **kwargs)  # noqa: E501
-            return data
-
-    def execute_action_on_pod_using_post_with_http_info(self, body, application_family, application_id, environment, pod_name, **kwargs):  # noqa: E501
-        """executeActionOnPod  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.execute_action_on_pod_using_post_with_http_info(body, application_family, application_id, environment, pod_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ApplicationAction body: applicationAction (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str pod_name: podName (required)
-        :return: ActionExecution
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family', 'application_id', 'environment', 'pod_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method execute_action_on_pod_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `execute_action_on_pod_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `execute_action_on_pod_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `execute_action_on_pod_using_post`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `execute_action_on_pod_using_post`")  # noqa: E501
-        # verify the required parameter 'pod_name' is set
-        if ('pod_name' not in params or
-                params['pod_name'] is None):
-            raise ValueError("Missing the required parameter `pod_name` when calling `execute_action_on_pod_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-        if 'pod_name' in params:
-            path_params['podName'] = params['pod_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/pods/{podName}/actions/executeAction', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ActionExecution',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_actions_for_pod_using_get(self, application_family, application_id, environment, pod_name, **kwargs):  # noqa: E501
-        """getActionsForPod  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_actions_for_pod_using_get(application_family, application_id, environment, pod_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str pod_name: podName (required)
-        :return: list[ApplicationAction]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_actions_for_pod_using_get_with_http_info(application_family, application_id, environment, pod_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_actions_for_pod_using_get_with_http_info(application_family, application_id, environment, pod_name, **kwargs)  # noqa: E501
-            return data
-
-    def get_actions_for_pod_using_get_with_http_info(self, application_family, application_id, environment, pod_name, **kwargs):  # noqa: E501
-        """getActionsForPod  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_actions_for_pod_using_get_with_http_info(application_family, application_id, environment, pod_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str pod_name: podName (required)
-        :return: list[ApplicationAction]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment', 'pod_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_actions_for_pod_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_actions_for_pod_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_actions_for_pod_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_actions_for_pod_using_get`")  # noqa: E501
-        # verify the required parameter 'pod_name' is set
-        if ('pod_name' not in params or
-                params['pod_name'] is None):
-            raise ValueError("Missing the required parameter `pod_name` when calling `get_actions_for_pod_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-        if 'pod_name' in params:
-            path_params['podName'] = params['pod_name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/pods/{podName}/actions', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ApplicationAction]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_alerting_details_using_get(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getAlertingDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_alerting_details_using_get(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Alerting
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_alerting_details_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_alerting_details_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def get_alerting_details_using_get_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getAlertingDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_alerting_details_using_get_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Alerting
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_alerting_details_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_alerting_details_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_alerting_details_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_alerting_details_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/alerting', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Alerting',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_all_application_metrics_using_get(self, application_family, **kwargs):  # noqa: E501
-        """getAllApplicationMetrics  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_application_metrics_using_get(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[ApplicationMetricsWrapper]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_application_metrics_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_all_application_metrics_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-            return data
-
-    def get_all_application_metrics_using_get_with_http_info(self, application_family, **kwargs):  # noqa: E501
-        """getAllApplicationMetrics  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_application_metrics_using_get_with_http_info(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[ApplicationMetricsWrapper]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_all_application_metrics_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_all_application_metrics_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/appmetrics', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ApplicationMetricsWrapper]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_all_registries_using_get(self, **kwargs):  # noqa: E501
-        """getAllRegistries  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_registries_using_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[Registry]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_registries_using_get_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_all_registries_using_get_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_all_registries_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllRegistries  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_registries_using_get_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[Registry]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_all_registries_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/getRegistries', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[Registry]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_branches_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationBranches  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_branches_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_branches_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_branches_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_application_branches_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationBranches  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_branches_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_branches_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_application_branches_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_application_branches_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/branches', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[str]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_families_using_get(self, **kwargs):  # noqa: E501
-        """getApplicationFamilies  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_families_using_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_families_using_get_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_families_using_get_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_application_families_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getApplicationFamilies  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_families_using_get_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_families_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/applicationFamilies', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[str]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_metric_summary_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationMetricSummary  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_metric_summary_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: dict(str, ApplicationMetrics)
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_metric_summary_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_metric_summary_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_application_metric_summary_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationMetricSummary  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_metric_summary_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: dict(str, ApplicationMetrics)
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_metric_summary_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_application_metric_summary_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_application_metric_summary_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/metrics', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='dict(str, ApplicationMetrics)',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_pod_details_using_get(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getApplicationPodDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_pod_details_using_get(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: list[ApplicationPodDetails]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_pod_details_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_pod_details_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def get_application_pod_details_using_get_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getApplicationPodDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_pod_details_using_get_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: list[ApplicationPodDetails]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_pod_details_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_application_pod_details_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_application_pod_details_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_application_pod_details_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/podDetails', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ApplicationPodDetails]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_secret_requests_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationSecretRequests  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_secret_requests_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[ApplicationSecretRequest]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_secret_requests_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_secret_requests_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_application_secret_requests_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationSecretRequests  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_secret_requests_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[ApplicationSecretRequest]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_secret_requests_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_application_secret_requests_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_application_secret_requests_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/secretRequests', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ApplicationSecretRequest]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_secrets_using_get(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getApplicationSecrets  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_secrets_using_get(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: list[ApplicationSecret]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_secrets_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_secrets_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def get_application_secrets_using_get_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getApplicationSecrets  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_secrets_using_get_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: list[ApplicationSecret]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_secrets_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_application_secrets_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_application_secrets_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_application_secrets_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/secretRequests', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ApplicationSecret]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_tags_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationTags  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_tags_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_tags_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_tags_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_application_tags_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplicationTags  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_tags_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_tags_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_application_tags_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_application_tags_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/tags', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[str]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_types_using_get(self, **kwargs):  # noqa: E501
-        """getApplicationTypes  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_types_using_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_types_using_get_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_types_using_get_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_application_types_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getApplicationTypes  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_types_using_get_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_types_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/applicationTypes', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[str]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_application_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: Application
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_application_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_application_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_application_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_application_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: Application
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_application_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_application_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_application_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Application',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_applications_using_get(self, application_family, **kwargs):  # noqa: E501
-        """getApplications  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_applications_using_get(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[Application]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_applications_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_applications_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-            return data
-
-    def get_applications_using_get_with_http_info(self, application_family, **kwargs):  # noqa: E501
-        """getApplications  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_applications_using_get_with_http_info(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[Application]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_applications_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_applications_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[Application]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_build_logs_using_get(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """getBuildLogs  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_logs_using_get(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :param str next_token: nextToken
-        :return: TokenPaginatedResponseLogEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_build_logs_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_build_logs_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_build_logs_using_get_with_http_info(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """getBuildLogs  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_logs_using_get_with_http_info(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :param str next_token: nextToken
-        :return: TokenPaginatedResponseLogEvent
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'build_id', 'next_token']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_build_logs_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_build_logs_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_build_logs_using_get`")  # noqa: E501
-        # verify the required parameter 'build_id' is set
-        if ('build_id' not in params or
-                params['build_id'] is None):
-            raise ValueError("Missing the required parameter `build_id` when calling `get_build_logs_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'build_id' in params:
-            path_params['buildId'] = params['build_id']  # noqa: E501
-
-        query_params = []
-        if 'next_token' in params:
-            query_params.append(('nextToken', params['next_token']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/logs', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='TokenPaginatedResponseLogEvent',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_build_using_get(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """getBuild  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_using_get(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_build_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_build_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_build_using_get_with_http_info(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """getBuild  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_using_get_with_http_info(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'build_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_build_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_build_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_build_using_get`")  # noqa: E501
-        # verify the required parameter 'build_id' is set
-        if ('build_id' not in params or
-                params['build_id'] is None):
-            raise ValueError("Missing the required parameter `build_id` when calling `get_build_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'build_id' in params:
-            path_params['buildId'] = params['build_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/builds/{buildId}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Build',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_builds_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getBuilds  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_builds_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[Build]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_builds_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_builds_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_builds_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getBuilds  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_builds_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[Build]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_builds_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_builds_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_builds_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/builds', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[Build]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_cc_environment_meta_data_using_get(self, application_family, **kwargs):  # noqa: E501
-        """getCCEnvironmentMetaData  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cc_environment_meta_data_using_get(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[EnvironmentMetaData]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_cc_environment_meta_data_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_cc_environment_meta_data_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-            return data
-
-    def get_cc_environment_meta_data_using_get_with_http_info(self, application_family, **kwargs):  # noqa: E501
-        """getCCEnvironmentMetaData  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cc_environment_meta_data_using_get_with_http_info(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[EnvironmentMetaData]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_cc_environment_meta_data_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_cc_environment_meta_data_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/cc/{applicationFamily}/environmentMetaData', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[EnvironmentMetaData]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_current_deployment_using_get(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getCurrentDeployment  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_deployment_using_get(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Deployment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_current_deployment_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_current_deployment_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def get_current_deployment_using_get_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getCurrentDeployment  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_deployment_using_get_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Deployment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_current_deployment_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_current_deployment_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_current_deployment_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_current_deployment_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/deployment/current', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Deployment',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_deployment_status_using_get(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getDeploymentStatus  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_status_using_get(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: DeploymentStatusDetails
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_deployment_status_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_deployment_status_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def get_deployment_status_using_get_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getDeploymentStatus  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_status_using_get_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: DeploymentStatusDetails
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_deployment_status_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_deployment_status_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_deployment_status_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_deployment_status_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/deploymentStatus', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DeploymentStatusDetails',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_dump_file_list_using_get(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getDumpFileList  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_dump_file_list_using_get(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str _date: date
-        :return: dict(str, str)
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_dump_file_list_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_dump_file_list_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def get_dump_file_list_using_get_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getDumpFileList  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_dump_file_list_using_get_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :param str _date: date
-        :return: dict(str, str)
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment', '_date']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_dump_file_list_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_dump_file_list_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_dump_file_list_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_dump_file_list_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-        if '_date' in params:
-            query_params.append(('date', params['_date']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/dumps', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='dict(str, str)',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_ecr_token_using_get(self, host, **kwargs):  # noqa: E501
-        """getEcrToken  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_ecr_token_using_get(host, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str host: Host (required)
-        :return: object
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_ecr_token_using_get_with_http_info(host, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_ecr_token_using_get_with_http_info(host, **kwargs)  # noqa: E501
-            return data
-
-    def get_ecr_token_using_get_with_http_info(self, host, **kwargs):  # noqa: E501
-        """getEcrToken  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_ecr_token_using_get_with_http_info(host, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str host: Host (required)
-        :return: object
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['host']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_ecr_token_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'host' is set
-        if ('host' not in params or
-                params['host'] is None):
-            raise ValueError("Missing the required parameter `host` when calling `get_ecr_token_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-        if 'host' in params:
-            header_params['Host'] = params['host']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/getEcrLoginToken', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='object',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_environment_meta_data_using_get(self, application_family, **kwargs):  # noqa: E501
-        """getEnvironmentMetaData  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_environment_meta_data_using_get(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[EnvironmentMetaData]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_environment_meta_data_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_environment_meta_data_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-            return data
-
-    def get_environment_meta_data_using_get_with_http_info(self, application_family, **kwargs):  # noqa: E501
-        """getEnvironmentMetaData  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_environment_meta_data_using_get_with_http_info(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[EnvironmentMetaData]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_environment_meta_data_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_environment_meta_data_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/environmentMetaData', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[EnvironmentMetaData]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_environment_using_get(self, application_family, id, **kwargs):  # noqa: E501
-        """getEnvironment  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_environment_using_get(application_family, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str id: id (required)
-        :return: Environment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_environment_using_get_with_http_info(application_family, id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_environment_using_get_with_http_info(application_family, id, **kwargs)  # noqa: E501
-            return data
-
-    def get_environment_using_get_with_http_info(self, application_family, id, **kwargs):  # noqa: E501
-        """getEnvironment  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_environment_using_get_with_http_info(application_family, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str id: id (required)
-        :return: Environment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_environment_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_environment_using_get`")  # noqa: E501
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_environment_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/environments/{id}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Environment',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_environments_using_get(self, application_family, **kwargs):  # noqa: E501
-        """getEnvironments  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_environments_using_get(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[Environment]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_environments_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_environments_using_get_with_http_info(application_family, **kwargs)  # noqa: E501
-            return data
-
-    def get_environments_using_get_with_http_info(self, application_family, **kwargs):  # noqa: E501
-        """getEnvironments  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_environments_using_get_with_http_info(application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :return: list[Environment]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_environments_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_environments_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/environments', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[Environment]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_executed_actions_for_application_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getExecutedActionsForApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_executed_actions_for_application_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[ActionExecution]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_executed_actions_for_application_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_executed_actions_for_application_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_executed_actions_for_application_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getExecutedActionsForApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_executed_actions_for_application_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[ActionExecution]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_executed_actions_for_application_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_executed_actions_for_application_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_executed_actions_for_application_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/executedActions', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ActionExecution]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_images_using_get(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getImages  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_images_using_get(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_images_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_images_using_get_with_http_info(application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_images_using_get_with_http_info(self, application_family, application_id, **kwargs):  # noqa: E501
-        """getImages  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_images_using_get_with_http_info(application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_images_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_images_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_images_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/images', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[str]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_monitoring_details_using_get(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getMonitoringDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_monitoring_details_using_get(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Monitoring
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_monitoring_details_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_monitoring_details_using_get_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def get_monitoring_details_using_get_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """getMonitoringDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_monitoring_details_using_get_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: Monitoring
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_monitoring_details_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_monitoring_details_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_monitoring_details_using_get`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `get_monitoring_details_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/monitoring', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Monitoring',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_test_build_details_using_get(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """getTestBuildDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_test_build_details_using_get(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: TestBuildDetails
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_test_build_details_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_test_build_details_using_get_with_http_info(application_family, application_id, build_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_test_build_details_using_get_with_http_info(self, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """getTestBuildDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_test_build_details_using_get_with_http_info(application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: TestBuildDetails
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'build_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_test_build_details_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `get_test_build_details_using_get`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `get_test_build_details_using_get`")  # noqa: E501
-        # verify the required parameter 'build_id' is set
-        if ('build_id' not in params or
-                params['build_id'] is None):
-            raise ValueError("Missing the required parameter `build_id` when calling `get_test_build_details_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'build_id' in params:
-            path_params['buildId'] = params['build_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/builds/{buildId}/testDetails', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='TestBuildDetails',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_users_using_get(self, **kwargs):  # noqa: E501
-        """getUsers  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_users_using_get(async_req=True)
+        >>> thread = api.get_users(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -4946,17 +346,17 @@ class ApplicationControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_users_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_users_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_users_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_users_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_users_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getUsers  # noqa: E501
+    def get_users_with_http_info(self, **kwargs):  # noqa: E501
+        """get_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_users_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_users_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -4976,7 +376,7 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_users_using_get" % key
+                    " to method get_users" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -4998,7 +398,7 @@ class ApplicationControllerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/users', 'GET',
@@ -5016,36 +416,36 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def global_stats_using_get(self, **kwargs):  # noqa: E501
-        """globalStats  # noqa: E501
+    def login(self, **kwargs):  # noqa: E501
+        """login  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.global_stats_using_get(async_req=True)
+        >>> thread = api.login(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: GlobalStats
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.global_stats_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.login_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.global_stats_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.login_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def global_stats_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """globalStats  # noqa: E501
+    def login_with_http_info(self, **kwargs):  # noqa: E501
+        """login  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.global_stats_using_get_with_http_info(async_req=True)
+        >>> thread = api.login_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: GlobalStats
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5061,7 +461,7 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method global_stats_using_get" % key
+                    " to method login" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -5069,115 +469,6 @@ class ApplicationControllerApi(object):
         collection_formats = {}
 
         path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/stats', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='GlobalStats',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def halt_application_using_post(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """haltApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.halt_application_using_post(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.halt_application_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.halt_application_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def halt_application_using_post_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """haltApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.halt_application_using_post_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method halt_application_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `halt_application_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `halt_application_using_post`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `halt_application_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
 
         query_params = []
 
@@ -5192,177 +483,7 @@ class ApplicationControllerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/halt', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def login_using_delete(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_delete(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.login_using_delete_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.login_using_delete_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def login_using_delete_with_http_info(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_delete_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method login_using_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/login', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def login_using_get(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.login_using_get_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.login_using_get_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def login_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_get_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method login_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/login', 'GET',
@@ -5380,12 +501,12 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def login_using_head(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
+    def login1(self, **kwargs):  # noqa: E501
+        """login1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_head(async_req=True)
+        >>> thread = api.login1(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5395,17 +516,17 @@ class ApplicationControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.login_using_head_with_http_info(**kwargs)  # noqa: E501
+            return self.login1_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.login_using_head_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.login1_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def login_using_head_with_http_info(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
+    def login1_with_http_info(self, **kwargs):  # noqa: E501
+        """login1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_head_with_http_info(async_req=True)
+        >>> thread = api.login1_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5425,7 +546,7 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method login_using_head" % key
+                    " to method login1" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -5444,10 +565,10 @@ class ApplicationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/login', 'HEAD',
@@ -5465,12 +586,12 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def login_using_options(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
+    def login2(self, **kwargs):  # noqa: E501
+        """login2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_options(async_req=True)
+        >>> thread = api.login2(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5480,17 +601,17 @@ class ApplicationControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.login_using_options_with_http_info(**kwargs)  # noqa: E501
+            return self.login2_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.login_using_options_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.login2_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def login_using_options_with_http_info(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
+    def login2_with_http_info(self, **kwargs):  # noqa: E501
+        """login2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_options_with_http_info(async_req=True)
+        >>> thread = api.login2_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5510,7 +631,7 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method login_using_options" % key
+                    " to method login2" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -5529,180 +650,10 @@ class ApplicationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/login', 'OPTIONS',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def login_using_patch(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_patch(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.login_using_patch_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.login_using_patch_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def login_using_patch_with_http_info(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_patch_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method login_using_patch" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/login', 'PATCH',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='str',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def login_using_post(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_post(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.login_using_post_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.login_using_post_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def login_using_post_with_http_info(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_post_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: str
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method login_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/login', 'POST',
@@ -5720,12 +671,12 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def login_using_put(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
+    def login3(self, **kwargs):  # noqa: E501
+        """login3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_put(async_req=True)
+        >>> thread = api.login3(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5735,17 +686,17 @@ class ApplicationControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.login_using_put_with_http_info(**kwargs)  # noqa: E501
+            return self.login3_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.login_using_put_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.login3_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def login_using_put_with_http_info(self, **kwargs):  # noqa: E501
-        """login  # noqa: E501
+    def login3_with_http_info(self, **kwargs):  # noqa: E501
+        """login3  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.login_using_put_with_http_info(async_req=True)
+        >>> thread = api.login3_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5765,7 +716,7 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method login_using_put" % key
+                    " to method login3" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -5784,10 +735,10 @@ class ApplicationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/login', 'PUT',
@@ -5805,12 +756,267 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def me_using_get(self, **kwargs):  # noqa: E501
+    def login4(self, **kwargs):  # noqa: E501
+        """login4  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login4(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.login4_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.login4_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def login4_with_http_info(self, **kwargs):  # noqa: E501
+        """login4  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login4_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method login4" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/login', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def login5(self, **kwargs):  # noqa: E501
+        """login5  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login5(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.login5_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.login5_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def login5_with_http_info(self, **kwargs):  # noqa: E501
+        """login5  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login5_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method login5" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/login', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def login6(self, **kwargs):  # noqa: E501
+        """login6  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login6(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.login6_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.login6_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def login6_with_http_info(self, **kwargs):  # noqa: E501
+        """login6  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login6_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method login6" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/login', 'OPTIONS',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def me(self, **kwargs):  # noqa: E501
         """me  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.me_using_get(async_req=True)
+        >>> thread = api.me(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5820,17 +1026,17 @@ class ApplicationControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.me_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.me_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.me_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.me_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def me_using_get_with_http_info(self, **kwargs):  # noqa: E501
+    def me_with_http_info(self, **kwargs):  # noqa: E501
         """me  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.me_using_get_with_http_info(async_req=True)
+        >>> thread = api.me_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -5850,7 +1056,7 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method me_using_get" % key
+                    " to method me" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -5869,10 +1075,10 @@ class ApplicationControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/me', 'GET',
@@ -5890,939 +1096,39 @@ class ApplicationControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def process_webhook_pr_bitbucket_using_post(self, body, host, x_event_key, application_family, application_id, **kwargs):  # noqa: E501
-        """processWebhookPRBitbucket  # noqa: E501
+    def update_user(self, body, user_id, **kwargs):  # noqa: E501
+        """update_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.process_webhook_pr_bitbucket_using_post(body, host, x_event_key, application_family, application_id, async_req=True)
+        >>> thread = api.update_user(body, user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BitbucketPREvent body: webhook (required)
-        :param str host: Host (required)
-        :param str x_event_key: X-Event-Key (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: object
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.process_webhook_pr_bitbucket_using_post_with_http_info(body, host, x_event_key, application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.process_webhook_pr_bitbucket_using_post_with_http_info(body, host, x_event_key, application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def process_webhook_pr_bitbucket_using_post_with_http_info(self, body, host, x_event_key, application_family, application_id, **kwargs):  # noqa: E501
-        """processWebhookPRBitbucket  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.process_webhook_pr_bitbucket_using_post_with_http_info(body, host, x_event_key, application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param BitbucketPREvent body: webhook (required)
-        :param str host: Host (required)
-        :param str x_event_key: X-Event-Key (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: object
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'host', 'x_event_key', 'application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method process_webhook_pr_bitbucket_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `process_webhook_pr_bitbucket_using_post`")  # noqa: E501
-        # verify the required parameter 'host' is set
-        if ('host' not in params or
-                params['host'] is None):
-            raise ValueError("Missing the required parameter `host` when calling `process_webhook_pr_bitbucket_using_post`")  # noqa: E501
-        # verify the required parameter 'x_event_key' is set
-        if ('x_event_key' not in params or
-                params['x_event_key'] is None):
-            raise ValueError("Missing the required parameter `x_event_key` when calling `process_webhook_pr_bitbucket_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `process_webhook_pr_bitbucket_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `process_webhook_pr_bitbucket_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-        if 'host' in params:
-            header_params['Host'] = params['host']  # noqa: E501
-        if 'x_event_key' in params:
-            header_params['X-Event-Key'] = params['x_event_key']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/webhooks/pr/bitbucket', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='object',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def process_webhook_pr_github_using_post(self, body, host, application_family, application_id, **kwargs):  # noqa: E501
-        """processWebhookPRGithub  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.process_webhook_pr_github_using_post(body, host, application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param GithubPREvent body: webhook (required)
-        :param str host: Host (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: object
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.process_webhook_pr_github_using_post_with_http_info(body, host, application_family, application_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.process_webhook_pr_github_using_post_with_http_info(body, host, application_family, application_id, **kwargs)  # noqa: E501
-            return data
-
-    def process_webhook_pr_github_using_post_with_http_info(self, body, host, application_family, application_id, **kwargs):  # noqa: E501
-        """processWebhookPRGithub  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.process_webhook_pr_github_using_post_with_http_info(body, host, application_family, application_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param GithubPREvent body: webhook (required)
-        :param str host: Host (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :return: object
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'host', 'application_family', 'application_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method process_webhook_pr_github_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `process_webhook_pr_github_using_post`")  # noqa: E501
-        # verify the required parameter 'host' is set
-        if ('host' not in params or
-                params['host'] is None):
-            raise ValueError("Missing the required parameter `host` when calling `process_webhook_pr_github_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `process_webhook_pr_github_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `process_webhook_pr_github_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-        if 'host' in params:
-            header_params['Host'] = params['host']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/webhooks/pr/github', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='object',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def redeploy_using_post(self, application_family, environment, **kwargs):  # noqa: E501
-        """redeploy  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.redeploy_using_post(application_family, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str environment: environment (required)
-        :return: dict(str, bool)
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.redeploy_using_post_with_http_info(application_family, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.redeploy_using_post_with_http_info(application_family, environment, **kwargs)  # noqa: E501
-            return data
-
-    def redeploy_using_post_with_http_info(self, application_family, environment, **kwargs):  # noqa: E501
-        """redeploy  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.redeploy_using_post_with_http_info(application_family, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str environment: environment (required)
-        :return: dict(str, bool)
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method redeploy_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `redeploy_using_post`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `redeploy_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/redeployment', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='dict(str, bool)',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def refresh_build_details_using_put(self, code_build_id, **kwargs):  # noqa: E501
-        """refreshBuildDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.refresh_build_details_using_put(code_build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str code_build_id: codeBuildId (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.refresh_build_details_using_put_with_http_info(code_build_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.refresh_build_details_using_put_with_http_info(code_build_id, **kwargs)  # noqa: E501
-            return data
-
-    def refresh_build_details_using_put_with_http_info(self, code_build_id, **kwargs):  # noqa: E501
-        """refreshBuildDetails  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.refresh_build_details_using_put_with_http_info(code_build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str code_build_id: codeBuildId (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['code_build_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method refresh_build_details_using_put" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'code_build_id' is set
-        if ('code_build_id' not in params or
-                params['code_build_id'] is None):
-            raise ValueError("Missing the required parameter `code_build_id` when calling `refresh_build_details_using_put`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'code_build_id' in params:
-            path_params['codeBuildId'] = params['code_build_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/codebuild/builds/{codeBuildId}/refresh', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def resume_application_using_post(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """resumeApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.resume_application_using_post(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.resume_application_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.resume_application_using_post_with_http_info(application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def resume_application_using_post_with_http_info(self, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """resumeApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.resume_application_using_post_with_http_info(application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: bool
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method resume_application_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `resume_application_using_post`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `resume_application_using_post`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `resume_application_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/resume', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='bool',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def update_application_secrets_using_put(self, body, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """updateApplicationSecrets  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_application_secrets_using_put(body, application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[ApplicationSecret] body: applicationSecrets (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: list[ApplicationSecret]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_application_secrets_using_put_with_http_info(body, application_family, application_id, environment, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_application_secrets_using_put_with_http_info(body, application_family, application_id, environment, **kwargs)  # noqa: E501
-            return data
-
-    def update_application_secrets_using_put_with_http_info(self, body, application_family, application_id, environment, **kwargs):  # noqa: E501
-        """updateApplicationSecrets  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_application_secrets_using_put_with_http_info(body, application_family, application_id, environment, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[ApplicationSecret] body: applicationSecrets (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str environment: environment (required)
-        :return: list[ApplicationSecret]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family', 'application_id', 'environment']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_application_secrets_using_put" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_application_secrets_using_put`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `update_application_secrets_using_put`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `update_application_secrets_using_put`")  # noqa: E501
-        # verify the required parameter 'environment' is set
-        if ('environment' not in params or
-                params['environment'] is None):
-            raise ValueError("Missing the required parameter `environment` when calling `update_application_secrets_using_put`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'environment' in params:
-            path_params['environment'] = params['environment']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/{environment}/applications/{applicationId}/secrets', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ApplicationSecret]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def update_application_using_put(self, body, application_family, **kwargs):  # noqa: E501
-        """updateApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_application_using_put(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Application body: application (required)
-        :param str application_family: applicationFamily (required)
-        :return: Application
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_application_using_put_with_http_info(body, application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_application_using_put_with_http_info(body, application_family, **kwargs)  # noqa: E501
-            return data
-
-    def update_application_using_put_with_http_info(self, body, application_family, **kwargs):  # noqa: E501
-        """updateApplication  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_application_using_put_with_http_info(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Application body: application (required)
-        :param str application_family: applicationFamily (required)
-        :return: Application
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_application_using_put" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_application_using_put`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `update_application_using_put`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Application',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def update_build_using_put(self, body, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """updateBuild  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_build_using_put(body, application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Build body: build (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_build_using_put_with_http_info(body, application_family, application_id, build_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_build_using_put_with_http_info(body, application_family, application_id, build_id, **kwargs)  # noqa: E501
-            return data
-
-    def update_build_using_put_with_http_info(self, body, application_family, application_id, build_id, **kwargs):  # noqa: E501
-        """updateBuild  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_build_using_put_with_http_info(body, application_family, application_id, build_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Build body: build (required)
-        :param str application_family: applicationFamily (required)
-        :param str application_id: applicationId (required)
-        :param str build_id: buildId (required)
-        :return: Build
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family', 'application_id', 'build_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_build_using_put" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_build_using_put`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `update_build_using_put`")  # noqa: E501
-        # verify the required parameter 'application_id' is set
-        if ('application_id' not in params or
-                params['application_id'] is None):
-            raise ValueError("Missing the required parameter `application_id` when calling `update_build_using_put`")  # noqa: E501
-        # verify the required parameter 'build_id' is set
-        if ('build_id' not in params or
-                params['build_id'] is None):
-            raise ValueError("Missing the required parameter `build_id` when calling `update_build_using_put`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-        if 'application_id' in params:
-            path_params['applicationId'] = params['application_id']  # noqa: E501
-        if 'build_id' in params:
-            path_params['buildId'] = params['build_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/applications/{applicationId}/builds/{buildId}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Build',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def update_user_using_put(self, body, user_id, **kwargs):  # noqa: E501
-        """updateUser  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_user_using_put(body, user_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param User body: user (required)
-        :param str user_id: userId (required)
+        :param User body: (required)
+        :param str user_id: (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_user_using_put_with_http_info(body, user_id, **kwargs)  # noqa: E501
+            return self.update_user_with_http_info(body, user_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_user_using_put_with_http_info(body, user_id, **kwargs)  # noqa: E501
+            (data) = self.update_user_with_http_info(body, user_id, **kwargs)  # noqa: E501
             return data
 
-    def update_user_using_put_with_http_info(self, body, user_id, **kwargs):  # noqa: E501
-        """updateUser  # noqa: E501
+    def update_user_with_http_info(self, body, user_id, **kwargs):  # noqa: E501
+        """update_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_user_using_put_with_http_info(body, user_id, async_req=True)
+        >>> thread = api.update_user_with_http_info(body, user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param User body: user (required)
-        :param str user_id: userId (required)
+        :param User body: (required)
+        :param str user_id: (required)
         :return: User
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6839,18 +1145,18 @@ class ApplicationControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_user_using_put" % key
+                    " to method update_user" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_user_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_user`")  # noqa: E501
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params or
                 params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `update_user_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `user_id` when calling `update_user`")  # noqa: E501
 
         collection_formats = {}
 
@@ -6877,7 +1183,7 @@ class ApplicationControllerApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/users/{userId}', 'PUT',
@@ -6888,216 +1194,6 @@ class ApplicationControllerApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='User',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def upsert_application_family_metadata_using_post(self, body, application_family, **kwargs):  # noqa: E501
-        """upsertApplicationFamilyMetadata  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upsert_application_family_metadata_using_post(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ApplicationFamilyMetadata body: applicationFamilyMetadata (required)
-        :param str application_family: applicationFamily (required)
-        :return: ApplicationFamilyMetadata
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.upsert_application_family_metadata_using_post_with_http_info(body, application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.upsert_application_family_metadata_using_post_with_http_info(body, application_family, **kwargs)  # noqa: E501
-            return data
-
-    def upsert_application_family_metadata_using_post_with_http_info(self, body, application_family, **kwargs):  # noqa: E501
-        """upsertApplicationFamilyMetadata  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upsert_application_family_metadata_using_post_with_http_info(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ApplicationFamilyMetadata body: applicationFamilyMetadata (required)
-        :param str application_family: applicationFamily (required)
-        :return: ApplicationFamilyMetadata
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method upsert_application_family_metadata_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `upsert_application_family_metadata_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `upsert_application_family_metadata_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/applicationFamilies/{applicationFamily}/metadata', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ApplicationFamilyMetadata',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def upsert_environment_using_post(self, body, application_family, **kwargs):  # noqa: E501
-        """upsertEnvironment  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upsert_environment_using_post(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Environment body: environment (required)
-        :param str application_family: applicationFamily (required)
-        :return: Environment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.upsert_environment_using_post_with_http_info(body, application_family, **kwargs)  # noqa: E501
-        else:
-            (data) = self.upsert_environment_using_post_with_http_info(body, application_family, **kwargs)  # noqa: E501
-            return data
-
-    def upsert_environment_using_post_with_http_info(self, body, application_family, **kwargs):  # noqa: E501
-        """upsertEnvironment  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.upsert_environment_using_post_with_http_info(body, application_family, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Environment body: environment (required)
-        :param str application_family: applicationFamily (required)
-        :return: Environment
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'application_family']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method upsert_environment_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `upsert_environment_using_post`")  # noqa: E501
-        # verify the required parameter 'application_family' is set
-        if ('application_family' not in params or
-                params['application_family'] is None):
-            raise ValueError("Missing the required parameter `application_family` when calling `upsert_environment_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'application_family' in params:
-            path_params['applicationFamily'] = params['application_family']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/{applicationFamily}/environments', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='Environment',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

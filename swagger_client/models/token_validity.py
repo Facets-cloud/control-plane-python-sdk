@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class TokenValidity(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'valid': 'bool',
         'message': 'str',
-        'username': 'str',
-        'valid': 'bool'
+        'username': 'str'
     }
 
     attribute_map = {
+        'valid': 'valid',
         'message': 'message',
-        'username': 'username',
-        'valid': 'valid'
+        'username': 'username'
     }
 
-    def __init__(self, message=None, username=None, valid=None):  # noqa: E501
+    def __init__(self, valid=None, message=None, username=None):  # noqa: E501
         """TokenValidity - a model defined in Swagger"""  # noqa: E501
+        self._valid = None
         self._message = None
         self._username = None
-        self._valid = None
         self.discriminator = None
+        if valid is not None:
+            self.valid = valid
         if message is not None:
             self.message = message
         if username is not None:
             self.username = username
-        if valid is not None:
-            self.valid = valid
+
+    @property
+    def valid(self):
+        """Gets the valid of this TokenValidity.  # noqa: E501
+
+
+        :return: The valid of this TokenValidity.  # noqa: E501
+        :rtype: bool
+        """
+        return self._valid
+
+    @valid.setter
+    def valid(self, valid):
+        """Sets the valid of this TokenValidity.
+
+
+        :param valid: The valid of this TokenValidity.  # noqa: E501
+        :type: bool
+        """
+
+        self._valid = valid
 
     @property
     def message(self):
@@ -99,27 +120,6 @@ class TokenValidity(object):
         """
 
         self._username = username
-
-    @property
-    def valid(self):
-        """Gets the valid of this TokenValidity.  # noqa: E501
-
-
-        :return: The valid of this TokenValidity.  # noqa: E501
-        :rtype: bool
-        """
-        return self._valid
-
-    @valid.setter
-    def valid(self, valid):
-        """Sets the valid of this TokenValidity.
-
-
-        :param valid: The valid of this TokenValidity.  # noqa: E501
-        :type: bool
-        """
-
-        self._valid = valid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

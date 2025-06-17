@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class VCSLinkingResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'redirect_url': 'str',
-        'webhook': 'OneTimeWebhook'
+        'webhook': 'OneTimeWebhook',
+        'redirect_url': 'str'
     }
 
     attribute_map = {
-        'redirect_url': 'redirectUrl',
-        'webhook': 'webhook'
+        'webhook': 'webhook',
+        'redirect_url': 'redirectUrl'
     }
 
-    def __init__(self, redirect_url=None, webhook=None):  # noqa: E501
+    def __init__(self, webhook=None, redirect_url=None):  # noqa: E501
         """VCSLinkingResponse - a model defined in Swagger"""  # noqa: E501
-        self._redirect_url = None
         self._webhook = None
+        self._redirect_url = None
         self.discriminator = None
-        if redirect_url is not None:
-            self.redirect_url = redirect_url
         if webhook is not None:
             self.webhook = webhook
-
-    @property
-    def redirect_url(self):
-        """Gets the redirect_url of this VCSLinkingResponse.  # noqa: E501
-
-
-        :return: The redirect_url of this VCSLinkingResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._redirect_url
-
-    @redirect_url.setter
-    def redirect_url(self, redirect_url):
-        """Sets the redirect_url of this VCSLinkingResponse.
-
-
-        :param redirect_url: The redirect_url of this VCSLinkingResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._redirect_url = redirect_url
+        if redirect_url is not None:
+            self.redirect_url = redirect_url
 
     @property
     def webhook(self):
@@ -88,6 +67,27 @@ class VCSLinkingResponse(object):
         """
 
         self._webhook = webhook
+
+    @property
+    def redirect_url(self):
+        """Gets the redirect_url of this VCSLinkingResponse.  # noqa: E501
+
+
+        :return: The redirect_url of this VCSLinkingResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._redirect_url
+
+    @redirect_url.setter
+    def redirect_url(self, redirect_url):
+        """Sets the redirect_url of this VCSLinkingResponse.
+
+
+        :param redirect_url: The redirect_url of this VCSLinkingResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._redirect_url = redirect_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

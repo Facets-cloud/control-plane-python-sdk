@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,55 @@ class ReplicaStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'current_replicas': 'int',
-        'max_replicas': 'int',
         'min_replicas': 'int',
+        'max_replicas': 'int',
+        'current_replicas': 'int',
         'target_replicas': 'int'
     }
 
     attribute_map = {
-        'current_replicas': 'currentReplicas',
-        'max_replicas': 'maxReplicas',
         'min_replicas': 'minReplicas',
+        'max_replicas': 'maxReplicas',
+        'current_replicas': 'currentReplicas',
         'target_replicas': 'targetReplicas'
     }
 
-    def __init__(self, current_replicas=None, max_replicas=None, min_replicas=None, target_replicas=None):  # noqa: E501
+    def __init__(self, min_replicas=None, max_replicas=None, current_replicas=None, target_replicas=None):  # noqa: E501
         """ReplicaStatus - a model defined in Swagger"""  # noqa: E501
-        self._current_replicas = None
-        self._max_replicas = None
         self._min_replicas = None
+        self._max_replicas = None
+        self._current_replicas = None
         self._target_replicas = None
         self.discriminator = None
-        if current_replicas is not None:
-            self.current_replicas = current_replicas
-        if max_replicas is not None:
-            self.max_replicas = max_replicas
         if min_replicas is not None:
             self.min_replicas = min_replicas
+        if max_replicas is not None:
+            self.max_replicas = max_replicas
+        if current_replicas is not None:
+            self.current_replicas = current_replicas
         if target_replicas is not None:
             self.target_replicas = target_replicas
 
     @property
-    def current_replicas(self):
-        """Gets the current_replicas of this ReplicaStatus.  # noqa: E501
+    def min_replicas(self):
+        """Gets the min_replicas of this ReplicaStatus.  # noqa: E501
 
 
-        :return: The current_replicas of this ReplicaStatus.  # noqa: E501
+        :return: The min_replicas of this ReplicaStatus.  # noqa: E501
         :rtype: int
         """
-        return self._current_replicas
+        return self._min_replicas
 
-    @current_replicas.setter
-    def current_replicas(self, current_replicas):
-        """Sets the current_replicas of this ReplicaStatus.
+    @min_replicas.setter
+    def min_replicas(self, min_replicas):
+        """Sets the min_replicas of this ReplicaStatus.
 
 
-        :param current_replicas: The current_replicas of this ReplicaStatus.  # noqa: E501
+        :param min_replicas: The min_replicas of this ReplicaStatus.  # noqa: E501
         :type: int
         """
 
-        self._current_replicas = current_replicas
+        self._min_replicas = min_replicas
 
     @property
     def max_replicas(self):
@@ -100,25 +100,25 @@ class ReplicaStatus(object):
         self._max_replicas = max_replicas
 
     @property
-    def min_replicas(self):
-        """Gets the min_replicas of this ReplicaStatus.  # noqa: E501
+    def current_replicas(self):
+        """Gets the current_replicas of this ReplicaStatus.  # noqa: E501
 
 
-        :return: The min_replicas of this ReplicaStatus.  # noqa: E501
+        :return: The current_replicas of this ReplicaStatus.  # noqa: E501
         :rtype: int
         """
-        return self._min_replicas
+        return self._current_replicas
 
-    @min_replicas.setter
-    def min_replicas(self, min_replicas):
-        """Sets the min_replicas of this ReplicaStatus.
+    @current_replicas.setter
+    def current_replicas(self, current_replicas):
+        """Sets the current_replicas of this ReplicaStatus.
 
 
-        :param min_replicas: The min_replicas of this ReplicaStatus.  # noqa: E501
+        :param current_replicas: The current_replicas of this ReplicaStatus.  # noqa: E501
         :type: int
         """
 
-        self._min_replicas = min_replicas
+        self._current_replicas = current_replicas
 
     @property
     def target_replicas(self):

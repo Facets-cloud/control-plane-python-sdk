@@ -1,18 +1,18 @@
 # swagger_client.UiCloudCostExplorerControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_daily_cloud_cost_using_get**](UiCloudCostExplorerControllerApi.md#get_daily_cloud_cost_using_get) | **GET** /cc-ui/v1/cost-explorer/stack/{stackName}/daily-cost | getDailyCloudCost
-[**get_service_wise_cost_using_get**](UiCloudCostExplorerControllerApi.md#get_service_wise_cost_using_get) | **GET** /cc-ui/v1/cost-explorer/service-wise-cost/{clusterId} | getServiceWiseCost
-[**is_aws_cost_explorer_enabled_using_get**](UiCloudCostExplorerControllerApi.md#is_aws_cost_explorer_enabled_using_get) | **GET** /cc-ui/v1/cost-explorer/aws/enabled | isAwsCostExplorerEnabled
-[**sync_cloud_cost_using_get**](UiCloudCostExplorerControllerApi.md#sync_cloud_cost_using_get) | **GET** /cc-ui/v1/cost-explorer/sync-cost | syncCloudCost
+[**get_daily_cloud_cost**](UiCloudCostExplorerControllerApi.md#get_daily_cloud_cost) | **GET** /cc-ui/v1/cost-explorer/stack/{stackName}/daily-cost | 
+[**get_service_wise_cost**](UiCloudCostExplorerControllerApi.md#get_service_wise_cost) | **GET** /cc-ui/v1/cost-explorer/service-wise-cost/{clusterId} | 
+[**is_aws_cost_explorer_enabled**](UiCloudCostExplorerControllerApi.md#is_aws_cost_explorer_enabled) | **GET** /cc-ui/v1/cost-explorer/aws/enabled | 
+[**sync_cloud_cost**](UiCloudCostExplorerControllerApi.md#sync_cloud_cost) | **GET** /cc-ui/v1/cost-explorer/sync-cost | 
 
-# **get_daily_cloud_cost_using_get**
-> DailyCloudCostDTO get_daily_cloud_cost_using_get(end, stack_name, start, cluster_ids=cluster_ids)
+# **get_daily_cloud_cost**
+> DailyCloudCostDTO get_daily_cloud_cost(stack_name, start, end, cluster_ids=cluster_ids)
 
-getDailyCloudCost
+
 
 ### Example
 ```python
@@ -21,34 +21,33 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCloudCostExplorerControllerApi(swagger_client.ApiClient(configuration))
-end = '2013-10-20' # date | end
-stack_name = 'stack_name_example' # str | stackName
-start = '2013-10-20' # date | start
-cluster_ids = ['cluster_ids_example'] # list[str] | clusterIds (optional)
+stack_name = 'stack_name_example' # str | 
+start = '2013-10-20' # date | 
+end = '2013-10-20' # date | 
+cluster_ids = ['cluster_ids_example'] # list[str] |  (optional)
 
 try:
-    # getDailyCloudCost
-    api_response = api_instance.get_daily_cloud_cost_using_get(end, stack_name, start, cluster_ids=cluster_ids)
+    api_response = api_instance.get_daily_cloud_cost(stack_name, start, end, cluster_ids=cluster_ids)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCloudCostExplorerControllerApi->get_daily_cloud_cost_using_get: %s\n" % e)
+    print("Exception when calling UiCloudCostExplorerControllerApi->get_daily_cloud_cost: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **end** | **date**| end | 
- **stack_name** | **str**| stackName | 
- **start** | **date**| start | 
- **cluster_ids** | [**list[str]**](str.md)| clusterIds | [optional] 
+ **stack_name** | **str**|  | 
+ **start** | **date**|  | 
+ **end** | **date**|  | 
+ **cluster_ids** | [**list[str]**](str.md)|  | [optional] 
 
 ### Return type
 
@@ -56,19 +55,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_service_wise_cost_using_get**
-> list[DailyCost] get_service_wise_cost_using_get(cluster_id, end, start)
+# **get_service_wise_cost**
+> list[DailyCost] get_service_wise_cost(cluster_id, start, end)
 
-getServiceWiseCost
+
 
 ### Example
 ```python
@@ -77,32 +76,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCloudCostExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-end = '2013-10-20' # date | end
-start = '2013-10-20' # date | start
+cluster_id = 'cluster_id_example' # str | 
+start = '2013-10-20' # date | 
+end = '2013-10-20' # date | 
 
 try:
-    # getServiceWiseCost
-    api_response = api_instance.get_service_wise_cost_using_get(cluster_id, end, start)
+    api_response = api_instance.get_service_wise_cost(cluster_id, start, end)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCloudCostExplorerControllerApi->get_service_wise_cost_using_get: %s\n" % e)
+    print("Exception when calling UiCloudCostExplorerControllerApi->get_service_wise_cost: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **end** | **date**| end | 
- **start** | **date**| start | 
+ **cluster_id** | **str**|  | 
+ **start** | **date**|  | 
+ **end** | **date**|  | 
 
 ### Return type
 
@@ -110,19 +108,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **is_aws_cost_explorer_enabled_using_get**
-> bool is_aws_cost_explorer_enabled_using_get()
+# **is_aws_cost_explorer_enabled**
+> bool is_aws_cost_explorer_enabled()
 
-isAwsCostExplorerEnabled
+
 
 ### Example
 ```python
@@ -131,7 +129,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -140,11 +138,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiCloudCostExplorerControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # isAwsCostExplorerEnabled
-    api_response = api_instance.is_aws_cost_explorer_enabled_using_get()
+    api_response = api_instance.is_aws_cost_explorer_enabled()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCloudCostExplorerControllerApi->is_aws_cost_explorer_enabled_using_get: %s\n" % e)
+    print("Exception when calling UiCloudCostExplorerControllerApi->is_aws_cost_explorer_enabled: %s\n" % e)
 ```
 
 ### Parameters
@@ -156,19 +153,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_cloud_cost_using_get**
-> sync_cloud_cost_using_get()
+# **sync_cloud_cost**
+> sync_cloud_cost()
 
-syncCloudCost
+
 
 ### Example
 ```python
@@ -177,7 +174,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -186,10 +183,9 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiCloudCostExplorerControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # syncCloudCost
-    api_instance.sync_cloud_cost_using_get()
+    api_instance.sync_cloud_cost()
 except ApiException as e:
-    print("Exception when calling UiCloudCostExplorerControllerApi->sync_cloud_cost_using_get: %s\n" % e)
+    print("Exception when calling UiCloudCostExplorerControllerApi->sync_cloud_cost: %s\n" % e)
 ```
 
 ### Parameters
@@ -201,12 +197,12 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

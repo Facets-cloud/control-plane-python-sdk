@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,29 @@ class Versioned(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'number_of_versions': 'int',
-        'versioning_key': 'str'
+        'versioning_key': 'str',
+        'change_log': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'number_of_versions': 'numberOfVersions',
-        'versioning_key': 'versioningKey'
+        'versioning_key': 'versioningKey',
+        'change_log': 'changeLog',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, number_of_versions=None, versioning_key=None):  # noqa: E501
+    def __init__(self, versioning_key=None, change_log=None, number_of_versions=None):  # noqa: E501
         """Versioned - a model defined in Swagger"""  # noqa: E501
-        self._number_of_versions = None
         self._versioning_key = None
+        self._change_log = None
+        self._number_of_versions = None
         self.discriminator = None
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
         if versioning_key is not None:
             self.versioning_key = versioning_key
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this Versioned.  # noqa: E501
-
-
-        :return: The number_of_versions of this Versioned.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this Versioned.
-
-
-        :param number_of_versions: The number_of_versions of this Versioned.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
+        if change_log is not None:
+            self.change_log = change_log
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
     def versioning_key(self):
@@ -88,6 +72,48 @@ class Versioned(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this Versioned.  # noqa: E501
+
+
+        :return: The change_log of this Versioned.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this Versioned.
+
+
+        :param change_log: The change_log of this Versioned.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this Versioned.  # noqa: E501
+
+
+        :return: The number_of_versions of this Versioned.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this Versioned.
+
+
+        :param number_of_versions: The number_of_versions of this Versioned.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

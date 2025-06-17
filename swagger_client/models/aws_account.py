@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,173 +28,125 @@ class AwsAccount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_type': 'str',
-        'associated_to': 'list[AccountAssociationInfo]',
-        'change_log': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'entity_type': 'str',
+        'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'name': 'str',
+        'account_type': 'str',
+        'provider': 'str',
+        'change_log': 'str',
+        'system_defined': 'bool',
+        'in_use': 'bool',
+        'associated_to': 'list[AccountAssociationInfo]',
         'external_id': 'str',
         'iam_role': 'str',
-        'id': 'str',
-        'in_use': 'bool',
-        'last_modified_by': 'str',
-        'last_modified_date': 'datetime',
-        'name': 'str',
-        'number_of_versions': 'int',
-        'provider': 'str',
+        'entity_type': 'str',
         'secrets_uid': 'str',
-        'system_defined': 'bool',
-        'versioning_key': 'str'
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'account_type': 'accountType',
-        'associated_to': 'associatedTo',
-        'change_log': 'changeLog',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'entity_type': 'entityType',
+        'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'name': 'name',
+        'account_type': 'accountType',
+        'provider': 'provider',
+        'change_log': 'changeLog',
+        'system_defined': 'systemDefined',
+        'in_use': 'inUse',
+        'associated_to': 'associatedTo',
         'external_id': 'externalId',
         'iam_role': 'iamRole',
-        'id': 'id',
-        'in_use': 'inUse',
-        'last_modified_by': 'lastModifiedBy',
-        'last_modified_date': 'lastModifiedDate',
-        'name': 'name',
-        'number_of_versions': 'numberOfVersions',
-        'provider': 'provider',
+        'entity_type': 'entityType',
         'secrets_uid': 'secretsUid',
-        'system_defined': 'systemDefined',
-        'versioning_key': 'versioningKey'
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, account_type=None, associated_to=None, change_log=None, created_by=None, creation_date=None, entity_type=None, external_id=None, iam_role=None, id=None, in_use=None, last_modified_by=None, last_modified_date=None, name=None, number_of_versions=None, provider=None, secrets_uid=None, system_defined=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, account_type=None, provider=None, change_log=None, system_defined=None, in_use=None, associated_to=None, external_id=None, iam_role=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """AwsAccount - a model defined in Swagger"""  # noqa: E501
-        self._account_type = None
-        self._associated_to = None
-        self._change_log = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._entity_type = None
+        self._last_modified_date = None
+        self._last_modified_by = None
+        self._name = None
+        self._account_type = None
+        self._provider = None
+        self._change_log = None
+        self._system_defined = None
+        self._in_use = None
+        self._associated_to = None
         self._external_id = None
         self._iam_role = None
-        self._id = None
-        self._in_use = None
-        self._last_modified_by = None
-        self._last_modified_date = None
-        self._name = None
-        self._number_of_versions = None
-        self._provider = None
+        self._entity_type = None
         self._secrets_uid = None
-        self._system_defined = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if account_type is not None:
-            self.account_type = account_type
-        if associated_to is not None:
-            self.associated_to = associated_to
-        if change_log is not None:
-            self.change_log = change_log
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if entity_type is not None:
-            self.entity_type = entity_type
+        if last_modified_date is not None:
+            self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if name is not None:
+            self.name = name
+        if account_type is not None:
+            self.account_type = account_type
+        if provider is not None:
+            self.provider = provider
+        if change_log is not None:
+            self.change_log = change_log
+        if system_defined is not None:
+            self.system_defined = system_defined
+        if in_use is not None:
+            self.in_use = in_use
+        if associated_to is not None:
+            self.associated_to = associated_to
         if external_id is not None:
             self.external_id = external_id
         if iam_role is not None:
             self.iam_role = iam_role
-        if id is not None:
-            self.id = id
-        if in_use is not None:
-            self.in_use = in_use
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
-        if last_modified_date is not None:
-            self.last_modified_date = last_modified_date
-        if name is not None:
-            self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if provider is not None:
-            self.provider = provider
+        if entity_type is not None:
+            self.entity_type = entity_type
         if secrets_uid is not None:
             self.secrets_uid = secrets_uid
-        if system_defined is not None:
-            self.system_defined = system_defined
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def account_type(self):
-        """Gets the account_type of this AwsAccount.  # noqa: E501
+    def id(self):
+        """Gets the id of this AwsAccount.  # noqa: E501
 
 
-        :return: The account_type of this AwsAccount.  # noqa: E501
+        :return: The id of this AwsAccount.  # noqa: E501
         :rtype: str
         """
-        return self._account_type
+        return self._id
 
-    @account_type.setter
-    def account_type(self, account_type):
-        """Sets the account_type of this AwsAccount.
-
-
-        :param account_type: The account_type of this AwsAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
-        if account_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(account_type, allowed_values)
-            )
-
-        self._account_type = account_type
-
-    @property
-    def associated_to(self):
-        """Gets the associated_to of this AwsAccount.  # noqa: E501
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AwsAccount.
 
 
-        :return: The associated_to of this AwsAccount.  # noqa: E501
-        :rtype: list[AccountAssociationInfo]
-        """
-        return self._associated_to
-
-    @associated_to.setter
-    def associated_to(self, associated_to):
-        """Sets the associated_to of this AwsAccount.
-
-
-        :param associated_to: The associated_to of this AwsAccount.  # noqa: E501
-        :type: list[AccountAssociationInfo]
-        """
-
-        self._associated_to = associated_to
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this AwsAccount.  # noqa: E501
-
-
-        :return: The change_log of this AwsAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this AwsAccount.
-
-
-        :param change_log: The change_log of this AwsAccount.  # noqa: E501
+        :param id: The id of this AwsAccount.  # noqa: E501
         :type: str
         """
 
-        self._change_log = change_log
+        self._id = id
 
     @property
     def created_by(self):
@@ -239,31 +191,205 @@ class AwsAccount(object):
         self._creation_date = creation_date
 
     @property
-    def entity_type(self):
-        """Gets the entity_type of this AwsAccount.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this AwsAccount.  # noqa: E501
 
 
-        :return: The entity_type of this AwsAccount.  # noqa: E501
+        :return: The last_modified_date of this AwsAccount.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this AwsAccount.
+
+
+        :param last_modified_date: The last_modified_date of this AwsAccount.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this AwsAccount.  # noqa: E501
+
+
+        :return: The last_modified_by of this AwsAccount.  # noqa: E501
         :rtype: str
         """
-        return self._entity_type
+        return self._last_modified_by
 
-    @entity_type.setter
-    def entity_type(self, entity_type):
-        """Sets the entity_type of this AwsAccount.
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this AwsAccount.
 
 
-        :param entity_type: The entity_type of this AwsAccount.  # noqa: E501
+        :param last_modified_by: The last_modified_by of this AwsAccount.  # noqa: E501
         :type: str
         """
-        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
-        if entity_type not in allowed_values:
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def name(self):
+        """Gets the name of this AwsAccount.  # noqa: E501
+
+
+        :return: The name of this AwsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this AwsAccount.
+
+
+        :param name: The name of this AwsAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def account_type(self):
+        """Gets the account_type of this AwsAccount.  # noqa: E501
+
+
+        :return: The account_type of this AwsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_type
+
+    @account_type.setter
+    def account_type(self, account_type):
+        """Sets the account_type of this AwsAccount.
+
+
+        :param account_type: The account_type of this AwsAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
+        if account_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(entity_type, allowed_values)
+                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(account_type, allowed_values)
             )
 
-        self._entity_type = entity_type
+        self._account_type = account_type
+
+    @property
+    def provider(self):
+        """Gets the provider of this AwsAccount.  # noqa: E501
+
+
+        :return: The provider of this AwsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this AwsAccount.
+
+
+        :param provider: The provider of this AwsAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB", "AWS", "AZURE", "GCP", "KUBERNETES", "CODER"]  # noqa: E501
+        if provider not in allowed_values:
+            raise ValueError(
+                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
+                .format(provider, allowed_values)
+            )
+
+        self._provider = provider
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this AwsAccount.  # noqa: E501
+
+
+        :return: The change_log of this AwsAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this AwsAccount.
+
+
+        :param change_log: The change_log of this AwsAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def system_defined(self):
+        """Gets the system_defined of this AwsAccount.  # noqa: E501
+
+
+        :return: The system_defined of this AwsAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._system_defined
+
+    @system_defined.setter
+    def system_defined(self, system_defined):
+        """Sets the system_defined of this AwsAccount.
+
+
+        :param system_defined: The system_defined of this AwsAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._system_defined = system_defined
+
+    @property
+    def in_use(self):
+        """Gets the in_use of this AwsAccount.  # noqa: E501
+
+
+        :return: The in_use of this AwsAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_use
+
+    @in_use.setter
+    def in_use(self, in_use):
+        """Sets the in_use of this AwsAccount.
+
+
+        :param in_use: The in_use of this AwsAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_use = in_use
+
+    @property
+    def associated_to(self):
+        """Gets the associated_to of this AwsAccount.  # noqa: E501
+
+
+        :return: The associated_to of this AwsAccount.  # noqa: E501
+        :rtype: list[AccountAssociationInfo]
+        """
+        return self._associated_to
+
+    @associated_to.setter
+    def associated_to(self, associated_to):
+        """Sets the associated_to of this AwsAccount.
+
+
+        :param associated_to: The associated_to of this AwsAccount.  # noqa: E501
+        :type: list[AccountAssociationInfo]
+        """
+
+        self._associated_to = associated_to
 
     @property
     def external_id(self):
@@ -308,157 +434,31 @@ class AwsAccount(object):
         self._iam_role = iam_role
 
     @property
-    def id(self):
-        """Gets the id of this AwsAccount.  # noqa: E501
+    def entity_type(self):
+        """Gets the entity_type of this AwsAccount.  # noqa: E501
 
 
-        :return: The id of this AwsAccount.  # noqa: E501
+        :return: The entity_type of this AwsAccount.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._entity_type
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this AwsAccount.
+    @entity_type.setter
+    def entity_type(self, entity_type):
+        """Sets the entity_type of this AwsAccount.
 
 
-        :param id: The id of this AwsAccount.  # noqa: E501
+        :param entity_type: The entity_type of this AwsAccount.  # noqa: E501
         :type: str
         """
-
-        self._id = id
-
-    @property
-    def in_use(self):
-        """Gets the in_use of this AwsAccount.  # noqa: E501
-
-
-        :return: The in_use of this AwsAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._in_use
-
-    @in_use.setter
-    def in_use(self, in_use):
-        """Sets the in_use of this AwsAccount.
-
-
-        :param in_use: The in_use of this AwsAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._in_use = in_use
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this AwsAccount.  # noqa: E501
-
-
-        :return: The last_modified_by of this AwsAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this AwsAccount.
-
-
-        :param last_modified_by: The last_modified_by of this AwsAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this AwsAccount.  # noqa: E501
-
-
-        :return: The last_modified_date of this AwsAccount.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this AwsAccount.
-
-
-        :param last_modified_date: The last_modified_date of this AwsAccount.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def name(self):
-        """Gets the name of this AwsAccount.  # noqa: E501
-
-
-        :return: The name of this AwsAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this AwsAccount.
-
-
-        :param name: The name of this AwsAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this AwsAccount.  # noqa: E501
-
-
-        :return: The number_of_versions of this AwsAccount.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this AwsAccount.
-
-
-        :param number_of_versions: The number_of_versions of this AwsAccount.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
-
-    @property
-    def provider(self):
-        """Gets the provider of this AwsAccount.  # noqa: E501
-
-
-        :return: The provider of this AwsAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._provider
-
-    @provider.setter
-    def provider(self, provider):
-        """Sets the provider of this AwsAccount.
-
-
-        :param provider: The provider of this AwsAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB", "AWS", "AZURE", "GCP", "KUBERNETES", "CODER"]  # noqa: E501
-        if provider not in allowed_values:
+        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
+        if entity_type not in allowed_values:
             raise ValueError(
-                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
-                .format(provider, allowed_values)
+                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(entity_type, allowed_values)
             )
 
-        self._provider = provider
+        self._entity_type = entity_type
 
     @property
     def secrets_uid(self):
@@ -482,27 +482,6 @@ class AwsAccount(object):
         self._secrets_uid = secrets_uid
 
     @property
-    def system_defined(self):
-        """Gets the system_defined of this AwsAccount.  # noqa: E501
-
-
-        :return: The system_defined of this AwsAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._system_defined
-
-    @system_defined.setter
-    def system_defined(self, system_defined):
-        """Sets the system_defined of this AwsAccount.
-
-
-        :param system_defined: The system_defined of this AwsAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._system_defined = system_defined
-
-    @property
     def versioning_key(self):
         """Gets the versioning_key of this AwsAccount.  # noqa: E501
 
@@ -522,6 +501,27 @@ class AwsAccount(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this AwsAccount.  # noqa: E501
+
+
+        :return: The number_of_versions of this AwsAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this AwsAccount.
+
+
+        :param number_of_versions: The number_of_versions of this AwsAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

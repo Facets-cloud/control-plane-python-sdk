@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,138 +28,54 @@ class DaemonSetDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'available': 'int',
-        'current': 'int',
-        'desired': 'int',
         'name': 'str',
-        'node_selector': 'dict(str, str)',
+        'desired': 'int',
+        'current': 'int',
         'ready': 'int',
-        'up_to_date': 'int'
+        'up_to_date': 'int',
+        'available': 'int',
+        'node_selector': 'dict(str, str)',
+        'age_in_seconds': 'int'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'available': 'available',
-        'current': 'current',
-        'desired': 'desired',
         'name': 'name',
-        'node_selector': 'nodeSelector',
+        'desired': 'desired',
+        'current': 'current',
         'ready': 'ready',
-        'up_to_date': 'upToDate'
+        'up_to_date': 'upToDate',
+        'available': 'available',
+        'node_selector': 'nodeSelector',
+        'age_in_seconds': 'ageInSeconds'
     }
 
-    def __init__(self, age_in_seconds=None, available=None, current=None, desired=None, name=None, node_selector=None, ready=None, up_to_date=None):  # noqa: E501
+    def __init__(self, name=None, desired=None, current=None, ready=None, up_to_date=None, available=None, node_selector=None, age_in_seconds=None):  # noqa: E501
         """DaemonSetDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._available = None
-        self._current = None
-        self._desired = None
         self._name = None
-        self._node_selector = None
+        self._desired = None
+        self._current = None
         self._ready = None
         self._up_to_date = None
+        self._available = None
+        self._node_selector = None
+        self._age_in_seconds = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if available is not None:
-            self.available = available
-        if current is not None:
-            self.current = current
-        if desired is not None:
-            self.desired = desired
         if name is not None:
             self.name = name
-        if node_selector is not None:
-            self.node_selector = node_selector
+        if desired is not None:
+            self.desired = desired
+        if current is not None:
+            self.current = current
         if ready is not None:
             self.ready = ready
         if up_to_date is not None:
             self.up_to_date = up_to_date
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this DaemonSetDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this DaemonSetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this DaemonSetDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this DaemonSetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def available(self):
-        """Gets the available of this DaemonSetDTO.  # noqa: E501
-
-
-        :return: The available of this DaemonSetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._available
-
-    @available.setter
-    def available(self, available):
-        """Sets the available of this DaemonSetDTO.
-
-
-        :param available: The available of this DaemonSetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._available = available
-
-    @property
-    def current(self):
-        """Gets the current of this DaemonSetDTO.  # noqa: E501
-
-
-        :return: The current of this DaemonSetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._current
-
-    @current.setter
-    def current(self, current):
-        """Sets the current of this DaemonSetDTO.
-
-
-        :param current: The current of this DaemonSetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._current = current
-
-    @property
-    def desired(self):
-        """Gets the desired of this DaemonSetDTO.  # noqa: E501
-
-
-        :return: The desired of this DaemonSetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._desired
-
-    @desired.setter
-    def desired(self, desired):
-        """Sets the desired of this DaemonSetDTO.
-
-
-        :param desired: The desired of this DaemonSetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._desired = desired
+        if available is not None:
+            self.available = available
+        if node_selector is not None:
+            self.node_selector = node_selector
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
 
     @property
     def name(self):
@@ -183,25 +99,46 @@ class DaemonSetDTO(object):
         self._name = name
 
     @property
-    def node_selector(self):
-        """Gets the node_selector of this DaemonSetDTO.  # noqa: E501
+    def desired(self):
+        """Gets the desired of this DaemonSetDTO.  # noqa: E501
 
 
-        :return: The node_selector of this DaemonSetDTO.  # noqa: E501
-        :rtype: dict(str, str)
+        :return: The desired of this DaemonSetDTO.  # noqa: E501
+        :rtype: int
         """
-        return self._node_selector
+        return self._desired
 
-    @node_selector.setter
-    def node_selector(self, node_selector):
-        """Sets the node_selector of this DaemonSetDTO.
+    @desired.setter
+    def desired(self, desired):
+        """Sets the desired of this DaemonSetDTO.
 
 
-        :param node_selector: The node_selector of this DaemonSetDTO.  # noqa: E501
-        :type: dict(str, str)
+        :param desired: The desired of this DaemonSetDTO.  # noqa: E501
+        :type: int
         """
 
-        self._node_selector = node_selector
+        self._desired = desired
+
+    @property
+    def current(self):
+        """Gets the current of this DaemonSetDTO.  # noqa: E501
+
+
+        :return: The current of this DaemonSetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._current
+
+    @current.setter
+    def current(self, current):
+        """Sets the current of this DaemonSetDTO.
+
+
+        :param current: The current of this DaemonSetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._current = current
 
     @property
     def ready(self):
@@ -244,6 +181,69 @@ class DaemonSetDTO(object):
         """
 
         self._up_to_date = up_to_date
+
+    @property
+    def available(self):
+        """Gets the available of this DaemonSetDTO.  # noqa: E501
+
+
+        :return: The available of this DaemonSetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._available
+
+    @available.setter
+    def available(self, available):
+        """Sets the available of this DaemonSetDTO.
+
+
+        :param available: The available of this DaemonSetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._available = available
+
+    @property
+    def node_selector(self):
+        """Gets the node_selector of this DaemonSetDTO.  # noqa: E501
+
+
+        :return: The node_selector of this DaemonSetDTO.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._node_selector
+
+    @node_selector.setter
+    def node_selector(self, node_selector):
+        """Sets the node_selector of this DaemonSetDTO.
+
+
+        :param node_selector: The node_selector of this DaemonSetDTO.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._node_selector = node_selector
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this DaemonSetDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this DaemonSetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this DaemonSetDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this DaemonSetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

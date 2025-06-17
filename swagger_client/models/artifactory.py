@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,84 +28,232 @@ class Artifactory(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifactory_type': 'str',
-        'change_log': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'entity_type': 'str',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
-        'number_of_versions': 'int',
+        'uri': 'str',
+        'artifactory_type': 'str',
+        'change_log': 'str',
         'stacks_associated': 'list[str]',
         'system_defined': 'bool',
-        'uri': 'str',
-        'versioning_key': 'str'
+        'entity_type': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'artifactory_type': 'artifactoryType',
-        'change_log': 'changeLog',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'entity_type': 'entityType',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
-        'number_of_versions': 'numberOfVersions',
+        'uri': 'uri',
+        'artifactory_type': 'artifactoryType',
+        'change_log': 'changeLog',
         'stacks_associated': 'stacksAssociated',
         'system_defined': 'systemDefined',
-        'uri': 'uri',
-        'versioning_key': 'versioningKey'
+        'entity_type': 'entityType',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, artifactory_type=None, change_log=None, created_by=None, creation_date=None, entity_type=None, id=None, last_modified_by=None, last_modified_date=None, name=None, number_of_versions=None, stacks_associated=None, system_defined=None, uri=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, uri=None, artifactory_type=None, change_log=None, stacks_associated=None, system_defined=None, entity_type=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Artifactory - a model defined in Swagger"""  # noqa: E501
-        self._artifactory_type = None
-        self._change_log = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._entity_type = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
-        self._number_of_versions = None
+        self._uri = None
+        self._artifactory_type = None
+        self._change_log = None
         self._stacks_associated = None
         self._system_defined = None
-        self._uri = None
+        self._entity_type = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if artifactory_type is not None:
-            self.artifactory_type = artifactory_type
-        if change_log is not None:
-            self.change_log = change_log
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if name is not None:
-            self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.name = name
+        if uri is not None:
+            self.uri = uri
+        if artifactory_type is not None:
+            self.artifactory_type = artifactory_type
+        if change_log is not None:
+            self.change_log = change_log
         if stacks_associated is not None:
             self.stacks_associated = stacks_associated
         if system_defined is not None:
             self.system_defined = system_defined
-        if uri is not None:
-            self.uri = uri
+        if entity_type is not None:
+            self.entity_type = entity_type
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
+
+    @property
+    def id(self):
+        """Gets the id of this Artifactory.  # noqa: E501
+
+
+        :return: The id of this Artifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Artifactory.
+
+
+        :param id: The id of this Artifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def created_by(self):
+        """Gets the created_by of this Artifactory.  # noqa: E501
+
+
+        :return: The created_by of this Artifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this Artifactory.
+
+
+        :param created_by: The created_by of this Artifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._created_by = created_by
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this Artifactory.  # noqa: E501
+
+
+        :return: The creation_date of this Artifactory.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this Artifactory.
+
+
+        :param creation_date: The creation_date of this Artifactory.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this Artifactory.  # noqa: E501
+
+
+        :return: The last_modified_date of this Artifactory.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this Artifactory.
+
+
+        :param last_modified_date: The last_modified_date of this Artifactory.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this Artifactory.  # noqa: E501
+
+
+        :return: The last_modified_by of this Artifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this Artifactory.
+
+
+        :param last_modified_by: The last_modified_by of this Artifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def name(self):
+        """Gets the name of this Artifactory.  # noqa: E501
+
+
+        :return: The name of this Artifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Artifactory.
+
+
+        :param name: The name of this Artifactory.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def uri(self):
+        """Gets the uri of this Artifactory.  # noqa: E501
+
+
+        :return: The uri of this Artifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._uri
+
+    @uri.setter
+    def uri(self, uri):
+        """Sets the uri of this Artifactory.
+
+
+        :param uri: The uri of this Artifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._uri = uri
 
     @property
     def artifactory_type(self):
@@ -156,180 +304,6 @@ class Artifactory(object):
         self._change_log = change_log
 
     @property
-    def created_by(self):
-        """Gets the created_by of this Artifactory.  # noqa: E501
-
-
-        :return: The created_by of this Artifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._created_by
-
-    @created_by.setter
-    def created_by(self, created_by):
-        """Sets the created_by of this Artifactory.
-
-
-        :param created_by: The created_by of this Artifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._created_by = created_by
-
-    @property
-    def creation_date(self):
-        """Gets the creation_date of this Artifactory.  # noqa: E501
-
-
-        :return: The creation_date of this Artifactory.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._creation_date
-
-    @creation_date.setter
-    def creation_date(self, creation_date):
-        """Sets the creation_date of this Artifactory.
-
-
-        :param creation_date: The creation_date of this Artifactory.  # noqa: E501
-        :type: datetime
-        """
-
-        self._creation_date = creation_date
-
-    @property
-    def entity_type(self):
-        """Gets the entity_type of this Artifactory.  # noqa: E501
-
-
-        :return: The entity_type of this Artifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._entity_type
-
-    @entity_type.setter
-    def entity_type(self, entity_type):
-        """Sets the entity_type of this Artifactory.
-
-
-        :param entity_type: The entity_type of this Artifactory.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
-        if entity_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(entity_type, allowed_values)
-            )
-
-        self._entity_type = entity_type
-
-    @property
-    def id(self):
-        """Gets the id of this Artifactory.  # noqa: E501
-
-
-        :return: The id of this Artifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Artifactory.
-
-
-        :param id: The id of this Artifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this Artifactory.  # noqa: E501
-
-
-        :return: The last_modified_by of this Artifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this Artifactory.
-
-
-        :param last_modified_by: The last_modified_by of this Artifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this Artifactory.  # noqa: E501
-
-
-        :return: The last_modified_date of this Artifactory.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this Artifactory.
-
-
-        :param last_modified_date: The last_modified_date of this Artifactory.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def name(self):
-        """Gets the name of this Artifactory.  # noqa: E501
-
-
-        :return: The name of this Artifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Artifactory.
-
-
-        :param name: The name of this Artifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this Artifactory.  # noqa: E501
-
-
-        :return: The number_of_versions of this Artifactory.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this Artifactory.
-
-
-        :param number_of_versions: The number_of_versions of this Artifactory.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
-
-    @property
     def stacks_associated(self):
         """Gets the stacks_associated of this Artifactory.  # noqa: E501
 
@@ -372,25 +346,31 @@ class Artifactory(object):
         self._system_defined = system_defined
 
     @property
-    def uri(self):
-        """Gets the uri of this Artifactory.  # noqa: E501
+    def entity_type(self):
+        """Gets the entity_type of this Artifactory.  # noqa: E501
 
 
-        :return: The uri of this Artifactory.  # noqa: E501
+        :return: The entity_type of this Artifactory.  # noqa: E501
         :rtype: str
         """
-        return self._uri
+        return self._entity_type
 
-    @uri.setter
-    def uri(self, uri):
-        """Sets the uri of this Artifactory.
+    @entity_type.setter
+    def entity_type(self, entity_type):
+        """Sets the entity_type of this Artifactory.
 
 
-        :param uri: The uri of this Artifactory.  # noqa: E501
+        :param entity_type: The entity_type of this Artifactory.  # noqa: E501
         :type: str
         """
+        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
+        if entity_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(entity_type, allowed_values)
+            )
 
-        self._uri = uri
+        self._entity_type = entity_type
 
     @property
     def versioning_key(self):
@@ -412,6 +392,27 @@ class Artifactory(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this Artifactory.  # noqa: E501
+
+
+        :return: The number_of_versions of this Artifactory.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this Artifactory.
+
+
+        :param number_of_versions: The number_of_versions of this Artifactory.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

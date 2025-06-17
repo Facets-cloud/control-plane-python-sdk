@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,55 @@ class AssistantRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'thread_id': 'str',
         'action_name': 'str',
-        'context': 'JSONObject',
         'message': 'str',
-        'thread_id': 'str'
+        'context': 'JSONObject'
     }
 
     attribute_map = {
+        'thread_id': 'threadId',
         'action_name': 'actionName',
-        'context': 'context',
         'message': 'message',
-        'thread_id': 'threadId'
+        'context': 'context'
     }
 
-    def __init__(self, action_name=None, context=None, message=None, thread_id=None):  # noqa: E501
+    def __init__(self, thread_id=None, action_name=None, message=None, context=None):  # noqa: E501
         """AssistantRequest - a model defined in Swagger"""  # noqa: E501
-        self._action_name = None
-        self._context = None
-        self._message = None
         self._thread_id = None
+        self._action_name = None
+        self._message = None
+        self._context = None
         self.discriminator = None
-        if action_name is not None:
-            self.action_name = action_name
-        if context is not None:
-            self.context = context
-        if message is not None:
-            self.message = message
         if thread_id is not None:
             self.thread_id = thread_id
+        if action_name is not None:
+            self.action_name = action_name
+        if message is not None:
+            self.message = message
+        if context is not None:
+            self.context = context
+
+    @property
+    def thread_id(self):
+        """Gets the thread_id of this AssistantRequest.  # noqa: E501
+
+
+        :return: The thread_id of this AssistantRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._thread_id
+
+    @thread_id.setter
+    def thread_id(self, thread_id):
+        """Sets the thread_id of this AssistantRequest.
+
+
+        :param thread_id: The thread_id of this AssistantRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._thread_id = thread_id
 
     @property
     def action_name(self):
@@ -79,27 +100,6 @@ class AssistantRequest(object):
         self._action_name = action_name
 
     @property
-    def context(self):
-        """Gets the context of this AssistantRequest.  # noqa: E501
-
-
-        :return: The context of this AssistantRequest.  # noqa: E501
-        :rtype: JSONObject
-        """
-        return self._context
-
-    @context.setter
-    def context(self, context):
-        """Sets the context of this AssistantRequest.
-
-
-        :param context: The context of this AssistantRequest.  # noqa: E501
-        :type: JSONObject
-        """
-
-        self._context = context
-
-    @property
     def message(self):
         """Gets the message of this AssistantRequest.  # noqa: E501
 
@@ -121,25 +121,25 @@ class AssistantRequest(object):
         self._message = message
 
     @property
-    def thread_id(self):
-        """Gets the thread_id of this AssistantRequest.  # noqa: E501
+    def context(self):
+        """Gets the context of this AssistantRequest.  # noqa: E501
 
 
-        :return: The thread_id of this AssistantRequest.  # noqa: E501
-        :rtype: str
+        :return: The context of this AssistantRequest.  # noqa: E501
+        :rtype: JSONObject
         """
-        return self._thread_id
+        return self._context
 
-    @thread_id.setter
-    def thread_id(self, thread_id):
-        """Sets the thread_id of this AssistantRequest.
+    @context.setter
+    def context(self, context):
+        """Sets the context of this AssistantRequest.
 
 
-        :param thread_id: The thread_id of this AssistantRequest.  # noqa: E501
-        :type: str
+        :param context: The context of this AssistantRequest.  # noqa: E501
+        :type: JSONObject
         """
 
-        self._thread_id = thread_id
+        self._context = context
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,39 +28,102 @@ class ValidationResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'directory': 'str',
-        'errors': 'list[BlueprintValidationError]',
-        'filename': 'str',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'filename': 'str',
+        'directory': 'str',
+        'errors': 'list[BlueprintValidationError]'
     }
 
     attribute_map = {
-        'directory': 'directory',
-        'errors': 'errors',
-        'filename': 'filename',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'filename': 'filename',
+        'directory': 'directory',
+        'errors': 'errors'
     }
 
-    def __init__(self, directory=None, errors=None, filename=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, filename=None, directory=None, errors=None):  # noqa: E501
         """ValidationResponse - a model defined in Swagger"""  # noqa: E501
+        self._resource_type = None
+        self._resource_name = None
+        self._filename = None
         self._directory = None
         self._errors = None
-        self._filename = None
-        self._resource_name = None
-        self._resource_type = None
         self.discriminator = None
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if filename is not None:
+            self.filename = filename
         if directory is not None:
             self.directory = directory
         if errors is not None:
             self.errors = errors
-        if filename is not None:
-            self.filename = filename
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this ValidationResponse.  # noqa: E501
+
+
+        :return: The resource_type of this ValidationResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ValidationResponse.
+
+
+        :param resource_type: The resource_type of this ValidationResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_type = resource_type
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this ValidationResponse.  # noqa: E501
+
+
+        :return: The resource_name of this ValidationResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this ValidationResponse.
+
+
+        :param resource_name: The resource_name of this ValidationResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
+
+    @property
+    def filename(self):
+        """Gets the filename of this ValidationResponse.  # noqa: E501
+
+
+        :return: The filename of this ValidationResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._filename
+
+    @filename.setter
+    def filename(self, filename):
+        """Sets the filename of this ValidationResponse.
+
+
+        :param filename: The filename of this ValidationResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._filename = filename
 
     @property
     def directory(self):
@@ -103,69 +166,6 @@ class ValidationResponse(object):
         """
 
         self._errors = errors
-
-    @property
-    def filename(self):
-        """Gets the filename of this ValidationResponse.  # noqa: E501
-
-
-        :return: The filename of this ValidationResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._filename
-
-    @filename.setter
-    def filename(self, filename):
-        """Sets the filename of this ValidationResponse.
-
-
-        :param filename: The filename of this ValidationResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._filename = filename
-
-    @property
-    def resource_name(self):
-        """Gets the resource_name of this ValidationResponse.  # noqa: E501
-
-
-        :return: The resource_name of this ValidationResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_name
-
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this ValidationResponse.
-
-
-        :param resource_name: The resource_name of this ValidationResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_name = resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this ValidationResponse.  # noqa: E501
-
-
-        :return: The resource_type of this ValidationResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ValidationResponse.
-
-
-        :param resource_type: The resource_type of this ValidationResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,36 @@ class ResourceRenameRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'directory': 'str',
         'new_resource_name': 'str',
-        'old_file_name': 'str',
+        'resource_type': 'str',
         'old_resource_name': 'str',
-        'resource_type': 'str'
+        'old_file_name': 'str',
+        'directory': 'str'
     }
 
     attribute_map = {
-        'directory': 'directory',
         'new_resource_name': 'newResourceName',
-        'old_file_name': 'oldFileName',
+        'resource_type': 'resourceType',
         'old_resource_name': 'oldResourceName',
-        'resource_type': 'resourceType'
+        'old_file_name': 'oldFileName',
+        'directory': 'directory'
     }
 
-    def __init__(self, directory=None, new_resource_name=None, old_file_name=None, old_resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, new_resource_name=None, resource_type=None, old_resource_name=None, old_file_name=None, directory=None):  # noqa: E501
         """ResourceRenameRequest - a model defined in Swagger"""  # noqa: E501
-        self._directory = None
         self._new_resource_name = None
-        self._old_file_name = None
-        self._old_resource_name = None
         self._resource_type = None
+        self._old_resource_name = None
+        self._old_file_name = None
+        self._directory = None
         self.discriminator = None
-        if directory is not None:
-            self.directory = directory
-        if new_resource_name is not None:
-            self.new_resource_name = new_resource_name
+        self.new_resource_name = new_resource_name
+        self.resource_type = resource_type
+        self.old_resource_name = old_resource_name
         if old_file_name is not None:
             self.old_file_name = old_file_name
-        if old_resource_name is not None:
-            self.old_resource_name = old_resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
-
-    @property
-    def directory(self):
-        """Gets the directory of this ResourceRenameRequest.  # noqa: E501
-
-
-        :return: The directory of this ResourceRenameRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._directory
-
-    @directory.setter
-    def directory(self, directory):
-        """Sets the directory of this ResourceRenameRequest.
-
-
-        :param directory: The directory of this ResourceRenameRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._directory = directory
+        if directory is not None:
+            self.directory = directory
 
     @property
     def new_resource_name(self):
@@ -101,8 +77,56 @@ class ResourceRenameRequest(object):
         :param new_resource_name: The new_resource_name of this ResourceRenameRequest.  # noqa: E501
         :type: str
         """
+        if new_resource_name is None:
+            raise ValueError("Invalid value for `new_resource_name`, must not be `None`")  # noqa: E501
 
         self._new_resource_name = new_resource_name
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this ResourceRenameRequest.  # noqa: E501
+
+
+        :return: The resource_type of this ResourceRenameRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ResourceRenameRequest.
+
+
+        :param resource_type: The resource_type of this ResourceRenameRequest.  # noqa: E501
+        :type: str
+        """
+        if resource_type is None:
+            raise ValueError("Invalid value for `resource_type`, must not be `None`")  # noqa: E501
+
+        self._resource_type = resource_type
+
+    @property
+    def old_resource_name(self):
+        """Gets the old_resource_name of this ResourceRenameRequest.  # noqa: E501
+
+
+        :return: The old_resource_name of this ResourceRenameRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._old_resource_name
+
+    @old_resource_name.setter
+    def old_resource_name(self, old_resource_name):
+        """Sets the old_resource_name of this ResourceRenameRequest.
+
+
+        :param old_resource_name: The old_resource_name of this ResourceRenameRequest.  # noqa: E501
+        :type: str
+        """
+        if old_resource_name is None:
+            raise ValueError("Invalid value for `old_resource_name`, must not be `None`")  # noqa: E501
+
+        self._old_resource_name = old_resource_name
 
     @property
     def old_file_name(self):
@@ -126,46 +150,25 @@ class ResourceRenameRequest(object):
         self._old_file_name = old_file_name
 
     @property
-    def old_resource_name(self):
-        """Gets the old_resource_name of this ResourceRenameRequest.  # noqa: E501
+    def directory(self):
+        """Gets the directory of this ResourceRenameRequest.  # noqa: E501
 
 
-        :return: The old_resource_name of this ResourceRenameRequest.  # noqa: E501
+        :return: The directory of this ResourceRenameRequest.  # noqa: E501
         :rtype: str
         """
-        return self._old_resource_name
+        return self._directory
 
-    @old_resource_name.setter
-    def old_resource_name(self, old_resource_name):
-        """Sets the old_resource_name of this ResourceRenameRequest.
+    @directory.setter
+    def directory(self, directory):
+        """Sets the directory of this ResourceRenameRequest.
 
 
-        :param old_resource_name: The old_resource_name of this ResourceRenameRequest.  # noqa: E501
+        :param directory: The directory of this ResourceRenameRequest.  # noqa: E501
         :type: str
         """
 
-        self._old_resource_name = old_resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this ResourceRenameRequest.  # noqa: E501
-
-
-        :return: The resource_type of this ResourceRenameRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ResourceRenameRequest.
-
-
-        :param resource_type: The resource_type of this ResourceRenameRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
+        self._directory = directory
 
     def to_dict(self):
         """Returns the model properties as a dict"""

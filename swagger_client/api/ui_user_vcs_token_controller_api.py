@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiUserVcsTokenControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_using_post1(self, body, **kwargs):  # noqa: E501
+    def add(self, body, **kwargs):  # noqa: E501
         """add  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_using_post1(body, async_req=True)
+        >>> thread = api.add(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserVCSTokenRequest body: userVCSTokenRequest (required)
+        :param UserVCSTokenRequest body: (required)
         :return: UserVCSTokenResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_using_post1_with_http_info(body, **kwargs)  # noqa: E501
+            return self.add_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_using_post1_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.add_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def add_using_post1_with_http_info(self, body, **kwargs):  # noqa: E501
+    def add_with_http_info(self, body, **kwargs):  # noqa: E501
         """add  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_using_post1_with_http_info(body, async_req=True)
+        >>> thread = api.add_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserVCSTokenRequest body: userVCSTokenRequest (required)
+        :param UserVCSTokenRequest body: (required)
         :return: UserVCSTokenResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiUserVcsTokenControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_using_post1" % key
+                    " to method add" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_using_post1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiUserVcsTokenControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/user-token', 'POST',
@@ -129,37 +129,37 @@ class UiUserVcsTokenControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_using_delete2(self, id, **kwargs):  # noqa: E501
+    def delete(self, id, **kwargs):  # noqa: E501
         """delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_using_delete2(id, async_req=True)
+        >>> thread = api.delete(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_using_delete2_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_using_delete2_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_using_delete2_with_http_info(self, id, **kwargs):  # noqa: E501
+    def delete_with_http_info(self, id, **kwargs):  # noqa: E501
         """delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_using_delete2_with_http_info(id, async_req=True)
+        >>> thread = api.delete_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiUserVcsTokenControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_using_delete2" % key
+                    " to method delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete_using_delete2`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -199,8 +199,12 @@ class UiUserVcsTokenControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/user-token/{id}', 'DELETE',
@@ -218,12 +222,12 @@ class UiUserVcsTokenControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_using_get5(self, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all(self, **kwargs):  # noqa: E501
+        """get_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get5(async_req=True)
+        >>> thread = api.get_all(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -233,17 +237,17 @@ class UiUserVcsTokenControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_using_get5_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_using_get5_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_using_get5_with_http_info(self, **kwargs):  # noqa: E501
-        """getAll  # noqa: E501
+    def get_all_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_using_get5_with_http_info(async_req=True)
+        >>> thread = api.get_all_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -263,7 +267,7 @@ class UiUserVcsTokenControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_using_get5" % key
+                    " to method get_all" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -282,10 +286,10 @@ class UiUserVcsTokenControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/user-token', 'GET',
@@ -303,37 +307,37 @@ class UiUserVcsTokenControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_using_put2(self, body, **kwargs):  # noqa: E501
+    def update(self, body, **kwargs):  # noqa: E501
         """update  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_using_put2(body, async_req=True)
+        >>> thread = api.update(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserVCSTokenRequest body: userVCSTokenRequest (required)
+        :param UserVCSTokenRequest body: (required)
         :return: UserVCSTokenResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_using_put2_with_http_info(body, **kwargs)  # noqa: E501
+            return self.update_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_using_put2_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.update_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def update_using_put2_with_http_info(self, body, **kwargs):  # noqa: E501
+    def update_with_http_info(self, body, **kwargs):  # noqa: E501
         """update  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_using_put2_with_http_info(body, async_req=True)
+        >>> thread = api.update_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param UserVCSTokenRequest body: userVCSTokenRequest (required)
+        :param UserVCSTokenRequest body: (required)
         :return: UserVCSTokenResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -350,14 +354,14 @@ class UiUserVcsTokenControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_using_put2" % key
+                    " to method update" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_using_put2`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update`")  # noqa: E501
 
         collection_formats = {}
 
@@ -375,14 +379,14 @@ class UiUserVcsTokenControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/user-token', 'PUT',

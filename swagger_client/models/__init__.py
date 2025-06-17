@@ -2,9 +2,9 @@
 
 # flake8: noqa
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -20,7 +20,6 @@ from swagger_client.models.access_analyzer_response import AccessAnalyzerRespons
 from swagger_client.models.access_role_details import AccessRoleDetails
 from swagger_client.models.account import Account
 from swagger_client.models.account_association_info import AccountAssociationInfo
-from swagger_client.models.action_execution import ActionExecution
 from swagger_client.models.add_on_dto import AddOnDTO
 from swagger_client.models.affected_resource import AffectedResource
 from swagger_client.models.affected_resources_request import AffectedResourcesRequest
@@ -28,19 +27,8 @@ from swagger_client.models.affinity import Affinity
 from swagger_client.models.alert import Alert
 from swagger_client.models.alert_group import AlertGroup
 from swagger_client.models.alert_overview import AlertOverview
-from swagger_client.models.alerting import Alerting
 from swagger_client.models.all_regions_and_az import AllRegionsAndAZ
 from swagger_client.models.app_deployment import AppDeployment
-from swagger_client.models.application import Application
-from swagger_client.models.application_action import ApplicationAction
-from swagger_client.models.application_deployment_details import ApplicationDeploymentDetails
-from swagger_client.models.application_family_metadata import ApplicationFamilyMetadata
-from swagger_client.models.application_metrics import ApplicationMetrics
-from swagger_client.models.application_metrics_wrapper import ApplicationMetricsWrapper
-from swagger_client.models.application_pod_details import ApplicationPodDetails
-from swagger_client.models.application_secret import ApplicationSecret
-from swagger_client.models.application_secret_request import ApplicationSecretRequest
-from swagger_client.models.application_service_details import ApplicationServiceDetails
 from swagger_client.models.artifact import Artifact
 from swagger_client.models.artifact_by_environment_request import ArtifactByEnvironmentRequest
 from swagger_client.models.artifact_by_release_stream_request import ArtifactByReleaseStreamRequest
@@ -74,25 +62,17 @@ from swagger_client.models.basic_docker_dto import BasicDockerDTO
 from swagger_client.models.billing_metadata import BillingMetadata
 from swagger_client.models.bit_bucket_account import BitBucketAccount
 from swagger_client.models.bitbucket_oauth_app_payload import BitbucketOauthAppPayload
-from swagger_client.models.bitbucket_pr_branch_ref import BitbucketPRBranchRef
-from swagger_client.models.bitbucket_pr_event import BitbucketPREvent
-from swagger_client.models.bitbucket_pr_field import BitbucketPRField
-from swagger_client.models.bitbucket_pr_links import BitbucketPRLinks
 from swagger_client.models.blueprint_file import BlueprintFile
 from swagger_client.models.blueprint_file_summary_dto import BlueprintFileSummaryDto
 from swagger_client.models.blueprint_validation_error import BlueprintValidationError
-from swagger_client.models.branch import Branch
 from swagger_client.models.branch_dto import BranchDTO
 from swagger_client.models.branch_update_request import BranchUpdateRequest
-from swagger_client.models.build import Build
 from swagger_client.models.bulk_workflow_attach_request import BulkWorkflowAttachRequest
 from swagger_client.models.csi_volume_source import CSIVolumeSource
-from swagger_client.models.callback_body import CallbackBody
 from swagger_client.models.capabilities import Capabilities
-from swagger_client.models.category import Category
 from swagger_client.models.ceph_fs_volume_source import CephFSVolumeSource
 from swagger_client.models.change import Change
-from swagger_client.models.change_representation import ChangeRepresentation
+from swagger_client.models.change_representation_object import ChangeRepresentationObject
 from swagger_client.models.changed_attribute import ChangedAttribute
 from swagger_client.models.channel_type_payload import ChannelTypePayload
 from swagger_client.models.chat import Chat
@@ -106,7 +86,6 @@ from swagger_client.models.cinder_volume_source import CinderVolumeSource
 from swagger_client.models.claim_source import ClaimSource
 from swagger_client.models.client_authentication_method import ClientAuthenticationMethod
 from swagger_client.models.cloud_linking_request import CloudLinkingRequest
-from swagger_client.models.cluster_autoscaler_configuration import ClusterAutoscalerConfiguration
 from swagger_client.models.cluster_cost_dto import ClusterCostDTO
 from swagger_client.models.cluster_firing_alerts_dto import ClusterFiringAlertsDTO
 from swagger_client.models.cluster_info import ClusterInfo
@@ -119,13 +98,11 @@ from swagger_client.models.cluster_resources_response_facets_resource import Clu
 from swagger_client.models.cluster_response import ClusterResponse
 from swagger_client.models.cluster_schedule import ClusterSchedule
 from swagger_client.models.cluster_tf_version_mapping import ClusterTfVersionMapping
-from swagger_client.models.code_build_status_callback import CodeBuildStatusCallback
 from swagger_client.models.coder_account import CoderAccount
 from swagger_client.models.coder_launch_eligibility_response import CoderLaunchEligibilityResponse
 from swagger_client.models.coder_workspace_response import CoderWorkspaceResponse
 from swagger_client.models.commit import Commit
 from swagger_client.models.commit_log import CommitLog
-from swagger_client.models.condition import Condition
 from swagger_client.models.config import Config
 from swagger_client.models.config_map_dto import ConfigMapDTO
 from swagger_client.models.config_map_env_source import ConfigMapEnvSource
@@ -157,13 +134,10 @@ from swagger_client.models.cross_version_object_reference import CrossVersionObj
 from swagger_client.models.custom_o_auth2_client_registration import CustomOAuth2ClientRegistration
 from swagger_client.models.custom_role_request import CustomRoleRequest
 from swagger_client.models.customer_onboard_request import CustomerOnboardRequest
-from swagger_client.models.dr_result import DRResult
 from swagger_client.models.daemon_set_dto import DaemonSetDTO
 from swagger_client.models.daily_cloud_cost_dto import DailyCloudCostDTO
 from swagger_client.models.daily_cost import DailyCost
-from swagger_client.models.deferred_result_assistant_response import DeferredResultAssistantResponse
-from swagger_client.models.deleted_entity import DeletedEntity
-from swagger_client.models.deployment import Deployment
+from swagger_client.models.deleted_entity_soft_delete import DeletedEntitySoftDelete
 from swagger_client.models.deployment_context import DeploymentContext
 from swagger_client.models.deployment_dto import DeploymentDTO
 from swagger_client.models.deployment_log import DeploymentLog
@@ -171,7 +145,6 @@ from swagger_client.models.deployment_overview import DeploymentOverview
 from swagger_client.models.deployment_request import DeploymentRequest
 from swagger_client.models.deployment_stats_dto import DeploymentStatsDto
 from swagger_client.models.deployment_status_count_dto import DeploymentStatusCountDto
-from swagger_client.models.deployment_status_details import DeploymentStatusDetails
 from swagger_client.models.deployments_stats import DeploymentsStats
 from swagger_client.models.domain_dto import DomainDTO
 from swagger_client.models.downward_api_projection import DownwardAPIProjection
@@ -180,24 +153,19 @@ from swagger_client.models.downward_api_volume_source import DownwardAPIVolumeSo
 from swagger_client.models.draft_cluster_request import DraftClusterRequest
 from swagger_client.models.ecr_artifactory import ECRArtifactory
 from swagger_client.models.ecr_authorization_data import ECRAuthorizationData
-from swagger_client.models.ecr_registry import ECRRegistry
 from swagger_client.models.edge import Edge
 from swagger_client.models.empty_dir_volume_source import EmptyDirVolumeSource
 from swagger_client.models.enable_disable_opa_policy import EnableDisableOPAPolicy
 from swagger_client.models.enable_git_ops_request import EnableGitOpsRequest
-from swagger_client.models.endpoint import Endpoint
 from swagger_client.models.env_from_source import EnvFromSource
 from swagger_client.models.env_info import EnvInfo
 from swagger_client.models.env_specific_access import EnvSpecificAccess
 from swagger_client.models.env_var import EnvVar
 from swagger_client.models.env_var_source import EnvVarSource
-from swagger_client.models.environment import Environment
-from swagger_client.models.environment_configuration import EnvironmentConfiguration
-from swagger_client.models.environment_meta_data import EnvironmentMetaData
-from swagger_client.models.environment_variable import EnvironmentVariable
 from swagger_client.models.ephemeral_container import EphemeralContainer
 from swagger_client.models.ephemeral_volume_source import EphemeralVolumeSource
 from swagger_client.models.error import Error
+from swagger_client.models.error_details import ErrorDetails
 from swagger_client.models.event import Event
 from swagger_client.models.event_dto import EventDTO
 from swagger_client.models.event_series import EventSeries
@@ -206,14 +174,12 @@ from swagger_client.models.exec_action import ExecAction
 from swagger_client.models.execution_time import ExecutionTime
 from swagger_client.models.expanded_user import ExpandedUser
 from swagger_client.models.expanded_user_group import ExpandedUserGroup
-from swagger_client.models.external_dns_configuration import ExternalDnsConfiguration
 from swagger_client.models.external_metric_source import ExternalMetricSource
 from swagger_client.models.external_metric_status import ExternalMetricStatus
 from swagger_client.models.fc_volume_source import FCVolumeSource
 from swagger_client.models.facets_audit_log_response import FacetsAuditLogResponse
 from swagger_client.models.facets_resource import FacetsResource
 from swagger_client.models.fields_v1 import FieldsV1
-from swagger_client.models.file import File
 from swagger_client.models.flex_volume_source import FlexVolumeSource
 from swagger_client.models.flocker_volume_source import FlockerVolumeSource
 from swagger_client.models.gce_persistent_disk_volume_source import GCEPersistentDiskVolumeSource
@@ -222,7 +188,6 @@ from swagger_client.models.gcp_cluster_request import GCPClusterRequest
 from swagger_client.models.grpc_action import GRPCAction
 from swagger_client.models.gcp_account import GcpAccount
 from swagger_client.models.generic_o_auth2_client_registration import GenericOAuth2ClientRegistration
-from swagger_client.models.get_provided_resources_response import GetProvidedResourcesResponse
 from swagger_client.models.git_hub_account import GitHubAccount
 from swagger_client.models.git_lab_account import GitLabAccount
 from swagger_client.models.git_repo_volume_source import GitRepoVolumeSource
@@ -230,24 +195,17 @@ from swagger_client.models.github_app_installation_payload import GithubAppInsta
 from swagger_client.models.github_app_installation_request import GithubAppInstallationRequest
 from swagger_client.models.github_app_installation_request_response import GithubAppInstallationRequestResponse
 from swagger_client.models.github_label import GithubLabel
-from swagger_client.models.github_pr_branch_ref import GithubPRBranchRef
-from swagger_client.models.github_pr_event import GithubPREvent
-from swagger_client.models.github_pr_field import GithubPRField
 from swagger_client.models.github_user import GithubUser
 from swagger_client.models.gitlab_oauth_app_payload import GitlabOauthAppPayload
-from swagger_client.models.global_stats import GlobalStats
 from swagger_client.models.glusterfs_volume_source import GlusterfsVolumeSource
 from swagger_client.models.granted_authority import GrantedAuthority
 from swagger_client.models.grouped_count_dto import GroupedCountDto
-from swagger_client.models.hpa import HPA
-from swagger_client.models.hpa_details import HPADetails
 from swagger_client.models.hpa_scaling_policy import HPAScalingPolicy
 from swagger_client.models.hpa_scaling_rules import HPAScalingRules
 from swagger_client.models.http_get_action import HTTPGetAction
 from swagger_client.models.http_header import HTTPHeader
 from swagger_client.models.http_ingress_path import HTTPIngressPath
 from swagger_client.models.http_ingress_rule_value import HTTPIngressRuleValue
-from swagger_client.models.health_check import HealthCheck
 from swagger_client.models.history_metadata import HistoryMetadata
 from swagger_client.models.horizontal_pod_autoscaler import HorizontalPodAutoscaler
 from swagger_client.models.horizontal_pod_autoscaler_behavior import HorizontalPodAutoscalerBehavior
@@ -259,7 +217,6 @@ from swagger_client.models.host_alias import HostAlias
 from swagger_client.models.host_path_volume_source import HostPathVolumeSource
 from swagger_client.models.hotfix_deployment_recipe import HotfixDeploymentRecipe
 from swagger_client.models.iscsi_volume_source import ISCSIVolumeSource
-from swagger_client.models.iac_repo import IacRepo
 from swagger_client.models.id_name import IdName
 from swagger_client.models.image_override_request import ImageOverrideRequest
 from swagger_client.models.info import Info
@@ -278,8 +235,6 @@ from swagger_client.models.ingress_status import IngressStatus
 from swagger_client.models.ingress_tls import IngressTLS
 from swagger_client.models.input import Input
 from swagger_client.models.input_output_resource import InputOutputResource
-from swagger_client.models.input_stream import InputStream
-from swagger_client.models.input_stream_resource import InputStreamResource
 from swagger_client.models.int_or_string import IntOrString
 from swagger_client.models.intent_output import IntentOutput
 from swagger_client.models.intent_request_dto import IntentRequestDTO
@@ -289,10 +244,7 @@ from swagger_client.models.json_object import JSONObject
 from swagger_client.models.job_dto import JobDTO
 from swagger_client.models.json_node import JsonNode
 from swagger_client.models.k8s_analyze_response import K8sAnalyzeResponse
-from swagger_client.models.k8s_credentials import K8sCredentials
-from swagger_client.models.k8s_logging_configuration import K8sLoggingConfiguration
 from swagger_client.models.key_to_path import KeyToPath
-from swagger_client.models.kube2_iam_configuration import Kube2IamConfiguration
 from swagger_client.models.kubernetes_account import KubernetesAccount
 from swagger_client.models.kubernetes_cluster import KubernetesCluster
 from swagger_client.models.kubernetes_cluster_request import KubernetesClusterRequest
@@ -305,18 +257,11 @@ from swagger_client.models.list_deployments_wrapper import ListDeploymentsWrappe
 from swagger_client.models.list_pull_request_response import ListPullRequestResponse
 from swagger_client.models.list_resources_response import ListResourcesResponse
 from swagger_client.models.list_workflow_runs_response import ListWorkflowRunsResponse
-from swagger_client.models.local_cluster import LocalCluster
-from swagger_client.models.local_cluster_request import LocalClusterRequest
 from swagger_client.models.local_object_reference import LocalObjectReference
 from swagger_client.models.local_time import LocalTime
-from swagger_client.models.log_event import LogEvent
 from swagger_client.models.maintenance_window_dto import MaintenanceWindowDTO
+from swagger_client.models.maintenance_window_dto_time_zone import MaintenanceWindowDTOTimeZone
 from swagger_client.models.managed_fields_entry import ManagedFieldsEntry
-from swagger_client.models.mapstring_artifact import MapstringArtifact
-from swagger_client.models.mapstring_json_node import MapstringJsonNode
-from swagger_client.models.mapstring_snapshot_info import MapstringSnapshotInfo
-from swagger_client.models.mapstring_tf_module_lite_list_dto import MapstringTFModuleLiteListDTO
-from swagger_client.models.mapstringobject import Mapstringobject
 from swagger_client.models.matched_module_dto import MatchedModuleDTO
 from swagger_client.models.matched_resource_dto import MatchedResourceDTO
 from swagger_client.models.metric import Metric
@@ -333,7 +278,6 @@ from swagger_client.models.module_input_dto import ModuleInputDTO
 from swagger_client.models.module_metadata import ModuleMetadata
 from swagger_client.models.module_usage_dto import ModuleUsageDTO
 from swagger_client.models.modules_upload_body import ModulesUploadBody
-from swagger_client.models.monitoring import Monitoring
 from swagger_client.models.nfs_volume_source import NFSVolumeSource
 from swagger_client.models.node_affinity import NodeAffinity
 from swagger_client.models.node_selector import NodeSelector
@@ -367,7 +311,6 @@ from swagger_client.models.override_config import OverrideConfig
 from swagger_client.models.override_object import OverrideObject
 from swagger_client.models.override_request import OverrideRequest
 from swagger_client.models.owner_reference import OwnerReference
-from swagger_client.models.pvc import PVC
 from swagger_client.models.package import Package
 from swagger_client.models.package_response import PackageResponse
 from swagger_client.models.page_abstract_cluster import PageAbstractCluster
@@ -375,8 +318,8 @@ from swagger_client.models.page_chat import PageChat
 from swagger_client.models.page_deployment_log import PageDeploymentLog
 from swagger_client.models.page_facets_audit_log_response import PageFacetsAuditLogResponse
 from swagger_client.models.page_resource_release_impact import PageResourceReleaseImpact
-from swagger_client.models.page_version import PageVersion
-from swagger_client.models.pageable import Pageable
+from swagger_client.models.page_version_versioned import PageVersionVersioned
+from swagger_client.models.pageable_object import PageableObject
 from swagger_client.models.password_change import PasswordChange
 from swagger_client.models.pause_release_request import PauseReleaseRequest
 from swagger_client.models.pending_migration_details import PendingMigrationDetails
@@ -398,8 +341,6 @@ from swagger_client.models.pod_dto import PodDTO
 from swagger_client.models.pod_ip import PodIP
 from swagger_client.models.pod_os import PodOS
 from swagger_client.models.pod_readiness_gate import PodReadinessGate
-from swagger_client.models.pod_replication_details import PodReplicationDetails
-from swagger_client.models.pod_resource import PodResource
 from swagger_client.models.pod_resource_claim import PodResourceClaim
 from swagger_client.models.pod_scheduling_gate import PodSchedulingGate
 from swagger_client.models.pod_security_context import PodSecurityContext
@@ -409,7 +350,6 @@ from swagger_client.models.pod_status_dto import PodStatusDTO
 from swagger_client.models.pods_metric_source import PodsMetricSource
 from swagger_client.models.pods_metric_status import PodsMetricStatus
 from swagger_client.models.policy_template_dto import PolicyTemplateDTO
-from swagger_client.models.port import Port
 from swagger_client.models.port_info import PortInfo
 from swagger_client.models.portworx_volume_source import PortworxVolumeSource
 from swagger_client.models.preferred_scheduling_term import PreferredSchedulingTerm
@@ -427,18 +367,13 @@ from swagger_client.models.provided_unauthenticated_resource import ProvidedUnau
 from swagger_client.models.pull_request_response import PullRequestResponse
 from swagger_client.models.push_credentials_request import PushCredentialsRequest
 from swagger_client.models.push_credentials_response import PushCredentialsResponse
-from swagger_client.models.qa_suite import QASuite
-from swagger_client.models.qa_suite_result import QASuiteResult
-from swagger_client.models.quality_gate import QualityGate
 from swagger_client.models.quantity import Quantity
 from swagger_client.models.queued_release import QueuedRelease
 from swagger_client.models.quobyte_volume_source import QuobyteVolumeSource
-from swagger_client.models.rbac_entity import RBACEntity
 from swagger_client.models.rbd_volume_source import RBDVolumeSource
 from swagger_client.models.raw_error import RawError
 from swagger_client.models.ref_expression import RefExpression
 from swagger_client.models.region_and_zone import RegionAndZone
-from swagger_client.models.registry import Registry
 from swagger_client.models.release_button_status import ReleaseButtonStatus
 from swagger_client.models.release_changes import ReleaseChanges
 from swagger_client.models.release_details import ReleaseDetails
@@ -450,7 +385,6 @@ from swagger_client.models.replica_status import ReplicaStatus
 from swagger_client.models.replicaset_dto import ReplicasetDTO
 from swagger_client.models.repository import Repository
 from swagger_client.models.reset_password_request import ResetPasswordRequest
-from swagger_client.models.resource import Resource
 from swagger_client.models.resource_affected_response import ResourceAffectedResponse
 from swagger_client.models.resource_change import ResourceChange
 from swagger_client.models.resource_claim import ResourceClaim
@@ -477,16 +411,12 @@ from swagger_client.models.resource_status_response import ResourceStatusRespons
 from swagger_client.models.resource_sync_request import ResourceSyncRequest
 from swagger_client.models.response import Response
 from swagger_client.models.result import Result
-from swagger_client.models.role import Role
 from swagger_client.models.role_info import RoleInfo
 from swagger_client.models.role_mapping import RoleMapping
-from swagger_client.models.s3_dump_aws_config import S3DumpAwsConfig
 from swagger_client.models.se_linux_options import SELinuxOptions
-from swagger_client.models.ssl_configs import SSLConfigs
 from swagger_client.models.saas_artifact_request import SaasArtifactRequest
 from swagger_client.models.save_as_template_request import SaveAsTemplateRequest
 from swagger_client.models.save_password_reset_password_request import SavePasswordResetPasswordRequest
-from swagger_client.models.save_provided_resources_request import SaveProvidedResourcesRequest
 from swagger_client.models.scale_io_volume_source import ScaleIOVolumeSource
 from swagger_client.models.schedule_request import ScheduleRequest
 from swagger_client.models.seccomp_profile import SeccompProfile
@@ -510,9 +440,8 @@ from swagger_client.models.setting import Setting
 from swagger_client.models.silence_alarm_request import SilenceAlarmRequest
 from swagger_client.models.simple_oauth2_user import SimpleOauth2User
 from swagger_client.models.snapshot_info import SnapshotInfo
-from swagger_client.models.sock5_ok_http_client_factory import Sock5OkHttpClientFactory
 from swagger_client.models.soft_delete import SoftDelete
-from swagger_client.models.sort import Sort
+from swagger_client.models.sort_object import SortObject
 from swagger_client.models.stack import Stack
 from swagger_client.models.stack_git_log import StackGitLog
 from swagger_client.models.stack_resource import StackResource
@@ -536,7 +465,6 @@ from swagger_client.models.tf_module_response_dto import TFModuleResponseDTO
 from swagger_client.models.tf_output_request_dto import TFOutputRequestDTO
 from swagger_client.models.tf_output_response_dto import TFOutputResponseDTO
 from swagger_client.models.tf_provider import TFProvider
-from swagger_client.models.tf_run_configurations import TFRunConfigurations
 from swagger_client.models.tag_data_model import TagDataModel
 from swagger_client.models.target_resource import TargetResource
 from swagger_client.models.team import Team
@@ -545,15 +473,12 @@ from swagger_client.models.team_resource import TeamResource
 from swagger_client.models.template_git_details import TemplateGitDetails
 from swagger_client.models.template_response_dto import TemplateResponseDTO
 from swagger_client.models.terraform_change import TerraformChange
-from swagger_client.models.test_build_details import TestBuildDetails
 from swagger_client.models.test_notification_request import TestNotificationRequest
 from swagger_client.models.test_rule_response import TestRuleResponse
 from swagger_client.models.tf_version import TfVersion
 from swagger_client.models.theme_file_response import ThemeFileResponse
-from swagger_client.models.time_zone import TimeZone
 from swagger_client.models.toggle_release import ToggleRelease
 from swagger_client.models.token_paginated_response import TokenPaginatedResponse
-from swagger_client.models.token_paginated_response_log_event import TokenPaginatedResponseLogEvent
 from swagger_client.models.token_validation_request import TokenValidationRequest
 from swagger_client.models.token_validity import TokenValidity
 from swagger_client.models.toleration import Toleration
@@ -561,8 +486,6 @@ from swagger_client.models.tools_config import ToolsConfig
 from swagger_client.models.topology_spread_constraint import TopologySpreadConstraint
 from swagger_client.models.typed_local_object_reference import TypedLocalObjectReference
 from swagger_client.models.typed_object_reference import TypedObjectReference
-from swagger_client.models.uri import URI
-from swagger_client.models.url import URL
 from swagger_client.models.user import User
 from swagger_client.models.user_access_token import UserAccessToken
 from swagger_client.models.user_group import UserGroup
@@ -581,6 +504,7 @@ from swagger_client.models.variable_count_dto import VariableCountDto
 from swagger_client.models.variable_details import VariableDetails
 from swagger_client.models.variables import Variables
 from swagger_client.models.version import Version
+from swagger_client.models.version_versioned import VersionVersioned
 from swagger_client.models.versioned import Versioned
 from swagger_client.models.volume import Volume
 from swagger_client.models.volume_device import VolumeDevice

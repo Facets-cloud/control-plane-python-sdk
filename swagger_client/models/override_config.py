@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,91 +28,49 @@ class OverrideConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'branch_name': 'str',
-        'git_org_name': 'str',
         'git_override_url': 'str',
-        'migration_failure_message': 'str',
-        'overrides_migration_status': 'str',
+        'branch_name': 'str',
+        'ui_overrides_enabled': 'bool',
+        'git_org_name': 'str',
         'overrides_repo_name': 'str',
-        'ui_overrides_enabled': 'bool'
+        'overrides_migration_status': 'str',
+        'migration_failure_message': 'str'
     }
 
     attribute_map = {
-        'branch_name': 'branchName',
-        'git_org_name': 'gitOrgName',
         'git_override_url': 'gitOverrideUrl',
-        'migration_failure_message': 'migrationFailureMessage',
-        'overrides_migration_status': 'overridesMigrationStatus',
+        'branch_name': 'branchName',
+        'ui_overrides_enabled': 'uiOverridesEnabled',
+        'git_org_name': 'gitOrgName',
         'overrides_repo_name': 'overridesRepoName',
-        'ui_overrides_enabled': 'uiOverridesEnabled'
+        'overrides_migration_status': 'overridesMigrationStatus',
+        'migration_failure_message': 'migrationFailureMessage'
     }
 
-    def __init__(self, branch_name=None, git_org_name=None, git_override_url=None, migration_failure_message=None, overrides_migration_status=None, overrides_repo_name=None, ui_overrides_enabled=None):  # noqa: E501
+    def __init__(self, git_override_url=None, branch_name=None, ui_overrides_enabled=None, git_org_name=None, overrides_repo_name=None, overrides_migration_status=None, migration_failure_message=None):  # noqa: E501
         """OverrideConfig - a model defined in Swagger"""  # noqa: E501
-        self._branch_name = None
-        self._git_org_name = None
         self._git_override_url = None
-        self._migration_failure_message = None
-        self._overrides_migration_status = None
-        self._overrides_repo_name = None
+        self._branch_name = None
         self._ui_overrides_enabled = None
+        self._git_org_name = None
+        self._overrides_repo_name = None
+        self._overrides_migration_status = None
+        self._migration_failure_message = None
         self.discriminator = None
-        if branch_name is not None:
-            self.branch_name = branch_name
-        if git_org_name is not None:
-            self.git_org_name = git_org_name
         if git_override_url is not None:
             self.git_override_url = git_override_url
-        if migration_failure_message is not None:
-            self.migration_failure_message = migration_failure_message
-        if overrides_migration_status is not None:
-            self.overrides_migration_status = overrides_migration_status
-        if overrides_repo_name is not None:
-            self.overrides_repo_name = overrides_repo_name
+        if branch_name is not None:
+            self.branch_name = branch_name
         if ui_overrides_enabled is not None:
             self.ui_overrides_enabled = ui_overrides_enabled
-
-    @property
-    def branch_name(self):
-        """Gets the branch_name of this OverrideConfig.  # noqa: E501
-
-
-        :return: The branch_name of this OverrideConfig.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch_name
-
-    @branch_name.setter
-    def branch_name(self, branch_name):
-        """Sets the branch_name of this OverrideConfig.
-
-
-        :param branch_name: The branch_name of this OverrideConfig.  # noqa: E501
-        :type: str
-        """
-
-        self._branch_name = branch_name
-
-    @property
-    def git_org_name(self):
-        """Gets the git_org_name of this OverrideConfig.  # noqa: E501
-
-
-        :return: The git_org_name of this OverrideConfig.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_org_name
-
-    @git_org_name.setter
-    def git_org_name(self, git_org_name):
-        """Sets the git_org_name of this OverrideConfig.
-
-
-        :param git_org_name: The git_org_name of this OverrideConfig.  # noqa: E501
-        :type: str
-        """
-
-        self._git_org_name = git_org_name
+        if git_org_name is not None:
+            self.git_org_name = git_org_name
+        if overrides_repo_name is not None:
+            self.overrides_repo_name = overrides_repo_name
+        if overrides_migration_status is not None:
+            self.overrides_migration_status = overrides_migration_status
+        if migration_failure_message is not None:
+            self.migration_failure_message = migration_failure_message
 
     @property
     def git_override_url(self):
@@ -136,25 +94,88 @@ class OverrideConfig(object):
         self._git_override_url = git_override_url
 
     @property
-    def migration_failure_message(self):
-        """Gets the migration_failure_message of this OverrideConfig.  # noqa: E501
+    def branch_name(self):
+        """Gets the branch_name of this OverrideConfig.  # noqa: E501
 
 
-        :return: The migration_failure_message of this OverrideConfig.  # noqa: E501
+        :return: The branch_name of this OverrideConfig.  # noqa: E501
         :rtype: str
         """
-        return self._migration_failure_message
+        return self._branch_name
 
-    @migration_failure_message.setter
-    def migration_failure_message(self, migration_failure_message):
-        """Sets the migration_failure_message of this OverrideConfig.
+    @branch_name.setter
+    def branch_name(self, branch_name):
+        """Sets the branch_name of this OverrideConfig.
 
 
-        :param migration_failure_message: The migration_failure_message of this OverrideConfig.  # noqa: E501
+        :param branch_name: The branch_name of this OverrideConfig.  # noqa: E501
         :type: str
         """
 
-        self._migration_failure_message = migration_failure_message
+        self._branch_name = branch_name
+
+    @property
+    def ui_overrides_enabled(self):
+        """Gets the ui_overrides_enabled of this OverrideConfig.  # noqa: E501
+
+
+        :return: The ui_overrides_enabled of this OverrideConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ui_overrides_enabled
+
+    @ui_overrides_enabled.setter
+    def ui_overrides_enabled(self, ui_overrides_enabled):
+        """Sets the ui_overrides_enabled of this OverrideConfig.
+
+
+        :param ui_overrides_enabled: The ui_overrides_enabled of this OverrideConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._ui_overrides_enabled = ui_overrides_enabled
+
+    @property
+    def git_org_name(self):
+        """Gets the git_org_name of this OverrideConfig.  # noqa: E501
+
+
+        :return: The git_org_name of this OverrideConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_org_name
+
+    @git_org_name.setter
+    def git_org_name(self, git_org_name):
+        """Sets the git_org_name of this OverrideConfig.
+
+
+        :param git_org_name: The git_org_name of this OverrideConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._git_org_name = git_org_name
+
+    @property
+    def overrides_repo_name(self):
+        """Gets the overrides_repo_name of this OverrideConfig.  # noqa: E501
+
+
+        :return: The overrides_repo_name of this OverrideConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._overrides_repo_name
+
+    @overrides_repo_name.setter
+    def overrides_repo_name(self, overrides_repo_name):
+        """Sets the overrides_repo_name of this OverrideConfig.
+
+
+        :param overrides_repo_name: The overrides_repo_name of this OverrideConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._overrides_repo_name = overrides_repo_name
 
     @property
     def overrides_migration_status(self):
@@ -184,46 +205,25 @@ class OverrideConfig(object):
         self._overrides_migration_status = overrides_migration_status
 
     @property
-    def overrides_repo_name(self):
-        """Gets the overrides_repo_name of this OverrideConfig.  # noqa: E501
+    def migration_failure_message(self):
+        """Gets the migration_failure_message of this OverrideConfig.  # noqa: E501
 
 
-        :return: The overrides_repo_name of this OverrideConfig.  # noqa: E501
+        :return: The migration_failure_message of this OverrideConfig.  # noqa: E501
         :rtype: str
         """
-        return self._overrides_repo_name
+        return self._migration_failure_message
 
-    @overrides_repo_name.setter
-    def overrides_repo_name(self, overrides_repo_name):
-        """Sets the overrides_repo_name of this OverrideConfig.
+    @migration_failure_message.setter
+    def migration_failure_message(self, migration_failure_message):
+        """Sets the migration_failure_message of this OverrideConfig.
 
 
-        :param overrides_repo_name: The overrides_repo_name of this OverrideConfig.  # noqa: E501
+        :param migration_failure_message: The migration_failure_message of this OverrideConfig.  # noqa: E501
         :type: str
         """
 
-        self._overrides_repo_name = overrides_repo_name
-
-    @property
-    def ui_overrides_enabled(self):
-        """Gets the ui_overrides_enabled of this OverrideConfig.  # noqa: E501
-
-
-        :return: The ui_overrides_enabled of this OverrideConfig.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ui_overrides_enabled
-
-    @ui_overrides_enabled.setter
-    def ui_overrides_enabled(self, ui_overrides_enabled):
-        """Sets the ui_overrides_enabled of this OverrideConfig.
-
-
-        :param ui_overrides_enabled: The ui_overrides_enabled of this OverrideConfig.  # noqa: E501
-        :type: bool
-        """
-
-        self._ui_overrides_enabled = ui_overrides_enabled
+        self._migration_failure_message = migration_failure_message
 
     def to_dict(self):
         """Returns the model properties as a dict"""

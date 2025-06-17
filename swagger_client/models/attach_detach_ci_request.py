@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,51 +28,26 @@ class AttachDetachCiRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'blueprint_name': 'str',
         'ci_name': 'str',
-        'registration_type': 'str'
+        'registration_type': 'str',
+        'blueprint_name': 'str'
     }
 
     attribute_map = {
-        'blueprint_name': 'blueprintName',
         'ci_name': 'ciName',
-        'registration_type': 'registrationType'
+        'registration_type': 'registrationType',
+        'blueprint_name': 'blueprintName'
     }
 
-    def __init__(self, blueprint_name=None, ci_name=None, registration_type=None):  # noqa: E501
+    def __init__(self, ci_name=None, registration_type=None, blueprint_name=None):  # noqa: E501
         """AttachDetachCiRequest - a model defined in Swagger"""  # noqa: E501
-        self._blueprint_name = None
         self._ci_name = None
         self._registration_type = None
+        self._blueprint_name = None
         self.discriminator = None
-        self.blueprint_name = blueprint_name
         self.ci_name = ci_name
         self.registration_type = registration_type
-
-    @property
-    def blueprint_name(self):
-        """Gets the blueprint_name of this AttachDetachCiRequest.  # noqa: E501
-
-        Blueprint name related to the CI.  # noqa: E501
-
-        :return: The blueprint_name of this AttachDetachCiRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._blueprint_name
-
-    @blueprint_name.setter
-    def blueprint_name(self, blueprint_name):
-        """Sets the blueprint_name of this AttachDetachCiRequest.
-
-        Blueprint name related to the CI.  # noqa: E501
-
-        :param blueprint_name: The blueprint_name of this AttachDetachCiRequest.  # noqa: E501
-        :type: str
-        """
-        if blueprint_name is None:
-            raise ValueError("Invalid value for `blueprint_name`, must not be `None`")  # noqa: E501
-
-        self._blueprint_name = blueprint_name
+        self.blueprint_name = blueprint_name
 
     @property
     def ci_name(self):
@@ -129,6 +104,31 @@ class AttachDetachCiRequest(object):
             )
 
         self._registration_type = registration_type
+
+    @property
+    def blueprint_name(self):
+        """Gets the blueprint_name of this AttachDetachCiRequest.  # noqa: E501
+
+        Blueprint name related to the CI.  # noqa: E501
+
+        :return: The blueprint_name of this AttachDetachCiRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._blueprint_name
+
+    @blueprint_name.setter
+    def blueprint_name(self, blueprint_name):
+        """Sets the blueprint_name of this AttachDetachCiRequest.
+
+        Blueprint name related to the CI.  # noqa: E501
+
+        :param blueprint_name: The blueprint_name of this AttachDetachCiRequest.  # noqa: E501
+        :type: str
+        """
+        if blueprint_name is None:
+            raise ValueError("Invalid value for `blueprint_name`, must not be `None`")  # noqa: E501
+
+        self._blueprint_name = blueprint_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

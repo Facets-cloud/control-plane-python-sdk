@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,59 +28,84 @@ class SaasArtifactRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'blueprint_name': 'str',
         'application_name': 'str',
+        'ci_name': 'str',
+        'artifact_uri': 'str',
+        'external_id': 'str',
+        'artifactory': 'str',
         'artifact_register_type': 'str',
         'artifact_register_value': 'str',
-        'artifact_uri': 'str',
-        'artifactory': 'str',
-        'blueprint_name': 'str',
-        'ci_name': 'str',
-        'external_id': 'str',
         'repository_name': 'str',
         'tag': 'str'
     }
 
     attribute_map = {
+        'blueprint_name': 'blueprintName',
         'application_name': 'applicationName',
+        'ci_name': 'ciName',
+        'artifact_uri': 'artifactUri',
+        'external_id': 'externalId',
+        'artifactory': 'artifactory',
         'artifact_register_type': 'artifactRegisterType',
         'artifact_register_value': 'artifactRegisterValue',
-        'artifact_uri': 'artifactUri',
-        'artifactory': 'artifactory',
-        'blueprint_name': 'blueprintName',
-        'ci_name': 'ciName',
-        'external_id': 'externalId',
         'repository_name': 'repositoryName',
         'tag': 'tag'
     }
 
-    def __init__(self, application_name=None, artifact_register_type=None, artifact_register_value=None, artifact_uri=None, artifactory=None, blueprint_name=None, ci_name=None, external_id=None, repository_name=None, tag=None):  # noqa: E501
+    def __init__(self, blueprint_name=None, application_name=None, ci_name=None, artifact_uri=None, external_id=None, artifactory=None, artifact_register_type=None, artifact_register_value=None, repository_name=None, tag=None):  # noqa: E501
         """SaasArtifactRequest - a model defined in Swagger"""  # noqa: E501
+        self._blueprint_name = None
         self._application_name = None
+        self._ci_name = None
+        self._artifact_uri = None
+        self._external_id = None
+        self._artifactory = None
         self._artifact_register_type = None
         self._artifact_register_value = None
-        self._artifact_uri = None
-        self._artifactory = None
-        self._blueprint_name = None
-        self._ci_name = None
-        self._external_id = None
         self._repository_name = None
         self._tag = None
         self.discriminator = None
+        self.blueprint_name = blueprint_name
         if application_name is not None:
             self.application_name = application_name
-        self.artifact_register_type = artifact_register_type
-        self.artifact_register_value = artifact_register_value
-        self.artifact_uri = artifact_uri
-        self.artifactory = artifactory
-        self.blueprint_name = blueprint_name
         if ci_name is not None:
             self.ci_name = ci_name
+        self.artifact_uri = artifact_uri
         if external_id is not None:
             self.external_id = external_id
+        self.artifactory = artifactory
+        self.artifact_register_type = artifact_register_type
+        self.artifact_register_value = artifact_register_value
         if repository_name is not None:
             self.repository_name = repository_name
         if tag is not None:
             self.tag = tag
+
+    @property
+    def blueprint_name(self):
+        """Gets the blueprint_name of this SaasArtifactRequest.  # noqa: E501
+
+        Blueprint name associated with the artifact.  # noqa: E501
+
+        :return: The blueprint_name of this SaasArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._blueprint_name
+
+    @blueprint_name.setter
+    def blueprint_name(self, blueprint_name):
+        """Sets the blueprint_name of this SaasArtifactRequest.
+
+        Blueprint name associated with the artifact.  # noqa: E501
+
+        :param blueprint_name: The blueprint_name of this SaasArtifactRequest.  # noqa: E501
+        :type: str
+        """
+        if blueprint_name is None:
+            raise ValueError("Invalid value for `blueprint_name`, must not be `None`")  # noqa: E501
+
+        self._blueprint_name = blueprint_name
 
     @property
     def application_name(self):
@@ -104,6 +129,102 @@ class SaasArtifactRequest(object):
         """
 
         self._application_name = application_name
+
+    @property
+    def ci_name(self):
+        """Gets the ci_name of this SaasArtifactRequest.  # noqa: E501
+
+        Custom CI name if applicationName is not used.  # noqa: E501
+
+        :return: The ci_name of this SaasArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._ci_name
+
+    @ci_name.setter
+    def ci_name(self, ci_name):
+        """Sets the ci_name of this SaasArtifactRequest.
+
+        Custom CI name if applicationName is not used.  # noqa: E501
+
+        :param ci_name: The ci_name of this SaasArtifactRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._ci_name = ci_name
+
+    @property
+    def artifact_uri(self):
+        """Gets the artifact_uri of this SaasArtifactRequest.  # noqa: E501
+
+        URI of the artifact.  # noqa: E501
+
+        :return: The artifact_uri of this SaasArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifact_uri
+
+    @artifact_uri.setter
+    def artifact_uri(self, artifact_uri):
+        """Sets the artifact_uri of this SaasArtifactRequest.
+
+        URI of the artifact.  # noqa: E501
+
+        :param artifact_uri: The artifact_uri of this SaasArtifactRequest.  # noqa: E501
+        :type: str
+        """
+        if artifact_uri is None:
+            raise ValueError("Invalid value for `artifact_uri`, must not be `None`")  # noqa: E501
+
+        self._artifact_uri = artifact_uri
+
+    @property
+    def external_id(self):
+        """Gets the external_id of this SaasArtifactRequest.  # noqa: E501
+
+        External identifier for the artifact.  # noqa: E501
+
+        :return: The external_id of this SaasArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """Sets the external_id of this SaasArtifactRequest.
+
+        External identifier for the artifact.  # noqa: E501
+
+        :param external_id: The external_id of this SaasArtifactRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._external_id = external_id
+
+    @property
+    def artifactory(self):
+        """Gets the artifactory of this SaasArtifactRequest.  # noqa: E501
+
+        Name of the artifactory.  # noqa: E501
+
+        :return: The artifactory of this SaasArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory
+
+    @artifactory.setter
+    def artifactory(self, artifactory):
+        """Sets the artifactory of this SaasArtifactRequest.
+
+        Name of the artifactory.  # noqa: E501
+
+        :param artifactory: The artifactory of this SaasArtifactRequest.  # noqa: E501
+        :type: str
+        """
+        if artifactory is None:
+            raise ValueError("Invalid value for `artifactory`, must not be `None`")  # noqa: E501
+
+        self._artifactory = artifactory
 
     @property
     def artifact_register_type(self):
@@ -160,127 +281,6 @@ class SaasArtifactRequest(object):
             raise ValueError("Invalid value for `artifact_register_value`, must not be `None`")  # noqa: E501
 
         self._artifact_register_value = artifact_register_value
-
-    @property
-    def artifact_uri(self):
-        """Gets the artifact_uri of this SaasArtifactRequest.  # noqa: E501
-
-        URI of the artifact.  # noqa: E501
-
-        :return: The artifact_uri of this SaasArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifact_uri
-
-    @artifact_uri.setter
-    def artifact_uri(self, artifact_uri):
-        """Sets the artifact_uri of this SaasArtifactRequest.
-
-        URI of the artifact.  # noqa: E501
-
-        :param artifact_uri: The artifact_uri of this SaasArtifactRequest.  # noqa: E501
-        :type: str
-        """
-        if artifact_uri is None:
-            raise ValueError("Invalid value for `artifact_uri`, must not be `None`")  # noqa: E501
-
-        self._artifact_uri = artifact_uri
-
-    @property
-    def artifactory(self):
-        """Gets the artifactory of this SaasArtifactRequest.  # noqa: E501
-
-        Name of the artifactory.  # noqa: E501
-
-        :return: The artifactory of this SaasArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifactory
-
-    @artifactory.setter
-    def artifactory(self, artifactory):
-        """Sets the artifactory of this SaasArtifactRequest.
-
-        Name of the artifactory.  # noqa: E501
-
-        :param artifactory: The artifactory of this SaasArtifactRequest.  # noqa: E501
-        :type: str
-        """
-        if artifactory is None:
-            raise ValueError("Invalid value for `artifactory`, must not be `None`")  # noqa: E501
-
-        self._artifactory = artifactory
-
-    @property
-    def blueprint_name(self):
-        """Gets the blueprint_name of this SaasArtifactRequest.  # noqa: E501
-
-        Blueprint name associated with the artifact.  # noqa: E501
-
-        :return: The blueprint_name of this SaasArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._blueprint_name
-
-    @blueprint_name.setter
-    def blueprint_name(self, blueprint_name):
-        """Sets the blueprint_name of this SaasArtifactRequest.
-
-        Blueprint name associated with the artifact.  # noqa: E501
-
-        :param blueprint_name: The blueprint_name of this SaasArtifactRequest.  # noqa: E501
-        :type: str
-        """
-        if blueprint_name is None:
-            raise ValueError("Invalid value for `blueprint_name`, must not be `None`")  # noqa: E501
-
-        self._blueprint_name = blueprint_name
-
-    @property
-    def ci_name(self):
-        """Gets the ci_name of this SaasArtifactRequest.  # noqa: E501
-
-        Custom CI name if applicationName is not used.  # noqa: E501
-
-        :return: The ci_name of this SaasArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._ci_name
-
-    @ci_name.setter
-    def ci_name(self, ci_name):
-        """Sets the ci_name of this SaasArtifactRequest.
-
-        Custom CI name if applicationName is not used.  # noqa: E501
-
-        :param ci_name: The ci_name of this SaasArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._ci_name = ci_name
-
-    @property
-    def external_id(self):
-        """Gets the external_id of this SaasArtifactRequest.  # noqa: E501
-
-        External identifier for the artifact.  # noqa: E501
-
-        :return: The external_id of this SaasArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_id
-
-    @external_id.setter
-    def external_id(self, external_id):
-        """Sets the external_id of this SaasArtifactRequest.
-
-        External identifier for the artifact.  # noqa: E501
-
-        :param external_id: The external_id of this SaasArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._external_id = external_id
 
     @property
     def repository_name(self):

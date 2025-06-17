@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,50 @@ class ReleaseChanges(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'changes': 'list[ResourceChange]',
+        'id': 'str',
         'deployment_id': 'str',
-        'id': 'str'
+        'changes': 'list[ResourceChange]'
     }
 
     attribute_map = {
-        'changes': 'changes',
+        'id': 'id',
         'deployment_id': 'deploymentId',
-        'id': 'id'
+        'changes': 'changes'
     }
 
-    def __init__(self, changes=None, deployment_id=None, id=None):  # noqa: E501
+    def __init__(self, id=None, deployment_id=None, changes=None):  # noqa: E501
         """ReleaseChanges - a model defined in Swagger"""  # noqa: E501
-        self._changes = None
-        self._deployment_id = None
         self._id = None
+        self._deployment_id = None
+        self._changes = None
         self.discriminator = None
-        if changes is not None:
-            self.changes = changes
-        if deployment_id is not None:
-            self.deployment_id = deployment_id
         if id is not None:
             self.id = id
+        if deployment_id is not None:
+            self.deployment_id = deployment_id
+        if changes is not None:
+            self.changes = changes
 
     @property
-    def changes(self):
-        """Gets the changes of this ReleaseChanges.  # noqa: E501
+    def id(self):
+        """Gets the id of this ReleaseChanges.  # noqa: E501
 
 
-        :return: The changes of this ReleaseChanges.  # noqa: E501
-        :rtype: list[ResourceChange]
+        :return: The id of this ReleaseChanges.  # noqa: E501
+        :rtype: str
         """
-        return self._changes
+        return self._id
 
-    @changes.setter
-    def changes(self, changes):
-        """Sets the changes of this ReleaseChanges.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ReleaseChanges.
 
 
-        :param changes: The changes of this ReleaseChanges.  # noqa: E501
-        :type: list[ResourceChange]
+        :param id: The id of this ReleaseChanges.  # noqa: E501
+        :type: str
         """
 
-        self._changes = changes
+        self._id = id
 
     @property
     def deployment_id(self):
@@ -95,25 +95,25 @@ class ReleaseChanges(object):
         self._deployment_id = deployment_id
 
     @property
-    def id(self):
-        """Gets the id of this ReleaseChanges.  # noqa: E501
+    def changes(self):
+        """Gets the changes of this ReleaseChanges.  # noqa: E501
 
 
-        :return: The id of this ReleaseChanges.  # noqa: E501
-        :rtype: str
+        :return: The changes of this ReleaseChanges.  # noqa: E501
+        :rtype: list[ResourceChange]
         """
-        return self._id
+        return self._changes
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ReleaseChanges.
+    @changes.setter
+    def changes(self, changes):
+        """Sets the changes of this ReleaseChanges.
 
 
-        :param id: The id of this ReleaseChanges.  # noqa: E501
-        :type: str
+        :param changes: The changes of this ReleaseChanges.  # noqa: E501
+        :type: list[ResourceChange]
         """
 
-        self._id = id
+        self._changes = changes
 
     def to_dict(self):
         """Returns the model properties as a dict"""

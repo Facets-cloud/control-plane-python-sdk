@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class GithubLabel(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'name': 'str',
         'color': 'str',
-        'description': 'str',
-        'name': 'str'
+        'description': 'str'
     }
 
     attribute_map = {
+        'name': 'name',
         'color': 'color',
-        'description': 'description',
-        'name': 'name'
+        'description': 'description'
     }
 
-    def __init__(self, color=None, description=None, name=None):  # noqa: E501
+    def __init__(self, name=None, color=None, description=None):  # noqa: E501
         """GithubLabel - a model defined in Swagger"""  # noqa: E501
+        self._name = None
         self._color = None
         self._description = None
-        self._name = None
         self.discriminator = None
+        if name is not None:
+            self.name = name
         if color is not None:
             self.color = color
         if description is not None:
             self.description = description
-        if name is not None:
-            self.name = name
+
+    @property
+    def name(self):
+        """Gets the name of this GithubLabel.  # noqa: E501
+
+
+        :return: The name of this GithubLabel.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this GithubLabel.
+
+
+        :param name: The name of this GithubLabel.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def color(self):
@@ -93,27 +114,6 @@ class GithubLabel(object):
         """
 
         self._description = description
-
-    @property
-    def name(self):
-        """Gets the name of this GithubLabel.  # noqa: E501
-
-
-        :return: The name of this GithubLabel.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this GithubLabel.
-
-
-        :param name: The name of this GithubLabel.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

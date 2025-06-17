@@ -1,34 +1,34 @@
 # swagger_client.UiApplicationControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**abort_using_put**](UiApplicationControllerApi.md#abort_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/abort | abort
-[**cluster_sync_with_git_using_post**](UiApplicationControllerApi.md#cluster_sync_with_git_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/sync-with-git | clusterSyncWithGit
-[**get_application_overrides_using_get**](UiApplicationControllerApi.md#get_application_overrides_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/{resourceType}/{appName}/overrides | getApplicationOverrides
-[**get_argo_rollout_info_using_get**](UiApplicationControllerApi.md#get_argo_rollout_info_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/argo-info | getArgoRolloutInfo
-[**get_deployed_commit_id_for_resource_using_get**](UiApplicationControllerApi.md#get_deployed_commit_id_for_resource_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/deployed-commit-id | getDeployedCommitIdForResource
-[**get_events_using_get**](UiApplicationControllerApi.md#get_events_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/pods/{podName}/events | getEvents
-[**get_hpa_using_get**](UiApplicationControllerApi.md#get_hpa_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceName/{applicationName}/hpa | getHPA
-[**get_ingresses_using_get**](UiApplicationControllerApi.md#get_ingresses_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceName/{applicationName}/ingresses | getIngresses
-[**get_resource_by_name_using_get**](UiApplicationControllerApi.md#get_resource_by_name_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/{resourceType}/{appName} | getResourceByName
-[**get_resource_by_name_v2_using_get**](UiApplicationControllerApi.md#get_resource_by_name_v2_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | getResourceByNameV2
-[**get_resource_history_using_get**](UiApplicationControllerApi.md#get_resource_history_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history | getResourceHistory
-[**get_resource_out_properties_using_get**](UiApplicationControllerApi.md#get_resource_out_properties_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/resource-out-properties | getResourceOutProperties
-[**get_resource_override_object_using_get**](UiApplicationControllerApi.md#get_resource_override_object_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/overrides | getResourceOverrideObject
-[**get_validations_using_get**](UiApplicationControllerApi.md#get_validations_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/validation-errors | getValidations
-[**list_pods_using_get**](UiApplicationControllerApi.md#list_pods_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceName/{applicationName}/pods | listPods
-[**logs_using_get**](UiApplicationControllerApi.md#logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/pods/{podName}/logs | logs
-[**post_resource_override_object_using_post**](UiApplicationControllerApi.md#post_resource_override_object_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/overrides | postResourceOverrideObject
-[**promote_using_put**](UiApplicationControllerApi.md#promote_using_put) | **PUT** /cc-ui/v1/clusters/{clusterId}/promote | promote
-[**rolling_restart_using_post**](UiApplicationControllerApi.md#rolling_restart_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/restart/{applicationName} | rollingRestart
-[**run_validation_using_post**](UiApplicationControllerApi.md#run_validation_using_post) | **POST** /cc-ui/v1/clusters/{clusterId}/validate | runValidation
+[**abort**](UiApplicationControllerApi.md#abort) | **PUT** /cc-ui/v1/clusters/{clusterId}/abort | 
+[**cluster_sync_with_git**](UiApplicationControllerApi.md#cluster_sync_with_git) | **POST** /cc-ui/v1/clusters/{clusterId}/sync-with-git | 
+[**get_application_overrides**](UiApplicationControllerApi.md#get_application_overrides) | **GET** /cc-ui/v1/clusters/{clusterId}/{resourceType}/{appName}/overrides | 
+[**get_argo_rollout_info**](UiApplicationControllerApi.md#get_argo_rollout_info) | **GET** /cc-ui/v1/clusters/{clusterId}/argo-info | 
+[**get_deployed_commit_id_for_resource**](UiApplicationControllerApi.md#get_deployed_commit_id_for_resource) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/deployed-commit-id | 
+[**get_events**](UiApplicationControllerApi.md#get_events) | **GET** /cc-ui/v1/clusters/{clusterId}/pods/{podName}/events | 
+[**get_hpa**](UiApplicationControllerApi.md#get_hpa) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceName/{applicationName}/hpa | 
+[**get_ingresses**](UiApplicationControllerApi.md#get_ingresses) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceName/{applicationName}/ingresses | 
+[**get_resource_by_name**](UiApplicationControllerApi.md#get_resource_by_name) | **GET** /cc-ui/v1/clusters/{clusterId}/{resourceType}/{appName} | 
+[**get_resource_by_name_v2**](UiApplicationControllerApi.md#get_resource_by_name_v2) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | 
+[**get_resource_history**](UiApplicationControllerApi.md#get_resource_history) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/resource-history | 
+[**get_resource_out_properties**](UiApplicationControllerApi.md#get_resource_out_properties) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/resource-out-properties | 
+[**get_resource_override_object**](UiApplicationControllerApi.md#get_resource_override_object) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/overrides | 
+[**get_validations**](UiApplicationControllerApi.md#get_validations) | **GET** /cc-ui/v1/clusters/{clusterId}/validation-errors | 
+[**list_pods**](UiApplicationControllerApi.md#list_pods) | **GET** /cc-ui/v1/clusters/{clusterId}/resourceName/{applicationName}/pods | 
+[**logs**](UiApplicationControllerApi.md#logs) | **GET** /cc-ui/v1/clusters/{clusterId}/pods/{podName}/logs | 
+[**post_resource_override_object**](UiApplicationControllerApi.md#post_resource_override_object) | **POST** /cc-ui/v1/clusters/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}/overrides | 
+[**promote**](UiApplicationControllerApi.md#promote) | **PUT** /cc-ui/v1/clusters/{clusterId}/promote | 
+[**rolling_restart**](UiApplicationControllerApi.md#rolling_restart) | **POST** /cc-ui/v1/clusters/{clusterId}/restart/{applicationName} | 
+[**run_validation**](UiApplicationControllerApi.md#run_validation) | **POST** /cc-ui/v1/clusters/{clusterId}/validate | 
 
-# **abort_using_put**
-> abort_using_put(cluster_id, labels)
+# **abort**
+> abort(cluster_id, labels)
 
-abort
+
 
 ### Example
 ```python
@@ -37,29 +37,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # abort
-    api_instance.abort_using_put(cluster_id, labels)
+    api_instance.abort(cluster_id, labels)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->abort_using_put: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->abort: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -67,19 +66,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **cluster_sync_with_git_using_post**
-> cluster_sync_with_git_using_post(cluster_id, force=force)
+# **cluster_sync_with_git**
+> cluster_sync_with_git(cluster_id, force=force)
 
-clusterSyncWithGit
+
 
 ### Example
 ```python
@@ -88,29 +87,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-force = false # bool | force (optional) (default to false)
+cluster_id = 'cluster_id_example' # str | 
+force = false # bool |  (optional) (default to false)
 
 try:
-    # clusterSyncWithGit
-    api_instance.cluster_sync_with_git_using_post(cluster_id, force=force)
+    api_instance.cluster_sync_with_git(cluster_id, force=force)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->cluster_sync_with_git_using_post: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->cluster_sync_with_git: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **force** | **bool**| force | [optional] [default to false]
+ **cluster_id** | **str**|  | 
+ **force** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
@@ -118,19 +116,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_application_overrides_using_get**
-> object get_application_overrides_using_get(app_name, cluster_id, resource_type)
+# **get_application_overrides**
+> dict(str, object) get_application_overrides(cluster_id, app_name, resource_type)
 
-getApplicationOverrides
+
 
 ### Example
 ```python
@@ -139,32 +137,82 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-app_name = 'app_name_example' # str | appName
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+app_name = 'app_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getApplicationOverrides
-    api_response = api_instance.get_application_overrides_using_get(app_name, cluster_id, resource_type)
+    api_response = api_instance.get_application_overrides(cluster_id, app_name, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_application_overrides_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_application_overrides: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_name** | **str**| appName | 
- **cluster_id** | **str**| clusterId | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **app_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+
+### Return type
+
+**dict(str, object)**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_argo_rollout_info**
+> object get_argo_rollout_info(cluster_id, labels)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
+
+try:
+    api_response = api_instance.get_argo_rollout_info(cluster_id, labels)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiApplicationControllerApi->get_argo_rollout_info: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -172,19 +220,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_argo_rollout_info_using_get**
-> object get_argo_rollout_info_using_get(cluster_id, labels)
+# **get_deployed_commit_id_for_resource**
+> str get_deployed_commit_id_for_resource(cluster_id, resource_type, resource_name)
 
-getArgoRolloutInfo
+
 
 ### Example
 ```python
@@ -193,84 +241,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getArgoRolloutInfo
-    api_response = api_instance.get_argo_rollout_info_using_get(cluster_id, labels)
+    api_response = api_instance.get_deployed_commit_id_for_resource(cluster_id, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_argo_rollout_info_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_deployed_commit_id_for_resource: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_deployed_commit_id_for_resource_using_get**
-> str get_deployed_commit_id_for_resource_using_get(cluster_id, resource_name, resource_type)
-
-getDeployedCommitIdForResource
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-
-try:
-    # getDeployedCommitIdForResource
-    api_response = api_instance.get_deployed_commit_id_for_resource_using_get(cluster_id, resource_name, resource_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_deployed_commit_id_for_resource_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
@@ -278,19 +273,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_events_using_get**
-> list[Event] get_events_using_get(cluster_id, pod_name)
+# **get_events**
+> list[Event] get_events(cluster_id, pod_name)
 
-getEvents
+
 
 ### Example
 ```python
@@ -299,30 +294,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-pod_name = 'pod_name_example' # str | podName
+cluster_id = 'cluster_id_example' # str | 
+pod_name = 'pod_name_example' # str | 
 
 try:
-    # getEvents
-    api_response = api_instance.get_events_using_get(cluster_id, pod_name)
+    api_response = api_instance.get_events(cluster_id, pod_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_events_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_events: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **pod_name** | **str**| podName | 
+ **cluster_id** | **str**|  | 
+ **pod_name** | **str**|  | 
 
 ### Return type
 
@@ -330,19 +324,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_hpa_using_get**
-> HorizontalPodAutoscaler get_hpa_using_get(application_name, cluster_id)
+# **get_hpa**
+> HorizontalPodAutoscaler get_hpa(cluster_id, application_name)
 
-getHPA
+
 
 ### Example
 ```python
@@ -351,30 +345,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_name = 'application_name_example' # str | applicationName
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
+application_name = 'application_name_example' # str | 
 
 try:
-    # getHPA
-    api_response = api_instance.get_hpa_using_get(application_name, cluster_id)
+    api_response = api_instance.get_hpa(cluster_id, application_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_hpa_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_hpa: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_name** | **str**| applicationName | 
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
+ **application_name** | **str**|  | 
 
 ### Return type
 
@@ -382,19 +375,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ingresses_using_get**
-> list[Ingress] get_ingresses_using_get(application_name, cluster_id)
+# **get_ingresses**
+> list[Ingress] get_ingresses(cluster_id, application_name)
 
-getIngresses
+
 
 ### Example
 ```python
@@ -403,30 +396,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_name = 'application_name_example' # str | applicationName
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
+application_name = 'application_name_example' # str | 
 
 try:
-    # getIngresses
-    api_response = api_instance.get_ingresses_using_get(application_name, cluster_id)
+    api_response = api_instance.get_ingresses(cluster_id, application_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_ingresses_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_ingresses: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_name** | **str**| applicationName | 
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
+ **application_name** | **str**|  | 
 
 ### Return type
 
@@ -434,19 +426,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_by_name_using_get**
-> object get_resource_by_name_using_get(app_name, cluster_id, resource_type)
+# **get_resource_by_name**
+> dict(str, object) get_resource_by_name(cluster_id, app_name, resource_type)
 
-getResourceByName
+
 
 ### Example
 ```python
@@ -455,52 +447,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-app_name = 'app_name_example' # str | appName
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+app_name = 'app_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getResourceByName
-    api_response = api_instance.get_resource_by_name_using_get(app_name, cluster_id, resource_type)
+    api_response = api_instance.get_resource_by_name(cluster_id, app_name, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_resource_by_name_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_resource_by_name: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_name** | **str**| appName | 
- **cluster_id** | **str**| clusterId | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **app_name** | **str**|  | 
+ **resource_type** | **str**|  | 
 
 ### Return type
 
-**object**
+**dict(str, object)**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_by_name_v2_using_get**
-> object get_resource_by_name_v2_using_get(cluster_id, resource_name, resource_type)
+# **get_resource_by_name_v2**
+> dict(str, object) get_resource_by_name_v2(cluster_id, resource_name, resource_type)
 
-getResourceByNameV2
+
 
 ### Example
 ```python
@@ -509,52 +500,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+resource_name = 'resource_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getResourceByNameV2
-    api_response = api_instance.get_resource_by_name_v2_using_get(cluster_id, resource_name, resource_type)
+    api_response = api_instance.get_resource_by_name_v2(cluster_id, resource_name, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_resource_by_name_v2_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_resource_by_name_v2: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **resource_type** | **str**|  | 
 
 ### Return type
 
-**object**
+**dict(str, object)**
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_history_using_get**
-> ResourceHistory get_resource_history_using_get(cluster_id, resource_name, resource_type)
+# **get_resource_history**
+> ResourceHistory get_resource_history(cluster_id, resource_type, resource_name)
 
-getResourceHistory
+
 
 ### Example
 ```python
@@ -563,32 +553,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getResourceHistory
-    api_response = api_instance.get_resource_history_using_get(cluster_id, resource_name, resource_type)
+    api_response = api_instance.get_resource_history(cluster_id, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_resource_history_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_resource_history: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
@@ -596,19 +585,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_out_properties_using_get**
-> ResourceOutProperties get_resource_out_properties_using_get(cluster_id, resource_name, resource_type)
+# **get_resource_out_properties**
+> ResourceOutProperties get_resource_out_properties(cluster_id, resource_type, resource_name)
 
-getResourceOutProperties
+
 
 ### Example
 ```python
@@ -617,32 +606,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getResourceOutProperties
-    api_response = api_instance.get_resource_out_properties_using_get(cluster_id, resource_name, resource_type)
+    api_response = api_instance.get_resource_out_properties(cluster_id, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_resource_out_properties_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_resource_out_properties: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
@@ -650,19 +638,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_override_object_using_get**
-> OverrideObject get_resource_override_object_using_get(cluster_id, resource_name, resource_type)
+# **get_resource_override_object**
+> OverrideObject get_resource_override_object(cluster_id, resource_name, resource_type)
 
-getResourceOverrideObject
+
 
 ### Example
 ```python
@@ -671,32 +659,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
+cluster_id = 'cluster_id_example' # str | 
+resource_name = 'resource_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
 
 try:
-    # getResourceOverrideObject
-    api_response = api_instance.get_resource_override_object_using_get(cluster_id, resource_name, resource_type)
+    api_response = api_instance.get_resource_override_object(cluster_id, resource_name, resource_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_resource_override_object_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_resource_override_object: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
+ **cluster_id** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **resource_type** | **str**|  | 
 
 ### Return type
 
@@ -704,19 +691,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_validations_using_get**
-> list[ValidationResponse] get_validations_using_get(cluster_id)
+# **get_validations**
+> list[ValidationResponse] get_validations(cluster_id)
 
-getValidations
+
 
 ### Example
 ```python
@@ -725,28 +712,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getValidations
-    api_response = api_instance.get_validations_using_get(cluster_id)
+    api_response = api_instance.get_validations(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->get_validations_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->get_validations: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -754,19 +740,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_pods_using_get**
-> list[Pod] list_pods_using_get(application_name, cluster_id)
+# **list_pods**
+> list[Pod] list_pods(cluster_id, application_name)
 
-listPods
+
 
 ### Example
 ```python
@@ -775,30 +761,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_name = 'application_name_example' # str | applicationName
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
+application_name = 'application_name_example' # str | 
 
 try:
-    # listPods
-    api_response = api_instance.list_pods_using_get(application_name, cluster_id)
+    api_response = api_instance.list_pods(cluster_id, application_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->list_pods_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->list_pods: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_name** | **str**| applicationName | 
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
+ **application_name** | **str**|  | 
 
 ### Return type
 
@@ -806,19 +791,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **logs_using_get**
-> StreamingResponseBody logs_using_get(cluster_id, labels, pod_name)
+# **logs**
+> StreamingResponseBody logs(cluster_id, pod_name, labels)
 
-logs
+
 
 ### Example
 ```python
@@ -827,32 +812,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
-pod_name = 'pod_name_example' # str | podName
+cluster_id = 'cluster_id_example' # str | 
+pod_name = 'pod_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # logs
-    api_response = api_instance.logs_using_get(cluster_id, labels, pod_name)
+    api_response = api_instance.logs(cluster_id, pod_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->logs_using_get: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->logs: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
- **pod_name** | **str**| podName | 
+ **cluster_id** | **str**|  | 
+ **pod_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -860,19 +844,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_resource_override_object_using_post**
-> OverrideObject post_resource_override_object_using_post(body, cluster_id, resource_name, resource_type, do_sync=do_sync)
+# **post_resource_override_object**
+> OverrideObject post_resource_override_object(body, cluster_id, resource_name, resource_type, do_sync=do_sync)
 
-postResourceOverrideObject
+
 
 ### Example
 ```python
@@ -881,36 +865,35 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OverrideRequest() # OverrideRequest | overrideRequest
-cluster_id = 'cluster_id_example' # str | clusterId
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-do_sync = true # bool | doSync (optional) (default to true)
+body = swagger_client.OverrideRequest() # OverrideRequest | 
+cluster_id = 'cluster_id_example' # str | 
+resource_name = 'resource_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+do_sync = true # bool |  (optional) (default to true)
 
 try:
-    # postResourceOverrideObject
-    api_response = api_instance.post_resource_override_object_using_post(body, cluster_id, resource_name, resource_type, do_sync=do_sync)
+    api_response = api_instance.post_resource_override_object(body, cluster_id, resource_name, resource_type, do_sync=do_sync)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->post_resource_override_object_using_post: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->post_resource_override_object: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OverrideRequest**](OverrideRequest.md)| overrideRequest | 
- **cluster_id** | **str**| clusterId | 
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **do_sync** | **bool**| doSync | [optional] [default to true]
+ **body** | [**OverrideRequest**](OverrideRequest.md)|  | 
+ **cluster_id** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **do_sync** | **bool**|  | [optional] [default to true]
 
 ### Return type
 
@@ -918,19 +901,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **promote_using_put**
-> promote_using_put(cluster_id, labels)
+# **promote**
+> promote(cluster_id, labels)
 
-promote
+
 
 ### Example
 ```python
@@ -939,29 +922,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # promote
-    api_instance.promote_using_put(cluster_id, labels)
+    api_instance.promote(cluster_id, labels)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->promote_using_put: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->promote: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -969,19 +951,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **rolling_restart_using_post**
-> rolling_restart_using_post(application_name, cluster_id, labels)
+# **rolling_restart**
+> rolling_restart(cluster_id, application_name, labels)
 
-rollingRestart
+
 
 ### Example
 ```python
@@ -990,31 +972,30 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-application_name = 'application_name_example' # str | applicationName
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+application_name = 'application_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # rollingRestart
-    api_instance.rolling_restart_using_post(application_name, cluster_id, labels)
+    api_instance.rolling_restart(cluster_id, application_name, labels)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->rolling_restart_using_post: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->rolling_restart: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application_name** | **str**| applicationName | 
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **application_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -1022,19 +1003,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **run_validation_using_post**
-> run_validation_using_post(cluster_id)
+# **run_validation**
+> run_validation(cluster_id)
 
-runValidation
+
 
 ### Example
 ```python
@@ -1043,27 +1024,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiApplicationControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # runValidation
-    api_instance.run_validation_using_post(cluster_id)
+    api_instance.run_validation(cluster_id)
 except ApiException as e:
-    print("Exception when calling UiApplicationControllerApi->run_validation_using_post: %s\n" % e)
+    print("Exception when calling UiApplicationControllerApi->run_validation: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -1071,12 +1051,12 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

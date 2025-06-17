@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,115 @@ class IntentRequestDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
-        'display_name': 'str',
-        'icon_url': 'str',
-        'inferred_from_module': 'bool',
-        'intent_outputs': 'list[IntentOutput]',
         'name': 'str',
-        'type': 'str'
+        'type': 'str',
+        'display_name': 'str',
+        'description': 'str',
+        'icon_url': 'str',
+        'intent_outputs': 'list[IntentOutput]',
+        'inferred_from_module': 'bool'
     }
 
     attribute_map = {
-        'description': 'description',
-        'display_name': 'displayName',
-        'icon_url': 'iconUrl',
-        'inferred_from_module': 'inferredFromModule',
-        'intent_outputs': 'intentOutputs',
         'name': 'name',
-        'type': 'type'
+        'type': 'type',
+        'display_name': 'displayName',
+        'description': 'description',
+        'icon_url': 'iconUrl',
+        'intent_outputs': 'intentOutputs',
+        'inferred_from_module': 'inferredFromModule'
     }
 
-    def __init__(self, description=None, display_name=None, icon_url=None, inferred_from_module=None, intent_outputs=None, name=None, type=None):  # noqa: E501
+    def __init__(self, name=None, type=None, display_name=None, description=None, icon_url=None, intent_outputs=None, inferred_from_module=None):  # noqa: E501
         """IntentRequestDTO - a model defined in Swagger"""  # noqa: E501
-        self._description = None
-        self._display_name = None
-        self._icon_url = None
-        self._inferred_from_module = None
-        self._intent_outputs = None
         self._name = None
         self._type = None
+        self._display_name = None
+        self._description = None
+        self._icon_url = None
+        self._intent_outputs = None
+        self._inferred_from_module = None
         self.discriminator = None
+        self.name = name
+        self.type = type
+        self.display_name = display_name
         if description is not None:
             self.description = description
-        if display_name is not None:
-            self.display_name = display_name
         if icon_url is not None:
             self.icon_url = icon_url
-        if inferred_from_module is not None:
-            self.inferred_from_module = inferred_from_module
         if intent_outputs is not None:
             self.intent_outputs = intent_outputs
-        if name is not None:
-            self.name = name
-        if type is not None:
-            self.type = type
+        if inferred_from_module is not None:
+            self.inferred_from_module = inferred_from_module
+
+    @property
+    def name(self):
+        """Gets the name of this IntentRequestDTO.  # noqa: E501
+
+
+        :return: The name of this IntentRequestDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this IntentRequestDTO.
+
+
+        :param name: The name of this IntentRequestDTO.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def type(self):
+        """Gets the type of this IntentRequestDTO.  # noqa: E501
+
+
+        :return: The type of this IntentRequestDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this IntentRequestDTO.
+
+
+        :param type: The type of this IntentRequestDTO.  # noqa: E501
+        :type: str
+        """
+        if type is None:
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+
+        self._type = type
+
+    @property
+    def display_name(self):
+        """Gets the display_name of this IntentRequestDTO.  # noqa: E501
+
+
+        :return: The display_name of this IntentRequestDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this IntentRequestDTO.
+
+
+        :param display_name: The display_name of this IntentRequestDTO.  # noqa: E501
+        :type: str
+        """
+        if display_name is None:
+            raise ValueError("Invalid value for `display_name`, must not be `None`")  # noqa: E501
+
+        self._display_name = display_name
 
     @property
     def description(self):
@@ -94,27 +160,6 @@ class IntentRequestDTO(object):
         self._description = description
 
     @property
-    def display_name(self):
-        """Gets the display_name of this IntentRequestDTO.  # noqa: E501
-
-
-        :return: The display_name of this IntentRequestDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """Sets the display_name of this IntentRequestDTO.
-
-
-        :param display_name: The display_name of this IntentRequestDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._display_name = display_name
-
-    @property
     def icon_url(self):
         """Gets the icon_url of this IntentRequestDTO.  # noqa: E501
 
@@ -134,27 +179,6 @@ class IntentRequestDTO(object):
         """
 
         self._icon_url = icon_url
-
-    @property
-    def inferred_from_module(self):
-        """Gets the inferred_from_module of this IntentRequestDTO.  # noqa: E501
-
-
-        :return: The inferred_from_module of this IntentRequestDTO.  # noqa: E501
-        :rtype: bool
-        """
-        return self._inferred_from_module
-
-    @inferred_from_module.setter
-    def inferred_from_module(self, inferred_from_module):
-        """Sets the inferred_from_module of this IntentRequestDTO.
-
-
-        :param inferred_from_module: The inferred_from_module of this IntentRequestDTO.  # noqa: E501
-        :type: bool
-        """
-
-        self._inferred_from_module = inferred_from_module
 
     @property
     def intent_outputs(self):
@@ -178,46 +202,25 @@ class IntentRequestDTO(object):
         self._intent_outputs = intent_outputs
 
     @property
-    def name(self):
-        """Gets the name of this IntentRequestDTO.  # noqa: E501
+    def inferred_from_module(self):
+        """Gets the inferred_from_module of this IntentRequestDTO.  # noqa: E501
 
 
-        :return: The name of this IntentRequestDTO.  # noqa: E501
-        :rtype: str
+        :return: The inferred_from_module of this IntentRequestDTO.  # noqa: E501
+        :rtype: bool
         """
-        return self._name
+        return self._inferred_from_module
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this IntentRequestDTO.
-
-
-        :param name: The name of this IntentRequestDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def type(self):
-        """Gets the type of this IntentRequestDTO.  # noqa: E501
+    @inferred_from_module.setter
+    def inferred_from_module(self, inferred_from_module):
+        """Sets the inferred_from_module of this IntentRequestDTO.
 
 
-        :return: The type of this IntentRequestDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this IntentRequestDTO.
-
-
-        :param type: The type of this IntentRequestDTO.  # noqa: E501
-        :type: str
+        :param inferred_from_module: The inferred_from_module of this IntentRequestDTO.  # noqa: E501
+        :type: bool
         """
 
-        self._type = type
+        self._inferred_from_module = inferred_from_module
 
     def to_dict(self):
         """Returns the model properties as a dict"""

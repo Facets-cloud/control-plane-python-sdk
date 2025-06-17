@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,55 @@ class VariableCountDto(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'overridden_secrets': 'int',
+        'total_variables': 'int',
         'overridden_variables': 'int',
         'total_secrets': 'int',
-        'total_variables': 'int'
+        'overridden_secrets': 'int'
     }
 
     attribute_map = {
-        'overridden_secrets': 'overriddenSecrets',
+        'total_variables': 'totalVariables',
         'overridden_variables': 'overriddenVariables',
         'total_secrets': 'totalSecrets',
-        'total_variables': 'totalVariables'
+        'overridden_secrets': 'overriddenSecrets'
     }
 
-    def __init__(self, overridden_secrets=None, overridden_variables=None, total_secrets=None, total_variables=None):  # noqa: E501
+    def __init__(self, total_variables=None, overridden_variables=None, total_secrets=None, overridden_secrets=None):  # noqa: E501
         """VariableCountDto - a model defined in Swagger"""  # noqa: E501
-        self._overridden_secrets = None
+        self._total_variables = None
         self._overridden_variables = None
         self._total_secrets = None
-        self._total_variables = None
+        self._overridden_secrets = None
         self.discriminator = None
-        if overridden_secrets is not None:
-            self.overridden_secrets = overridden_secrets
+        if total_variables is not None:
+            self.total_variables = total_variables
         if overridden_variables is not None:
             self.overridden_variables = overridden_variables
         if total_secrets is not None:
             self.total_secrets = total_secrets
-        if total_variables is not None:
-            self.total_variables = total_variables
+        if overridden_secrets is not None:
+            self.overridden_secrets = overridden_secrets
 
     @property
-    def overridden_secrets(self):
-        """Gets the overridden_secrets of this VariableCountDto.  # noqa: E501
+    def total_variables(self):
+        """Gets the total_variables of this VariableCountDto.  # noqa: E501
 
 
-        :return: The overridden_secrets of this VariableCountDto.  # noqa: E501
+        :return: The total_variables of this VariableCountDto.  # noqa: E501
         :rtype: int
         """
-        return self._overridden_secrets
+        return self._total_variables
 
-    @overridden_secrets.setter
-    def overridden_secrets(self, overridden_secrets):
-        """Sets the overridden_secrets of this VariableCountDto.
+    @total_variables.setter
+    def total_variables(self, total_variables):
+        """Sets the total_variables of this VariableCountDto.
 
 
-        :param overridden_secrets: The overridden_secrets of this VariableCountDto.  # noqa: E501
+        :param total_variables: The total_variables of this VariableCountDto.  # noqa: E501
         :type: int
         """
 
-        self._overridden_secrets = overridden_secrets
+        self._total_variables = total_variables
 
     @property
     def overridden_variables(self):
@@ -121,25 +121,25 @@ class VariableCountDto(object):
         self._total_secrets = total_secrets
 
     @property
-    def total_variables(self):
-        """Gets the total_variables of this VariableCountDto.  # noqa: E501
+    def overridden_secrets(self):
+        """Gets the overridden_secrets of this VariableCountDto.  # noqa: E501
 
 
-        :return: The total_variables of this VariableCountDto.  # noqa: E501
+        :return: The overridden_secrets of this VariableCountDto.  # noqa: E501
         :rtype: int
         """
-        return self._total_variables
+        return self._overridden_secrets
 
-    @total_variables.setter
-    def total_variables(self, total_variables):
-        """Sets the total_variables of this VariableCountDto.
+    @overridden_secrets.setter
+    def overridden_secrets(self, overridden_secrets):
+        """Sets the overridden_secrets of this VariableCountDto.
 
 
-        :param total_variables: The total_variables of this VariableCountDto.  # noqa: E501
+        :param overridden_secrets: The overridden_secrets of this VariableCountDto.  # noqa: E501
         :type: int
         """
 
-        self._total_variables = total_variables
+        self._overridden_secrets = overridden_secrets
 
     def to_dict(self):
         """Returns the model properties as a dict"""

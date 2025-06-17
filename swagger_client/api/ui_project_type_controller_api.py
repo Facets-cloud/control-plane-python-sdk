@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,39 +32,39 @@ class UiProjectTypeControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_project_type_using_post(self, body, **kwargs):  # noqa: E501
+    def add_project_type(self, body, **kwargs):  # noqa: E501
         """Add a new project type  # noqa: E501
 
         - **Description:** Creates a new project type from the provided request details.  - **Restrictions:** Only users with the appropriate permissions can add project types.  - **Permissions:** Requires `PROJECT_TYPE_WRITE` permission.  - **Audit Logging:** This operation is logged for audit purposes.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_project_type_using_post(body, async_req=True)
+        >>> thread = api.add_project_type(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ProjectTypeRequest body: projectTypeRequest (required)
+        :param ProjectTypeRequest body: (required)
         :return: ProjectTypeResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_project_type_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.add_project_type_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_project_type_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.add_project_type_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def add_project_type_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
+    def add_project_type_with_http_info(self, body, **kwargs):  # noqa: E501
         """Add a new project type  # noqa: E501
 
         - **Description:** Creates a new project type from the provided request details.  - **Restrictions:** Only users with the appropriate permissions can add project types.  - **Permissions:** Requires `PROJECT_TYPE_WRITE` permission.  - **Audit Logging:** This operation is logged for audit purposes.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_project_type_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.add_project_type_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ProjectTypeRequest body: projectTypeRequest (required)
+        :param ProjectTypeRequest body: (required)
         :return: ProjectTypeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,14 +81,14 @@ class UiProjectTypeControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_project_type_using_post" % key
+                    " to method add_project_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_project_type_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add_project_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -106,14 +106,14 @@ class UiProjectTypeControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/project-types', 'POST',
@@ -131,39 +131,39 @@ class UiProjectTypeControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_project_type_using_delete(self, id, **kwargs):  # noqa: E501
+    def delete_project_type(self, id, **kwargs):  # noqa: E501
         """Delete a project type  # noqa: E501
 
         - **Description:** Deletes an existing project type based on its ID.  - **Restrictions:** Only users with the correct RBAC permission can delete a project type.  - **Permissions:** Requires `PROJECT_TYPE_DELETE` permission.  - **Audit Logging:** This operation is logged for audit purposes.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_project_type_using_delete(id, async_req=True)
+        >>> thread = api.delete_project_type(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_project_type_using_delete_with_http_info(id, **kwargs)  # noqa: E501
+            return self.delete_project_type_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_project_type_using_delete_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.delete_project_type_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def delete_project_type_using_delete_with_http_info(self, id, **kwargs):  # noqa: E501
+    def delete_project_type_with_http_info(self, id, **kwargs):  # noqa: E501
         """Delete a project type  # noqa: E501
 
         - **Description:** Deletes an existing project type based on its ID.  - **Restrictions:** Only users with the correct RBAC permission can delete a project type.  - **Permissions:** Requires `PROJECT_TYPE_DELETE` permission.  - **Audit Logging:** This operation is logged for audit purposes.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_project_type_using_delete_with_http_info(id, async_req=True)
+        >>> thread = api.delete_project_type_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -180,14 +180,14 @@ class UiProjectTypeControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_project_type_using_delete" % key
+                    " to method delete_project_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `delete_project_type_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `delete_project_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -203,8 +203,12 @@ class UiProjectTypeControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/project-types/{id}', 'DELETE',
@@ -222,13 +226,13 @@ class UiProjectTypeControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_project_types_using_get(self, **kwargs):  # noqa: E501
+    def get_all_project_types(self, **kwargs):  # noqa: E501
         """Get all project types  # noqa: E501
 
         - **Description:** Retrieve a list of all existing project types.  - **Restrictions:** None.  - **Permissions:** No specific permissions required.  - **Audit Logging:** Not applicable.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_project_types_using_get(async_req=True)
+        >>> thread = api.get_all_project_types(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -238,18 +242,18 @@ class UiProjectTypeControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_project_types_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_project_types_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_project_types_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_project_types_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_project_types_using_get_with_http_info(self, **kwargs):  # noqa: E501
+    def get_all_project_types_with_http_info(self, **kwargs):  # noqa: E501
         """Get all project types  # noqa: E501
 
         - **Description:** Retrieve a list of all existing project types.  - **Restrictions:** None.  - **Permissions:** No specific permissions required.  - **Audit Logging:** Not applicable.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_project_types_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_project_types_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -269,7 +273,7 @@ class UiProjectTypeControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_project_types_using_get" % key
+                    " to method get_all_project_types" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -288,10 +292,10 @@ class UiProjectTypeControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/project-types', 'GET',
@@ -309,39 +313,39 @@ class UiProjectTypeControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_project_type_by_id_using_get(self, id, **kwargs):  # noqa: E501
+    def get_project_type_by_id(self, id, **kwargs):  # noqa: E501
         """Get project type by ID  # noqa: E501
 
         - **Description:** Retrieve a specific project type by its ID.  - **Restrictions:** None.  - **Permissions:** No specific permissions required.  - **Audit Logging:** Not applicable.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_project_type_by_id_using_get(id, async_req=True)
+        >>> thread = api.get_project_type_by_id(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: ProjectTypeResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_project_type_by_id_using_get_with_http_info(id, **kwargs)  # noqa: E501
+            return self.get_project_type_by_id_with_http_info(id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_project_type_by_id_using_get_with_http_info(id, **kwargs)  # noqa: E501
+            (data) = self.get_project_type_by_id_with_http_info(id, **kwargs)  # noqa: E501
             return data
 
-    def get_project_type_by_id_using_get_with_http_info(self, id, **kwargs):  # noqa: E501
+    def get_project_type_by_id_with_http_info(self, id, **kwargs):  # noqa: E501
         """Get project type by ID  # noqa: E501
 
         - **Description:** Retrieve a specific project type by its ID.  - **Restrictions:** None.  - **Permissions:** No specific permissions required.  - **Audit Logging:** Not applicable.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_project_type_by_id_using_get_with_http_info(id, async_req=True)
+        >>> thread = api.get_project_type_by_id_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: id (required)
+        :param str id: (required)
         :return: ProjectTypeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -358,14 +362,14 @@ class UiProjectTypeControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_project_type_by_id_using_get" % key
+                    " to method get_project_type_by_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_project_type_by_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `get_project_type_by_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -383,10 +387,10 @@ class UiProjectTypeControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/project-types/{id}', 'GET',
@@ -404,41 +408,41 @@ class UiProjectTypeControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_project_type_using_put(self, body, id, **kwargs):  # noqa: E501
+    def update_project_type(self, body, id, **kwargs):  # noqa: E501
         """Update an existing project type  # noqa: E501
 
         - **Description:** Updates details of a specified project type by its ID.  - **Restrictions:** Only users with the correct permissions can update project types.  - **Permissions:** Requires `PROJECT_TYPE_WRITE` permission.  - **Audit Logging:** This operation is logged for audit purposes.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_project_type_using_put(body, id, async_req=True)
+        >>> thread = api.update_project_type(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ProjectTypeRequest body: projectTypeRequest (required)
-        :param str id: id (required)
+        :param ProjectTypeRequest body: (required)
+        :param str id: (required)
         :return: ProjectTypeResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_project_type_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            return self.update_project_type_with_http_info(body, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_project_type_using_put_with_http_info(body, id, **kwargs)  # noqa: E501
+            (data) = self.update_project_type_with_http_info(body, id, **kwargs)  # noqa: E501
             return data
 
-    def update_project_type_using_put_with_http_info(self, body, id, **kwargs):  # noqa: E501
+    def update_project_type_with_http_info(self, body, id, **kwargs):  # noqa: E501
         """Update an existing project type  # noqa: E501
 
         - **Description:** Updates details of a specified project type by its ID.  - **Restrictions:** Only users with the correct permissions can update project types.  - **Permissions:** Requires `PROJECT_TYPE_WRITE` permission.  - **Audit Logging:** This operation is logged for audit purposes.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_project_type_using_put_with_http_info(body, id, async_req=True)
+        >>> thread = api.update_project_type_with_http_info(body, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ProjectTypeRequest body: projectTypeRequest (required)
-        :param str id: id (required)
+        :param ProjectTypeRequest body: (required)
+        :param str id: (required)
         :return: ProjectTypeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -455,18 +459,18 @@ class UiProjectTypeControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_project_type_using_put" % key
+                    " to method update_project_type" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_project_type_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_project_type`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `update_project_type_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `update_project_type`")  # noqa: E501
 
         collection_formats = {}
 
@@ -486,14 +490,14 @@ class UiProjectTypeControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/project-types/{id}', 'PUT',

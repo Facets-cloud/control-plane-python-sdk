@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,102 +28,39 @@ class VariableDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
-        '_global': 'bool',
-        'required': 'bool',
         'secret': 'bool',
-        'value': 'str'
+        'value': 'str',
+        '_global': 'bool',
+        'description': 'str',
+        'required': 'bool'
     }
 
     attribute_map = {
-        'description': 'description',
-        '_global': 'global',
-        'required': 'required',
         'secret': 'secret',
-        'value': 'value'
+        'value': 'value',
+        '_global': 'global',
+        'description': 'description',
+        'required': 'required'
     }
 
-    def __init__(self, description=None, _global=None, required=None, secret=None, value=None):  # noqa: E501
+    def __init__(self, secret=None, value=None, _global=None, description=None, required=None):  # noqa: E501
         """VariableDetails - a model defined in Swagger"""  # noqa: E501
-        self._description = None
-        self.__global = None
-        self._required = None
         self._secret = None
         self._value = None
+        self.__global = None
+        self._description = None
+        self._required = None
         self.discriminator = None
-        if description is not None:
-            self.description = description
-        if _global is not None:
-            self._global = _global
-        if required is not None:
-            self.required = required
         if secret is not None:
             self.secret = secret
         if value is not None:
             self.value = value
-
-    @property
-    def description(self):
-        """Gets the description of this VariableDetails.  # noqa: E501
-
-
-        :return: The description of this VariableDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this VariableDetails.
-
-
-        :param description: The description of this VariableDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def _global(self):
-        """Gets the _global of this VariableDetails.  # noqa: E501
-
-
-        :return: The _global of this VariableDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self.__global
-
-    @_global.setter
-    def _global(self, _global):
-        """Sets the _global of this VariableDetails.
-
-
-        :param _global: The _global of this VariableDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self.__global = _global
-
-    @property
-    def required(self):
-        """Gets the required of this VariableDetails.  # noqa: E501
-
-
-        :return: The required of this VariableDetails.  # noqa: E501
-        :rtype: bool
-        """
-        return self._required
-
-    @required.setter
-    def required(self, required):
-        """Sets the required of this VariableDetails.
-
-
-        :param required: The required of this VariableDetails.  # noqa: E501
-        :type: bool
-        """
-
-        self._required = required
+        if _global is not None:
+            self._global = _global
+        if description is not None:
+            self.description = description
+        if required is not None:
+            self.required = required
 
     @property
     def secret(self):
@@ -166,6 +103,69 @@ class VariableDetails(object):
         """
 
         self._value = value
+
+    @property
+    def _global(self):
+        """Gets the _global of this VariableDetails.  # noqa: E501
+
+
+        :return: The _global of this VariableDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self.__global
+
+    @_global.setter
+    def _global(self, _global):
+        """Sets the _global of this VariableDetails.
+
+
+        :param _global: The _global of this VariableDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self.__global = _global
+
+    @property
+    def description(self):
+        """Gets the description of this VariableDetails.  # noqa: E501
+
+
+        :return: The description of this VariableDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this VariableDetails.
+
+
+        :param description: The description of this VariableDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def required(self):
+        """Gets the required of this VariableDetails.  # noqa: E501
+
+
+        :return: The required of this VariableDetails.  # noqa: E501
+        :rtype: bool
+        """
+        return self._required
+
+    @required.setter
+    def required(self, required):
+        """Sets the required of this VariableDetails.
+
+
+        :param required: The required of this VariableDetails.  # noqa: E501
+        :type: bool
+        """
+
+        self._required = required
 
     def to_dict(self):
         """Returns the model properties as a dict"""

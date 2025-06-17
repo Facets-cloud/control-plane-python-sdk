@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiCustomContentControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_content_file_using_post(self, body, **kwargs):  # noqa: E501
-        """createContentFile  # noqa: E501
+    def create_content_file(self, body, **kwargs):  # noqa: E501
+        """create_content_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_content_file_using_post(body, async_req=True)
+        >>> thread = api.create_content_file(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ContentFile body: contentFile (required)
+        :param ContentFile body: (required)
         :return: ContentFile
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_content_file_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_content_file_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_content_file_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_content_file_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_content_file_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createContentFile  # noqa: E501
+    def create_content_file_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_content_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_content_file_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_content_file_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ContentFile body: contentFile (required)
+        :param ContentFile body: (required)
         :return: ContentFile
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiCustomContentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_content_file_using_post" % key
+                    " to method create_content_file" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_content_file_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_content_file`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiCustomContentControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/content/files', 'POST',
@@ -129,37 +129,37 @@ class UiCustomContentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_content_file_using_delete(self, content_id, **kwargs):  # noqa: E501
-        """deleteContentFile  # noqa: E501
+    def delete_content_file(self, content_id, **kwargs):  # noqa: E501
+        """delete_content_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_content_file_using_delete(content_id, async_req=True)
+        >>> thread = api.delete_content_file(content_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str content_id: contentId (required)
+        :param str content_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_content_file_using_delete_with_http_info(content_id, **kwargs)  # noqa: E501
+            return self.delete_content_file_with_http_info(content_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_content_file_using_delete_with_http_info(content_id, **kwargs)  # noqa: E501
+            (data) = self.delete_content_file_with_http_info(content_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_content_file_using_delete_with_http_info(self, content_id, **kwargs):  # noqa: E501
-        """deleteContentFile  # noqa: E501
+    def delete_content_file_with_http_info(self, content_id, **kwargs):  # noqa: E501
+        """delete_content_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_content_file_using_delete_with_http_info(content_id, async_req=True)
+        >>> thread = api.delete_content_file_with_http_info(content_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str content_id: contentId (required)
+        :param str content_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiCustomContentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_content_file_using_delete" % key
+                    " to method delete_content_file" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'content_id' is set
         if ('content_id' not in params or
                 params['content_id'] is None):
-            raise ValueError("Missing the required parameter `content_id` when calling `delete_content_file_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `content_id` when calling `delete_content_file`")  # noqa: E501
 
         collection_formats = {}
 
@@ -199,8 +199,12 @@ class UiCustomContentControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/content/files/{contentId}', 'DELETE',
@@ -218,51 +222,51 @@ class UiCustomContentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_content_files_by_selectors_using_get(self, content_type, **kwargs):  # noqa: E501
-        """getContentFilesBySelectors  # noqa: E501
+    def get_content_files_by_selectors(self, content_type, **kwargs):  # noqa: E501
+        """get_content_files_by_selectors  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content_files_by_selectors_using_get(content_type, async_req=True)
+        >>> thread = api.get_content_files_by_selectors(content_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str content_type: contentType (required)
-        :param str display_type: displayType
-        :param str resource_name: resourceName
-        :param str resource_type: resourceType
-        :param str sub_type: subType
+        :param str content_type: (required)
+        :param str resource_type:
+        :param str resource_name:
+        :param str display_type:
+        :param str sub_type:
         :return: list[ContentFile]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_content_files_by_selectors_using_get_with_http_info(content_type, **kwargs)  # noqa: E501
+            return self.get_content_files_by_selectors_with_http_info(content_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_content_files_by_selectors_using_get_with_http_info(content_type, **kwargs)  # noqa: E501
+            (data) = self.get_content_files_by_selectors_with_http_info(content_type, **kwargs)  # noqa: E501
             return data
 
-    def get_content_files_by_selectors_using_get_with_http_info(self, content_type, **kwargs):  # noqa: E501
-        """getContentFilesBySelectors  # noqa: E501
+    def get_content_files_by_selectors_with_http_info(self, content_type, **kwargs):  # noqa: E501
+        """get_content_files_by_selectors  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_content_files_by_selectors_using_get_with_http_info(content_type, async_req=True)
+        >>> thread = api.get_content_files_by_selectors_with_http_info(content_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str content_type: contentType (required)
-        :param str display_type: displayType
-        :param str resource_name: resourceName
-        :param str resource_type: resourceType
-        :param str sub_type: subType
+        :param str content_type: (required)
+        :param str resource_type:
+        :param str resource_name:
+        :param str display_type:
+        :param str sub_type:
         :return: list[ContentFile]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'display_type', 'resource_name', 'resource_type', 'sub_type']  # noqa: E501
+        all_params = ['content_type', 'resource_type', 'resource_name', 'display_type', 'sub_type']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -273,14 +277,14 @@ class UiCustomContentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_content_files_by_selectors_using_get" % key
+                    " to method get_content_files_by_selectors" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params or
                 params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `get_content_files_by_selectors_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `content_type` when calling `get_content_files_by_selectors`")  # noqa: E501
 
         collection_formats = {}
 
@@ -289,12 +293,12 @@ class UiCustomContentControllerApi(object):
             path_params['contentType'] = params['content_type']  # noqa: E501
 
         query_params = []
-        if 'display_type' in params:
-            query_params.append(('displayType', params['display_type']))  # noqa: E501
-        if 'resource_name' in params:
-            query_params.append(('resourceName', params['resource_name']))  # noqa: E501
         if 'resource_type' in params:
             query_params.append(('resourceType', params['resource_type']))  # noqa: E501
+        if 'resource_name' in params:
+            query_params.append(('resourceName', params['resource_name']))  # noqa: E501
+        if 'display_type' in params:
+            query_params.append(('displayType', params['display_type']))  # noqa: E501
         if 'sub_type' in params:
             query_params.append(('subType', params['sub_type']))  # noqa: E501
 
@@ -306,10 +310,10 @@ class UiCustomContentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/content/files/selectors/{contentType}', 'GET',
@@ -327,39 +331,39 @@ class UiCustomContentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def render_content_using_post(self, body, content_id, **kwargs):  # noqa: E501
-        """renderContent  # noqa: E501
+    def render_content(self, body, content_id, **kwargs):  # noqa: E501
+        """render_content  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.render_content_using_post(body, content_id, async_req=True)
+        >>> thread = api.render_content(body, content_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, str) body: payload (required)
-        :param str content_id: contentId (required)
+        :param dict(str, str) body: (required)
+        :param str content_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.render_content_using_post_with_http_info(body, content_id, **kwargs)  # noqa: E501
+            return self.render_content_with_http_info(body, content_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.render_content_using_post_with_http_info(body, content_id, **kwargs)  # noqa: E501
+            (data) = self.render_content_with_http_info(body, content_id, **kwargs)  # noqa: E501
             return data
 
-    def render_content_using_post_with_http_info(self, body, content_id, **kwargs):  # noqa: E501
-        """renderContent  # noqa: E501
+    def render_content_with_http_info(self, body, content_id, **kwargs):  # noqa: E501
+        """render_content  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.render_content_using_post_with_http_info(body, content_id, async_req=True)
+        >>> thread = api.render_content_with_http_info(body, content_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param dict(str, str) body: payload (required)
-        :param str content_id: contentId (required)
+        :param dict(str, str) body: (required)
+        :param str content_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -376,18 +380,18 @@ class UiCustomContentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method render_content_using_post" % key
+                    " to method render_content" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `render_content_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `render_content`")  # noqa: E501
         # verify the required parameter 'content_id' is set
         if ('content_id' not in params or
                 params['content_id'] is None):
-            raise ValueError("Missing the required parameter `content_id` when calling `render_content_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `content_id` when calling `render_content`")  # noqa: E501
 
         collection_formats = {}
 
@@ -407,14 +411,14 @@ class UiCustomContentControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/content/files/{contentId}/render', 'POST',
@@ -432,39 +436,39 @@ class UiCustomContentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_content_file_using_put(self, body, content_id, **kwargs):  # noqa: E501
-        """updateContentFile  # noqa: E501
+    def update_content_file(self, body, content_id, **kwargs):  # noqa: E501
+        """update_content_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_content_file_using_put(body, content_id, async_req=True)
+        >>> thread = api.update_content_file(body, content_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ContentFile body: updatedContent (required)
-        :param str content_id: contentId (required)
+        :param ContentFile body: (required)
+        :param str content_id: (required)
         :return: ContentFile
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_content_file_using_put_with_http_info(body, content_id, **kwargs)  # noqa: E501
+            return self.update_content_file_with_http_info(body, content_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_content_file_using_put_with_http_info(body, content_id, **kwargs)  # noqa: E501
+            (data) = self.update_content_file_with_http_info(body, content_id, **kwargs)  # noqa: E501
             return data
 
-    def update_content_file_using_put_with_http_info(self, body, content_id, **kwargs):  # noqa: E501
-        """updateContentFile  # noqa: E501
+    def update_content_file_with_http_info(self, body, content_id, **kwargs):  # noqa: E501
+        """update_content_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_content_file_using_put_with_http_info(body, content_id, async_req=True)
+        >>> thread = api.update_content_file_with_http_info(body, content_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ContentFile body: updatedContent (required)
-        :param str content_id: contentId (required)
+        :param ContentFile body: (required)
+        :param str content_id: (required)
         :return: ContentFile
                  If the method is called asynchronously,
                  returns the request thread.
@@ -481,18 +485,18 @@ class UiCustomContentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_content_file_using_put" % key
+                    " to method update_content_file" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_content_file_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_content_file`")  # noqa: E501
         # verify the required parameter 'content_id' is set
         if ('content_id' not in params or
                 params['content_id'] is None):
-            raise ValueError("Missing the required parameter `content_id` when calling `update_content_file_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `content_id` when calling `update_content_file`")  # noqa: E501
 
         collection_formats = {}
 
@@ -512,14 +516,14 @@ class UiCustomContentControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/content/files/{contentId}', 'PUT',

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,309 +28,114 @@ class ResourceStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
-        'current_artifact_url': 'str',
-        'current_bp_version': 'str',
-        'current_override_version': 'str',
-        'current_state': 'str',
-        'disabled': 'bool',
-        'flavor': 'str',
-        'has_state_change': 'bool',
-        'health_status': 'str',
         'id': 'str',
-        'is_alpha': 'bool',
-        'live_artifact_url': 'str',
-        'live_bp_version': 'str',
-        'live_override_version': 'str',
-        'previous_state': 'str',
-        'release_status': 'str',
-        'release_trace_id': 'str',
+        'cluster_id': 'str',
         'resource_name': 'str',
         'resource_type': 'str',
-        'sync_status': 'str'
+        'sync_status': 'str',
+        'current_bp_version': 'str',
+        'live_bp_version': 'str',
+        'current_artifact_url': 'str',
+        'live_artifact_url': 'str',
+        'current_override_version': 'str',
+        'live_override_version': 'str',
+        'health_status': 'str',
+        'release_status': 'str',
+        'release_trace_id': 'str',
+        'is_alpha': 'bool',
+        'disabled': 'bool',
+        'current_state': 'str',
+        'previous_state': 'str',
+        'has_state_change': 'bool',
+        'flavor': 'str'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
-        'current_artifact_url': 'currentArtifactUrl',
-        'current_bp_version': 'currentBPVersion',
-        'current_override_version': 'currentOverrideVersion',
-        'current_state': 'currentState',
-        'disabled': 'disabled',
-        'flavor': 'flavor',
-        'has_state_change': 'hasStateChange',
-        'health_status': 'healthStatus',
         'id': 'id',
-        'is_alpha': 'isAlpha',
-        'live_artifact_url': 'liveArtifactUrl',
-        'live_bp_version': 'liveBPVersion',
-        'live_override_version': 'liveOverrideVersion',
-        'previous_state': 'previousState',
-        'release_status': 'releaseStatus',
-        'release_trace_id': 'releaseTraceId',
+        'cluster_id': 'clusterId',
         'resource_name': 'resourceName',
         'resource_type': 'resourceType',
-        'sync_status': 'syncStatus'
+        'sync_status': 'syncStatus',
+        'current_bp_version': 'currentBPVersion',
+        'live_bp_version': 'liveBPVersion',
+        'current_artifact_url': 'currentArtifactUrl',
+        'live_artifact_url': 'liveArtifactUrl',
+        'current_override_version': 'currentOverrideVersion',
+        'live_override_version': 'liveOverrideVersion',
+        'health_status': 'healthStatus',
+        'release_status': 'releaseStatus',
+        'release_trace_id': 'releaseTraceId',
+        'is_alpha': 'isAlpha',
+        'disabled': 'disabled',
+        'current_state': 'currentState',
+        'previous_state': 'previousState',
+        'has_state_change': 'hasStateChange',
+        'flavor': 'flavor'
     }
 
-    def __init__(self, cluster_id=None, current_artifact_url=None, current_bp_version=None, current_override_version=None, current_state=None, disabled=None, flavor=None, has_state_change=None, health_status=None, id=None, is_alpha=None, live_artifact_url=None, live_bp_version=None, live_override_version=None, previous_state=None, release_status=None, release_trace_id=None, resource_name=None, resource_type=None, sync_status=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, resource_name=None, resource_type=None, sync_status=None, current_bp_version=None, live_bp_version=None, current_artifact_url=None, live_artifact_url=None, current_override_version=None, live_override_version=None, health_status=None, release_status=None, release_trace_id=None, is_alpha=None, disabled=None, current_state=None, previous_state=None, has_state_change=None, flavor=None):  # noqa: E501
         """ResourceStatus - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
-        self._current_artifact_url = None
-        self._current_bp_version = None
-        self._current_override_version = None
-        self._current_state = None
-        self._disabled = None
-        self._flavor = None
-        self._has_state_change = None
-        self._health_status = None
         self._id = None
-        self._is_alpha = None
-        self._live_artifact_url = None
-        self._live_bp_version = None
-        self._live_override_version = None
-        self._previous_state = None
-        self._release_status = None
-        self._release_trace_id = None
+        self._cluster_id = None
         self._resource_name = None
         self._resource_type = None
         self._sync_status = None
+        self._current_bp_version = None
+        self._live_bp_version = None
+        self._current_artifact_url = None
+        self._live_artifact_url = None
+        self._current_override_version = None
+        self._live_override_version = None
+        self._health_status = None
+        self._release_status = None
+        self._release_trace_id = None
+        self._is_alpha = None
+        self._disabled = None
+        self._current_state = None
+        self._previous_state = None
+        self._has_state_change = None
+        self._flavor = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if current_artifact_url is not None:
-            self.current_artifact_url = current_artifact_url
-        if current_bp_version is not None:
-            self.current_bp_version = current_bp_version
-        if current_override_version is not None:
-            self.current_override_version = current_override_version
-        if current_state is not None:
-            self.current_state = current_state
-        if disabled is not None:
-            self.disabled = disabled
-        if flavor is not None:
-            self.flavor = flavor
-        if has_state_change is not None:
-            self.has_state_change = has_state_change
-        if health_status is not None:
-            self.health_status = health_status
         if id is not None:
             self.id = id
-        if is_alpha is not None:
-            self.is_alpha = is_alpha
-        if live_artifact_url is not None:
-            self.live_artifact_url = live_artifact_url
-        if live_bp_version is not None:
-            self.live_bp_version = live_bp_version
-        if live_override_version is not None:
-            self.live_override_version = live_override_version
-        if previous_state is not None:
-            self.previous_state = previous_state
-        if release_status is not None:
-            self.release_status = release_status
-        if release_trace_id is not None:
-            self.release_trace_id = release_trace_id
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if resource_name is not None:
             self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
         if sync_status is not None:
             self.sync_status = sync_status
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ResourceStatus.  # noqa: E501
-
-
-        :return: The cluster_id of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ResourceStatus.
-
-
-        :param cluster_id: The cluster_id of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
-
-    @property
-    def current_artifact_url(self):
-        """Gets the current_artifact_url of this ResourceStatus.  # noqa: E501
-
-
-        :return: The current_artifact_url of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._current_artifact_url
-
-    @current_artifact_url.setter
-    def current_artifact_url(self, current_artifact_url):
-        """Sets the current_artifact_url of this ResourceStatus.
-
-
-        :param current_artifact_url: The current_artifact_url of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._current_artifact_url = current_artifact_url
-
-    @property
-    def current_bp_version(self):
-        """Gets the current_bp_version of this ResourceStatus.  # noqa: E501
-
-
-        :return: The current_bp_version of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._current_bp_version
-
-    @current_bp_version.setter
-    def current_bp_version(self, current_bp_version):
-        """Sets the current_bp_version of this ResourceStatus.
-
-
-        :param current_bp_version: The current_bp_version of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._current_bp_version = current_bp_version
-
-    @property
-    def current_override_version(self):
-        """Gets the current_override_version of this ResourceStatus.  # noqa: E501
-
-
-        :return: The current_override_version of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._current_override_version
-
-    @current_override_version.setter
-    def current_override_version(self, current_override_version):
-        """Sets the current_override_version of this ResourceStatus.
-
-
-        :param current_override_version: The current_override_version of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._current_override_version = current_override_version
-
-    @property
-    def current_state(self):
-        """Gets the current_state of this ResourceStatus.  # noqa: E501
-
-
-        :return: The current_state of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._current_state
-
-    @current_state.setter
-    def current_state(self, current_state):
-        """Sets the current_state of this ResourceStatus.
-
-
-        :param current_state: The current_state of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ENABLED", "DISABLED"]  # noqa: E501
-        if current_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `current_state` ({0}), must be one of {1}"  # noqa: E501
-                .format(current_state, allowed_values)
-            )
-
-        self._current_state = current_state
-
-    @property
-    def disabled(self):
-        """Gets the disabled of this ResourceStatus.  # noqa: E501
-
-
-        :return: The disabled of this ResourceStatus.  # noqa: E501
-        :rtype: bool
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this ResourceStatus.
-
-
-        :param disabled: The disabled of this ResourceStatus.  # noqa: E501
-        :type: bool
-        """
-
-        self._disabled = disabled
-
-    @property
-    def flavor(self):
-        """Gets the flavor of this ResourceStatus.  # noqa: E501
-
-
-        :return: The flavor of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._flavor
-
-    @flavor.setter
-    def flavor(self, flavor):
-        """Sets the flavor of this ResourceStatus.
-
-
-        :param flavor: The flavor of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._flavor = flavor
-
-    @property
-    def has_state_change(self):
-        """Gets the has_state_change of this ResourceStatus.  # noqa: E501
-
-
-        :return: The has_state_change of this ResourceStatus.  # noqa: E501
-        :rtype: bool
-        """
-        return self._has_state_change
-
-    @has_state_change.setter
-    def has_state_change(self, has_state_change):
-        """Sets the has_state_change of this ResourceStatus.
-
-
-        :param has_state_change: The has_state_change of this ResourceStatus.  # noqa: E501
-        :type: bool
-        """
-
-        self._has_state_change = has_state_change
-
-    @property
-    def health_status(self):
-        """Gets the health_status of this ResourceStatus.  # noqa: E501
-
-
-        :return: The health_status of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._health_status
-
-    @health_status.setter
-    def health_status(self, health_status):
-        """Sets the health_status of this ResourceStatus.
-
-
-        :param health_status: The health_status of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._health_status = health_status
+        if current_bp_version is not None:
+            self.current_bp_version = current_bp_version
+        if live_bp_version is not None:
+            self.live_bp_version = live_bp_version
+        if current_artifact_url is not None:
+            self.current_artifact_url = current_artifact_url
+        if live_artifact_url is not None:
+            self.live_artifact_url = live_artifact_url
+        if current_override_version is not None:
+            self.current_override_version = current_override_version
+        if live_override_version is not None:
+            self.live_override_version = live_override_version
+        if health_status is not None:
+            self.health_status = health_status
+        if release_status is not None:
+            self.release_status = release_status
+        if release_trace_id is not None:
+            self.release_trace_id = release_trace_id
+        if is_alpha is not None:
+            self.is_alpha = is_alpha
+        if disabled is not None:
+            self.disabled = disabled
+        if current_state is not None:
+            self.current_state = current_state
+        if previous_state is not None:
+            self.previous_state = previous_state
+        if has_state_change is not None:
+            self.has_state_change = has_state_change
+        if flavor is not None:
+            self.flavor = flavor
 
     @property
     def id(self):
@@ -354,163 +159,25 @@ class ResourceStatus(object):
         self._id = id
 
     @property
-    def is_alpha(self):
-        """Gets the is_alpha of this ResourceStatus.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this ResourceStatus.  # noqa: E501
 
 
-        :return: The is_alpha of this ResourceStatus.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_alpha
-
-    @is_alpha.setter
-    def is_alpha(self, is_alpha):
-        """Sets the is_alpha of this ResourceStatus.
-
-
-        :param is_alpha: The is_alpha of this ResourceStatus.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_alpha = is_alpha
-
-    @property
-    def live_artifact_url(self):
-        """Gets the live_artifact_url of this ResourceStatus.  # noqa: E501
-
-
-        :return: The live_artifact_url of this ResourceStatus.  # noqa: E501
+        :return: The cluster_id of this ResourceStatus.  # noqa: E501
         :rtype: str
         """
-        return self._live_artifact_url
+        return self._cluster_id
 
-    @live_artifact_url.setter
-    def live_artifact_url(self, live_artifact_url):
-        """Sets the live_artifact_url of this ResourceStatus.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ResourceStatus.
 
 
-        :param live_artifact_url: The live_artifact_url of this ResourceStatus.  # noqa: E501
+        :param cluster_id: The cluster_id of this ResourceStatus.  # noqa: E501
         :type: str
         """
 
-        self._live_artifact_url = live_artifact_url
-
-    @property
-    def live_bp_version(self):
-        """Gets the live_bp_version of this ResourceStatus.  # noqa: E501
-
-
-        :return: The live_bp_version of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._live_bp_version
-
-    @live_bp_version.setter
-    def live_bp_version(self, live_bp_version):
-        """Sets the live_bp_version of this ResourceStatus.
-
-
-        :param live_bp_version: The live_bp_version of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._live_bp_version = live_bp_version
-
-    @property
-    def live_override_version(self):
-        """Gets the live_override_version of this ResourceStatus.  # noqa: E501
-
-
-        :return: The live_override_version of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._live_override_version
-
-    @live_override_version.setter
-    def live_override_version(self, live_override_version):
-        """Sets the live_override_version of this ResourceStatus.
-
-
-        :param live_override_version: The live_override_version of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._live_override_version = live_override_version
-
-    @property
-    def previous_state(self):
-        """Gets the previous_state of this ResourceStatus.  # noqa: E501
-
-
-        :return: The previous_state of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._previous_state
-
-    @previous_state.setter
-    def previous_state(self, previous_state):
-        """Sets the previous_state of this ResourceStatus.
-
-
-        :param previous_state: The previous_state of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ENABLED", "DISABLED"]  # noqa: E501
-        if previous_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `previous_state` ({0}), must be one of {1}"  # noqa: E501
-                .format(previous_state, allowed_values)
-            )
-
-        self._previous_state = previous_state
-
-    @property
-    def release_status(self):
-        """Gets the release_status of this ResourceStatus.  # noqa: E501
-
-
-        :return: The release_status of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_status
-
-    @release_status.setter
-    def release_status(self, release_status):
-        """Sets the release_status of this ResourceStatus.
-
-
-        :param release_status: The release_status of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["QUEUED", "FAILED", "IN_PROGRESS", "COMPLETED"]  # noqa: E501
-        if release_status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `release_status` ({0}), must be one of {1}"  # noqa: E501
-                .format(release_status, allowed_values)
-            )
-
-        self._release_status = release_status
-
-    @property
-    def release_trace_id(self):
-        """Gets the release_trace_id of this ResourceStatus.  # noqa: E501
-
-
-        :return: The release_trace_id of this ResourceStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_trace_id
-
-    @release_trace_id.setter
-    def release_trace_id(self, release_trace_id):
-        """Sets the release_trace_id of this ResourceStatus.
-
-
-        :param release_trace_id: The release_trace_id of this ResourceStatus.  # noqa: E501
-        :type: str
-        """
-
-        self._release_trace_id = release_trace_id
+        self._cluster_id = cluster_id
 
     @property
     def resource_name(self):
@@ -580,6 +247,339 @@ class ResourceStatus(object):
             )
 
         self._sync_status = sync_status
+
+    @property
+    def current_bp_version(self):
+        """Gets the current_bp_version of this ResourceStatus.  # noqa: E501
+
+
+        :return: The current_bp_version of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._current_bp_version
+
+    @current_bp_version.setter
+    def current_bp_version(self, current_bp_version):
+        """Sets the current_bp_version of this ResourceStatus.
+
+
+        :param current_bp_version: The current_bp_version of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._current_bp_version = current_bp_version
+
+    @property
+    def live_bp_version(self):
+        """Gets the live_bp_version of this ResourceStatus.  # noqa: E501
+
+
+        :return: The live_bp_version of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._live_bp_version
+
+    @live_bp_version.setter
+    def live_bp_version(self, live_bp_version):
+        """Sets the live_bp_version of this ResourceStatus.
+
+
+        :param live_bp_version: The live_bp_version of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._live_bp_version = live_bp_version
+
+    @property
+    def current_artifact_url(self):
+        """Gets the current_artifact_url of this ResourceStatus.  # noqa: E501
+
+
+        :return: The current_artifact_url of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._current_artifact_url
+
+    @current_artifact_url.setter
+    def current_artifact_url(self, current_artifact_url):
+        """Sets the current_artifact_url of this ResourceStatus.
+
+
+        :param current_artifact_url: The current_artifact_url of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._current_artifact_url = current_artifact_url
+
+    @property
+    def live_artifact_url(self):
+        """Gets the live_artifact_url of this ResourceStatus.  # noqa: E501
+
+
+        :return: The live_artifact_url of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._live_artifact_url
+
+    @live_artifact_url.setter
+    def live_artifact_url(self, live_artifact_url):
+        """Sets the live_artifact_url of this ResourceStatus.
+
+
+        :param live_artifact_url: The live_artifact_url of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._live_artifact_url = live_artifact_url
+
+    @property
+    def current_override_version(self):
+        """Gets the current_override_version of this ResourceStatus.  # noqa: E501
+
+
+        :return: The current_override_version of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._current_override_version
+
+    @current_override_version.setter
+    def current_override_version(self, current_override_version):
+        """Sets the current_override_version of this ResourceStatus.
+
+
+        :param current_override_version: The current_override_version of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._current_override_version = current_override_version
+
+    @property
+    def live_override_version(self):
+        """Gets the live_override_version of this ResourceStatus.  # noqa: E501
+
+
+        :return: The live_override_version of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._live_override_version
+
+    @live_override_version.setter
+    def live_override_version(self, live_override_version):
+        """Sets the live_override_version of this ResourceStatus.
+
+
+        :param live_override_version: The live_override_version of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._live_override_version = live_override_version
+
+    @property
+    def health_status(self):
+        """Gets the health_status of this ResourceStatus.  # noqa: E501
+
+
+        :return: The health_status of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._health_status
+
+    @health_status.setter
+    def health_status(self, health_status):
+        """Sets the health_status of this ResourceStatus.
+
+
+        :param health_status: The health_status of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._health_status = health_status
+
+    @property
+    def release_status(self):
+        """Gets the release_status of this ResourceStatus.  # noqa: E501
+
+
+        :return: The release_status of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_status
+
+    @release_status.setter
+    def release_status(self, release_status):
+        """Sets the release_status of this ResourceStatus.
+
+
+        :param release_status: The release_status of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["QUEUED", "FAILED", "IN_PROGRESS", "COMPLETED"]  # noqa: E501
+        if release_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `release_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(release_status, allowed_values)
+            )
+
+        self._release_status = release_status
+
+    @property
+    def release_trace_id(self):
+        """Gets the release_trace_id of this ResourceStatus.  # noqa: E501
+
+
+        :return: The release_trace_id of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_trace_id
+
+    @release_trace_id.setter
+    def release_trace_id(self, release_trace_id):
+        """Sets the release_trace_id of this ResourceStatus.
+
+
+        :param release_trace_id: The release_trace_id of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._release_trace_id = release_trace_id
+
+    @property
+    def is_alpha(self):
+        """Gets the is_alpha of this ResourceStatus.  # noqa: E501
+
+
+        :return: The is_alpha of this ResourceStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_alpha
+
+    @is_alpha.setter
+    def is_alpha(self, is_alpha):
+        """Sets the is_alpha of this ResourceStatus.
+
+
+        :param is_alpha: The is_alpha of this ResourceStatus.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_alpha = is_alpha
+
+    @property
+    def disabled(self):
+        """Gets the disabled of this ResourceStatus.  # noqa: E501
+
+
+        :return: The disabled of this ResourceStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this ResourceStatus.
+
+
+        :param disabled: The disabled of this ResourceStatus.  # noqa: E501
+        :type: bool
+        """
+
+        self._disabled = disabled
+
+    @property
+    def current_state(self):
+        """Gets the current_state of this ResourceStatus.  # noqa: E501
+
+
+        :return: The current_state of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._current_state
+
+    @current_state.setter
+    def current_state(self, current_state):
+        """Sets the current_state of this ResourceStatus.
+
+
+        :param current_state: The current_state of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]  # noqa: E501
+        if current_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `current_state` ({0}), must be one of {1}"  # noqa: E501
+                .format(current_state, allowed_values)
+            )
+
+        self._current_state = current_state
+
+    @property
+    def previous_state(self):
+        """Gets the previous_state of this ResourceStatus.  # noqa: E501
+
+
+        :return: The previous_state of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._previous_state
+
+    @previous_state.setter
+    def previous_state(self, previous_state):
+        """Sets the previous_state of this ResourceStatus.
+
+
+        :param previous_state: The previous_state of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]  # noqa: E501
+        if previous_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `previous_state` ({0}), must be one of {1}"  # noqa: E501
+                .format(previous_state, allowed_values)
+            )
+
+        self._previous_state = previous_state
+
+    @property
+    def has_state_change(self):
+        """Gets the has_state_change of this ResourceStatus.  # noqa: E501
+
+
+        :return: The has_state_change of this ResourceStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_state_change
+
+    @has_state_change.setter
+    def has_state_change(self, has_state_change):
+        """Sets the has_state_change of this ResourceStatus.
+
+
+        :param has_state_change: The has_state_change of this ResourceStatus.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_state_change = has_state_change
+
+    @property
+    def flavor(self):
+        """Gets the flavor of this ResourceStatus.  # noqa: E501
+
+
+        :return: The flavor of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._flavor
+
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this ResourceStatus.
+
+
+        :param flavor: The flavor of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._flavor = flavor
 
     def to_dict(self):
         """Returns the model properties as a dict"""

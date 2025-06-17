@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class StackResource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'resources': 'list[FacetsResource]',
-        'stack_name': 'str'
+        'stack_name': 'str',
+        'resources': 'list[FacetsResource]'
     }
 
     attribute_map = {
-        'resources': 'resources',
-        'stack_name': 'stackName'
+        'stack_name': 'stackName',
+        'resources': 'resources'
     }
 
-    def __init__(self, resources=None, stack_name=None):  # noqa: E501
+    def __init__(self, stack_name=None, resources=None):  # noqa: E501
         """StackResource - a model defined in Swagger"""  # noqa: E501
-        self._resources = None
         self._stack_name = None
+        self._resources = None
         self.discriminator = None
-        if resources is not None:
-            self.resources = resources
         if stack_name is not None:
             self.stack_name = stack_name
-
-    @property
-    def resources(self):
-        """Gets the resources of this StackResource.  # noqa: E501
-
-
-        :return: The resources of this StackResource.  # noqa: E501
-        :rtype: list[FacetsResource]
-        """
-        return self._resources
-
-    @resources.setter
-    def resources(self, resources):
-        """Sets the resources of this StackResource.
-
-
-        :param resources: The resources of this StackResource.  # noqa: E501
-        :type: list[FacetsResource]
-        """
-
-        self._resources = resources
+        if resources is not None:
+            self.resources = resources
 
     @property
     def stack_name(self):
@@ -88,6 +67,27 @@ class StackResource(object):
         """
 
         self._stack_name = stack_name
+
+    @property
+    def resources(self):
+        """Gets the resources of this StackResource.  # noqa: E501
+
+
+        :return: The resources of this StackResource.  # noqa: E501
+        :rtype: list[FacetsResource]
+        """
+        return self._resources
+
+    @resources.setter
+    def resources(self, resources):
+        """Sets the resources of this StackResource.
+
+
+        :param resources: The resources of this StackResource.  # noqa: E501
+        :type: list[FacetsResource]
+        """
+
+        self._resources = resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

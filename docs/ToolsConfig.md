@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cluster_id** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
+**cluster_id** | **str** |  | [optional] 
 **tools_key** | **str** |  | [optional] 
 **tools_user** | **str** |  | [optional] 
 

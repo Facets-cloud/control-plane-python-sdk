@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,243 +28,195 @@ class TFModuleResponseDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alias_flavors': 'list[str]',
-        'allowed_test_projects': 'list[str]',
-        'clouds': 'list[str]',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'description': 'str',
-        'feature_branch': 'bool',
-        'flavor': 'str',
-        'git_ref': 'str',
-        'git_url': 'str',
-        'iac_tool': 'list[str]',
-        'id': 'str',
-        'inputs': 'dict(str, Input)',
-        'intent': 'str',
-        'intent_details': 'IntentResponseDTO',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
-        'latest_version': 'OtherVersion',
-        'metadata': 'str',
-        'other_versions': 'list[OtherVersion]',
-        'outputs': 'list[IntentOutput]',
+        'last_modified_by': 'str',
+        'intent_details': 'IntentResponseDTO',
+        'intent': 'str',
+        'flavor': 'str',
+        'alias_flavors': 'list[str]',
+        'version': 'str',
+        'clouds': 'list[str]',
+        'source': 'str',
+        'stage': 'str',
         'preview_module_id': 'str',
         'published_module_id': 'str',
-        'readme_md': 'str',
-        'sample_json': 'str',
-        'source': 'str',
-        'spec': 'str',
-        'stage': 'str',
-        'tags': 'list[str]',
         'type': 'str',
-        'version': 'str',
-        'versioning_key': 'str'
+        'git_url': 'str',
+        'git_ref': 'str',
+        'sample_json': 'str',
+        'spec': 'str',
+        'metadata': 'str',
+        'inputs': 'dict(str, Input)',
+        'outputs': 'list[IntentOutput]',
+        'versioning_key': 'str',
+        'description': 'str',
+        'readme_md': 'str',
+        'other_versions': 'list[OtherVersion]',
+        'latest_version': 'OtherVersion',
+        'tags': 'list[str]',
+        'allowed_test_projects': 'list[str]',
+        'iac_tool': 'list[str]',
+        'feature_branch': 'bool'
     }
 
     attribute_map = {
-        'alias_flavors': 'aliasFlavors',
-        'allowed_test_projects': 'allowedTestProjects',
-        'clouds': 'clouds',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'description': 'description',
-        'feature_branch': 'featureBranch',
-        'flavor': 'flavor',
-        'git_ref': 'gitRef',
-        'git_url': 'gitUrl',
-        'iac_tool': 'iacTool',
-        'id': 'id',
-        'inputs': 'inputs',
-        'intent': 'intent',
-        'intent_details': 'intentDetails',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
-        'latest_version': 'latestVersion',
-        'metadata': 'metadata',
-        'other_versions': 'otherVersions',
-        'outputs': 'outputs',
+        'last_modified_by': 'lastModifiedBy',
+        'intent_details': 'intentDetails',
+        'intent': 'intent',
+        'flavor': 'flavor',
+        'alias_flavors': 'aliasFlavors',
+        'version': 'version',
+        'clouds': 'clouds',
+        'source': 'source',
+        'stage': 'stage',
         'preview_module_id': 'previewModuleId',
         'published_module_id': 'publishedModuleId',
-        'readme_md': 'readmeMd',
-        'sample_json': 'sampleJson',
-        'source': 'source',
-        'spec': 'spec',
-        'stage': 'stage',
-        'tags': 'tags',
         'type': 'type',
-        'version': 'version',
-        'versioning_key': 'versioningKey'
+        'git_url': 'gitUrl',
+        'git_ref': 'gitRef',
+        'sample_json': 'sampleJson',
+        'spec': 'spec',
+        'metadata': 'metadata',
+        'inputs': 'inputs',
+        'outputs': 'outputs',
+        'versioning_key': 'versioningKey',
+        'description': 'description',
+        'readme_md': 'readmeMd',
+        'other_versions': 'otherVersions',
+        'latest_version': 'latestVersion',
+        'tags': 'tags',
+        'allowed_test_projects': 'allowedTestProjects',
+        'iac_tool': 'iacTool',
+        'feature_branch': 'featureBranch'
     }
 
-    def __init__(self, alias_flavors=None, allowed_test_projects=None, clouds=None, created_by=None, creation_date=None, description=None, feature_branch=None, flavor=None, git_ref=None, git_url=None, iac_tool=None, id=None, inputs=None, intent=None, intent_details=None, last_modified_by=None, last_modified_date=None, latest_version=None, metadata=None, other_versions=None, outputs=None, preview_module_id=None, published_module_id=None, readme_md=None, sample_json=None, source=None, spec=None, stage=None, tags=None, type=None, version=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent_details=None, intent=None, flavor=None, alias_flavors=None, version=None, clouds=None, source=None, stage=None, preview_module_id=None, published_module_id=None, type=None, git_url=None, git_ref=None, sample_json=None, spec=None, metadata=None, inputs=None, outputs=None, versioning_key=None, description=None, readme_md=None, other_versions=None, latest_version=None, tags=None, allowed_test_projects=None, iac_tool=None, feature_branch=None):  # noqa: E501
         """TFModuleResponseDTO - a model defined in Swagger"""  # noqa: E501
-        self._alias_flavors = None
-        self._allowed_test_projects = None
-        self._clouds = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._description = None
-        self._feature_branch = None
-        self._flavor = None
-        self._git_ref = None
-        self._git_url = None
-        self._iac_tool = None
-        self._id = None
-        self._inputs = None
-        self._intent = None
-        self._intent_details = None
-        self._last_modified_by = None
         self._last_modified_date = None
-        self._latest_version = None
-        self._metadata = None
-        self._other_versions = None
-        self._outputs = None
+        self._last_modified_by = None
+        self._intent_details = None
+        self._intent = None
+        self._flavor = None
+        self._alias_flavors = None
+        self._version = None
+        self._clouds = None
+        self._source = None
+        self._stage = None
         self._preview_module_id = None
         self._published_module_id = None
-        self._readme_md = None
-        self._sample_json = None
-        self._source = None
-        self._spec = None
-        self._stage = None
-        self._tags = None
         self._type = None
-        self._version = None
+        self._git_url = None
+        self._git_ref = None
+        self._sample_json = None
+        self._spec = None
+        self._metadata = None
+        self._inputs = None
+        self._outputs = None
         self._versioning_key = None
+        self._description = None
+        self._readme_md = None
+        self._other_versions = None
+        self._latest_version = None
+        self._tags = None
+        self._allowed_test_projects = None
+        self._iac_tool = None
+        self._feature_branch = None
         self.discriminator = None
-        if alias_flavors is not None:
-            self.alias_flavors = alias_flavors
-        if allowed_test_projects is not None:
-            self.allowed_test_projects = allowed_test_projects
-        if clouds is not None:
-            self.clouds = clouds
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if description is not None:
-            self.description = description
-        if feature_branch is not None:
-            self.feature_branch = feature_branch
-        if flavor is not None:
-            self.flavor = flavor
-        if git_ref is not None:
-            self.git_ref = git_ref
-        if git_url is not None:
-            self.git_url = git_url
-        if iac_tool is not None:
-            self.iac_tool = iac_tool
-        if id is not None:
-            self.id = id
-        if inputs is not None:
-            self.inputs = inputs
-        if intent is not None:
-            self.intent = intent
-        if intent_details is not None:
-            self.intent_details = intent_details
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if latest_version is not None:
-            self.latest_version = latest_version
-        if metadata is not None:
-            self.metadata = metadata
-        if other_versions is not None:
-            self.other_versions = other_versions
-        if outputs is not None:
-            self.outputs = outputs
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if intent_details is not None:
+            self.intent_details = intent_details
+        if intent is not None:
+            self.intent = intent
+        if flavor is not None:
+            self.flavor = flavor
+        if alias_flavors is not None:
+            self.alias_flavors = alias_flavors
+        if version is not None:
+            self.version = version
+        if clouds is not None:
+            self.clouds = clouds
+        if source is not None:
+            self.source = source
+        if stage is not None:
+            self.stage = stage
         if preview_module_id is not None:
             self.preview_module_id = preview_module_id
         if published_module_id is not None:
             self.published_module_id = published_module_id
-        if readme_md is not None:
-            self.readme_md = readme_md
-        if sample_json is not None:
-            self.sample_json = sample_json
-        if source is not None:
-            self.source = source
-        if spec is not None:
-            self.spec = spec
-        if stage is not None:
-            self.stage = stage
-        if tags is not None:
-            self.tags = tags
         if type is not None:
             self.type = type
-        if version is not None:
-            self.version = version
+        if git_url is not None:
+            self.git_url = git_url
+        if git_ref is not None:
+            self.git_ref = git_ref
+        if sample_json is not None:
+            self.sample_json = sample_json
+        if spec is not None:
+            self.spec = spec
+        if metadata is not None:
+            self.metadata = metadata
+        if inputs is not None:
+            self.inputs = inputs
+        if outputs is not None:
+            self.outputs = outputs
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if description is not None:
+            self.description = description
+        if readme_md is not None:
+            self.readme_md = readme_md
+        if other_versions is not None:
+            self.other_versions = other_versions
+        if latest_version is not None:
+            self.latest_version = latest_version
+        if tags is not None:
+            self.tags = tags
+        if allowed_test_projects is not None:
+            self.allowed_test_projects = allowed_test_projects
+        if iac_tool is not None:
+            self.iac_tool = iac_tool
+        if feature_branch is not None:
+            self.feature_branch = feature_branch
 
     @property
-    def alias_flavors(self):
-        """Gets the alias_flavors of this TFModuleResponseDTO.  # noqa: E501
+    def id(self):
+        """Gets the id of this TFModuleResponseDTO.  # noqa: E501
 
-        Alias flavors for the module  # noqa: E501
 
-        :return: The alias_flavors of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: list[str]
+        :return: The id of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._alias_flavors
+        return self._id
 
-    @alias_flavors.setter
-    def alias_flavors(self, alias_flavors):
-        """Sets the alias_flavors of this TFModuleResponseDTO.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this TFModuleResponseDTO.
 
-        Alias flavors for the module  # noqa: E501
 
-        :param alias_flavors: The alias_flavors of this TFModuleResponseDTO.  # noqa: E501
-        :type: list[str]
+        :param id: The id of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
         """
 
-        self._alias_flavors = alias_flavors
-
-    @property
-    def allowed_test_projects(self):
-        """Gets the allowed_test_projects of this TFModuleResponseDTO.  # noqa: E501
-
-        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
-
-        :return: The allowed_test_projects of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._allowed_test_projects
-
-    @allowed_test_projects.setter
-    def allowed_test_projects(self, allowed_test_projects):
-        """Sets the allowed_test_projects of this TFModuleResponseDTO.
-
-        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
-
-        :param allowed_test_projects: The allowed_test_projects of this TFModuleResponseDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._allowed_test_projects = allowed_test_projects
-
-    @property
-    def clouds(self):
-        """Gets the clouds of this TFModuleResponseDTO.  # noqa: E501
-
-        Supported cloud providers  # noqa: E501
-
-        :return: The clouds of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._clouds
-
-    @clouds.setter
-    def clouds(self, clouds):
-        """Sets the clouds of this TFModuleResponseDTO.
-
-        Supported cloud providers  # noqa: E501
-
-        :param clouds: The clouds of this TFModuleResponseDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._clouds = clouds
+        self._id = id
 
     @property
     def created_by(self):
@@ -309,189 +261,67 @@ class TFModuleResponseDTO(object):
         self._creation_date = creation_date
 
     @property
-    def description(self):
-        """Gets the description of this TFModuleResponseDTO.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this TFModuleResponseDTO.  # noqa: E501
 
-        Module description  # noqa: E501
 
-        :return: The description of this TFModuleResponseDTO.  # noqa: E501
+        :return: The last_modified_date of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this TFModuleResponseDTO.
+
+
+        :param last_modified_date: The last_modified_date of this TFModuleResponseDTO.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The last_modified_by of this TFModuleResponseDTO.  # noqa: E501
         :rtype: str
         """
-        return self._description
+        return self._last_modified_by
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this TFModuleResponseDTO.
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this TFModuleResponseDTO.
 
-        Module description  # noqa: E501
 
-        :param description: The description of this TFModuleResponseDTO.  # noqa: E501
+        :param last_modified_by: The last_modified_by of this TFModuleResponseDTO.  # noqa: E501
         :type: str
         """
 
-        self._description = description
+        self._last_modified_by = last_modified_by
 
     @property
-    def feature_branch(self):
-        """Gets the feature_branch of this TFModuleResponseDTO.  # noqa: E501
+    def intent_details(self):
+        """Gets the intent_details of this TFModuleResponseDTO.  # noqa: E501
 
 
-        :return: The feature_branch of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: bool
+        :return: The intent_details of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: IntentResponseDTO
         """
-        return self._feature_branch
+        return self._intent_details
 
-    @feature_branch.setter
-    def feature_branch(self, feature_branch):
-        """Sets the feature_branch of this TFModuleResponseDTO.
+    @intent_details.setter
+    def intent_details(self, intent_details):
+        """Sets the intent_details of this TFModuleResponseDTO.
 
 
-        :param feature_branch: The feature_branch of this TFModuleResponseDTO.  # noqa: E501
-        :type: bool
-        """
-
-        self._feature_branch = feature_branch
-
-    @property
-    def flavor(self):
-        """Gets the flavor of this TFModuleResponseDTO.  # noqa: E501
-
-        Flavor of the TF Module  # noqa: E501
-
-        :return: The flavor of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._flavor
-
-    @flavor.setter
-    def flavor(self, flavor):
-        """Sets the flavor of this TFModuleResponseDTO.
-
-        Flavor of the TF Module  # noqa: E501
-
-        :param flavor: The flavor of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
+        :param intent_details: The intent_details of this TFModuleResponseDTO.  # noqa: E501
+        :type: IntentResponseDTO
         """
 
-        self._flavor = flavor
-
-    @property
-    def git_ref(self):
-        """Gets the git_ref of this TFModuleResponseDTO.  # noqa: E501
-
-        Reference to a specific GIT branch or commit  # noqa: E501
-
-        :return: The git_ref of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_ref
-
-    @git_ref.setter
-    def git_ref(self, git_ref):
-        """Sets the git_ref of this TFModuleResponseDTO.
-
-        Reference to a specific GIT branch or commit  # noqa: E501
-
-        :param git_ref: The git_ref of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._git_ref = git_ref
-
-    @property
-    def git_url(self):
-        """Gets the git_url of this TFModuleResponseDTO.  # noqa: E501
-
-        URL of the GIT repository  # noqa: E501
-
-        :return: The git_url of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_url
-
-    @git_url.setter
-    def git_url(self, git_url):
-        """Sets the git_url of this TFModuleResponseDTO.
-
-        URL of the GIT repository  # noqa: E501
-
-        :param git_url: The git_url of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._git_url = git_url
-
-    @property
-    def iac_tool(self):
-        """Gets the iac_tool of this TFModuleResponseDTO.  # noqa: E501
-
-
-        :return: The iac_tool of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._iac_tool
-
-    @iac_tool.setter
-    def iac_tool(self, iac_tool):
-        """Sets the iac_tool of this TFModuleResponseDTO.
-
-
-        :param iac_tool: The iac_tool of this TFModuleResponseDTO.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
-        if not set(iac_tool).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._iac_tool = iac_tool
-
-    @property
-    def id(self):
-        """Gets the id of this TFModuleResponseDTO.  # noqa: E501
-
-
-        :return: The id of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this TFModuleResponseDTO.
-
-
-        :param id: The id of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def inputs(self):
-        """Gets the inputs of this TFModuleResponseDTO.  # noqa: E501
-
-        Input parameters for this module  # noqa: E501
-
-        :return: The inputs of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: dict(str, Input)
-        """
-        return self._inputs
-
-    @inputs.setter
-    def inputs(self, inputs):
-        """Sets the inputs of this TFModuleResponseDTO.
-
-        Input parameters for this module  # noqa: E501
-
-        :param inputs: The inputs of this TFModuleResponseDTO.  # noqa: E501
-        :type: dict(str, Input)
-        """
-
-        self._inputs = inputs
+        self._intent_details = intent_details
 
     @property
     def intent(self):
@@ -517,153 +347,154 @@ class TFModuleResponseDTO(object):
         self._intent = intent
 
     @property
-    def intent_details(self):
-        """Gets the intent_details of this TFModuleResponseDTO.  # noqa: E501
+    def flavor(self):
+        """Gets the flavor of this TFModuleResponseDTO.  # noqa: E501
 
+        Flavor of the TF Module  # noqa: E501
 
-        :return: The intent_details of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: IntentResponseDTO
-        """
-        return self._intent_details
-
-    @intent_details.setter
-    def intent_details(self, intent_details):
-        """Sets the intent_details of this TFModuleResponseDTO.
-
-
-        :param intent_details: The intent_details of this TFModuleResponseDTO.  # noqa: E501
-        :type: IntentResponseDTO
-        """
-
-        self._intent_details = intent_details
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this TFModuleResponseDTO.  # noqa: E501
-
-
-        :return: The last_modified_by of this TFModuleResponseDTO.  # noqa: E501
+        :return: The flavor of this TFModuleResponseDTO.  # noqa: E501
         :rtype: str
         """
-        return self._last_modified_by
+        return self._flavor
 
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this TFModuleResponseDTO.
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this TFModuleResponseDTO.
 
+        Flavor of the TF Module  # noqa: E501
 
-        :param last_modified_by: The last_modified_by of this TFModuleResponseDTO.  # noqa: E501
+        :param flavor: The flavor of this TFModuleResponseDTO.  # noqa: E501
         :type: str
         """
 
-        self._last_modified_by = last_modified_by
+        self._flavor = flavor
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this TFModuleResponseDTO.  # noqa: E501
+    def alias_flavors(self):
+        """Gets the alias_flavors of this TFModuleResponseDTO.  # noqa: E501
 
+        Alias flavors for the module  # noqa: E501
 
-        :return: The last_modified_date of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: datetime
+        :return: The alias_flavors of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._last_modified_date
+        return self._alias_flavors
 
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this TFModuleResponseDTO.
+    @alias_flavors.setter
+    def alias_flavors(self, alias_flavors):
+        """Sets the alias_flavors of this TFModuleResponseDTO.
 
+        Alias flavors for the module  # noqa: E501
 
-        :param last_modified_date: The last_modified_date of this TFModuleResponseDTO.  # noqa: E501
-        :type: datetime
+        :param alias_flavors: The alias_flavors of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[str]
         """
 
-        self._last_modified_date = last_modified_date
+        self._alias_flavors = alias_flavors
 
     @property
-    def latest_version(self):
-        """Gets the latest_version of this TFModuleResponseDTO.  # noqa: E501
+    def version(self):
+        """Gets the version of this TFModuleResponseDTO.  # noqa: E501
 
+        Version of the TF Module  # noqa: E501
 
-        :return: The latest_version of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: OtherVersion
-        """
-        return self._latest_version
-
-    @latest_version.setter
-    def latest_version(self, latest_version):
-        """Sets the latest_version of this TFModuleResponseDTO.
-
-
-        :param latest_version: The latest_version of this TFModuleResponseDTO.  # noqa: E501
-        :type: OtherVersion
-        """
-
-        self._latest_version = latest_version
-
-    @property
-    def metadata(self):
-        """Gets the metadata of this TFModuleResponseDTO.  # noqa: E501
-
-        Metadata of the module  # noqa: E501
-
-        :return: The metadata of this TFModuleResponseDTO.  # noqa: E501
+        :return: The version of this TFModuleResponseDTO.  # noqa: E501
         :rtype: str
         """
-        return self._metadata
+        return self._version
 
-    @metadata.setter
-    def metadata(self, metadata):
-        """Sets the metadata of this TFModuleResponseDTO.
+    @version.setter
+    def version(self, version):
+        """Sets the version of this TFModuleResponseDTO.
 
-        Metadata of the module  # noqa: E501
+        Version of the TF Module  # noqa: E501
 
-        :param metadata: The metadata of this TFModuleResponseDTO.  # noqa: E501
+        :param version: The version of this TFModuleResponseDTO.  # noqa: E501
         :type: str
         """
 
-        self._metadata = metadata
+        self._version = version
 
     @property
-    def other_versions(self):
-        """Gets the other_versions of this TFModuleResponseDTO.  # noqa: E501
+    def clouds(self):
+        """Gets the clouds of this TFModuleResponseDTO.  # noqa: E501
 
+        Supported cloud providers  # noqa: E501
 
-        :return: The other_versions of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: list[OtherVersion]
+        :return: The clouds of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._other_versions
+        return self._clouds
 
-    @other_versions.setter
-    def other_versions(self, other_versions):
-        """Sets the other_versions of this TFModuleResponseDTO.
+    @clouds.setter
+    def clouds(self, clouds):
+        """Sets the clouds of this TFModuleResponseDTO.
 
+        Supported cloud providers  # noqa: E501
 
-        :param other_versions: The other_versions of this TFModuleResponseDTO.  # noqa: E501
-        :type: list[OtherVersion]
+        :param clouds: The clouds of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[str]
         """
 
-        self._other_versions = other_versions
+        self._clouds = clouds
 
     @property
-    def outputs(self):
-        """Gets the outputs of this TFModuleResponseDTO.  # noqa: E501
+    def source(self):
+        """Gets the source of this TFModuleResponseDTO.  # noqa: E501
 
+        Source of the TF Module  # noqa: E501
 
-        :return: The outputs of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: list[IntentOutput]
+        :return: The source of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._outputs
+        return self._source
 
-    @outputs.setter
-    def outputs(self, outputs):
-        """Sets the outputs of this TFModuleResponseDTO.
+    @source.setter
+    def source(self, source):
+        """Sets the source of this TFModuleResponseDTO.
 
+        Source of the TF Module  # noqa: E501
 
-        :param outputs: The outputs of this TFModuleResponseDTO.  # noqa: E501
-        :type: list[IntentOutput]
+        :param source: The source of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["BUILT_IN", "CUSTOM"]  # noqa: E501
+        if source not in allowed_values:
+            raise ValueError(
+                "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501
+                .format(source, allowed_values)
+            )
 
-        self._outputs = outputs
+        self._source = source
+
+    @property
+    def stage(self):
+        """Gets the stage of this TFModuleResponseDTO.  # noqa: E501
+
+        Stage of the TF Module in its lifecycle  # noqa: E501
+
+        :return: The stage of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._stage
+
+    @stage.setter
+    def stage(self, stage):
+        """Sets the stage of this TFModuleResponseDTO.
+
+        Stage of the TF Module in its lifecycle  # noqa: E501
+
+        :param stage: The stage of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["PREVIEW", "PUBLISHED"]  # noqa: E501
+        if stage not in allowed_values:
+            raise ValueError(
+                "Invalid value for `stage` ({0}), must be one of {1}"  # noqa: E501
+                .format(stage, allowed_values)
+            )
+
+        self._stage = stage
 
     @property
     def preview_module_id(self):
@@ -708,156 +539,6 @@ class TFModuleResponseDTO(object):
         self._published_module_id = published_module_id
 
     @property
-    def readme_md(self):
-        """Gets the readme_md of this TFModuleResponseDTO.  # noqa: E501
-
-        Readme content in markdown format  # noqa: E501
-
-        :return: The readme_md of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._readme_md
-
-    @readme_md.setter
-    def readme_md(self, readme_md):
-        """Sets the readme_md of this TFModuleResponseDTO.
-
-        Readme content in markdown format  # noqa: E501
-
-        :param readme_md: The readme_md of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._readme_md = readme_md
-
-    @property
-    def sample_json(self):
-        """Gets the sample_json of this TFModuleResponseDTO.  # noqa: E501
-
-        Sample JSON configuration  # noqa: E501
-
-        :return: The sample_json of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._sample_json
-
-    @sample_json.setter
-    def sample_json(self, sample_json):
-        """Sets the sample_json of this TFModuleResponseDTO.
-
-        Sample JSON configuration  # noqa: E501
-
-        :param sample_json: The sample_json of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._sample_json = sample_json
-
-    @property
-    def source(self):
-        """Gets the source of this TFModuleResponseDTO.  # noqa: E501
-
-        Source of the TF Module  # noqa: E501
-
-        :return: The source of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._source
-
-    @source.setter
-    def source(self, source):
-        """Sets the source of this TFModuleResponseDTO.
-
-        Source of the TF Module  # noqa: E501
-
-        :param source: The source of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["BUILT_IN", "CUSTOM"]  # noqa: E501
-        if source not in allowed_values:
-            raise ValueError(
-                "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501
-                .format(source, allowed_values)
-            )
-
-        self._source = source
-
-    @property
-    def spec(self):
-        """Gets the spec of this TFModuleResponseDTO.  # noqa: E501
-
-        Specification details of the module  # noqa: E501
-
-        :return: The spec of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._spec
-
-    @spec.setter
-    def spec(self, spec):
-        """Sets the spec of this TFModuleResponseDTO.
-
-        Specification details of the module  # noqa: E501
-
-        :param spec: The spec of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._spec = spec
-
-    @property
-    def stage(self):
-        """Gets the stage of this TFModuleResponseDTO.  # noqa: E501
-
-        Stage of the TF Module in its lifecycle  # noqa: E501
-
-        :return: The stage of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._stage
-
-    @stage.setter
-    def stage(self, stage):
-        """Sets the stage of this TFModuleResponseDTO.
-
-        Stage of the TF Module in its lifecycle  # noqa: E501
-
-        :param stage: The stage of this TFModuleResponseDTO.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["PREVIEW", "PUBLISHED"]  # noqa: E501
-        if stage not in allowed_values:
-            raise ValueError(
-                "Invalid value for `stage` ({0}), must be one of {1}"  # noqa: E501
-                .format(stage, allowed_values)
-            )
-
-        self._stage = stage
-
-    @property
-    def tags(self):
-        """Gets the tags of this TFModuleResponseDTO.  # noqa: E501
-
-        Tags associated with the module  # noqa: E501
-
-        :return: The tags of this TFModuleResponseDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._tags
-
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this TFModuleResponseDTO.
-
-        Tags associated with the module  # noqa: E501
-
-        :param tags: The tags of this TFModuleResponseDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._tags = tags
-
-    @property
     def type(self):
         """Gets the type of this TFModuleResponseDTO.  # noqa: E501
 
@@ -887,27 +568,163 @@ class TFModuleResponseDTO(object):
         self._type = type
 
     @property
-    def version(self):
-        """Gets the version of this TFModuleResponseDTO.  # noqa: E501
+    def git_url(self):
+        """Gets the git_url of this TFModuleResponseDTO.  # noqa: E501
 
-        Version of the TF Module  # noqa: E501
+        URL of the GIT repository  # noqa: E501
 
-        :return: The version of this TFModuleResponseDTO.  # noqa: E501
+        :return: The git_url of this TFModuleResponseDTO.  # noqa: E501
         :rtype: str
         """
-        return self._version
+        return self._git_url
 
-    @version.setter
-    def version(self, version):
-        """Sets the version of this TFModuleResponseDTO.
+    @git_url.setter
+    def git_url(self, git_url):
+        """Sets the git_url of this TFModuleResponseDTO.
 
-        Version of the TF Module  # noqa: E501
+        URL of the GIT repository  # noqa: E501
 
-        :param version: The version of this TFModuleResponseDTO.  # noqa: E501
+        :param git_url: The git_url of this TFModuleResponseDTO.  # noqa: E501
         :type: str
         """
 
-        self._version = version
+        self._git_url = git_url
+
+    @property
+    def git_ref(self):
+        """Gets the git_ref of this TFModuleResponseDTO.  # noqa: E501
+
+        Reference to a specific GIT branch or commit  # noqa: E501
+
+        :return: The git_ref of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_ref
+
+    @git_ref.setter
+    def git_ref(self, git_ref):
+        """Sets the git_ref of this TFModuleResponseDTO.
+
+        Reference to a specific GIT branch or commit  # noqa: E501
+
+        :param git_ref: The git_ref of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._git_ref = git_ref
+
+    @property
+    def sample_json(self):
+        """Gets the sample_json of this TFModuleResponseDTO.  # noqa: E501
+
+        Sample JSON configuration  # noqa: E501
+
+        :return: The sample_json of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._sample_json
+
+    @sample_json.setter
+    def sample_json(self, sample_json):
+        """Sets the sample_json of this TFModuleResponseDTO.
+
+        Sample JSON configuration  # noqa: E501
+
+        :param sample_json: The sample_json of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._sample_json = sample_json
+
+    @property
+    def spec(self):
+        """Gets the spec of this TFModuleResponseDTO.  # noqa: E501
+
+        Specification details of the module  # noqa: E501
+
+        :return: The spec of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._spec
+
+    @spec.setter
+    def spec(self, spec):
+        """Sets the spec of this TFModuleResponseDTO.
+
+        Specification details of the module  # noqa: E501
+
+        :param spec: The spec of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._spec = spec
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this TFModuleResponseDTO.  # noqa: E501
+
+        Metadata of the module  # noqa: E501
+
+        :return: The metadata of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this TFModuleResponseDTO.
+
+        Metadata of the module  # noqa: E501
+
+        :param metadata: The metadata of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._metadata = metadata
+
+    @property
+    def inputs(self):
+        """Gets the inputs of this TFModuleResponseDTO.  # noqa: E501
+
+        Input parameters for this module  # noqa: E501
+
+        :return: The inputs of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: dict(str, Input)
+        """
+        return self._inputs
+
+    @inputs.setter
+    def inputs(self, inputs):
+        """Sets the inputs of this TFModuleResponseDTO.
+
+        Input parameters for this module  # noqa: E501
+
+        :param inputs: The inputs of this TFModuleResponseDTO.  # noqa: E501
+        :type: dict(str, Input)
+        """
+
+        self._inputs = inputs
+
+    @property
+    def outputs(self):
+        """Gets the outputs of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The outputs of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[IntentOutput]
+        """
+        return self._outputs
+
+    @outputs.setter
+    def outputs(self, outputs):
+        """Sets the outputs of this TFModuleResponseDTO.
+
+
+        :param outputs: The outputs of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[IntentOutput]
+        """
+
+        self._outputs = outputs
 
     @property
     def versioning_key(self):
@@ -929,6 +746,189 @@ class TFModuleResponseDTO(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def description(self):
+        """Gets the description of this TFModuleResponseDTO.  # noqa: E501
+
+        Module description  # noqa: E501
+
+        :return: The description of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this TFModuleResponseDTO.
+
+        Module description  # noqa: E501
+
+        :param description: The description of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def readme_md(self):
+        """Gets the readme_md of this TFModuleResponseDTO.  # noqa: E501
+
+        Readme content in markdown format  # noqa: E501
+
+        :return: The readme_md of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._readme_md
+
+    @readme_md.setter
+    def readme_md(self, readme_md):
+        """Sets the readme_md of this TFModuleResponseDTO.
+
+        Readme content in markdown format  # noqa: E501
+
+        :param readme_md: The readme_md of this TFModuleResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._readme_md = readme_md
+
+    @property
+    def other_versions(self):
+        """Gets the other_versions of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The other_versions of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[OtherVersion]
+        """
+        return self._other_versions
+
+    @other_versions.setter
+    def other_versions(self, other_versions):
+        """Sets the other_versions of this TFModuleResponseDTO.
+
+
+        :param other_versions: The other_versions of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[OtherVersion]
+        """
+
+        self._other_versions = other_versions
+
+    @property
+    def latest_version(self):
+        """Gets the latest_version of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The latest_version of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: OtherVersion
+        """
+        return self._latest_version
+
+    @latest_version.setter
+    def latest_version(self, latest_version):
+        """Sets the latest_version of this TFModuleResponseDTO.
+
+
+        :param latest_version: The latest_version of this TFModuleResponseDTO.  # noqa: E501
+        :type: OtherVersion
+        """
+
+        self._latest_version = latest_version
+
+    @property
+    def tags(self):
+        """Gets the tags of this TFModuleResponseDTO.  # noqa: E501
+
+        Tags associated with the module  # noqa: E501
+
+        :return: The tags of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this TFModuleResponseDTO.
+
+        Tags associated with the module  # noqa: E501
+
+        :param tags: The tags of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
+
+    @property
+    def allowed_test_projects(self):
+        """Gets the allowed_test_projects of this TFModuleResponseDTO.  # noqa: E501
+
+        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
+
+        :return: The allowed_test_projects of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_test_projects
+
+    @allowed_test_projects.setter
+    def allowed_test_projects(self, allowed_test_projects):
+        """Sets the allowed_test_projects of this TFModuleResponseDTO.
+
+        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
+
+        :param allowed_test_projects: The allowed_test_projects of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_test_projects = allowed_test_projects
+
+    @property
+    def iac_tool(self):
+        """Gets the iac_tool of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The iac_tool of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._iac_tool
+
+    @iac_tool.setter
+    def iac_tool(self, iac_tool):
+        """Sets the iac_tool of this TFModuleResponseDTO.
+
+
+        :param iac_tool: The iac_tool of this TFModuleResponseDTO.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
+        if not set(iac_tool).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._iac_tool = iac_tool
+
+    @property
+    def feature_branch(self):
+        """Gets the feature_branch of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The feature_branch of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._feature_branch
+
+    @feature_branch.setter
+    def feature_branch(self, feature_branch):
+        """Sets the feature_branch of this TFModuleResponseDTO.
+
+
+        :param feature_branch: The feature_branch of this TFModuleResponseDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._feature_branch = feature_branch
 
     def to_dict(self):
         """Returns the model properties as a dict"""

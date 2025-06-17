@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,26 @@ class ProjectTypeMappedResource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'flavor': 'str',
         'intent': 'str',
-        'intent_type': 'str'
+        'intent_type': 'str',
+        'flavor': 'str'
     }
 
     attribute_map = {
-        'flavor': 'flavor',
         'intent': 'intent',
-        'intent_type': 'intentType'
+        'intent_type': 'intentType',
+        'flavor': 'flavor'
     }
 
-    def __init__(self, flavor=None, intent=None, intent_type=None):  # noqa: E501
+    def __init__(self, intent=None, intent_type=None, flavor=None):  # noqa: E501
         """ProjectTypeMappedResource - a model defined in Swagger"""  # noqa: E501
-        self._flavor = None
         self._intent = None
         self._intent_type = None
+        self._flavor = None
         self.discriminator = None
-        if flavor is not None:
-            self.flavor = flavor
-        if intent is not None:
-            self.intent = intent
-        if intent_type is not None:
-            self.intent_type = intent_type
-
-    @property
-    def flavor(self):
-        """Gets the flavor of this ProjectTypeMappedResource.  # noqa: E501
-
-
-        :return: The flavor of this ProjectTypeMappedResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._flavor
-
-    @flavor.setter
-    def flavor(self, flavor):
-        """Sets the flavor of this ProjectTypeMappedResource.
-
-
-        :param flavor: The flavor of this ProjectTypeMappedResource.  # noqa: E501
-        :type: str
-        """
-
-        self._flavor = flavor
+        self.intent = intent
+        self.intent_type = intent_type
+        self.flavor = flavor
 
     @property
     def intent(self):
@@ -91,6 +67,8 @@ class ProjectTypeMappedResource(object):
         :param intent: The intent of this ProjectTypeMappedResource.  # noqa: E501
         :type: str
         """
+        if intent is None:
+            raise ValueError("Invalid value for `intent`, must not be `None`")  # noqa: E501
 
         self._intent = intent
 
@@ -112,8 +90,33 @@ class ProjectTypeMappedResource(object):
         :param intent_type: The intent_type of this ProjectTypeMappedResource.  # noqa: E501
         :type: str
         """
+        if intent_type is None:
+            raise ValueError("Invalid value for `intent_type`, must not be `None`")  # noqa: E501
 
         self._intent_type = intent_type
+
+    @property
+    def flavor(self):
+        """Gets the flavor of this ProjectTypeMappedResource.  # noqa: E501
+
+
+        :return: The flavor of this ProjectTypeMappedResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._flavor
+
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this ProjectTypeMappedResource.
+
+
+        :param flavor: The flavor of this ProjectTypeMappedResource.  # noqa: E501
+        :type: str
+        """
+        if flavor is None:
+            raise ValueError("Invalid value for `flavor`, must not be `None`")  # noqa: E501
+
+        self._flavor = flavor
 
     def to_dict(self):
         """Returns the model properties as a dict"""

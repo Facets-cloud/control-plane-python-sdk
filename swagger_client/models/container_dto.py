@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,76 +28,34 @@ class ContainerDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'image': 'str',
         'name': 'str',
-        'restart_count': 'int'
+        'image': 'str',
+        'restart_count': 'int',
+        'age_in_seconds': 'int'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'image': 'image',
         'name': 'name',
-        'restart_count': 'restartCount'
+        'image': 'image',
+        'restart_count': 'restartCount',
+        'age_in_seconds': 'ageInSeconds'
     }
 
-    def __init__(self, age_in_seconds=None, image=None, name=None, restart_count=None):  # noqa: E501
+    def __init__(self, name=None, image=None, restart_count=None, age_in_seconds=None):  # noqa: E501
         """ContainerDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._image = None
         self._name = None
+        self._image = None
         self._restart_count = None
+        self._age_in_seconds = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if image is not None:
-            self.image = image
         if name is not None:
             self.name = name
+        if image is not None:
+            self.image = image
         if restart_count is not None:
             self.restart_count = restart_count
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this ContainerDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this ContainerDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this ContainerDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this ContainerDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def image(self):
-        """Gets the image of this ContainerDTO.  # noqa: E501
-
-
-        :return: The image of this ContainerDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._image
-
-    @image.setter
-    def image(self, image):
-        """Sets the image of this ContainerDTO.
-
-
-        :param image: The image of this ContainerDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._image = image
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
 
     @property
     def name(self):
@@ -121,6 +79,27 @@ class ContainerDTO(object):
         self._name = name
 
     @property
+    def image(self):
+        """Gets the image of this ContainerDTO.  # noqa: E501
+
+
+        :return: The image of this ContainerDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._image
+
+    @image.setter
+    def image(self, image):
+        """Sets the image of this ContainerDTO.
+
+
+        :param image: The image of this ContainerDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._image = image
+
+    @property
     def restart_count(self):
         """Gets the restart_count of this ContainerDTO.  # noqa: E501
 
@@ -140,6 +119,27 @@ class ContainerDTO(object):
         """
 
         self._restart_count = restart_count
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this ContainerDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this ContainerDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this ContainerDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this ContainerDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

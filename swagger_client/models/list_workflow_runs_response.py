@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,39 @@ class ListWorkflowRunsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'page_number': 'int',
         'page_size': 'int',
-        'total_count': 'int',
+        'page_number': 'int',
         'total_pages': 'int',
+        'total_count': 'int',
         'workflow_runs': 'list[WorkflowRun]'
     }
 
     attribute_map = {
-        'page_number': 'pageNumber',
         'page_size': 'pageSize',
-        'total_count': 'totalCount',
+        'page_number': 'pageNumber',
         'total_pages': 'totalPages',
+        'total_count': 'totalCount',
         'workflow_runs': 'workflowRuns'
     }
 
-    def __init__(self, page_number=None, page_size=None, total_count=None, total_pages=None, workflow_runs=None):  # noqa: E501
+    def __init__(self, page_size=None, page_number=None, total_pages=None, total_count=None, workflow_runs=None):  # noqa: E501
         """ListWorkflowRunsResponse - a model defined in Swagger"""  # noqa: E501
-        self._page_number = None
         self._page_size = None
-        self._total_count = None
+        self._page_number = None
         self._total_pages = None
+        self._total_count = None
         self._workflow_runs = None
         self.discriminator = None
-        if page_number is not None:
-            self.page_number = page_number
         if page_size is not None:
             self.page_size = page_size
-        if total_count is not None:
-            self.total_count = total_count
+        if page_number is not None:
+            self.page_number = page_number
         if total_pages is not None:
             self.total_pages = total_pages
+        if total_count is not None:
+            self.total_count = total_count
         if workflow_runs is not None:
             self.workflow_runs = workflow_runs
-
-    @property
-    def page_number(self):
-        """Gets the page_number of this ListWorkflowRunsResponse.  # noqa: E501
-
-
-        :return: The page_number of this ListWorkflowRunsResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_number
-
-    @page_number.setter
-    def page_number(self, page_number):
-        """Sets the page_number of this ListWorkflowRunsResponse.
-
-
-        :param page_number: The page_number of this ListWorkflowRunsResponse.  # noqa: E501
-        :type: int
-        """
-
-        self._page_number = page_number
 
     @property
     def page_size(self):
@@ -105,25 +84,25 @@ class ListWorkflowRunsResponse(object):
         self._page_size = page_size
 
     @property
-    def total_count(self):
-        """Gets the total_count of this ListWorkflowRunsResponse.  # noqa: E501
+    def page_number(self):
+        """Gets the page_number of this ListWorkflowRunsResponse.  # noqa: E501
 
 
-        :return: The total_count of this ListWorkflowRunsResponse.  # noqa: E501
+        :return: The page_number of this ListWorkflowRunsResponse.  # noqa: E501
         :rtype: int
         """
-        return self._total_count
+        return self._page_number
 
-    @total_count.setter
-    def total_count(self, total_count):
-        """Sets the total_count of this ListWorkflowRunsResponse.
+    @page_number.setter
+    def page_number(self, page_number):
+        """Sets the page_number of this ListWorkflowRunsResponse.
 
 
-        :param total_count: The total_count of this ListWorkflowRunsResponse.  # noqa: E501
+        :param page_number: The page_number of this ListWorkflowRunsResponse.  # noqa: E501
         :type: int
         """
 
-        self._total_count = total_count
+        self._page_number = page_number
 
     @property
     def total_pages(self):
@@ -145,6 +124,27 @@ class ListWorkflowRunsResponse(object):
         """
 
         self._total_pages = total_pages
+
+    @property
+    def total_count(self):
+        """Gets the total_count of this ListWorkflowRunsResponse.  # noqa: E501
+
+
+        :return: The total_count of this ListWorkflowRunsResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_count
+
+    @total_count.setter
+    def total_count(self, total_count):
+        """Sets the total_count of this ListWorkflowRunsResponse.
+
+
+        :param total_count: The total_count of this ListWorkflowRunsResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._total_count = total_count
 
     @property
     def workflow_runs(self):

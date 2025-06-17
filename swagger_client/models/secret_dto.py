@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,102 +28,39 @@ class SecretDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age': 'int',
-        'data_count': 'int',
-        'data_key_set': 'list[str]',
         'name': 'str',
-        'type': 'str'
+        'type': 'str',
+        'data_key_set': 'list[str]',
+        'data_count': 'int',
+        'age': 'int'
     }
 
     attribute_map = {
-        'age': 'age',
-        'data_count': 'dataCount',
-        'data_key_set': 'dataKeySet',
         'name': 'name',
-        'type': 'type'
+        'type': 'type',
+        'data_key_set': 'dataKeySet',
+        'data_count': 'dataCount',
+        'age': 'age'
     }
 
-    def __init__(self, age=None, data_count=None, data_key_set=None, name=None, type=None):  # noqa: E501
+    def __init__(self, name=None, type=None, data_key_set=None, data_count=None, age=None):  # noqa: E501
         """SecretDTO - a model defined in Swagger"""  # noqa: E501
-        self._age = None
-        self._data_count = None
-        self._data_key_set = None
         self._name = None
         self._type = None
+        self._data_key_set = None
+        self._data_count = None
+        self._age = None
         self.discriminator = None
-        if age is not None:
-            self.age = age
-        if data_count is not None:
-            self.data_count = data_count
-        if data_key_set is not None:
-            self.data_key_set = data_key_set
         if name is not None:
             self.name = name
         if type is not None:
             self.type = type
-
-    @property
-    def age(self):
-        """Gets the age of this SecretDTO.  # noqa: E501
-
-
-        :return: The age of this SecretDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age
-
-    @age.setter
-    def age(self, age):
-        """Sets the age of this SecretDTO.
-
-
-        :param age: The age of this SecretDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age = age
-
-    @property
-    def data_count(self):
-        """Gets the data_count of this SecretDTO.  # noqa: E501
-
-
-        :return: The data_count of this SecretDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._data_count
-
-    @data_count.setter
-    def data_count(self, data_count):
-        """Sets the data_count of this SecretDTO.
-
-
-        :param data_count: The data_count of this SecretDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._data_count = data_count
-
-    @property
-    def data_key_set(self):
-        """Gets the data_key_set of this SecretDTO.  # noqa: E501
-
-
-        :return: The data_key_set of this SecretDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._data_key_set
-
-    @data_key_set.setter
-    def data_key_set(self, data_key_set):
-        """Sets the data_key_set of this SecretDTO.
-
-
-        :param data_key_set: The data_key_set of this SecretDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._data_key_set = data_key_set
+        if data_key_set is not None:
+            self.data_key_set = data_key_set
+        if data_count is not None:
+            self.data_count = data_count
+        if age is not None:
+            self.age = age
 
     @property
     def name(self):
@@ -166,6 +103,69 @@ class SecretDTO(object):
         """
 
         self._type = type
+
+    @property
+    def data_key_set(self):
+        """Gets the data_key_set of this SecretDTO.  # noqa: E501
+
+
+        :return: The data_key_set of this SecretDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._data_key_set
+
+    @data_key_set.setter
+    def data_key_set(self, data_key_set):
+        """Sets the data_key_set of this SecretDTO.
+
+
+        :param data_key_set: The data_key_set of this SecretDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._data_key_set = data_key_set
+
+    @property
+    def data_count(self):
+        """Gets the data_count of this SecretDTO.  # noqa: E501
+
+
+        :return: The data_count of this SecretDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._data_count
+
+    @data_count.setter
+    def data_count(self, data_count):
+        """Sets the data_count of this SecretDTO.
+
+
+        :param data_count: The data_count of this SecretDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._data_count = data_count
+
+    @property
+    def age(self):
+        """Gets the age of this SecretDTO.  # noqa: E501
+
+
+        :return: The age of this SecretDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        """Sets the age of this SecretDTO.
+
+
+        :param age: The age of this SecretDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age = age
 
     def to_dict(self):
         """Returns the model properties as a dict"""

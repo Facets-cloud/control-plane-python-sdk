@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,76 +28,55 @@ class InputOutputResource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'default': 'bool',
-        'output_name': 'str',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'output_name': 'str',
+        'default': 'bool'
     }
 
     attribute_map = {
-        'default': 'default',
-        'output_name': 'outputName',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'output_name': 'outputName',
+        'default': 'default'
     }
 
-    def __init__(self, default=None, output_name=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, output_name=None, default=None):  # noqa: E501
         """InputOutputResource - a model defined in Swagger"""  # noqa: E501
-        self._default = None
-        self._output_name = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._output_name = None
+        self._default = None
         self.discriminator = None
-        if default is not None:
-            self.default = default
-        if output_name is not None:
-            self.output_name = output_name
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if output_name is not None:
+            self.output_name = output_name
+        if default is not None:
+            self.default = default
 
     @property
-    def default(self):
-        """Gets the default of this InputOutputResource.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this InputOutputResource.  # noqa: E501
 
 
-        :return: The default of this InputOutputResource.  # noqa: E501
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """Sets the default of this InputOutputResource.
-
-
-        :param default: The default of this InputOutputResource.  # noqa: E501
-        :type: bool
-        """
-
-        self._default = default
-
-    @property
-    def output_name(self):
-        """Gets the output_name of this InputOutputResource.  # noqa: E501
-
-
-        :return: The output_name of this InputOutputResource.  # noqa: E501
+        :return: The resource_type of this InputOutputResource.  # noqa: E501
         :rtype: str
         """
-        return self._output_name
+        return self._resource_type
 
-    @output_name.setter
-    def output_name(self, output_name):
-        """Sets the output_name of this InputOutputResource.
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this InputOutputResource.
 
 
-        :param output_name: The output_name of this InputOutputResource.  # noqa: E501
+        :param resource_type: The resource_type of this InputOutputResource.  # noqa: E501
         :type: str
         """
 
-        self._output_name = output_name
+        self._resource_type = resource_type
 
     @property
     def resource_name(self):
@@ -121,25 +100,46 @@ class InputOutputResource(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this InputOutputResource.  # noqa: E501
+    def output_name(self):
+        """Gets the output_name of this InputOutputResource.  # noqa: E501
 
 
-        :return: The resource_type of this InputOutputResource.  # noqa: E501
+        :return: The output_name of this InputOutputResource.  # noqa: E501
         :rtype: str
         """
-        return self._resource_type
+        return self._output_name
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this InputOutputResource.
+    @output_name.setter
+    def output_name(self, output_name):
+        """Sets the output_name of this InputOutputResource.
 
 
-        :param resource_type: The resource_type of this InputOutputResource.  # noqa: E501
+        :param output_name: The output_name of this InputOutputResource.  # noqa: E501
         :type: str
         """
 
-        self._resource_type = resource_type
+        self._output_name = output_name
+
+    @property
+    def default(self):
+        """Gets the default of this InputOutputResource.  # noqa: E501
+
+
+        :return: The default of this InputOutputResource.  # noqa: E501
+        :rtype: bool
+        """
+        return self._default
+
+    @default.setter
+    def default(self, default):
+        """Sets the default of this InputOutputResource.
+
+
+        :param default: The default of this InputOutputResource.  # noqa: E501
+        :type: bool
+        """
+
+        self._default = default
 
     def to_dict(self):
         """Returns the model properties as a dict"""

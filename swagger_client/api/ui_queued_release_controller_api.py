@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,39 +32,39 @@ class UiQueuedReleaseControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete_by_id_using_delete(self, cluster_id, queued_release_id, **kwargs):  # noqa: E501
-        """deleteById  # noqa: E501
+    def delete_by_id(self, cluster_id, queued_release_id, **kwargs):  # noqa: E501
+        """delete_by_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_by_id_using_delete(cluster_id, queued_release_id, async_req=True)
+        >>> thread = api.delete_by_id(cluster_id, queued_release_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str queued_release_id: queuedReleaseId (required)
+        :param str cluster_id: (required)
+        :param str queued_release_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_by_id_using_delete_with_http_info(cluster_id, queued_release_id, **kwargs)  # noqa: E501
+            return self.delete_by_id_with_http_info(cluster_id, queued_release_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_by_id_using_delete_with_http_info(cluster_id, queued_release_id, **kwargs)  # noqa: E501
+            (data) = self.delete_by_id_with_http_info(cluster_id, queued_release_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_by_id_using_delete_with_http_info(self, cluster_id, queued_release_id, **kwargs):  # noqa: E501
-        """deleteById  # noqa: E501
+    def delete_by_id_with_http_info(self, cluster_id, queued_release_id, **kwargs):  # noqa: E501
+        """delete_by_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_by_id_using_delete_with_http_info(cluster_id, queued_release_id, async_req=True)
+        >>> thread = api.delete_by_id_with_http_info(cluster_id, queued_release_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str queued_release_id: queuedReleaseId (required)
+        :param str cluster_id: (required)
+        :param str queued_release_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,18 +81,18 @@ class UiQueuedReleaseControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_by_id_using_delete" % key
+                    " to method delete_by_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_by_id_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_by_id`")  # noqa: E501
         # verify the required parameter 'queued_release_id' is set
         if ('queued_release_id' not in params or
                 params['queued_release_id'] is None):
-            raise ValueError("Missing the required parameter `queued_release_id` when calling `delete_by_id_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `queued_release_id` when calling `delete_by_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -110,8 +110,12 @@ class UiQueuedReleaseControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/queued-releases/{queuedReleaseId}', 'DELETE',
@@ -129,37 +133,37 @@ class UiQueuedReleaseControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_queued_releases_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllQueuedReleases  # noqa: E501
+    def get_all_queued_releases(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_queued_releases  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_queued_releases_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_all_queued_releases(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: list[QueuedRelease]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_queued_releases_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_all_queued_releases_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_queued_releases_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_all_queued_releases_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_all_queued_releases_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllQueuedReleases  # noqa: E501
+    def get_all_queued_releases_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_queued_releases  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_queued_releases_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_all_queued_releases_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: list[QueuedRelease]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +180,14 @@ class UiQueuedReleaseControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_queued_releases_using_get" % key
+                    " to method get_all_queued_releases" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_queued_releases_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_queued_releases`")  # noqa: E501
 
         collection_formats = {}
 
@@ -201,10 +205,10 @@ class UiQueuedReleaseControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/queued-releases/', 'GET',

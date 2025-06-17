@@ -1,31 +1,31 @@
 # swagger_client.PublicApIsApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_all_feature_properties_using_get**](PublicApIsApi.md#get_all_feature_properties_using_get) | **GET** /public/v1/features | getAllFeatureProperties
-[**get_cp_cloud_using_get**](PublicApIsApi.md#get_cp_cloud_using_get) | **GET** /public/v1/cp-cloud | getCPCloud
-[**get_feature_property_using_get**](PublicApIsApi.md#get_feature_property_using_get) | **GET** /public/v1/features/{name} | getFeatureProperty
-[**get_login_options_using_get**](PublicApIsApi.md#get_login_options_using_get) | **GET** /public/v1/loginOptions | getLoginOptions
-[**get_logo_using_get**](PublicApIsApi.md#get_logo_using_get) | **GET** /public/v1/logo | getLogo
-[**health_check_using_get**](PublicApIsApi.md#health_check_using_get) | **GET** /public/v1/health | healthCheck
-[**link_aws_account_using_post**](PublicApIsApi.md#link_aws_account_using_post) | **POST** /public/v1/link-aws | linkAwsAccount
-[**link_azure_account_using_post**](PublicApIsApi.md#link_azure_account_using_post) | **POST** /public/v1/link-azure | linkAzureAccount
-[**link_bitbucket_account_using_post**](PublicApIsApi.md#link_bitbucket_account_using_post) | **POST** /public/v1/link-bitbucket | linkBitbucketAccount
-[**link_docker_registries_using_post**](PublicApIsApi.md#link_docker_registries_using_post) | **POST** /public/v1/link-docker-registries | linkDockerRegistries
-[**link_ecr_using_post**](PublicApIsApi.md#link_ecr_using_post) | **POST** /public/v1/link-ecr | linkECR
-[**link_gcp_account_using_post**](PublicApIsApi.md#link_gcp_account_using_post) | **POST** /public/v1/link-gcp | linkGcpAccount
-[**link_github_account_using_post**](PublicApIsApi.md#link_github_account_using_post) | **POST** /public/v1/link-github | linkGithubAccount
-[**link_gitlab_account_using_post**](PublicApIsApi.md#link_gitlab_account_using_post) | **POST** /public/v1/link-gitlab | linkGitlabAccount
-[**link_k8s_account_using_post**](PublicApIsApi.md#link_k8s_account_using_post) | **POST** /public/v1/link-kubernetes | linkK8sAccount
-[**process_github_installation_request_using_post**](PublicApIsApi.md#process_github_installation_request_using_post) | **POST** /public/v1/github-installation-request | processGithubInstallationRequest
-[**retrieve_theme_file_using_get**](PublicApIsApi.md#retrieve_theme_file_using_get) | **GET** /public/v1/themeFile | retrieveThemeFile
+[**get_all_feature_properties**](PublicApIsApi.md#get_all_feature_properties) | **GET** /public/v1/features | 
+[**get_cp_cloud**](PublicApIsApi.md#get_cp_cloud) | **GET** /public/v1/cp-cloud | 
+[**get_feature_property**](PublicApIsApi.md#get_feature_property) | **GET** /public/v1/features/{name} | 
+[**get_login_options**](PublicApIsApi.md#get_login_options) | **GET** /public/v1/loginOptions | 
+[**get_logo**](PublicApIsApi.md#get_logo) | **GET** /public/v1/logo | 
+[**health_check**](PublicApIsApi.md#health_check) | **GET** /public/v1/health | 
+[**link_aws_account**](PublicApIsApi.md#link_aws_account) | **POST** /public/v1/link-aws | 
+[**link_azure_account**](PublicApIsApi.md#link_azure_account) | **POST** /public/v1/link-azure | 
+[**link_bitbucket_account**](PublicApIsApi.md#link_bitbucket_account) | **POST** /public/v1/link-bitbucket | 
+[**link_docker_registries**](PublicApIsApi.md#link_docker_registries) | **POST** /public/v1/link-docker-registries | 
+[**link_ecr**](PublicApIsApi.md#link_ecr) | **POST** /public/v1/link-ecr | 
+[**link_gcp_account**](PublicApIsApi.md#link_gcp_account) | **POST** /public/v1/link-gcp | 
+[**link_github_account**](PublicApIsApi.md#link_github_account) | **POST** /public/v1/link-github | 
+[**link_gitlab_account**](PublicApIsApi.md#link_gitlab_account) | **POST** /public/v1/link-gitlab | 
+[**link_k8s_account**](PublicApIsApi.md#link_k8s_account) | **POST** /public/v1/link-kubernetes | 
+[**process_github_installation_request**](PublicApIsApi.md#process_github_installation_request) | **POST** /public/v1/github-installation-request | 
+[**retrieve_theme_file**](PublicApIsApi.md#retrieve_theme_file) | **GET** /public/v1/themeFile | 
 
-# **get_all_feature_properties_using_get**
-> dict(str, str) get_all_feature_properties_using_get()
+# **get_all_feature_properties**
+> dict(str, str) get_all_feature_properties()
 
-getAllFeatureProperties
+
 
 ### Example
 ```python
@@ -34,7 +34,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -43,11 +43,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllFeatureProperties
-    api_response = api_instance.get_all_feature_properties_using_get()
+    api_response = api_instance.get_all_feature_properties()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->get_all_feature_properties_using_get: %s\n" % e)
+    print("Exception when calling PublicApIsApi->get_all_feature_properties: %s\n" % e)
 ```
 
 ### Parameters
@@ -59,19 +58,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_cp_cloud_using_get**
-> str get_cp_cloud_using_get()
+# **get_cp_cloud**
+> str get_cp_cloud()
 
-getCPCloud
+
 
 ### Example
 ```python
@@ -80,7 +79,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -89,11 +88,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getCPCloud
-    api_response = api_instance.get_cp_cloud_using_get()
+    api_response = api_instance.get_cp_cloud()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->get_cp_cloud_using_get: %s\n" % e)
+    print("Exception when calling PublicApIsApi->get_cp_cloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -105,19 +103,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_feature_property_using_get**
-> dict(str, str) get_feature_property_using_get(name)
+# **get_feature_property**
+> dict(str, str) get_feature_property(name)
 
-getFeatureProperty
+
 
 ### Example
 ```python
@@ -126,28 +124,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-name = 'name_example' # str | name
+name = 'name_example' # str | 
 
 try:
-    # getFeatureProperty
-    api_response = api_instance.get_feature_property_using_get(name)
+    api_response = api_instance.get_feature_property(name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->get_feature_property_using_get: %s\n" % e)
+    print("Exception when calling PublicApIsApi->get_feature_property: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| name | 
+ **name** | **str**|  | 
 
 ### Return type
 
@@ -155,19 +152,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_login_options_using_get**
-> list[CustomOAuth2ClientRegistration] get_login_options_using_get()
+# **get_login_options**
+> list[CustomOAuth2ClientRegistration] get_login_options()
 
-getLoginOptions
+
 
 ### Example
 ```python
@@ -176,7 +173,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -185,11 +182,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getLoginOptions
-    api_response = api_instance.get_login_options_using_get()
+    api_response = api_instance.get_login_options()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->get_login_options_using_get: %s\n" % e)
+    print("Exception when calling PublicApIsApi->get_login_options: %s\n" % e)
 ```
 
 ### Parameters
@@ -201,19 +197,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_logo_using_get**
-> str get_logo_using_get()
+# **get_logo**
+> str get_logo()
 
-getLogo
+
 
 ### Example
 ```python
@@ -222,7 +218,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -231,11 +227,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getLogo
-    api_response = api_instance.get_logo_using_get()
+    api_response = api_instance.get_logo()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->get_logo_using_get: %s\n" % e)
+    print("Exception when calling PublicApIsApi->get_logo: %s\n" % e)
 ```
 
 ### Parameters
@@ -247,19 +242,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **health_check_using_get**
-> dict(str, object) health_check_using_get()
+# **health_check**
+> dict(str, object) health_check()
 
-healthCheck
+
 
 ### Example
 ```python
@@ -268,7 +263,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -277,11 +272,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
 
 try:
-    # healthCheck
-    api_response = api_instance.health_check_using_get()
+    api_response = api_instance.health_check()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->health_check_using_get: %s\n" % e)
+    print("Exception when calling PublicApIsApi->health_check: %s\n" % e)
 ```
 
 ### Parameters
@@ -293,19 +287,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_aws_account_using_post**
-> link_aws_account_using_post(body)
+# **link_aws_account**
+> link_aws_account(body)
 
-linkAwsAccount
+
 
 ### Example
 ```python
@@ -314,27 +308,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadAwsAccount() # OneTimePayloadAwsAccount | payload
+body = swagger_client.OneTimePayloadAwsAccount() # OneTimePayloadAwsAccount | 
 
 try:
-    # linkAwsAccount
-    api_instance.link_aws_account_using_post(body)
+    api_instance.link_aws_account(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_aws_account_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_aws_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadAwsAccount**](OneTimePayloadAwsAccount.md)| payload | 
+ **body** | [**OneTimePayloadAwsAccount**](OneTimePayloadAwsAccount.md)|  | 
 
 ### Return type
 
@@ -342,19 +335,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_azure_account_using_post**
-> link_azure_account_using_post(body)
+# **link_azure_account**
+> link_azure_account(body)
 
-linkAzureAccount
+
 
 ### Example
 ```python
@@ -363,27 +356,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadAzureAccount() # OneTimePayloadAzureAccount | payload
+body = swagger_client.OneTimePayloadAzureAccount() # OneTimePayloadAzureAccount | 
 
 try:
-    # linkAzureAccount
-    api_instance.link_azure_account_using_post(body)
+    api_instance.link_azure_account(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_azure_account_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_azure_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadAzureAccount**](OneTimePayloadAzureAccount.md)| payload | 
+ **body** | [**OneTimePayloadAzureAccount**](OneTimePayloadAzureAccount.md)|  | 
 
 ### Return type
 
@@ -391,19 +383,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_bitbucket_account_using_post**
-> link_bitbucket_account_using_post(body)
+# **link_bitbucket_account**
+> link_bitbucket_account(body)
 
-linkBitbucketAccount
+
 
 ### Example
 ```python
@@ -412,27 +404,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadBitbucketOauthAppPayload() # OneTimePayloadBitbucketOauthAppPayload | payload
+body = swagger_client.OneTimePayloadBitbucketOauthAppPayload() # OneTimePayloadBitbucketOauthAppPayload | 
 
 try:
-    # linkBitbucketAccount
-    api_instance.link_bitbucket_account_using_post(body)
+    api_instance.link_bitbucket_account(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_bitbucket_account_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_bitbucket_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadBitbucketOauthAppPayload**](OneTimePayloadBitbucketOauthAppPayload.md)| payload | 
+ **body** | [**OneTimePayloadBitbucketOauthAppPayload**](OneTimePayloadBitbucketOauthAppPayload.md)|  | 
 
 ### Return type
 
@@ -440,19 +431,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_docker_registries_using_post**
-> link_docker_registries_using_post(body)
+# **link_docker_registries**
+> link_docker_registries(body)
 
-linkDockerRegistries
+
 
 ### Example
 ```python
@@ -461,27 +452,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadBasicDockerDTO() # OneTimePayloadBasicDockerDTO | payload
+body = swagger_client.OneTimePayloadBasicDockerDTO() # OneTimePayloadBasicDockerDTO | 
 
 try:
-    # linkDockerRegistries
-    api_instance.link_docker_registries_using_post(body)
+    api_instance.link_docker_registries(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_docker_registries_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_docker_registries: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadBasicDockerDTO**](OneTimePayloadBasicDockerDTO.md)| payload | 
+ **body** | [**OneTimePayloadBasicDockerDTO**](OneTimePayloadBasicDockerDTO.md)|  | 
 
 ### Return type
 
@@ -489,19 +479,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_ecr_using_post**
-> link_ecr_using_post(body)
+# **link_ecr**
+> link_ecr(body)
 
-linkECR
+
 
 ### Example
 ```python
@@ -510,27 +500,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadECRArtifactory() # OneTimePayloadECRArtifactory | payload
+body = swagger_client.OneTimePayloadECRArtifactory() # OneTimePayloadECRArtifactory | 
 
 try:
-    # linkECR
-    api_instance.link_ecr_using_post(body)
+    api_instance.link_ecr(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_ecr_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_ecr: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadECRArtifactory**](OneTimePayloadECRArtifactory.md)| payload | 
+ **body** | [**OneTimePayloadECRArtifactory**](OneTimePayloadECRArtifactory.md)|  | 
 
 ### Return type
 
@@ -538,19 +527,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_gcp_account_using_post**
-> link_gcp_account_using_post(body)
+# **link_gcp_account**
+> link_gcp_account(body)
 
-linkGcpAccount
+
 
 ### Example
 ```python
@@ -559,27 +548,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadGcpAccount() # OneTimePayloadGcpAccount | payload
+body = swagger_client.OneTimePayloadGcpAccount() # OneTimePayloadGcpAccount | 
 
 try:
-    # linkGcpAccount
-    api_instance.link_gcp_account_using_post(body)
+    api_instance.link_gcp_account(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_gcp_account_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_gcp_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadGcpAccount**](OneTimePayloadGcpAccount.md)| payload | 
+ **body** | [**OneTimePayloadGcpAccount**](OneTimePayloadGcpAccount.md)|  | 
 
 ### Return type
 
@@ -587,19 +575,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_github_account_using_post**
-> link_github_account_using_post(body)
+# **link_github_account**
+> link_github_account(body)
 
-linkGithubAccount
+
 
 ### Example
 ```python
@@ -608,27 +596,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadGithubAppInstallationPayload() # OneTimePayloadGithubAppInstallationPayload | payload
+body = swagger_client.OneTimePayloadGithubAppInstallationPayload() # OneTimePayloadGithubAppInstallationPayload | 
 
 try:
-    # linkGithubAccount
-    api_instance.link_github_account_using_post(body)
+    api_instance.link_github_account(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_github_account_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_github_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadGithubAppInstallationPayload**](OneTimePayloadGithubAppInstallationPayload.md)| payload | 
+ **body** | [**OneTimePayloadGithubAppInstallationPayload**](OneTimePayloadGithubAppInstallationPayload.md)|  | 
 
 ### Return type
 
@@ -636,19 +623,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_gitlab_account_using_post**
-> link_gitlab_account_using_post(body)
+# **link_gitlab_account**
+> link_gitlab_account(body)
 
-linkGitlabAccount
+
 
 ### Example
 ```python
@@ -657,27 +644,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadGitlabOauthAppPayload() # OneTimePayloadGitlabOauthAppPayload | payload
+body = swagger_client.OneTimePayloadGitlabOauthAppPayload() # OneTimePayloadGitlabOauthAppPayload | 
 
 try:
-    # linkGitlabAccount
-    api_instance.link_gitlab_account_using_post(body)
+    api_instance.link_gitlab_account(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_gitlab_account_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_gitlab_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadGitlabOauthAppPayload**](OneTimePayloadGitlabOauthAppPayload.md)| payload | 
+ **body** | [**OneTimePayloadGitlabOauthAppPayload**](OneTimePayloadGitlabOauthAppPayload.md)|  | 
 
 ### Return type
 
@@ -685,19 +671,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **link_k8s_account_using_post**
-> link_k8s_account_using_post(body)
+# **link_k8s_account**
+> link_k8s_account(body)
 
-linkK8sAccount
+
 
 ### Example
 ```python
@@ -706,27 +692,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.OneTimePayloadKubernetesAccount() # OneTimePayloadKubernetesAccount | payload
+body = swagger_client.OneTimePayloadKubernetesAccount() # OneTimePayloadKubernetesAccount | 
 
 try:
-    # linkK8sAccount
-    api_instance.link_k8s_account_using_post(body)
+    api_instance.link_k8s_account(body)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->link_k8s_account_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->link_k8s_account: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**OneTimePayloadKubernetesAccount**](OneTimePayloadKubernetesAccount.md)| payload | 
+ **body** | [**OneTimePayloadKubernetesAccount**](OneTimePayloadKubernetesAccount.md)|  | 
 
 ### Return type
 
@@ -734,19 +719,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **process_github_installation_request_using_post**
-> GithubAppInstallationRequestResponse process_github_installation_request_using_post(body)
+# **process_github_installation_request**
+> GithubAppInstallationRequestResponse process_github_installation_request(body)
 
-processGithubInstallationRequest
+
 
 ### Example
 ```python
@@ -755,28 +740,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GithubAppInstallationRequest() # GithubAppInstallationRequest | githubAppInstallationRequest
+body = swagger_client.GithubAppInstallationRequest() # GithubAppInstallationRequest | 
 
 try:
-    # processGithubInstallationRequest
-    api_response = api_instance.process_github_installation_request_using_post(body)
+    api_response = api_instance.process_github_installation_request(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->process_github_installation_request_using_post: %s\n" % e)
+    print("Exception when calling PublicApIsApi->process_github_installation_request: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GithubAppInstallationRequest**](GithubAppInstallationRequest.md)| githubAppInstallationRequest | 
+ **body** | [**GithubAppInstallationRequest**](GithubAppInstallationRequest.md)|  | 
 
 ### Return type
 
@@ -784,19 +768,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **retrieve_theme_file_using_get**
-> ThemeFileResponse retrieve_theme_file_using_get()
+# **retrieve_theme_file**
+> ThemeFileResponse retrieve_theme_file()
 
-retrieveThemeFile
+
 
 ### Example
 ```python
@@ -805,7 +789,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -814,11 +798,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
 
 try:
-    # retrieveThemeFile
-    api_response = api_instance.retrieve_theme_file_using_get()
+    api_response = api_instance.retrieve_theme_file()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PublicApIsApi->retrieve_theme_file_using_get: %s\n" % e)
+    print("Exception when calling PublicApIsApi->retrieve_theme_file: %s\n" % e)
 ```
 
 ### Parameters
@@ -830,12 +813,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

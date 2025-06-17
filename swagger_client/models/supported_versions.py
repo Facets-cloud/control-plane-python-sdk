@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -42,10 +42,8 @@ class SupportedVersions(object):
         self._component_type = None
         self._supported_versions = None
         self.discriminator = None
-        if component_type is not None:
-            self.component_type = component_type
-        if supported_versions is not None:
-            self.supported_versions = supported_versions
+        self.component_type = component_type
+        self.supported_versions = supported_versions
 
     @property
     def component_type(self):
@@ -65,6 +63,8 @@ class SupportedVersions(object):
         :param component_type: The component_type of this SupportedVersions.  # noqa: E501
         :type: str
         """
+        if component_type is None:
+            raise ValueError("Invalid value for `component_type`, must not be `None`")  # noqa: E501
         allowed_values = ["KUBERNETES"]  # noqa: E501
         if component_type not in allowed_values:
             raise ValueError(
@@ -92,6 +92,8 @@ class SupportedVersions(object):
         :param supported_versions: The supported_versions of this SupportedVersions.  # noqa: E501
         :type: list[str]
         """
+        if supported_versions is None:
+            raise ValueError("Invalid value for `supported_versions`, must not be `None`")  # noqa: E501
 
         self._supported_versions = supported_versions
 

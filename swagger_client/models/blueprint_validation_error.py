@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,39 @@ class BlueprintValidationError(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'blueprint_error_lines': 'list[int]',
         'category': 'str',
+        'severity': 'str',
         'message': 'str',
-        'override_error_lines': 'list[int]',
-        'severity': 'str'
+        'blueprint_error_lines': 'list[int]',
+        'override_error_lines': 'list[int]'
     }
 
     attribute_map = {
-        'blueprint_error_lines': 'blueprintErrorLines',
         'category': 'category',
+        'severity': 'severity',
         'message': 'message',
-        'override_error_lines': 'overrideErrorLines',
-        'severity': 'severity'
+        'blueprint_error_lines': 'blueprintErrorLines',
+        'override_error_lines': 'overrideErrorLines'
     }
 
-    def __init__(self, blueprint_error_lines=None, category=None, message=None, override_error_lines=None, severity=None):  # noqa: E501
+    def __init__(self, category=None, severity=None, message=None, blueprint_error_lines=None, override_error_lines=None):  # noqa: E501
         """BlueprintValidationError - a model defined in Swagger"""  # noqa: E501
-        self._blueprint_error_lines = None
         self._category = None
-        self._message = None
-        self._override_error_lines = None
         self._severity = None
+        self._message = None
+        self._blueprint_error_lines = None
+        self._override_error_lines = None
         self.discriminator = None
-        if blueprint_error_lines is not None:
-            self.blueprint_error_lines = blueprint_error_lines
         if category is not None:
             self.category = category
-        if message is not None:
-            self.message = message
-        if override_error_lines is not None:
-            self.override_error_lines = override_error_lines
         if severity is not None:
             self.severity = severity
-
-    @property
-    def blueprint_error_lines(self):
-        """Gets the blueprint_error_lines of this BlueprintValidationError.  # noqa: E501
-
-
-        :return: The blueprint_error_lines of this BlueprintValidationError.  # noqa: E501
-        :rtype: list[int]
-        """
-        return self._blueprint_error_lines
-
-    @blueprint_error_lines.setter
-    def blueprint_error_lines(self, blueprint_error_lines):
-        """Sets the blueprint_error_lines of this BlueprintValidationError.
-
-
-        :param blueprint_error_lines: The blueprint_error_lines of this BlueprintValidationError.  # noqa: E501
-        :type: list[int]
-        """
-
-        self._blueprint_error_lines = blueprint_error_lines
+        if message is not None:
+            self.message = message
+        if blueprint_error_lines is not None:
+            self.blueprint_error_lines = blueprint_error_lines
+        if override_error_lines is not None:
+            self.override_error_lines = override_error_lines
 
     @property
     def category(self):
@@ -111,48 +90,6 @@ class BlueprintValidationError(object):
         self._category = category
 
     @property
-    def message(self):
-        """Gets the message of this BlueprintValidationError.  # noqa: E501
-
-
-        :return: The message of this BlueprintValidationError.  # noqa: E501
-        :rtype: str
-        """
-        return self._message
-
-    @message.setter
-    def message(self, message):
-        """Sets the message of this BlueprintValidationError.
-
-
-        :param message: The message of this BlueprintValidationError.  # noqa: E501
-        :type: str
-        """
-
-        self._message = message
-
-    @property
-    def override_error_lines(self):
-        """Gets the override_error_lines of this BlueprintValidationError.  # noqa: E501
-
-
-        :return: The override_error_lines of this BlueprintValidationError.  # noqa: E501
-        :rtype: list[int]
-        """
-        return self._override_error_lines
-
-    @override_error_lines.setter
-    def override_error_lines(self, override_error_lines):
-        """Sets the override_error_lines of this BlueprintValidationError.
-
-
-        :param override_error_lines: The override_error_lines of this BlueprintValidationError.  # noqa: E501
-        :type: list[int]
-        """
-
-        self._override_error_lines = override_error_lines
-
-    @property
     def severity(self):
         """Gets the severity of this BlueprintValidationError.  # noqa: E501
 
@@ -178,6 +115,69 @@ class BlueprintValidationError(object):
             )
 
         self._severity = severity
+
+    @property
+    def message(self):
+        """Gets the message of this BlueprintValidationError.  # noqa: E501
+
+
+        :return: The message of this BlueprintValidationError.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this BlueprintValidationError.
+
+
+        :param message: The message of this BlueprintValidationError.  # noqa: E501
+        :type: str
+        """
+
+        self._message = message
+
+    @property
+    def blueprint_error_lines(self):
+        """Gets the blueprint_error_lines of this BlueprintValidationError.  # noqa: E501
+
+
+        :return: The blueprint_error_lines of this BlueprintValidationError.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._blueprint_error_lines
+
+    @blueprint_error_lines.setter
+    def blueprint_error_lines(self, blueprint_error_lines):
+        """Sets the blueprint_error_lines of this BlueprintValidationError.
+
+
+        :param blueprint_error_lines: The blueprint_error_lines of this BlueprintValidationError.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._blueprint_error_lines = blueprint_error_lines
+
+    @property
+    def override_error_lines(self):
+        """Gets the override_error_lines of this BlueprintValidationError.  # noqa: E501
+
+
+        :return: The override_error_lines of this BlueprintValidationError.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._override_error_lines
+
+    @override_error_lines.setter
+    def override_error_lines(self, override_error_lines):
+        """Sets the override_error_lines of this BlueprintValidationError.
+
+
+        :param override_error_lines: The override_error_lines of this BlueprintValidationError.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._override_error_lines = override_error_lines
 
     def to_dict(self):
         """Returns the model properties as a dict"""

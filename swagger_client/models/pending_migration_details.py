@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class PendingMigrationDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'pending_migrations': 'list[MigrationScriptMetadata]',
         'block_releases': 'bool',
-        'migration_status_available': 'bool',
-        'pending_migrations': 'list[MigrationScriptMetadata]'
+        'migration_status_available': 'bool'
     }
 
     attribute_map = {
+        'pending_migrations': 'pendingMigrations',
         'block_releases': 'blockReleases',
-        'migration_status_available': 'migrationStatusAvailable',
-        'pending_migrations': 'pendingMigrations'
+        'migration_status_available': 'migrationStatusAvailable'
     }
 
-    def __init__(self, block_releases=None, migration_status_available=None, pending_migrations=None):  # noqa: E501
+    def __init__(self, pending_migrations=None, block_releases=None, migration_status_available=None):  # noqa: E501
         """PendingMigrationDetails - a model defined in Swagger"""  # noqa: E501
+        self._pending_migrations = None
         self._block_releases = None
         self._migration_status_available = None
-        self._pending_migrations = None
         self.discriminator = None
+        if pending_migrations is not None:
+            self.pending_migrations = pending_migrations
         if block_releases is not None:
             self.block_releases = block_releases
         if migration_status_available is not None:
             self.migration_status_available = migration_status_available
-        if pending_migrations is not None:
-            self.pending_migrations = pending_migrations
+
+    @property
+    def pending_migrations(self):
+        """Gets the pending_migrations of this PendingMigrationDetails.  # noqa: E501
+
+
+        :return: The pending_migrations of this PendingMigrationDetails.  # noqa: E501
+        :rtype: list[MigrationScriptMetadata]
+        """
+        return self._pending_migrations
+
+    @pending_migrations.setter
+    def pending_migrations(self, pending_migrations):
+        """Sets the pending_migrations of this PendingMigrationDetails.
+
+
+        :param pending_migrations: The pending_migrations of this PendingMigrationDetails.  # noqa: E501
+        :type: list[MigrationScriptMetadata]
+        """
+
+        self._pending_migrations = pending_migrations
 
     @property
     def block_releases(self):
@@ -93,27 +114,6 @@ class PendingMigrationDetails(object):
         """
 
         self._migration_status_available = migration_status_available
-
-    @property
-    def pending_migrations(self):
-        """Gets the pending_migrations of this PendingMigrationDetails.  # noqa: E501
-
-
-        :return: The pending_migrations of this PendingMigrationDetails.  # noqa: E501
-        :rtype: list[MigrationScriptMetadata]
-        """
-        return self._pending_migrations
-
-    @pending_migrations.setter
-    def pending_migrations(self, pending_migrations):
-        """Sets the pending_migrations of this PendingMigrationDetails.
-
-
-        :param pending_migrations: The pending_migrations of this PendingMigrationDetails.  # noqa: E501
-        :type: list[MigrationScriptMetadata]
-        """
-
-        self._pending_migrations = pending_migrations
 
     def to_dict(self):
         """Returns the model properties as a dict"""
