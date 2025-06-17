@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,39 +32,39 @@ class UiMaintenanceWindowControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def enable_disable_using_put(self, cluster_id, disabled, **kwargs):  # noqa: E501
-        """enableDisable  # noqa: E501
+    def enable_disable(self, cluster_id, disabled, **kwargs):  # noqa: E501
+        """enable_disable  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.enable_disable_using_put(cluster_id, disabled, async_req=True)
+        >>> thread = api.enable_disable(cluster_id, disabled, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool disabled: disabled (required)
+        :param str cluster_id: (required)
+        :param bool disabled: (required)
         :return: MaintenanceWindowDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.enable_disable_using_put_with_http_info(cluster_id, disabled, **kwargs)  # noqa: E501
+            return self.enable_disable_with_http_info(cluster_id, disabled, **kwargs)  # noqa: E501
         else:
-            (data) = self.enable_disable_using_put_with_http_info(cluster_id, disabled, **kwargs)  # noqa: E501
+            (data) = self.enable_disable_with_http_info(cluster_id, disabled, **kwargs)  # noqa: E501
             return data
 
-    def enable_disable_using_put_with_http_info(self, cluster_id, disabled, **kwargs):  # noqa: E501
-        """enableDisable  # noqa: E501
+    def enable_disable_with_http_info(self, cluster_id, disabled, **kwargs):  # noqa: E501
+        """enable_disable  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.enable_disable_using_put_with_http_info(cluster_id, disabled, async_req=True)
+        >>> thread = api.enable_disable_with_http_info(cluster_id, disabled, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool disabled: disabled (required)
+        :param str cluster_id: (required)
+        :param bool disabled: (required)
         :return: MaintenanceWindowDTO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,18 +81,18 @@ class UiMaintenanceWindowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method enable_disable_using_put" % key
+                    " to method enable_disable" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `enable_disable_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `enable_disable`")  # noqa: E501
         # verify the required parameter 'disabled' is set
         if ('disabled' not in params or
                 params['disabled'] is None):
-            raise ValueError("Missing the required parameter `disabled` when calling `enable_disable_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `disabled` when calling `enable_disable`")  # noqa: E501
 
         collection_formats = {}
 
@@ -112,10 +112,10 @@ class UiMaintenanceWindowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/maintenance-window/{clusterId}/enable-disable', 'PUT',
@@ -133,37 +133,37 @@ class UiMaintenanceWindowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_by_cluster_id_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getByClusterId  # noqa: E501
+    def get_by_cluster_id(self, cluster_id, **kwargs):  # noqa: E501
+        """get_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_by_cluster_id_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_by_cluster_id(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: MaintenanceWindowDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_by_cluster_id_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_by_cluster_id_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_by_cluster_id_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_by_cluster_id_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_by_cluster_id_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getByClusterId  # noqa: E501
+    def get_by_cluster_id_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_by_cluster_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_by_cluster_id_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_by_cluster_id_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: MaintenanceWindowDTO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -180,14 +180,14 @@ class UiMaintenanceWindowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_by_cluster_id_using_get" % key
+                    " to method get_by_cluster_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_by_cluster_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_by_cluster_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -205,10 +205,10 @@ class UiMaintenanceWindowControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/maintenance-window/{clusterId}', 'GET',
@@ -226,37 +226,37 @@ class UiMaintenanceWindowControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_using_put(self, body, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update2(self, body, **kwargs):  # noqa: E501
+        """update2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_using_put(body, async_req=True)
+        >>> thread = api.update2(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param MaintenanceWindowDTO body: maintenanceWindowDTO (required)
+        :param MaintenanceWindowDTO body: (required)
         :return: MaintenanceWindowDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_using_put_with_http_info(body, **kwargs)  # noqa: E501
+            return self.update2_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_using_put_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.update2_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def update_using_put_with_http_info(self, body, **kwargs):  # noqa: E501
-        """update  # noqa: E501
+    def update2_with_http_info(self, body, **kwargs):  # noqa: E501
+        """update2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_using_put_with_http_info(body, async_req=True)
+        >>> thread = api.update2_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param MaintenanceWindowDTO body: maintenanceWindowDTO (required)
+        :param MaintenanceWindowDTO body: (required)
         :return: MaintenanceWindowDTO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -273,14 +273,14 @@ class UiMaintenanceWindowControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_using_put" % key
+                    " to method update2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -298,14 +298,14 @@ class UiMaintenanceWindowControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/maintenance-window', 'PUT',

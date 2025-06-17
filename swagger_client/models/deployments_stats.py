@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,55 @@ class DeploymentsStats(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'success_releases': 'int',
         'failed_releases': 'int',
-        'is_first_release': 'bool',
         'no_change_releases': 'int',
-        'success_releases': 'int'
+        'is_first_release': 'bool'
     }
 
     attribute_map = {
+        'success_releases': 'successReleases',
         'failed_releases': 'failedReleases',
-        'is_first_release': 'isFirstRelease',
         'no_change_releases': 'noChangeReleases',
-        'success_releases': 'successReleases'
+        'is_first_release': 'isFirstRelease'
     }
 
-    def __init__(self, failed_releases=None, is_first_release=None, no_change_releases=None, success_releases=None):  # noqa: E501
+    def __init__(self, success_releases=None, failed_releases=None, no_change_releases=None, is_first_release=None):  # noqa: E501
         """DeploymentsStats - a model defined in Swagger"""  # noqa: E501
-        self._failed_releases = None
-        self._is_first_release = None
-        self._no_change_releases = None
         self._success_releases = None
+        self._failed_releases = None
+        self._no_change_releases = None
+        self._is_first_release = None
         self.discriminator = None
-        if failed_releases is not None:
-            self.failed_releases = failed_releases
-        if is_first_release is not None:
-            self.is_first_release = is_first_release
-        if no_change_releases is not None:
-            self.no_change_releases = no_change_releases
         if success_releases is not None:
             self.success_releases = success_releases
+        if failed_releases is not None:
+            self.failed_releases = failed_releases
+        if no_change_releases is not None:
+            self.no_change_releases = no_change_releases
+        if is_first_release is not None:
+            self.is_first_release = is_first_release
+
+    @property
+    def success_releases(self):
+        """Gets the success_releases of this DeploymentsStats.  # noqa: E501
+
+
+        :return: The success_releases of this DeploymentsStats.  # noqa: E501
+        :rtype: int
+        """
+        return self._success_releases
+
+    @success_releases.setter
+    def success_releases(self, success_releases):
+        """Sets the success_releases of this DeploymentsStats.
+
+
+        :param success_releases: The success_releases of this DeploymentsStats.  # noqa: E501
+        :type: int
+        """
+
+        self._success_releases = success_releases
 
     @property
     def failed_releases(self):
@@ -79,27 +100,6 @@ class DeploymentsStats(object):
         self._failed_releases = failed_releases
 
     @property
-    def is_first_release(self):
-        """Gets the is_first_release of this DeploymentsStats.  # noqa: E501
-
-
-        :return: The is_first_release of this DeploymentsStats.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_first_release
-
-    @is_first_release.setter
-    def is_first_release(self, is_first_release):
-        """Sets the is_first_release of this DeploymentsStats.
-
-
-        :param is_first_release: The is_first_release of this DeploymentsStats.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_first_release = is_first_release
-
-    @property
     def no_change_releases(self):
         """Gets the no_change_releases of this DeploymentsStats.  # noqa: E501
 
@@ -121,25 +121,25 @@ class DeploymentsStats(object):
         self._no_change_releases = no_change_releases
 
     @property
-    def success_releases(self):
-        """Gets the success_releases of this DeploymentsStats.  # noqa: E501
+    def is_first_release(self):
+        """Gets the is_first_release of this DeploymentsStats.  # noqa: E501
 
 
-        :return: The success_releases of this DeploymentsStats.  # noqa: E501
-        :rtype: int
+        :return: The is_first_release of this DeploymentsStats.  # noqa: E501
+        :rtype: bool
         """
-        return self._success_releases
+        return self._is_first_release
 
-    @success_releases.setter
-    def success_releases(self, success_releases):
-        """Sets the success_releases of this DeploymentsStats.
+    @is_first_release.setter
+    def is_first_release(self, is_first_release):
+        """Sets the is_first_release of this DeploymentsStats.
 
 
-        :param success_releases: The success_releases of this DeploymentsStats.  # noqa: E501
-        :type: int
+        :param is_first_release: The is_first_release of this DeploymentsStats.  # noqa: E501
+        :type: bool
         """
 
-        self._success_releases = success_releases
+        self._is_first_release = is_first_release
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,21 +1,21 @@
 # swagger_client.UiUserGroupControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_user_group_using_post**](UiUserGroupControllerApi.md#create_user_group_using_post) | **POST** /cc-ui/v1/user-groups/ | createUserGroup
-[**delete_user_group_using_delete**](UiUserGroupControllerApi.md#delete_user_group_using_delete) | **DELETE** /cc-ui/v1/user-groups/{groupId} | deleteUserGroup
-[**get_all_group_using_get**](UiUserGroupControllerApi.md#get_all_group_using_get) | **GET** /cc-ui/v1/user-groups/ | getAllGroup
-[**get_all_user_groups_expanded_using_get**](UiUserGroupControllerApi.md#get_all_user_groups_expanded_using_get) | **GET** /cc-ui/v1/user-groups/list/groups-expanded | getAllUserGroupsExpanded
-[**get_user_group_expanded_using_get**](UiUserGroupControllerApi.md#get_user_group_expanded_using_get) | **GET** /cc-ui/v1/user-groups/{groupId}/group-expanded | getUserGroupExpanded
-[**get_user_group_using_get**](UiUserGroupControllerApi.md#get_user_group_using_get) | **GET** /cc-ui/v1/user-groups/{groupId} | getUserGroup
-[**update_user_group_using_put**](UiUserGroupControllerApi.md#update_user_group_using_put) | **PUT** /cc-ui/v1/user-groups/ | updateUserGroup
+[**create_user_group**](UiUserGroupControllerApi.md#create_user_group) | **POST** /cc-ui/v1/user-groups/ | 
+[**delete_user_group**](UiUserGroupControllerApi.md#delete_user_group) | **DELETE** /cc-ui/v1/user-groups/{groupId} | 
+[**get_all_group**](UiUserGroupControllerApi.md#get_all_group) | **GET** /cc-ui/v1/user-groups/ | 
+[**get_all_user_groups_expanded**](UiUserGroupControllerApi.md#get_all_user_groups_expanded) | **GET** /cc-ui/v1/user-groups/list/groups-expanded | 
+[**get_user_group**](UiUserGroupControllerApi.md#get_user_group) | **GET** /cc-ui/v1/user-groups/{groupId} | 
+[**get_user_group_expanded**](UiUserGroupControllerApi.md#get_user_group_expanded) | **GET** /cc-ui/v1/user-groups/{groupId}/group-expanded | 
+[**update_user_group**](UiUserGroupControllerApi.md#update_user_group) | **PUT** /cc-ui/v1/user-groups/ | 
 
-# **create_user_group_using_post**
-> UserGroup create_user_group_using_post(body)
+# **create_user_group**
+> UserGroup create_user_group(body)
 
-createUserGroup
+
 
 ### Example
 ```python
@@ -24,28 +24,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.UserGroup() # UserGroup | userGroup
+body = swagger_client.UserGroup() # UserGroup | 
 
 try:
-    # createUserGroup
-    api_response = api_instance.create_user_group_using_post(body)
+    api_response = api_instance.create_user_group(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserGroupControllerApi->create_user_group_using_post: %s\n" % e)
+    print("Exception when calling UiUserGroupControllerApi->create_user_group: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserGroup**](UserGroup.md)| userGroup | 
+ **body** | [**UserGroup**](UserGroup.md)|  | 
 
 ### Return type
 
@@ -53,19 +52,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_user_group_using_delete**
-> delete_user_group_using_delete(group_id)
+# **delete_user_group**
+> delete_user_group(group_id)
 
-deleteUserGroup
+
 
 ### Example
 ```python
@@ -74,27 +73,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
-group_id = 'group_id_example' # str | groupId
+group_id = 'group_id_example' # str | 
 
 try:
-    # deleteUserGroup
-    api_instance.delete_user_group_using_delete(group_id)
+    api_instance.delete_user_group(group_id)
 except ApiException as e:
-    print("Exception when calling UiUserGroupControllerApi->delete_user_group_using_delete: %s\n" % e)
+    print("Exception when calling UiUserGroupControllerApi->delete_user_group: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **str**| groupId | 
+ **group_id** | **str**|  | 
 
 ### Return type
 
@@ -102,19 +100,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_group_using_get**
-> list[UserGroup] get_all_group_using_get()
+# **get_all_group**
+> list[UserGroup] get_all_group()
 
-getAllGroup
+
 
 ### Example
 ```python
@@ -123,7 +121,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -132,11 +130,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllGroup
-    api_response = api_instance.get_all_group_using_get()
+    api_response = api_instance.get_all_group()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserGroupControllerApi->get_all_group_using_get: %s\n" % e)
+    print("Exception when calling UiUserGroupControllerApi->get_all_group: %s\n" % e)
 ```
 
 ### Parameters
@@ -148,19 +145,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_user_groups_expanded_using_get**
-> list[ExpandedUserGroup] get_all_user_groups_expanded_using_get()
+# **get_all_user_groups_expanded**
+> list[ExpandedUserGroup] get_all_user_groups_expanded()
 
-getAllUserGroupsExpanded
+
 
 ### Example
 ```python
@@ -169,7 +166,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -178,11 +175,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAllUserGroupsExpanded
-    api_response = api_instance.get_all_user_groups_expanded_using_get()
+    api_response = api_instance.get_all_user_groups_expanded()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserGroupControllerApi->get_all_user_groups_expanded_using_get: %s\n" % e)
+    print("Exception when calling UiUserGroupControllerApi->get_all_user_groups_expanded: %s\n" % e)
 ```
 
 ### Parameters
@@ -194,19 +190,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_group_expanded_using_get**
-> ExpandedUserGroup get_user_group_expanded_using_get(group_id)
+# **get_user_group**
+> UserGroup get_user_group(group_id)
 
-getUserGroupExpanded
+
 
 ### Example
 ```python
@@ -215,28 +211,76 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
-group_id = 'group_id_example' # str | groupId
+group_id = 'group_id_example' # str | 
 
 try:
-    # getUserGroupExpanded
-    api_response = api_instance.get_user_group_expanded_using_get(group_id)
+    api_response = api_instance.get_user_group(group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserGroupControllerApi->get_user_group_expanded_using_get: %s\n" % e)
+    print("Exception when calling UiUserGroupControllerApi->get_user_group: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **str**| groupId | 
+ **group_id** | **str**|  | 
+
+### Return type
+
+[**UserGroup**](UserGroup.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_group_expanded**
+> ExpandedUserGroup get_user_group_expanded(group_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
+group_id = 'group_id_example' # str | 
+
+try:
+    api_response = api_instance.get_user_group_expanded(group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiUserGroupControllerApi->get_user_group_expanded: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **group_id** | **str**|  | 
 
 ### Return type
 
@@ -244,19 +288,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_user_group_using_get**
-> UserGroup get_user_group_using_get(group_id)
+# **update_user_group**
+> UserGroup update_user_group(body)
 
-getUserGroup
+
 
 ### Example
 ```python
@@ -265,28 +309,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
-group_id = 'group_id_example' # str | groupId
+body = swagger_client.UserGroup() # UserGroup | 
 
 try:
-    # getUserGroup
-    api_response = api_instance.get_user_group_using_get(group_id)
+    api_response = api_instance.update_user_group(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserGroupControllerApi->get_user_group_using_get: %s\n" % e)
+    print("Exception when calling UiUserGroupControllerApi->update_user_group: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **group_id** | **str**| groupId | 
+ **body** | [**UserGroup**](UserGroup.md)|  | 
 
 ### Return type
 
@@ -294,62 +337,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_user_group_using_put**
-> UserGroup update_user_group_using_put(body)
-
-updateUserGroup
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiUserGroupControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.UserGroup() # UserGroup | userGroup
-
-try:
-    # updateUserGroup
-    api_response = api_instance.update_user_group_using_put(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiUserGroupControllerApi->update_user_group_using_put: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UserGroup**](UserGroup.md)| userGroup | 
-
-### Return type
-
-[**UserGroup**](UserGroup.md)
-
-### Authorization
-
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

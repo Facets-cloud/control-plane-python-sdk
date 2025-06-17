@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class VCSLinkingRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'webhook': 'OneTimeWebhook',
         'account_name': 'str',
-        'enterprise_host_name': 'str',
-        'webhook': 'OneTimeWebhook'
+        'enterprise_host_name': 'str'
     }
 
     attribute_map = {
+        'webhook': 'webhook',
         'account_name': 'accountName',
-        'enterprise_host_name': 'enterpriseHostName',
-        'webhook': 'webhook'
+        'enterprise_host_name': 'enterpriseHostName'
     }
 
-    def __init__(self, account_name=None, enterprise_host_name=None, webhook=None):  # noqa: E501
+    def __init__(self, webhook=None, account_name=None, enterprise_host_name=None):  # noqa: E501
         """VCSLinkingRequest - a model defined in Swagger"""  # noqa: E501
+        self._webhook = None
         self._account_name = None
         self._enterprise_host_name = None
-        self._webhook = None
         self.discriminator = None
+        if webhook is not None:
+            self.webhook = webhook
         if account_name is not None:
             self.account_name = account_name
         if enterprise_host_name is not None:
             self.enterprise_host_name = enterprise_host_name
-        if webhook is not None:
-            self.webhook = webhook
+
+    @property
+    def webhook(self):
+        """Gets the webhook of this VCSLinkingRequest.  # noqa: E501
+
+
+        :return: The webhook of this VCSLinkingRequest.  # noqa: E501
+        :rtype: OneTimeWebhook
+        """
+        return self._webhook
+
+    @webhook.setter
+    def webhook(self, webhook):
+        """Sets the webhook of this VCSLinkingRequest.
+
+
+        :param webhook: The webhook of this VCSLinkingRequest.  # noqa: E501
+        :type: OneTimeWebhook
+        """
+
+        self._webhook = webhook
 
     @property
     def account_name(self):
@@ -93,27 +114,6 @@ class VCSLinkingRequest(object):
         """
 
         self._enterprise_host_name = enterprise_host_name
-
-    @property
-    def webhook(self):
-        """Gets the webhook of this VCSLinkingRequest.  # noqa: E501
-
-
-        :return: The webhook of this VCSLinkingRequest.  # noqa: E501
-        :rtype: OneTimeWebhook
-        """
-        return self._webhook
-
-    @webhook.setter
-    def webhook(self, webhook):
-        """Sets the webhook of this VCSLinkingRequest.
-
-
-        :param webhook: The webhook of this VCSLinkingRequest.  # noqa: E501
-        :type: OneTimeWebhook
-        """
-
-        self._webhook = webhook
 
     def to_dict(self):
         """Returns the model properties as a dict"""

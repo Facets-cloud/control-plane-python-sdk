@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,525 +28,240 @@ class KubernetesCluster(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auto_sign_off_schedule': 'str',
-        'base_cluster_id': 'str',
-        'base_cluster_name': 'str',
-        'branch': 'str',
-        'cd_pipeline_parent': 'str',
-        'certificate_authority': 'str',
-        'cloud': 'str',
-        'cloud_account_id': 'str',
-        'cloud_account_secret_id': 'str',
-        'cluster_code': 'str',
-        'cluster_state': 'str',
-        'common_environment_variables': 'dict(str, str)',
-        'component_versions': 'dict(str, str)',
-        'configured': 'bool',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'deleted': 'bool',
-        'dynamic_launch': 'bool',
-        'enable_auto_sign_off': 'bool',
-        'entity_type': 'str',
-        'global_variables': 'dict(str, str)',
-        'host': 'str',
-        'id': 'str',
-        'is_ephemeral': 'bool',
-        'k8s_requests_to_limits_ratio': 'float',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
-        'namespace': 'str',
-        'number_of_versions': 'int',
-        'pause_releases': 'bool',
-        'release_stream': 'str',
-        'require_sign_off': 'bool',
-        'schedules': 'dict(str, str)',
-        'secrets': 'dict(str, str)',
-        'secrets_uid': 'str',
-        'stack_name': 'str',
-        'token': 'str',
+        'cloud': 'str',
         'tz': 'str',
+        'stack_name': 'str',
+        'release_stream': 'str',
+        'cd_pipeline_parent': 'str',
+        'require_sign_off': 'bool',
+        'deleted': 'bool',
+        'auto_sign_off_schedule': 'str',
+        'enable_auto_sign_off': 'bool',
+        'configured': 'bool',
+        'change_log': 'str',
+        'branch': 'str',
+        'cluster_code': 'str',
+        'common_environment_variables': 'dict(str, str)',
         'variables': 'dict(str, Variables)',
-        'versioning_key': 'str'
+        'secrets': 'dict(str, str)',
+        'global_variables': 'dict(str, str)',
+        'cluster_state': 'str',
+        'schedules': 'dict(str, str)',
+        'k8s_requests_to_limits_ratio': 'float',
+        'component_versions': 'dict(str, str)',
+        'cloud_account_id': 'str',
+        'cloud_account_secret_id': 'str',
+        'is_ephemeral': 'bool',
+        'pause_releases': 'bool',
+        'base_cluster_id': 'str',
+        'base_cluster_name': 'str',
+        'namespace': 'str',
+        'dynamic_launch': 'bool',
+        'host': 'str',
+        'token': 'str',
+        'certificate_authority': 'str',
+        'entity_type': 'str',
+        'secrets_uid': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'auto_sign_off_schedule': 'autoSignOffSchedule',
-        'base_cluster_id': 'baseClusterId',
-        'base_cluster_name': 'baseClusterName',
-        'branch': 'branch',
-        'cd_pipeline_parent': 'cdPipelineParent',
-        'certificate_authority': 'certificateAuthority',
-        'cloud': 'cloud',
-        'cloud_account_id': 'cloudAccountId',
-        'cloud_account_secret_id': 'cloudAccountSecretId',
-        'cluster_code': 'clusterCode',
-        'cluster_state': 'clusterState',
-        'common_environment_variables': 'commonEnvironmentVariables',
-        'component_versions': 'componentVersions',
-        'configured': 'configured',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'deleted': 'deleted',
-        'dynamic_launch': 'dynamicLaunch',
-        'enable_auto_sign_off': 'enableAutoSignOff',
-        'entity_type': 'entityType',
-        'global_variables': 'globalVariables',
-        'host': 'host',
-        'id': 'id',
-        'is_ephemeral': 'isEphemeral',
-        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
-        'namespace': 'namespace',
-        'number_of_versions': 'numberOfVersions',
-        'pause_releases': 'pauseReleases',
-        'release_stream': 'releaseStream',
-        'require_sign_off': 'requireSignOff',
-        'schedules': 'schedules',
-        'secrets': 'secrets',
-        'secrets_uid': 'secretsUid',
-        'stack_name': 'stackName',
-        'token': 'token',
+        'cloud': 'cloud',
         'tz': 'tz',
+        'stack_name': 'stackName',
+        'release_stream': 'releaseStream',
+        'cd_pipeline_parent': 'cdPipelineParent',
+        'require_sign_off': 'requireSignOff',
+        'deleted': 'deleted',
+        'auto_sign_off_schedule': 'autoSignOffSchedule',
+        'enable_auto_sign_off': 'enableAutoSignOff',
+        'configured': 'configured',
+        'change_log': 'changeLog',
+        'branch': 'branch',
+        'cluster_code': 'clusterCode',
+        'common_environment_variables': 'commonEnvironmentVariables',
         'variables': 'variables',
-        'versioning_key': 'versioningKey'
+        'secrets': 'secrets',
+        'global_variables': 'globalVariables',
+        'cluster_state': 'clusterState',
+        'schedules': 'schedules',
+        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
+        'component_versions': 'componentVersions',
+        'cloud_account_id': 'cloudAccountId',
+        'cloud_account_secret_id': 'cloudAccountSecretId',
+        'is_ephemeral': 'isEphemeral',
+        'pause_releases': 'pauseReleases',
+        'base_cluster_id': 'baseClusterId',
+        'base_cluster_name': 'baseClusterName',
+        'namespace': 'namespace',
+        'dynamic_launch': 'dynamicLaunch',
+        'host': 'host',
+        'token': 'token',
+        'certificate_authority': 'certificateAuthority',
+        'entity_type': 'entityType',
+        'secrets_uid': 'secretsUid',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, auto_sign_off_schedule=None, base_cluster_id=None, base_cluster_name=None, branch=None, cd_pipeline_parent=None, certificate_authority=None, cloud=None, cloud_account_id=None, cloud_account_secret_id=None, cluster_code=None, cluster_state=None, common_environment_variables=None, component_versions=None, configured=None, created_by=None, creation_date=None, deleted=None, dynamic_launch=None, enable_auto_sign_off=None, entity_type=None, global_variables=None, host=None, id=None, is_ephemeral=None, k8s_requests_to_limits_ratio=None, last_modified_by=None, last_modified_date=None, name=None, namespace=None, number_of_versions=None, pause_releases=None, release_stream=None, require_sign_off=None, schedules=None, secrets=None, secrets_uid=None, stack_name=None, token=None, tz=None, variables=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, cloud=None, tz=None, stack_name=None, release_stream=None, cd_pipeline_parent=None, require_sign_off=None, deleted=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, configured=None, change_log=None, branch=None, cluster_code=None, common_environment_variables=None, variables=None, secrets=None, global_variables=None, cluster_state=None, schedules=None, k8s_requests_to_limits_ratio=None, component_versions=None, cloud_account_id=None, cloud_account_secret_id=None, is_ephemeral=None, pause_releases=None, base_cluster_id=None, base_cluster_name=None, namespace=None, dynamic_launch=None, host=None, token=None, certificate_authority=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """KubernetesCluster - a model defined in Swagger"""  # noqa: E501
-        self._auto_sign_off_schedule = None
-        self._base_cluster_id = None
-        self._base_cluster_name = None
-        self._branch = None
-        self._cd_pipeline_parent = None
-        self._certificate_authority = None
-        self._cloud = None
-        self._cloud_account_id = None
-        self._cloud_account_secret_id = None
-        self._cluster_code = None
-        self._cluster_state = None
-        self._common_environment_variables = None
-        self._component_versions = None
-        self._configured = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._deleted = None
-        self._dynamic_launch = None
-        self._enable_auto_sign_off = None
-        self._entity_type = None
-        self._global_variables = None
-        self._host = None
-        self._id = None
-        self._is_ephemeral = None
-        self._k8s_requests_to_limits_ratio = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
-        self._namespace = None
-        self._number_of_versions = None
-        self._pause_releases = None
-        self._release_stream = None
-        self._require_sign_off = None
-        self._schedules = None
-        self._secrets = None
-        self._secrets_uid = None
-        self._stack_name = None
-        self._token = None
+        self._cloud = None
         self._tz = None
+        self._stack_name = None
+        self._release_stream = None
+        self._cd_pipeline_parent = None
+        self._require_sign_off = None
+        self._deleted = None
+        self._auto_sign_off_schedule = None
+        self._enable_auto_sign_off = None
+        self._configured = None
+        self._change_log = None
+        self._branch = None
+        self._cluster_code = None
+        self._common_environment_variables = None
         self._variables = None
+        self._secrets = None
+        self._global_variables = None
+        self._cluster_state = None
+        self._schedules = None
+        self._k8s_requests_to_limits_ratio = None
+        self._component_versions = None
+        self._cloud_account_id = None
+        self._cloud_account_secret_id = None
+        self._is_ephemeral = None
+        self._pause_releases = None
+        self._base_cluster_id = None
+        self._base_cluster_name = None
+        self._namespace = None
+        self._dynamic_launch = None
+        self._host = None
+        self._token = None
+        self._certificate_authority = None
+        self._entity_type = None
+        self._secrets_uid = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if auto_sign_off_schedule is not None:
-            self.auto_sign_off_schedule = auto_sign_off_schedule
-        if base_cluster_id is not None:
-            self.base_cluster_id = base_cluster_id
-        if base_cluster_name is not None:
-            self.base_cluster_name = base_cluster_name
-        if branch is not None:
-            self.branch = branch
-        if cd_pipeline_parent is not None:
-            self.cd_pipeline_parent = cd_pipeline_parent
-        if certificate_authority is not None:
-            self.certificate_authority = certificate_authority
-        if cloud is not None:
-            self.cloud = cloud
-        if cloud_account_id is not None:
-            self.cloud_account_id = cloud_account_id
-        if cloud_account_secret_id is not None:
-            self.cloud_account_secret_id = cloud_account_secret_id
-        if cluster_code is not None:
-            self.cluster_code = cluster_code
-        if cluster_state is not None:
-            self.cluster_state = cluster_state
-        if common_environment_variables is not None:
-            self.common_environment_variables = common_environment_variables
-        if component_versions is not None:
-            self.component_versions = component_versions
-        if configured is not None:
-            self.configured = configured
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if deleted is not None:
-            self.deleted = deleted
-        if dynamic_launch is not None:
-            self.dynamic_launch = dynamic_launch
-        if enable_auto_sign_off is not None:
-            self.enable_auto_sign_off = enable_auto_sign_off
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if global_variables is not None:
-            self.global_variables = global_variables
-        if host is not None:
-            self.host = host
-        if id is not None:
-            self.id = id
-        if is_ephemeral is not None:
-            self.is_ephemeral = is_ephemeral
-        if k8s_requests_to_limits_ratio is not None:
-            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if name is not None:
-            self.name = name
-        if namespace is not None:
-            self.namespace = namespace
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if pause_releases is not None:
-            self.pause_releases = pause_releases
-        if release_stream is not None:
-            self.release_stream = release_stream
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.name = name
+        self.cloud = cloud
+        self.tz = tz
+        self.stack_name = stack_name
+        self.release_stream = release_stream
+        if cd_pipeline_parent is not None:
+            self.cd_pipeline_parent = cd_pipeline_parent
         if require_sign_off is not None:
             self.require_sign_off = require_sign_off
-        if schedules is not None:
-            self.schedules = schedules
-        if secrets is not None:
-            self.secrets = secrets
-        if secrets_uid is not None:
-            self.secrets_uid = secrets_uid
-        if stack_name is not None:
-            self.stack_name = stack_name
-        if token is not None:
-            self.token = token
-        if tz is not None:
-            self.tz = tz
+        if deleted is not None:
+            self.deleted = deleted
+        if auto_sign_off_schedule is not None:
+            self.auto_sign_off_schedule = auto_sign_off_schedule
+        if enable_auto_sign_off is not None:
+            self.enable_auto_sign_off = enable_auto_sign_off
+        if configured is not None:
+            self.configured = configured
+        if change_log is not None:
+            self.change_log = change_log
+        if branch is not None:
+            self.branch = branch
+        if cluster_code is not None:
+            self.cluster_code = cluster_code
+        if common_environment_variables is not None:
+            self.common_environment_variables = common_environment_variables
         if variables is not None:
             self.variables = variables
+        if secrets is not None:
+            self.secrets = secrets
+        if global_variables is not None:
+            self.global_variables = global_variables
+        if cluster_state is not None:
+            self.cluster_state = cluster_state
+        if schedules is not None:
+            self.schedules = schedules
+        if k8s_requests_to_limits_ratio is not None:
+            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+        if component_versions is not None:
+            self.component_versions = component_versions
+        if cloud_account_id is not None:
+            self.cloud_account_id = cloud_account_id
+        if cloud_account_secret_id is not None:
+            self.cloud_account_secret_id = cloud_account_secret_id
+        if is_ephemeral is not None:
+            self.is_ephemeral = is_ephemeral
+        if pause_releases is not None:
+            self.pause_releases = pause_releases
+        if base_cluster_id is not None:
+            self.base_cluster_id = base_cluster_id
+        if base_cluster_name is not None:
+            self.base_cluster_name = base_cluster_name
+        if namespace is not None:
+            self.namespace = namespace
+        if dynamic_launch is not None:
+            self.dynamic_launch = dynamic_launch
+        if host is not None:
+            self.host = host
+        if token is not None:
+            self.token = token
+        if certificate_authority is not None:
+            self.certificate_authority = certificate_authority
+        if entity_type is not None:
+            self.entity_type = entity_type
+        if secrets_uid is not None:
+            self.secrets_uid = secrets_uid
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def auto_sign_off_schedule(self):
-        """Gets the auto_sign_off_schedule of this KubernetesCluster.  # noqa: E501
+    def id(self):
+        """Gets the id of this KubernetesCluster.  # noqa: E501
 
 
-        :return: The auto_sign_off_schedule of this KubernetesCluster.  # noqa: E501
+        :return: The id of this KubernetesCluster.  # noqa: E501
         :rtype: str
         """
-        return self._auto_sign_off_schedule
+        return self._id
 
-    @auto_sign_off_schedule.setter
-    def auto_sign_off_schedule(self, auto_sign_off_schedule):
-        """Sets the auto_sign_off_schedule of this KubernetesCluster.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this KubernetesCluster.
 
 
-        :param auto_sign_off_schedule: The auto_sign_off_schedule of this KubernetesCluster.  # noqa: E501
+        :param id: The id of this KubernetesCluster.  # noqa: E501
         :type: str
         """
 
-        self._auto_sign_off_schedule = auto_sign_off_schedule
-
-    @property
-    def base_cluster_id(self):
-        """Gets the base_cluster_id of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The base_cluster_id of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_cluster_id
-
-    @base_cluster_id.setter
-    def base_cluster_id(self, base_cluster_id):
-        """Sets the base_cluster_id of this KubernetesCluster.
-
-
-        :param base_cluster_id: The base_cluster_id of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._base_cluster_id = base_cluster_id
-
-    @property
-    def base_cluster_name(self):
-        """Gets the base_cluster_name of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The base_cluster_name of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_cluster_name
-
-    @base_cluster_name.setter
-    def base_cluster_name(self, base_cluster_name):
-        """Sets the base_cluster_name of this KubernetesCluster.
-
-
-        :param base_cluster_name: The base_cluster_name of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._base_cluster_name = base_cluster_name
-
-    @property
-    def branch(self):
-        """Gets the branch of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The branch of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch
-
-    @branch.setter
-    def branch(self, branch):
-        """Sets the branch of this KubernetesCluster.
-
-
-        :param branch: The branch of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._branch = branch
-
-    @property
-    def cd_pipeline_parent(self):
-        """Gets the cd_pipeline_parent of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The cd_pipeline_parent of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cd_pipeline_parent
-
-    @cd_pipeline_parent.setter
-    def cd_pipeline_parent(self, cd_pipeline_parent):
-        """Sets the cd_pipeline_parent of this KubernetesCluster.
-
-
-        :param cd_pipeline_parent: The cd_pipeline_parent of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cd_pipeline_parent = cd_pipeline_parent
-
-    @property
-    def certificate_authority(self):
-        """Gets the certificate_authority of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The certificate_authority of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._certificate_authority
-
-    @certificate_authority.setter
-    def certificate_authority(self, certificate_authority):
-        """Sets the certificate_authority of this KubernetesCluster.
-
-
-        :param certificate_authority: The certificate_authority of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._certificate_authority = certificate_authority
-
-    @property
-    def cloud(self):
-        """Gets the cloud of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The cloud of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud
-
-    @cloud.setter
-    def cloud(self, cloud):
-        """Sets the cloud of this KubernetesCluster.
-
-
-        :param cloud: The cloud of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if cloud not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
-                .format(cloud, allowed_values)
-            )
-
-        self._cloud = cloud
-
-    @property
-    def cloud_account_id(self):
-        """Gets the cloud_account_id of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The cloud_account_id of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_account_id
-
-    @cloud_account_id.setter
-    def cloud_account_id(self, cloud_account_id):
-        """Sets the cloud_account_id of this KubernetesCluster.
-
-
-        :param cloud_account_id: The cloud_account_id of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cloud_account_id = cloud_account_id
-
-    @property
-    def cloud_account_secret_id(self):
-        """Gets the cloud_account_secret_id of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The cloud_account_secret_id of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_account_secret_id
-
-    @cloud_account_secret_id.setter
-    def cloud_account_secret_id(self, cloud_account_secret_id):
-        """Sets the cloud_account_secret_id of this KubernetesCluster.
-
-
-        :param cloud_account_secret_id: The cloud_account_secret_id of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cloud_account_secret_id = cloud_account_secret_id
-
-    @property
-    def cluster_code(self):
-        """Gets the cluster_code of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The cluster_code of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_code
-
-    @cluster_code.setter
-    def cluster_code(self, cluster_code):
-        """Sets the cluster_code of this KubernetesCluster.
-
-
-        :param cluster_code: The cluster_code of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_code = cluster_code
-
-    @property
-    def cluster_state(self):
-        """Gets the cluster_state of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The cluster_state of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_state
-
-    @cluster_state.setter
-    def cluster_state(self, cluster_state):
-        """Sets the cluster_state of this KubernetesCluster.
-
-
-        :param cluster_state: The cluster_state of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["STOPPED", "RUNNING", "LAUNCHING", "DESTROYING", "LAUNCH_FAILED", "DESTROY_FAILED", "UNKNOWN", "SCALE_DOWN", "SCALING_DOWN", "SCALE_DOWN_FAILED", "SCALING_UP", "SCALE_UP_FAILED"]  # noqa: E501
-        if cluster_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cluster_state` ({0}), must be one of {1}"  # noqa: E501
-                .format(cluster_state, allowed_values)
-            )
-
-        self._cluster_state = cluster_state
-
-    @property
-    def common_environment_variables(self):
-        """Gets the common_environment_variables of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The common_environment_variables of this KubernetesCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._common_environment_variables
-
-    @common_environment_variables.setter
-    def common_environment_variables(self, common_environment_variables):
-        """Sets the common_environment_variables of this KubernetesCluster.
-
-
-        :param common_environment_variables: The common_environment_variables of this KubernetesCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._common_environment_variables = common_environment_variables
-
-    @property
-    def component_versions(self):
-        """Gets the component_versions of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The component_versions of this KubernetesCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._component_versions
-
-    @component_versions.setter
-    def component_versions(self, component_versions):
-        """Sets the component_versions of this KubernetesCluster.
-
-
-        :param component_versions: The component_versions of this KubernetesCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._component_versions = component_versions
-
-    @property
-    def configured(self):
-        """Gets the configured of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The configured of this KubernetesCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._configured
-
-    @configured.setter
-    def configured(self, configured):
-        """Sets the configured of this KubernetesCluster.
-
-
-        :param configured: The configured of this KubernetesCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._configured = configured
+        self._id = id
 
     @property
     def created_by(self):
@@ -591,6 +306,211 @@ class KubernetesCluster(object):
         self._creation_date = creation_date
 
     @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The last_modified_date of this KubernetesCluster.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this KubernetesCluster.
+
+
+        :param last_modified_date: The last_modified_date of this KubernetesCluster.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The last_modified_by of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this KubernetesCluster.
+
+
+        :param last_modified_by: The last_modified_by of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def name(self):
+        """Gets the name of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The name of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this KubernetesCluster.
+
+
+        :param name: The name of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def cloud(self):
+        """Gets the cloud of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The cloud of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud
+
+    @cloud.setter
+    def cloud(self, cloud):
+        """Sets the cloud of this KubernetesCluster.
+
+
+        :param cloud: The cloud of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+        if cloud is None:
+            raise ValueError("Invalid value for `cloud`, must not be `None`")  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if cloud not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
+                .format(cloud, allowed_values)
+            )
+
+        self._cloud = cloud
+
+    @property
+    def tz(self):
+        """Gets the tz of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The tz of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._tz
+
+    @tz.setter
+    def tz(self, tz):
+        """Sets the tz of this KubernetesCluster.
+
+
+        :param tz: The tz of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+        if tz is None:
+            raise ValueError("Invalid value for `tz`, must not be `None`")  # noqa: E501
+
+        self._tz = tz
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The stack_name of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this KubernetesCluster.
+
+
+        :param stack_name: The stack_name of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+        if stack_name is None:
+            raise ValueError("Invalid value for `stack_name`, must not be `None`")  # noqa: E501
+
+        self._stack_name = stack_name
+
+    @property
+    def release_stream(self):
+        """Gets the release_stream of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The release_stream of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_stream
+
+    @release_stream.setter
+    def release_stream(self, release_stream):
+        """Sets the release_stream of this KubernetesCluster.
+
+
+        :param release_stream: The release_stream of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+        if release_stream is None:
+            raise ValueError("Invalid value for `release_stream`, must not be `None`")  # noqa: E501
+
+        self._release_stream = release_stream
+
+    @property
+    def cd_pipeline_parent(self):
+        """Gets the cd_pipeline_parent of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The cd_pipeline_parent of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cd_pipeline_parent
+
+    @cd_pipeline_parent.setter
+    def cd_pipeline_parent(self, cd_pipeline_parent):
+        """Sets the cd_pipeline_parent of this KubernetesCluster.
+
+
+        :param cd_pipeline_parent: The cd_pipeline_parent of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cd_pipeline_parent = cd_pipeline_parent
+
+    @property
+    def require_sign_off(self):
+        """Gets the require_sign_off of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The require_sign_off of this KubernetesCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_sign_off
+
+    @require_sign_off.setter
+    def require_sign_off(self, require_sign_off):
+        """Sets the require_sign_off of this KubernetesCluster.
+
+
+        :param require_sign_off: The require_sign_off of this KubernetesCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_sign_off = require_sign_off
+
+    @property
     def deleted(self):
         """Gets the deleted of this KubernetesCluster.  # noqa: E501
 
@@ -610,6 +530,453 @@ class KubernetesCluster(object):
         """
 
         self._deleted = deleted
+
+    @property
+    def auto_sign_off_schedule(self):
+        """Gets the auto_sign_off_schedule of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The auto_sign_off_schedule of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_sign_off_schedule
+
+    @auto_sign_off_schedule.setter
+    def auto_sign_off_schedule(self, auto_sign_off_schedule):
+        """Sets the auto_sign_off_schedule of this KubernetesCluster.
+
+
+        :param auto_sign_off_schedule: The auto_sign_off_schedule of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_sign_off_schedule = auto_sign_off_schedule
+
+    @property
+    def enable_auto_sign_off(self):
+        """Gets the enable_auto_sign_off of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The enable_auto_sign_off of this KubernetesCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_auto_sign_off
+
+    @enable_auto_sign_off.setter
+    def enable_auto_sign_off(self, enable_auto_sign_off):
+        """Sets the enable_auto_sign_off of this KubernetesCluster.
+
+
+        :param enable_auto_sign_off: The enable_auto_sign_off of this KubernetesCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_auto_sign_off = enable_auto_sign_off
+
+    @property
+    def configured(self):
+        """Gets the configured of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The configured of this KubernetesCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._configured
+
+    @configured.setter
+    def configured(self, configured):
+        """Sets the configured of this KubernetesCluster.
+
+
+        :param configured: The configured of this KubernetesCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._configured = configured
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The change_log of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this KubernetesCluster.
+
+
+        :param change_log: The change_log of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def branch(self):
+        """Gets the branch of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The branch of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._branch
+
+    @branch.setter
+    def branch(self, branch):
+        """Sets the branch of this KubernetesCluster.
+
+
+        :param branch: The branch of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._branch = branch
+
+    @property
+    def cluster_code(self):
+        """Gets the cluster_code of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The cluster_code of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_code
+
+    @cluster_code.setter
+    def cluster_code(self, cluster_code):
+        """Sets the cluster_code of this KubernetesCluster.
+
+
+        :param cluster_code: The cluster_code of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_code = cluster_code
+
+    @property
+    def common_environment_variables(self):
+        """Gets the common_environment_variables of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The common_environment_variables of this KubernetesCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._common_environment_variables
+
+    @common_environment_variables.setter
+    def common_environment_variables(self, common_environment_variables):
+        """Sets the common_environment_variables of this KubernetesCluster.
+
+
+        :param common_environment_variables: The common_environment_variables of this KubernetesCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._common_environment_variables = common_environment_variables
+
+    @property
+    def variables(self):
+        """Gets the variables of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The variables of this KubernetesCluster.  # noqa: E501
+        :rtype: dict(str, Variables)
+        """
+        return self._variables
+
+    @variables.setter
+    def variables(self, variables):
+        """Sets the variables of this KubernetesCluster.
+
+
+        :param variables: The variables of this KubernetesCluster.  # noqa: E501
+        :type: dict(str, Variables)
+        """
+
+        self._variables = variables
+
+    @property
+    def secrets(self):
+        """Gets the secrets of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The secrets of this KubernetesCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._secrets
+
+    @secrets.setter
+    def secrets(self, secrets):
+        """Sets the secrets of this KubernetesCluster.
+
+
+        :param secrets: The secrets of this KubernetesCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._secrets = secrets
+
+    @property
+    def global_variables(self):
+        """Gets the global_variables of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The global_variables of this KubernetesCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._global_variables
+
+    @global_variables.setter
+    def global_variables(self, global_variables):
+        """Sets the global_variables of this KubernetesCluster.
+
+
+        :param global_variables: The global_variables of this KubernetesCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._global_variables = global_variables
+
+    @property
+    def cluster_state(self):
+        """Gets the cluster_state of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The cluster_state of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_state
+
+    @cluster_state.setter
+    def cluster_state(self, cluster_state):
+        """Sets the cluster_state of this KubernetesCluster.
+
+
+        :param cluster_state: The cluster_state of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STOPPED", "RUNNING", "LAUNCHING", "DESTROYING", "LAUNCH_FAILED", "DESTROY_FAILED", "UNKNOWN", "SCALE_DOWN", "SCALING_DOWN", "SCALE_DOWN_FAILED", "SCALING_UP", "SCALE_UP_FAILED"]  # noqa: E501
+        if cluster_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cluster_state` ({0}), must be one of {1}"  # noqa: E501
+                .format(cluster_state, allowed_values)
+            )
+
+        self._cluster_state = cluster_state
+
+    @property
+    def schedules(self):
+        """Gets the schedules of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The schedules of this KubernetesCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._schedules
+
+    @schedules.setter
+    def schedules(self, schedules):
+        """Sets the schedules of this KubernetesCluster.
+
+
+        :param schedules: The schedules of this KubernetesCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._schedules = schedules
+
+    @property
+    def k8s_requests_to_limits_ratio(self):
+        """Gets the k8s_requests_to_limits_ratio of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The k8s_requests_to_limits_ratio of this KubernetesCluster.  # noqa: E501
+        :rtype: float
+        """
+        return self._k8s_requests_to_limits_ratio
+
+    @k8s_requests_to_limits_ratio.setter
+    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
+        """Sets the k8s_requests_to_limits_ratio of this KubernetesCluster.
+
+
+        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this KubernetesCluster.  # noqa: E501
+        :type: float
+        """
+
+        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+
+    @property
+    def component_versions(self):
+        """Gets the component_versions of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The component_versions of this KubernetesCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._component_versions
+
+    @component_versions.setter
+    def component_versions(self, component_versions):
+        """Sets the component_versions of this KubernetesCluster.
+
+
+        :param component_versions: The component_versions of this KubernetesCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._component_versions = component_versions
+
+    @property
+    def cloud_account_id(self):
+        """Gets the cloud_account_id of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The cloud_account_id of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_account_id
+
+    @cloud_account_id.setter
+    def cloud_account_id(self, cloud_account_id):
+        """Sets the cloud_account_id of this KubernetesCluster.
+
+
+        :param cloud_account_id: The cloud_account_id of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_account_id = cloud_account_id
+
+    @property
+    def cloud_account_secret_id(self):
+        """Gets the cloud_account_secret_id of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The cloud_account_secret_id of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_account_secret_id
+
+    @cloud_account_secret_id.setter
+    def cloud_account_secret_id(self, cloud_account_secret_id):
+        """Sets the cloud_account_secret_id of this KubernetesCluster.
+
+
+        :param cloud_account_secret_id: The cloud_account_secret_id of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_account_secret_id = cloud_account_secret_id
+
+    @property
+    def is_ephemeral(self):
+        """Gets the is_ephemeral of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The is_ephemeral of this KubernetesCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_ephemeral
+
+    @is_ephemeral.setter
+    def is_ephemeral(self, is_ephemeral):
+        """Sets the is_ephemeral of this KubernetesCluster.
+
+
+        :param is_ephemeral: The is_ephemeral of this KubernetesCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_ephemeral = is_ephemeral
+
+    @property
+    def pause_releases(self):
+        """Gets the pause_releases of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The pause_releases of this KubernetesCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pause_releases
+
+    @pause_releases.setter
+    def pause_releases(self, pause_releases):
+        """Sets the pause_releases of this KubernetesCluster.
+
+
+        :param pause_releases: The pause_releases of this KubernetesCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._pause_releases = pause_releases
+
+    @property
+    def base_cluster_id(self):
+        """Gets the base_cluster_id of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The base_cluster_id of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_cluster_id
+
+    @base_cluster_id.setter
+    def base_cluster_id(self, base_cluster_id):
+        """Sets the base_cluster_id of this KubernetesCluster.
+
+
+        :param base_cluster_id: The base_cluster_id of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._base_cluster_id = base_cluster_id
+
+    @property
+    def base_cluster_name(self):
+        """Gets the base_cluster_name of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The base_cluster_name of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_cluster_name
+
+    @base_cluster_name.setter
+    def base_cluster_name(self, base_cluster_name):
+        """Sets the base_cluster_name of this KubernetesCluster.
+
+
+        :param base_cluster_name: The base_cluster_name of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._base_cluster_name = base_cluster_name
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The namespace of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this KubernetesCluster.
+
+
+        :param namespace: The namespace of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
 
     @property
     def dynamic_launch(self):
@@ -633,25 +1000,67 @@ class KubernetesCluster(object):
         self._dynamic_launch = dynamic_launch
 
     @property
-    def enable_auto_sign_off(self):
-        """Gets the enable_auto_sign_off of this KubernetesCluster.  # noqa: E501
+    def host(self):
+        """Gets the host of this KubernetesCluster.  # noqa: E501
 
 
-        :return: The enable_auto_sign_off of this KubernetesCluster.  # noqa: E501
-        :rtype: bool
+        :return: The host of this KubernetesCluster.  # noqa: E501
+        :rtype: str
         """
-        return self._enable_auto_sign_off
+        return self._host
 
-    @enable_auto_sign_off.setter
-    def enable_auto_sign_off(self, enable_auto_sign_off):
-        """Sets the enable_auto_sign_off of this KubernetesCluster.
+    @host.setter
+    def host(self, host):
+        """Sets the host of this KubernetesCluster.
 
 
-        :param enable_auto_sign_off: The enable_auto_sign_off of this KubernetesCluster.  # noqa: E501
-        :type: bool
+        :param host: The host of this KubernetesCluster.  # noqa: E501
+        :type: str
         """
 
-        self._enable_auto_sign_off = enable_auto_sign_off
+        self._host = host
+
+    @property
+    def token(self):
+        """Gets the token of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The token of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """Sets the token of this KubernetesCluster.
+
+
+        :param token: The token of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._token = token
+
+    @property
+    def certificate_authority(self):
+        """Gets the certificate_authority of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The certificate_authority of this KubernetesCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_authority
+
+    @certificate_authority.setter
+    def certificate_authority(self, certificate_authority):
+        """Sets the certificate_authority of this KubernetesCluster.
+
+
+        :param certificate_authority: The certificate_authority of this KubernetesCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_authority = certificate_authority
 
     @property
     def entity_type(self):
@@ -681,321 +1090,6 @@ class KubernetesCluster(object):
         self._entity_type = entity_type
 
     @property
-    def global_variables(self):
-        """Gets the global_variables of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The global_variables of this KubernetesCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._global_variables
-
-    @global_variables.setter
-    def global_variables(self, global_variables):
-        """Sets the global_variables of this KubernetesCluster.
-
-
-        :param global_variables: The global_variables of this KubernetesCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._global_variables = global_variables
-
-    @property
-    def host(self):
-        """Gets the host of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The host of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._host
-
-    @host.setter
-    def host(self, host):
-        """Sets the host of this KubernetesCluster.
-
-
-        :param host: The host of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._host = host
-
-    @property
-    def id(self):
-        """Gets the id of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The id of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this KubernetesCluster.
-
-
-        :param id: The id of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def is_ephemeral(self):
-        """Gets the is_ephemeral of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The is_ephemeral of this KubernetesCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_ephemeral
-
-    @is_ephemeral.setter
-    def is_ephemeral(self, is_ephemeral):
-        """Sets the is_ephemeral of this KubernetesCluster.
-
-
-        :param is_ephemeral: The is_ephemeral of this KubernetesCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_ephemeral = is_ephemeral
-
-    @property
-    def k8s_requests_to_limits_ratio(self):
-        """Gets the k8s_requests_to_limits_ratio of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The k8s_requests_to_limits_ratio of this KubernetesCluster.  # noqa: E501
-        :rtype: float
-        """
-        return self._k8s_requests_to_limits_ratio
-
-    @k8s_requests_to_limits_ratio.setter
-    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
-        """Sets the k8s_requests_to_limits_ratio of this KubernetesCluster.
-
-
-        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this KubernetesCluster.  # noqa: E501
-        :type: float
-        """
-
-        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The last_modified_by of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this KubernetesCluster.
-
-
-        :param last_modified_by: The last_modified_by of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The last_modified_date of this KubernetesCluster.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this KubernetesCluster.
-
-
-        :param last_modified_date: The last_modified_date of this KubernetesCluster.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def name(self):
-        """Gets the name of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The name of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this KubernetesCluster.
-
-
-        :param name: The name of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def namespace(self):
-        """Gets the namespace of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The namespace of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """Sets the namespace of this KubernetesCluster.
-
-
-        :param namespace: The namespace of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._namespace = namespace
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The number_of_versions of this KubernetesCluster.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this KubernetesCluster.
-
-
-        :param number_of_versions: The number_of_versions of this KubernetesCluster.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
-
-    @property
-    def pause_releases(self):
-        """Gets the pause_releases of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The pause_releases of this KubernetesCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._pause_releases
-
-    @pause_releases.setter
-    def pause_releases(self, pause_releases):
-        """Sets the pause_releases of this KubernetesCluster.
-
-
-        :param pause_releases: The pause_releases of this KubernetesCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._pause_releases = pause_releases
-
-    @property
-    def release_stream(self):
-        """Gets the release_stream of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The release_stream of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_stream
-
-    @release_stream.setter
-    def release_stream(self, release_stream):
-        """Sets the release_stream of this KubernetesCluster.
-
-
-        :param release_stream: The release_stream of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._release_stream = release_stream
-
-    @property
-    def require_sign_off(self):
-        """Gets the require_sign_off of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The require_sign_off of this KubernetesCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._require_sign_off
-
-    @require_sign_off.setter
-    def require_sign_off(self, require_sign_off):
-        """Sets the require_sign_off of this KubernetesCluster.
-
-
-        :param require_sign_off: The require_sign_off of this KubernetesCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._require_sign_off = require_sign_off
-
-    @property
-    def schedules(self):
-        """Gets the schedules of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The schedules of this KubernetesCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._schedules
-
-    @schedules.setter
-    def schedules(self, schedules):
-        """Sets the schedules of this KubernetesCluster.
-
-
-        :param schedules: The schedules of this KubernetesCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._schedules = schedules
-
-    @property
-    def secrets(self):
-        """Gets the secrets of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The secrets of this KubernetesCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._secrets
-
-    @secrets.setter
-    def secrets(self, secrets):
-        """Sets the secrets of this KubernetesCluster.
-
-
-        :param secrets: The secrets of this KubernetesCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._secrets = secrets
-
-    @property
     def secrets_uid(self):
         """Gets the secrets_uid of this KubernetesCluster.  # noqa: E501
 
@@ -1017,90 +1111,6 @@ class KubernetesCluster(object):
         self._secrets_uid = secrets_uid
 
     @property
-    def stack_name(self):
-        """Gets the stack_name of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The stack_name of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this KubernetesCluster.
-
-
-        :param stack_name: The stack_name of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
-
-    @property
-    def token(self):
-        """Gets the token of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The token of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._token
-
-    @token.setter
-    def token(self, token):
-        """Sets the token of this KubernetesCluster.
-
-
-        :param token: The token of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._token = token
-
-    @property
-    def tz(self):
-        """Gets the tz of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The tz of this KubernetesCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._tz
-
-    @tz.setter
-    def tz(self, tz):
-        """Sets the tz of this KubernetesCluster.
-
-
-        :param tz: The tz of this KubernetesCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._tz = tz
-
-    @property
-    def variables(self):
-        """Gets the variables of this KubernetesCluster.  # noqa: E501
-
-
-        :return: The variables of this KubernetesCluster.  # noqa: E501
-        :rtype: dict(str, Variables)
-        """
-        return self._variables
-
-    @variables.setter
-    def variables(self, variables):
-        """Sets the variables of this KubernetesCluster.
-
-
-        :param variables: The variables of this KubernetesCluster.  # noqa: E501
-        :type: dict(str, Variables)
-        """
-
-        self._variables = variables
-
-    @property
     def versioning_key(self):
         """Gets the versioning_key of this KubernetesCluster.  # noqa: E501
 
@@ -1120,6 +1130,27 @@ class KubernetesCluster(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this KubernetesCluster.  # noqa: E501
+
+
+        :return: The number_of_versions of this KubernetesCluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this KubernetesCluster.
+
+
+        :param number_of_versions: The number_of_versions of this KubernetesCluster.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

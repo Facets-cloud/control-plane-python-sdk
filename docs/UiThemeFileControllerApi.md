@@ -1,15 +1,15 @@
 # swagger_client.UiThemeFileControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**save_theme_file_using_post**](UiThemeFileControllerApi.md#save_theme_file_using_post) | **POST** /cc-ui/v1/themeFile | saveThemeFile
+[**save_theme_file**](UiThemeFileControllerApi.md#save_theme_file) | **POST** /cc-ui/v1/themeFile | 
 
-# **save_theme_file_using_post**
-> bool save_theme_file_using_post(body)
+# **save_theme_file**
+> bool save_theme_file(body)
 
-saveThemeFile
+
 
 ### Example
 ```python
@@ -18,28 +18,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiThemeFileControllerApi(swagger_client.ApiClient(configuration))
-body = 'body_example' # str | themeFileContent
+body = 'body_example' # str | 
 
 try:
-    # saveThemeFile
-    api_response = api_instance.save_theme_file_using_post(body)
+    api_response = api_instance.save_theme_file(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiThemeFileControllerApi->save_theme_file_using_post: %s\n" % e)
+    print("Exception when calling UiThemeFileControllerApi->save_theme_file: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**str**](str.md)| themeFileContent | 
+ **body** | [**str**](str.md)|  | 
 
 ### Return type
 
@@ -47,12 +46,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

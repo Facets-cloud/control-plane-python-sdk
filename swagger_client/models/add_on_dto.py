@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,60 @@ class AddOnDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'added': 'bool',
+        'intent': 'str',
         'flavor': 'str',
         'inputs': 'dict(str, Input)',
-        'intent': 'str',
+        'added': 'bool',
         'resource_name': 'str'
     }
 
     attribute_map = {
-        'added': 'added',
+        'intent': 'intent',
         'flavor': 'flavor',
         'inputs': 'inputs',
-        'intent': 'intent',
+        'added': 'added',
         'resource_name': 'resourceName'
     }
 
-    def __init__(self, added=None, flavor=None, inputs=None, intent=None, resource_name=None):  # noqa: E501
+    def __init__(self, intent=None, flavor=None, inputs=None, added=None, resource_name=None):  # noqa: E501
         """AddOnDTO - a model defined in Swagger"""  # noqa: E501
-        self._added = None
+        self._intent = None
         self._flavor = None
         self._inputs = None
-        self._intent = None
+        self._added = None
         self._resource_name = None
         self.discriminator = None
-        if added is not None:
-            self.added = added
+        if intent is not None:
+            self.intent = intent
         if flavor is not None:
             self.flavor = flavor
         if inputs is not None:
             self.inputs = inputs
-        if intent is not None:
-            self.intent = intent
+        if added is not None:
+            self.added = added
         if resource_name is not None:
             self.resource_name = resource_name
 
     @property
-    def added(self):
-        """Gets the added of this AddOnDTO.  # noqa: E501
+    def intent(self):
+        """Gets the intent of this AddOnDTO.  # noqa: E501
 
 
-        :return: The added of this AddOnDTO.  # noqa: E501
-        :rtype: bool
+        :return: The intent of this AddOnDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._added
+        return self._intent
 
-    @added.setter
-    def added(self, added):
-        """Sets the added of this AddOnDTO.
+    @intent.setter
+    def intent(self, intent):
+        """Sets the intent of this AddOnDTO.
 
 
-        :param added: The added of this AddOnDTO.  # noqa: E501
-        :type: bool
+        :param intent: The intent of this AddOnDTO.  # noqa: E501
+        :type: str
         """
 
-        self._added = added
+        self._intent = intent
 
     @property
     def flavor(self):
@@ -126,25 +126,25 @@ class AddOnDTO(object):
         self._inputs = inputs
 
     @property
-    def intent(self):
-        """Gets the intent of this AddOnDTO.  # noqa: E501
+    def added(self):
+        """Gets the added of this AddOnDTO.  # noqa: E501
 
 
-        :return: The intent of this AddOnDTO.  # noqa: E501
-        :rtype: str
+        :return: The added of this AddOnDTO.  # noqa: E501
+        :rtype: bool
         """
-        return self._intent
+        return self._added
 
-    @intent.setter
-    def intent(self, intent):
-        """Sets the intent of this AddOnDTO.
+    @added.setter
+    def added(self, added):
+        """Sets the added of this AddOnDTO.
 
 
-        :param intent: The intent of this AddOnDTO.  # noqa: E501
-        :type: str
+        :param added: The added of this AddOnDTO.  # noqa: E501
+        :type: bool
         """
 
-        self._intent = intent
+        self._added = added
 
     @property
     def resource_name(self):

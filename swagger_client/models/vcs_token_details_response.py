@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,31 @@ class VCSTokenDetailsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'account_id': 'str',
         'account_name': 'str',
         'expired': 'bool',
-        'expiry_date': 'datetime',
-        'id': 'str'
+        'expiry_date': 'datetime'
     }
 
     attribute_map = {
+        'id': 'id',
         'account_id': 'accountId',
         'account_name': 'accountName',
         'expired': 'expired',
-        'expiry_date': 'expiryDate',
-        'id': 'id'
+        'expiry_date': 'expiryDate'
     }
 
-    def __init__(self, account_id=None, account_name=None, expired=None, expiry_date=None, id=None):  # noqa: E501
+    def __init__(self, id=None, account_id=None, account_name=None, expired=None, expiry_date=None):  # noqa: E501
         """VCSTokenDetailsResponse - a model defined in Swagger"""  # noqa: E501
+        self._id = None
         self._account_id = None
         self._account_name = None
         self._expired = None
         self._expiry_date = None
-        self._id = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
         if account_id is not None:
             self.account_id = account_id
         if account_name is not None:
@@ -59,8 +61,27 @@ class VCSTokenDetailsResponse(object):
             self.expired = expired
         if expiry_date is not None:
             self.expiry_date = expiry_date
-        if id is not None:
-            self.id = id
+
+    @property
+    def id(self):
+        """Gets the id of this VCSTokenDetailsResponse.  # noqa: E501
+
+
+        :return: The id of this VCSTokenDetailsResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this VCSTokenDetailsResponse.
+
+
+        :param id: The id of this VCSTokenDetailsResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def account_id(self):
@@ -145,27 +166,6 @@ class VCSTokenDetailsResponse(object):
         """
 
         self._expiry_date = expiry_date
-
-    @property
-    def id(self):
-        """Gets the id of this VCSTokenDetailsResponse.  # noqa: E501
-
-
-        :return: The id of this VCSTokenDetailsResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this VCSTokenDetailsResponse.
-
-
-        :param id: The id of this VCSTokenDetailsResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

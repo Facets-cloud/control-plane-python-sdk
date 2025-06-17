@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class BulkWorkflowAttachRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_ci_ids': 'list[str]',
-        'workflow_id': 'str'
+        'workflow_id': 'str',
+        'artifact_ci_ids': 'list[str]'
     }
 
     attribute_map = {
-        'artifact_ci_ids': 'artifactCiIds',
-        'workflow_id': 'workflowId'
+        'workflow_id': 'workflowId',
+        'artifact_ci_ids': 'artifactCiIds'
     }
 
-    def __init__(self, artifact_ci_ids=None, workflow_id=None):  # noqa: E501
+    def __init__(self, workflow_id=None, artifact_ci_ids=None):  # noqa: E501
         """BulkWorkflowAttachRequest - a model defined in Swagger"""  # noqa: E501
-        self._artifact_ci_ids = None
         self._workflow_id = None
+        self._artifact_ci_ids = None
         self.discriminator = None
-        if artifact_ci_ids is not None:
-            self.artifact_ci_ids = artifact_ci_ids
         if workflow_id is not None:
             self.workflow_id = workflow_id
-
-    @property
-    def artifact_ci_ids(self):
-        """Gets the artifact_ci_ids of this BulkWorkflowAttachRequest.  # noqa: E501
-
-
-        :return: The artifact_ci_ids of this BulkWorkflowAttachRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._artifact_ci_ids
-
-    @artifact_ci_ids.setter
-    def artifact_ci_ids(self, artifact_ci_ids):
-        """Sets the artifact_ci_ids of this BulkWorkflowAttachRequest.
-
-
-        :param artifact_ci_ids: The artifact_ci_ids of this BulkWorkflowAttachRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._artifact_ci_ids = artifact_ci_ids
+        if artifact_ci_ids is not None:
+            self.artifact_ci_ids = artifact_ci_ids
 
     @property
     def workflow_id(self):
@@ -88,6 +67,27 @@ class BulkWorkflowAttachRequest(object):
         """
 
         self._workflow_id = workflow_id
+
+    @property
+    def artifact_ci_ids(self):
+        """Gets the artifact_ci_ids of this BulkWorkflowAttachRequest.  # noqa: E501
+
+
+        :return: The artifact_ci_ids of this BulkWorkflowAttachRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._artifact_ci_ids
+
+    @artifact_ci_ids.setter
+    def artifact_ci_ids(self, artifact_ci_ids):
+        """Sets the artifact_ci_ids of this BulkWorkflowAttachRequest.
+
+
+        :param artifact_ci_ids: The artifact_ci_ids of this BulkWorkflowAttachRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._artifact_ci_ids = artifact_ci_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

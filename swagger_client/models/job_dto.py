@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,55 @@ class JobDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'duration_in_seconds': 'int',
         'name': 'str',
+        'duration_in_seconds': 'int',
+        'age_in_seconds': 'int',
         'pod_status': 'PodStatusDTO'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'duration_in_seconds': 'durationInSeconds',
         'name': 'name',
+        'duration_in_seconds': 'durationInSeconds',
+        'age_in_seconds': 'ageInSeconds',
         'pod_status': 'podStatus'
     }
 
-    def __init__(self, age_in_seconds=None, duration_in_seconds=None, name=None, pod_status=None):  # noqa: E501
+    def __init__(self, name=None, duration_in_seconds=None, age_in_seconds=None, pod_status=None):  # noqa: E501
         """JobDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._duration_in_seconds = None
         self._name = None
+        self._duration_in_seconds = None
+        self._age_in_seconds = None
         self._pod_status = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if duration_in_seconds is not None:
-            self.duration_in_seconds = duration_in_seconds
         if name is not None:
             self.name = name
+        if duration_in_seconds is not None:
+            self.duration_in_seconds = duration_in_seconds
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
         if pod_status is not None:
             self.pod_status = pod_status
 
     @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this JobDTO.  # noqa: E501
+    def name(self):
+        """Gets the name of this JobDTO.  # noqa: E501
 
 
-        :return: The age_in_seconds of this JobDTO.  # noqa: E501
-        :rtype: int
+        :return: The name of this JobDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._age_in_seconds
+        return self._name
 
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this JobDTO.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this JobDTO.
 
 
-        :param age_in_seconds: The age_in_seconds of this JobDTO.  # noqa: E501
-        :type: int
+        :param name: The name of this JobDTO.  # noqa: E501
+        :type: str
         """
 
-        self._age_in_seconds = age_in_seconds
+        self._name = name
 
     @property
     def duration_in_seconds(self):
@@ -100,25 +100,25 @@ class JobDTO(object):
         self._duration_in_seconds = duration_in_seconds
 
     @property
-    def name(self):
-        """Gets the name of this JobDTO.  # noqa: E501
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this JobDTO.  # noqa: E501
 
 
-        :return: The name of this JobDTO.  # noqa: E501
-        :rtype: str
+        :return: The age_in_seconds of this JobDTO.  # noqa: E501
+        :rtype: int
         """
-        return self._name
+        return self._age_in_seconds
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this JobDTO.
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this JobDTO.
 
 
-        :param name: The name of this JobDTO.  # noqa: E501
-        :type: str
+        :param age_in_seconds: The age_in_seconds of this JobDTO.  # noqa: E501
+        :type: int
         """
 
-        self._name = name
+        self._age_in_seconds = age_in_seconds
 
     @property
     def pod_status(self):

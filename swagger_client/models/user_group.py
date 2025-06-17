@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,184 +28,142 @@ class UserGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'accounts': 'list[str]',
-        'additional_roles': 'list[str]',
-        'associated_resource_groups': 'list[str]',
-        'base_role': 'str',
-        'change_log': 'str',
-        'cluster_ids': 'list[str]',
-        'cluster_role_bindings': 'dict(str, str)',
-        'entity_type': 'str',
-        'group_name': 'str',
         'id': 'str',
-        'number_of_versions': 'int',
+        'group_name': 'str',
+        'cluster_role_bindings': 'dict(str, str)',
+        'cluster_ids': 'list[str]',
+        'base_role': 'str',
+        'additional_roles': 'list[str]',
+        'change_log': 'str',
+        'associated_resource_groups': 'list[str]',
         'stack_names': 'list[str]',
-        'versioning_key': 'str'
+        'accounts': 'list[str]',
+        'entity_type': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'accounts': 'accounts',
-        'additional_roles': 'additionalRoles',
-        'associated_resource_groups': 'associatedResourceGroups',
-        'base_role': 'baseRole',
-        'change_log': 'changeLog',
-        'cluster_ids': 'clusterIds',
-        'cluster_role_bindings': 'clusterRoleBindings',
-        'entity_type': 'entityType',
-        'group_name': 'groupName',
         'id': 'id',
-        'number_of_versions': 'numberOfVersions',
+        'group_name': 'groupName',
+        'cluster_role_bindings': 'clusterRoleBindings',
+        'cluster_ids': 'clusterIds',
+        'base_role': 'baseRole',
+        'additional_roles': 'additionalRoles',
+        'change_log': 'changeLog',
+        'associated_resource_groups': 'associatedResourceGroups',
         'stack_names': 'stackNames',
-        'versioning_key': 'versioningKey'
+        'accounts': 'accounts',
+        'entity_type': 'entityType',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, accounts=None, additional_roles=None, associated_resource_groups=None, base_role=None, change_log=None, cluster_ids=None, cluster_role_bindings=None, entity_type=None, group_name=None, id=None, number_of_versions=None, stack_names=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, group_name=None, cluster_role_bindings=None, cluster_ids=None, base_role=None, additional_roles=None, change_log=None, associated_resource_groups=None, stack_names=None, accounts=None, entity_type=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """UserGroup - a model defined in Swagger"""  # noqa: E501
-        self._accounts = None
-        self._additional_roles = None
-        self._associated_resource_groups = None
-        self._base_role = None
-        self._change_log = None
-        self._cluster_ids = None
-        self._cluster_role_bindings = None
-        self._entity_type = None
-        self._group_name = None
         self._id = None
-        self._number_of_versions = None
+        self._group_name = None
+        self._cluster_role_bindings = None
+        self._cluster_ids = None
+        self._base_role = None
+        self._additional_roles = None
+        self._change_log = None
+        self._associated_resource_groups = None
         self._stack_names = None
+        self._accounts = None
+        self._entity_type = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if accounts is not None:
-            self.accounts = accounts
-        if additional_roles is not None:
-            self.additional_roles = additional_roles
-        if associated_resource_groups is not None:
-            self.associated_resource_groups = associated_resource_groups
-        if base_role is not None:
-            self.base_role = base_role
-        if change_log is not None:
-            self.change_log = change_log
-        if cluster_ids is not None:
-            self.cluster_ids = cluster_ids
-        if cluster_role_bindings is not None:
-            self.cluster_role_bindings = cluster_role_bindings
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if group_name is not None:
-            self.group_name = group_name
         if id is not None:
             self.id = id
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
+        if group_name is not None:
+            self.group_name = group_name
+        if cluster_role_bindings is not None:
+            self.cluster_role_bindings = cluster_role_bindings
+        if cluster_ids is not None:
+            self.cluster_ids = cluster_ids
+        if base_role is not None:
+            self.base_role = base_role
+        if additional_roles is not None:
+            self.additional_roles = additional_roles
+        if change_log is not None:
+            self.change_log = change_log
+        if associated_resource_groups is not None:
+            self.associated_resource_groups = associated_resource_groups
         if stack_names is not None:
             self.stack_names = stack_names
+        if accounts is not None:
+            self.accounts = accounts
+        if entity_type is not None:
+            self.entity_type = entity_type
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def accounts(self):
-        """Gets the accounts of this UserGroup.  # noqa: E501
+    def id(self):
+        """Gets the id of this UserGroup.  # noqa: E501
 
 
-        :return: The accounts of this UserGroup.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._accounts
-
-    @accounts.setter
-    def accounts(self, accounts):
-        """Sets the accounts of this UserGroup.
-
-
-        :param accounts: The accounts of this UserGroup.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._accounts = accounts
-
-    @property
-    def additional_roles(self):
-        """Gets the additional_roles of this UserGroup.  # noqa: E501
-
-
-        :return: The additional_roles of this UserGroup.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._additional_roles
-
-    @additional_roles.setter
-    def additional_roles(self, additional_roles):
-        """Sets the additional_roles of this UserGroup.
-
-
-        :param additional_roles: The additional_roles of this UserGroup.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._additional_roles = additional_roles
-
-    @property
-    def associated_resource_groups(self):
-        """Gets the associated_resource_groups of this UserGroup.  # noqa: E501
-
-
-        :return: The associated_resource_groups of this UserGroup.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._associated_resource_groups
-
-    @associated_resource_groups.setter
-    def associated_resource_groups(self, associated_resource_groups):
-        """Sets the associated_resource_groups of this UserGroup.
-
-
-        :param associated_resource_groups: The associated_resource_groups of this UserGroup.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._associated_resource_groups = associated_resource_groups
-
-    @property
-    def base_role(self):
-        """Gets the base_role of this UserGroup.  # noqa: E501
-
-
-        :return: The base_role of this UserGroup.  # noqa: E501
+        :return: The id of this UserGroup.  # noqa: E501
         :rtype: str
         """
-        return self._base_role
+        return self._id
 
-    @base_role.setter
-    def base_role(self, base_role):
-        """Sets the base_role of this UserGroup.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this UserGroup.
 
 
-        :param base_role: The base_role of this UserGroup.  # noqa: E501
+        :param id: The id of this UserGroup.  # noqa: E501
         :type: str
         """
 
-        self._base_role = base_role
+        self._id = id
 
     @property
-    def change_log(self):
-        """Gets the change_log of this UserGroup.  # noqa: E501
+    def group_name(self):
+        """Gets the group_name of this UserGroup.  # noqa: E501
 
 
-        :return: The change_log of this UserGroup.  # noqa: E501
+        :return: The group_name of this UserGroup.  # noqa: E501
         :rtype: str
         """
-        return self._change_log
+        return self._group_name
 
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this UserGroup.
+    @group_name.setter
+    def group_name(self, group_name):
+        """Sets the group_name of this UserGroup.
 
 
-        :param change_log: The change_log of this UserGroup.  # noqa: E501
+        :param group_name: The group_name of this UserGroup.  # noqa: E501
         :type: str
         """
 
-        self._change_log = change_log
+        self._group_name = group_name
+
+    @property
+    def cluster_role_bindings(self):
+        """Gets the cluster_role_bindings of this UserGroup.  # noqa: E501
+
+
+        :return: The cluster_role_bindings of this UserGroup.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._cluster_role_bindings
+
+    @cluster_role_bindings.setter
+    def cluster_role_bindings(self, cluster_role_bindings):
+        """Sets the cluster_role_bindings of this UserGroup.
+
+
+        :param cluster_role_bindings: The cluster_role_bindings of this UserGroup.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._cluster_role_bindings = cluster_role_bindings
 
     @property
     def cluster_ids(self):
@@ -229,25 +187,130 @@ class UserGroup(object):
         self._cluster_ids = cluster_ids
 
     @property
-    def cluster_role_bindings(self):
-        """Gets the cluster_role_bindings of this UserGroup.  # noqa: E501
+    def base_role(self):
+        """Gets the base_role of this UserGroup.  # noqa: E501
 
 
-        :return: The cluster_role_bindings of this UserGroup.  # noqa: E501
-        :rtype: dict(str, str)
+        :return: The base_role of this UserGroup.  # noqa: E501
+        :rtype: str
         """
-        return self._cluster_role_bindings
+        return self._base_role
 
-    @cluster_role_bindings.setter
-    def cluster_role_bindings(self, cluster_role_bindings):
-        """Sets the cluster_role_bindings of this UserGroup.
+    @base_role.setter
+    def base_role(self, base_role):
+        """Sets the base_role of this UserGroup.
 
 
-        :param cluster_role_bindings: The cluster_role_bindings of this UserGroup.  # noqa: E501
-        :type: dict(str, str)
+        :param base_role: The base_role of this UserGroup.  # noqa: E501
+        :type: str
         """
 
-        self._cluster_role_bindings = cluster_role_bindings
+        self._base_role = base_role
+
+    @property
+    def additional_roles(self):
+        """Gets the additional_roles of this UserGroup.  # noqa: E501
+
+
+        :return: The additional_roles of this UserGroup.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._additional_roles
+
+    @additional_roles.setter
+    def additional_roles(self, additional_roles):
+        """Sets the additional_roles of this UserGroup.
+
+
+        :param additional_roles: The additional_roles of this UserGroup.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._additional_roles = additional_roles
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this UserGroup.  # noqa: E501
+
+
+        :return: The change_log of this UserGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this UserGroup.
+
+
+        :param change_log: The change_log of this UserGroup.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def associated_resource_groups(self):
+        """Gets the associated_resource_groups of this UserGroup.  # noqa: E501
+
+
+        :return: The associated_resource_groups of this UserGroup.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._associated_resource_groups
+
+    @associated_resource_groups.setter
+    def associated_resource_groups(self, associated_resource_groups):
+        """Sets the associated_resource_groups of this UserGroup.
+
+
+        :param associated_resource_groups: The associated_resource_groups of this UserGroup.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._associated_resource_groups = associated_resource_groups
+
+    @property
+    def stack_names(self):
+        """Gets the stack_names of this UserGroup.  # noqa: E501
+
+
+        :return: The stack_names of this UserGroup.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._stack_names
+
+    @stack_names.setter
+    def stack_names(self, stack_names):
+        """Sets the stack_names of this UserGroup.
+
+
+        :param stack_names: The stack_names of this UserGroup.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._stack_names = stack_names
+
+    @property
+    def accounts(self):
+        """Gets the accounts of this UserGroup.  # noqa: E501
+
+
+        :return: The accounts of this UserGroup.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._accounts
+
+    @accounts.setter
+    def accounts(self, accounts):
+        """Sets the accounts of this UserGroup.
+
+
+        :param accounts: The accounts of this UserGroup.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._accounts = accounts
 
     @property
     def entity_type(self):
@@ -277,46 +340,25 @@ class UserGroup(object):
         self._entity_type = entity_type
 
     @property
-    def group_name(self):
-        """Gets the group_name of this UserGroup.  # noqa: E501
+    def versioning_key(self):
+        """Gets the versioning_key of this UserGroup.  # noqa: E501
 
 
-        :return: The group_name of this UserGroup.  # noqa: E501
+        :return: The versioning_key of this UserGroup.  # noqa: E501
         :rtype: str
         """
-        return self._group_name
+        return self._versioning_key
 
-    @group_name.setter
-    def group_name(self, group_name):
-        """Sets the group_name of this UserGroup.
+    @versioning_key.setter
+    def versioning_key(self, versioning_key):
+        """Sets the versioning_key of this UserGroup.
 
 
-        :param group_name: The group_name of this UserGroup.  # noqa: E501
+        :param versioning_key: The versioning_key of this UserGroup.  # noqa: E501
         :type: str
         """
 
-        self._group_name = group_name
-
-    @property
-    def id(self):
-        """Gets the id of this UserGroup.  # noqa: E501
-
-
-        :return: The id of this UserGroup.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this UserGroup.
-
-
-        :param id: The id of this UserGroup.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
+        self._versioning_key = versioning_key
 
     @property
     def number_of_versions(self):
@@ -338,48 +380,6 @@ class UserGroup(object):
         """
 
         self._number_of_versions = number_of_versions
-
-    @property
-    def stack_names(self):
-        """Gets the stack_names of this UserGroup.  # noqa: E501
-
-
-        :return: The stack_names of this UserGroup.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._stack_names
-
-    @stack_names.setter
-    def stack_names(self, stack_names):
-        """Sets the stack_names of this UserGroup.
-
-
-        :param stack_names: The stack_names of this UserGroup.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._stack_names = stack_names
-
-    @property
-    def versioning_key(self):
-        """Gets the versioning_key of this UserGroup.  # noqa: E501
-
-
-        :return: The versioning_key of this UserGroup.  # noqa: E501
-        :rtype: str
-        """
-        return self._versioning_key
-
-    @versioning_key.setter
-    def versioning_key(self, versioning_key):
-        """Sets the versioning_key of this UserGroup.
-
-
-        :param versioning_key: The versioning_key of this UserGroup.  # noqa: E501
-        :type: str
-        """
-
-        self._versioning_key = versioning_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

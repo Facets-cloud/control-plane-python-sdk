@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiThemeFileControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def save_theme_file_using_post(self, body, **kwargs):  # noqa: E501
-        """saveThemeFile  # noqa: E501
+    def save_theme_file(self, body, **kwargs):  # noqa: E501
+        """save_theme_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.save_theme_file_using_post(body, async_req=True)
+        >>> thread = api.save_theme_file(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str body: themeFileContent (required)
+        :param str body: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.save_theme_file_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.save_theme_file_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.save_theme_file_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.save_theme_file_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def save_theme_file_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """saveThemeFile  # noqa: E501
+    def save_theme_file_with_http_info(self, body, **kwargs):  # noqa: E501
+        """save_theme_file  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.save_theme_file_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.save_theme_file_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str body: themeFileContent (required)
+        :param str body: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiThemeFileControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method save_theme_file_using_post" % key
+                    " to method save_theme_file" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `save_theme_file_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `save_theme_file`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiThemeFileControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/themeFile', 'POST',

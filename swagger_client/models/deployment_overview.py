@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,100 +28,79 @@ class DeploymentOverview(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster': 'AbstractCluster',
         'cluster_id': 'str',
-        'current_signed_off_deployment': 'DeploymentLog',
-        'deployments_stats': 'DeploymentsStats',
         'down_stream_cluster_names': 'list[str]',
-        'execution_time': 'dict(str, ExecutionTime)',
-        'in_progress_deployments': 'list[DeploymentLog]',
-        'is_scheduled_releases_paused': 'bool',
-        'latest_deployment': 'DeploymentLog',
-        'next_execution_time': 'str',
-        'queued_releases': 'list[QueuedRelease]',
+        'current_signed_off_deployment': 'DeploymentLog',
         'stack': 'Stack',
-        'time_to_next_execution': 'str'
+        'deployments_stats': 'DeploymentsStats',
+        'next_execution_time': 'str',
+        'time_to_next_execution': 'str',
+        'latest_deployment': 'DeploymentLog',
+        'in_progress_deployments': 'list[DeploymentLog]',
+        'cluster': 'AbstractCluster',
+        'is_scheduled_releases_paused': 'bool',
+        'queued_releases': 'list[QueuedRelease]',
+        'execution_time': 'dict(str, ExecutionTime)'
     }
 
     attribute_map = {
-        'cluster': 'cluster',
         'cluster_id': 'clusterId',
-        'current_signed_off_deployment': 'currentSignedOffDeployment',
-        'deployments_stats': 'deploymentsStats',
         'down_stream_cluster_names': 'downStreamClusterNames',
-        'execution_time': 'executionTime',
-        'in_progress_deployments': 'inProgressDeployments',
-        'is_scheduled_releases_paused': 'isScheduledReleasesPaused',
-        'latest_deployment': 'latestDeployment',
-        'next_execution_time': 'nextExecutionTime',
-        'queued_releases': 'queuedReleases',
+        'current_signed_off_deployment': 'currentSignedOffDeployment',
         'stack': 'stack',
-        'time_to_next_execution': 'timeToNextExecution'
+        'deployments_stats': 'deploymentsStats',
+        'next_execution_time': 'nextExecutionTime',
+        'time_to_next_execution': 'timeToNextExecution',
+        'latest_deployment': 'latestDeployment',
+        'in_progress_deployments': 'inProgressDeployments',
+        'cluster': 'cluster',
+        'is_scheduled_releases_paused': 'isScheduledReleasesPaused',
+        'queued_releases': 'queuedReleases',
+        'execution_time': 'executionTime'
     }
 
-    def __init__(self, cluster=None, cluster_id=None, current_signed_off_deployment=None, deployments_stats=None, down_stream_cluster_names=None, execution_time=None, in_progress_deployments=None, is_scheduled_releases_paused=None, latest_deployment=None, next_execution_time=None, queued_releases=None, stack=None, time_to_next_execution=None):  # noqa: E501
+    def __init__(self, cluster_id=None, down_stream_cluster_names=None, current_signed_off_deployment=None, stack=None, deployments_stats=None, next_execution_time=None, time_to_next_execution=None, latest_deployment=None, in_progress_deployments=None, cluster=None, is_scheduled_releases_paused=None, queued_releases=None, execution_time=None):  # noqa: E501
         """DeploymentOverview - a model defined in Swagger"""  # noqa: E501
-        self._cluster = None
         self._cluster_id = None
-        self._current_signed_off_deployment = None
-        self._deployments_stats = None
         self._down_stream_cluster_names = None
-        self._execution_time = None
-        self._in_progress_deployments = None
-        self._is_scheduled_releases_paused = None
-        self._latest_deployment = None
-        self._next_execution_time = None
-        self._queued_releases = None
+        self._current_signed_off_deployment = None
         self._stack = None
+        self._deployments_stats = None
+        self._next_execution_time = None
         self._time_to_next_execution = None
+        self._latest_deployment = None
+        self._in_progress_deployments = None
+        self._cluster = None
+        self._is_scheduled_releases_paused = None
+        self._queued_releases = None
+        self._execution_time = None
         self.discriminator = None
-        if cluster is not None:
-            self.cluster = cluster
         if cluster_id is not None:
             self.cluster_id = cluster_id
-        if current_signed_off_deployment is not None:
-            self.current_signed_off_deployment = current_signed_off_deployment
-        if deployments_stats is not None:
-            self.deployments_stats = deployments_stats
         if down_stream_cluster_names is not None:
             self.down_stream_cluster_names = down_stream_cluster_names
-        if execution_time is not None:
-            self.execution_time = execution_time
-        if in_progress_deployments is not None:
-            self.in_progress_deployments = in_progress_deployments
-        if is_scheduled_releases_paused is not None:
-            self.is_scheduled_releases_paused = is_scheduled_releases_paused
-        if latest_deployment is not None:
-            self.latest_deployment = latest_deployment
-        if next_execution_time is not None:
-            self.next_execution_time = next_execution_time
-        if queued_releases is not None:
-            self.queued_releases = queued_releases
+        if current_signed_off_deployment is not None:
+            self.current_signed_off_deployment = current_signed_off_deployment
         if stack is not None:
             self.stack = stack
+        if deployments_stats is not None:
+            self.deployments_stats = deployments_stats
+        if next_execution_time is not None:
+            self.next_execution_time = next_execution_time
         if time_to_next_execution is not None:
             self.time_to_next_execution = time_to_next_execution
-
-    @property
-    def cluster(self):
-        """Gets the cluster of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The cluster of this DeploymentOverview.  # noqa: E501
-        :rtype: AbstractCluster
-        """
-        return self._cluster
-
-    @cluster.setter
-    def cluster(self, cluster):
-        """Sets the cluster of this DeploymentOverview.
-
-
-        :param cluster: The cluster of this DeploymentOverview.  # noqa: E501
-        :type: AbstractCluster
-        """
-
-        self._cluster = cluster
+        if latest_deployment is not None:
+            self.latest_deployment = latest_deployment
+        if in_progress_deployments is not None:
+            self.in_progress_deployments = in_progress_deployments
+        if cluster is not None:
+            self.cluster = cluster
+        if is_scheduled_releases_paused is not None:
+            self.is_scheduled_releases_paused = is_scheduled_releases_paused
+        if queued_releases is not None:
+            self.queued_releases = queued_releases
+        if execution_time is not None:
+            self.execution_time = execution_time
 
     @property
     def cluster_id(self):
@@ -145,48 +124,6 @@ class DeploymentOverview(object):
         self._cluster_id = cluster_id
 
     @property
-    def current_signed_off_deployment(self):
-        """Gets the current_signed_off_deployment of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The current_signed_off_deployment of this DeploymentOverview.  # noqa: E501
-        :rtype: DeploymentLog
-        """
-        return self._current_signed_off_deployment
-
-    @current_signed_off_deployment.setter
-    def current_signed_off_deployment(self, current_signed_off_deployment):
-        """Sets the current_signed_off_deployment of this DeploymentOverview.
-
-
-        :param current_signed_off_deployment: The current_signed_off_deployment of this DeploymentOverview.  # noqa: E501
-        :type: DeploymentLog
-        """
-
-        self._current_signed_off_deployment = current_signed_off_deployment
-
-    @property
-    def deployments_stats(self):
-        """Gets the deployments_stats of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The deployments_stats of this DeploymentOverview.  # noqa: E501
-        :rtype: DeploymentsStats
-        """
-        return self._deployments_stats
-
-    @deployments_stats.setter
-    def deployments_stats(self, deployments_stats):
-        """Sets the deployments_stats of this DeploymentOverview.
-
-
-        :param deployments_stats: The deployments_stats of this DeploymentOverview.  # noqa: E501
-        :type: DeploymentsStats
-        """
-
-        self._deployments_stats = deployments_stats
-
-    @property
     def down_stream_cluster_names(self):
         """Gets the down_stream_cluster_names of this DeploymentOverview.  # noqa: E501
 
@@ -208,130 +145,25 @@ class DeploymentOverview(object):
         self._down_stream_cluster_names = down_stream_cluster_names
 
     @property
-    def execution_time(self):
-        """Gets the execution_time of this DeploymentOverview.  # noqa: E501
+    def current_signed_off_deployment(self):
+        """Gets the current_signed_off_deployment of this DeploymentOverview.  # noqa: E501
 
 
-        :return: The execution_time of this DeploymentOverview.  # noqa: E501
-        :rtype: dict(str, ExecutionTime)
-        """
-        return self._execution_time
-
-    @execution_time.setter
-    def execution_time(self, execution_time):
-        """Sets the execution_time of this DeploymentOverview.
-
-
-        :param execution_time: The execution_time of this DeploymentOverview.  # noqa: E501
-        :type: dict(str, ExecutionTime)
-        """
-
-        self._execution_time = execution_time
-
-    @property
-    def in_progress_deployments(self):
-        """Gets the in_progress_deployments of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The in_progress_deployments of this DeploymentOverview.  # noqa: E501
-        :rtype: list[DeploymentLog]
-        """
-        return self._in_progress_deployments
-
-    @in_progress_deployments.setter
-    def in_progress_deployments(self, in_progress_deployments):
-        """Sets the in_progress_deployments of this DeploymentOverview.
-
-
-        :param in_progress_deployments: The in_progress_deployments of this DeploymentOverview.  # noqa: E501
-        :type: list[DeploymentLog]
-        """
-
-        self._in_progress_deployments = in_progress_deployments
-
-    @property
-    def is_scheduled_releases_paused(self):
-        """Gets the is_scheduled_releases_paused of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The is_scheduled_releases_paused of this DeploymentOverview.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_scheduled_releases_paused
-
-    @is_scheduled_releases_paused.setter
-    def is_scheduled_releases_paused(self, is_scheduled_releases_paused):
-        """Sets the is_scheduled_releases_paused of this DeploymentOverview.
-
-
-        :param is_scheduled_releases_paused: The is_scheduled_releases_paused of this DeploymentOverview.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_scheduled_releases_paused = is_scheduled_releases_paused
-
-    @property
-    def latest_deployment(self):
-        """Gets the latest_deployment of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The latest_deployment of this DeploymentOverview.  # noqa: E501
+        :return: The current_signed_off_deployment of this DeploymentOverview.  # noqa: E501
         :rtype: DeploymentLog
         """
-        return self._latest_deployment
+        return self._current_signed_off_deployment
 
-    @latest_deployment.setter
-    def latest_deployment(self, latest_deployment):
-        """Sets the latest_deployment of this DeploymentOverview.
+    @current_signed_off_deployment.setter
+    def current_signed_off_deployment(self, current_signed_off_deployment):
+        """Sets the current_signed_off_deployment of this DeploymentOverview.
 
 
-        :param latest_deployment: The latest_deployment of this DeploymentOverview.  # noqa: E501
+        :param current_signed_off_deployment: The current_signed_off_deployment of this DeploymentOverview.  # noqa: E501
         :type: DeploymentLog
         """
 
-        self._latest_deployment = latest_deployment
-
-    @property
-    def next_execution_time(self):
-        """Gets the next_execution_time of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The next_execution_time of this DeploymentOverview.  # noqa: E501
-        :rtype: str
-        """
-        return self._next_execution_time
-
-    @next_execution_time.setter
-    def next_execution_time(self, next_execution_time):
-        """Sets the next_execution_time of this DeploymentOverview.
-
-
-        :param next_execution_time: The next_execution_time of this DeploymentOverview.  # noqa: E501
-        :type: str
-        """
-
-        self._next_execution_time = next_execution_time
-
-    @property
-    def queued_releases(self):
-        """Gets the queued_releases of this DeploymentOverview.  # noqa: E501
-
-
-        :return: The queued_releases of this DeploymentOverview.  # noqa: E501
-        :rtype: list[QueuedRelease]
-        """
-        return self._queued_releases
-
-    @queued_releases.setter
-    def queued_releases(self, queued_releases):
-        """Sets the queued_releases of this DeploymentOverview.
-
-
-        :param queued_releases: The queued_releases of this DeploymentOverview.  # noqa: E501
-        :type: list[QueuedRelease]
-        """
-
-        self._queued_releases = queued_releases
+        self._current_signed_off_deployment = current_signed_off_deployment
 
     @property
     def stack(self):
@@ -355,6 +187,48 @@ class DeploymentOverview(object):
         self._stack = stack
 
     @property
+    def deployments_stats(self):
+        """Gets the deployments_stats of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The deployments_stats of this DeploymentOverview.  # noqa: E501
+        :rtype: DeploymentsStats
+        """
+        return self._deployments_stats
+
+    @deployments_stats.setter
+    def deployments_stats(self, deployments_stats):
+        """Sets the deployments_stats of this DeploymentOverview.
+
+
+        :param deployments_stats: The deployments_stats of this DeploymentOverview.  # noqa: E501
+        :type: DeploymentsStats
+        """
+
+        self._deployments_stats = deployments_stats
+
+    @property
+    def next_execution_time(self):
+        """Gets the next_execution_time of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The next_execution_time of this DeploymentOverview.  # noqa: E501
+        :rtype: str
+        """
+        return self._next_execution_time
+
+    @next_execution_time.setter
+    def next_execution_time(self, next_execution_time):
+        """Sets the next_execution_time of this DeploymentOverview.
+
+
+        :param next_execution_time: The next_execution_time of this DeploymentOverview.  # noqa: E501
+        :type: str
+        """
+
+        self._next_execution_time = next_execution_time
+
+    @property
     def time_to_next_execution(self):
         """Gets the time_to_next_execution of this DeploymentOverview.  # noqa: E501
 
@@ -374,6 +248,132 @@ class DeploymentOverview(object):
         """
 
         self._time_to_next_execution = time_to_next_execution
+
+    @property
+    def latest_deployment(self):
+        """Gets the latest_deployment of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The latest_deployment of this DeploymentOverview.  # noqa: E501
+        :rtype: DeploymentLog
+        """
+        return self._latest_deployment
+
+    @latest_deployment.setter
+    def latest_deployment(self, latest_deployment):
+        """Sets the latest_deployment of this DeploymentOverview.
+
+
+        :param latest_deployment: The latest_deployment of this DeploymentOverview.  # noqa: E501
+        :type: DeploymentLog
+        """
+
+        self._latest_deployment = latest_deployment
+
+    @property
+    def in_progress_deployments(self):
+        """Gets the in_progress_deployments of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The in_progress_deployments of this DeploymentOverview.  # noqa: E501
+        :rtype: list[DeploymentLog]
+        """
+        return self._in_progress_deployments
+
+    @in_progress_deployments.setter
+    def in_progress_deployments(self, in_progress_deployments):
+        """Sets the in_progress_deployments of this DeploymentOverview.
+
+
+        :param in_progress_deployments: The in_progress_deployments of this DeploymentOverview.  # noqa: E501
+        :type: list[DeploymentLog]
+        """
+
+        self._in_progress_deployments = in_progress_deployments
+
+    @property
+    def cluster(self):
+        """Gets the cluster of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The cluster of this DeploymentOverview.  # noqa: E501
+        :rtype: AbstractCluster
+        """
+        return self._cluster
+
+    @cluster.setter
+    def cluster(self, cluster):
+        """Sets the cluster of this DeploymentOverview.
+
+
+        :param cluster: The cluster of this DeploymentOverview.  # noqa: E501
+        :type: AbstractCluster
+        """
+
+        self._cluster = cluster
+
+    @property
+    def is_scheduled_releases_paused(self):
+        """Gets the is_scheduled_releases_paused of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The is_scheduled_releases_paused of this DeploymentOverview.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_scheduled_releases_paused
+
+    @is_scheduled_releases_paused.setter
+    def is_scheduled_releases_paused(self, is_scheduled_releases_paused):
+        """Sets the is_scheduled_releases_paused of this DeploymentOverview.
+
+
+        :param is_scheduled_releases_paused: The is_scheduled_releases_paused of this DeploymentOverview.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_scheduled_releases_paused = is_scheduled_releases_paused
+
+    @property
+    def queued_releases(self):
+        """Gets the queued_releases of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The queued_releases of this DeploymentOverview.  # noqa: E501
+        :rtype: list[QueuedRelease]
+        """
+        return self._queued_releases
+
+    @queued_releases.setter
+    def queued_releases(self, queued_releases):
+        """Sets the queued_releases of this DeploymentOverview.
+
+
+        :param queued_releases: The queued_releases of this DeploymentOverview.  # noqa: E501
+        :type: list[QueuedRelease]
+        """
+
+        self._queued_releases = queued_releases
+
+    @property
+    def execution_time(self):
+        """Gets the execution_time of this DeploymentOverview.  # noqa: E501
+
+
+        :return: The execution_time of this DeploymentOverview.  # noqa: E501
+        :rtype: dict(str, ExecutionTime)
+        """
+        return self._execution_time
+
+    @execution_time.setter
+    def execution_time(self, execution_time):
+        """Sets the execution_time of this DeploymentOverview.
+
+
+        :param execution_time: The execution_time of this DeploymentOverview.  # noqa: E501
+        :type: dict(str, ExecutionTime)
+        """
+
+        self._execution_time = execution_time
 
     def to_dict(self):
         """Returns the model properties as a dict"""

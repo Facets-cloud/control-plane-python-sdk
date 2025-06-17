@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cluster_id** | **str** |  | [optional] 
 **cluster_name** | **str** |  | [optional] 
-**costs** | [**list[CostDTO]**](CostDTO.md) |  | [optional] 
+**cluster_id** | **str** |  | [optional] 
 **total** | **float** |  | [optional] 
+**costs** | [**list[CostDTO]**](CostDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

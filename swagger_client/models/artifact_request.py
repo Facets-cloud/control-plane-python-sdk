@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,199 +28,92 @@ class ArtifactRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'external_id': 'str',
+        'tag': 'str',
         'application_name': 'str',
         'artifact_uri': 'str',
-        'artifactory': 'str',
-        'cluster_id': 'str',
-        'description': 'str',
-        'external_id': 'str',
-        'metadata': 'dict(str, str)',
-        'promoted': 'bool',
-        'registered_for': 'str',
-        'registration_type': 'str',
         'release_stream': 'str',
+        'cluster_id': 'str',
+        'artifactory': 'str',
+        'description': 'str',
+        'registered_for': 'str',
+        'promoted': 'bool',
+        'metadata': 'dict(str, str)',
+        'rule_version_id': 'str',
         'rule_id': 'str',
         'rule_name': 'str',
-        'rule_version_id': 'str',
         'stack_name': 'str',
-        'tag': 'str'
+        'registration_type': 'str'
     }
 
     attribute_map = {
+        'external_id': 'externalId',
+        'tag': 'tag',
         'application_name': 'applicationName',
         'artifact_uri': 'artifactUri',
-        'artifactory': 'artifactory',
-        'cluster_id': 'clusterId',
-        'description': 'description',
-        'external_id': 'externalId',
-        'metadata': 'metadata',
-        'promoted': 'promoted',
-        'registered_for': 'registeredFor',
-        'registration_type': 'registrationType',
         'release_stream': 'releaseStream',
+        'cluster_id': 'clusterId',
+        'artifactory': 'artifactory',
+        'description': 'description',
+        'registered_for': 'registeredFor',
+        'promoted': 'promoted',
+        'metadata': 'metadata',
+        'rule_version_id': 'ruleVersionId',
         'rule_id': 'ruleId',
         'rule_name': 'ruleName',
-        'rule_version_id': 'ruleVersionId',
         'stack_name': 'stackName',
-        'tag': 'tag'
+        'registration_type': 'registrationType'
     }
 
-    def __init__(self, application_name=None, artifact_uri=None, artifactory=None, cluster_id=None, description=None, external_id=None, metadata=None, promoted=None, registered_for=None, registration_type=None, release_stream=None, rule_id=None, rule_name=None, rule_version_id=None, stack_name=None, tag=None):  # noqa: E501
+    def __init__(self, external_id=None, tag=None, application_name=None, artifact_uri=None, release_stream=None, cluster_id=None, artifactory=None, description=None, registered_for=None, promoted=None, metadata=None, rule_version_id=None, rule_id=None, rule_name=None, stack_name=None, registration_type=None):  # noqa: E501
         """ArtifactRequest - a model defined in Swagger"""  # noqa: E501
+        self._external_id = None
+        self._tag = None
         self._application_name = None
         self._artifact_uri = None
-        self._artifactory = None
-        self._cluster_id = None
-        self._description = None
-        self._external_id = None
-        self._metadata = None
-        self._promoted = None
-        self._registered_for = None
-        self._registration_type = None
         self._release_stream = None
+        self._cluster_id = None
+        self._artifactory = None
+        self._description = None
+        self._registered_for = None
+        self._promoted = None
+        self._metadata = None
+        self._rule_version_id = None
         self._rule_id = None
         self._rule_name = None
-        self._rule_version_id = None
         self._stack_name = None
-        self._tag = None
+        self._registration_type = None
         self.discriminator = None
-        if application_name is not None:
-            self.application_name = application_name
-        if artifact_uri is not None:
-            self.artifact_uri = artifact_uri
-        if artifactory is not None:
-            self.artifactory = artifactory
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if description is not None:
-            self.description = description
         if external_id is not None:
             self.external_id = external_id
-        if metadata is not None:
-            self.metadata = metadata
-        if promoted is not None:
-            self.promoted = promoted
-        if registered_for is not None:
-            self.registered_for = registered_for
-        if registration_type is not None:
-            self.registration_type = registration_type
+        if tag is not None:
+            self.tag = tag
+        self.application_name = application_name
+        self.artifact_uri = artifact_uri
         if release_stream is not None:
             self.release_stream = release_stream
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if artifactory is not None:
+            self.artifactory = artifactory
+        if description is not None:
+            self.description = description
+        if registered_for is not None:
+            self.registered_for = registered_for
+        if promoted is not None:
+            self.promoted = promoted
+        if metadata is not None:
+            self.metadata = metadata
+        if rule_version_id is not None:
+            self.rule_version_id = rule_version_id
         if rule_id is not None:
             self.rule_id = rule_id
         if rule_name is not None:
             self.rule_name = rule_name
-        if rule_version_id is not None:
-            self.rule_version_id = rule_version_id
         if stack_name is not None:
             self.stack_name = stack_name
-        if tag is not None:
-            self.tag = tag
-
-    @property
-    def application_name(self):
-        """Gets the application_name of this ArtifactRequest.  # noqa: E501
-
-
-        :return: The application_name of this ArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._application_name
-
-    @application_name.setter
-    def application_name(self, application_name):
-        """Sets the application_name of this ArtifactRequest.
-
-
-        :param application_name: The application_name of this ArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._application_name = application_name
-
-    @property
-    def artifact_uri(self):
-        """Gets the artifact_uri of this ArtifactRequest.  # noqa: E501
-
-
-        :return: The artifact_uri of this ArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifact_uri
-
-    @artifact_uri.setter
-    def artifact_uri(self, artifact_uri):
-        """Sets the artifact_uri of this ArtifactRequest.
-
-
-        :param artifact_uri: The artifact_uri of this ArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._artifact_uri = artifact_uri
-
-    @property
-    def artifactory(self):
-        """Gets the artifactory of this ArtifactRequest.  # noqa: E501
-
-
-        :return: The artifactory of this ArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifactory
-
-    @artifactory.setter
-    def artifactory(self, artifactory):
-        """Sets the artifactory of this ArtifactRequest.
-
-
-        :param artifactory: The artifactory of this ArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._artifactory = artifactory
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ArtifactRequest.  # noqa: E501
-
-
-        :return: The cluster_id of this ArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ArtifactRequest.
-
-
-        :param cluster_id: The cluster_id of this ArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
-
-    @property
-    def description(self):
-        """Gets the description of this ArtifactRequest.  # noqa: E501
-
-
-        :return: The description of this ArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ArtifactRequest.
-
-
-        :param description: The description of this ArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
+        if registration_type is not None:
+            self.registration_type = registration_type
 
     @property
     def external_id(self):
@@ -244,46 +137,155 @@ class ArtifactRequest(object):
         self._external_id = external_id
 
     @property
-    def metadata(self):
-        """Gets the metadata of this ArtifactRequest.  # noqa: E501
+    def tag(self):
+        """Gets the tag of this ArtifactRequest.  # noqa: E501
 
 
-        :return: The metadata of this ArtifactRequest.  # noqa: E501
-        :rtype: dict(str, str)
+        :return: The tag of this ArtifactRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._metadata
+        return self._tag
 
-    @metadata.setter
-    def metadata(self, metadata):
-        """Sets the metadata of this ArtifactRequest.
+    @tag.setter
+    def tag(self, tag):
+        """Sets the tag of this ArtifactRequest.
 
 
-        :param metadata: The metadata of this ArtifactRequest.  # noqa: E501
-        :type: dict(str, str)
+        :param tag: The tag of this ArtifactRequest.  # noqa: E501
+        :type: str
         """
 
-        self._metadata = metadata
+        self._tag = tag
 
     @property
-    def promoted(self):
-        """Gets the promoted of this ArtifactRequest.  # noqa: E501
+    def application_name(self):
+        """Gets the application_name of this ArtifactRequest.  # noqa: E501
 
 
-        :return: The promoted of this ArtifactRequest.  # noqa: E501
-        :rtype: bool
+        :return: The application_name of this ArtifactRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._promoted
+        return self._application_name
 
-    @promoted.setter
-    def promoted(self, promoted):
-        """Sets the promoted of this ArtifactRequest.
+    @application_name.setter
+    def application_name(self, application_name):
+        """Sets the application_name of this ArtifactRequest.
 
 
-        :param promoted: The promoted of this ArtifactRequest.  # noqa: E501
-        :type: bool
+        :param application_name: The application_name of this ArtifactRequest.  # noqa: E501
+        :type: str
+        """
+        if application_name is None:
+            raise ValueError("Invalid value for `application_name`, must not be `None`")  # noqa: E501
+
+        self._application_name = application_name
+
+    @property
+    def artifact_uri(self):
+        """Gets the artifact_uri of this ArtifactRequest.  # noqa: E501
+
+
+        :return: The artifact_uri of this ArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifact_uri
+
+    @artifact_uri.setter
+    def artifact_uri(self, artifact_uri):
+        """Sets the artifact_uri of this ArtifactRequest.
+
+
+        :param artifact_uri: The artifact_uri of this ArtifactRequest.  # noqa: E501
+        :type: str
+        """
+        if artifact_uri is None:
+            raise ValueError("Invalid value for `artifact_uri`, must not be `None`")  # noqa: E501
+
+        self._artifact_uri = artifact_uri
+
+    @property
+    def release_stream(self):
+        """Gets the release_stream of this ArtifactRequest.  # noqa: E501
+
+
+        :return: The release_stream of this ArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_stream
+
+    @release_stream.setter
+    def release_stream(self, release_stream):
+        """Sets the release_stream of this ArtifactRequest.
+
+
+        :param release_stream: The release_stream of this ArtifactRequest.  # noqa: E501
+        :type: str
         """
 
-        self._promoted = promoted
+        self._release_stream = release_stream
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this ArtifactRequest.  # noqa: E501
+
+
+        :return: The cluster_id of this ArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ArtifactRequest.
+
+
+        :param cluster_id: The cluster_id of this ArtifactRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
+
+    @property
+    def artifactory(self):
+        """Gets the artifactory of this ArtifactRequest.  # noqa: E501
+
+
+        :return: The artifactory of this ArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory
+
+    @artifactory.setter
+    def artifactory(self, artifactory):
+        """Sets the artifactory of this ArtifactRequest.
+
+
+        :param artifactory: The artifactory of this ArtifactRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._artifactory = artifactory
+
+    @property
+    def description(self):
+        """Gets the description of this ArtifactRequest.  # noqa: E501
+
+
+        :return: The description of this ArtifactRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ArtifactRequest.
+
+
+        :param description: The description of this ArtifactRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def registered_for(self):
@@ -313,52 +315,67 @@ class ArtifactRequest(object):
         self._registered_for = registered_for
 
     @property
-    def registration_type(self):
-        """Gets the registration_type of this ArtifactRequest.  # noqa: E501
+    def promoted(self):
+        """Gets the promoted of this ArtifactRequest.  # noqa: E501
 
 
-        :return: The registration_type of this ArtifactRequest.  # noqa: E501
-        :rtype: str
+        :return: The promoted of this ArtifactRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._registration_type
+        return self._promoted
 
-    @registration_type.setter
-    def registration_type(self, registration_type):
-        """Sets the registration_type of this ArtifactRequest.
+    @promoted.setter
+    def promoted(self, promoted):
+        """Sets the promoted of this ArtifactRequest.
 
 
-        :param registration_type: The registration_type of this ArtifactRequest.  # noqa: E501
-        :type: str
+        :param promoted: The promoted of this ArtifactRequest.  # noqa: E501
+        :type: bool
         """
-        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
-        if registration_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(registration_type, allowed_values)
-            )
 
-        self._registration_type = registration_type
+        self._promoted = promoted
 
     @property
-    def release_stream(self):
-        """Gets the release_stream of this ArtifactRequest.  # noqa: E501
+    def metadata(self):
+        """Gets the metadata of this ArtifactRequest.  # noqa: E501
 
 
-        :return: The release_stream of this ArtifactRequest.  # noqa: E501
+        :return: The metadata of this ArtifactRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this ArtifactRequest.
+
+
+        :param metadata: The metadata of this ArtifactRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._metadata = metadata
+
+    @property
+    def rule_version_id(self):
+        """Gets the rule_version_id of this ArtifactRequest.  # noqa: E501
+
+
+        :return: The rule_version_id of this ArtifactRequest.  # noqa: E501
         :rtype: str
         """
-        return self._release_stream
+        return self._rule_version_id
 
-    @release_stream.setter
-    def release_stream(self, release_stream):
-        """Sets the release_stream of this ArtifactRequest.
+    @rule_version_id.setter
+    def rule_version_id(self, rule_version_id):
+        """Sets the rule_version_id of this ArtifactRequest.
 
 
-        :param release_stream: The release_stream of this ArtifactRequest.  # noqa: E501
+        :param rule_version_id: The rule_version_id of this ArtifactRequest.  # noqa: E501
         :type: str
         """
 
-        self._release_stream = release_stream
+        self._rule_version_id = rule_version_id
 
     @property
     def rule_id(self):
@@ -403,27 +420,6 @@ class ArtifactRequest(object):
         self._rule_name = rule_name
 
     @property
-    def rule_version_id(self):
-        """Gets the rule_version_id of this ArtifactRequest.  # noqa: E501
-
-
-        :return: The rule_version_id of this ArtifactRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._rule_version_id
-
-    @rule_version_id.setter
-    def rule_version_id(self, rule_version_id):
-        """Sets the rule_version_id of this ArtifactRequest.
-
-
-        :param rule_version_id: The rule_version_id of this ArtifactRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._rule_version_id = rule_version_id
-
-    @property
     def stack_name(self):
         """Gets the stack_name of this ArtifactRequest.  # noqa: E501
 
@@ -445,25 +441,31 @@ class ArtifactRequest(object):
         self._stack_name = stack_name
 
     @property
-    def tag(self):
-        """Gets the tag of this ArtifactRequest.  # noqa: E501
+    def registration_type(self):
+        """Gets the registration_type of this ArtifactRequest.  # noqa: E501
 
 
-        :return: The tag of this ArtifactRequest.  # noqa: E501
+        :return: The registration_type of this ArtifactRequest.  # noqa: E501
         :rtype: str
         """
-        return self._tag
+        return self._registration_type
 
-    @tag.setter
-    def tag(self, tag):
-        """Sets the tag of this ArtifactRequest.
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """Sets the registration_type of this ArtifactRequest.
 
 
-        :param tag: The tag of this ArtifactRequest.  # noqa: E501
+        :param registration_type: The registration_type of this ArtifactRequest.  # noqa: E501
         :type: str
         """
+        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
+        if registration_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(registration_type, allowed_values)
+            )
 
-        self._tag = tag
+        self._registration_type = registration_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

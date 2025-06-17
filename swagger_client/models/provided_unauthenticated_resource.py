@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,76 @@ class ProvidedUnauthenticatedResource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'endpoint': 'str',
-        'port': 'str',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'endpoint': 'str',
+        'port': 'str'
     }
 
     attribute_map = {
-        'endpoint': 'endpoint',
-        'port': 'port',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'endpoint': 'endpoint',
+        'port': 'port'
     }
 
-    def __init__(self, endpoint=None, port=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, endpoint=None, port=None):  # noqa: E501
         """ProvidedUnauthenticatedResource - a model defined in Swagger"""  # noqa: E501
+        self._resource_type = None
+        self._resource_name = None
         self._endpoint = None
         self._port = None
-        self._resource_name = None
-        self._resource_type = None
         self.discriminator = None
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
         if endpoint is not None:
             self.endpoint = endpoint
         if port is not None:
             self.port = port
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this ProvidedUnauthenticatedResource.  # noqa: E501
+
+
+        :return: The resource_type of this ProvidedUnauthenticatedResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ProvidedUnauthenticatedResource.
+
+
+        :param resource_type: The resource_type of this ProvidedUnauthenticatedResource.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_type = resource_type
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this ProvidedUnauthenticatedResource.  # noqa: E501
+
+
+        :return: The resource_name of this ProvidedUnauthenticatedResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this ProvidedUnauthenticatedResource.
+
+
+        :param resource_name: The resource_name of this ProvidedUnauthenticatedResource.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
 
     @property
     def endpoint(self):
@@ -98,48 +140,6 @@ class ProvidedUnauthenticatedResource(object):
         """
 
         self._port = port
-
-    @property
-    def resource_name(self):
-        """Gets the resource_name of this ProvidedUnauthenticatedResource.  # noqa: E501
-
-
-        :return: The resource_name of this ProvidedUnauthenticatedResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_name
-
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this ProvidedUnauthenticatedResource.
-
-
-        :param resource_name: The resource_name of this ProvidedUnauthenticatedResource.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_name = resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this ProvidedUnauthenticatedResource.  # noqa: E501
-
-
-        :return: The resource_type of this ProvidedUnauthenticatedResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ProvidedUnauthenticatedResource.
-
-
-        :param resource_type: The resource_type of this ProvidedUnauthenticatedResource.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,91 +28,112 @@ class DailyCloudCostDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'daily_cost': 'list[ClusterCostDTO]',
-        'last_sync': 'datetime',
+        'stack_name': 'str',
+        'unit': 'str',
+        'total': 'float',
         'previous_period_total': 'float',
         'service_cost': 'list[ServiceCostDTO]',
-        'stack_name': 'str',
-        'total': 'float',
-        'unit': 'str'
+        'daily_cost': 'list[ClusterCostDTO]',
+        'last_sync': 'datetime'
     }
 
     attribute_map = {
-        'daily_cost': 'dailyCost',
-        'last_sync': 'lastSync',
+        'stack_name': 'stackName',
+        'unit': 'unit',
+        'total': 'total',
         'previous_period_total': 'previousPeriodTotal',
         'service_cost': 'serviceCost',
-        'stack_name': 'stackName',
-        'total': 'total',
-        'unit': 'unit'
+        'daily_cost': 'dailyCost',
+        'last_sync': 'lastSync'
     }
 
-    def __init__(self, daily_cost=None, last_sync=None, previous_period_total=None, service_cost=None, stack_name=None, total=None, unit=None):  # noqa: E501
+    def __init__(self, stack_name=None, unit=None, total=None, previous_period_total=None, service_cost=None, daily_cost=None, last_sync=None):  # noqa: E501
         """DailyCloudCostDTO - a model defined in Swagger"""  # noqa: E501
-        self._daily_cost = None
-        self._last_sync = None
+        self._stack_name = None
+        self._unit = None
+        self._total = None
         self._previous_period_total = None
         self._service_cost = None
-        self._stack_name = None
-        self._total = None
-        self._unit = None
+        self._daily_cost = None
+        self._last_sync = None
         self.discriminator = None
-        if daily_cost is not None:
-            self.daily_cost = daily_cost
-        if last_sync is not None:
-            self.last_sync = last_sync
+        if stack_name is not None:
+            self.stack_name = stack_name
+        if unit is not None:
+            self.unit = unit
+        if total is not None:
+            self.total = total
         if previous_period_total is not None:
             self.previous_period_total = previous_period_total
         if service_cost is not None:
             self.service_cost = service_cost
-        if stack_name is not None:
-            self.stack_name = stack_name
-        if total is not None:
-            self.total = total
-        if unit is not None:
-            self.unit = unit
+        if daily_cost is not None:
+            self.daily_cost = daily_cost
+        if last_sync is not None:
+            self.last_sync = last_sync
 
     @property
-    def daily_cost(self):
-        """Gets the daily_cost of this DailyCloudCostDTO.  # noqa: E501
+    def stack_name(self):
+        """Gets the stack_name of this DailyCloudCostDTO.  # noqa: E501
 
 
-        :return: The daily_cost of this DailyCloudCostDTO.  # noqa: E501
-        :rtype: list[ClusterCostDTO]
+        :return: The stack_name of this DailyCloudCostDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._daily_cost
+        return self._stack_name
 
-    @daily_cost.setter
-    def daily_cost(self, daily_cost):
-        """Sets the daily_cost of this DailyCloudCostDTO.
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this DailyCloudCostDTO.
 
 
-        :param daily_cost: The daily_cost of this DailyCloudCostDTO.  # noqa: E501
-        :type: list[ClusterCostDTO]
+        :param stack_name: The stack_name of this DailyCloudCostDTO.  # noqa: E501
+        :type: str
         """
 
-        self._daily_cost = daily_cost
+        self._stack_name = stack_name
 
     @property
-    def last_sync(self):
-        """Gets the last_sync of this DailyCloudCostDTO.  # noqa: E501
+    def unit(self):
+        """Gets the unit of this DailyCloudCostDTO.  # noqa: E501
 
 
-        :return: The last_sync of this DailyCloudCostDTO.  # noqa: E501
-        :rtype: datetime
+        :return: The unit of this DailyCloudCostDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._last_sync
+        return self._unit
 
-    @last_sync.setter
-    def last_sync(self, last_sync):
-        """Sets the last_sync of this DailyCloudCostDTO.
+    @unit.setter
+    def unit(self, unit):
+        """Sets the unit of this DailyCloudCostDTO.
 
 
-        :param last_sync: The last_sync of this DailyCloudCostDTO.  # noqa: E501
-        :type: datetime
+        :param unit: The unit of this DailyCloudCostDTO.  # noqa: E501
+        :type: str
         """
 
-        self._last_sync = last_sync
+        self._unit = unit
+
+    @property
+    def total(self):
+        """Gets the total of this DailyCloudCostDTO.  # noqa: E501
+
+
+        :return: The total of this DailyCloudCostDTO.  # noqa: E501
+        :rtype: float
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """Sets the total of this DailyCloudCostDTO.
+
+
+        :param total: The total of this DailyCloudCostDTO.  # noqa: E501
+        :type: float
+        """
+
+        self._total = total
 
     @property
     def previous_period_total(self):
@@ -157,67 +178,46 @@ class DailyCloudCostDTO(object):
         self._service_cost = service_cost
 
     @property
-    def stack_name(self):
-        """Gets the stack_name of this DailyCloudCostDTO.  # noqa: E501
+    def daily_cost(self):
+        """Gets the daily_cost of this DailyCloudCostDTO.  # noqa: E501
 
 
-        :return: The stack_name of this DailyCloudCostDTO.  # noqa: E501
-        :rtype: str
+        :return: The daily_cost of this DailyCloudCostDTO.  # noqa: E501
+        :rtype: list[ClusterCostDTO]
         """
-        return self._stack_name
+        return self._daily_cost
 
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this DailyCloudCostDTO.
+    @daily_cost.setter
+    def daily_cost(self, daily_cost):
+        """Sets the daily_cost of this DailyCloudCostDTO.
 
 
-        :param stack_name: The stack_name of this DailyCloudCostDTO.  # noqa: E501
-        :type: str
+        :param daily_cost: The daily_cost of this DailyCloudCostDTO.  # noqa: E501
+        :type: list[ClusterCostDTO]
         """
 
-        self._stack_name = stack_name
+        self._daily_cost = daily_cost
 
     @property
-    def total(self):
-        """Gets the total of this DailyCloudCostDTO.  # noqa: E501
+    def last_sync(self):
+        """Gets the last_sync of this DailyCloudCostDTO.  # noqa: E501
 
 
-        :return: The total of this DailyCloudCostDTO.  # noqa: E501
-        :rtype: float
+        :return: The last_sync of this DailyCloudCostDTO.  # noqa: E501
+        :rtype: datetime
         """
-        return self._total
+        return self._last_sync
 
-    @total.setter
-    def total(self, total):
-        """Sets the total of this DailyCloudCostDTO.
-
-
-        :param total: The total of this DailyCloudCostDTO.  # noqa: E501
-        :type: float
-        """
-
-        self._total = total
-
-    @property
-    def unit(self):
-        """Gets the unit of this DailyCloudCostDTO.  # noqa: E501
+    @last_sync.setter
+    def last_sync(self, last_sync):
+        """Sets the last_sync of this DailyCloudCostDTO.
 
 
-        :return: The unit of this DailyCloudCostDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._unit
-
-    @unit.setter
-    def unit(self, unit):
-        """Sets the unit of this DailyCloudCostDTO.
-
-
-        :param unit: The unit of this DailyCloudCostDTO.  # noqa: E501
-        :type: str
+        :param last_sync: The last_sync of this DailyCloudCostDTO.  # noqa: E501
+        :type: datetime
         """
 
-        self._unit = unit
+        self._last_sync = last_sync
 
     def to_dict(self):
         """Returns the model properties as a dict"""

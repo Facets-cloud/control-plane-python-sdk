@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,67 @@ class ArtifactByReleaseStreamRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'external_id': 'str',
         'application_name': 'str',
         'artifact_uri': 'str',
-        'artifactory': 'str',
-        'description': 'str',
-        'external_id': 'str',
+        'stack_name': 'str',
         'release_stream': 'str',
-        'stack_name': 'str'
+        'artifactory': 'str',
+        'description': 'str'
     }
 
     attribute_map = {
+        'external_id': 'externalId',
         'application_name': 'applicationName',
         'artifact_uri': 'artifactUri',
-        'artifactory': 'artifactory',
-        'description': 'description',
-        'external_id': 'externalId',
+        'stack_name': 'stackName',
         'release_stream': 'releaseStream',
-        'stack_name': 'stackName'
+        'artifactory': 'artifactory',
+        'description': 'description'
     }
 
-    def __init__(self, application_name=None, artifact_uri=None, artifactory=None, description=None, external_id=None, release_stream=None, stack_name=None):  # noqa: E501
+    def __init__(self, external_id=None, application_name=None, artifact_uri=None, stack_name=None, release_stream=None, artifactory=None, description=None):  # noqa: E501
         """ArtifactByReleaseStreamRequest - a model defined in Swagger"""  # noqa: E501
+        self._external_id = None
         self._application_name = None
         self._artifact_uri = None
+        self._stack_name = None
+        self._release_stream = None
         self._artifactory = None
         self._description = None
-        self._external_id = None
-        self._release_stream = None
-        self._stack_name = None
         self.discriminator = None
-        if application_name is not None:
-            self.application_name = application_name
-        if artifact_uri is not None:
-            self.artifact_uri = artifact_uri
+        if external_id is not None:
+            self.external_id = external_id
+        self.application_name = application_name
+        self.artifact_uri = artifact_uri
+        if stack_name is not None:
+            self.stack_name = stack_name
+        self.release_stream = release_stream
         if artifactory is not None:
             self.artifactory = artifactory
         if description is not None:
             self.description = description
-        if external_id is not None:
-            self.external_id = external_id
-        if release_stream is not None:
-            self.release_stream = release_stream
-        if stack_name is not None:
-            self.stack_name = stack_name
+
+    @property
+    def external_id(self):
+        """Gets the external_id of this ArtifactByReleaseStreamRequest.  # noqa: E501
+
+
+        :return: The external_id of this ArtifactByReleaseStreamRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """Sets the external_id of this ArtifactByReleaseStreamRequest.
+
+
+        :param external_id: The external_id of this ArtifactByReleaseStreamRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._external_id = external_id
 
     @property
     def application_name(self):
@@ -90,6 +108,8 @@ class ArtifactByReleaseStreamRequest(object):
         :param application_name: The application_name of this ArtifactByReleaseStreamRequest.  # noqa: E501
         :type: str
         """
+        if application_name is None:
+            raise ValueError("Invalid value for `application_name`, must not be `None`")  # noqa: E501
 
         self._application_name = application_name
 
@@ -111,8 +131,54 @@ class ArtifactByReleaseStreamRequest(object):
         :param artifact_uri: The artifact_uri of this ArtifactByReleaseStreamRequest.  # noqa: E501
         :type: str
         """
+        if artifact_uri is None:
+            raise ValueError("Invalid value for `artifact_uri`, must not be `None`")  # noqa: E501
 
         self._artifact_uri = artifact_uri
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this ArtifactByReleaseStreamRequest.  # noqa: E501
+
+
+        :return: The stack_name of this ArtifactByReleaseStreamRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this ArtifactByReleaseStreamRequest.
+
+
+        :param stack_name: The stack_name of this ArtifactByReleaseStreamRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_name = stack_name
+
+    @property
+    def release_stream(self):
+        """Gets the release_stream of this ArtifactByReleaseStreamRequest.  # noqa: E501
+
+
+        :return: The release_stream of this ArtifactByReleaseStreamRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_stream
+
+    @release_stream.setter
+    def release_stream(self, release_stream):
+        """Sets the release_stream of this ArtifactByReleaseStreamRequest.
+
+
+        :param release_stream: The release_stream of this ArtifactByReleaseStreamRequest.  # noqa: E501
+        :type: str
+        """
+        if release_stream is None:
+            raise ValueError("Invalid value for `release_stream`, must not be `None`")  # noqa: E501
+
+        self._release_stream = release_stream
 
     @property
     def artifactory(self):
@@ -155,69 +221,6 @@ class ArtifactByReleaseStreamRequest(object):
         """
 
         self._description = description
-
-    @property
-    def external_id(self):
-        """Gets the external_id of this ArtifactByReleaseStreamRequest.  # noqa: E501
-
-
-        :return: The external_id of this ArtifactByReleaseStreamRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_id
-
-    @external_id.setter
-    def external_id(self, external_id):
-        """Sets the external_id of this ArtifactByReleaseStreamRequest.
-
-
-        :param external_id: The external_id of this ArtifactByReleaseStreamRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._external_id = external_id
-
-    @property
-    def release_stream(self):
-        """Gets the release_stream of this ArtifactByReleaseStreamRequest.  # noqa: E501
-
-
-        :return: The release_stream of this ArtifactByReleaseStreamRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_stream
-
-    @release_stream.setter
-    def release_stream(self, release_stream):
-        """Sets the release_stream of this ArtifactByReleaseStreamRequest.
-
-
-        :param release_stream: The release_stream of this ArtifactByReleaseStreamRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._release_stream = release_stream
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this ArtifactByReleaseStreamRequest.  # noqa: E501
-
-
-        :return: The stack_name of this ArtifactByReleaseStreamRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this ArtifactByReleaseStreamRequest.
-
-
-        :param stack_name: The stack_name of this ArtifactByReleaseStreamRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

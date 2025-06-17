@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,39 +28,60 @@ class CommitLog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'commit_id': 'str',
         'author_email': 'str',
         'author_name': 'str',
-        'commit_date': 'datetime',
-        'commit_id': 'str',
-        'commit_message': 'str'
+        'commit_message': 'str',
+        'commit_date': 'datetime'
     }
 
     attribute_map = {
+        'commit_id': 'commitId',
         'author_email': 'authorEmail',
         'author_name': 'authorName',
-        'commit_date': 'commitDate',
-        'commit_id': 'commitId',
-        'commit_message': 'commitMessage'
+        'commit_message': 'commitMessage',
+        'commit_date': 'commitDate'
     }
 
-    def __init__(self, author_email=None, author_name=None, commit_date=None, commit_id=None, commit_message=None):  # noqa: E501
+    def __init__(self, commit_id=None, author_email=None, author_name=None, commit_message=None, commit_date=None):  # noqa: E501
         """CommitLog - a model defined in Swagger"""  # noqa: E501
+        self._commit_id = None
         self._author_email = None
         self._author_name = None
-        self._commit_date = None
-        self._commit_id = None
         self._commit_message = None
+        self._commit_date = None
         self.discriminator = None
+        if commit_id is not None:
+            self.commit_id = commit_id
         if author_email is not None:
             self.author_email = author_email
         if author_name is not None:
             self.author_name = author_name
-        if commit_date is not None:
-            self.commit_date = commit_date
-        if commit_id is not None:
-            self.commit_id = commit_id
         if commit_message is not None:
             self.commit_message = commit_message
+        if commit_date is not None:
+            self.commit_date = commit_date
+
+    @property
+    def commit_id(self):
+        """Gets the commit_id of this CommitLog.  # noqa: E501
+
+
+        :return: The commit_id of this CommitLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._commit_id
+
+    @commit_id.setter
+    def commit_id(self, commit_id):
+        """Sets the commit_id of this CommitLog.
+
+
+        :param commit_id: The commit_id of this CommitLog.  # noqa: E501
+        :type: str
+        """
+
+        self._commit_id = commit_id
 
     @property
     def author_email(self):
@@ -105,48 +126,6 @@ class CommitLog(object):
         self._author_name = author_name
 
     @property
-    def commit_date(self):
-        """Gets the commit_date of this CommitLog.  # noqa: E501
-
-
-        :return: The commit_date of this CommitLog.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._commit_date
-
-    @commit_date.setter
-    def commit_date(self, commit_date):
-        """Sets the commit_date of this CommitLog.
-
-
-        :param commit_date: The commit_date of this CommitLog.  # noqa: E501
-        :type: datetime
-        """
-
-        self._commit_date = commit_date
-
-    @property
-    def commit_id(self):
-        """Gets the commit_id of this CommitLog.  # noqa: E501
-
-
-        :return: The commit_id of this CommitLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._commit_id
-
-    @commit_id.setter
-    def commit_id(self, commit_id):
-        """Sets the commit_id of this CommitLog.
-
-
-        :param commit_id: The commit_id of this CommitLog.  # noqa: E501
-        :type: str
-        """
-
-        self._commit_id = commit_id
-
-    @property
     def commit_message(self):
         """Gets the commit_message of this CommitLog.  # noqa: E501
 
@@ -166,6 +145,27 @@ class CommitLog(object):
         """
 
         self._commit_message = commit_message
+
+    @property
+    def commit_date(self):
+        """Gets the commit_date of this CommitLog.  # noqa: E501
+
+
+        :return: The commit_date of this CommitLog.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._commit_date
+
+    @commit_date.setter
+    def commit_date(self, commit_date):
+        """Sets the commit_date of this CommitLog.
+
+
+        :param commit_date: The commit_date of this CommitLog.  # noqa: E501
+        :type: datetime
+        """
+
+        self._commit_date = commit_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

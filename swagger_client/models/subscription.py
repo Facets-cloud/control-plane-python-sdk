@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,159 +28,68 @@ class Subscription(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'channel_address': 'str',
-        'channel_id': 'str',
-        'channel_type': 'str',
-        'filters': 'dict(str, list[str])',
         'id': 'str',
         'name': 'str',
-        'notification_subject': 'str',
-        'notification_type': 'str',
-        'payload_json': 'str',
         'stack_name': 'str',
+        'channel_type': 'str',
+        'channel_address': 'str',
+        'notification_type': 'str',
+        'channel_id': 'str',
+        'notification_subject': 'str',
+        'filters': 'dict(str, list[str])',
+        'payload_json': 'str',
         'test': 'bool'
     }
 
     attribute_map = {
-        'channel_address': 'channelAddress',
-        'channel_id': 'channelId',
-        'channel_type': 'channelType',
-        'filters': 'filters',
         'id': 'id',
         'name': 'name',
-        'notification_subject': 'notificationSubject',
-        'notification_type': 'notificationType',
-        'payload_json': 'payloadJson',
         'stack_name': 'stackName',
+        'channel_type': 'channelType',
+        'channel_address': 'channelAddress',
+        'notification_type': 'notificationType',
+        'channel_id': 'channelId',
+        'notification_subject': 'notificationSubject',
+        'filters': 'filters',
+        'payload_json': 'payloadJson',
         'test': 'test'
     }
 
-    def __init__(self, channel_address=None, channel_id=None, channel_type=None, filters=None, id=None, name=None, notification_subject=None, notification_type=None, payload_json=None, stack_name=None, test=None):  # noqa: E501
+    def __init__(self, id=None, name=None, stack_name=None, channel_type=None, channel_address=None, notification_type=None, channel_id=None, notification_subject=None, filters=None, payload_json=None, test=None):  # noqa: E501
         """Subscription - a model defined in Swagger"""  # noqa: E501
-        self._channel_address = None
-        self._channel_id = None
-        self._channel_type = None
-        self._filters = None
         self._id = None
         self._name = None
-        self._notification_subject = None
-        self._notification_type = None
-        self._payload_json = None
         self._stack_name = None
+        self._channel_type = None
+        self._channel_address = None
+        self._notification_type = None
+        self._channel_id = None
+        self._notification_subject = None
+        self._filters = None
+        self._payload_json = None
         self._test = None
         self.discriminator = None
-        if channel_address is not None:
-            self.channel_address = channel_address
-        if channel_id is not None:
-            self.channel_id = channel_id
-        if channel_type is not None:
-            self.channel_type = channel_type
-        if filters is not None:
-            self.filters = filters
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
-        if notification_subject is not None:
-            self.notification_subject = notification_subject
-        if notification_type is not None:
-            self.notification_type = notification_type
-        if payload_json is not None:
-            self.payload_json = payload_json
         if stack_name is not None:
             self.stack_name = stack_name
+        if channel_type is not None:
+            self.channel_type = channel_type
+        if channel_address is not None:
+            self.channel_address = channel_address
+        if notification_type is not None:
+            self.notification_type = notification_type
+        self.channel_id = channel_id
+        if notification_subject is not None:
+            self.notification_subject = notification_subject
+        if filters is not None:
+            self.filters = filters
+        if payload_json is not None:
+            self.payload_json = payload_json
         if test is not None:
             self.test = test
-
-    @property
-    def channel_address(self):
-        """Gets the channel_address of this Subscription.  # noqa: E501
-
-
-        :return: The channel_address of this Subscription.  # noqa: E501
-        :rtype: str
-        """
-        return self._channel_address
-
-    @channel_address.setter
-    def channel_address(self, channel_address):
-        """Sets the channel_address of this Subscription.
-
-
-        :param channel_address: The channel_address of this Subscription.  # noqa: E501
-        :type: str
-        """
-
-        self._channel_address = channel_address
-
-    @property
-    def channel_id(self):
-        """Gets the channel_id of this Subscription.  # noqa: E501
-
-
-        :return: The channel_id of this Subscription.  # noqa: E501
-        :rtype: str
-        """
-        return self._channel_id
-
-    @channel_id.setter
-    def channel_id(self, channel_id):
-        """Sets the channel_id of this Subscription.
-
-
-        :param channel_id: The channel_id of this Subscription.  # noqa: E501
-        :type: str
-        """
-
-        self._channel_id = channel_id
-
-    @property
-    def channel_type(self):
-        """Gets the channel_type of this Subscription.  # noqa: E501
-
-
-        :return: The channel_type of this Subscription.  # noqa: E501
-        :rtype: str
-        """
-        return self._channel_type
-
-    @channel_type.setter
-    def channel_type(self, channel_type):
-        """Sets the channel_type of this Subscription.
-
-
-        :param channel_type: The channel_type of this Subscription.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["SLACK", "CAPILLARY_VALIDATOR", "WEBHOOK", "PAGER_DUTY", "ZEN_DUTY", "EMAIL", "MS_TEAMS", "MS_TEAMS_WORKFLOW"]  # noqa: E501
-        if channel_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `channel_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(channel_type, allowed_values)
-            )
-
-        self._channel_type = channel_type
-
-    @property
-    def filters(self):
-        """Gets the filters of this Subscription.  # noqa: E501
-
-
-        :return: The filters of this Subscription.  # noqa: E501
-        :rtype: dict(str, list[str])
-        """
-        return self._filters
-
-    @filters.setter
-    def filters(self, filters):
-        """Sets the filters of this Subscription.
-
-
-        :param filters: The filters of this Subscription.  # noqa: E501
-        :type: dict(str, list[str])
-        """
-
-        self._filters = filters
 
     @property
     def id(self):
@@ -225,25 +134,73 @@ class Subscription(object):
         self._name = name
 
     @property
-    def notification_subject(self):
-        """Gets the notification_subject of this Subscription.  # noqa: E501
+    def stack_name(self):
+        """Gets the stack_name of this Subscription.  # noqa: E501
 
 
-        :return: The notification_subject of this Subscription.  # noqa: E501
+        :return: The stack_name of this Subscription.  # noqa: E501
         :rtype: str
         """
-        return self._notification_subject
+        return self._stack_name
 
-    @notification_subject.setter
-    def notification_subject(self, notification_subject):
-        """Sets the notification_subject of this Subscription.
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this Subscription.
 
 
-        :param notification_subject: The notification_subject of this Subscription.  # noqa: E501
+        :param stack_name: The stack_name of this Subscription.  # noqa: E501
         :type: str
         """
 
-        self._notification_subject = notification_subject
+        self._stack_name = stack_name
+
+    @property
+    def channel_type(self):
+        """Gets the channel_type of this Subscription.  # noqa: E501
+
+
+        :return: The channel_type of this Subscription.  # noqa: E501
+        :rtype: str
+        """
+        return self._channel_type
+
+    @channel_type.setter
+    def channel_type(self, channel_type):
+        """Sets the channel_type of this Subscription.
+
+
+        :param channel_type: The channel_type of this Subscription.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["SLACK", "CAPILLARY_VALIDATOR", "WEBHOOK", "PAGER_DUTY", "ZEN_DUTY", "EMAIL", "MS_TEAMS", "MS_TEAMS_WORKFLOW"]  # noqa: E501
+        if channel_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `channel_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(channel_type, allowed_values)
+            )
+
+        self._channel_type = channel_type
+
+    @property
+    def channel_address(self):
+        """Gets the channel_address of this Subscription.  # noqa: E501
+
+
+        :return: The channel_address of this Subscription.  # noqa: E501
+        :rtype: str
+        """
+        return self._channel_address
+
+    @channel_address.setter
+    def channel_address(self, channel_address):
+        """Sets the channel_address of this Subscription.
+
+
+        :param channel_address: The channel_address of this Subscription.  # noqa: E501
+        :type: str
+        """
+
+        self._channel_address = channel_address
 
     @property
     def notification_type(self):
@@ -273,6 +230,71 @@ class Subscription(object):
         self._notification_type = notification_type
 
     @property
+    def channel_id(self):
+        """Gets the channel_id of this Subscription.  # noqa: E501
+
+
+        :return: The channel_id of this Subscription.  # noqa: E501
+        :rtype: str
+        """
+        return self._channel_id
+
+    @channel_id.setter
+    def channel_id(self, channel_id):
+        """Sets the channel_id of this Subscription.
+
+
+        :param channel_id: The channel_id of this Subscription.  # noqa: E501
+        :type: str
+        """
+        if channel_id is None:
+            raise ValueError("Invalid value for `channel_id`, must not be `None`")  # noqa: E501
+
+        self._channel_id = channel_id
+
+    @property
+    def notification_subject(self):
+        """Gets the notification_subject of this Subscription.  # noqa: E501
+
+
+        :return: The notification_subject of this Subscription.  # noqa: E501
+        :rtype: str
+        """
+        return self._notification_subject
+
+    @notification_subject.setter
+    def notification_subject(self, notification_subject):
+        """Sets the notification_subject of this Subscription.
+
+
+        :param notification_subject: The notification_subject of this Subscription.  # noqa: E501
+        :type: str
+        """
+
+        self._notification_subject = notification_subject
+
+    @property
+    def filters(self):
+        """Gets the filters of this Subscription.  # noqa: E501
+
+
+        :return: The filters of this Subscription.  # noqa: E501
+        :rtype: dict(str, list[str])
+        """
+        return self._filters
+
+    @filters.setter
+    def filters(self, filters):
+        """Sets the filters of this Subscription.
+
+
+        :param filters: The filters of this Subscription.  # noqa: E501
+        :type: dict(str, list[str])
+        """
+
+        self._filters = filters
+
+    @property
     def payload_json(self):
         """Gets the payload_json of this Subscription.  # noqa: E501
 
@@ -292,27 +314,6 @@ class Subscription(object):
         """
 
         self._payload_json = payload_json
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this Subscription.  # noqa: E501
-
-
-        :return: The stack_name of this Subscription.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this Subscription.
-
-
-        :param stack_name: The stack_name of this Subscription.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
 
     @property
     def test(self):

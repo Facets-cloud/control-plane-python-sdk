@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,97 +28,34 @@ class VCSOrganizationsRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'vcs_type': 'str',
         'access_token': 'str',
-        'enterprise_host_name': 'str',
         'username': 'str',
-        'vcs_type': 'str'
+        'enterprise_host_name': 'str'
     }
 
     attribute_map = {
+        'vcs_type': 'vcsType',
         'access_token': 'accessToken',
-        'enterprise_host_name': 'enterpriseHostName',
         'username': 'username',
-        'vcs_type': 'vcsType'
+        'enterprise_host_name': 'enterpriseHostName'
     }
 
-    def __init__(self, access_token=None, enterprise_host_name=None, username=None, vcs_type=None):  # noqa: E501
+    def __init__(self, vcs_type=None, access_token=None, username=None, enterprise_host_name=None):  # noqa: E501
         """VCSOrganizationsRequest - a model defined in Swagger"""  # noqa: E501
-        self._access_token = None
-        self._enterprise_host_name = None
-        self._username = None
         self._vcs_type = None
+        self._access_token = None
+        self._username = None
+        self._enterprise_host_name = None
         self.discriminator = None
-        if access_token is not None:
-            self.access_token = access_token
-        if enterprise_host_name is not None:
-            self.enterprise_host_name = enterprise_host_name
-        if username is not None:
-            self.username = username
         if vcs_type is not None:
             self.vcs_type = vcs_type
-
-    @property
-    def access_token(self):
-        """Gets the access_token of this VCSOrganizationsRequest.  # noqa: E501
-
-
-        :return: The access_token of this VCSOrganizationsRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._access_token
-
-    @access_token.setter
-    def access_token(self, access_token):
-        """Sets the access_token of this VCSOrganizationsRequest.
-
-
-        :param access_token: The access_token of this VCSOrganizationsRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._access_token = access_token
-
-    @property
-    def enterprise_host_name(self):
-        """Gets the enterprise_host_name of this VCSOrganizationsRequest.  # noqa: E501
-
-
-        :return: The enterprise_host_name of this VCSOrganizationsRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._enterprise_host_name
-
-    @enterprise_host_name.setter
-    def enterprise_host_name(self, enterprise_host_name):
-        """Sets the enterprise_host_name of this VCSOrganizationsRequest.
-
-
-        :param enterprise_host_name: The enterprise_host_name of this VCSOrganizationsRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._enterprise_host_name = enterprise_host_name
-
-    @property
-    def username(self):
-        """Gets the username of this VCSOrganizationsRequest.  # noqa: E501
-
-
-        :return: The username of this VCSOrganizationsRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this VCSOrganizationsRequest.
-
-
-        :param username: The username of this VCSOrganizationsRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
+        if access_token is not None:
+            self.access_token = access_token
+        if username is not None:
+            self.username = username
+        if enterprise_host_name is not None:
+            self.enterprise_host_name = enterprise_host_name
 
     @property
     def vcs_type(self):
@@ -146,6 +83,69 @@ class VCSOrganizationsRequest(object):
             )
 
         self._vcs_type = vcs_type
+
+    @property
+    def access_token(self):
+        """Gets the access_token of this VCSOrganizationsRequest.  # noqa: E501
+
+
+        :return: The access_token of this VCSOrganizationsRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._access_token
+
+    @access_token.setter
+    def access_token(self, access_token):
+        """Sets the access_token of this VCSOrganizationsRequest.
+
+
+        :param access_token: The access_token of this VCSOrganizationsRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._access_token = access_token
+
+    @property
+    def username(self):
+        """Gets the username of this VCSOrganizationsRequest.  # noqa: E501
+
+
+        :return: The username of this VCSOrganizationsRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this VCSOrganizationsRequest.
+
+
+        :param username: The username of this VCSOrganizationsRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
+
+    @property
+    def enterprise_host_name(self):
+        """Gets the enterprise_host_name of this VCSOrganizationsRequest.  # noqa: E501
+
+
+        :return: The enterprise_host_name of this VCSOrganizationsRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._enterprise_host_name
+
+    @enterprise_host_name.setter
+    def enterprise_host_name(self, enterprise_host_name):
+        """Sets the enterprise_host_name of this VCSOrganizationsRequest.
+
+
+        :param enterprise_host_name: The enterprise_host_name of this VCSOrganizationsRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._enterprise_host_name = enterprise_host_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

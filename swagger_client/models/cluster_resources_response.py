@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class ClusterResourcesResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
         'cluster_name': 'str',
+        'cluster_id': 'str',
         'resources': 'list[ClusterResourcesResponseFacetsResource]'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
         'cluster_name': 'clusterName',
+        'cluster_id': 'clusterId',
         'resources': 'resources'
     }
 
-    def __init__(self, cluster_id=None, cluster_name=None, resources=None):  # noqa: E501
+    def __init__(self, cluster_name=None, cluster_id=None, resources=None):  # noqa: E501
         """ClusterResourcesResponse - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
         self._cluster_name = None
+        self._cluster_id = None
         self._resources = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
         if cluster_name is not None:
             self.cluster_name = cluster_name
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if resources is not None:
             self.resources = resources
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ClusterResourcesResponse.  # noqa: E501
-
-
-        :return: The cluster_id of this ClusterResourcesResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ClusterResourcesResponse.
-
-
-        :param cluster_id: The cluster_id of this ClusterResourcesResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
 
     @property
     def cluster_name(self):
@@ -93,6 +72,27 @@ class ClusterResourcesResponse(object):
         """
 
         self._cluster_name = cluster_name
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this ClusterResourcesResponse.  # noqa: E501
+
+
+        :return: The cluster_id of this ClusterResourcesResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ClusterResourcesResponse.
+
+
+        :param cluster_id: The cluster_id of this ClusterResourcesResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
 
     @property
     def resources(self):

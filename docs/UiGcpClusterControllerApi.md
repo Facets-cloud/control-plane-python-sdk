@@ -1,19 +1,19 @@
 # swagger_client.UiGcpClusterControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**configure_draft_cluster_using_post2**](UiGcpClusterControllerApi.md#configure_draft_cluster_using_post2) | **POST** /cc-ui/v1/gcp/clusters/configure/{clusterId} | configureDraftCluster
-[**create_gcp_cluster_using_post**](UiGcpClusterControllerApi.md#create_gcp_cluster_using_post) | **POST** /cc-ui/v1/gcp/clusters | createGCPCluster
-[**get_gcp_cluster_using_get**](UiGcpClusterControllerApi.md#get_gcp_cluster_using_get) | **GET** /cc-ui/v1/gcp/clusters/{clusterId} | getGCPCluster
-[**update_gcp_cluster_using_put**](UiGcpClusterControllerApi.md#update_gcp_cluster_using_put) | **PUT** /cc-ui/v1/gcp/clusters/{clusterId} | updateGCPCluster
-[**validate_vpc_id_using_get1**](UiGcpClusterControllerApi.md#validate_vpc_id_using_get1) | **GET** /cc-ui/v1/gcp/clusters/validate-vpcId | validateVpcId
+[**configure_draft_cluster**](UiGcpClusterControllerApi.md#configure_draft_cluster) | **POST** /cc-ui/v1/gcp/clusters/configure/{clusterId} | 
+[**create_gcp_cluster**](UiGcpClusterControllerApi.md#create_gcp_cluster) | **POST** /cc-ui/v1/gcp/clusters | 
+[**get_gcp_cluster**](UiGcpClusterControllerApi.md#get_gcp_cluster) | **GET** /cc-ui/v1/gcp/clusters/{clusterId} | 
+[**update_gcp_cluster**](UiGcpClusterControllerApi.md#update_gcp_cluster) | **PUT** /cc-ui/v1/gcp/clusters/{clusterId} | 
+[**validate_vpc_id**](UiGcpClusterControllerApi.md#validate_vpc_id) | **GET** /cc-ui/v1/gcp/clusters/validate-vpcId | 
 
-# **configure_draft_cluster_using_post2**
-> GCPCluster configure_draft_cluster_using_post2(body, cluster_id)
+# **configure_draft_cluster**
+> GCPCluster configure_draft_cluster(body, cluster_id)
 
-configureDraftCluster
+
 
 ### Example
 ```python
@@ -22,30 +22,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.GCPClusterRequest() # GCPClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # configureDraftCluster
-    api_response = api_instance.configure_draft_cluster_using_post2(body, cluster_id)
+    api_response = api_instance.configure_draft_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiGcpClusterControllerApi->configure_draft_cluster_using_post2: %s\n" % e)
+    print("Exception when calling UiGcpClusterControllerApi->configure_draft_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**GCPClusterRequest**](GCPClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -53,19 +52,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_gcp_cluster_using_post**
-> GCPCluster create_gcp_cluster_using_post(body)
+# **create_gcp_cluster**
+> GCPCluster create_gcp_cluster(body)
 
-createGCPCluster
+
 
 ### Example
 ```python
@@ -74,28 +73,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
+body = swagger_client.GCPClusterRequest() # GCPClusterRequest | 
 
 try:
-    # createGCPCluster
-    api_response = api_instance.create_gcp_cluster_using_post(body)
+    api_response = api_instance.create_gcp_cluster(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiGcpClusterControllerApi->create_gcp_cluster_using_post: %s\n" % e)
+    print("Exception when calling UiGcpClusterControllerApi->create_gcp_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
+ **body** | [**GCPClusterRequest**](GCPClusterRequest.md)|  | 
 
 ### Return type
 
@@ -103,19 +101,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_gcp_cluster_using_get**
-> GCPCluster get_gcp_cluster_using_get(cluster_id)
+# **get_gcp_cluster**
+> GCPCluster get_gcp_cluster(cluster_id)
 
-getGCPCluster
+
 
 ### Example
 ```python
@@ -124,28 +122,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getGCPCluster
-    api_response = api_instance.get_gcp_cluster_using_get(cluster_id)
+    api_response = api_instance.get_gcp_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiGcpClusterControllerApi->get_gcp_cluster_using_get: %s\n" % e)
+    print("Exception when calling UiGcpClusterControllerApi->get_gcp_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -153,19 +150,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_gcp_cluster_using_put**
-> GCPCluster update_gcp_cluster_using_put(body, cluster_id)
+# **update_gcp_cluster**
+> GCPCluster update_gcp_cluster(body, cluster_id)
 
-updateGCPCluster
+
 
 ### Example
 ```python
@@ -174,30 +171,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.GCPClusterRequest() # GCPClusterRequest | request
-cluster_id = 'cluster_id_example' # str | clusterId
+body = swagger_client.GCPClusterRequest() # GCPClusterRequest | 
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # updateGCPCluster
-    api_response = api_instance.update_gcp_cluster_using_put(body, cluster_id)
+    api_response = api_instance.update_gcp_cluster(body, cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiGcpClusterControllerApi->update_gcp_cluster_using_put: %s\n" % e)
+    print("Exception when calling UiGcpClusterControllerApi->update_gcp_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GCPClusterRequest**](GCPClusterRequest.md)| request | 
- **cluster_id** | **str**| clusterId | 
+ **body** | [**GCPClusterRequest**](GCPClusterRequest.md)|  | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -205,19 +201,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **validate_vpc_id_using_get1**
-> bool validate_vpc_id_using_get1(account_id, vpc_id)
+# **validate_vpc_id**
+> bool validate_vpc_id(vpc_id, account_id)
 
-validateVpcId
+
 
 ### Example
 ```python
@@ -226,30 +222,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiGcpClusterControllerApi(swagger_client.ApiClient(configuration))
-account_id = 'account_id_example' # str | accountId
-vpc_id = 'vpc_id_example' # str | vpcId
+vpc_id = 'vpc_id_example' # str | 
+account_id = 'account_id_example' # str | 
 
 try:
-    # validateVpcId
-    api_response = api_instance.validate_vpc_id_using_get1(account_id, vpc_id)
+    api_response = api_instance.validate_vpc_id(vpc_id, account_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiGcpClusterControllerApi->validate_vpc_id_using_get1: %s\n" % e)
+    print("Exception when calling UiGcpClusterControllerApi->validate_vpc_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| accountId | 
- **vpc_id** | **str**| vpcId | 
+ **vpc_id** | **str**|  | 
+ **account_id** | **str**|  | 
 
 ### Return type
 
@@ -257,12 +252,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -39,8 +39,7 @@ class AffectedResourcesRequest(object):
         """AffectedResourcesRequest - a model defined in Swagger"""  # noqa: E501
         self._target_resources = None
         self.discriminator = None
-        if target_resources is not None:
-            self.target_resources = target_resources
+        self.target_resources = target_resources
 
     @property
     def target_resources(self):
@@ -60,6 +59,8 @@ class AffectedResourcesRequest(object):
         :param target_resources: The target_resources of this AffectedResourcesRequest.  # noqa: E501
         :type: list[TargetResource]
         """
+        if target_resources is None:
+            raise ValueError("Invalid value for `target_resources`, must not be `None`")  # noqa: E501
 
         self._target_resources = target_resources
 

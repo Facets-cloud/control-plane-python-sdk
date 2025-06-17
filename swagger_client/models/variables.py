@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,39 @@ class Variables(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
-        '_global': 'bool',
         'secret': 'bool',
+        'value': 'str',
         'status': 'str',
-        'value': 'str'
+        '_global': 'bool',
+        'description': 'str'
     }
 
     attribute_map = {
-        'description': 'description',
-        '_global': 'global',
         'secret': 'secret',
+        'value': 'value',
         'status': 'status',
-        'value': 'value'
+        '_global': 'global',
+        'description': 'description'
     }
 
-    def __init__(self, description=None, _global=None, secret=None, status=None, value=None):  # noqa: E501
+    def __init__(self, secret=None, value=None, status=None, _global=None, description=None):  # noqa: E501
         """Variables - a model defined in Swagger"""  # noqa: E501
-        self._description = None
-        self.__global = None
         self._secret = None
-        self._status = None
         self._value = None
+        self._status = None
+        self.__global = None
+        self._description = None
         self.discriminator = None
-        if description is not None:
-            self.description = description
-        if _global is not None:
-            self._global = _global
         if secret is not None:
             self.secret = secret
-        if status is not None:
-            self.status = status
         if value is not None:
             self.value = value
-
-    @property
-    def description(self):
-        """Gets the description of this Variables.  # noqa: E501
-
-
-        :return: The description of this Variables.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Variables.
-
-
-        :param description: The description of this Variables.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def _global(self):
-        """Gets the _global of this Variables.  # noqa: E501
-
-
-        :return: The _global of this Variables.  # noqa: E501
-        :rtype: bool
-        """
-        return self.__global
-
-    @_global.setter
-    def _global(self, _global):
-        """Sets the _global of this Variables.
-
-
-        :param _global: The _global of this Variables.  # noqa: E501
-        :type: bool
-        """
-
-        self.__global = _global
+        if status is not None:
+            self.status = status
+        if _global is not None:
+            self._global = _global
+        if description is not None:
+            self.description = description
 
     @property
     def secret(self):
@@ -124,6 +82,27 @@ class Variables(object):
         """
 
         self._secret = secret
+
+    @property
+    def value(self):
+        """Gets the value of this Variables.  # noqa: E501
+
+
+        :return: The value of this Variables.  # noqa: E501
+        :rtype: str
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this Variables.
+
+
+        :param value: The value of this Variables.  # noqa: E501
+        :type: str
+        """
+
+        self._value = value
 
     @property
     def status(self):
@@ -153,25 +132,46 @@ class Variables(object):
         self._status = status
 
     @property
-    def value(self):
-        """Gets the value of this Variables.  # noqa: E501
+    def _global(self):
+        """Gets the _global of this Variables.  # noqa: E501
 
 
-        :return: The value of this Variables.  # noqa: E501
+        :return: The _global of this Variables.  # noqa: E501
+        :rtype: bool
+        """
+        return self.__global
+
+    @_global.setter
+    def _global(self, _global):
+        """Sets the _global of this Variables.
+
+
+        :param _global: The _global of this Variables.  # noqa: E501
+        :type: bool
+        """
+
+        self.__global = _global
+
+    @property
+    def description(self):
+        """Gets the description of this Variables.  # noqa: E501
+
+
+        :return: The description of this Variables.  # noqa: E501
         :rtype: str
         """
-        return self._value
+        return self._description
 
-    @value.setter
-    def value(self, value):
-        """Sets the value of this Variables.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Variables.
 
 
-        :param value: The value of this Variables.  # noqa: E501
+        :param description: The description of this Variables.  # noqa: E501
         :type: str
         """
 
-        self._value = value
+        self._description = description
 
     def to_dict(self):
         """Returns the model properties as a dict"""

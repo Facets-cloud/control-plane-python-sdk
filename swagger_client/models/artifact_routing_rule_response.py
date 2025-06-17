@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,138 +28,54 @@ class ArtifactRoutingRuleResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created_by': 'str',
-        'creation_date': 'datetime',
-        'criteria': 'list[Criterion]',
-        'default': 'bool',
         'id': 'str',
         'registration_type': 'str',
+        'criteria': 'list[Criterion]',
         'rule_name': 'str',
-        'stack_name': 'str'
+        'created_by': 'str',
+        'stack_name': 'str',
+        'creation_date': 'datetime',
+        'default': 'bool'
     }
 
     attribute_map = {
-        'created_by': 'createdBy',
-        'creation_date': 'creationDate',
-        'criteria': 'criteria',
-        'default': 'default',
         'id': 'id',
         'registration_type': 'registrationType',
+        'criteria': 'criteria',
         'rule_name': 'ruleName',
-        'stack_name': 'stackName'
+        'created_by': 'createdBy',
+        'stack_name': 'stackName',
+        'creation_date': 'creationDate',
+        'default': 'default'
     }
 
-    def __init__(self, created_by=None, creation_date=None, criteria=None, default=None, id=None, registration_type=None, rule_name=None, stack_name=None):  # noqa: E501
+    def __init__(self, id=None, registration_type=None, criteria=None, rule_name=None, created_by=None, stack_name=None, creation_date=None, default=None):  # noqa: E501
         """ArtifactRoutingRuleResponse - a model defined in Swagger"""  # noqa: E501
-        self._created_by = None
-        self._creation_date = None
-        self._criteria = None
-        self._default = None
         self._id = None
         self._registration_type = None
+        self._criteria = None
         self._rule_name = None
+        self._created_by = None
         self._stack_name = None
+        self._creation_date = None
+        self._default = None
         self.discriminator = None
-        if created_by is not None:
-            self.created_by = created_by
-        if creation_date is not None:
-            self.creation_date = creation_date
-        if criteria is not None:
-            self.criteria = criteria
-        if default is not None:
-            self.default = default
         if id is not None:
             self.id = id
         if registration_type is not None:
             self.registration_type = registration_type
+        if criteria is not None:
+            self.criteria = criteria
         if rule_name is not None:
             self.rule_name = rule_name
+        if created_by is not None:
+            self.created_by = created_by
         if stack_name is not None:
             self.stack_name = stack_name
-
-    @property
-    def created_by(self):
-        """Gets the created_by of this ArtifactRoutingRuleResponse.  # noqa: E501
-
-
-        :return: The created_by of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._created_by
-
-    @created_by.setter
-    def created_by(self, created_by):
-        """Sets the created_by of this ArtifactRoutingRuleResponse.
-
-
-        :param created_by: The created_by of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._created_by = created_by
-
-    @property
-    def creation_date(self):
-        """Gets the creation_date of this ArtifactRoutingRuleResponse.  # noqa: E501
-
-
-        :return: The creation_date of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._creation_date
-
-    @creation_date.setter
-    def creation_date(self, creation_date):
-        """Sets the creation_date of this ArtifactRoutingRuleResponse.
-
-
-        :param creation_date: The creation_date of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :type: datetime
-        """
-
-        self._creation_date = creation_date
-
-    @property
-    def criteria(self):
-        """Gets the criteria of this ArtifactRoutingRuleResponse.  # noqa: E501
-
-
-        :return: The criteria of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :rtype: list[Criterion]
-        """
-        return self._criteria
-
-    @criteria.setter
-    def criteria(self, criteria):
-        """Sets the criteria of this ArtifactRoutingRuleResponse.
-
-
-        :param criteria: The criteria of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :type: list[Criterion]
-        """
-
-        self._criteria = criteria
-
-    @property
-    def default(self):
-        """Gets the default of this ArtifactRoutingRuleResponse.  # noqa: E501
-
-
-        :return: The default of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :rtype: bool
-        """
-        return self._default
-
-    @default.setter
-    def default(self, default):
-        """Sets the default of this ArtifactRoutingRuleResponse.
-
-
-        :param default: The default of this ArtifactRoutingRuleResponse.  # noqa: E501
-        :type: bool
-        """
-
-        self._default = default
+        if creation_date is not None:
+            self.creation_date = creation_date
+        if default is not None:
+            self.default = default
 
     @property
     def id(self):
@@ -210,6 +126,27 @@ class ArtifactRoutingRuleResponse(object):
         self._registration_type = registration_type
 
     @property
+    def criteria(self):
+        """Gets the criteria of this ArtifactRoutingRuleResponse.  # noqa: E501
+
+
+        :return: The criteria of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :rtype: list[Criterion]
+        """
+        return self._criteria
+
+    @criteria.setter
+    def criteria(self, criteria):
+        """Sets the criteria of this ArtifactRoutingRuleResponse.
+
+
+        :param criteria: The criteria of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :type: list[Criterion]
+        """
+
+        self._criteria = criteria
+
+    @property
     def rule_name(self):
         """Gets the rule_name of this ArtifactRoutingRuleResponse.  # noqa: E501
 
@@ -231,6 +168,27 @@ class ArtifactRoutingRuleResponse(object):
         self._rule_name = rule_name
 
     @property
+    def created_by(self):
+        """Gets the created_by of this ArtifactRoutingRuleResponse.  # noqa: E501
+
+
+        :return: The created_by of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this ArtifactRoutingRuleResponse.
+
+
+        :param created_by: The created_by of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._created_by = created_by
+
+    @property
     def stack_name(self):
         """Gets the stack_name of this ArtifactRoutingRuleResponse.  # noqa: E501
 
@@ -250,6 +208,48 @@ class ArtifactRoutingRuleResponse(object):
         """
 
         self._stack_name = stack_name
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this ArtifactRoutingRuleResponse.  # noqa: E501
+
+
+        :return: The creation_date of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this ArtifactRoutingRuleResponse.
+
+
+        :param creation_date: The creation_date of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
+
+    @property
+    def default(self):
+        """Gets the default of this ArtifactRoutingRuleResponse.  # noqa: E501
+
+
+        :return: The default of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._default
+
+    @default.setter
+    def default(self, default):
+        """Sets the default of this ArtifactRoutingRuleResponse.
+
+
+        :param default: The default of this ArtifactRoutingRuleResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._default = default
 
     def to_dict(self):
         """Returns the model properties as a dict"""

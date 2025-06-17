@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,53 +28,27 @@ class ArtifactsUploadBody(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_request': 'object',
-        'file': 'str'
+        'file': 'str',
+        'artifact_request': 'str'
     }
 
     attribute_map = {
-        'artifact_request': 'artifactRequest',
-        'file': 'file'
+        'file': 'file',
+        'artifact_request': 'artifactRequest'
     }
 
-    def __init__(self, artifact_request=None, file=None):  # noqa: E501
+    def __init__(self, file=None, artifact_request=None):  # noqa: E501
         """ArtifactsUploadBody - a model defined in Swagger"""  # noqa: E501
-        self._artifact_request = None
         self._file = None
+        self._artifact_request = None
         self.discriminator = None
-        self.artifact_request = artifact_request
         self.file = file
-
-    @property
-    def artifact_request(self):
-        """Gets the artifact_request of this ArtifactsUploadBody.  # noqa: E501
-
-        artifactRequest  # noqa: E501
-
-        :return: The artifact_request of this ArtifactsUploadBody.  # noqa: E501
-        :rtype: object
-        """
-        return self._artifact_request
-
-    @artifact_request.setter
-    def artifact_request(self, artifact_request):
-        """Sets the artifact_request of this ArtifactsUploadBody.
-
-        artifactRequest  # noqa: E501
-
-        :param artifact_request: The artifact_request of this ArtifactsUploadBody.  # noqa: E501
-        :type: object
-        """
-        if artifact_request is None:
-            raise ValueError("Invalid value for `artifact_request`, must not be `None`")  # noqa: E501
-
-        self._artifact_request = artifact_request
+        self.artifact_request = artifact_request
 
     @property
     def file(self):
         """Gets the file of this ArtifactsUploadBody.  # noqa: E501
 
-        file  # noqa: E501
 
         :return: The file of this ArtifactsUploadBody.  # noqa: E501
         :rtype: str
@@ -85,7 +59,6 @@ class ArtifactsUploadBody(object):
     def file(self, file):
         """Sets the file of this ArtifactsUploadBody.
 
-        file  # noqa: E501
 
         :param file: The file of this ArtifactsUploadBody.  # noqa: E501
         :type: str
@@ -94,6 +67,29 @@ class ArtifactsUploadBody(object):
             raise ValueError("Invalid value for `file`, must not be `None`")  # noqa: E501
 
         self._file = file
+
+    @property
+    def artifact_request(self):
+        """Gets the artifact_request of this ArtifactsUploadBody.  # noqa: E501
+
+
+        :return: The artifact_request of this ArtifactsUploadBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifact_request
+
+    @artifact_request.setter
+    def artifact_request(self, artifact_request):
+        """Sets the artifact_request of this ArtifactsUploadBody.
+
+
+        :param artifact_request: The artifact_request of this ArtifactsUploadBody.  # noqa: E501
+        :type: str
+        """
+        if artifact_request is None:
+            raise ValueError("Invalid value for `artifact_request`, must not be `None`")  # noqa: E501
+
+        self._artifact_request = artifact_request
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -30,32 +30,32 @@ class LocalTime(object):
     swagger_types = {
         'hour': 'int',
         'minute': 'int',
-        'nano': 'int',
-        'second': 'int'
+        'second': 'int',
+        'nano': 'int'
     }
 
     attribute_map = {
         'hour': 'hour',
         'minute': 'minute',
-        'nano': 'nano',
-        'second': 'second'
+        'second': 'second',
+        'nano': 'nano'
     }
 
-    def __init__(self, hour=None, minute=None, nano=None, second=None):  # noqa: E501
+    def __init__(self, hour=None, minute=None, second=None, nano=None):  # noqa: E501
         """LocalTime - a model defined in Swagger"""  # noqa: E501
         self._hour = None
         self._minute = None
-        self._nano = None
         self._second = None
+        self._nano = None
         self.discriminator = None
         if hour is not None:
             self.hour = hour
         if minute is not None:
             self.minute = minute
-        if nano is not None:
-            self.nano = nano
         if second is not None:
             self.second = second
+        if nano is not None:
+            self.nano = nano
 
     @property
     def hour(self):
@@ -100,27 +100,6 @@ class LocalTime(object):
         self._minute = minute
 
     @property
-    def nano(self):
-        """Gets the nano of this LocalTime.  # noqa: E501
-
-
-        :return: The nano of this LocalTime.  # noqa: E501
-        :rtype: int
-        """
-        return self._nano
-
-    @nano.setter
-    def nano(self, nano):
-        """Sets the nano of this LocalTime.
-
-
-        :param nano: The nano of this LocalTime.  # noqa: E501
-        :type: int
-        """
-
-        self._nano = nano
-
-    @property
     def second(self):
         """Gets the second of this LocalTime.  # noqa: E501
 
@@ -140,6 +119,27 @@ class LocalTime(object):
         """
 
         self._second = second
+
+    @property
+    def nano(self):
+        """Gets the nano of this LocalTime.  # noqa: E501
+
+
+        :return: The nano of this LocalTime.  # noqa: E501
+        :rtype: int
+        """
+        return self._nano
+
+    @nano.setter
+    def nano(self, nano):
+        """Sets the nano of this LocalTime.
+
+
+        :param nano: The nano of this LocalTime.  # noqa: E501
+        :type: int
+        """
+
+        self._nano = nano
 
     def to_dict(self):
         """Returns the model properties as a dict"""

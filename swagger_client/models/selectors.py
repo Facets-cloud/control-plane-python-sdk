@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,76 @@ class Selectors(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'display_type': 'str',
-        'resource_name': 'str',
         'resource_type': 'str',
+        'resource_name': 'str',
+        'display_type': 'str',
         'sub_type': 'str'
     }
 
     attribute_map = {
-        'display_type': 'displayType',
-        'resource_name': 'resourceName',
         'resource_type': 'resourceType',
+        'resource_name': 'resourceName',
+        'display_type': 'displayType',
         'sub_type': 'subType'
     }
 
-    def __init__(self, display_type=None, resource_name=None, resource_type=None, sub_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, display_type=None, sub_type=None):  # noqa: E501
         """Selectors - a model defined in Swagger"""  # noqa: E501
-        self._display_type = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._display_type = None
         self._sub_type = None
         self.discriminator = None
-        if display_type is not None:
-            self.display_type = display_type
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if display_type is not None:
+            self.display_type = display_type
         if sub_type is not None:
             self.sub_type = sub_type
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this Selectors.  # noqa: E501
+
+
+        :return: The resource_type of this Selectors.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this Selectors.
+
+
+        :param resource_type: The resource_type of this Selectors.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_type = resource_type
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this Selectors.  # noqa: E501
+
+
+        :return: The resource_name of this Selectors.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this Selectors.
+
+
+        :param resource_name: The resource_name of this Selectors.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
 
     @property
     def display_type(self):
@@ -83,48 +125,6 @@ class Selectors(object):
             )
 
         self._display_type = display_type
-
-    @property
-    def resource_name(self):
-        """Gets the resource_name of this Selectors.  # noqa: E501
-
-
-        :return: The resource_name of this Selectors.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_name
-
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this Selectors.
-
-
-        :param resource_name: The resource_name of this Selectors.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_name = resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this Selectors.  # noqa: E501
-
-
-        :return: The resource_type of this Selectors.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this Selectors.
-
-
-        :param resource_type: The resource_type of this Selectors.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
 
     @property
     def sub_type(self):

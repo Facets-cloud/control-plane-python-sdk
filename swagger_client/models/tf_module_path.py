@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,71 +28,29 @@ class TFModulePath(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'etag': 'str',
+        'path_type': 'str',
         'path': 'str',
-        'path_type': 'str'
+        'etag': 'str'
     }
 
     attribute_map = {
-        'etag': 'etag',
+        'path_type': 'pathType',
         'path': 'path',
-        'path_type': 'pathType'
+        'etag': 'etag'
     }
 
-    def __init__(self, etag=None, path=None, path_type=None):  # noqa: E501
+    def __init__(self, path_type=None, path=None, etag=None):  # noqa: E501
         """TFModulePath - a model defined in Swagger"""  # noqa: E501
-        self._etag = None
-        self._path = None
         self._path_type = None
+        self._path = None
+        self._etag = None
         self.discriminator = None
-        if etag is not None:
-            self.etag = etag
-        if path is not None:
-            self.path = path
         if path_type is not None:
             self.path_type = path_type
-
-    @property
-    def etag(self):
-        """Gets the etag of this TFModulePath.  # noqa: E501
-
-
-        :return: The etag of this TFModulePath.  # noqa: E501
-        :rtype: str
-        """
-        return self._etag
-
-    @etag.setter
-    def etag(self, etag):
-        """Sets the etag of this TFModulePath.
-
-
-        :param etag: The etag of this TFModulePath.  # noqa: E501
-        :type: str
-        """
-
-        self._etag = etag
-
-    @property
-    def path(self):
-        """Gets the path of this TFModulePath.  # noqa: E501
-
-
-        :return: The path of this TFModulePath.  # noqa: E501
-        :rtype: str
-        """
-        return self._path
-
-    @path.setter
-    def path(self, path):
-        """Sets the path of this TFModulePath.
-
-
-        :param path: The path of this TFModulePath.  # noqa: E501
-        :type: str
-        """
-
-        self._path = path
+        if path is not None:
+            self.path = path
+        if etag is not None:
+            self.etag = etag
 
     @property
     def path_type(self):
@@ -120,6 +78,48 @@ class TFModulePath(object):
             )
 
         self._path_type = path_type
+
+    @property
+    def path(self):
+        """Gets the path of this TFModulePath.  # noqa: E501
+
+
+        :return: The path of this TFModulePath.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this TFModulePath.
+
+
+        :param path: The path of this TFModulePath.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
+
+    @property
+    def etag(self):
+        """Gets the etag of this TFModulePath.  # noqa: E501
+
+
+        :return: The etag of this TFModulePath.  # noqa: E501
+        :rtype: str
+        """
+        return self._etag
+
+    @etag.setter
+    def etag(self, etag):
+        """Sets the etag of this TFModulePath.
+
+
+        :param etag: The etag of this TFModulePath.  # noqa: E501
+        :type: str
+        """
+
+        self._etag = etag
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class ResourceList(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'resource_names': 'list[str]',
-        'resource_type': 'str'
+        'resource_type': 'str',
+        'resource_names': 'list[str]'
     }
 
     attribute_map = {
-        'resource_names': 'resourceNames',
-        'resource_type': 'resourceType'
+        'resource_type': 'resourceType',
+        'resource_names': 'resourceNames'
     }
 
-    def __init__(self, resource_names=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_names=None):  # noqa: E501
         """ResourceList - a model defined in Swagger"""  # noqa: E501
-        self._resource_names = None
         self._resource_type = None
+        self._resource_names = None
         self.discriminator = None
-        if resource_names is not None:
-            self.resource_names = resource_names
         if resource_type is not None:
             self.resource_type = resource_type
-
-    @property
-    def resource_names(self):
-        """Gets the resource_names of this ResourceList.  # noqa: E501
-
-
-        :return: The resource_names of this ResourceList.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._resource_names
-
-    @resource_names.setter
-    def resource_names(self, resource_names):
-        """Sets the resource_names of this ResourceList.
-
-
-        :param resource_names: The resource_names of this ResourceList.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._resource_names = resource_names
+        if resource_names is not None:
+            self.resource_names = resource_names
 
     @property
     def resource_type(self):
@@ -88,6 +67,27 @@ class ResourceList(object):
         """
 
         self._resource_type = resource_type
+
+    @property
+    def resource_names(self):
+        """Gets the resource_names of this ResourceList.  # noqa: E501
+
+
+        :return: The resource_names of this ResourceList.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._resource_names
+
+    @resource_names.setter
+    def resource_names(self, resource_names):
+        """Sets the resource_names of this ResourceList.
+
+
+        :param resource_names: The resource_names of this ResourceList.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._resource_names = resource_names
 
     def to_dict(self):
         """Returns the model properties as a dict"""

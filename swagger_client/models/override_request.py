@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,99 @@ class OverrideRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'change_log': 'str',
-        'overrides': 'object',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'overrides': 'dict(str, object)',
+        'change_log': 'str'
     }
 
     attribute_map = {
-        'change_log': 'changeLog',
-        'overrides': 'overrides',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'overrides': 'overrides',
+        'change_log': 'changeLog'
     }
 
-    def __init__(self, change_log=None, overrides=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, overrides=None, change_log=None):  # noqa: E501
         """OverrideRequest - a model defined in Swagger"""  # noqa: E501
-        self._change_log = None
-        self._overrides = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._overrides = None
+        self._change_log = None
         self.discriminator = None
-        if change_log is not None:
-            self.change_log = change_log
+        self.resource_type = resource_type
+        self.resource_name = resource_name
         if overrides is not None:
             self.overrides = overrides
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
+        if change_log is not None:
+            self.change_log = change_log
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this OverrideRequest.  # noqa: E501
+
+
+        :return: The resource_type of this OverrideRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this OverrideRequest.
+
+
+        :param resource_type: The resource_type of this OverrideRequest.  # noqa: E501
+        :type: str
+        """
+        if resource_type is None:
+            raise ValueError("Invalid value for `resource_type`, must not be `None`")  # noqa: E501
+
+        self._resource_type = resource_type
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this OverrideRequest.  # noqa: E501
+
+
+        :return: The resource_name of this OverrideRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this OverrideRequest.
+
+
+        :param resource_name: The resource_name of this OverrideRequest.  # noqa: E501
+        :type: str
+        """
+        if resource_name is None:
+            raise ValueError("Invalid value for `resource_name`, must not be `None`")  # noqa: E501
+
+        self._resource_name = resource_name
+
+    @property
+    def overrides(self):
+        """Gets the overrides of this OverrideRequest.  # noqa: E501
+
+
+        :return: The overrides of this OverrideRequest.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._overrides
+
+    @overrides.setter
+    def overrides(self, overrides):
+        """Sets the overrides of this OverrideRequest.
+
+
+        :param overrides: The overrides of this OverrideRequest.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._overrides = overrides
 
     @property
     def change_log(self):
@@ -77,69 +142,6 @@ class OverrideRequest(object):
         """
 
         self._change_log = change_log
-
-    @property
-    def overrides(self):
-        """Gets the overrides of this OverrideRequest.  # noqa: E501
-
-
-        :return: The overrides of this OverrideRequest.  # noqa: E501
-        :rtype: object
-        """
-        return self._overrides
-
-    @overrides.setter
-    def overrides(self, overrides):
-        """Sets the overrides of this OverrideRequest.
-
-
-        :param overrides: The overrides of this OverrideRequest.  # noqa: E501
-        :type: object
-        """
-
-        self._overrides = overrides
-
-    @property
-    def resource_name(self):
-        """Gets the resource_name of this OverrideRequest.  # noqa: E501
-
-
-        :return: The resource_name of this OverrideRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_name
-
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this OverrideRequest.
-
-
-        :param resource_name: The resource_name of this OverrideRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_name = resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this OverrideRequest.  # noqa: E501
-
-
-        :return: The resource_type of this OverrideRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this OverrideRequest.
-
-
-        :param resource_type: The resource_type of this OverrideRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

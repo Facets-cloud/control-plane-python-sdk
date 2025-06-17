@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiUserControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def analyze_access_using_get(self, permissions, **kwargs):  # noqa: E501
-        """analyzeAccess  # noqa: E501
+    def analyze_access(self, permissions, **kwargs):  # noqa: E501
+        """analyze_access  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.analyze_access_using_get(permissions, async_req=True)
+        >>> thread = api.analyze_access(permissions, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[str] permissions: permissions (required)
+        :param list[str] permissions: (required)
         :return: list[AccessAnalyzerResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.analyze_access_using_get_with_http_info(permissions, **kwargs)  # noqa: E501
+            return self.analyze_access_with_http_info(permissions, **kwargs)  # noqa: E501
         else:
-            (data) = self.analyze_access_using_get_with_http_info(permissions, **kwargs)  # noqa: E501
+            (data) = self.analyze_access_with_http_info(permissions, **kwargs)  # noqa: E501
             return data
 
-    def analyze_access_using_get_with_http_info(self, permissions, **kwargs):  # noqa: E501
-        """analyzeAccess  # noqa: E501
+    def analyze_access_with_http_info(self, permissions, **kwargs):  # noqa: E501
+        """analyze_access  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.analyze_access_using_get_with_http_info(permissions, async_req=True)
+        >>> thread = api.analyze_access_with_http_info(permissions, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[str] permissions: permissions (required)
+        :param list[str] permissions: (required)
         :return: list[AccessAnalyzerResponse]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method analyze_access_using_get" % key
+                    " to method analyze_access" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'permissions' is set
         if ('permissions' not in params or
                 params['permissions'] is None):
-            raise ValueError("Missing the required parameter `permissions` when calling `analyze_access_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `permissions` when calling `analyze_access`")  # noqa: E501
 
         collection_formats = {}
 
@@ -105,10 +105,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/analyze-access', 'GET',
@@ -126,53 +126,43 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_token_using_post(self, **kwargs):  # noqa: E501
-        """createToken  # noqa: E501
+    def create_token(self, token, **kwargs):  # noqa: E501
+        """create_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_token_using_post(async_req=True)
+        >>> thread = api.create_token(token, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param datetime created_on:
-        :param str description:
-        :param str name:
-        :param str token:
-        :param str token_id:
-        :param str user_name:
+        :param UserAccessToken token: (required)
         :return: list[UserAccessToken]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_token_using_post_with_http_info(**kwargs)  # noqa: E501
+            return self.create_token_with_http_info(token, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_token_using_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.create_token_with_http_info(token, **kwargs)  # noqa: E501
             return data
 
-    def create_token_using_post_with_http_info(self, **kwargs):  # noqa: E501
-        """createToken  # noqa: E501
+    def create_token_with_http_info(self, token, **kwargs):  # noqa: E501
+        """create_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_token_using_post_with_http_info(async_req=True)
+        >>> thread = api.create_token_with_http_info(token, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param datetime created_on:
-        :param str description:
-        :param str name:
-        :param str token:
-        :param str token_id:
-        :param str user_name:
+        :param UserAccessToken token: (required)
         :return: list[UserAccessToken]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['created_on', 'description', 'name', 'token', 'token_id', 'user_name']  # noqa: E501
+        all_params = ['token']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -183,28 +173,22 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_token_using_post" % key
+                    " to method create_token" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'token' is set
+        if ('token' not in params or
+                params['token'] is None):
+            raise ValueError("Missing the required parameter `token` when calling `create_token`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'created_on' in params:
-            query_params.append(('createdOn', params['created_on']))  # noqa: E501
-        if 'description' in params:
-            query_params.append(('description', params['description']))  # noqa: E501
-        if 'name' in params:
-            query_params.append(('name', params['name']))  # noqa: E501
         if 'token' in params:
             query_params.append(('token', params['token']))  # noqa: E501
-        if 'token_id' in params:
-            query_params.append(('tokenId', params['token_id']))  # noqa: E501
-        if 'user_name' in params:
-            query_params.append(('userName', params['user_name']))  # noqa: E501
 
         header_params = {}
 
@@ -214,10 +198,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/createAccessToken', 'POST',
@@ -235,12 +219,12 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_all_logged_in_users_using_delete(self, **kwargs):  # noqa: E501
-        """deleteALlLoggedInUsers  # noqa: E501
+    def delete_all_logged_in_users(self, **kwargs):  # noqa: E501
+        """delete_all_logged_in_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_all_logged_in_users_using_delete(async_req=True)
+        >>> thread = api.delete_all_logged_in_users(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -250,17 +234,17 @@ class UiUserControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_all_logged_in_users_using_delete_with_http_info(**kwargs)  # noqa: E501
+            return self.delete_all_logged_in_users_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.delete_all_logged_in_users_using_delete_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.delete_all_logged_in_users_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def delete_all_logged_in_users_using_delete_with_http_info(self, **kwargs):  # noqa: E501
-        """deleteALlLoggedInUsers  # noqa: E501
+    def delete_all_logged_in_users_with_http_info(self, **kwargs):  # noqa: E501
+        """delete_all_logged_in_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_all_logged_in_users_using_delete_with_http_info(async_req=True)
+        >>> thread = api.delete_all_logged_in_users_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -280,7 +264,7 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_all_logged_in_users_using_delete" % key
+                    " to method delete_all_logged_in_users" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -299,10 +283,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/loggedIn/session', 'DELETE',
@@ -320,37 +304,37 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_token_using_delete(self, **kwargs):  # noqa: E501
-        """deleteToken  # noqa: E501
+    def delete_token(self, token_id, **kwargs):  # noqa: E501
+        """delete_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_token_using_delete(async_req=True)
+        >>> thread = api.delete_token(token_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str token_id: tokenId
+        :param str token_id: (required)
         :return: list[UserAccessToken]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_token_using_delete_with_http_info(**kwargs)  # noqa: E501
+            return self.delete_token_with_http_info(token_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_token_using_delete_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.delete_token_with_http_info(token_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_token_using_delete_with_http_info(self, **kwargs):  # noqa: E501
-        """deleteToken  # noqa: E501
+    def delete_token_with_http_info(self, token_id, **kwargs):  # noqa: E501
+        """delete_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_token_using_delete_with_http_info(async_req=True)
+        >>> thread = api.delete_token_with_http_info(token_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str token_id: tokenId
+        :param str token_id: (required)
         :return: list[UserAccessToken]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -367,10 +351,14 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_token_using_delete" % key
+                    " to method delete_token" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'token_id' is set
+        if ('token_id' not in params or
+                params['token_id'] is None):
+            raise ValueError("Missing the required parameter `token_id` when calling `delete_token`")  # noqa: E501
 
         collection_formats = {}
 
@@ -388,10 +376,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/tokens/{tokenId}', 'DELETE',
@@ -409,37 +397,37 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_user_using_delete(self, user_id, **kwargs):  # noqa: E501
-        """deleteUser  # noqa: E501
+    def delete_user(self, user_id, **kwargs):  # noqa: E501
+        """delete_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_user_using_delete(user_id, async_req=True)
+        >>> thread = api.delete_user(user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str user_id: userId (required)
+        :param str user_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_user_using_delete_with_http_info(user_id, **kwargs)  # noqa: E501
+            return self.delete_user_with_http_info(user_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_user_using_delete_with_http_info(user_id, **kwargs)  # noqa: E501
+            (data) = self.delete_user_with_http_info(user_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_user_using_delete_with_http_info(self, user_id, **kwargs):  # noqa: E501
-        """deleteUser  # noqa: E501
+    def delete_user_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """delete_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_user_using_delete_with_http_info(user_id, async_req=True)
+        >>> thread = api.delete_user_with_http_info(user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str user_id: userId (required)
+        :param str user_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
@@ -456,14 +444,14 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_user_using_delete" % key
+                    " to method delete_user" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params or
                 params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `delete_user_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_user`")  # noqa: E501
 
         collection_formats = {}
 
@@ -481,10 +469,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/{userId}', 'DELETE',
@@ -502,12 +490,12 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_logged_in_users_using_get(self, **kwargs):  # noqa: E501
-        """getALlLoggedInUsers  # noqa: E501
+    def get_all_logged_in_users(self, **kwargs):  # noqa: E501
+        """get_all_logged_in_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_logged_in_users_using_get(async_req=True)
+        >>> thread = api.get_all_logged_in_users(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -517,17 +505,17 @@ class UiUserControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_logged_in_users_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_logged_in_users_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_logged_in_users_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_logged_in_users_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_logged_in_users_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getALlLoggedInUsers  # noqa: E501
+    def get_all_logged_in_users_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_logged_in_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_logged_in_users_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_logged_in_users_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -547,7 +535,7 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_logged_in_users_using_get" % key
+                    " to method get_all_logged_in_users" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -566,10 +554,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/loggedIn', 'GET',
@@ -587,36 +575,36 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_system_roles_using_get(self, **kwargs):  # noqa: E501
-        """getAllSystemRoles  # noqa: E501
+    def get_all_system_roles(self, **kwargs):  # noqa: E501
+        """get_all_system_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_system_roles_using_get(async_req=True)
+        >>> thread = api.get_all_system_roles(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Role]
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_system_roles_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_system_roles_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_system_roles_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_system_roles_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_system_roles_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllSystemRoles  # noqa: E501
+    def get_all_system_roles_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_system_roles  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_system_roles_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_system_roles_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :return: list[Role]
+        :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -632,7 +620,7 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_system_roles_using_get" % key
+                    " to method get_all_system_roles" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -651,10 +639,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/roles', 'GET',
@@ -664,7 +652,7 @@ class UiUserControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Role]',  # noqa: E501
+            response_type='list[str]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -672,97 +660,12 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_users_expanded_using_get(self, **kwargs):  # noqa: E501
-        """getAllUsersExpanded  # noqa: E501
+    def get_all_users(self, **kwargs):  # noqa: E501
+        """get_all_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_users_expanded_using_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[ExpandedUser]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_all_users_expanded_using_get_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.get_all_users_expanded_using_get_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def get_all_users_expanded_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllUsersExpanded  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_users_expanded_using_get_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :return: list[ExpandedUser]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_all_users_expanded_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/users/list/users-expanded', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[ExpandedUser]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_all_users_using_get(self, **kwargs):  # noqa: E501
-        """getAllUsers  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_users_using_get(async_req=True)
+        >>> thread = api.get_all_users(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -772,17 +675,17 @@ class UiUserControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_users_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_users_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_users_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_users_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_users_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllUsers  # noqa: E501
+    def get_all_users_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_users_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_users_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -802,7 +705,7 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_users_using_get" % key
+                    " to method get_all_users" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -821,10 +724,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/', 'GET',
@@ -842,12 +745,97 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_current_user_using_get(self, **kwargs):  # noqa: E501
-        """getCurrentUser  # noqa: E501
+    def get_all_users_expanded(self, **kwargs):  # noqa: E501
+        """get_all_users_expanded  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_user_using_get(async_req=True)
+        >>> thread = api.get_all_users_expanded(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: list[ExpandedUser]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_all_users_expanded_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_all_users_expanded_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_all_users_expanded_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_users_expanded  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_users_expanded_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: list[ExpandedUser]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_users_expanded" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/users/list/users-expanded', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ExpandedUser]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_current_user(self, **kwargs):  # noqa: E501
+        """get_current_user  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_current_user(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -857,17 +845,17 @@ class UiUserControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_current_user_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_current_user_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_current_user_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_current_user_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_current_user_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getCurrentUser  # noqa: E501
+    def get_current_user_with_http_info(self, **kwargs):  # noqa: E501
+        """get_current_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_current_user_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_current_user_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -887,7 +875,7 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_current_user_using_get" % key
+                    " to method get_current_user" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -906,10 +894,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/current-user', 'GET',
@@ -927,12 +915,12 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_token_using_get(self, **kwargs):  # noqa: E501
-        """getToken  # noqa: E501
+    def get_token(self, **kwargs):  # noqa: E501
+        """get_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_token_using_get(async_req=True)
+        >>> thread = api.get_token(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -942,17 +930,17 @@ class UiUserControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_token_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_token_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_token_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_token_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_token_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getToken  # noqa: E501
+    def get_token_with_http_info(self, **kwargs):  # noqa: E501
+        """get_token  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_token_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_token_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -972,7 +960,7 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_token_using_get" % key
+                    " to method get_token" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -991,10 +979,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/tokens', 'GET',
@@ -1012,38 +1000,38 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_user_expanded_using_get(self, user_id, **kwargs):  # noqa: E501
-        """getUserExpanded  # noqa: E501
+    def get_user(self, user_id, **kwargs):  # noqa: E501
+        """get_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_user_expanded_using_get(user_id, async_req=True)
+        >>> thread = api.get_user(user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str user_id: userId (required)
-        :return: ExpandedUser
+        :param str user_id: (required)
+        :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_user_expanded_using_get_with_http_info(user_id, **kwargs)  # noqa: E501
+            return self.get_user_with_http_info(user_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_user_expanded_using_get_with_http_info(user_id, **kwargs)  # noqa: E501
+            (data) = self.get_user_with_http_info(user_id, **kwargs)  # noqa: E501
             return data
 
-    def get_user_expanded_using_get_with_http_info(self, user_id, **kwargs):  # noqa: E501
-        """getUserExpanded  # noqa: E501
+    def get_user_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """get_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_user_expanded_using_get_with_http_info(user_id, async_req=True)
+        >>> thread = api.get_user_with_http_info(user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str user_id: userId (required)
-        :return: ExpandedUser
+        :param str user_id: (required)
+        :return: User
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1059,14 +1047,14 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_user_expanded_using_get" % key
+                    " to method get_user" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params or
                 params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `get_user_expanded_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `user_id` when calling `get_user`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1084,103 +1072,10 @@ class UiUserControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/users/{userId}/user-expanded', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ExpandedUser',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_user_using_get(self, user_id, **kwargs):  # noqa: E501
-        """getUser  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_user_using_get(user_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_id: userId (required)
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_user_using_get_with_http_info(user_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_user_using_get_with_http_info(user_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_user_using_get_with_http_info(self, user_id, **kwargs):  # noqa: E501
-        """getUser  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_user_using_get_with_http_info(user_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str user_id: userId (required)
-        :return: User
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['user_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_user_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'user_id' is set
-        if ('user_id' not in params or
-                params['user_id'] is None):
-            raise ValueError("Missing the required parameter `user_id` when calling `get_user_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'user_id' in params:
-            path_params['userId'] = params['user_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/{userId}', 'GET',
@@ -1198,43 +1093,43 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def invite_users_using_post(self, body, **kwargs):  # noqa: E501
-        """inviteUsers  # noqa: E501
+    def get_user_expanded(self, user_id, **kwargs):  # noqa: E501
+        """get_user_expanded  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.invite_users_using_post(body, async_req=True)
+        >>> thread = api.get_user_expanded(user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param InviteUserRequest body: inviteUserRequest (required)
-        :return: None
+        :param str user_id: (required)
+        :return: ExpandedUser
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.invite_users_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.get_user_expanded_with_http_info(user_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.invite_users_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.get_user_expanded_with_http_info(user_id, **kwargs)  # noqa: E501
             return data
 
-    def invite_users_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """inviteUsers  # noqa: E501
+    def get_user_expanded_with_http_info(self, user_id, **kwargs):  # noqa: E501
+        """get_user_expanded  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.invite_users_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.get_user_expanded_with_http_info(user_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param InviteUserRequest body: inviteUserRequest (required)
-        :return: None
+        :param str user_id: (required)
+        :return: ExpandedUser
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = ['user_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1245,18 +1140,20 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method invite_users_using_post" % key
+                    " to method get_user_expanded" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `invite_users_using_post`")  # noqa: E501
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params or
+                params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_user_expanded`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']  # noqa: E501
 
         query_params = []
 
@@ -1266,24 +1163,22 @@ class UiUserControllerApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/cc-ui/v1/users/invite-users', 'POST',
+            '/cc-ui/v1/users/{userId}/user-expanded', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='ExpandedUser',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1291,38 +1186,38 @@ class UiUserControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_password_using_post(self, body, **kwargs):  # noqa: E501
-        """updatePassword  # noqa: E501
+    def invite_users(self, body, **kwargs):  # noqa: E501
+        """invite_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_password_using_post(body, async_req=True)
+        >>> thread = api.invite_users(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param PasswordChange body: updatePasswordRequest (required)
-        :return: Response
+        :param InviteUserRequest body: (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_password_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.invite_users_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_password_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.invite_users_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def update_password_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """updatePassword  # noqa: E501
+    def invite_users_with_http_info(self, body, **kwargs):  # noqa: E501
+        """invite_users  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_password_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.invite_users_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param PasswordChange body: updatePasswordRequest (required)
-        :return: Response
+        :param InviteUserRequest body: (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1338,14 +1233,14 @@ class UiUserControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_password_using_post" % key
+                    " to method invite_users" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_password_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `invite_users`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1363,14 +1258,111 @@ class UiUserControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/users/invite-users', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_password(self, body, **kwargs):  # noqa: E501
+        """update_password  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_password(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PasswordChange body: (required)
+        :return: Response
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_password_with_http_info(body, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_password_with_http_info(body, **kwargs)  # noqa: E501
+            return data
+
+    def update_password_with_http_info(self, body, **kwargs):  # noqa: E501
+        """update_password  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_password_with_http_info(body, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param PasswordChange body: (required)
+        :return: Response
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_password" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_password`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/users/updatePassword', 'POST',

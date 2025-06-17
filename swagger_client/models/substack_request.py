@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,70 +28,49 @@ class SubstackRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'branch': 'str',
         'name': 'str',
-        'relative_path': 'str',
-        'tf_module': 'bool',
-        'vcs': 'str',
         'vcs_url': 'str',
-        'version_control_account_id': 'str'
+        'vcs': 'str',
+        'relative_path': 'str',
+        'branch': 'str',
+        'version_control_account_id': 'str',
+        'tf_module': 'bool'
     }
 
     attribute_map = {
-        'branch': 'branch',
         'name': 'name',
-        'relative_path': 'relativePath',
-        'tf_module': 'tfModule',
-        'vcs': 'vcs',
         'vcs_url': 'vcsUrl',
-        'version_control_account_id': 'versionControlAccountId'
+        'vcs': 'vcs',
+        'relative_path': 'relativePath',
+        'branch': 'branch',
+        'version_control_account_id': 'versionControlAccountId',
+        'tf_module': 'tfModule'
     }
 
-    def __init__(self, branch=None, name=None, relative_path=None, tf_module=None, vcs=None, vcs_url=None, version_control_account_id=None):  # noqa: E501
+    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, branch=None, version_control_account_id=None, tf_module=None):  # noqa: E501
         """SubstackRequest - a model defined in Swagger"""  # noqa: E501
-        self._branch = None
         self._name = None
-        self._relative_path = None
-        self._tf_module = None
-        self._vcs = None
         self._vcs_url = None
+        self._vcs = None
+        self._relative_path = None
+        self._branch = None
         self._version_control_account_id = None
+        self._tf_module = None
         self.discriminator = None
-        if branch is not None:
-            self.branch = branch
         if name is not None:
             self.name = name
-        if relative_path is not None:
-            self.relative_path = relative_path
-        if tf_module is not None:
-            self.tf_module = tf_module
-        if vcs is not None:
-            self.vcs = vcs
         if vcs_url is not None:
             self.vcs_url = vcs_url
+        if vcs is not None:
+            self.vcs = vcs
+        if relative_path is not None:
+            self.relative_path = relative_path
+        if branch is not None:
+            self.branch = branch
         if version_control_account_id is not None:
             self.version_control_account_id = version_control_account_id
-
-    @property
-    def branch(self):
-        """Gets the branch of this SubstackRequest.  # noqa: E501
-
-
-        :return: The branch of this SubstackRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch
-
-    @branch.setter
-    def branch(self, branch):
-        """Sets the branch of this SubstackRequest.
-
-
-        :param branch: The branch of this SubstackRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._branch = branch
+        if tf_module is not None:
+            self.tf_module = tf_module
 
     @property
     def name(self):
@@ -115,46 +94,25 @@ class SubstackRequest(object):
         self._name = name
 
     @property
-    def relative_path(self):
-        """Gets the relative_path of this SubstackRequest.  # noqa: E501
+    def vcs_url(self):
+        """Gets the vcs_url of this SubstackRequest.  # noqa: E501
 
 
-        :return: The relative_path of this SubstackRequest.  # noqa: E501
+        :return: The vcs_url of this SubstackRequest.  # noqa: E501
         :rtype: str
         """
-        return self._relative_path
+        return self._vcs_url
 
-    @relative_path.setter
-    def relative_path(self, relative_path):
-        """Sets the relative_path of this SubstackRequest.
+    @vcs_url.setter
+    def vcs_url(self, vcs_url):
+        """Sets the vcs_url of this SubstackRequest.
 
 
-        :param relative_path: The relative_path of this SubstackRequest.  # noqa: E501
+        :param vcs_url: The vcs_url of this SubstackRequest.  # noqa: E501
         :type: str
         """
 
-        self._relative_path = relative_path
-
-    @property
-    def tf_module(self):
-        """Gets the tf_module of this SubstackRequest.  # noqa: E501
-
-
-        :return: The tf_module of this SubstackRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._tf_module
-
-    @tf_module.setter
-    def tf_module(self, tf_module):
-        """Sets the tf_module of this SubstackRequest.
-
-
-        :param tf_module: The tf_module of this SubstackRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._tf_module = tf_module
+        self._vcs_url = vcs_url
 
     @property
     def vcs(self):
@@ -184,25 +142,46 @@ class SubstackRequest(object):
         self._vcs = vcs
 
     @property
-    def vcs_url(self):
-        """Gets the vcs_url of this SubstackRequest.  # noqa: E501
+    def relative_path(self):
+        """Gets the relative_path of this SubstackRequest.  # noqa: E501
 
 
-        :return: The vcs_url of this SubstackRequest.  # noqa: E501
+        :return: The relative_path of this SubstackRequest.  # noqa: E501
         :rtype: str
         """
-        return self._vcs_url
+        return self._relative_path
 
-    @vcs_url.setter
-    def vcs_url(self, vcs_url):
-        """Sets the vcs_url of this SubstackRequest.
+    @relative_path.setter
+    def relative_path(self, relative_path):
+        """Sets the relative_path of this SubstackRequest.
 
 
-        :param vcs_url: The vcs_url of this SubstackRequest.  # noqa: E501
+        :param relative_path: The relative_path of this SubstackRequest.  # noqa: E501
         :type: str
         """
 
-        self._vcs_url = vcs_url
+        self._relative_path = relative_path
+
+    @property
+    def branch(self):
+        """Gets the branch of this SubstackRequest.  # noqa: E501
+
+
+        :return: The branch of this SubstackRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._branch
+
+    @branch.setter
+    def branch(self, branch):
+        """Sets the branch of this SubstackRequest.
+
+
+        :param branch: The branch of this SubstackRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._branch = branch
 
     @property
     def version_control_account_id(self):
@@ -224,6 +203,27 @@ class SubstackRequest(object):
         """
 
         self._version_control_account_id = version_control_account_id
+
+    @property
+    def tf_module(self):
+        """Gets the tf_module of this SubstackRequest.  # noqa: E501
+
+
+        :return: The tf_module of this SubstackRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._tf_module
+
+    @tf_module.setter
+    def tf_module(self, tf_module):
+        """Sets the tf_module of this SubstackRequest.
+
+
+        :param tf_module: The tf_module of this SubstackRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._tf_module = tf_module
 
     def to_dict(self):
         """Returns the model properties as a dict"""

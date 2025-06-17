@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,39 +29,39 @@ class OwnerReference(object):
     """
     swagger_types = {
         'api_version': 'str',
+        'kind': 'str',
         'block_owner_deletion': 'bool',
         'controller': 'bool',
-        'kind': 'str',
         'name': 'str',
         'uid': 'str'
     }
 
     attribute_map = {
         'api_version': 'apiVersion',
+        'kind': 'kind',
         'block_owner_deletion': 'blockOwnerDeletion',
         'controller': 'controller',
-        'kind': 'kind',
         'name': 'name',
         'uid': 'uid'
     }
 
-    def __init__(self, api_version=None, block_owner_deletion=None, controller=None, kind=None, name=None, uid=None):  # noqa: E501
+    def __init__(self, api_version=None, kind=None, block_owner_deletion=None, controller=None, name=None, uid=None):  # noqa: E501
         """OwnerReference - a model defined in Swagger"""  # noqa: E501
         self._api_version = None
+        self._kind = None
         self._block_owner_deletion = None
         self._controller = None
-        self._kind = None
         self._name = None
         self._uid = None
         self.discriminator = None
         if api_version is not None:
             self.api_version = api_version
+        if kind is not None:
+            self.kind = kind
         if block_owner_deletion is not None:
             self.block_owner_deletion = block_owner_deletion
         if controller is not None:
             self.controller = controller
-        if kind is not None:
-            self.kind = kind
         if name is not None:
             self.name = name
         if uid is not None:
@@ -87,6 +87,27 @@ class OwnerReference(object):
         """
 
         self._api_version = api_version
+
+    @property
+    def kind(self):
+        """Gets the kind of this OwnerReference.  # noqa: E501
+
+
+        :return: The kind of this OwnerReference.  # noqa: E501
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """Sets the kind of this OwnerReference.
+
+
+        :param kind: The kind of this OwnerReference.  # noqa: E501
+        :type: str
+        """
+
+        self._kind = kind
 
     @property
     def block_owner_deletion(self):
@@ -129,27 +150,6 @@ class OwnerReference(object):
         """
 
         self._controller = controller
-
-    @property
-    def kind(self):
-        """Gets the kind of this OwnerReference.  # noqa: E501
-
-
-        :return: The kind of this OwnerReference.  # noqa: E501
-        :rtype: str
-        """
-        return self._kind
-
-    @kind.setter
-    def kind(self, kind):
-        """Sets the kind of this OwnerReference.
-
-
-        :param kind: The kind of this OwnerReference.  # noqa: E501
-        :type: str
-        """
-
-        self._kind = kind
 
     @property
     def name(self):

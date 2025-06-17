@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,218 +28,134 @@ class GCPClusterRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auto_sign_off_schedule': 'str',
-        'azs': 'list[str]',
-        'base_cluster_id': 'str',
-        'cd_pipeline_parent': 'str',
         'cloud': 'str',
-        'cloud_account_id': 'str',
         'cluster_name': 'str',
-        'component_versions': 'dict(str, str)',
-        'enable_auto_sign_off': 'bool',
-        'is_ephemeral': 'bool',
-        'k8s_requests_to_limits_ratio': 'float',
-        'machine_type': 'str',
-        'namespace': 'str',
-        'project': 'str',
-        'provided_vpcid': 'str',
-        'region': 'str',
-        'release_stream': 'str',
-        'require_sign_off': 'bool',
-        'schedules': 'dict(str, str)',
-        'service_account_key': 'str',
-        'shared_vpc_settings': 'dict(str, str)',
         'stack_name': 'str',
-        'tz': 'TimeZone',
-        'vpc_cidr': 'str'
+        'cd_pipeline_parent': 'str',
+        'require_sign_off': 'bool',
+        'tz': 'MaintenanceWindowDTOTimeZone',
+        'release_stream': 'str',
+        'k8s_requests_to_limits_ratio': 'float',
+        'schedules': 'dict(str, str)',
+        'auto_sign_off_schedule': 'str',
+        'enable_auto_sign_off': 'bool',
+        'component_versions': 'dict(str, str)',
+        'is_ephemeral': 'bool',
+        'cloud_account_id': 'str',
+        'base_cluster_id': 'str',
+        'namespace': 'str',
+        'service_account_key': 'str',
+        'project': 'str',
+        'region': 'str',
+        'azs': 'list[str]',
+        'vpc_cidr': 'str',
+        'machine_type': 'str',
+        'provided_vpcid': 'str',
+        'shared_vpc_settings': 'dict(str, str)'
     }
 
     attribute_map = {
-        'auto_sign_off_schedule': 'autoSignOffSchedule',
-        'azs': 'azs',
-        'base_cluster_id': 'baseClusterId',
-        'cd_pipeline_parent': 'cdPipelineParent',
         'cloud': 'cloud',
-        'cloud_account_id': 'cloudAccountId',
         'cluster_name': 'clusterName',
-        'component_versions': 'componentVersions',
-        'enable_auto_sign_off': 'enableAutoSignOff',
-        'is_ephemeral': 'isEphemeral',
-        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
-        'machine_type': 'machineType',
-        'namespace': 'namespace',
-        'project': 'project',
-        'provided_vpcid': 'providedVPCId',
-        'region': 'region',
-        'release_stream': 'releaseStream',
-        'require_sign_off': 'requireSignOff',
-        'schedules': 'schedules',
-        'service_account_key': 'serviceAccountKey',
-        'shared_vpc_settings': 'sharedVPCSettings',
         'stack_name': 'stackName',
+        'cd_pipeline_parent': 'cdPipelineParent',
+        'require_sign_off': 'requireSignOff',
         'tz': 'tz',
-        'vpc_cidr': 'vpcCIDR'
+        'release_stream': 'releaseStream',
+        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
+        'schedules': 'schedules',
+        'auto_sign_off_schedule': 'autoSignOffSchedule',
+        'enable_auto_sign_off': 'enableAutoSignOff',
+        'component_versions': 'componentVersions',
+        'is_ephemeral': 'isEphemeral',
+        'cloud_account_id': 'cloudAccountId',
+        'base_cluster_id': 'baseClusterId',
+        'namespace': 'namespace',
+        'service_account_key': 'serviceAccountKey',
+        'project': 'project',
+        'region': 'region',
+        'azs': 'azs',
+        'vpc_cidr': 'vpcCIDR',
+        'machine_type': 'machineType',
+        'provided_vpcid': 'providedVPCId',
+        'shared_vpc_settings': 'sharedVPCSettings'
     }
 
-    def __init__(self, auto_sign_off_schedule=None, azs=None, base_cluster_id=None, cd_pipeline_parent=None, cloud=None, cloud_account_id=None, cluster_name=None, component_versions=None, enable_auto_sign_off=None, is_ephemeral=None, k8s_requests_to_limits_ratio=None, machine_type=None, namespace=None, project=None, provided_vpcid=None, region=None, release_stream=None, require_sign_off=None, schedules=None, service_account_key=None, shared_vpc_settings=None, stack_name=None, tz=None, vpc_cidr=None):  # noqa: E501
+    def __init__(self, cloud=None, cluster_name=None, stack_name=None, cd_pipeline_parent=None, require_sign_off=None, tz=None, release_stream=None, k8s_requests_to_limits_ratio=None, schedules=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, component_versions=None, is_ephemeral=None, cloud_account_id=None, base_cluster_id=None, namespace=None, service_account_key=None, project=None, region=None, azs=None, vpc_cidr=None, machine_type=None, provided_vpcid=None, shared_vpc_settings=None):  # noqa: E501
         """GCPClusterRequest - a model defined in Swagger"""  # noqa: E501
-        self._auto_sign_off_schedule = None
-        self._azs = None
-        self._base_cluster_id = None
-        self._cd_pipeline_parent = None
         self._cloud = None
-        self._cloud_account_id = None
         self._cluster_name = None
-        self._component_versions = None
-        self._enable_auto_sign_off = None
-        self._is_ephemeral = None
-        self._k8s_requests_to_limits_ratio = None
-        self._machine_type = None
-        self._namespace = None
-        self._project = None
-        self._provided_vpcid = None
-        self._region = None
-        self._release_stream = None
-        self._require_sign_off = None
-        self._schedules = None
-        self._service_account_key = None
-        self._shared_vpc_settings = None
         self._stack_name = None
+        self._cd_pipeline_parent = None
+        self._require_sign_off = None
         self._tz = None
+        self._release_stream = None
+        self._k8s_requests_to_limits_ratio = None
+        self._schedules = None
+        self._auto_sign_off_schedule = None
+        self._enable_auto_sign_off = None
+        self._component_versions = None
+        self._is_ephemeral = None
+        self._cloud_account_id = None
+        self._base_cluster_id = None
+        self._namespace = None
+        self._service_account_key = None
+        self._project = None
+        self._region = None
+        self._azs = None
         self._vpc_cidr = None
+        self._machine_type = None
+        self._provided_vpcid = None
+        self._shared_vpc_settings = None
         self.discriminator = None
-        if auto_sign_off_schedule is not None:
-            self.auto_sign_off_schedule = auto_sign_off_schedule
-        if azs is not None:
-            self.azs = azs
-        if base_cluster_id is not None:
-            self.base_cluster_id = base_cluster_id
-        if cd_pipeline_parent is not None:
-            self.cd_pipeline_parent = cd_pipeline_parent
         if cloud is not None:
             self.cloud = cloud
-        if cloud_account_id is not None:
-            self.cloud_account_id = cloud_account_id
         if cluster_name is not None:
             self.cluster_name = cluster_name
-        if component_versions is not None:
-            self.component_versions = component_versions
-        if enable_auto_sign_off is not None:
-            self.enable_auto_sign_off = enable_auto_sign_off
-        if is_ephemeral is not None:
-            self.is_ephemeral = is_ephemeral
-        if k8s_requests_to_limits_ratio is not None:
-            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-        if machine_type is not None:
-            self.machine_type = machine_type
-        if namespace is not None:
-            self.namespace = namespace
-        if project is not None:
-            self.project = project
-        if provided_vpcid is not None:
-            self.provided_vpcid = provided_vpcid
-        if region is not None:
-            self.region = region
-        if release_stream is not None:
-            self.release_stream = release_stream
-        if require_sign_off is not None:
-            self.require_sign_off = require_sign_off
-        if schedules is not None:
-            self.schedules = schedules
-        if service_account_key is not None:
-            self.service_account_key = service_account_key
-        if shared_vpc_settings is not None:
-            self.shared_vpc_settings = shared_vpc_settings
         if stack_name is not None:
             self.stack_name = stack_name
+        if cd_pipeline_parent is not None:
+            self.cd_pipeline_parent = cd_pipeline_parent
+        if require_sign_off is not None:
+            self.require_sign_off = require_sign_off
         if tz is not None:
             self.tz = tz
+        if release_stream is not None:
+            self.release_stream = release_stream
+        if k8s_requests_to_limits_ratio is not None:
+            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+        if schedules is not None:
+            self.schedules = schedules
+        if auto_sign_off_schedule is not None:
+            self.auto_sign_off_schedule = auto_sign_off_schedule
+        if enable_auto_sign_off is not None:
+            self.enable_auto_sign_off = enable_auto_sign_off
+        if component_versions is not None:
+            self.component_versions = component_versions
+        if is_ephemeral is not None:
+            self.is_ephemeral = is_ephemeral
+        if cloud_account_id is not None:
+            self.cloud_account_id = cloud_account_id
+        if base_cluster_id is not None:
+            self.base_cluster_id = base_cluster_id
+        if namespace is not None:
+            self.namespace = namespace
+        if service_account_key is not None:
+            self.service_account_key = service_account_key
+        if project is not None:
+            self.project = project
+        if region is not None:
+            self.region = region
+        if azs is not None:
+            self.azs = azs
         if vpc_cidr is not None:
             self.vpc_cidr = vpc_cidr
-
-    @property
-    def auto_sign_off_schedule(self):
-        """Gets the auto_sign_off_schedule of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The auto_sign_off_schedule of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._auto_sign_off_schedule
-
-    @auto_sign_off_schedule.setter
-    def auto_sign_off_schedule(self, auto_sign_off_schedule):
-        """Sets the auto_sign_off_schedule of this GCPClusterRequest.
-
-
-        :param auto_sign_off_schedule: The auto_sign_off_schedule of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._auto_sign_off_schedule = auto_sign_off_schedule
-
-    @property
-    def azs(self):
-        """Gets the azs of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The azs of this GCPClusterRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._azs
-
-    @azs.setter
-    def azs(self, azs):
-        """Sets the azs of this GCPClusterRequest.
-
-
-        :param azs: The azs of this GCPClusterRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._azs = azs
-
-    @property
-    def base_cluster_id(self):
-        """Gets the base_cluster_id of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The base_cluster_id of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_cluster_id
-
-    @base_cluster_id.setter
-    def base_cluster_id(self, base_cluster_id):
-        """Sets the base_cluster_id of this GCPClusterRequest.
-
-
-        :param base_cluster_id: The base_cluster_id of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._base_cluster_id = base_cluster_id
-
-    @property
-    def cd_pipeline_parent(self):
-        """Gets the cd_pipeline_parent of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The cd_pipeline_parent of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cd_pipeline_parent
-
-    @cd_pipeline_parent.setter
-    def cd_pipeline_parent(self, cd_pipeline_parent):
-        """Sets the cd_pipeline_parent of this GCPClusterRequest.
-
-
-        :param cd_pipeline_parent: The cd_pipeline_parent of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._cd_pipeline_parent = cd_pipeline_parent
+        if machine_type is not None:
+            self.machine_type = machine_type
+        if provided_vpcid is not None:
+            self.provided_vpcid = provided_vpcid
+        if shared_vpc_settings is not None:
+            self.shared_vpc_settings = shared_vpc_settings
 
     @property
     def cloud(self):
@@ -269,27 +185,6 @@ class GCPClusterRequest(object):
         self._cloud = cloud
 
     @property
-    def cloud_account_id(self):
-        """Gets the cloud_account_id of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The cloud_account_id of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_account_id
-
-    @cloud_account_id.setter
-    def cloud_account_id(self, cloud_account_id):
-        """Sets the cloud_account_id of this GCPClusterRequest.
-
-
-        :param cloud_account_id: The cloud_account_id of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._cloud_account_id = cloud_account_id
-
-    @property
     def cluster_name(self):
         """Gets the cluster_name of this GCPClusterRequest.  # noqa: E501
 
@@ -309,300 +204,6 @@ class GCPClusterRequest(object):
         """
 
         self._cluster_name = cluster_name
-
-    @property
-    def component_versions(self):
-        """Gets the component_versions of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The component_versions of this GCPClusterRequest.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._component_versions
-
-    @component_versions.setter
-    def component_versions(self, component_versions):
-        """Sets the component_versions of this GCPClusterRequest.
-
-
-        :param component_versions: The component_versions of this GCPClusterRequest.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._component_versions = component_versions
-
-    @property
-    def enable_auto_sign_off(self):
-        """Gets the enable_auto_sign_off of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The enable_auto_sign_off of this GCPClusterRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_auto_sign_off
-
-    @enable_auto_sign_off.setter
-    def enable_auto_sign_off(self, enable_auto_sign_off):
-        """Sets the enable_auto_sign_off of this GCPClusterRequest.
-
-
-        :param enable_auto_sign_off: The enable_auto_sign_off of this GCPClusterRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_auto_sign_off = enable_auto_sign_off
-
-    @property
-    def is_ephemeral(self):
-        """Gets the is_ephemeral of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The is_ephemeral of this GCPClusterRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_ephemeral
-
-    @is_ephemeral.setter
-    def is_ephemeral(self, is_ephemeral):
-        """Sets the is_ephemeral of this GCPClusterRequest.
-
-
-        :param is_ephemeral: The is_ephemeral of this GCPClusterRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_ephemeral = is_ephemeral
-
-    @property
-    def k8s_requests_to_limits_ratio(self):
-        """Gets the k8s_requests_to_limits_ratio of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The k8s_requests_to_limits_ratio of this GCPClusterRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._k8s_requests_to_limits_ratio
-
-    @k8s_requests_to_limits_ratio.setter
-    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
-        """Sets the k8s_requests_to_limits_ratio of this GCPClusterRequest.
-
-
-        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this GCPClusterRequest.  # noqa: E501
-        :type: float
-        """
-
-        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-
-    @property
-    def machine_type(self):
-        """Gets the machine_type of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The machine_type of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._machine_type
-
-    @machine_type.setter
-    def machine_type(self, machine_type):
-        """Sets the machine_type of this GCPClusterRequest.
-
-
-        :param machine_type: The machine_type of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._machine_type = machine_type
-
-    @property
-    def namespace(self):
-        """Gets the namespace of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The namespace of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """Sets the namespace of this GCPClusterRequest.
-
-
-        :param namespace: The namespace of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._namespace = namespace
-
-    @property
-    def project(self):
-        """Gets the project of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The project of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._project
-
-    @project.setter
-    def project(self, project):
-        """Sets the project of this GCPClusterRequest.
-
-
-        :param project: The project of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._project = project
-
-    @property
-    def provided_vpcid(self):
-        """Gets the provided_vpcid of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The provided_vpcid of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._provided_vpcid
-
-    @provided_vpcid.setter
-    def provided_vpcid(self, provided_vpcid):
-        """Sets the provided_vpcid of this GCPClusterRequest.
-
-
-        :param provided_vpcid: The provided_vpcid of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._provided_vpcid = provided_vpcid
-
-    @property
-    def region(self):
-        """Gets the region of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The region of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._region
-
-    @region.setter
-    def region(self, region):
-        """Sets the region of this GCPClusterRequest.
-
-
-        :param region: The region of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._region = region
-
-    @property
-    def release_stream(self):
-        """Gets the release_stream of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The release_stream of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_stream
-
-    @release_stream.setter
-    def release_stream(self, release_stream):
-        """Sets the release_stream of this GCPClusterRequest.
-
-
-        :param release_stream: The release_stream of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._release_stream = release_stream
-
-    @property
-    def require_sign_off(self):
-        """Gets the require_sign_off of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The require_sign_off of this GCPClusterRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._require_sign_off
-
-    @require_sign_off.setter
-    def require_sign_off(self, require_sign_off):
-        """Sets the require_sign_off of this GCPClusterRequest.
-
-
-        :param require_sign_off: The require_sign_off of this GCPClusterRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._require_sign_off = require_sign_off
-
-    @property
-    def schedules(self):
-        """Gets the schedules of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The schedules of this GCPClusterRequest.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._schedules
-
-    @schedules.setter
-    def schedules(self, schedules):
-        """Sets the schedules of this GCPClusterRequest.
-
-
-        :param schedules: The schedules of this GCPClusterRequest.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._schedules = schedules
-
-    @property
-    def service_account_key(self):
-        """Gets the service_account_key of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The service_account_key of this GCPClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._service_account_key
-
-    @service_account_key.setter
-    def service_account_key(self, service_account_key):
-        """Sets the service_account_key of this GCPClusterRequest.
-
-
-        :param service_account_key: The service_account_key of this GCPClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._service_account_key = service_account_key
-
-    @property
-    def shared_vpc_settings(self):
-        """Gets the shared_vpc_settings of this GCPClusterRequest.  # noqa: E501
-
-
-        :return: The shared_vpc_settings of this GCPClusterRequest.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._shared_vpc_settings
-
-    @shared_vpc_settings.setter
-    def shared_vpc_settings(self, shared_vpc_settings):
-        """Sets the shared_vpc_settings of this GCPClusterRequest.
-
-
-        :param shared_vpc_settings: The shared_vpc_settings of this GCPClusterRequest.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._shared_vpc_settings = shared_vpc_settings
 
     @property
     def stack_name(self):
@@ -626,12 +227,54 @@ class GCPClusterRequest(object):
         self._stack_name = stack_name
 
     @property
+    def cd_pipeline_parent(self):
+        """Gets the cd_pipeline_parent of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The cd_pipeline_parent of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cd_pipeline_parent
+
+    @cd_pipeline_parent.setter
+    def cd_pipeline_parent(self, cd_pipeline_parent):
+        """Sets the cd_pipeline_parent of this GCPClusterRequest.
+
+
+        :param cd_pipeline_parent: The cd_pipeline_parent of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._cd_pipeline_parent = cd_pipeline_parent
+
+    @property
+    def require_sign_off(self):
+        """Gets the require_sign_off of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The require_sign_off of this GCPClusterRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_sign_off
+
+    @require_sign_off.setter
+    def require_sign_off(self, require_sign_off):
+        """Sets the require_sign_off of this GCPClusterRequest.
+
+
+        :param require_sign_off: The require_sign_off of this GCPClusterRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_sign_off = require_sign_off
+
+    @property
     def tz(self):
         """Gets the tz of this GCPClusterRequest.  # noqa: E501
 
 
         :return: The tz of this GCPClusterRequest.  # noqa: E501
-        :rtype: TimeZone
+        :rtype: MaintenanceWindowDTOTimeZone
         """
         return self._tz
 
@@ -641,10 +284,304 @@ class GCPClusterRequest(object):
 
 
         :param tz: The tz of this GCPClusterRequest.  # noqa: E501
-        :type: TimeZone
+        :type: MaintenanceWindowDTOTimeZone
         """
 
         self._tz = tz
+
+    @property
+    def release_stream(self):
+        """Gets the release_stream of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The release_stream of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_stream
+
+    @release_stream.setter
+    def release_stream(self, release_stream):
+        """Sets the release_stream of this GCPClusterRequest.
+
+
+        :param release_stream: The release_stream of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._release_stream = release_stream
+
+    @property
+    def k8s_requests_to_limits_ratio(self):
+        """Gets the k8s_requests_to_limits_ratio of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The k8s_requests_to_limits_ratio of this GCPClusterRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._k8s_requests_to_limits_ratio
+
+    @k8s_requests_to_limits_ratio.setter
+    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
+        """Sets the k8s_requests_to_limits_ratio of this GCPClusterRequest.
+
+
+        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this GCPClusterRequest.  # noqa: E501
+        :type: float
+        """
+
+        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+
+    @property
+    def schedules(self):
+        """Gets the schedules of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The schedules of this GCPClusterRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._schedules
+
+    @schedules.setter
+    def schedules(self, schedules):
+        """Sets the schedules of this GCPClusterRequest.
+
+
+        :param schedules: The schedules of this GCPClusterRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._schedules = schedules
+
+    @property
+    def auto_sign_off_schedule(self):
+        """Gets the auto_sign_off_schedule of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The auto_sign_off_schedule of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_sign_off_schedule
+
+    @auto_sign_off_schedule.setter
+    def auto_sign_off_schedule(self, auto_sign_off_schedule):
+        """Sets the auto_sign_off_schedule of this GCPClusterRequest.
+
+
+        :param auto_sign_off_schedule: The auto_sign_off_schedule of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_sign_off_schedule = auto_sign_off_schedule
+
+    @property
+    def enable_auto_sign_off(self):
+        """Gets the enable_auto_sign_off of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The enable_auto_sign_off of this GCPClusterRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_auto_sign_off
+
+    @enable_auto_sign_off.setter
+    def enable_auto_sign_off(self, enable_auto_sign_off):
+        """Sets the enable_auto_sign_off of this GCPClusterRequest.
+
+
+        :param enable_auto_sign_off: The enable_auto_sign_off of this GCPClusterRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_auto_sign_off = enable_auto_sign_off
+
+    @property
+    def component_versions(self):
+        """Gets the component_versions of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The component_versions of this GCPClusterRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._component_versions
+
+    @component_versions.setter
+    def component_versions(self, component_versions):
+        """Sets the component_versions of this GCPClusterRequest.
+
+
+        :param component_versions: The component_versions of this GCPClusterRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._component_versions = component_versions
+
+    @property
+    def is_ephemeral(self):
+        """Gets the is_ephemeral of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The is_ephemeral of this GCPClusterRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_ephemeral
+
+    @is_ephemeral.setter
+    def is_ephemeral(self, is_ephemeral):
+        """Sets the is_ephemeral of this GCPClusterRequest.
+
+
+        :param is_ephemeral: The is_ephemeral of this GCPClusterRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_ephemeral = is_ephemeral
+
+    @property
+    def cloud_account_id(self):
+        """Gets the cloud_account_id of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The cloud_account_id of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_account_id
+
+    @cloud_account_id.setter
+    def cloud_account_id(self, cloud_account_id):
+        """Sets the cloud_account_id of this GCPClusterRequest.
+
+
+        :param cloud_account_id: The cloud_account_id of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_account_id = cloud_account_id
+
+    @property
+    def base_cluster_id(self):
+        """Gets the base_cluster_id of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The base_cluster_id of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_cluster_id
+
+    @base_cluster_id.setter
+    def base_cluster_id(self, base_cluster_id):
+        """Sets the base_cluster_id of this GCPClusterRequest.
+
+
+        :param base_cluster_id: The base_cluster_id of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._base_cluster_id = base_cluster_id
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The namespace of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this GCPClusterRequest.
+
+
+        :param namespace: The namespace of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
+
+    @property
+    def service_account_key(self):
+        """Gets the service_account_key of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The service_account_key of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._service_account_key
+
+    @service_account_key.setter
+    def service_account_key(self, service_account_key):
+        """Sets the service_account_key of this GCPClusterRequest.
+
+
+        :param service_account_key: The service_account_key of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._service_account_key = service_account_key
+
+    @property
+    def project(self):
+        """Gets the project of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The project of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._project
+
+    @project.setter
+    def project(self, project):
+        """Sets the project of this GCPClusterRequest.
+
+
+        :param project: The project of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._project = project
+
+    @property
+    def region(self):
+        """Gets the region of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The region of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this GCPClusterRequest.
+
+
+        :param region: The region of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
+
+    @property
+    def azs(self):
+        """Gets the azs of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The azs of this GCPClusterRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._azs
+
+    @azs.setter
+    def azs(self, azs):
+        """Sets the azs of this GCPClusterRequest.
+
+
+        :param azs: The azs of this GCPClusterRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._azs = azs
 
     @property
     def vpc_cidr(self):
@@ -666,6 +603,69 @@ class GCPClusterRequest(object):
         """
 
         self._vpc_cidr = vpc_cidr
+
+    @property
+    def machine_type(self):
+        """Gets the machine_type of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The machine_type of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._machine_type
+
+    @machine_type.setter
+    def machine_type(self, machine_type):
+        """Sets the machine_type of this GCPClusterRequest.
+
+
+        :param machine_type: The machine_type of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._machine_type = machine_type
+
+    @property
+    def provided_vpcid(self):
+        """Gets the provided_vpcid of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The provided_vpcid of this GCPClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._provided_vpcid
+
+    @provided_vpcid.setter
+    def provided_vpcid(self, provided_vpcid):
+        """Sets the provided_vpcid of this GCPClusterRequest.
+
+
+        :param provided_vpcid: The provided_vpcid of this GCPClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._provided_vpcid = provided_vpcid
+
+    @property
+    def shared_vpc_settings(self):
+        """Gets the shared_vpc_settings of this GCPClusterRequest.  # noqa: E501
+
+
+        :return: The shared_vpc_settings of this GCPClusterRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._shared_vpc_settings
+
+    @shared_vpc_settings.setter
+    def shared_vpc_settings(self, shared_vpc_settings):
+        """Sets the shared_vpc_settings of this GCPClusterRequest.
+
+
+        :param shared_vpc_settings: The shared_vpc_settings of this GCPClusterRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._shared_vpc_settings = shared_vpc_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

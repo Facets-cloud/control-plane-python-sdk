@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,65 +28,44 @@ class Edge(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'block_edits': 'bool',
         'id': 'str',
-        'input_name': 'str',
-        'is_input': 'bool',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'is_input': 'bool',
+        'input_name': 'str',
+        'block_edits': 'bool'
     }
 
     attribute_map = {
-        'block_edits': 'blockEdits',
         'id': 'id',
-        'input_name': 'inputName',
-        'is_input': 'isInput',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'is_input': 'isInput',
+        'input_name': 'inputName',
+        'block_edits': 'blockEdits'
     }
 
-    def __init__(self, block_edits=None, id=None, input_name=None, is_input=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, id=None, resource_type=None, resource_name=None, is_input=None, input_name=None, block_edits=None):  # noqa: E501
         """Edge - a model defined in Swagger"""  # noqa: E501
-        self._block_edits = None
         self._id = None
-        self._input_name = None
-        self._is_input = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._is_input = None
+        self._input_name = None
+        self._block_edits = None
         self.discriminator = None
-        if block_edits is not None:
-            self.block_edits = block_edits
         if id is not None:
             self.id = id
-        if input_name is not None:
-            self.input_name = input_name
-        if is_input is not None:
-            self.is_input = is_input
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
-
-    @property
-    def block_edits(self):
-        """Gets the block_edits of this Edge.  # noqa: E501
-
-
-        :return: The block_edits of this Edge.  # noqa: E501
-        :rtype: bool
-        """
-        return self._block_edits
-
-    @block_edits.setter
-    def block_edits(self, block_edits):
-        """Sets the block_edits of this Edge.
-
-
-        :param block_edits: The block_edits of this Edge.  # noqa: E501
-        :type: bool
-        """
-
-        self._block_edits = block_edits
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if is_input is not None:
+            self.is_input = is_input
+        if input_name is not None:
+            self.input_name = input_name
+        if block_edits is not None:
+            self.block_edits = block_edits
 
     @property
     def id(self):
@@ -110,46 +89,25 @@ class Edge(object):
         self._id = id
 
     @property
-    def input_name(self):
-        """Gets the input_name of this Edge.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this Edge.  # noqa: E501
 
 
-        :return: The input_name of this Edge.  # noqa: E501
+        :return: The resource_type of this Edge.  # noqa: E501
         :rtype: str
         """
-        return self._input_name
+        return self._resource_type
 
-    @input_name.setter
-    def input_name(self, input_name):
-        """Sets the input_name of this Edge.
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this Edge.
 
 
-        :param input_name: The input_name of this Edge.  # noqa: E501
+        :param resource_type: The resource_type of this Edge.  # noqa: E501
         :type: str
         """
 
-        self._input_name = input_name
-
-    @property
-    def is_input(self):
-        """Gets the is_input of this Edge.  # noqa: E501
-
-
-        :return: The is_input of this Edge.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_input
-
-    @is_input.setter
-    def is_input(self, is_input):
-        """Sets the is_input of this Edge.
-
-
-        :param is_input: The is_input of this Edge.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_input = is_input
+        self._resource_type = resource_type
 
     @property
     def resource_name(self):
@@ -173,25 +131,67 @@ class Edge(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this Edge.  # noqa: E501
+    def is_input(self):
+        """Gets the is_input of this Edge.  # noqa: E501
 
 
-        :return: The resource_type of this Edge.  # noqa: E501
+        :return: The is_input of this Edge.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_input
+
+    @is_input.setter
+    def is_input(self, is_input):
+        """Sets the is_input of this Edge.
+
+
+        :param is_input: The is_input of this Edge.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_input = is_input
+
+    @property
+    def input_name(self):
+        """Gets the input_name of this Edge.  # noqa: E501
+
+
+        :return: The input_name of this Edge.  # noqa: E501
         :rtype: str
         """
-        return self._resource_type
+        return self._input_name
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this Edge.
+    @input_name.setter
+    def input_name(self, input_name):
+        """Sets the input_name of this Edge.
 
 
-        :param resource_type: The resource_type of this Edge.  # noqa: E501
+        :param input_name: The input_name of this Edge.  # noqa: E501
         :type: str
         """
 
-        self._resource_type = resource_type
+        self._input_name = input_name
+
+    @property
+    def block_edits(self):
+        """Gets the block_edits of this Edge.  # noqa: E501
+
+
+        :return: The block_edits of this Edge.  # noqa: E501
+        :rtype: bool
+        """
+        return self._block_edits
+
+    @block_edits.setter
+    def block_edits(self, block_edits):
+        """Sets the block_edits of this Edge.
+
+
+        :param block_edits: The block_edits of this Edge.  # noqa: E501
+        :type: bool
+        """
+
+        self._block_edits = block_edits
 
     def to_dict(self):
         """Returns the model properties as a dict"""

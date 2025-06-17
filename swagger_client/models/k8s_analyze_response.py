@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,76 +28,34 @@ class K8sAnalyzeResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'problems': 'int',
-        'provider': 'str',
         'results': 'list[Result]',
-        'status': 'str'
+        'problems': 'int',
+        'status': 'str',
+        'provider': 'str'
     }
 
     attribute_map = {
-        'problems': 'problems',
-        'provider': 'provider',
         'results': 'results',
-        'status': 'status'
+        'problems': 'problems',
+        'status': 'status',
+        'provider': 'provider'
     }
 
-    def __init__(self, problems=None, provider=None, results=None, status=None):  # noqa: E501
+    def __init__(self, results=None, problems=None, status=None, provider=None):  # noqa: E501
         """K8sAnalyzeResponse - a model defined in Swagger"""  # noqa: E501
-        self._problems = None
-        self._provider = None
         self._results = None
+        self._problems = None
         self._status = None
+        self._provider = None
         self.discriminator = None
-        if problems is not None:
-            self.problems = problems
-        if provider is not None:
-            self.provider = provider
         if results is not None:
             self.results = results
+        if problems is not None:
+            self.problems = problems
         if status is not None:
             self.status = status
-
-    @property
-    def problems(self):
-        """Gets the problems of this K8sAnalyzeResponse.  # noqa: E501
-
-
-        :return: The problems of this K8sAnalyzeResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._problems
-
-    @problems.setter
-    def problems(self, problems):
-        """Sets the problems of this K8sAnalyzeResponse.
-
-
-        :param problems: The problems of this K8sAnalyzeResponse.  # noqa: E501
-        :type: int
-        """
-
-        self._problems = problems
-
-    @property
-    def provider(self):
-        """Gets the provider of this K8sAnalyzeResponse.  # noqa: E501
-
-
-        :return: The provider of this K8sAnalyzeResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._provider
-
-    @provider.setter
-    def provider(self, provider):
-        """Sets the provider of this K8sAnalyzeResponse.
-
-
-        :param provider: The provider of this K8sAnalyzeResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._provider = provider
+        if provider is not None:
+            self.provider = provider
 
     @property
     def results(self):
@@ -121,6 +79,27 @@ class K8sAnalyzeResponse(object):
         self._results = results
 
     @property
+    def problems(self):
+        """Gets the problems of this K8sAnalyzeResponse.  # noqa: E501
+
+
+        :return: The problems of this K8sAnalyzeResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._problems
+
+    @problems.setter
+    def problems(self, problems):
+        """Sets the problems of this K8sAnalyzeResponse.
+
+
+        :param problems: The problems of this K8sAnalyzeResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._problems = problems
+
+    @property
     def status(self):
         """Gets the status of this K8sAnalyzeResponse.  # noqa: E501
 
@@ -140,6 +119,27 @@ class K8sAnalyzeResponse(object):
         """
 
         self._status = status
+
+    @property
+    def provider(self):
+        """Gets the provider of this K8sAnalyzeResponse.  # noqa: E501
+
+
+        :return: The provider of this K8sAnalyzeResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this K8sAnalyzeResponse.
+
+
+        :param provider: The provider of this K8sAnalyzeResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._provider = provider
 
     def to_dict(self):
         """Returns the model properties as a dict"""

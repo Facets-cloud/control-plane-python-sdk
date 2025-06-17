@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,65 +28,44 @@ class PodDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
         'name': 'str',
         'ready': 'str',
+        'status': 'str',
         'restarts': 'int',
-        'role': 'str',
-        'status': 'str'
+        'age_in_seconds': 'int',
+        'role': 'str'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
         'name': 'name',
         'ready': 'ready',
+        'status': 'status',
         'restarts': 'restarts',
-        'role': 'role',
-        'status': 'status'
+        'age_in_seconds': 'ageInSeconds',
+        'role': 'role'
     }
 
-    def __init__(self, age_in_seconds=None, name=None, ready=None, restarts=None, role=None, status=None):  # noqa: E501
+    def __init__(self, name=None, ready=None, status=None, restarts=None, age_in_seconds=None, role=None):  # noqa: E501
         """PodDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
         self._name = None
         self._ready = None
-        self._restarts = None
-        self._role = None
         self._status = None
+        self._restarts = None
+        self._age_in_seconds = None
+        self._role = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
         if name is not None:
             self.name = name
         if ready is not None:
             self.ready = ready
-        if restarts is not None:
-            self.restarts = restarts
-        if role is not None:
-            self.role = role
         if status is not None:
             self.status = status
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this PodDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this PodDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this PodDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this PodDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
+        if restarts is not None:
+            self.restarts = restarts
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
+        if role is not None:
+            self.role = role
 
     @property
     def name(self):
@@ -131,6 +110,33 @@ class PodDTO(object):
         self._ready = ready
 
     @property
+    def status(self):
+        """Gets the status of this PodDTO.  # noqa: E501
+
+
+        :return: The status of this PodDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this PodDTO.
+
+
+        :param status: The status of this PodDTO.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["Pending", "Running", "Succeeded", "Failed", "Unknown", "CrashLoopBackOff", "ImagePullBackOff", "ContainerCreating", "Terminating", "Evicted", "Completed", "Restarting", "Error", "InvalidImageName", "OOMKilled"]  # noqa: E501
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
+
+    @property
     def restarts(self):
         """Gets the restarts of this PodDTO.  # noqa: E501
 
@@ -150,6 +156,27 @@ class PodDTO(object):
         """
 
         self._restarts = restarts
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this PodDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this PodDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this PodDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this PodDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     @property
     def role(self):
@@ -177,33 +204,6 @@ class PodDTO(object):
             )
 
         self._role = role
-
-    @property
-    def status(self):
-        """Gets the status of this PodDTO.  # noqa: E501
-
-
-        :return: The status of this PodDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this PodDTO.
-
-
-        :param status: The status of this PodDTO.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["Pending", "Running", "Succeeded", "Failed", "Unknown", "CrashLoopBackOff", "ImagePullBackOff", "ContainerCreating", "Terminating", "Evicted", "Completed", "Restarting", "Error", "InvalidImageName", "OOMKilled"]  # noqa: E501
-        if status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
-            )
-
-        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

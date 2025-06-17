@@ -1,37 +1,37 @@
 # swagger_client.UiKubernetesExplorerControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**container_logs_using_get**](UiKubernetesExplorerControllerApi.md#container_logs_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pods/{podName}/{containerName}/logs | containerLogs
-[**get_all_ingress_rules_for_cluster_using_get**](UiKubernetesExplorerControllerApi.md#get_all_ingress_rules_for_cluster_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/ingress-rules | getAllIngressRulesForCluster
-[**get_config_map_data_using_get**](UiKubernetesExplorerControllerApi.md#get_config_map_data_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/configMaps/{configMapName} | getConfigMapData
-[**get_manifest_using_get**](UiKubernetesExplorerControllerApi.md#get_manifest_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{k8sResourceType}/{k8sResourceName}/manifest | getManifest
-[**get_pods_for_deployment_using_get**](UiKubernetesExplorerControllerApi.md#get_pods_for_deployment_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/deployments/{deploymentName} | getPodsForDeployment
-[**get_secrets_data_using_get**](UiKubernetesExplorerControllerApi.md#get_secrets_data_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/secrets/{secretName} | getSecretsData
-[**list_config_map_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_config_map_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/configMaps | listConfigMapByLabels
-[**list_containers_in_pod_using_get**](UiKubernetesExplorerControllerApi.md#list_containers_in_pod_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{podName}/containers | listContainersInPod
-[**list_containers_in_pod_v2_using_get**](UiKubernetesExplorerControllerApi.md#list_containers_in_pod_v2_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{podName}/v2/containers | listContainersInPodV2
-[**list_cron_job_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_cron_job_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/cronJobs | listCronJobByLabels
-[**list_daemon_sets_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_daemon_sets_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/daemonSets | listDaemonSetsByLabels
-[**list_deployments_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_deployments_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/deployments | listDeploymentsByLabels
-[**list_events_by_k8s_resource_using_get**](UiKubernetesExplorerControllerApi.md#list_events_by_k8s_resource_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{k8sResourceType}/{k8sResourceName}/events | listEventsByK8sResource
-[**list_hpa_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_hpa_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/hpa | listHpaByLabels
-[**list_ingresses_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_ingresses_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/ingresses | listIngressesByLabels
-[**list_jobs_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_jobs_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/jobs | listJobsByLabels
-[**list_pods_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_pods_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pods | listPodsByLabels
-[**list_pvby_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_pvby_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pv | listPVByLabels
-[**list_pvcby_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_pvcby_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pvc | listPVCByLabels
-[**list_replicasets_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_replicasets_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/replicasets | listReplicasetsByLabels
-[**list_secrets_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_secrets_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/secrets | listSecretsByLabels
-[**list_services_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_services_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/services | listServicesByLabels
-[**list_statefulsets_labels_by_labels_using_get**](UiKubernetesExplorerControllerApi.md#list_statefulsets_labels_by_labels_using_get) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/statefulsets | listStatefulsetsLabelsByLabels
+[**container_logs**](UiKubernetesExplorerControllerApi.md#container_logs) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pods/{podName}/{containerName}/logs | 
+[**get_all_ingress_rules_for_cluster**](UiKubernetesExplorerControllerApi.md#get_all_ingress_rules_for_cluster) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/ingress-rules | 
+[**get_config_map_data**](UiKubernetesExplorerControllerApi.md#get_config_map_data) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/configMaps/{configMapName} | 
+[**get_manifest**](UiKubernetesExplorerControllerApi.md#get_manifest) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{k8sResourceType}/{k8sResourceName}/manifest | 
+[**get_pods_for_deployment**](UiKubernetesExplorerControllerApi.md#get_pods_for_deployment) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/deployments/{deploymentName} | 
+[**get_secrets_data**](UiKubernetesExplorerControllerApi.md#get_secrets_data) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/secrets/{secretName} | 
+[**list_config_map_by_labels**](UiKubernetesExplorerControllerApi.md#list_config_map_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/configMaps | 
+[**list_containers_in_pod**](UiKubernetesExplorerControllerApi.md#list_containers_in_pod) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{podName}/containers | 
+[**list_containers_in_pod_v2**](UiKubernetesExplorerControllerApi.md#list_containers_in_pod_v2) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{podName}/v2/containers | 
+[**list_cron_job_by_labels**](UiKubernetesExplorerControllerApi.md#list_cron_job_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/cronJobs | 
+[**list_daemon_sets_by_labels**](UiKubernetesExplorerControllerApi.md#list_daemon_sets_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/daemonSets | 
+[**list_deployments_by_labels**](UiKubernetesExplorerControllerApi.md#list_deployments_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/deployments | 
+[**list_events_by_k8s_resource**](UiKubernetesExplorerControllerApi.md#list_events_by_k8s_resource) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/{k8sResourceType}/{k8sResourceName}/events | 
+[**list_hpa_by_labels**](UiKubernetesExplorerControllerApi.md#list_hpa_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/hpa | 
+[**list_ingresses_by_labels**](UiKubernetesExplorerControllerApi.md#list_ingresses_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/ingresses | 
+[**list_jobs_by_labels**](UiKubernetesExplorerControllerApi.md#list_jobs_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/jobs | 
+[**list_pods_by_labels**](UiKubernetesExplorerControllerApi.md#list_pods_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pods | 
+[**list_pvby_labels**](UiKubernetesExplorerControllerApi.md#list_pvby_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pv | 
+[**list_pvcby_labels**](UiKubernetesExplorerControllerApi.md#list_pvcby_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/pvc | 
+[**list_replicasets_by_labels**](UiKubernetesExplorerControllerApi.md#list_replicasets_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/replicasets | 
+[**list_secrets_by_labels**](UiKubernetesExplorerControllerApi.md#list_secrets_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/secrets | 
+[**list_services_by_labels**](UiKubernetesExplorerControllerApi.md#list_services_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/services | 
+[**list_statefulsets_labels_by_labels**](UiKubernetesExplorerControllerApi.md#list_statefulsets_labels_by_labels) | **GET** /cc-ui/v1/clusters/{clusterId}/k8s-explorer/statefulsets | 
 
-# **container_logs_using_get**
-> StreamingResponseBody container_logs_using_get(cluster_id, container_name, labels, pod_name, tail)
+# **container_logs**
+> StreamingResponseBody container_logs(cluster_id, pod_name, container_name, tail, labels)
 
-containerLogs
+
 
 ### Example
 ```python
@@ -40,36 +40,35 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-container_name = 'container_name_example' # str | containerName
-labels = NULL # object | labels
-pod_name = 'pod_name_example' # str | podName
-tail = 56 # int | tail
+cluster_id = 'cluster_id_example' # str | 
+pod_name = 'pod_name_example' # str | 
+container_name = 'container_name_example' # str | 
+tail = 56 # int | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # containerLogs
-    api_response = api_instance.container_logs_using_get(cluster_id, container_name, labels, pod_name, tail)
+    api_response = api_instance.container_logs(cluster_id, pod_name, container_name, tail, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->container_logs_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->container_logs: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **container_name** | **str**| containerName | 
- **labels** | [**object**](.md)| labels | 
- **pod_name** | **str**| podName | 
- **tail** | **int**| tail | 
+ **cluster_id** | **str**|  | 
+ **pod_name** | **str**|  | 
+ **container_name** | **str**|  | 
+ **tail** | **int**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -77,19 +76,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_ingress_rules_for_cluster_using_get**
-> list[IngressRulesDTO] get_all_ingress_rules_for_cluster_using_get(cluster_id)
+# **get_all_ingress_rules_for_cluster**
+> list[IngressRulesDTO] get_all_ingress_rules_for_cluster(cluster_id)
 
-getAllIngressRulesForCluster
+
 
 ### Example
 ```python
@@ -98,28 +97,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # getAllIngressRulesForCluster
-    api_response = api_instance.get_all_ingress_rules_for_cluster_using_get(cluster_id)
+    api_response = api_instance.get_all_ingress_rules_for_cluster(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->get_all_ingress_rules_for_cluster_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->get_all_ingress_rules_for_cluster: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -127,19 +125,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_config_map_data_using_get**
-> object get_config_map_data_using_get(cluster_id, config_map_name, labels)
+# **get_config_map_data**
+> object get_config_map_data(cluster_id, config_map_name, labels)
 
-getConfigMapData
+
 
 ### Example
 ```python
@@ -148,32 +146,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-config_map_name = 'config_map_name_example' # str | configMapName
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+config_map_name = 'config_map_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # getConfigMapData
-    api_response = api_instance.get_config_map_data_using_get(cluster_id, config_map_name, labels)
+    api_response = api_instance.get_config_map_data(cluster_id, config_map_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->get_config_map_data_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->get_config_map_data: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **config_map_name** | **str**| configMapName | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **config_map_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -181,19 +178,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_manifest_using_get**
-> str get_manifest_using_get(cluster_id, k8s_resource_name, k8s_resource_type, labels)
+# **get_manifest**
+> str get_manifest(cluster_id, k8s_resource_type, k8s_resource_name, labels)
 
-getManifest
+
 
 ### Example
 ```python
@@ -202,34 +199,33 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-k8s_resource_name = 'k8s_resource_name_example' # str | k8sResourceName
-k8s_resource_type = 'k8s_resource_type_example' # str | k8sResourceType
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+k8s_resource_type = 'k8s_resource_type_example' # str | 
+k8s_resource_name = 'k8s_resource_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # getManifest
-    api_response = api_instance.get_manifest_using_get(cluster_id, k8s_resource_name, k8s_resource_type, labels)
+    api_response = api_instance.get_manifest(cluster_id, k8s_resource_type, k8s_resource_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->get_manifest_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->get_manifest: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **k8s_resource_name** | **str**| k8sResourceName | 
- **k8s_resource_type** | **str**| k8sResourceType | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **k8s_resource_type** | **str**|  | 
+ **k8s_resource_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -237,19 +233,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_pods_for_deployment_using_get**
-> list[str] get_pods_for_deployment_using_get(cluster_id, deployment_name, labels)
+# **get_pods_for_deployment**
+> list[str] get_pods_for_deployment(cluster_id, deployment_name, labels)
 
-getPodsForDeployment
+
 
 ### Example
 ```python
@@ -258,32 +254,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-deployment_name = 'deployment_name_example' # str | deploymentName
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+deployment_name = 'deployment_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # getPodsForDeployment
-    api_response = api_instance.get_pods_for_deployment_using_get(cluster_id, deployment_name, labels)
+    api_response = api_instance.get_pods_for_deployment(cluster_id, deployment_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->get_pods_for_deployment_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->get_pods_for_deployment: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **deployment_name** | **str**| deploymentName | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **deployment_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -291,19 +286,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_secrets_data_using_get**
-> object get_secrets_data_using_get(cluster_id, labels, secret_name)
+# **get_secrets_data**
+> object get_secrets_data(cluster_id, secret_name, labels)
 
-getSecretsData
+
 
 ### Example
 ```python
@@ -312,32 +307,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
-secret_name = 'secret_name_example' # str | secretName
+cluster_id = 'cluster_id_example' # str | 
+secret_name = 'secret_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # getSecretsData
-    api_response = api_instance.get_secrets_data_using_get(cluster_id, labels, secret_name)
+    api_response = api_instance.get_secrets_data(cluster_id, secret_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->get_secrets_data_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->get_secrets_data: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
- **secret_name** | **str**| secretName | 
+ **cluster_id** | **str**|  | 
+ **secret_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -345,19 +339,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_config_map_by_labels_using_get**
-> list[ConfigMapDTO] list_config_map_by_labels_using_get(cluster_id, labels)
+# **list_config_map_by_labels**
+> list[ConfigMapDTO] list_config_map_by_labels(cluster_id, labels)
 
-listConfigMapByLabels
+
 
 ### Example
 ```python
@@ -366,30 +360,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listConfigMapByLabels
-    api_response = api_instance.list_config_map_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_config_map_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_config_map_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_config_map_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -397,19 +390,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_containers_in_pod_using_get**
-> list[Container] list_containers_in_pod_using_get(cluster_id, labels, pod_name)
+# **list_containers_in_pod**
+> list[Container] list_containers_in_pod(cluster_id, pod_name, labels)
 
-listContainersInPod
+
 
 ### Example
 ```python
@@ -418,32 +411,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
-pod_name = 'pod_name_example' # str | podName
+cluster_id = 'cluster_id_example' # str | 
+pod_name = 'pod_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listContainersInPod
-    api_response = api_instance.list_containers_in_pod_using_get(cluster_id, labels, pod_name)
+    api_response = api_instance.list_containers_in_pod(cluster_id, pod_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_containers_in_pod_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_containers_in_pod: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
- **pod_name** | **str**| podName | 
+ **cluster_id** | **str**|  | 
+ **pod_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -451,19 +443,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_containers_in_pod_v2_using_get**
-> list[ContainerDTO] list_containers_in_pod_v2_using_get(cluster_id, labels, pod_name)
+# **list_containers_in_pod_v2**
+> list[ContainerDTO] list_containers_in_pod_v2(cluster_id, pod_name, labels)
 
-listContainersInPodV2
+
 
 ### Example
 ```python
@@ -472,32 +464,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
-pod_name = 'pod_name_example' # str | podName
+cluster_id = 'cluster_id_example' # str | 
+pod_name = 'pod_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listContainersInPodV2
-    api_response = api_instance.list_containers_in_pod_v2_using_get(cluster_id, labels, pod_name)
+    api_response = api_instance.list_containers_in_pod_v2(cluster_id, pod_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_containers_in_pod_v2_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_containers_in_pod_v2: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
- **pod_name** | **str**| podName | 
+ **cluster_id** | **str**|  | 
+ **pod_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -505,19 +496,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_cron_job_by_labels_using_get**
-> list[CronJobDTO] list_cron_job_by_labels_using_get(cluster_id, labels)
+# **list_cron_job_by_labels**
+> list[CronJobDTO] list_cron_job_by_labels(cluster_id, labels)
 
-listCronJobByLabels
+
 
 ### Example
 ```python
@@ -526,30 +517,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listCronJobByLabels
-    api_response = api_instance.list_cron_job_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_cron_job_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_cron_job_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_cron_job_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -557,19 +547,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_daemon_sets_by_labels_using_get**
-> list[DaemonSetDTO] list_daemon_sets_by_labels_using_get(cluster_id, labels)
+# **list_daemon_sets_by_labels**
+> list[DaemonSetDTO] list_daemon_sets_by_labels(cluster_id, labels)
 
-listDaemonSetsByLabels
+
 
 ### Example
 ```python
@@ -578,30 +568,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listDaemonSetsByLabels
-    api_response = api_instance.list_daemon_sets_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_daemon_sets_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_daemon_sets_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_daemon_sets_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -609,19 +598,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_deployments_by_labels_using_get**
-> list[DeploymentDTO] list_deployments_by_labels_using_get(cluster_id, labels)
+# **list_deployments_by_labels**
+> list[DeploymentDTO] list_deployments_by_labels(cluster_id, labels)
 
-listDeploymentsByLabels
+
 
 ### Example
 ```python
@@ -630,30 +619,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listDeploymentsByLabels
-    api_response = api_instance.list_deployments_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_deployments_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_deployments_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_deployments_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -661,19 +649,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_events_by_k8s_resource_using_get**
-> list[EventDTO] list_events_by_k8s_resource_using_get(cluster_id, k8s_resource_name, k8s_resource_type, labels)
+# **list_events_by_k8s_resource**
+> list[EventDTO] list_events_by_k8s_resource(cluster_id, k8s_resource_type, k8s_resource_name, labels)
 
-listEventsByK8sResource
+
 
 ### Example
 ```python
@@ -682,34 +670,33 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-k8s_resource_name = 'k8s_resource_name_example' # str | k8sResourceName
-k8s_resource_type = 'k8s_resource_type_example' # str | k8sResourceType
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+k8s_resource_type = 'k8s_resource_type_example' # str | 
+k8s_resource_name = 'k8s_resource_name_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listEventsByK8sResource
-    api_response = api_instance.list_events_by_k8s_resource_using_get(cluster_id, k8s_resource_name, k8s_resource_type, labels)
+    api_response = api_instance.list_events_by_k8s_resource(cluster_id, k8s_resource_type, k8s_resource_name, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_events_by_k8s_resource_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_events_by_k8s_resource: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **k8s_resource_name** | **str**| k8sResourceName | 
- **k8s_resource_type** | **str**| k8sResourceType | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **k8s_resource_type** | **str**|  | 
+ **k8s_resource_name** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -717,19 +704,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_hpa_by_labels_using_get**
-> list[HorizontalPodAutoscalerDTO] list_hpa_by_labels_using_get(cluster_id, labels)
+# **list_hpa_by_labels**
+> list[HorizontalPodAutoscalerDTO] list_hpa_by_labels(cluster_id, labels)
 
-listHpaByLabels
+
 
 ### Example
 ```python
@@ -738,30 +725,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listHpaByLabels
-    api_response = api_instance.list_hpa_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_hpa_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_hpa_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_hpa_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -769,19 +755,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_ingresses_by_labels_using_get**
-> list[IngressDTO] list_ingresses_by_labels_using_get(cluster_id, labels)
+# **list_ingresses_by_labels**
+> list[IngressDTO] list_ingresses_by_labels(cluster_id, labels)
 
-listIngressesByLabels
+
 
 ### Example
 ```python
@@ -790,30 +776,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listIngressesByLabels
-    api_response = api_instance.list_ingresses_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_ingresses_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_ingresses_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_ingresses_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -821,19 +806,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_jobs_by_labels_using_get**
-> list[JobDTO] list_jobs_by_labels_using_get(cluster_id, labels)
+# **list_jobs_by_labels**
+> list[JobDTO] list_jobs_by_labels(cluster_id, labels)
 
-listJobsByLabels
+
 
 ### Example
 ```python
@@ -842,30 +827,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listJobsByLabels
-    api_response = api_instance.list_jobs_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_jobs_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_jobs_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_jobs_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -873,19 +857,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_pods_by_labels_using_get**
-> list[PodDTO] list_pods_by_labels_using_get(cluster_id, labels)
+# **list_pods_by_labels**
+> list[PodDTO] list_pods_by_labels(cluster_id, labels)
 
-listPodsByLabels
+
 
 ### Example
 ```python
@@ -894,30 +878,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listPodsByLabels
-    api_response = api_instance.list_pods_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_pods_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_pods_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_pods_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -925,19 +908,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_pvby_labels_using_get**
-> list[PersistentVolumeDTO] list_pvby_labels_using_get(cluster_id, labels)
+# **list_pvby_labels**
+> list[PersistentVolumeDTO] list_pvby_labels(cluster_id, labels)
 
-listPVByLabels
+
 
 ### Example
 ```python
@@ -946,30 +929,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listPVByLabels
-    api_response = api_instance.list_pvby_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_pvby_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_pvby_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_pvby_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -977,19 +959,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_pvcby_labels_using_get**
-> list[PersistentVolumeClaimDTO] list_pvcby_labels_using_get(cluster_id, labels)
+# **list_pvcby_labels**
+> list[PersistentVolumeClaimDTO] list_pvcby_labels(cluster_id, labels)
 
-listPVCByLabels
+
 
 ### Example
 ```python
@@ -998,30 +980,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listPVCByLabels
-    api_response = api_instance.list_pvcby_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_pvcby_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_pvcby_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_pvcby_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -1029,19 +1010,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_replicasets_by_labels_using_get**
-> list[ReplicasetDTO] list_replicasets_by_labels_using_get(cluster_id, labels)
+# **list_replicasets_by_labels**
+> list[ReplicasetDTO] list_replicasets_by_labels(cluster_id, labels)
 
-listReplicasetsByLabels
+
 
 ### Example
 ```python
@@ -1050,30 +1031,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listReplicasetsByLabels
-    api_response = api_instance.list_replicasets_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_replicasets_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_replicasets_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_replicasets_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -1081,19 +1061,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_secrets_by_labels_using_get**
-> list[SecretDTO] list_secrets_by_labels_using_get(cluster_id, labels)
+# **list_secrets_by_labels**
+> list[SecretDTO] list_secrets_by_labels(cluster_id, labels)
 
-listSecretsByLabels
+
 
 ### Example
 ```python
@@ -1102,30 +1082,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listSecretsByLabels
-    api_response = api_instance.list_secrets_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_secrets_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_secrets_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_secrets_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -1133,19 +1112,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_services_by_labels_using_get**
-> list[ServiceDTO] list_services_by_labels_using_get(cluster_id, labels=labels)
+# **list_services_by_labels**
+> list[ServiceDTO] list_services_by_labels(cluster_id)
 
-listServicesByLabels
+
 
 ### Example
 ```python
@@ -1154,30 +1133,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels (optional)
+cluster_id = 'cluster_id_example' # str | 
 
 try:
-    # listServicesByLabels
-    api_response = api_instance.list_services_by_labels_using_get(cluster_id, labels=labels)
+    api_response = api_instance.list_services_by_labels(cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_services_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_services_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | [optional] 
+ **cluster_id** | **str**|  | 
 
 ### Return type
 
@@ -1185,19 +1161,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_statefulsets_labels_by_labels_using_get**
-> list[StatefulSetDTO] list_statefulsets_labels_by_labels_using_get(cluster_id, labels)
+# **list_statefulsets_labels_by_labels**
+> list[StatefulSetDTO] list_statefulsets_labels_by_labels(cluster_id, labels)
 
-listStatefulsetsLabelsByLabels
+
 
 ### Example
 ```python
@@ -1206,30 +1182,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiKubernetesExplorerControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | clusterId
-labels = NULL # object | labels
+cluster_id = 'cluster_id_example' # str | 
+labels = {'key': 'labels_example'} # dict(str, str) | 
 
 try:
-    # listStatefulsetsLabelsByLabels
-    api_response = api_instance.list_statefulsets_labels_by_labels_using_get(cluster_id, labels)
+    api_response = api_instance.list_statefulsets_labels_by_labels(cluster_id, labels)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiKubernetesExplorerControllerApi->list_statefulsets_labels_by_labels_using_get: %s\n" % e)
+    print("Exception when calling UiKubernetesExplorerControllerApi->list_statefulsets_labels_by_labels: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**| clusterId | 
- **labels** | [**object**](.md)| labels | 
+ **cluster_id** | **str**|  | 
+ **labels** | [**dict(str, str)**](str.md)|  | 
 
 ### Return type
 
@@ -1237,12 +1212,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

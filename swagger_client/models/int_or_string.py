@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,50 @@ class IntOrString(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'int_val': 'int',
+        'value': 'object',
         'str_val': 'str',
-        'value': 'object'
+        'int_val': 'int'
     }
 
     attribute_map = {
-        'int_val': 'intVal',
+        'value': 'value',
         'str_val': 'strVal',
-        'value': 'value'
+        'int_val': 'intVal'
     }
 
-    def __init__(self, int_val=None, str_val=None, value=None):  # noqa: E501
+    def __init__(self, value=None, str_val=None, int_val=None):  # noqa: E501
         """IntOrString - a model defined in Swagger"""  # noqa: E501
-        self._int_val = None
-        self._str_val = None
         self._value = None
+        self._str_val = None
+        self._int_val = None
         self.discriminator = None
-        if int_val is not None:
-            self.int_val = int_val
-        if str_val is not None:
-            self.str_val = str_val
         if value is not None:
             self.value = value
+        if str_val is not None:
+            self.str_val = str_val
+        if int_val is not None:
+            self.int_val = int_val
 
     @property
-    def int_val(self):
-        """Gets the int_val of this IntOrString.  # noqa: E501
+    def value(self):
+        """Gets the value of this IntOrString.  # noqa: E501
 
 
-        :return: The int_val of this IntOrString.  # noqa: E501
-        :rtype: int
+        :return: The value of this IntOrString.  # noqa: E501
+        :rtype: object
         """
-        return self._int_val
+        return self._value
 
-    @int_val.setter
-    def int_val(self, int_val):
-        """Sets the int_val of this IntOrString.
+    @value.setter
+    def value(self, value):
+        """Sets the value of this IntOrString.
 
 
-        :param int_val: The int_val of this IntOrString.  # noqa: E501
-        :type: int
+        :param value: The value of this IntOrString.  # noqa: E501
+        :type: object
         """
 
-        self._int_val = int_val
+        self._value = value
 
     @property
     def str_val(self):
@@ -95,25 +95,25 @@ class IntOrString(object):
         self._str_val = str_val
 
     @property
-    def value(self):
-        """Gets the value of this IntOrString.  # noqa: E501
+    def int_val(self):
+        """Gets the int_val of this IntOrString.  # noqa: E501
 
 
-        :return: The value of this IntOrString.  # noqa: E501
-        :rtype: object
+        :return: The int_val of this IntOrString.  # noqa: E501
+        :rtype: int
         """
-        return self._value
+        return self._int_val
 
-    @value.setter
-    def value(self, value):
-        """Sets the value of this IntOrString.
+    @int_val.setter
+    def int_val(self, int_val):
+        """Sets the int_val of this IntOrString.
 
 
-        :param value: The value of this IntOrString.  # noqa: E501
-        :type: object
+        :param int_val: The int_val of this IntOrString.  # noqa: E501
+        :type: int
         """
 
-        self._value = value
+        self._int_val = int_val
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,70 +28,112 @@ class AccessRoleDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
-        'environment': 'str',
-        'group_id': 'str',
-        'group_name': 'str',
-        'role_label': 'str',
         'role_name': 'str',
-        'role_type': 'str'
+        'role_label': 'str',
+        'role_type': 'str',
+        'environment': 'str',
+        'cluster_id': 'str',
+        'group_id': 'str',
+        'group_name': 'str'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
-        'environment': 'environment',
-        'group_id': 'groupId',
-        'group_name': 'groupName',
-        'role_label': 'roleLabel',
         'role_name': 'roleName',
-        'role_type': 'roleType'
+        'role_label': 'roleLabel',
+        'role_type': 'roleType',
+        'environment': 'environment',
+        'cluster_id': 'clusterId',
+        'group_id': 'groupId',
+        'group_name': 'groupName'
     }
 
-    def __init__(self, cluster_id=None, environment=None, group_id=None, group_name=None, role_label=None, role_name=None, role_type=None):  # noqa: E501
+    def __init__(self, role_name=None, role_label=None, role_type=None, environment=None, cluster_id=None, group_id=None, group_name=None):  # noqa: E501
         """AccessRoleDetails - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
+        self._role_name = None
+        self._role_label = None
+        self._role_type = None
         self._environment = None
+        self._cluster_id = None
         self._group_id = None
         self._group_name = None
-        self._role_label = None
-        self._role_name = None
-        self._role_type = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
+        if role_name is not None:
+            self.role_name = role_name
+        if role_label is not None:
+            self.role_label = role_label
+        if role_type is not None:
+            self.role_type = role_type
         if environment is not None:
             self.environment = environment
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if group_id is not None:
             self.group_id = group_id
         if group_name is not None:
             self.group_name = group_name
-        if role_label is not None:
-            self.role_label = role_label
-        if role_name is not None:
-            self.role_name = role_name
-        if role_type is not None:
-            self.role_type = role_type
 
     @property
-    def cluster_id(self):
-        """Gets the cluster_id of this AccessRoleDetails.  # noqa: E501
+    def role_name(self):
+        """Gets the role_name of this AccessRoleDetails.  # noqa: E501
 
 
-        :return: The cluster_id of this AccessRoleDetails.  # noqa: E501
+        :return: The role_name of this AccessRoleDetails.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_id
+        return self._role_name
 
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this AccessRoleDetails.
+    @role_name.setter
+    def role_name(self, role_name):
+        """Sets the role_name of this AccessRoleDetails.
 
 
-        :param cluster_id: The cluster_id of this AccessRoleDetails.  # noqa: E501
+        :param role_name: The role_name of this AccessRoleDetails.  # noqa: E501
         :type: str
         """
 
-        self._cluster_id = cluster_id
+        self._role_name = role_name
+
+    @property
+    def role_label(self):
+        """Gets the role_label of this AccessRoleDetails.  # noqa: E501
+
+
+        :return: The role_label of this AccessRoleDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_label
+
+    @role_label.setter
+    def role_label(self, role_label):
+        """Sets the role_label of this AccessRoleDetails.
+
+
+        :param role_label: The role_label of this AccessRoleDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._role_label = role_label
+
+    @property
+    def role_type(self):
+        """Gets the role_type of this AccessRoleDetails.  # noqa: E501
+
+
+        :return: The role_type of this AccessRoleDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_type
+
+    @role_type.setter
+    def role_type(self, role_type):
+        """Sets the role_type of this AccessRoleDetails.
+
+
+        :param role_type: The role_type of this AccessRoleDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._role_type = role_type
 
     @property
     def environment(self):
@@ -113,6 +155,27 @@ class AccessRoleDetails(object):
         """
 
         self._environment = environment
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this AccessRoleDetails.  # noqa: E501
+
+
+        :return: The cluster_id of this AccessRoleDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this AccessRoleDetails.
+
+
+        :param cluster_id: The cluster_id of this AccessRoleDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
 
     @property
     def group_id(self):
@@ -155,69 +218,6 @@ class AccessRoleDetails(object):
         """
 
         self._group_name = group_name
-
-    @property
-    def role_label(self):
-        """Gets the role_label of this AccessRoleDetails.  # noqa: E501
-
-
-        :return: The role_label of this AccessRoleDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._role_label
-
-    @role_label.setter
-    def role_label(self, role_label):
-        """Sets the role_label of this AccessRoleDetails.
-
-
-        :param role_label: The role_label of this AccessRoleDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._role_label = role_label
-
-    @property
-    def role_name(self):
-        """Gets the role_name of this AccessRoleDetails.  # noqa: E501
-
-
-        :return: The role_name of this AccessRoleDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._role_name
-
-    @role_name.setter
-    def role_name(self, role_name):
-        """Sets the role_name of this AccessRoleDetails.
-
-
-        :param role_name: The role_name of this AccessRoleDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._role_name = role_name
-
-    @property
-    def role_type(self):
-        """Gets the role_type of this AccessRoleDetails.  # noqa: E501
-
-
-        :return: The role_type of this AccessRoleDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._role_type
-
-    @role_type.setter
-    def role_type(self, role_type):
-        """Sets the role_type of this AccessRoleDetails.
-
-
-        :param role_type: The role_type of this AccessRoleDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._role_type = role_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,166 +28,145 @@ class BlueprintFile(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alpha': 'bool',
-        'children_resource_ids': 'list[str]',
-        'cluster_id': 'str',
-        'content': 'str',
-        'directory': 'str',
-        'edges': 'list[Edge]',
-        'errors': 'list[BlueprintValidationError]',
-        'expressions': 'list[RefExpression]',
-        'filename': 'str',
-        'icon_url': 'str',
-        'info': 'Info',
-        'overridden': 'bool',
-        'override': 'object',
-        'parent_resource_id': 'str',
-        'resource_name': 'str',
-        'resource_type': 'str',
         'stack_name': 'str',
-        'substack': 'bool',
+        'cluster_id': 'str',
+        'version': 'str',
         'sync_ctx_md5': 'str',
         'sync_id': 'str',
-        'templated_resource': 'bool',
-        'version': 'str'
+        'filename': 'str',
+        'directory': 'str',
+        'content': 'str',
+        'resource_name': 'str',
+        'resource_type': 'str',
+        'alpha': 'bool',
+        'info': 'Info',
+        'overridden': 'bool',
+        'override': 'dict(str, object)',
+        'edges': 'list[Edge]',
+        'expressions': 'list[RefExpression]',
+        'errors': 'list[BlueprintValidationError]',
+        'parent_resource_id': 'str',
+        'children_resource_ids': 'list[str]',
+        'icon_url': 'str',
+        'substack': 'bool',
+        'templated_resource': 'bool'
     }
 
     attribute_map = {
-        'alpha': 'alpha',
-        'children_resource_ids': 'childrenResourceIds',
+        'stack_name': 'stackName',
         'cluster_id': 'clusterId',
-        'content': 'content',
-        'directory': 'directory',
-        'edges': 'edges',
-        'errors': 'errors',
-        'expressions': 'expressions',
+        'version': 'version',
+        'sync_ctx_md5': 'syncCtxMd5',
+        'sync_id': 'syncId',
         'filename': 'filename',
-        'icon_url': 'iconUrl',
+        'directory': 'directory',
+        'content': 'content',
+        'resource_name': 'resourceName',
+        'resource_type': 'resourceType',
+        'alpha': 'alpha',
         'info': 'info',
         'overridden': 'overridden',
         'override': 'override',
+        'edges': 'edges',
+        'expressions': 'expressions',
+        'errors': 'errors',
         'parent_resource_id': 'parentResourceId',
-        'resource_name': 'resourceName',
-        'resource_type': 'resourceType',
-        'stack_name': 'stackName',
+        'children_resource_ids': 'childrenResourceIds',
+        'icon_url': 'iconUrl',
         'substack': 'substack',
-        'sync_ctx_md5': 'syncCtxMd5',
-        'sync_id': 'syncId',
-        'templated_resource': 'templatedResource',
-        'version': 'version'
+        'templated_resource': 'templatedResource'
     }
 
-    def __init__(self, alpha=None, children_resource_ids=None, cluster_id=None, content=None, directory=None, edges=None, errors=None, expressions=None, filename=None, icon_url=None, info=None, overridden=None, override=None, parent_resource_id=None, resource_name=None, resource_type=None, stack_name=None, substack=None, sync_ctx_md5=None, sync_id=None, templated_resource=None, version=None):  # noqa: E501
+    def __init__(self, stack_name=None, cluster_id=None, version=None, sync_ctx_md5=None, sync_id=None, filename=None, directory=None, content=None, resource_name=None, resource_type=None, alpha=None, info=None, overridden=None, override=None, edges=None, expressions=None, errors=None, parent_resource_id=None, children_resource_ids=None, icon_url=None, substack=None, templated_resource=None):  # noqa: E501
         """BlueprintFile - a model defined in Swagger"""  # noqa: E501
-        self._alpha = None
-        self._children_resource_ids = None
+        self._stack_name = None
         self._cluster_id = None
-        self._content = None
-        self._directory = None
-        self._edges = None
-        self._errors = None
-        self._expressions = None
+        self._version = None
+        self._sync_ctx_md5 = None
+        self._sync_id = None
         self._filename = None
-        self._icon_url = None
+        self._directory = None
+        self._content = None
+        self._resource_name = None
+        self._resource_type = None
+        self._alpha = None
         self._info = None
         self._overridden = None
         self._override = None
+        self._edges = None
+        self._expressions = None
+        self._errors = None
         self._parent_resource_id = None
-        self._resource_name = None
-        self._resource_type = None
-        self._stack_name = None
+        self._children_resource_ids = None
+        self._icon_url = None
         self._substack = None
-        self._sync_ctx_md5 = None
-        self._sync_id = None
         self._templated_resource = None
-        self._version = None
         self.discriminator = None
-        if alpha is not None:
-            self.alpha = alpha
-        if children_resource_ids is not None:
-            self.children_resource_ids = children_resource_ids
+        if stack_name is not None:
+            self.stack_name = stack_name
         if cluster_id is not None:
             self.cluster_id = cluster_id
-        if content is not None:
-            self.content = content
-        if directory is not None:
-            self.directory = directory
-        if edges is not None:
-            self.edges = edges
-        if errors is not None:
-            self.errors = errors
-        if expressions is not None:
-            self.expressions = expressions
+        if version is not None:
+            self.version = version
+        if sync_ctx_md5 is not None:
+            self.sync_ctx_md5 = sync_ctx_md5
+        if sync_id is not None:
+            self.sync_id = sync_id
         if filename is not None:
             self.filename = filename
-        if icon_url is not None:
-            self.icon_url = icon_url
+        if directory is not None:
+            self.directory = directory
+        if content is not None:
+            self.content = content
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if alpha is not None:
+            self.alpha = alpha
         if info is not None:
             self.info = info
         if overridden is not None:
             self.overridden = overridden
         if override is not None:
             self.override = override
+        if edges is not None:
+            self.edges = edges
+        if expressions is not None:
+            self.expressions = expressions
+        if errors is not None:
+            self.errors = errors
         if parent_resource_id is not None:
             self.parent_resource_id = parent_resource_id
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
-        if stack_name is not None:
-            self.stack_name = stack_name
+        if children_resource_ids is not None:
+            self.children_resource_ids = children_resource_ids
+        if icon_url is not None:
+            self.icon_url = icon_url
         if substack is not None:
             self.substack = substack
-        if sync_ctx_md5 is not None:
-            self.sync_ctx_md5 = sync_ctx_md5
-        if sync_id is not None:
-            self.sync_id = sync_id
         if templated_resource is not None:
             self.templated_resource = templated_resource
-        if version is not None:
-            self.version = version
 
     @property
-    def alpha(self):
-        """Gets the alpha of this BlueprintFile.  # noqa: E501
+    def stack_name(self):
+        """Gets the stack_name of this BlueprintFile.  # noqa: E501
 
 
-        :return: The alpha of this BlueprintFile.  # noqa: E501
-        :rtype: bool
+        :return: The stack_name of this BlueprintFile.  # noqa: E501
+        :rtype: str
         """
-        return self._alpha
+        return self._stack_name
 
-    @alpha.setter
-    def alpha(self, alpha):
-        """Sets the alpha of this BlueprintFile.
-
-
-        :param alpha: The alpha of this BlueprintFile.  # noqa: E501
-        :type: bool
-        """
-
-        self._alpha = alpha
-
-    @property
-    def children_resource_ids(self):
-        """Gets the children_resource_ids of this BlueprintFile.  # noqa: E501
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this BlueprintFile.
 
 
-        :return: The children_resource_ids of this BlueprintFile.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._children_resource_ids
-
-    @children_resource_ids.setter
-    def children_resource_ids(self, children_resource_ids):
-        """Sets the children_resource_ids of this BlueprintFile.
-
-
-        :param children_resource_ids: The children_resource_ids of this BlueprintFile.  # noqa: E501
-        :type: list[str]
+        :param stack_name: The stack_name of this BlueprintFile.  # noqa: E501
+        :type: str
         """
 
-        self._children_resource_ids = children_resource_ids
+        self._stack_name = stack_name
 
     @property
     def cluster_id(self):
@@ -211,109 +190,67 @@ class BlueprintFile(object):
         self._cluster_id = cluster_id
 
     @property
-    def content(self):
-        """Gets the content of this BlueprintFile.  # noqa: E501
+    def version(self):
+        """Gets the version of this BlueprintFile.  # noqa: E501
 
 
-        :return: The content of this BlueprintFile.  # noqa: E501
+        :return: The version of this BlueprintFile.  # noqa: E501
         :rtype: str
         """
-        return self._content
+        return self._version
 
-    @content.setter
-    def content(self, content):
-        """Sets the content of this BlueprintFile.
+    @version.setter
+    def version(self, version):
+        """Sets the version of this BlueprintFile.
 
 
-        :param content: The content of this BlueprintFile.  # noqa: E501
+        :param version: The version of this BlueprintFile.  # noqa: E501
         :type: str
         """
 
-        self._content = content
+        self._version = version
 
     @property
-    def directory(self):
-        """Gets the directory of this BlueprintFile.  # noqa: E501
+    def sync_ctx_md5(self):
+        """Gets the sync_ctx_md5 of this BlueprintFile.  # noqa: E501
 
 
-        :return: The directory of this BlueprintFile.  # noqa: E501
+        :return: The sync_ctx_md5 of this BlueprintFile.  # noqa: E501
         :rtype: str
         """
-        return self._directory
+        return self._sync_ctx_md5
 
-    @directory.setter
-    def directory(self, directory):
-        """Sets the directory of this BlueprintFile.
+    @sync_ctx_md5.setter
+    def sync_ctx_md5(self, sync_ctx_md5):
+        """Sets the sync_ctx_md5 of this BlueprintFile.
 
 
-        :param directory: The directory of this BlueprintFile.  # noqa: E501
+        :param sync_ctx_md5: The sync_ctx_md5 of this BlueprintFile.  # noqa: E501
         :type: str
         """
 
-        self._directory = directory
+        self._sync_ctx_md5 = sync_ctx_md5
 
     @property
-    def edges(self):
-        """Gets the edges of this BlueprintFile.  # noqa: E501
+    def sync_id(self):
+        """Gets the sync_id of this BlueprintFile.  # noqa: E501
 
 
-        :return: The edges of this BlueprintFile.  # noqa: E501
-        :rtype: list[Edge]
+        :return: The sync_id of this BlueprintFile.  # noqa: E501
+        :rtype: str
         """
-        return self._edges
+        return self._sync_id
 
-    @edges.setter
-    def edges(self, edges):
-        """Sets the edges of this BlueprintFile.
-
-
-        :param edges: The edges of this BlueprintFile.  # noqa: E501
-        :type: list[Edge]
-        """
-
-        self._edges = edges
-
-    @property
-    def errors(self):
-        """Gets the errors of this BlueprintFile.  # noqa: E501
+    @sync_id.setter
+    def sync_id(self, sync_id):
+        """Sets the sync_id of this BlueprintFile.
 
 
-        :return: The errors of this BlueprintFile.  # noqa: E501
-        :rtype: list[BlueprintValidationError]
-        """
-        return self._errors
-
-    @errors.setter
-    def errors(self, errors):
-        """Sets the errors of this BlueprintFile.
-
-
-        :param errors: The errors of this BlueprintFile.  # noqa: E501
-        :type: list[BlueprintValidationError]
+        :param sync_id: The sync_id of this BlueprintFile.  # noqa: E501
+        :type: str
         """
 
-        self._errors = errors
-
-    @property
-    def expressions(self):
-        """Gets the expressions of this BlueprintFile.  # noqa: E501
-
-
-        :return: The expressions of this BlueprintFile.  # noqa: E501
-        :rtype: list[RefExpression]
-        """
-        return self._expressions
-
-    @expressions.setter
-    def expressions(self, expressions):
-        """Sets the expressions of this BlueprintFile.
-
-
-        :param expressions: The expressions of this BlueprintFile.  # noqa: E501
-        :type: list[RefExpression]
-        """
-
-        self._expressions = expressions
+        self._sync_id = sync_id
 
     @property
     def filename(self):
@@ -337,25 +274,109 @@ class BlueprintFile(object):
         self._filename = filename
 
     @property
-    def icon_url(self):
-        """Gets the icon_url of this BlueprintFile.  # noqa: E501
+    def directory(self):
+        """Gets the directory of this BlueprintFile.  # noqa: E501
 
 
-        :return: The icon_url of this BlueprintFile.  # noqa: E501
+        :return: The directory of this BlueprintFile.  # noqa: E501
         :rtype: str
         """
-        return self._icon_url
+        return self._directory
 
-    @icon_url.setter
-    def icon_url(self, icon_url):
-        """Sets the icon_url of this BlueprintFile.
+    @directory.setter
+    def directory(self, directory):
+        """Sets the directory of this BlueprintFile.
 
 
-        :param icon_url: The icon_url of this BlueprintFile.  # noqa: E501
+        :param directory: The directory of this BlueprintFile.  # noqa: E501
         :type: str
         """
 
-        self._icon_url = icon_url
+        self._directory = directory
+
+    @property
+    def content(self):
+        """Gets the content of this BlueprintFile.  # noqa: E501
+
+
+        :return: The content of this BlueprintFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this BlueprintFile.
+
+
+        :param content: The content of this BlueprintFile.  # noqa: E501
+        :type: str
+        """
+
+        self._content = content
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this BlueprintFile.  # noqa: E501
+
+
+        :return: The resource_name of this BlueprintFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this BlueprintFile.
+
+
+        :param resource_name: The resource_name of this BlueprintFile.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this BlueprintFile.  # noqa: E501
+
+
+        :return: The resource_type of this BlueprintFile.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this BlueprintFile.
+
+
+        :param resource_type: The resource_type of this BlueprintFile.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_type = resource_type
+
+    @property
+    def alpha(self):
+        """Gets the alpha of this BlueprintFile.  # noqa: E501
+
+
+        :return: The alpha of this BlueprintFile.  # noqa: E501
+        :rtype: bool
+        """
+        return self._alpha
+
+    @alpha.setter
+    def alpha(self, alpha):
+        """Sets the alpha of this BlueprintFile.
+
+
+        :param alpha: The alpha of this BlueprintFile.  # noqa: E501
+        :type: bool
+        """
+
+        self._alpha = alpha
 
     @property
     def info(self):
@@ -405,7 +426,7 @@ class BlueprintFile(object):
 
 
         :return: The override of this BlueprintFile.  # noqa: E501
-        :rtype: object
+        :rtype: dict(str, object)
         """
         return self._override
 
@@ -415,10 +436,73 @@ class BlueprintFile(object):
 
 
         :param override: The override of this BlueprintFile.  # noqa: E501
-        :type: object
+        :type: dict(str, object)
         """
 
         self._override = override
+
+    @property
+    def edges(self):
+        """Gets the edges of this BlueprintFile.  # noqa: E501
+
+
+        :return: The edges of this BlueprintFile.  # noqa: E501
+        :rtype: list[Edge]
+        """
+        return self._edges
+
+    @edges.setter
+    def edges(self, edges):
+        """Sets the edges of this BlueprintFile.
+
+
+        :param edges: The edges of this BlueprintFile.  # noqa: E501
+        :type: list[Edge]
+        """
+
+        self._edges = edges
+
+    @property
+    def expressions(self):
+        """Gets the expressions of this BlueprintFile.  # noqa: E501
+
+
+        :return: The expressions of this BlueprintFile.  # noqa: E501
+        :rtype: list[RefExpression]
+        """
+        return self._expressions
+
+    @expressions.setter
+    def expressions(self, expressions):
+        """Sets the expressions of this BlueprintFile.
+
+
+        :param expressions: The expressions of this BlueprintFile.  # noqa: E501
+        :type: list[RefExpression]
+        """
+
+        self._expressions = expressions
+
+    @property
+    def errors(self):
+        """Gets the errors of this BlueprintFile.  # noqa: E501
+
+
+        :return: The errors of this BlueprintFile.  # noqa: E501
+        :rtype: list[BlueprintValidationError]
+        """
+        return self._errors
+
+    @errors.setter
+    def errors(self, errors):
+        """Sets the errors of this BlueprintFile.
+
+
+        :param errors: The errors of this BlueprintFile.  # noqa: E501
+        :type: list[BlueprintValidationError]
+        """
+
+        self._errors = errors
 
     @property
     def parent_resource_id(self):
@@ -442,67 +526,46 @@ class BlueprintFile(object):
         self._parent_resource_id = parent_resource_id
 
     @property
-    def resource_name(self):
-        """Gets the resource_name of this BlueprintFile.  # noqa: E501
+    def children_resource_ids(self):
+        """Gets the children_resource_ids of this BlueprintFile.  # noqa: E501
 
 
-        :return: The resource_name of this BlueprintFile.  # noqa: E501
-        :rtype: str
+        :return: The children_resource_ids of this BlueprintFile.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._resource_name
+        return self._children_resource_ids
 
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this BlueprintFile.
+    @children_resource_ids.setter
+    def children_resource_ids(self, children_resource_ids):
+        """Sets the children_resource_ids of this BlueprintFile.
 
 
-        :param resource_name: The resource_name of this BlueprintFile.  # noqa: E501
-        :type: str
+        :param children_resource_ids: The children_resource_ids of this BlueprintFile.  # noqa: E501
+        :type: list[str]
         """
 
-        self._resource_name = resource_name
+        self._children_resource_ids = children_resource_ids
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this BlueprintFile.  # noqa: E501
+    def icon_url(self):
+        """Gets the icon_url of this BlueprintFile.  # noqa: E501
 
 
-        :return: The resource_type of this BlueprintFile.  # noqa: E501
+        :return: The icon_url of this BlueprintFile.  # noqa: E501
         :rtype: str
         """
-        return self._resource_type
+        return self._icon_url
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this BlueprintFile.
+    @icon_url.setter
+    def icon_url(self, icon_url):
+        """Sets the icon_url of this BlueprintFile.
 
 
-        :param resource_type: The resource_type of this BlueprintFile.  # noqa: E501
+        :param icon_url: The icon_url of this BlueprintFile.  # noqa: E501
         :type: str
         """
 
-        self._resource_type = resource_type
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this BlueprintFile.  # noqa: E501
-
-
-        :return: The stack_name of this BlueprintFile.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this BlueprintFile.
-
-
-        :param stack_name: The stack_name of this BlueprintFile.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
+        self._icon_url = icon_url
 
     @property
     def substack(self):
@@ -526,48 +589,6 @@ class BlueprintFile(object):
         self._substack = substack
 
     @property
-    def sync_ctx_md5(self):
-        """Gets the sync_ctx_md5 of this BlueprintFile.  # noqa: E501
-
-
-        :return: The sync_ctx_md5 of this BlueprintFile.  # noqa: E501
-        :rtype: str
-        """
-        return self._sync_ctx_md5
-
-    @sync_ctx_md5.setter
-    def sync_ctx_md5(self, sync_ctx_md5):
-        """Sets the sync_ctx_md5 of this BlueprintFile.
-
-
-        :param sync_ctx_md5: The sync_ctx_md5 of this BlueprintFile.  # noqa: E501
-        :type: str
-        """
-
-        self._sync_ctx_md5 = sync_ctx_md5
-
-    @property
-    def sync_id(self):
-        """Gets the sync_id of this BlueprintFile.  # noqa: E501
-
-
-        :return: The sync_id of this BlueprintFile.  # noqa: E501
-        :rtype: str
-        """
-        return self._sync_id
-
-    @sync_id.setter
-    def sync_id(self, sync_id):
-        """Sets the sync_id of this BlueprintFile.
-
-
-        :param sync_id: The sync_id of this BlueprintFile.  # noqa: E501
-        :type: str
-        """
-
-        self._sync_id = sync_id
-
-    @property
     def templated_resource(self):
         """Gets the templated_resource of this BlueprintFile.  # noqa: E501
 
@@ -587,27 +608,6 @@ class BlueprintFile(object):
         """
 
         self._templated_resource = templated_resource
-
-    @property
-    def version(self):
-        """Gets the version of this BlueprintFile.  # noqa: E501
-
-
-        :return: The version of this BlueprintFile.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this BlueprintFile.
-
-
-        :param version: The version of this BlueprintFile.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

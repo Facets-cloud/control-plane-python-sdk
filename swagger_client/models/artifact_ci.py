@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,95 +28,92 @@ class ArtifactCI(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ci_name': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'entity_type': 'str',
-        'id': 'str',
-        'integration_type': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
-        'promotion_workflow_id': 'str',
+        'last_modified_by': 'str',
+        'ci_name': 'str',
         'registration_type': 'str',
+        'stack_name': 'str',
+        'integration_type': 'str',
+        'promotion_workflow_id': 'str',
         'rule_id': 'str',
-        'stack_name': 'str'
+        'entity_type': 'str'
     }
 
     attribute_map = {
-        'ci_name': 'ciName',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'entity_type': 'entityType',
-        'id': 'id',
-        'integration_type': 'integrationType',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
-        'promotion_workflow_id': 'promotionWorkflowId',
+        'last_modified_by': 'lastModifiedBy',
+        'ci_name': 'ciName',
         'registration_type': 'registrationType',
+        'stack_name': 'stackName',
+        'integration_type': 'integrationType',
+        'promotion_workflow_id': 'promotionWorkflowId',
         'rule_id': 'ruleId',
-        'stack_name': 'stackName'
+        'entity_type': 'entityType'
     }
 
-    def __init__(self, ci_name=None, created_by=None, creation_date=None, entity_type=None, id=None, integration_type=None, last_modified_by=None, last_modified_date=None, promotion_workflow_id=None, registration_type=None, rule_id=None, stack_name=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, ci_name=None, registration_type=None, stack_name=None, integration_type=None, promotion_workflow_id=None, rule_id=None, entity_type=None):  # noqa: E501
         """ArtifactCI - a model defined in Swagger"""  # noqa: E501
-        self._ci_name = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._entity_type = None
-        self._id = None
-        self._integration_type = None
-        self._last_modified_by = None
         self._last_modified_date = None
-        self._promotion_workflow_id = None
+        self._last_modified_by = None
+        self._ci_name = None
         self._registration_type = None
-        self._rule_id = None
         self._stack_name = None
+        self._integration_type = None
+        self._promotion_workflow_id = None
+        self._rule_id = None
+        self._entity_type = None
         self.discriminator = None
-        if ci_name is not None:
-            self.ci_name = ci_name
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if id is not None:
-            self.id = id
-        if integration_type is not None:
-            self.integration_type = integration_type
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if promotion_workflow_id is not None:
-            self.promotion_workflow_id = promotion_workflow_id
-        if registration_type is not None:
-            self.registration_type = registration_type
-        if rule_id is not None:
-            self.rule_id = rule_id
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.ci_name = ci_name
+        self.registration_type = registration_type
         if stack_name is not None:
             self.stack_name = stack_name
+        self.integration_type = integration_type
+        if promotion_workflow_id is not None:
+            self.promotion_workflow_id = promotion_workflow_id
+        if rule_id is not None:
+            self.rule_id = rule_id
+        if entity_type is not None:
+            self.entity_type = entity_type
 
     @property
-    def ci_name(self):
-        """Gets the ci_name of this ArtifactCI.  # noqa: E501
+    def id(self):
+        """Gets the id of this ArtifactCI.  # noqa: E501
 
 
-        :return: The ci_name of this ArtifactCI.  # noqa: E501
+        :return: The id of this ArtifactCI.  # noqa: E501
         :rtype: str
         """
-        return self._ci_name
+        return self._id
 
-    @ci_name.setter
-    def ci_name(self, ci_name):
-        """Sets the ci_name of this ArtifactCI.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ArtifactCI.
 
 
-        :param ci_name: The ci_name of this ArtifactCI.  # noqa: E501
+        :param id: The id of this ArtifactCI.  # noqa: E501
         :type: str
         """
 
-        self._ci_name = ci_name
+        self._id = id
 
     @property
     def created_by(self):
@@ -161,6 +158,192 @@ class ArtifactCI(object):
         self._creation_date = creation_date
 
     @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this ArtifactCI.  # noqa: E501
+
+
+        :return: The last_modified_date of this ArtifactCI.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this ArtifactCI.
+
+
+        :param last_modified_date: The last_modified_date of this ArtifactCI.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this ArtifactCI.  # noqa: E501
+
+
+        :return: The last_modified_by of this ArtifactCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this ArtifactCI.
+
+
+        :param last_modified_by: The last_modified_by of this ArtifactCI.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def ci_name(self):
+        """Gets the ci_name of this ArtifactCI.  # noqa: E501
+
+
+        :return: The ci_name of this ArtifactCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._ci_name
+
+    @ci_name.setter
+    def ci_name(self, ci_name):
+        """Sets the ci_name of this ArtifactCI.
+
+
+        :param ci_name: The ci_name of this ArtifactCI.  # noqa: E501
+        :type: str
+        """
+        if ci_name is None:
+            raise ValueError("Invalid value for `ci_name`, must not be `None`")  # noqa: E501
+
+        self._ci_name = ci_name
+
+    @property
+    def registration_type(self):
+        """Gets the registration_type of this ArtifactCI.  # noqa: E501
+
+
+        :return: The registration_type of this ArtifactCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_type
+
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """Sets the registration_type of this ArtifactCI.
+
+
+        :param registration_type: The registration_type of this ArtifactCI.  # noqa: E501
+        :type: str
+        """
+        if registration_type is None:
+            raise ValueError("Invalid value for `registration_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
+        if registration_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(registration_type, allowed_values)
+            )
+
+        self._registration_type = registration_type
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this ArtifactCI.  # noqa: E501
+
+
+        :return: The stack_name of this ArtifactCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this ArtifactCI.
+
+
+        :param stack_name: The stack_name of this ArtifactCI.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_name = stack_name
+
+    @property
+    def integration_type(self):
+        """Gets the integration_type of this ArtifactCI.  # noqa: E501
+
+
+        :return: The integration_type of this ArtifactCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._integration_type
+
+    @integration_type.setter
+    def integration_type(self, integration_type):
+        """Sets the integration_type of this ArtifactCI.
+
+
+        :param integration_type: The integration_type of this ArtifactCI.  # noqa: E501
+        :type: str
+        """
+        if integration_type is None:
+            raise ValueError("Invalid value for `integration_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["EXTERNAL"]  # noqa: E501
+        if integration_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `integration_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(integration_type, allowed_values)
+            )
+
+        self._integration_type = integration_type
+
+    @property
+    def promotion_workflow_id(self):
+        """Gets the promotion_workflow_id of this ArtifactCI.  # noqa: E501
+
+
+        :return: The promotion_workflow_id of this ArtifactCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._promotion_workflow_id
+
+    @promotion_workflow_id.setter
+    def promotion_workflow_id(self, promotion_workflow_id):
+        """Sets the promotion_workflow_id of this ArtifactCI.
+
+
+        :param promotion_workflow_id: The promotion_workflow_id of this ArtifactCI.  # noqa: E501
+        :type: str
+        """
+
+        self._promotion_workflow_id = promotion_workflow_id
+
+    @property
+    def rule_id(self):
+        """Gets the rule_id of this ArtifactCI.  # noqa: E501
+
+
+        :return: The rule_id of this ArtifactCI.  # noqa: E501
+        :rtype: str
+        """
+        return self._rule_id
+
+    @rule_id.setter
+    def rule_id(self, rule_id):
+        """Sets the rule_id of this ArtifactCI.
+
+
+        :param rule_id: The rule_id of this ArtifactCI.  # noqa: E501
+        :type: str
+        """
+
+        self._rule_id = rule_id
+
+    @property
     def entity_type(self):
         """Gets the entity_type of this ArtifactCI.  # noqa: E501
 
@@ -186,186 +369,6 @@ class ArtifactCI(object):
             )
 
         self._entity_type = entity_type
-
-    @property
-    def id(self):
-        """Gets the id of this ArtifactCI.  # noqa: E501
-
-
-        :return: The id of this ArtifactCI.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ArtifactCI.
-
-
-        :param id: The id of this ArtifactCI.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def integration_type(self):
-        """Gets the integration_type of this ArtifactCI.  # noqa: E501
-
-
-        :return: The integration_type of this ArtifactCI.  # noqa: E501
-        :rtype: str
-        """
-        return self._integration_type
-
-    @integration_type.setter
-    def integration_type(self, integration_type):
-        """Sets the integration_type of this ArtifactCI.
-
-
-        :param integration_type: The integration_type of this ArtifactCI.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["EXTERNAL"]  # noqa: E501
-        if integration_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `integration_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(integration_type, allowed_values)
-            )
-
-        self._integration_type = integration_type
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this ArtifactCI.  # noqa: E501
-
-
-        :return: The last_modified_by of this ArtifactCI.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this ArtifactCI.
-
-
-        :param last_modified_by: The last_modified_by of this ArtifactCI.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this ArtifactCI.  # noqa: E501
-
-
-        :return: The last_modified_date of this ArtifactCI.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this ArtifactCI.
-
-
-        :param last_modified_date: The last_modified_date of this ArtifactCI.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def promotion_workflow_id(self):
-        """Gets the promotion_workflow_id of this ArtifactCI.  # noqa: E501
-
-
-        :return: The promotion_workflow_id of this ArtifactCI.  # noqa: E501
-        :rtype: str
-        """
-        return self._promotion_workflow_id
-
-    @promotion_workflow_id.setter
-    def promotion_workflow_id(self, promotion_workflow_id):
-        """Sets the promotion_workflow_id of this ArtifactCI.
-
-
-        :param promotion_workflow_id: The promotion_workflow_id of this ArtifactCI.  # noqa: E501
-        :type: str
-        """
-
-        self._promotion_workflow_id = promotion_workflow_id
-
-    @property
-    def registration_type(self):
-        """Gets the registration_type of this ArtifactCI.  # noqa: E501
-
-
-        :return: The registration_type of this ArtifactCI.  # noqa: E501
-        :rtype: str
-        """
-        return self._registration_type
-
-    @registration_type.setter
-    def registration_type(self, registration_type):
-        """Sets the registration_type of this ArtifactCI.
-
-
-        :param registration_type: The registration_type of this ArtifactCI.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
-        if registration_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(registration_type, allowed_values)
-            )
-
-        self._registration_type = registration_type
-
-    @property
-    def rule_id(self):
-        """Gets the rule_id of this ArtifactCI.  # noqa: E501
-
-
-        :return: The rule_id of this ArtifactCI.  # noqa: E501
-        :rtype: str
-        """
-        return self._rule_id
-
-    @rule_id.setter
-    def rule_id(self, rule_id):
-        """Sets the rule_id of this ArtifactCI.
-
-
-        :param rule_id: The rule_id of this ArtifactCI.  # noqa: E501
-        :type: str
-        """
-
-        self._rule_id = rule_id
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this ArtifactCI.  # noqa: E501
-
-
-        :return: The stack_name of this ArtifactCI.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this ArtifactCI.
-
-
-        :param stack_name: The stack_name of this ArtifactCI.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

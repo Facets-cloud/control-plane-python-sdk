@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,104 +28,257 @@ class Info(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_type': 'str',
-        'artifactory': 'str',
-        'ci_name': 'str',
         'disabled': 'bool',
+        'provided': 'bool',
+        'version': 'str',
         'flavour': 'str',
+        'tf_module_id': 'str',
+        'strategy': 'str',
+        'ci_name': 'str',
+        'artifact_type': 'str',
+        'static_image': 'str',
         'github_repository_url': 'str',
-        'inherit_from_base': 'bool',
+        'repository_path': 'str',
         'namespace': 'str',
         'overridden_name': 'str',
-        'provided': 'bool',
+        'inherit_from_base': 'bool',
+        'artifactory': 'str',
         'repository': 'str',
-        'repository_path': 'str',
-        'static_image': 'str',
-        'strategy': 'str',
         'tag': 'str',
-        'tf_module_id': 'str',
-        'ui': 'object',
-        'version': 'str'
+        'ui': 'dict(str, object)'
     }
 
     attribute_map = {
-        'artifact_type': 'artifactType',
-        'artifactory': 'artifactory',
-        'ci_name': 'ciName',
         'disabled': 'disabled',
+        'provided': 'provided',
+        'version': 'version',
         'flavour': 'flavour',
+        'tf_module_id': 'tfModuleId',
+        'strategy': 'strategy',
+        'ci_name': 'ciName',
+        'artifact_type': 'artifactType',
+        'static_image': 'staticImage',
         'github_repository_url': 'githubRepositoryUrl',
-        'inherit_from_base': 'inheritFromBase',
+        'repository_path': 'repositoryPath',
         'namespace': 'namespace',
         'overridden_name': 'overriddenName',
-        'provided': 'provided',
+        'inherit_from_base': 'inheritFromBase',
+        'artifactory': 'artifactory',
         'repository': 'repository',
-        'repository_path': 'repositoryPath',
-        'static_image': 'staticImage',
-        'strategy': 'strategy',
         'tag': 'tag',
-        'tf_module_id': 'tfModuleId',
-        'ui': 'ui',
-        'version': 'version'
+        'ui': 'ui'
     }
 
-    def __init__(self, artifact_type=None, artifactory=None, ci_name=None, disabled=None, flavour=None, github_repository_url=None, inherit_from_base=None, namespace=None, overridden_name=None, provided=None, repository=None, repository_path=None, static_image=None, strategy=None, tag=None, tf_module_id=None, ui=None, version=None):  # noqa: E501
+    def __init__(self, disabled=None, provided=None, version=None, flavour=None, tf_module_id=None, strategy=None, ci_name=None, artifact_type=None, static_image=None, github_repository_url=None, repository_path=None, namespace=None, overridden_name=None, inherit_from_base=None, artifactory=None, repository=None, tag=None, ui=None):  # noqa: E501
         """Info - a model defined in Swagger"""  # noqa: E501
-        self._artifact_type = None
-        self._artifactory = None
-        self._ci_name = None
         self._disabled = None
+        self._provided = None
+        self._version = None
         self._flavour = None
+        self._tf_module_id = None
+        self._strategy = None
+        self._ci_name = None
+        self._artifact_type = None
+        self._static_image = None
         self._github_repository_url = None
-        self._inherit_from_base = None
+        self._repository_path = None
         self._namespace = None
         self._overridden_name = None
-        self._provided = None
+        self._inherit_from_base = None
+        self._artifactory = None
         self._repository = None
-        self._repository_path = None
-        self._static_image = None
-        self._strategy = None
         self._tag = None
-        self._tf_module_id = None
         self._ui = None
-        self._version = None
         self.discriminator = None
-        if artifact_type is not None:
-            self.artifact_type = artifact_type
-        if artifactory is not None:
-            self.artifactory = artifactory
-        if ci_name is not None:
-            self.ci_name = ci_name
         if disabled is not None:
             self.disabled = disabled
+        if provided is not None:
+            self.provided = provided
+        if version is not None:
+            self.version = version
         if flavour is not None:
             self.flavour = flavour
+        if tf_module_id is not None:
+            self.tf_module_id = tf_module_id
+        if strategy is not None:
+            self.strategy = strategy
+        if ci_name is not None:
+            self.ci_name = ci_name
+        if artifact_type is not None:
+            self.artifact_type = artifact_type
+        if static_image is not None:
+            self.static_image = static_image
         if github_repository_url is not None:
             self.github_repository_url = github_repository_url
-        if inherit_from_base is not None:
-            self.inherit_from_base = inherit_from_base
+        if repository_path is not None:
+            self.repository_path = repository_path
         if namespace is not None:
             self.namespace = namespace
         if overridden_name is not None:
             self.overridden_name = overridden_name
-        if provided is not None:
-            self.provided = provided
+        if inherit_from_base is not None:
+            self.inherit_from_base = inherit_from_base
+        if artifactory is not None:
+            self.artifactory = artifactory
         if repository is not None:
             self.repository = repository
-        if repository_path is not None:
-            self.repository_path = repository_path
-        if static_image is not None:
-            self.static_image = static_image
-        if strategy is not None:
-            self.strategy = strategy
         if tag is not None:
             self.tag = tag
-        if tf_module_id is not None:
-            self.tf_module_id = tf_module_id
         if ui is not None:
             self.ui = ui
-        if version is not None:
-            self.version = version
+
+    @property
+    def disabled(self):
+        """Gets the disabled of this Info.  # noqa: E501
+
+
+        :return: The disabled of this Info.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this Info.
+
+
+        :param disabled: The disabled of this Info.  # noqa: E501
+        :type: bool
+        """
+
+        self._disabled = disabled
+
+    @property
+    def provided(self):
+        """Gets the provided of this Info.  # noqa: E501
+
+
+        :return: The provided of this Info.  # noqa: E501
+        :rtype: bool
+        """
+        return self._provided
+
+    @provided.setter
+    def provided(self, provided):
+        """Sets the provided of this Info.
+
+
+        :param provided: The provided of this Info.  # noqa: E501
+        :type: bool
+        """
+
+        self._provided = provided
+
+    @property
+    def version(self):
+        """Gets the version of this Info.  # noqa: E501
+
+
+        :return: The version of this Info.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this Info.
+
+
+        :param version: The version of this Info.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
+
+    @property
+    def flavour(self):
+        """Gets the flavour of this Info.  # noqa: E501
+
+
+        :return: The flavour of this Info.  # noqa: E501
+        :rtype: str
+        """
+        return self._flavour
+
+    @flavour.setter
+    def flavour(self, flavour):
+        """Sets the flavour of this Info.
+
+
+        :param flavour: The flavour of this Info.  # noqa: E501
+        :type: str
+        """
+
+        self._flavour = flavour
+
+    @property
+    def tf_module_id(self):
+        """Gets the tf_module_id of this Info.  # noqa: E501
+
+
+        :return: The tf_module_id of this Info.  # noqa: E501
+        :rtype: str
+        """
+        return self._tf_module_id
+
+    @tf_module_id.setter
+    def tf_module_id(self, tf_module_id):
+        """Sets the tf_module_id of this Info.
+
+
+        :param tf_module_id: The tf_module_id of this Info.  # noqa: E501
+        :type: str
+        """
+
+        self._tf_module_id = tf_module_id
+
+    @property
+    def strategy(self):
+        """Gets the strategy of this Info.  # noqa: E501
+
+
+        :return: The strategy of this Info.  # noqa: E501
+        :rtype: str
+        """
+        return self._strategy
+
+    @strategy.setter
+    def strategy(self, strategy):
+        """Sets the strategy of this Info.
+
+
+        :param strategy: The strategy of this Info.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["RollingUpdate", "BlueGreen", "Canary"]  # noqa: E501
+        if strategy not in allowed_values:
+            raise ValueError(
+                "Invalid value for `strategy` ({0}), must be one of {1}"  # noqa: E501
+                .format(strategy, allowed_values)
+            )
+
+        self._strategy = strategy
+
+    @property
+    def ci_name(self):
+        """Gets the ci_name of this Info.  # noqa: E501
+
+
+        :return: The ci_name of this Info.  # noqa: E501
+        :rtype: str
+        """
+        return self._ci_name
+
+    @ci_name.setter
+    def ci_name(self, ci_name):
+        """Sets the ci_name of this Info.
+
+
+        :param ci_name: The ci_name of this Info.  # noqa: E501
+        :type: str
+        """
+
+        self._ci_name = ci_name
 
     @property
     def artifact_type(self):
@@ -155,88 +308,25 @@ class Info(object):
         self._artifact_type = artifact_type
 
     @property
-    def artifactory(self):
-        """Gets the artifactory of this Info.  # noqa: E501
+    def static_image(self):
+        """Gets the static_image of this Info.  # noqa: E501
 
 
-        :return: The artifactory of this Info.  # noqa: E501
+        :return: The static_image of this Info.  # noqa: E501
         :rtype: str
         """
-        return self._artifactory
+        return self._static_image
 
-    @artifactory.setter
-    def artifactory(self, artifactory):
-        """Sets the artifactory of this Info.
+    @static_image.setter
+    def static_image(self, static_image):
+        """Sets the static_image of this Info.
 
 
-        :param artifactory: The artifactory of this Info.  # noqa: E501
+        :param static_image: The static_image of this Info.  # noqa: E501
         :type: str
         """
 
-        self._artifactory = artifactory
-
-    @property
-    def ci_name(self):
-        """Gets the ci_name of this Info.  # noqa: E501
-
-
-        :return: The ci_name of this Info.  # noqa: E501
-        :rtype: str
-        """
-        return self._ci_name
-
-    @ci_name.setter
-    def ci_name(self, ci_name):
-        """Sets the ci_name of this Info.
-
-
-        :param ci_name: The ci_name of this Info.  # noqa: E501
-        :type: str
-        """
-
-        self._ci_name = ci_name
-
-    @property
-    def disabled(self):
-        """Gets the disabled of this Info.  # noqa: E501
-
-
-        :return: The disabled of this Info.  # noqa: E501
-        :rtype: bool
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this Info.
-
-
-        :param disabled: The disabled of this Info.  # noqa: E501
-        :type: bool
-        """
-
-        self._disabled = disabled
-
-    @property
-    def flavour(self):
-        """Gets the flavour of this Info.  # noqa: E501
-
-
-        :return: The flavour of this Info.  # noqa: E501
-        :rtype: str
-        """
-        return self._flavour
-
-    @flavour.setter
-    def flavour(self, flavour):
-        """Sets the flavour of this Info.
-
-
-        :param flavour: The flavour of this Info.  # noqa: E501
-        :type: str
-        """
-
-        self._flavour = flavour
+        self._static_image = static_image
 
     @property
     def github_repository_url(self):
@@ -260,25 +350,25 @@ class Info(object):
         self._github_repository_url = github_repository_url
 
     @property
-    def inherit_from_base(self):
-        """Gets the inherit_from_base of this Info.  # noqa: E501
+    def repository_path(self):
+        """Gets the repository_path of this Info.  # noqa: E501
 
 
-        :return: The inherit_from_base of this Info.  # noqa: E501
-        :rtype: bool
+        :return: The repository_path of this Info.  # noqa: E501
+        :rtype: str
         """
-        return self._inherit_from_base
+        return self._repository_path
 
-    @inherit_from_base.setter
-    def inherit_from_base(self, inherit_from_base):
-        """Sets the inherit_from_base of this Info.
+    @repository_path.setter
+    def repository_path(self, repository_path):
+        """Sets the repository_path of this Info.
 
 
-        :param inherit_from_base: The inherit_from_base of this Info.  # noqa: E501
-        :type: bool
+        :param repository_path: The repository_path of this Info.  # noqa: E501
+        :type: str
         """
 
-        self._inherit_from_base = inherit_from_base
+        self._repository_path = repository_path
 
     @property
     def namespace(self):
@@ -323,25 +413,46 @@ class Info(object):
         self._overridden_name = overridden_name
 
     @property
-    def provided(self):
-        """Gets the provided of this Info.  # noqa: E501
+    def inherit_from_base(self):
+        """Gets the inherit_from_base of this Info.  # noqa: E501
 
 
-        :return: The provided of this Info.  # noqa: E501
+        :return: The inherit_from_base of this Info.  # noqa: E501
         :rtype: bool
         """
-        return self._provided
+        return self._inherit_from_base
 
-    @provided.setter
-    def provided(self, provided):
-        """Sets the provided of this Info.
+    @inherit_from_base.setter
+    def inherit_from_base(self, inherit_from_base):
+        """Sets the inherit_from_base of this Info.
 
 
-        :param provided: The provided of this Info.  # noqa: E501
+        :param inherit_from_base: The inherit_from_base of this Info.  # noqa: E501
         :type: bool
         """
 
-        self._provided = provided
+        self._inherit_from_base = inherit_from_base
+
+    @property
+    def artifactory(self):
+        """Gets the artifactory of this Info.  # noqa: E501
+
+
+        :return: The artifactory of this Info.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory
+
+    @artifactory.setter
+    def artifactory(self, artifactory):
+        """Sets the artifactory of this Info.
+
+
+        :param artifactory: The artifactory of this Info.  # noqa: E501
+        :type: str
+        """
+
+        self._artifactory = artifactory
 
     @property
     def repository(self):
@@ -365,75 +476,6 @@ class Info(object):
         self._repository = repository
 
     @property
-    def repository_path(self):
-        """Gets the repository_path of this Info.  # noqa: E501
-
-
-        :return: The repository_path of this Info.  # noqa: E501
-        :rtype: str
-        """
-        return self._repository_path
-
-    @repository_path.setter
-    def repository_path(self, repository_path):
-        """Sets the repository_path of this Info.
-
-
-        :param repository_path: The repository_path of this Info.  # noqa: E501
-        :type: str
-        """
-
-        self._repository_path = repository_path
-
-    @property
-    def static_image(self):
-        """Gets the static_image of this Info.  # noqa: E501
-
-
-        :return: The static_image of this Info.  # noqa: E501
-        :rtype: str
-        """
-        return self._static_image
-
-    @static_image.setter
-    def static_image(self, static_image):
-        """Sets the static_image of this Info.
-
-
-        :param static_image: The static_image of this Info.  # noqa: E501
-        :type: str
-        """
-
-        self._static_image = static_image
-
-    @property
-    def strategy(self):
-        """Gets the strategy of this Info.  # noqa: E501
-
-
-        :return: The strategy of this Info.  # noqa: E501
-        :rtype: str
-        """
-        return self._strategy
-
-    @strategy.setter
-    def strategy(self, strategy):
-        """Sets the strategy of this Info.
-
-
-        :param strategy: The strategy of this Info.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["RollingUpdate", "BlueGreen", "Canary"]  # noqa: E501
-        if strategy not in allowed_values:
-            raise ValueError(
-                "Invalid value for `strategy` ({0}), must be one of {1}"  # noqa: E501
-                .format(strategy, allowed_values)
-            )
-
-        self._strategy = strategy
-
-    @property
     def tag(self):
         """Gets the tag of this Info.  # noqa: E501
 
@@ -455,33 +497,12 @@ class Info(object):
         self._tag = tag
 
     @property
-    def tf_module_id(self):
-        """Gets the tf_module_id of this Info.  # noqa: E501
-
-
-        :return: The tf_module_id of this Info.  # noqa: E501
-        :rtype: str
-        """
-        return self._tf_module_id
-
-    @tf_module_id.setter
-    def tf_module_id(self, tf_module_id):
-        """Sets the tf_module_id of this Info.
-
-
-        :param tf_module_id: The tf_module_id of this Info.  # noqa: E501
-        :type: str
-        """
-
-        self._tf_module_id = tf_module_id
-
-    @property
     def ui(self):
         """Gets the ui of this Info.  # noqa: E501
 
 
         :return: The ui of this Info.  # noqa: E501
-        :rtype: object
+        :rtype: dict(str, object)
         """
         return self._ui
 
@@ -491,31 +512,10 @@ class Info(object):
 
 
         :param ui: The ui of this Info.  # noqa: E501
-        :type: object
+        :type: dict(str, object)
         """
 
         self._ui = ui
-
-    @property
-    def version(self):
-        """Gets the version of this Info.  # noqa: E501
-
-
-        :return: The version of this Info.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this Info.
-
-
-        :param version: The version of this Info.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

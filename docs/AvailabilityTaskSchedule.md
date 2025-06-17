@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**by_day** | **list[str]** |  | [optional] 
-**by_time** | [**LocalTime**](LocalTime.md) |  | [optional] 
-**cron_expr** | **str** |  | [optional] 
+**release_type** | **str** |  | 
 **description** | **str** |  | [optional] 
 **frequency** | **str** |  | [optional] 
 **interval** | **int** |  | [optional] 
-**release_type** | **str** |  | [optional] 
-**time_zone** | [**TimeZone**](TimeZone.md) |  | [optional] 
+**by_day** | **list[str]** |  | [optional] 
+**by_time** | [**LocalTime**](LocalTime.md) |  | [optional] 
+**time_zone** | [**MaintenanceWindowDTOTimeZone**](MaintenanceWindowDTOTimeZone.md) |  | [optional] 
+**cron_expr** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

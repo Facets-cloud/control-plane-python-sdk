@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,64 +28,85 @@ class OneTimeWebhook(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'delete_at': 'datetime',
-        'error_message': 'str',
-        'expires_at': 'datetime',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'type': 'str',
         'status': 'str',
-        'type': 'str'
+        'expires_at': 'datetime',
+        'delete_at': 'datetime',
+        'error_message': 'str'
     }
 
     attribute_map = {
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'delete_at': 'deleteAt',
-        'error_message': 'errorMessage',
-        'expires_at': 'expiresAt',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'type': 'type',
         'status': 'status',
-        'type': 'type'
+        'expires_at': 'expiresAt',
+        'delete_at': 'deleteAt',
+        'error_message': 'errorMessage'
     }
 
-    def __init__(self, created_by=None, creation_date=None, delete_at=None, error_message=None, expires_at=None, id=None, last_modified_by=None, last_modified_date=None, status=None, type=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, type=None, status=None, expires_at=None, delete_at=None, error_message=None):  # noqa: E501
         """OneTimeWebhook - a model defined in Swagger"""  # noqa: E501
+        self._id = None
         self._created_by = None
         self._creation_date = None
+        self._last_modified_date = None
+        self._last_modified_by = None
+        self._type = None
+        self._status = None
+        self._expires_at = None
         self._delete_at = None
         self._error_message = None
-        self._expires_at = None
-        self._id = None
-        self._last_modified_by = None
-        self._last_modified_date = None
-        self._status = None
-        self._type = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
+        if last_modified_date is not None:
+            self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if type is not None:
+            self.type = type
+        if status is not None:
+            self.status = status
+        if expires_at is not None:
+            self.expires_at = expires_at
         if delete_at is not None:
             self.delete_at = delete_at
         if error_message is not None:
             self.error_message = error_message
-        if expires_at is not None:
-            self.expires_at = expires_at
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
-        if last_modified_date is not None:
-            self.last_modified_date = last_modified_date
-        if status is not None:
-            self.status = status
-        if type is not None:
-            self.type = type
+
+    @property
+    def id(self):
+        """Gets the id of this OneTimeWebhook.  # noqa: E501
+
+
+        :return: The id of this OneTimeWebhook.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this OneTimeWebhook.
+
+
+        :param id: The id of this OneTimeWebhook.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def created_by(self):
@@ -130,6 +151,123 @@ class OneTimeWebhook(object):
         self._creation_date = creation_date
 
     @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this OneTimeWebhook.  # noqa: E501
+
+
+        :return: The last_modified_date of this OneTimeWebhook.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this OneTimeWebhook.
+
+
+        :param last_modified_date: The last_modified_date of this OneTimeWebhook.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this OneTimeWebhook.  # noqa: E501
+
+
+        :return: The last_modified_by of this OneTimeWebhook.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this OneTimeWebhook.
+
+
+        :param last_modified_by: The last_modified_by of this OneTimeWebhook.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def type(self):
+        """Gets the type of this OneTimeWebhook.  # noqa: E501
+
+
+        :return: The type of this OneTimeWebhook.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this OneTimeWebhook.
+
+
+        :param type: The type of this OneTimeWebhook.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AZURE", "GCP", "AWS", "KUBERNETES", "ECR", "OTHER_DOCKER_REGISTRY", "GITHUB", "GITLAB", "BITBUCKET"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
+
+        self._type = type
+
+    @property
+    def status(self):
+        """Gets the status of this OneTimeWebhook.  # noqa: E501
+
+
+        :return: The status of this OneTimeWebhook.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this OneTimeWebhook.
+
+
+        :param status: The status of this OneTimeWebhook.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["WAITING", "SUCCESS", "FAILED", "EXPIRED"]  # noqa: E501
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
+
+    @property
+    def expires_at(self):
+        """Gets the expires_at of this OneTimeWebhook.  # noqa: E501
+
+
+        :return: The expires_at of this OneTimeWebhook.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._expires_at
+
+    @expires_at.setter
+    def expires_at(self, expires_at):
+        """Sets the expires_at of this OneTimeWebhook.
+
+
+        :param expires_at: The expires_at of this OneTimeWebhook.  # noqa: E501
+        :type: datetime
+        """
+
+        self._expires_at = expires_at
+
+    @property
     def delete_at(self):
         """Gets the delete_at of this OneTimeWebhook.  # noqa: E501
 
@@ -170,144 +308,6 @@ class OneTimeWebhook(object):
         """
 
         self._error_message = error_message
-
-    @property
-    def expires_at(self):
-        """Gets the expires_at of this OneTimeWebhook.  # noqa: E501
-
-
-        :return: The expires_at of this OneTimeWebhook.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._expires_at
-
-    @expires_at.setter
-    def expires_at(self, expires_at):
-        """Sets the expires_at of this OneTimeWebhook.
-
-
-        :param expires_at: The expires_at of this OneTimeWebhook.  # noqa: E501
-        :type: datetime
-        """
-
-        self._expires_at = expires_at
-
-    @property
-    def id(self):
-        """Gets the id of this OneTimeWebhook.  # noqa: E501
-
-
-        :return: The id of this OneTimeWebhook.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this OneTimeWebhook.
-
-
-        :param id: The id of this OneTimeWebhook.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this OneTimeWebhook.  # noqa: E501
-
-
-        :return: The last_modified_by of this OneTimeWebhook.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this OneTimeWebhook.
-
-
-        :param last_modified_by: The last_modified_by of this OneTimeWebhook.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this OneTimeWebhook.  # noqa: E501
-
-
-        :return: The last_modified_date of this OneTimeWebhook.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this OneTimeWebhook.
-
-
-        :param last_modified_date: The last_modified_date of this OneTimeWebhook.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def status(self):
-        """Gets the status of this OneTimeWebhook.  # noqa: E501
-
-
-        :return: The status of this OneTimeWebhook.  # noqa: E501
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this OneTimeWebhook.
-
-
-        :param status: The status of this OneTimeWebhook.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["WAITING", "SUCCESS", "FAILED", "EXPIRED"]  # noqa: E501
-        if status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
-                .format(status, allowed_values)
-            )
-
-        self._status = status
-
-    @property
-    def type(self):
-        """Gets the type of this OneTimeWebhook.  # noqa: E501
-
-
-        :return: The type of this OneTimeWebhook.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this OneTimeWebhook.
-
-
-        :param type: The type of this OneTimeWebhook.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["AZURE", "GCP", "AWS", "KUBERNETES", "ECR", "OTHER_DOCKER_REGISTRY", "GITHUB", "GITLAB", "BITBUCKET"]  # noqa: E501
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
-            )
-
-        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

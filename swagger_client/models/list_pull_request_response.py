@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,39 @@ class ListPullRequestResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'page_number': 'int',
         'page_size': 'int',
-        'pull_requests': 'list[PullRequestResponse]',
+        'page_number': 'int',
+        'total_pages': 'int',
         'total_count': 'int',
-        'total_pages': 'int'
+        'pull_requests': 'list[PullRequestResponse]'
     }
 
     attribute_map = {
-        'page_number': 'pageNumber',
         'page_size': 'pageSize',
-        'pull_requests': 'pullRequests',
+        'page_number': 'pageNumber',
+        'total_pages': 'totalPages',
         'total_count': 'totalCount',
-        'total_pages': 'totalPages'
+        'pull_requests': 'pullRequests'
     }
 
-    def __init__(self, page_number=None, page_size=None, pull_requests=None, total_count=None, total_pages=None):  # noqa: E501
+    def __init__(self, page_size=None, page_number=None, total_pages=None, total_count=None, pull_requests=None):  # noqa: E501
         """ListPullRequestResponse - a model defined in Swagger"""  # noqa: E501
-        self._page_number = None
         self._page_size = None
-        self._pull_requests = None
-        self._total_count = None
+        self._page_number = None
         self._total_pages = None
+        self._total_count = None
+        self._pull_requests = None
         self.discriminator = None
-        if page_number is not None:
-            self.page_number = page_number
         if page_size is not None:
             self.page_size = page_size
-        if pull_requests is not None:
-            self.pull_requests = pull_requests
-        if total_count is not None:
-            self.total_count = total_count
+        if page_number is not None:
+            self.page_number = page_number
         if total_pages is not None:
             self.total_pages = total_pages
-
-    @property
-    def page_number(self):
-        """Gets the page_number of this ListPullRequestResponse.  # noqa: E501
-
-
-        :return: The page_number of this ListPullRequestResponse.  # noqa: E501
-        :rtype: int
-        """
-        return self._page_number
-
-    @page_number.setter
-    def page_number(self, page_number):
-        """Sets the page_number of this ListPullRequestResponse.
-
-
-        :param page_number: The page_number of this ListPullRequestResponse.  # noqa: E501
-        :type: int
-        """
-
-        self._page_number = page_number
+        if total_count is not None:
+            self.total_count = total_count
+        if pull_requests is not None:
+            self.pull_requests = pull_requests
 
     @property
     def page_size(self):
@@ -105,25 +84,46 @@ class ListPullRequestResponse(object):
         self._page_size = page_size
 
     @property
-    def pull_requests(self):
-        """Gets the pull_requests of this ListPullRequestResponse.  # noqa: E501
+    def page_number(self):
+        """Gets the page_number of this ListPullRequestResponse.  # noqa: E501
 
 
-        :return: The pull_requests of this ListPullRequestResponse.  # noqa: E501
-        :rtype: list[PullRequestResponse]
+        :return: The page_number of this ListPullRequestResponse.  # noqa: E501
+        :rtype: int
         """
-        return self._pull_requests
+        return self._page_number
 
-    @pull_requests.setter
-    def pull_requests(self, pull_requests):
-        """Sets the pull_requests of this ListPullRequestResponse.
+    @page_number.setter
+    def page_number(self, page_number):
+        """Sets the page_number of this ListPullRequestResponse.
 
 
-        :param pull_requests: The pull_requests of this ListPullRequestResponse.  # noqa: E501
-        :type: list[PullRequestResponse]
+        :param page_number: The page_number of this ListPullRequestResponse.  # noqa: E501
+        :type: int
         """
 
-        self._pull_requests = pull_requests
+        self._page_number = page_number
+
+    @property
+    def total_pages(self):
+        """Gets the total_pages of this ListPullRequestResponse.  # noqa: E501
+
+
+        :return: The total_pages of this ListPullRequestResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_pages
+
+    @total_pages.setter
+    def total_pages(self, total_pages):
+        """Sets the total_pages of this ListPullRequestResponse.
+
+
+        :param total_pages: The total_pages of this ListPullRequestResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._total_pages = total_pages
 
     @property
     def total_count(self):
@@ -147,25 +147,25 @@ class ListPullRequestResponse(object):
         self._total_count = total_count
 
     @property
-    def total_pages(self):
-        """Gets the total_pages of this ListPullRequestResponse.  # noqa: E501
+    def pull_requests(self):
+        """Gets the pull_requests of this ListPullRequestResponse.  # noqa: E501
 
 
-        :return: The total_pages of this ListPullRequestResponse.  # noqa: E501
-        :rtype: int
+        :return: The pull_requests of this ListPullRequestResponse.  # noqa: E501
+        :rtype: list[PullRequestResponse]
         """
-        return self._total_pages
+        return self._pull_requests
 
-    @total_pages.setter
-    def total_pages(self, total_pages):
-        """Sets the total_pages of this ListPullRequestResponse.
+    @pull_requests.setter
+    def pull_requests(self, pull_requests):
+        """Sets the pull_requests of this ListPullRequestResponse.
 
 
-        :param total_pages: The total_pages of this ListPullRequestResponse.  # noqa: E501
-        :type: int
+        :param pull_requests: The pull_requests of this ListPullRequestResponse.  # noqa: E501
+        :type: list[PullRequestResponse]
         """
 
-        self._total_pages = total_pages
+        self._pull_requests = pull_requests
 
     def to_dict(self):
         """Returns the model properties as a dict"""

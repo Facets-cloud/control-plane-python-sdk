@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,24 +28,46 @@ class ResourceInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'resources': 'list[ResourceList]',
-        'stack_name': 'str'
+        'stack_name': 'str',
+        'resources': 'list[ResourceList]'
     }
 
     attribute_map = {
-        'resources': 'resources',
-        'stack_name': 'stackName'
+        'stack_name': 'stackName',
+        'resources': 'resources'
     }
 
-    def __init__(self, resources=None, stack_name=None):  # noqa: E501
+    def __init__(self, stack_name=None, resources=None):  # noqa: E501
         """ResourceInfo - a model defined in Swagger"""  # noqa: E501
-        self._resources = None
         self._stack_name = None
+        self._resources = None
         self.discriminator = None
+        self.stack_name = stack_name
         if resources is not None:
             self.resources = resources
-        if stack_name is not None:
-            self.stack_name = stack_name
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this ResourceInfo.  # noqa: E501
+
+
+        :return: The stack_name of this ResourceInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this ResourceInfo.
+
+
+        :param stack_name: The stack_name of this ResourceInfo.  # noqa: E501
+        :type: str
+        """
+        if stack_name is None:
+            raise ValueError("Invalid value for `stack_name`, must not be `None`")  # noqa: E501
+
+        self._stack_name = stack_name
 
     @property
     def resources(self):
@@ -67,27 +89,6 @@ class ResourceInfo(object):
         """
 
         self._resources = resources
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this ResourceInfo.  # noqa: E501
-
-
-        :return: The stack_name of this ResourceInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this ResourceInfo.
-
-
-        :param stack_name: The stack_name of this ResourceInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

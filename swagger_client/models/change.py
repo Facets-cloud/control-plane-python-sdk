@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,24 +28,45 @@ class Change(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'change_type': 'str',
-        'changed_attribute': 'ChangedAttribute'
+        'changed_attribute': 'ChangedAttribute',
+        'change_type': 'str'
     }
 
     attribute_map = {
-        'change_type': 'changeType',
-        'changed_attribute': 'changedAttribute'
+        'changed_attribute': 'changedAttribute',
+        'change_type': 'changeType'
     }
 
-    def __init__(self, change_type=None, changed_attribute=None):  # noqa: E501
+    def __init__(self, changed_attribute=None, change_type=None):  # noqa: E501
         """Change - a model defined in Swagger"""  # noqa: E501
-        self._change_type = None
         self._changed_attribute = None
+        self._change_type = None
         self.discriminator = None
-        if change_type is not None:
-            self.change_type = change_type
         if changed_attribute is not None:
             self.changed_attribute = changed_attribute
+        if change_type is not None:
+            self.change_type = change_type
+
+    @property
+    def changed_attribute(self):
+        """Gets the changed_attribute of this Change.  # noqa: E501
+
+
+        :return: The changed_attribute of this Change.  # noqa: E501
+        :rtype: ChangedAttribute
+        """
+        return self._changed_attribute
+
+    @changed_attribute.setter
+    def changed_attribute(self, changed_attribute):
+        """Sets the changed_attribute of this Change.
+
+
+        :param changed_attribute: The changed_attribute of this Change.  # noqa: E501
+        :type: ChangedAttribute
+        """
+
+        self._changed_attribute = changed_attribute
 
     @property
     def change_type(self):
@@ -73,27 +94,6 @@ class Change(object):
             )
 
         self._change_type = change_type
-
-    @property
-    def changed_attribute(self):
-        """Gets the changed_attribute of this Change.  # noqa: E501
-
-
-        :return: The changed_attribute of this Change.  # noqa: E501
-        :rtype: ChangedAttribute
-        """
-        return self._changed_attribute
-
-    @changed_attribute.setter
-    def changed_attribute(self, changed_attribute):
-        """Sets the changed_attribute of this Change.
-
-
-        :param changed_attribute: The changed_attribute of this Change.  # noqa: E501
-        :type: ChangedAttribute
-        """
-
-        self._changed_attribute = changed_attribute
 
     def to_dict(self):
         """Returns the model properties as a dict"""

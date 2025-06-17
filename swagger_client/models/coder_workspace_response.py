@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class CoderWorkspaceResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'workspace_id': 'str',
         'name': 'str',
-        'url': 'str',
-        'workspace_id': 'str'
+        'url': 'str'
     }
 
     attribute_map = {
+        'workspace_id': 'workspaceId',
         'name': 'name',
-        'url': 'url',
-        'workspace_id': 'workspaceId'
+        'url': 'url'
     }
 
-    def __init__(self, name=None, url=None, workspace_id=None):  # noqa: E501
+    def __init__(self, workspace_id=None, name=None, url=None):  # noqa: E501
         """CoderWorkspaceResponse - a model defined in Swagger"""  # noqa: E501
+        self._workspace_id = None
         self._name = None
         self._url = None
-        self._workspace_id = None
         self.discriminator = None
+        if workspace_id is not None:
+            self.workspace_id = workspace_id
         if name is not None:
             self.name = name
         if url is not None:
             self.url = url
-        if workspace_id is not None:
-            self.workspace_id = workspace_id
+
+    @property
+    def workspace_id(self):
+        """Gets the workspace_id of this CoderWorkspaceResponse.  # noqa: E501
+
+
+        :return: The workspace_id of this CoderWorkspaceResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._workspace_id
+
+    @workspace_id.setter
+    def workspace_id(self, workspace_id):
+        """Sets the workspace_id of this CoderWorkspaceResponse.
+
+
+        :param workspace_id: The workspace_id of this CoderWorkspaceResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._workspace_id = workspace_id
 
     @property
     def name(self):
@@ -93,27 +114,6 @@ class CoderWorkspaceResponse(object):
         """
 
         self._url = url
-
-    @property
-    def workspace_id(self):
-        """Gets the workspace_id of this CoderWorkspaceResponse.  # noqa: E501
-
-
-        :return: The workspace_id of this CoderWorkspaceResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._workspace_id
-
-    @workspace_id.setter
-    def workspace_id(self, workspace_id):
-        """Sets the workspace_id of this CoderWorkspaceResponse.
-
-
-        :param workspace_id: The workspace_id of this CoderWorkspaceResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._workspace_id = workspace_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

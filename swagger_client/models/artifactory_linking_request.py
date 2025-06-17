@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class ArtifactoryLinkingRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifactory_name': 'str',
-        'webhook': 'OneTimeWebhook'
+        'webhook': 'OneTimeWebhook',
+        'artifactory_name': 'str'
     }
 
     attribute_map = {
-        'artifactory_name': 'artifactoryName',
-        'webhook': 'webhook'
+        'webhook': 'webhook',
+        'artifactory_name': 'artifactoryName'
     }
 
-    def __init__(self, artifactory_name=None, webhook=None):  # noqa: E501
+    def __init__(self, webhook=None, artifactory_name=None):  # noqa: E501
         """ArtifactoryLinkingRequest - a model defined in Swagger"""  # noqa: E501
-        self._artifactory_name = None
         self._webhook = None
+        self._artifactory_name = None
         self.discriminator = None
-        if artifactory_name is not None:
-            self.artifactory_name = artifactory_name
         if webhook is not None:
             self.webhook = webhook
-
-    @property
-    def artifactory_name(self):
-        """Gets the artifactory_name of this ArtifactoryLinkingRequest.  # noqa: E501
-
-
-        :return: The artifactory_name of this ArtifactoryLinkingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifactory_name
-
-    @artifactory_name.setter
-    def artifactory_name(self, artifactory_name):
-        """Sets the artifactory_name of this ArtifactoryLinkingRequest.
-
-
-        :param artifactory_name: The artifactory_name of this ArtifactoryLinkingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._artifactory_name = artifactory_name
+        if artifactory_name is not None:
+            self.artifactory_name = artifactory_name
 
     @property
     def webhook(self):
@@ -88,6 +67,27 @@ class ArtifactoryLinkingRequest(object):
         """
 
         self._webhook = webhook
+
+    @property
+    def artifactory_name(self):
+        """Gets the artifactory_name of this ArtifactoryLinkingRequest.  # noqa: E501
+
+
+        :return: The artifactory_name of this ArtifactoryLinkingRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory_name
+
+    @artifactory_name.setter
+    def artifactory_name(self, artifactory_name):
+        """Sets the artifactory_name of this ArtifactoryLinkingRequest.
+
+
+        :param artifactory_name: The artifactory_name of this ArtifactoryLinkingRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._artifactory_name = artifactory_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

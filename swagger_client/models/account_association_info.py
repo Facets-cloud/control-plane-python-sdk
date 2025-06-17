@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class AccountAssociationInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'clusters': 'list[ClusterInfo]',
-        'stack_name': 'str'
+        'stack_name': 'str',
+        'clusters': 'list[ClusterInfo]'
     }
 
     attribute_map = {
-        'clusters': 'clusters',
-        'stack_name': 'stackName'
+        'stack_name': 'stackName',
+        'clusters': 'clusters'
     }
 
-    def __init__(self, clusters=None, stack_name=None):  # noqa: E501
+    def __init__(self, stack_name=None, clusters=None):  # noqa: E501
         """AccountAssociationInfo - a model defined in Swagger"""  # noqa: E501
-        self._clusters = None
         self._stack_name = None
+        self._clusters = None
         self.discriminator = None
-        if clusters is not None:
-            self.clusters = clusters
         if stack_name is not None:
             self.stack_name = stack_name
-
-    @property
-    def clusters(self):
-        """Gets the clusters of this AccountAssociationInfo.  # noqa: E501
-
-
-        :return: The clusters of this AccountAssociationInfo.  # noqa: E501
-        :rtype: list[ClusterInfo]
-        """
-        return self._clusters
-
-    @clusters.setter
-    def clusters(self, clusters):
-        """Sets the clusters of this AccountAssociationInfo.
-
-
-        :param clusters: The clusters of this AccountAssociationInfo.  # noqa: E501
-        :type: list[ClusterInfo]
-        """
-
-        self._clusters = clusters
+        if clusters is not None:
+            self.clusters = clusters
 
     @property
     def stack_name(self):
@@ -88,6 +67,27 @@ class AccountAssociationInfo(object):
         """
 
         self._stack_name = stack_name
+
+    @property
+    def clusters(self):
+        """Gets the clusters of this AccountAssociationInfo.  # noqa: E501
+
+
+        :return: The clusters of this AccountAssociationInfo.  # noqa: E501
+        :rtype: list[ClusterInfo]
+        """
+        return self._clusters
+
+    @clusters.setter
+    def clusters(self, clusters):
+        """Sets the clusters of this AccountAssociationInfo.
+
+
+        :param clusters: The clusters of this AccountAssociationInfo.  # noqa: E501
+        :type: list[ClusterInfo]
+        """
+
+        self._clusters = clusters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

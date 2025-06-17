@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,102 +28,39 @@ class CreateTemplateRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'coder_account_id': 'str',
-        'description': 'str',
-        'mono_repo': 'bool',
         'name': 'str',
-        'relative_path': 'str'
+        'description': 'str',
+        'coder_account_id': 'str',
+        'relative_path': 'str',
+        'mono_repo': 'bool'
     }
 
     attribute_map = {
-        'coder_account_id': 'coderAccountId',
-        'description': 'description',
-        'mono_repo': 'monoRepo',
         'name': 'name',
-        'relative_path': 'relativePath'
+        'description': 'description',
+        'coder_account_id': 'coderAccountId',
+        'relative_path': 'relativePath',
+        'mono_repo': 'monoRepo'
     }
 
-    def __init__(self, coder_account_id=None, description=None, mono_repo=None, name=None, relative_path=None):  # noqa: E501
+    def __init__(self, name=None, description=None, coder_account_id=None, relative_path=None, mono_repo=None):  # noqa: E501
         """CreateTemplateRequest - a model defined in Swagger"""  # noqa: E501
-        self._coder_account_id = None
-        self._description = None
-        self._mono_repo = None
         self._name = None
+        self._description = None
+        self._coder_account_id = None
         self._relative_path = None
+        self._mono_repo = None
         self.discriminator = None
-        if coder_account_id is not None:
-            self.coder_account_id = coder_account_id
-        if description is not None:
-            self.description = description
-        if mono_repo is not None:
-            self.mono_repo = mono_repo
         if name is not None:
             self.name = name
+        if description is not None:
+            self.description = description
+        if coder_account_id is not None:
+            self.coder_account_id = coder_account_id
         if relative_path is not None:
             self.relative_path = relative_path
-
-    @property
-    def coder_account_id(self):
-        """Gets the coder_account_id of this CreateTemplateRequest.  # noqa: E501
-
-
-        :return: The coder_account_id of this CreateTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._coder_account_id
-
-    @coder_account_id.setter
-    def coder_account_id(self, coder_account_id):
-        """Sets the coder_account_id of this CreateTemplateRequest.
-
-
-        :param coder_account_id: The coder_account_id of this CreateTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._coder_account_id = coder_account_id
-
-    @property
-    def description(self):
-        """Gets the description of this CreateTemplateRequest.  # noqa: E501
-
-
-        :return: The description of this CreateTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this CreateTemplateRequest.
-
-
-        :param description: The description of this CreateTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def mono_repo(self):
-        """Gets the mono_repo of this CreateTemplateRequest.  # noqa: E501
-
-
-        :return: The mono_repo of this CreateTemplateRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._mono_repo
-
-    @mono_repo.setter
-    def mono_repo(self, mono_repo):
-        """Sets the mono_repo of this CreateTemplateRequest.
-
-
-        :param mono_repo: The mono_repo of this CreateTemplateRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._mono_repo = mono_repo
+        if mono_repo is not None:
+            self.mono_repo = mono_repo
 
     @property
     def name(self):
@@ -147,6 +84,48 @@ class CreateTemplateRequest(object):
         self._name = name
 
     @property
+    def description(self):
+        """Gets the description of this CreateTemplateRequest.  # noqa: E501
+
+
+        :return: The description of this CreateTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateTemplateRequest.
+
+
+        :param description: The description of this CreateTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def coder_account_id(self):
+        """Gets the coder_account_id of this CreateTemplateRequest.  # noqa: E501
+
+
+        :return: The coder_account_id of this CreateTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._coder_account_id
+
+    @coder_account_id.setter
+    def coder_account_id(self, coder_account_id):
+        """Sets the coder_account_id of this CreateTemplateRequest.
+
+
+        :param coder_account_id: The coder_account_id of this CreateTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._coder_account_id = coder_account_id
+
+    @property
     def relative_path(self):
         """Gets the relative_path of this CreateTemplateRequest.  # noqa: E501
 
@@ -166,6 +145,27 @@ class CreateTemplateRequest(object):
         """
 
         self._relative_path = relative_path
+
+    @property
+    def mono_repo(self):
+        """Gets the mono_repo of this CreateTemplateRequest.  # noqa: E501
+
+
+        :return: The mono_repo of this CreateTemplateRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mono_repo
+
+    @mono_repo.setter
+    def mono_repo(self, mono_repo):
+        """Sets the mono_repo of this CreateTemplateRequest.
+
+
+        :param mono_repo: The mono_repo of this CreateTemplateRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._mono_repo = mono_repo
 
     def to_dict(self):
         """Returns the model properties as a dict"""

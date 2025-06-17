@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,62 @@ class NotificationTypeResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'supported_tags': 'list[str]',
         'key': 'str',
         'notification_name': 'str',
-        'notification_type': 'str',
-        'supported_tags': 'list[str]'
+        'notification_type': 'str'
     }
 
     attribute_map = {
+        'supported_tags': 'supportedTags',
         'key': 'key',
         'notification_name': 'notificationName',
-        'notification_type': 'notificationType',
-        'supported_tags': 'supportedTags'
+        'notification_type': 'notificationType'
     }
 
-    def __init__(self, key=None, notification_name=None, notification_type=None, supported_tags=None):  # noqa: E501
+    def __init__(self, supported_tags=None, key=None, notification_name=None, notification_type=None):  # noqa: E501
         """NotificationTypeResponse - a model defined in Swagger"""  # noqa: E501
+        self._supported_tags = None
         self._key = None
         self._notification_name = None
         self._notification_type = None
-        self._supported_tags = None
         self.discriminator = None
+        if supported_tags is not None:
+            self.supported_tags = supported_tags
         if key is not None:
             self.key = key
         if notification_name is not None:
             self.notification_name = notification_name
         if notification_type is not None:
             self.notification_type = notification_type
-        if supported_tags is not None:
-            self.supported_tags = supported_tags
+
+    @property
+    def supported_tags(self):
+        """Gets the supported_tags of this NotificationTypeResponse.  # noqa: E501
+
+
+        :return: The supported_tags of this NotificationTypeResponse.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._supported_tags
+
+    @supported_tags.setter
+    def supported_tags(self, supported_tags):
+        """Sets the supported_tags of this NotificationTypeResponse.
+
+
+        :param supported_tags: The supported_tags of this NotificationTypeResponse.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["CLUSTER_NAME", "CLUSTER_TYPE", "QASUITE_RESULT", "DR_ACTION", "DR_STATUS", "STACK_NAME", "SEVERITY", "ALERT_NAME", "DEPLOYMENT_STATUS", "APPLICATION_NAME", "SEND_RESOLVED", "RELEASE_TYPE"]  # noqa: E501
+        if not set(supported_tags).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `supported_tags` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(supported_tags) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._supported_tags = supported_tags
 
     @property
     def key(self):
@@ -125,34 +153,6 @@ class NotificationTypeResponse(object):
             )
 
         self._notification_type = notification_type
-
-    @property
-    def supported_tags(self):
-        """Gets the supported_tags of this NotificationTypeResponse.  # noqa: E501
-
-
-        :return: The supported_tags of this NotificationTypeResponse.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._supported_tags
-
-    @supported_tags.setter
-    def supported_tags(self, supported_tags):
-        """Sets the supported_tags of this NotificationTypeResponse.
-
-
-        :param supported_tags: The supported_tags of this NotificationTypeResponse.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["CLUSTER_NAME", "CLUSTER_TYPE", "QASUITE_RESULT", "DR_ACTION", "DR_STATUS", "STACK_NAME", "SEVERITY", "ALERT_NAME", "DEPLOYMENT_STATUS", "APPLICATION_NAME", "SEND_RESOLVED", "RELEASE_TYPE"]  # noqa: E501
-        if not set(supported_tags).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `supported_tags` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(supported_tags) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._supported_tags = supported_tags
 
     def to_dict(self):
         """Returns the model properties as a dict"""

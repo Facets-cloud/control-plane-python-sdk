@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,39 @@ class ModuleInputDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'compatible_resources': 'list[InputOutputResource]',
-        'description': 'str',
         'display_name': 'str',
+        'description': 'str',
+        'type': 'str',
         'optional': 'bool',
-        'type': 'str'
+        'compatible_resources': 'list[InputOutputResource]'
     }
 
     attribute_map = {
-        'compatible_resources': 'compatibleResources',
-        'description': 'description',
         'display_name': 'displayName',
+        'description': 'description',
+        'type': 'type',
         'optional': 'optional',
-        'type': 'type'
+        'compatible_resources': 'compatibleResources'
     }
 
-    def __init__(self, compatible_resources=None, description=None, display_name=None, optional=None, type=None):  # noqa: E501
+    def __init__(self, display_name=None, description=None, type=None, optional=None, compatible_resources=None):  # noqa: E501
         """ModuleInputDTO - a model defined in Swagger"""  # noqa: E501
-        self._compatible_resources = None
-        self._description = None
         self._display_name = None
-        self._optional = None
+        self._description = None
         self._type = None
+        self._optional = None
+        self._compatible_resources = None
         self.discriminator = None
-        if compatible_resources is not None:
-            self.compatible_resources = compatible_resources
-        if description is not None:
-            self.description = description
         if display_name is not None:
             self.display_name = display_name
-        if optional is not None:
-            self.optional = optional
+        if description is not None:
+            self.description = description
         if type is not None:
             self.type = type
-
-    @property
-    def compatible_resources(self):
-        """Gets the compatible_resources of this ModuleInputDTO.  # noqa: E501
-
-
-        :return: The compatible_resources of this ModuleInputDTO.  # noqa: E501
-        :rtype: list[InputOutputResource]
-        """
-        return self._compatible_resources
-
-    @compatible_resources.setter
-    def compatible_resources(self, compatible_resources):
-        """Sets the compatible_resources of this ModuleInputDTO.
-
-
-        :param compatible_resources: The compatible_resources of this ModuleInputDTO.  # noqa: E501
-        :type: list[InputOutputResource]
-        """
-
-        self._compatible_resources = compatible_resources
-
-    @property
-    def description(self):
-        """Gets the description of this ModuleInputDTO.  # noqa: E501
-
-
-        :return: The description of this ModuleInputDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ModuleInputDTO.
-
-
-        :param description: The description of this ModuleInputDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
+        if optional is not None:
+            self.optional = optional
+        if compatible_resources is not None:
+            self.compatible_resources = compatible_resources
 
     @property
     def display_name(self):
@@ -126,25 +84,25 @@ class ModuleInputDTO(object):
         self._display_name = display_name
 
     @property
-    def optional(self):
-        """Gets the optional of this ModuleInputDTO.  # noqa: E501
+    def description(self):
+        """Gets the description of this ModuleInputDTO.  # noqa: E501
 
 
-        :return: The optional of this ModuleInputDTO.  # noqa: E501
-        :rtype: bool
+        :return: The description of this ModuleInputDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._optional
+        return self._description
 
-    @optional.setter
-    def optional(self, optional):
-        """Sets the optional of this ModuleInputDTO.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ModuleInputDTO.
 
 
-        :param optional: The optional of this ModuleInputDTO.  # noqa: E501
-        :type: bool
+        :param description: The description of this ModuleInputDTO.  # noqa: E501
+        :type: str
         """
 
-        self._optional = optional
+        self._description = description
 
     @property
     def type(self):
@@ -166,6 +124,48 @@ class ModuleInputDTO(object):
         """
 
         self._type = type
+
+    @property
+    def optional(self):
+        """Gets the optional of this ModuleInputDTO.  # noqa: E501
+
+
+        :return: The optional of this ModuleInputDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._optional
+
+    @optional.setter
+    def optional(self, optional):
+        """Sets the optional of this ModuleInputDTO.
+
+
+        :param optional: The optional of this ModuleInputDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._optional = optional
+
+    @property
+    def compatible_resources(self):
+        """Gets the compatible_resources of this ModuleInputDTO.  # noqa: E501
+
+
+        :return: The compatible_resources of this ModuleInputDTO.  # noqa: E501
+        :rtype: list[InputOutputResource]
+        """
+        return self._compatible_resources
+
+    @compatible_resources.setter
+    def compatible_resources(self, compatible_resources):
+        """Sets the compatible_resources of this ModuleInputDTO.
+
+
+        :param compatible_resources: The compatible_resources of this ModuleInputDTO.  # noqa: E501
+        :type: list[InputOutputResource]
+        """
+
+        self._compatible_resources = compatible_resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

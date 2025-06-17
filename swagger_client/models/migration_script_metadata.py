@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,55 @@ class MigrationScriptMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'clouds': 'list[str]',
+        'sequence_number': 'int',
         'description': 'str',
         'downtime': 'bool',
-        'sequence_number': 'int'
+        'clouds': 'list[str]'
     }
 
     attribute_map = {
-        'clouds': 'clouds',
+        'sequence_number': 'sequenceNumber',
         'description': 'description',
         'downtime': 'downtime',
-        'sequence_number': 'sequenceNumber'
+        'clouds': 'clouds'
     }
 
-    def __init__(self, clouds=None, description=None, downtime=None, sequence_number=None):  # noqa: E501
+    def __init__(self, sequence_number=None, description=None, downtime=None, clouds=None):  # noqa: E501
         """MigrationScriptMetadata - a model defined in Swagger"""  # noqa: E501
-        self._clouds = None
+        self._sequence_number = None
         self._description = None
         self._downtime = None
-        self._sequence_number = None
+        self._clouds = None
         self.discriminator = None
-        if clouds is not None:
-            self.clouds = clouds
+        if sequence_number is not None:
+            self.sequence_number = sequence_number
         if description is not None:
             self.description = description
         if downtime is not None:
             self.downtime = downtime
-        if sequence_number is not None:
-            self.sequence_number = sequence_number
+        if clouds is not None:
+            self.clouds = clouds
 
     @property
-    def clouds(self):
-        """Gets the clouds of this MigrationScriptMetadata.  # noqa: E501
+    def sequence_number(self):
+        """Gets the sequence_number of this MigrationScriptMetadata.  # noqa: E501
 
 
-        :return: The clouds of this MigrationScriptMetadata.  # noqa: E501
-        :rtype: list[str]
+        :return: The sequence_number of this MigrationScriptMetadata.  # noqa: E501
+        :rtype: int
         """
-        return self._clouds
+        return self._sequence_number
 
-    @clouds.setter
-    def clouds(self, clouds):
-        """Sets the clouds of this MigrationScriptMetadata.
+    @sequence_number.setter
+    def sequence_number(self, sequence_number):
+        """Sets the sequence_number of this MigrationScriptMetadata.
 
 
-        :param clouds: The clouds of this MigrationScriptMetadata.  # noqa: E501
-        :type: list[str]
+        :param sequence_number: The sequence_number of this MigrationScriptMetadata.  # noqa: E501
+        :type: int
         """
 
-        self._clouds = clouds
+        self._sequence_number = sequence_number
 
     @property
     def description(self):
@@ -121,25 +121,25 @@ class MigrationScriptMetadata(object):
         self._downtime = downtime
 
     @property
-    def sequence_number(self):
-        """Gets the sequence_number of this MigrationScriptMetadata.  # noqa: E501
+    def clouds(self):
+        """Gets the clouds of this MigrationScriptMetadata.  # noqa: E501
 
 
-        :return: The sequence_number of this MigrationScriptMetadata.  # noqa: E501
-        :rtype: int
+        :return: The clouds of this MigrationScriptMetadata.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._sequence_number
+        return self._clouds
 
-    @sequence_number.setter
-    def sequence_number(self, sequence_number):
-        """Sets the sequence_number of this MigrationScriptMetadata.
+    @clouds.setter
+    def clouds(self, clouds):
+        """Sets the clouds of this MigrationScriptMetadata.
 
 
-        :param sequence_number: The sequence_number of this MigrationScriptMetadata.  # noqa: E501
-        :type: int
+        :param clouds: The clouds of this MigrationScriptMetadata.  # noqa: E501
+        :type: list[str]
         """
 
-        self._sequence_number = sequence_number
+        self._clouds = clouds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

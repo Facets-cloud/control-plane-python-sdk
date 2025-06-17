@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,34 @@ class UserVCSTokenResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'host_name': 'str',
         'id': 'str',
         'user_id': 'str',
+        'host_name': 'str',
         'user_name': 'str'
     }
 
     attribute_map = {
-        'host_name': 'hostName',
         'id': 'id',
         'user_id': 'userId',
+        'host_name': 'hostName',
         'user_name': 'userName'
     }
 
-    def __init__(self, host_name=None, id=None, user_id=None, user_name=None):  # noqa: E501
+    def __init__(self, id=None, user_id=None, host_name=None, user_name=None):  # noqa: E501
         """UserVCSTokenResponse - a model defined in Swagger"""  # noqa: E501
-        self._host_name = None
         self._id = None
         self._user_id = None
+        self._host_name = None
         self._user_name = None
         self.discriminator = None
-        if host_name is not None:
-            self.host_name = host_name
         if id is not None:
             self.id = id
         if user_id is not None:
             self.user_id = user_id
+        if host_name is not None:
+            self.host_name = host_name
         if user_name is not None:
             self.user_name = user_name
-
-    @property
-    def host_name(self):
-        """Gets the host_name of this UserVCSTokenResponse.  # noqa: E501
-
-
-        :return: The host_name of this UserVCSTokenResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._host_name
-
-    @host_name.setter
-    def host_name(self, host_name):
-        """Sets the host_name of this UserVCSTokenResponse.
-
-
-        :param host_name: The host_name of this UserVCSTokenResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._host_name = host_name
 
     @property
     def id(self):
@@ -119,6 +98,27 @@ class UserVCSTokenResponse(object):
         """
 
         self._user_id = user_id
+
+    @property
+    def host_name(self):
+        """Gets the host_name of this UserVCSTokenResponse.  # noqa: E501
+
+
+        :return: The host_name of this UserVCSTokenResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._host_name
+
+    @host_name.setter
+    def host_name(self, host_name):
+        """Sets the host_name of this UserVCSTokenResponse.
+
+
+        :param host_name: The host_name of this UserVCSTokenResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._host_name = host_name
 
     @property
     def user_name(self):

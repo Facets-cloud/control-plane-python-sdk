@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,51 +32,51 @@ class UiKubernetesExplorerControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def container_logs_using_get(self, cluster_id, container_name, labels, pod_name, tail, **kwargs):  # noqa: E501
-        """containerLogs  # noqa: E501
+    def container_logs(self, cluster_id, pod_name, container_name, tail, labels, **kwargs):  # noqa: E501
+        """container_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.container_logs_using_get(cluster_id, container_name, labels, pod_name, tail, async_req=True)
+        >>> thread = api.container_logs(cluster_id, pod_name, container_name, tail, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str container_name: containerName (required)
-        :param object labels: labels (required)
-        :param str pod_name: podName (required)
-        :param int tail: tail (required)
+        :param str cluster_id: (required)
+        :param str pod_name: (required)
+        :param str container_name: (required)
+        :param int tail: (required)
+        :param dict(str, str) labels: (required)
         :return: StreamingResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.container_logs_using_get_with_http_info(cluster_id, container_name, labels, pod_name, tail, **kwargs)  # noqa: E501
+            return self.container_logs_with_http_info(cluster_id, pod_name, container_name, tail, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.container_logs_using_get_with_http_info(cluster_id, container_name, labels, pod_name, tail, **kwargs)  # noqa: E501
+            (data) = self.container_logs_with_http_info(cluster_id, pod_name, container_name, tail, labels, **kwargs)  # noqa: E501
             return data
 
-    def container_logs_using_get_with_http_info(self, cluster_id, container_name, labels, pod_name, tail, **kwargs):  # noqa: E501
-        """containerLogs  # noqa: E501
+    def container_logs_with_http_info(self, cluster_id, pod_name, container_name, tail, labels, **kwargs):  # noqa: E501
+        """container_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.container_logs_using_get_with_http_info(cluster_id, container_name, labels, pod_name, tail, async_req=True)
+        >>> thread = api.container_logs_with_http_info(cluster_id, pod_name, container_name, tail, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str container_name: containerName (required)
-        :param object labels: labels (required)
-        :param str pod_name: podName (required)
-        :param int tail: tail (required)
+        :param str cluster_id: (required)
+        :param str pod_name: (required)
+        :param str container_name: (required)
+        :param int tail: (required)
+        :param dict(str, str) labels: (required)
         :return: StreamingResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'container_name', 'labels', 'pod_name', 'tail']  # noqa: E501
+        all_params = ['cluster_id', 'pod_name', 'container_name', 'tail', 'labels']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -87,46 +87,46 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method container_logs_using_get" % key
+                    " to method container_logs" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `container_logs_using_get`")  # noqa: E501
-        # verify the required parameter 'container_name' is set
-        if ('container_name' not in params or
-                params['container_name'] is None):
-            raise ValueError("Missing the required parameter `container_name` when calling `container_logs_using_get`")  # noqa: E501
-        # verify the required parameter 'labels' is set
-        if ('labels' not in params or
-                params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `container_logs_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `container_logs`")  # noqa: E501
         # verify the required parameter 'pod_name' is set
         if ('pod_name' not in params or
                 params['pod_name'] is None):
-            raise ValueError("Missing the required parameter `pod_name` when calling `container_logs_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `pod_name` when calling `container_logs`")  # noqa: E501
+        # verify the required parameter 'container_name' is set
+        if ('container_name' not in params or
+                params['container_name'] is None):
+            raise ValueError("Missing the required parameter `container_name` when calling `container_logs`")  # noqa: E501
         # verify the required parameter 'tail' is set
         if ('tail' not in params or
                 params['tail'] is None):
-            raise ValueError("Missing the required parameter `tail` when calling `container_logs_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `tail` when calling `container_logs`")  # noqa: E501
+        # verify the required parameter 'labels' is set
+        if ('labels' not in params or
+                params['labels'] is None):
+            raise ValueError("Missing the required parameter `labels` when calling `container_logs`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'container_name' in params:
-            path_params['containerName'] = params['container_name']  # noqa: E501
         if 'pod_name' in params:
             path_params['podName'] = params['pod_name']  # noqa: E501
+        if 'container_name' in params:
+            path_params['containerName'] = params['container_name']  # noqa: E501
 
         query_params = []
-        if 'labels' in params:
-            query_params.append(('labels', params['labels']))  # noqa: E501
         if 'tail' in params:
             query_params.append(('tail', params['tail']))  # noqa: E501
+        if 'labels' in params:
+            query_params.append(('labels', params['labels']))  # noqa: E501
 
         header_params = {}
 
@@ -136,10 +136,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/pods/{podName}/{containerName}/logs', 'GET',
@@ -157,37 +157,37 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_ingress_rules_for_cluster_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllIngressRulesForCluster  # noqa: E501
+    def get_all_ingress_rules_for_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_ingress_rules_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_ingress_rules_for_cluster_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_all_ingress_rules_for_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: list[IngressRulesDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_ingress_rules_for_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_all_ingress_rules_for_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_ingress_rules_for_cluster_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_all_ingress_rules_for_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_all_ingress_rules_for_cluster_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getAllIngressRulesForCluster  # noqa: E501
+    def get_all_ingress_rules_for_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_all_ingress_rules_for_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_ingress_rules_for_cluster_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_all_ingress_rules_for_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: list[IngressRulesDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -204,14 +204,14 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_ingress_rules_for_cluster_using_get" % key
+                    " to method get_all_ingress_rules_for_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_ingress_rules_for_cluster_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_ingress_rules_for_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -229,10 +229,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/ingress-rules', 'GET',
@@ -250,41 +250,41 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_config_map_data_using_get(self, cluster_id, config_map_name, labels, **kwargs):  # noqa: E501
-        """getConfigMapData  # noqa: E501
+    def get_config_map_data(self, cluster_id, config_map_name, labels, **kwargs):  # noqa: E501
+        """get_config_map_data  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_config_map_data_using_get(cluster_id, config_map_name, labels, async_req=True)
+        >>> thread = api.get_config_map_data(cluster_id, config_map_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str config_map_name: configMapName (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str config_map_name: (required)
+        :param dict(str, str) labels: (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_config_map_data_using_get_with_http_info(cluster_id, config_map_name, labels, **kwargs)  # noqa: E501
+            return self.get_config_map_data_with_http_info(cluster_id, config_map_name, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_config_map_data_using_get_with_http_info(cluster_id, config_map_name, labels, **kwargs)  # noqa: E501
+            (data) = self.get_config_map_data_with_http_info(cluster_id, config_map_name, labels, **kwargs)  # noqa: E501
             return data
 
-    def get_config_map_data_using_get_with_http_info(self, cluster_id, config_map_name, labels, **kwargs):  # noqa: E501
-        """getConfigMapData  # noqa: E501
+    def get_config_map_data_with_http_info(self, cluster_id, config_map_name, labels, **kwargs):  # noqa: E501
+        """get_config_map_data  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_config_map_data_using_get_with_http_info(cluster_id, config_map_name, labels, async_req=True)
+        >>> thread = api.get_config_map_data_with_http_info(cluster_id, config_map_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str config_map_name: configMapName (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str config_map_name: (required)
+        :param dict(str, str) labels: (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -301,22 +301,22 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_config_map_data_using_get" % key
+                    " to method get_config_map_data" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_config_map_data_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_config_map_data`")  # noqa: E501
         # verify the required parameter 'config_map_name' is set
         if ('config_map_name' not in params or
                 params['config_map_name'] is None):
-            raise ValueError("Missing the required parameter `config_map_name` when calling `get_config_map_data_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `config_map_name` when calling `get_config_map_data`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `get_config_map_data_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `get_config_map_data`")  # noqa: E501
 
         collection_formats = {}
 
@@ -338,10 +338,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/configMaps/{configMapName}', 'GET',
@@ -359,49 +359,49 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_manifest_using_get(self, cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs):  # noqa: E501
-        """getManifest  # noqa: E501
+    def get_manifest(self, cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs):  # noqa: E501
+        """get_manifest  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_manifest_using_get(cluster_id, k8s_resource_name, k8s_resource_type, labels, async_req=True)
+        >>> thread = api.get_manifest(cluster_id, k8s_resource_type, k8s_resource_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str k8s_resource_name: k8sResourceName (required)
-        :param str k8s_resource_type: k8sResourceType (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str k8s_resource_type: (required)
+        :param str k8s_resource_name: (required)
+        :param dict(str, str) labels: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_manifest_using_get_with_http_info(cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs)  # noqa: E501
+            return self.get_manifest_with_http_info(cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_manifest_using_get_with_http_info(cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs)  # noqa: E501
+            (data) = self.get_manifest_with_http_info(cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs)  # noqa: E501
             return data
 
-    def get_manifest_using_get_with_http_info(self, cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs):  # noqa: E501
-        """getManifest  # noqa: E501
+    def get_manifest_with_http_info(self, cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs):  # noqa: E501
+        """get_manifest  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_manifest_using_get_with_http_info(cluster_id, k8s_resource_name, k8s_resource_type, labels, async_req=True)
+        >>> thread = api.get_manifest_with_http_info(cluster_id, k8s_resource_type, k8s_resource_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str k8s_resource_name: k8sResourceName (required)
-        :param str k8s_resource_type: k8sResourceType (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str k8s_resource_type: (required)
+        :param str k8s_resource_name: (required)
+        :param dict(str, str) labels: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'k8s_resource_name', 'k8s_resource_type', 'labels']  # noqa: E501
+        all_params = ['cluster_id', 'k8s_resource_type', 'k8s_resource_name', 'labels']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -412,36 +412,36 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_manifest_using_get" % key
+                    " to method get_manifest" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_manifest_using_get`")  # noqa: E501
-        # verify the required parameter 'k8s_resource_name' is set
-        if ('k8s_resource_name' not in params or
-                params['k8s_resource_name'] is None):
-            raise ValueError("Missing the required parameter `k8s_resource_name` when calling `get_manifest_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_manifest`")  # noqa: E501
         # verify the required parameter 'k8s_resource_type' is set
         if ('k8s_resource_type' not in params or
                 params['k8s_resource_type'] is None):
-            raise ValueError("Missing the required parameter `k8s_resource_type` when calling `get_manifest_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `k8s_resource_type` when calling `get_manifest`")  # noqa: E501
+        # verify the required parameter 'k8s_resource_name' is set
+        if ('k8s_resource_name' not in params or
+                params['k8s_resource_name'] is None):
+            raise ValueError("Missing the required parameter `k8s_resource_name` when calling `get_manifest`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `get_manifest_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `get_manifest`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'k8s_resource_name' in params:
-            path_params['k8sResourceName'] = params['k8s_resource_name']  # noqa: E501
         if 'k8s_resource_type' in params:
             path_params['k8sResourceType'] = params['k8s_resource_type']  # noqa: E501
+        if 'k8s_resource_name' in params:
+            path_params['k8sResourceName'] = params['k8s_resource_name']  # noqa: E501
 
         query_params = []
         if 'labels' in params:
@@ -455,10 +455,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['text/plain'])  # noqa: E501
+            ['application/json', 'text/plain'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/{k8sResourceType}/{k8sResourceName}/manifest', 'GET',
@@ -476,41 +476,41 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_pods_for_deployment_using_get(self, cluster_id, deployment_name, labels, **kwargs):  # noqa: E501
-        """getPodsForDeployment  # noqa: E501
+    def get_pods_for_deployment(self, cluster_id, deployment_name, labels, **kwargs):  # noqa: E501
+        """get_pods_for_deployment  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pods_for_deployment_using_get(cluster_id, deployment_name, labels, async_req=True)
+        >>> thread = api.get_pods_for_deployment(cluster_id, deployment_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_name: deploymentName (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str deployment_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_pods_for_deployment_using_get_with_http_info(cluster_id, deployment_name, labels, **kwargs)  # noqa: E501
+            return self.get_pods_for_deployment_with_http_info(cluster_id, deployment_name, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_pods_for_deployment_using_get_with_http_info(cluster_id, deployment_name, labels, **kwargs)  # noqa: E501
+            (data) = self.get_pods_for_deployment_with_http_info(cluster_id, deployment_name, labels, **kwargs)  # noqa: E501
             return data
 
-    def get_pods_for_deployment_using_get_with_http_info(self, cluster_id, deployment_name, labels, **kwargs):  # noqa: E501
-        """getPodsForDeployment  # noqa: E501
+    def get_pods_for_deployment_with_http_info(self, cluster_id, deployment_name, labels, **kwargs):  # noqa: E501
+        """get_pods_for_deployment  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_pods_for_deployment_using_get_with_http_info(cluster_id, deployment_name, labels, async_req=True)
+        >>> thread = api.get_pods_for_deployment_with_http_info(cluster_id, deployment_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_name: deploymentName (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str deployment_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[str]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -527,22 +527,22 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_pods_for_deployment_using_get" % key
+                    " to method get_pods_for_deployment" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_pods_for_deployment_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_pods_for_deployment`")  # noqa: E501
         # verify the required parameter 'deployment_name' is set
         if ('deployment_name' not in params or
                 params['deployment_name'] is None):
-            raise ValueError("Missing the required parameter `deployment_name` when calling `get_pods_for_deployment_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_name` when calling `get_pods_for_deployment`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `get_pods_for_deployment_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `get_pods_for_deployment`")  # noqa: E501
 
         collection_formats = {}
 
@@ -564,10 +564,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/deployments/{deploymentName}', 'GET',
@@ -585,47 +585,47 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_secrets_data_using_get(self, cluster_id, labels, secret_name, **kwargs):  # noqa: E501
-        """getSecretsData  # noqa: E501
+    def get_secrets_data(self, cluster_id, secret_name, labels, **kwargs):  # noqa: E501
+        """get_secrets_data  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_secrets_data_using_get(cluster_id, labels, secret_name, async_req=True)
+        >>> thread = api.get_secrets_data(cluster_id, secret_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
-        :param str secret_name: secretName (required)
+        :param str cluster_id: (required)
+        :param str secret_name: (required)
+        :param dict(str, str) labels: (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_secrets_data_using_get_with_http_info(cluster_id, labels, secret_name, **kwargs)  # noqa: E501
+            return self.get_secrets_data_with_http_info(cluster_id, secret_name, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_secrets_data_using_get_with_http_info(cluster_id, labels, secret_name, **kwargs)  # noqa: E501
+            (data) = self.get_secrets_data_with_http_info(cluster_id, secret_name, labels, **kwargs)  # noqa: E501
             return data
 
-    def get_secrets_data_using_get_with_http_info(self, cluster_id, labels, secret_name, **kwargs):  # noqa: E501
-        """getSecretsData  # noqa: E501
+    def get_secrets_data_with_http_info(self, cluster_id, secret_name, labels, **kwargs):  # noqa: E501
+        """get_secrets_data  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_secrets_data_using_get_with_http_info(cluster_id, labels, secret_name, async_req=True)
+        >>> thread = api.get_secrets_data_with_http_info(cluster_id, secret_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
-        :param str secret_name: secretName (required)
+        :param str cluster_id: (required)
+        :param str secret_name: (required)
+        :param dict(str, str) labels: (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'labels', 'secret_name']  # noqa: E501
+        all_params = ['cluster_id', 'secret_name', 'labels']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -636,22 +636,22 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_secrets_data_using_get" % key
+                    " to method get_secrets_data" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_secrets_data_using_get`")  # noqa: E501
-        # verify the required parameter 'labels' is set
-        if ('labels' not in params or
-                params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `get_secrets_data_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_secrets_data`")  # noqa: E501
         # verify the required parameter 'secret_name' is set
         if ('secret_name' not in params or
                 params['secret_name'] is None):
-            raise ValueError("Missing the required parameter `secret_name` when calling `get_secrets_data_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `secret_name` when calling `get_secrets_data`")  # noqa: E501
+        # verify the required parameter 'labels' is set
+        if ('labels' not in params or
+                params['labels'] is None):
+            raise ValueError("Missing the required parameter `labels` when calling `get_secrets_data`")  # noqa: E501
 
         collection_formats = {}
 
@@ -673,10 +673,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/secrets/{secretName}', 'GET',
@@ -694,39 +694,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_config_map_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listConfigMapByLabels  # noqa: E501
+    def list_config_map_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_config_map_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_config_map_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_config_map_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[ConfigMapDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_config_map_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_config_map_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_config_map_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_config_map_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_config_map_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listConfigMapByLabels  # noqa: E501
+    def list_config_map_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_config_map_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_config_map_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_config_map_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[ConfigMapDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -743,18 +743,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_config_map_by_labels_using_get" % key
+                    " to method list_config_map_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_config_map_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_config_map_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_config_map_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_config_map_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -774,10 +774,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/configMaps', 'GET',
@@ -795,47 +795,47 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_containers_in_pod_using_get(self, cluster_id, labels, pod_name, **kwargs):  # noqa: E501
-        """listContainersInPod  # noqa: E501
+    def list_containers_in_pod(self, cluster_id, pod_name, labels, **kwargs):  # noqa: E501
+        """list_containers_in_pod  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_containers_in_pod_using_get(cluster_id, labels, pod_name, async_req=True)
+        >>> thread = api.list_containers_in_pod(cluster_id, pod_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
-        :param str pod_name: podName (required)
+        :param str cluster_id: (required)
+        :param str pod_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[Container]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_containers_in_pod_using_get_with_http_info(cluster_id, labels, pod_name, **kwargs)  # noqa: E501
+            return self.list_containers_in_pod_with_http_info(cluster_id, pod_name, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_containers_in_pod_using_get_with_http_info(cluster_id, labels, pod_name, **kwargs)  # noqa: E501
+            (data) = self.list_containers_in_pod_with_http_info(cluster_id, pod_name, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_containers_in_pod_using_get_with_http_info(self, cluster_id, labels, pod_name, **kwargs):  # noqa: E501
-        """listContainersInPod  # noqa: E501
+    def list_containers_in_pod_with_http_info(self, cluster_id, pod_name, labels, **kwargs):  # noqa: E501
+        """list_containers_in_pod  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_containers_in_pod_using_get_with_http_info(cluster_id, labels, pod_name, async_req=True)
+        >>> thread = api.list_containers_in_pod_with_http_info(cluster_id, pod_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
-        :param str pod_name: podName (required)
+        :param str cluster_id: (required)
+        :param str pod_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[Container]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'labels', 'pod_name']  # noqa: E501
+        all_params = ['cluster_id', 'pod_name', 'labels']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -846,22 +846,22 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_containers_in_pod_using_get" % key
+                    " to method list_containers_in_pod" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_containers_in_pod_using_get`")  # noqa: E501
-        # verify the required parameter 'labels' is set
-        if ('labels' not in params or
-                params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_containers_in_pod_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_containers_in_pod`")  # noqa: E501
         # verify the required parameter 'pod_name' is set
         if ('pod_name' not in params or
                 params['pod_name'] is None):
-            raise ValueError("Missing the required parameter `pod_name` when calling `list_containers_in_pod_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `pod_name` when calling `list_containers_in_pod`")  # noqa: E501
+        # verify the required parameter 'labels' is set
+        if ('labels' not in params or
+                params['labels'] is None):
+            raise ValueError("Missing the required parameter `labels` when calling `list_containers_in_pod`")  # noqa: E501
 
         collection_formats = {}
 
@@ -883,10 +883,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/{podName}/containers', 'GET',
@@ -904,47 +904,47 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_containers_in_pod_v2_using_get(self, cluster_id, labels, pod_name, **kwargs):  # noqa: E501
-        """listContainersInPodV2  # noqa: E501
+    def list_containers_in_pod_v2(self, cluster_id, pod_name, labels, **kwargs):  # noqa: E501
+        """list_containers_in_pod_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_containers_in_pod_v2_using_get(cluster_id, labels, pod_name, async_req=True)
+        >>> thread = api.list_containers_in_pod_v2(cluster_id, pod_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
-        :param str pod_name: podName (required)
+        :param str cluster_id: (required)
+        :param str pod_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[ContainerDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_containers_in_pod_v2_using_get_with_http_info(cluster_id, labels, pod_name, **kwargs)  # noqa: E501
+            return self.list_containers_in_pod_v2_with_http_info(cluster_id, pod_name, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_containers_in_pod_v2_using_get_with_http_info(cluster_id, labels, pod_name, **kwargs)  # noqa: E501
+            (data) = self.list_containers_in_pod_v2_with_http_info(cluster_id, pod_name, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_containers_in_pod_v2_using_get_with_http_info(self, cluster_id, labels, pod_name, **kwargs):  # noqa: E501
-        """listContainersInPodV2  # noqa: E501
+    def list_containers_in_pod_v2_with_http_info(self, cluster_id, pod_name, labels, **kwargs):  # noqa: E501
+        """list_containers_in_pod_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_containers_in_pod_v2_using_get_with_http_info(cluster_id, labels, pod_name, async_req=True)
+        >>> thread = api.list_containers_in_pod_v2_with_http_info(cluster_id, pod_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
-        :param str pod_name: podName (required)
+        :param str cluster_id: (required)
+        :param str pod_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[ContainerDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'labels', 'pod_name']  # noqa: E501
+        all_params = ['cluster_id', 'pod_name', 'labels']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -955,22 +955,22 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_containers_in_pod_v2_using_get" % key
+                    " to method list_containers_in_pod_v2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_containers_in_pod_v2_using_get`")  # noqa: E501
-        # verify the required parameter 'labels' is set
-        if ('labels' not in params or
-                params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_containers_in_pod_v2_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_containers_in_pod_v2`")  # noqa: E501
         # verify the required parameter 'pod_name' is set
         if ('pod_name' not in params or
                 params['pod_name'] is None):
-            raise ValueError("Missing the required parameter `pod_name` when calling `list_containers_in_pod_v2_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `pod_name` when calling `list_containers_in_pod_v2`")  # noqa: E501
+        # verify the required parameter 'labels' is set
+        if ('labels' not in params or
+                params['labels'] is None):
+            raise ValueError("Missing the required parameter `labels` when calling `list_containers_in_pod_v2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -992,10 +992,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/{podName}/v2/containers', 'GET',
@@ -1013,39 +1013,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_cron_job_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listCronJobByLabels  # noqa: E501
+    def list_cron_job_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_cron_job_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_cron_job_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_cron_job_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[CronJobDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_cron_job_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_cron_job_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_cron_job_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_cron_job_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_cron_job_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listCronJobByLabels  # noqa: E501
+    def list_cron_job_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_cron_job_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_cron_job_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_cron_job_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[CronJobDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1062,18 +1062,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_cron_job_by_labels_using_get" % key
+                    " to method list_cron_job_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_cron_job_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_cron_job_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_cron_job_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_cron_job_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1093,10 +1093,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/cronJobs', 'GET',
@@ -1114,39 +1114,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_daemon_sets_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listDaemonSetsByLabels  # noqa: E501
+    def list_daemon_sets_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_daemon_sets_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_daemon_sets_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_daemon_sets_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[DaemonSetDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_daemon_sets_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_daemon_sets_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_daemon_sets_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_daemon_sets_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_daemon_sets_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listDaemonSetsByLabels  # noqa: E501
+    def list_daemon_sets_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_daemon_sets_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_daemon_sets_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_daemon_sets_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[DaemonSetDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1163,18 +1163,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_daemon_sets_by_labels_using_get" % key
+                    " to method list_daemon_sets_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_daemon_sets_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_daemon_sets_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_daemon_sets_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_daemon_sets_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1194,10 +1194,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/daemonSets', 'GET',
@@ -1215,39 +1215,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_deployments_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listDeploymentsByLabels  # noqa: E501
+    def list_deployments_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_deployments_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_deployments_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_deployments_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[DeploymentDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_deployments_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_deployments_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_deployments_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_deployments_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_deployments_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listDeploymentsByLabels  # noqa: E501
+    def list_deployments_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_deployments_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_deployments_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_deployments_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[DeploymentDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1264,18 +1264,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_deployments_by_labels_using_get" % key
+                    " to method list_deployments_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_deployments_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_deployments_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_deployments_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_deployments_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1295,10 +1295,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/deployments', 'GET',
@@ -1316,49 +1316,49 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_events_by_k8s_resource_using_get(self, cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs):  # noqa: E501
-        """listEventsByK8sResource  # noqa: E501
+    def list_events_by_k8s_resource(self, cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs):  # noqa: E501
+        """list_events_by_k8s_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_events_by_k8s_resource_using_get(cluster_id, k8s_resource_name, k8s_resource_type, labels, async_req=True)
+        >>> thread = api.list_events_by_k8s_resource(cluster_id, k8s_resource_type, k8s_resource_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str k8s_resource_name: k8sResourceName (required)
-        :param str k8s_resource_type: k8sResourceType (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str k8s_resource_type: (required)
+        :param str k8s_resource_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[EventDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_events_by_k8s_resource_using_get_with_http_info(cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs)  # noqa: E501
+            return self.list_events_by_k8s_resource_with_http_info(cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_events_by_k8s_resource_using_get_with_http_info(cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs)  # noqa: E501
+            (data) = self.list_events_by_k8s_resource_with_http_info(cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_events_by_k8s_resource_using_get_with_http_info(self, cluster_id, k8s_resource_name, k8s_resource_type, labels, **kwargs):  # noqa: E501
-        """listEventsByK8sResource  # noqa: E501
+    def list_events_by_k8s_resource_with_http_info(self, cluster_id, k8s_resource_type, k8s_resource_name, labels, **kwargs):  # noqa: E501
+        """list_events_by_k8s_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_events_by_k8s_resource_using_get_with_http_info(cluster_id, k8s_resource_name, k8s_resource_type, labels, async_req=True)
+        >>> thread = api.list_events_by_k8s_resource_with_http_info(cluster_id, k8s_resource_type, k8s_resource_name, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str k8s_resource_name: k8sResourceName (required)
-        :param str k8s_resource_type: k8sResourceType (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param str k8s_resource_type: (required)
+        :param str k8s_resource_name: (required)
+        :param dict(str, str) labels: (required)
         :return: list[EventDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'k8s_resource_name', 'k8s_resource_type', 'labels']  # noqa: E501
+        all_params = ['cluster_id', 'k8s_resource_type', 'k8s_resource_name', 'labels']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1369,36 +1369,36 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_events_by_k8s_resource_using_get" % key
+                    " to method list_events_by_k8s_resource" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_events_by_k8s_resource_using_get`")  # noqa: E501
-        # verify the required parameter 'k8s_resource_name' is set
-        if ('k8s_resource_name' not in params or
-                params['k8s_resource_name'] is None):
-            raise ValueError("Missing the required parameter `k8s_resource_name` when calling `list_events_by_k8s_resource_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_events_by_k8s_resource`")  # noqa: E501
         # verify the required parameter 'k8s_resource_type' is set
         if ('k8s_resource_type' not in params or
                 params['k8s_resource_type'] is None):
-            raise ValueError("Missing the required parameter `k8s_resource_type` when calling `list_events_by_k8s_resource_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `k8s_resource_type` when calling `list_events_by_k8s_resource`")  # noqa: E501
+        # verify the required parameter 'k8s_resource_name' is set
+        if ('k8s_resource_name' not in params or
+                params['k8s_resource_name'] is None):
+            raise ValueError("Missing the required parameter `k8s_resource_name` when calling `list_events_by_k8s_resource`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_events_by_k8s_resource_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_events_by_k8s_resource`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'k8s_resource_name' in params:
-            path_params['k8sResourceName'] = params['k8s_resource_name']  # noqa: E501
         if 'k8s_resource_type' in params:
             path_params['k8sResourceType'] = params['k8s_resource_type']  # noqa: E501
+        if 'k8s_resource_name' in params:
+            path_params['k8sResourceName'] = params['k8s_resource_name']  # noqa: E501
 
         query_params = []
         if 'labels' in params:
@@ -1412,10 +1412,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/{k8sResourceType}/{k8sResourceName}/events', 'GET',
@@ -1433,39 +1433,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_hpa_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listHpaByLabels  # noqa: E501
+    def list_hpa_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_hpa_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_hpa_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_hpa_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[HorizontalPodAutoscalerDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_hpa_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_hpa_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_hpa_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_hpa_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_hpa_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listHpaByLabels  # noqa: E501
+    def list_hpa_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_hpa_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_hpa_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_hpa_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[HorizontalPodAutoscalerDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1482,18 +1482,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_hpa_by_labels_using_get" % key
+                    " to method list_hpa_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_hpa_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_hpa_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_hpa_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_hpa_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1513,10 +1513,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/hpa', 'GET',
@@ -1534,39 +1534,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_ingresses_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listIngressesByLabels  # noqa: E501
+    def list_ingresses_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_ingresses_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_ingresses_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_ingresses_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[IngressDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_ingresses_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_ingresses_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_ingresses_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_ingresses_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_ingresses_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listIngressesByLabels  # noqa: E501
+    def list_ingresses_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_ingresses_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_ingresses_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_ingresses_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[IngressDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1583,18 +1583,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_ingresses_by_labels_using_get" % key
+                    " to method list_ingresses_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_ingresses_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_ingresses_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_ingresses_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_ingresses_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1614,10 +1614,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/ingresses', 'GET',
@@ -1635,39 +1635,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_jobs_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listJobsByLabels  # noqa: E501
+    def list_jobs_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_jobs_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_jobs_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_jobs_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[JobDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_jobs_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_jobs_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_jobs_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_jobs_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_jobs_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listJobsByLabels  # noqa: E501
+    def list_jobs_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_jobs_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_jobs_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_jobs_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[JobDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1684,18 +1684,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_jobs_by_labels_using_get" % key
+                    " to method list_jobs_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_jobs_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_jobs_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_jobs_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_jobs_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1715,10 +1715,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/jobs', 'GET',
@@ -1736,39 +1736,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_pods_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listPodsByLabels  # noqa: E501
+    def list_pods_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_pods_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_pods_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_pods_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[PodDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_pods_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_pods_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_pods_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_pods_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_pods_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listPodsByLabels  # noqa: E501
+    def list_pods_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_pods_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_pods_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_pods_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[PodDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1785,18 +1785,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_pods_by_labels_using_get" % key
+                    " to method list_pods_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_pods_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_pods_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_pods_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_pods_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1816,10 +1816,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/pods', 'GET',
@@ -1837,39 +1837,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_pvby_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listPVByLabels  # noqa: E501
+    def list_pvby_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_pvby_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_pvby_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_pvby_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[PersistentVolumeDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_pvby_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_pvby_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_pvby_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_pvby_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_pvby_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listPVByLabels  # noqa: E501
+    def list_pvby_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_pvby_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_pvby_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_pvby_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[PersistentVolumeDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1886,18 +1886,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_pvby_labels_using_get" % key
+                    " to method list_pvby_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_pvby_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_pvby_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_pvby_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_pvby_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1917,10 +1917,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/pv', 'GET',
@@ -1938,39 +1938,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_pvcby_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listPVCByLabels  # noqa: E501
+    def list_pvcby_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_pvcby_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_pvcby_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_pvcby_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[PersistentVolumeClaimDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_pvcby_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_pvcby_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_pvcby_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_pvcby_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_pvcby_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listPVCByLabels  # noqa: E501
+    def list_pvcby_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_pvcby_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_pvcby_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_pvcby_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[PersistentVolumeClaimDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1987,18 +1987,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_pvcby_labels_using_get" % key
+                    " to method list_pvcby_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_pvcby_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_pvcby_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_pvcby_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_pvcby_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2018,10 +2018,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/pvc', 'GET',
@@ -2039,39 +2039,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_replicasets_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listReplicasetsByLabels  # noqa: E501
+    def list_replicasets_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_replicasets_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_replicasets_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_replicasets_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[ReplicasetDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_replicasets_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_replicasets_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_replicasets_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_replicasets_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_replicasets_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listReplicasetsByLabels  # noqa: E501
+    def list_replicasets_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_replicasets_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_replicasets_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_replicasets_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[ReplicasetDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2088,18 +2088,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_replicasets_by_labels_using_get" % key
+                    " to method list_replicasets_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_replicasets_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_replicasets_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_replicasets_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_replicasets_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2119,10 +2119,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/replicasets', 'GET',
@@ -2140,39 +2140,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_secrets_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listSecretsByLabels  # noqa: E501
+    def list_secrets_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_secrets_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_secrets_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_secrets_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[SecretDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_secrets_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_secrets_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_secrets_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_secrets_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_secrets_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listSecretsByLabels  # noqa: E501
+    def list_secrets_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_secrets_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_secrets_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_secrets_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[SecretDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2189,18 +2189,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_secrets_by_labels_using_get" % key
+                    " to method list_secrets_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_secrets_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_secrets_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_secrets_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_secrets_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2220,10 +2220,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/secrets', 'GET',
@@ -2241,45 +2241,43 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_services_by_labels_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """listServicesByLabels  # noqa: E501
+    def list_services_by_labels(self, cluster_id, **kwargs):  # noqa: E501
+        """list_services_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_services_by_labels_using_get(cluster_id, async_req=True)
+        >>> thread = api.list_services_by_labels(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels
+        :param str cluster_id: (required)
         :return: list[ServiceDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_services_by_labels_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.list_services_by_labels_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_services_by_labels_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.list_services_by_labels_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def list_services_by_labels_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """listServicesByLabels  # noqa: E501
+    def list_services_by_labels_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """list_services_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_services_by_labels_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.list_services_by_labels_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels
+        :param str cluster_id: (required)
         :return: list[ServiceDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'labels']  # noqa: E501
+        all_params = ['cluster_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2290,14 +2288,14 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_services_by_labels_using_get" % key
+                    " to method list_services_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_services_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_services_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2306,8 +2304,6 @@ class UiKubernetesExplorerControllerApi(object):
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
 
         query_params = []
-        if 'labels' in params:
-            query_params.append(('labels', params['labels']))  # noqa: E501
 
         header_params = {}
 
@@ -2317,10 +2313,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/services', 'GET',
@@ -2338,39 +2334,39 @@ class UiKubernetesExplorerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_statefulsets_labels_by_labels_using_get(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listStatefulsetsLabelsByLabels  # noqa: E501
+    def list_statefulsets_labels_by_labels(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_statefulsets_labels_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_statefulsets_labels_by_labels_using_get(cluster_id, labels, async_req=True)
+        >>> thread = api.list_statefulsets_labels_by_labels(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[StatefulSetDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.list_statefulsets_labels_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            return self.list_statefulsets_labels_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
         else:
-            (data) = self.list_statefulsets_labels_by_labels_using_get_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
+            (data) = self.list_statefulsets_labels_by_labels_with_http_info(cluster_id, labels, **kwargs)  # noqa: E501
             return data
 
-    def list_statefulsets_labels_by_labels_using_get_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
-        """listStatefulsetsLabelsByLabels  # noqa: E501
+    def list_statefulsets_labels_by_labels_with_http_info(self, cluster_id, labels, **kwargs):  # noqa: E501
+        """list_statefulsets_labels_by_labels  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_statefulsets_labels_by_labels_using_get_with_http_info(cluster_id, labels, async_req=True)
+        >>> thread = api.list_statefulsets_labels_by_labels_with_http_info(cluster_id, labels, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param object labels: labels (required)
+        :param str cluster_id: (required)
+        :param dict(str, str) labels: (required)
         :return: list[StatefulSetDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2387,18 +2383,18 @@ class UiKubernetesExplorerControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_statefulsets_labels_by_labels_using_get" % key
+                    " to method list_statefulsets_labels_by_labels" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `list_statefulsets_labels_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `list_statefulsets_labels_by_labels`")  # noqa: E501
         # verify the required parameter 'labels' is set
         if ('labels' not in params or
                 params['labels'] is None):
-            raise ValueError("Missing the required parameter `labels` when calling `list_statefulsets_labels_by_labels_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `labels` when calling `list_statefulsets_labels_by_labels`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2418,10 +2414,10 @@ class UiKubernetesExplorerControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/k8s-explorer/statefulsets', 'GET',

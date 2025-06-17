@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,102 +28,60 @@ class ResourceEnableDisableRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'directory': 'str',
-        'disabled': 'bool',
-        'filename': 'str',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'directory': 'str',
+        'filename': 'str',
+        'disabled': 'bool'
     }
 
     attribute_map = {
-        'directory': 'directory',
-        'disabled': 'disabled',
-        'filename': 'filename',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'directory': 'directory',
+        'filename': 'filename',
+        'disabled': 'disabled'
     }
 
-    def __init__(self, directory=None, disabled=None, filename=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, directory=None, filename=None, disabled=None):  # noqa: E501
         """ResourceEnableDisableRequest - a model defined in Swagger"""  # noqa: E501
-        self._directory = None
-        self._disabled = None
-        self._filename = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._directory = None
+        self._filename = None
+        self._disabled = None
         self.discriminator = None
-        if directory is not None:
-            self.directory = directory
-        if disabled is not None:
-            self.disabled = disabled
-        if filename is not None:
-            self.filename = filename
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if directory is not None:
+            self.directory = directory
+        if filename is not None:
+            self.filename = filename
+        if disabled is not None:
+            self.disabled = disabled
 
     @property
-    def directory(self):
-        """Gets the directory of this ResourceEnableDisableRequest.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this ResourceEnableDisableRequest.  # noqa: E501
 
 
-        :return: The directory of this ResourceEnableDisableRequest.  # noqa: E501
+        :return: The resource_type of this ResourceEnableDisableRequest.  # noqa: E501
         :rtype: str
         """
-        return self._directory
+        return self._resource_type
 
-    @directory.setter
-    def directory(self, directory):
-        """Sets the directory of this ResourceEnableDisableRequest.
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ResourceEnableDisableRequest.
 
 
-        :param directory: The directory of this ResourceEnableDisableRequest.  # noqa: E501
+        :param resource_type: The resource_type of this ResourceEnableDisableRequest.  # noqa: E501
         :type: str
         """
 
-        self._directory = directory
-
-    @property
-    def disabled(self):
-        """Gets the disabled of this ResourceEnableDisableRequest.  # noqa: E501
-
-
-        :return: The disabled of this ResourceEnableDisableRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this ResourceEnableDisableRequest.
-
-
-        :param disabled: The disabled of this ResourceEnableDisableRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._disabled = disabled
-
-    @property
-    def filename(self):
-        """Gets the filename of this ResourceEnableDisableRequest.  # noqa: E501
-
-
-        :return: The filename of this ResourceEnableDisableRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._filename
-
-    @filename.setter
-    def filename(self, filename):
-        """Sets the filename of this ResourceEnableDisableRequest.
-
-
-        :param filename: The filename of this ResourceEnableDisableRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._filename = filename
+        self._resource_type = resource_type
 
     @property
     def resource_name(self):
@@ -147,25 +105,67 @@ class ResourceEnableDisableRequest(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this ResourceEnableDisableRequest.  # noqa: E501
+    def directory(self):
+        """Gets the directory of this ResourceEnableDisableRequest.  # noqa: E501
 
 
-        :return: The resource_type of this ResourceEnableDisableRequest.  # noqa: E501
+        :return: The directory of this ResourceEnableDisableRequest.  # noqa: E501
         :rtype: str
         """
-        return self._resource_type
+        return self._directory
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ResourceEnableDisableRequest.
+    @directory.setter
+    def directory(self, directory):
+        """Sets the directory of this ResourceEnableDisableRequest.
 
 
-        :param resource_type: The resource_type of this ResourceEnableDisableRequest.  # noqa: E501
+        :param directory: The directory of this ResourceEnableDisableRequest.  # noqa: E501
         :type: str
         """
 
-        self._resource_type = resource_type
+        self._directory = directory
+
+    @property
+    def filename(self):
+        """Gets the filename of this ResourceEnableDisableRequest.  # noqa: E501
+
+
+        :return: The filename of this ResourceEnableDisableRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._filename
+
+    @filename.setter
+    def filename(self, filename):
+        """Sets the filename of this ResourceEnableDisableRequest.
+
+
+        :param filename: The filename of this ResourceEnableDisableRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._filename = filename
+
+    @property
+    def disabled(self):
+        """Gets the disabled of this ResourceEnableDisableRequest.  # noqa: E501
+
+
+        :return: The disabled of this ResourceEnableDisableRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this ResourceEnableDisableRequest.
+
+
+        :param disabled: The disabled of this ResourceEnableDisableRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._disabled = disabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

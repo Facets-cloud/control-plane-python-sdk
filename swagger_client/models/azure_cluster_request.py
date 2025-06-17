@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,144 +28,339 @@ class AzureClusterRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auto_sign_off_schedule': 'str',
-        'azs': 'list[str]',
-        'base_cluster_id': 'str',
+        'cloud': 'str',
+        'cluster_name': 'str',
+        'stack_name': 'str',
         'cd_pipeline_parent': 'str',
+        'require_sign_off': 'bool',
+        'tz': 'MaintenanceWindowDTOTimeZone',
+        'release_stream': 'str',
+        'k8s_requests_to_limits_ratio': 'float',
+        'schedules': 'dict(str, str)',
+        'auto_sign_off_schedule': 'str',
+        'enable_auto_sign_off': 'bool',
+        'component_versions': 'dict(str, str)',
+        'is_ephemeral': 'bool',
+        'cloud_account_id': 'str',
+        'base_cluster_id': 'str',
+        'namespace': 'str',
+        'tenant_id': 'str',
+        'subscription_id': 'str',
         'client_id': 'str',
         'client_secret': 'str',
-        'cloud': 'str',
-        'cloud_account_id': 'str',
-        'cluster_name': 'str',
-        'component_versions': 'dict(str, str)',
-        'enable_auto_sign_off': 'bool',
-        'instance_types': 'list[str]',
-        'is_ephemeral': 'bool',
-        'k8s_requests_to_limits_ratio': 'float',
-        'namespace': 'str',
         'region': 'str',
-        'release_stream': 'str',
-        'require_sign_off': 'bool',
-        'resource_group_name': 'str',
-        'schedules': 'dict(str, str)',
-        'stack_name': 'str',
-        'subscription_id': 'str',
-        'tenant_id': 'str',
-        'tz': 'TimeZone',
+        'azs': 'list[str]',
+        'vpc_cidr': 'str',
+        'instance_types': 'list[str]',
         'vnet_name': 'str',
-        'vpc_cidr': 'str'
+        'resource_group_name': 'str'
     }
 
     attribute_map = {
-        'auto_sign_off_schedule': 'autoSignOffSchedule',
-        'azs': 'azs',
-        'base_cluster_id': 'baseClusterId',
+        'cloud': 'cloud',
+        'cluster_name': 'clusterName',
+        'stack_name': 'stackName',
         'cd_pipeline_parent': 'cdPipelineParent',
+        'require_sign_off': 'requireSignOff',
+        'tz': 'tz',
+        'release_stream': 'releaseStream',
+        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
+        'schedules': 'schedules',
+        'auto_sign_off_schedule': 'autoSignOffSchedule',
+        'enable_auto_sign_off': 'enableAutoSignOff',
+        'component_versions': 'componentVersions',
+        'is_ephemeral': 'isEphemeral',
+        'cloud_account_id': 'cloudAccountId',
+        'base_cluster_id': 'baseClusterId',
+        'namespace': 'namespace',
+        'tenant_id': 'tenantId',
+        'subscription_id': 'subscriptionId',
         'client_id': 'clientId',
         'client_secret': 'clientSecret',
-        'cloud': 'cloud',
-        'cloud_account_id': 'cloudAccountId',
-        'cluster_name': 'clusterName',
-        'component_versions': 'componentVersions',
-        'enable_auto_sign_off': 'enableAutoSignOff',
-        'instance_types': 'instanceTypes',
-        'is_ephemeral': 'isEphemeral',
-        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
-        'namespace': 'namespace',
         'region': 'region',
-        'release_stream': 'releaseStream',
-        'require_sign_off': 'requireSignOff',
-        'resource_group_name': 'resourceGroupName',
-        'schedules': 'schedules',
-        'stack_name': 'stackName',
-        'subscription_id': 'subscriptionId',
-        'tenant_id': 'tenantId',
-        'tz': 'tz',
+        'azs': 'azs',
+        'vpc_cidr': 'vpcCIDR',
+        'instance_types': 'instanceTypes',
         'vnet_name': 'vnetName',
-        'vpc_cidr': 'vpcCIDR'
+        'resource_group_name': 'resourceGroupName'
     }
 
-    def __init__(self, auto_sign_off_schedule=None, azs=None, base_cluster_id=None, cd_pipeline_parent=None, client_id=None, client_secret=None, cloud=None, cloud_account_id=None, cluster_name=None, component_versions=None, enable_auto_sign_off=None, instance_types=None, is_ephemeral=None, k8s_requests_to_limits_ratio=None, namespace=None, region=None, release_stream=None, require_sign_off=None, resource_group_name=None, schedules=None, stack_name=None, subscription_id=None, tenant_id=None, tz=None, vnet_name=None, vpc_cidr=None):  # noqa: E501
+    def __init__(self, cloud=None, cluster_name=None, stack_name=None, cd_pipeline_parent=None, require_sign_off=None, tz=None, release_stream=None, k8s_requests_to_limits_ratio=None, schedules=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, component_versions=None, is_ephemeral=None, cloud_account_id=None, base_cluster_id=None, namespace=None, tenant_id=None, subscription_id=None, client_id=None, client_secret=None, region=None, azs=None, vpc_cidr=None, instance_types=None, vnet_name=None, resource_group_name=None):  # noqa: E501
         """AzureClusterRequest - a model defined in Swagger"""  # noqa: E501
-        self._auto_sign_off_schedule = None
-        self._azs = None
-        self._base_cluster_id = None
+        self._cloud = None
+        self._cluster_name = None
+        self._stack_name = None
         self._cd_pipeline_parent = None
+        self._require_sign_off = None
+        self._tz = None
+        self._release_stream = None
+        self._k8s_requests_to_limits_ratio = None
+        self._schedules = None
+        self._auto_sign_off_schedule = None
+        self._enable_auto_sign_off = None
+        self._component_versions = None
+        self._is_ephemeral = None
+        self._cloud_account_id = None
+        self._base_cluster_id = None
+        self._namespace = None
+        self._tenant_id = None
+        self._subscription_id = None
         self._client_id = None
         self._client_secret = None
-        self._cloud = None
-        self._cloud_account_id = None
-        self._cluster_name = None
-        self._component_versions = None
-        self._enable_auto_sign_off = None
-        self._instance_types = None
-        self._is_ephemeral = None
-        self._k8s_requests_to_limits_ratio = None
-        self._namespace = None
         self._region = None
-        self._release_stream = None
-        self._require_sign_off = None
-        self._resource_group_name = None
-        self._schedules = None
-        self._stack_name = None
-        self._subscription_id = None
-        self._tenant_id = None
-        self._tz = None
-        self._vnet_name = None
+        self._azs = None
         self._vpc_cidr = None
+        self._instance_types = None
+        self._vnet_name = None
+        self._resource_group_name = None
         self.discriminator = None
-        if auto_sign_off_schedule is not None:
-            self.auto_sign_off_schedule = auto_sign_off_schedule
-        if azs is not None:
-            self.azs = azs
-        if base_cluster_id is not None:
-            self.base_cluster_id = base_cluster_id
+        if cloud is not None:
+            self.cloud = cloud
+        if cluster_name is not None:
+            self.cluster_name = cluster_name
+        if stack_name is not None:
+            self.stack_name = stack_name
         if cd_pipeline_parent is not None:
             self.cd_pipeline_parent = cd_pipeline_parent
+        if require_sign_off is not None:
+            self.require_sign_off = require_sign_off
+        if tz is not None:
+            self.tz = tz
+        if release_stream is not None:
+            self.release_stream = release_stream
+        if k8s_requests_to_limits_ratio is not None:
+            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+        if schedules is not None:
+            self.schedules = schedules
+        if auto_sign_off_schedule is not None:
+            self.auto_sign_off_schedule = auto_sign_off_schedule
+        if enable_auto_sign_off is not None:
+            self.enable_auto_sign_off = enable_auto_sign_off
+        if component_versions is not None:
+            self.component_versions = component_versions
+        if is_ephemeral is not None:
+            self.is_ephemeral = is_ephemeral
+        if cloud_account_id is not None:
+            self.cloud_account_id = cloud_account_id
+        if base_cluster_id is not None:
+            self.base_cluster_id = base_cluster_id
+        if namespace is not None:
+            self.namespace = namespace
+        if tenant_id is not None:
+            self.tenant_id = tenant_id
+        if subscription_id is not None:
+            self.subscription_id = subscription_id
         if client_id is not None:
             self.client_id = client_id
         if client_secret is not None:
             self.client_secret = client_secret
-        if cloud is not None:
-            self.cloud = cloud
-        if cloud_account_id is not None:
-            self.cloud_account_id = cloud_account_id
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
-        if component_versions is not None:
-            self.component_versions = component_versions
-        if enable_auto_sign_off is not None:
-            self.enable_auto_sign_off = enable_auto_sign_off
-        if instance_types is not None:
-            self.instance_types = instance_types
-        if is_ephemeral is not None:
-            self.is_ephemeral = is_ephemeral
-        if k8s_requests_to_limits_ratio is not None:
-            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-        if namespace is not None:
-            self.namespace = namespace
         if region is not None:
             self.region = region
-        if release_stream is not None:
-            self.release_stream = release_stream
-        if require_sign_off is not None:
-            self.require_sign_off = require_sign_off
-        if resource_group_name is not None:
-            self.resource_group_name = resource_group_name
-        if schedules is not None:
-            self.schedules = schedules
-        if stack_name is not None:
-            self.stack_name = stack_name
-        if subscription_id is not None:
-            self.subscription_id = subscription_id
-        if tenant_id is not None:
-            self.tenant_id = tenant_id
-        if tz is not None:
-            self.tz = tz
-        if vnet_name is not None:
-            self.vnet_name = vnet_name
+        if azs is not None:
+            self.azs = azs
         if vpc_cidr is not None:
             self.vpc_cidr = vpc_cidr
+        if instance_types is not None:
+            self.instance_types = instance_types
+        if vnet_name is not None:
+            self.vnet_name = vnet_name
+        if resource_group_name is not None:
+            self.resource_group_name = resource_group_name
+
+    @property
+    def cloud(self):
+        """Gets the cloud of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The cloud of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud
+
+    @cloud.setter
+    def cloud(self, cloud):
+        """Sets the cloud of this AzureClusterRequest.
+
+
+        :param cloud: The cloud of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if cloud not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
+                .format(cloud, allowed_values)
+            )
+
+        self._cloud = cloud
+
+    @property
+    def cluster_name(self):
+        """Gets the cluster_name of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The cluster_name of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_name
+
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """Sets the cluster_name of this AzureClusterRequest.
+
+
+        :param cluster_name: The cluster_name of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_name = cluster_name
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The stack_name of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this AzureClusterRequest.
+
+
+        :param stack_name: The stack_name of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_name = stack_name
+
+    @property
+    def cd_pipeline_parent(self):
+        """Gets the cd_pipeline_parent of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The cd_pipeline_parent of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cd_pipeline_parent
+
+    @cd_pipeline_parent.setter
+    def cd_pipeline_parent(self, cd_pipeline_parent):
+        """Sets the cd_pipeline_parent of this AzureClusterRequest.
+
+
+        :param cd_pipeline_parent: The cd_pipeline_parent of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._cd_pipeline_parent = cd_pipeline_parent
+
+    @property
+    def require_sign_off(self):
+        """Gets the require_sign_off of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The require_sign_off of this AzureClusterRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_sign_off
+
+    @require_sign_off.setter
+    def require_sign_off(self, require_sign_off):
+        """Sets the require_sign_off of this AzureClusterRequest.
+
+
+        :param require_sign_off: The require_sign_off of this AzureClusterRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_sign_off = require_sign_off
+
+    @property
+    def tz(self):
+        """Gets the tz of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The tz of this AzureClusterRequest.  # noqa: E501
+        :rtype: MaintenanceWindowDTOTimeZone
+        """
+        return self._tz
+
+    @tz.setter
+    def tz(self, tz):
+        """Sets the tz of this AzureClusterRequest.
+
+
+        :param tz: The tz of this AzureClusterRequest.  # noqa: E501
+        :type: MaintenanceWindowDTOTimeZone
+        """
+
+        self._tz = tz
+
+    @property
+    def release_stream(self):
+        """Gets the release_stream of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The release_stream of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_stream
+
+    @release_stream.setter
+    def release_stream(self, release_stream):
+        """Sets the release_stream of this AzureClusterRequest.
+
+
+        :param release_stream: The release_stream of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._release_stream = release_stream
+
+    @property
+    def k8s_requests_to_limits_ratio(self):
+        """Gets the k8s_requests_to_limits_ratio of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The k8s_requests_to_limits_ratio of this AzureClusterRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._k8s_requests_to_limits_ratio
+
+    @k8s_requests_to_limits_ratio.setter
+    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
+        """Sets the k8s_requests_to_limits_ratio of this AzureClusterRequest.
+
+
+        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this AzureClusterRequest.  # noqa: E501
+        :type: float
+        """
+
+        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+
+    @property
+    def schedules(self):
+        """Gets the schedules of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The schedules of this AzureClusterRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._schedules
+
+    @schedules.setter
+    def schedules(self, schedules):
+        """Sets the schedules of this AzureClusterRequest.
+
+
+        :param schedules: The schedules of this AzureClusterRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._schedules = schedules
 
     @property
     def auto_sign_off_schedule(self):
@@ -189,25 +384,88 @@ class AzureClusterRequest(object):
         self._auto_sign_off_schedule = auto_sign_off_schedule
 
     @property
-    def azs(self):
-        """Gets the azs of this AzureClusterRequest.  # noqa: E501
+    def enable_auto_sign_off(self):
+        """Gets the enable_auto_sign_off of this AzureClusterRequest.  # noqa: E501
 
 
-        :return: The azs of this AzureClusterRequest.  # noqa: E501
-        :rtype: list[str]
+        :return: The enable_auto_sign_off of this AzureClusterRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._azs
+        return self._enable_auto_sign_off
 
-    @azs.setter
-    def azs(self, azs):
-        """Sets the azs of this AzureClusterRequest.
+    @enable_auto_sign_off.setter
+    def enable_auto_sign_off(self, enable_auto_sign_off):
+        """Sets the enable_auto_sign_off of this AzureClusterRequest.
 
 
-        :param azs: The azs of this AzureClusterRequest.  # noqa: E501
-        :type: list[str]
+        :param enable_auto_sign_off: The enable_auto_sign_off of this AzureClusterRequest.  # noqa: E501
+        :type: bool
         """
 
-        self._azs = azs
+        self._enable_auto_sign_off = enable_auto_sign_off
+
+    @property
+    def component_versions(self):
+        """Gets the component_versions of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The component_versions of this AzureClusterRequest.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._component_versions
+
+    @component_versions.setter
+    def component_versions(self, component_versions):
+        """Sets the component_versions of this AzureClusterRequest.
+
+
+        :param component_versions: The component_versions of this AzureClusterRequest.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._component_versions = component_versions
+
+    @property
+    def is_ephemeral(self):
+        """Gets the is_ephemeral of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The is_ephemeral of this AzureClusterRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_ephemeral
+
+    @is_ephemeral.setter
+    def is_ephemeral(self, is_ephemeral):
+        """Sets the is_ephemeral of this AzureClusterRequest.
+
+
+        :param is_ephemeral: The is_ephemeral of this AzureClusterRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_ephemeral = is_ephemeral
+
+    @property
+    def cloud_account_id(self):
+        """Gets the cloud_account_id of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The cloud_account_id of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_account_id
+
+    @cloud_account_id.setter
+    def cloud_account_id(self, cloud_account_id):
+        """Sets the cloud_account_id of this AzureClusterRequest.
+
+
+        :param cloud_account_id: The cloud_account_id of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_account_id = cloud_account_id
 
     @property
     def base_cluster_id(self):
@@ -231,25 +489,67 @@ class AzureClusterRequest(object):
         self._base_cluster_id = base_cluster_id
 
     @property
-    def cd_pipeline_parent(self):
-        """Gets the cd_pipeline_parent of this AzureClusterRequest.  # noqa: E501
+    def namespace(self):
+        """Gets the namespace of this AzureClusterRequest.  # noqa: E501
 
 
-        :return: The cd_pipeline_parent of this AzureClusterRequest.  # noqa: E501
+        :return: The namespace of this AzureClusterRequest.  # noqa: E501
         :rtype: str
         """
-        return self._cd_pipeline_parent
+        return self._namespace
 
-    @cd_pipeline_parent.setter
-    def cd_pipeline_parent(self, cd_pipeline_parent):
-        """Sets the cd_pipeline_parent of this AzureClusterRequest.
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this AzureClusterRequest.
 
 
-        :param cd_pipeline_parent: The cd_pipeline_parent of this AzureClusterRequest.  # noqa: E501
+        :param namespace: The namespace of this AzureClusterRequest.  # noqa: E501
         :type: str
         """
 
-        self._cd_pipeline_parent = cd_pipeline_parent
+        self._namespace = namespace
+
+    @property
+    def tenant_id(self):
+        """Gets the tenant_id of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The tenant_id of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._tenant_id
+
+    @tenant_id.setter
+    def tenant_id(self, tenant_id):
+        """Sets the tenant_id of this AzureClusterRequest.
+
+
+        :param tenant_id: The tenant_id of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._tenant_id = tenant_id
+
+    @property
+    def subscription_id(self):
+        """Gets the subscription_id of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The subscription_id of this AzureClusterRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """Sets the subscription_id of this AzureClusterRequest.
+
+
+        :param subscription_id: The subscription_id of this AzureClusterRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._subscription_id = subscription_id
 
     @property
     def client_id(self):
@@ -294,115 +594,67 @@ class AzureClusterRequest(object):
         self._client_secret = client_secret
 
     @property
-    def cloud(self):
-        """Gets the cloud of this AzureClusterRequest.  # noqa: E501
+    def region(self):
+        """Gets the region of this AzureClusterRequest.  # noqa: E501
 
 
-        :return: The cloud of this AzureClusterRequest.  # noqa: E501
+        :return: The region of this AzureClusterRequest.  # noqa: E501
         :rtype: str
         """
-        return self._cloud
+        return self._region
 
-    @cloud.setter
-    def cloud(self, cloud):
-        """Sets the cloud of this AzureClusterRequest.
-
-
-        :param cloud: The cloud of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if cloud not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
-                .format(cloud, allowed_values)
-            )
-
-        self._cloud = cloud
-
-    @property
-    def cloud_account_id(self):
-        """Gets the cloud_account_id of this AzureClusterRequest.  # noqa: E501
+    @region.setter
+    def region(self, region):
+        """Sets the region of this AzureClusterRequest.
 
 
-        :return: The cloud_account_id of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_account_id
-
-    @cloud_account_id.setter
-    def cloud_account_id(self, cloud_account_id):
-        """Sets the cloud_account_id of this AzureClusterRequest.
-
-
-        :param cloud_account_id: The cloud_account_id of this AzureClusterRequest.  # noqa: E501
+        :param region: The region of this AzureClusterRequest.  # noqa: E501
         :type: str
         """
 
-        self._cloud_account_id = cloud_account_id
+        self._region = region
 
     @property
-    def cluster_name(self):
-        """Gets the cluster_name of this AzureClusterRequest.  # noqa: E501
+    def azs(self):
+        """Gets the azs of this AzureClusterRequest.  # noqa: E501
 
 
-        :return: The cluster_name of this AzureClusterRequest.  # noqa: E501
+        :return: The azs of this AzureClusterRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._azs
+
+    @azs.setter
+    def azs(self, azs):
+        """Sets the azs of this AzureClusterRequest.
+
+
+        :param azs: The azs of this AzureClusterRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._azs = azs
+
+    @property
+    def vpc_cidr(self):
+        """Gets the vpc_cidr of this AzureClusterRequest.  # noqa: E501
+
+
+        :return: The vpc_cidr of this AzureClusterRequest.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_name
+        return self._vpc_cidr
 
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
-        """Sets the cluster_name of this AzureClusterRequest.
+    @vpc_cidr.setter
+    def vpc_cidr(self, vpc_cidr):
+        """Sets the vpc_cidr of this AzureClusterRequest.
 
 
-        :param cluster_name: The cluster_name of this AzureClusterRequest.  # noqa: E501
+        :param vpc_cidr: The vpc_cidr of this AzureClusterRequest.  # noqa: E501
         :type: str
         """
 
-        self._cluster_name = cluster_name
-
-    @property
-    def component_versions(self):
-        """Gets the component_versions of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The component_versions of this AzureClusterRequest.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._component_versions
-
-    @component_versions.setter
-    def component_versions(self, component_versions):
-        """Sets the component_versions of this AzureClusterRequest.
-
-
-        :param component_versions: The component_versions of this AzureClusterRequest.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._component_versions = component_versions
-
-    @property
-    def enable_auto_sign_off(self):
-        """Gets the enable_auto_sign_off of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The enable_auto_sign_off of this AzureClusterRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_auto_sign_off
-
-    @enable_auto_sign_off.setter
-    def enable_auto_sign_off(self, enable_auto_sign_off):
-        """Sets the enable_auto_sign_off of this AzureClusterRequest.
-
-
-        :param enable_auto_sign_off: The enable_auto_sign_off of this AzureClusterRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_auto_sign_off = enable_auto_sign_off
+        self._vpc_cidr = vpc_cidr
 
     @property
     def instance_types(self):
@@ -426,258 +678,6 @@ class AzureClusterRequest(object):
         self._instance_types = instance_types
 
     @property
-    def is_ephemeral(self):
-        """Gets the is_ephemeral of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The is_ephemeral of this AzureClusterRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_ephemeral
-
-    @is_ephemeral.setter
-    def is_ephemeral(self, is_ephemeral):
-        """Sets the is_ephemeral of this AzureClusterRequest.
-
-
-        :param is_ephemeral: The is_ephemeral of this AzureClusterRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_ephemeral = is_ephemeral
-
-    @property
-    def k8s_requests_to_limits_ratio(self):
-        """Gets the k8s_requests_to_limits_ratio of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The k8s_requests_to_limits_ratio of this AzureClusterRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._k8s_requests_to_limits_ratio
-
-    @k8s_requests_to_limits_ratio.setter
-    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
-        """Sets the k8s_requests_to_limits_ratio of this AzureClusterRequest.
-
-
-        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this AzureClusterRequest.  # noqa: E501
-        :type: float
-        """
-
-        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-
-    @property
-    def namespace(self):
-        """Gets the namespace of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The namespace of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """Sets the namespace of this AzureClusterRequest.
-
-
-        :param namespace: The namespace of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._namespace = namespace
-
-    @property
-    def region(self):
-        """Gets the region of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The region of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._region
-
-    @region.setter
-    def region(self, region):
-        """Sets the region of this AzureClusterRequest.
-
-
-        :param region: The region of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._region = region
-
-    @property
-    def release_stream(self):
-        """Gets the release_stream of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The release_stream of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_stream
-
-    @release_stream.setter
-    def release_stream(self, release_stream):
-        """Sets the release_stream of this AzureClusterRequest.
-
-
-        :param release_stream: The release_stream of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._release_stream = release_stream
-
-    @property
-    def require_sign_off(self):
-        """Gets the require_sign_off of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The require_sign_off of this AzureClusterRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._require_sign_off
-
-    @require_sign_off.setter
-    def require_sign_off(self, require_sign_off):
-        """Sets the require_sign_off of this AzureClusterRequest.
-
-
-        :param require_sign_off: The require_sign_off of this AzureClusterRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._require_sign_off = require_sign_off
-
-    @property
-    def resource_group_name(self):
-        """Gets the resource_group_name of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The resource_group_name of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_group_name
-
-    @resource_group_name.setter
-    def resource_group_name(self, resource_group_name):
-        """Sets the resource_group_name of this AzureClusterRequest.
-
-
-        :param resource_group_name: The resource_group_name of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_group_name = resource_group_name
-
-    @property
-    def schedules(self):
-        """Gets the schedules of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The schedules of this AzureClusterRequest.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._schedules
-
-    @schedules.setter
-    def schedules(self, schedules):
-        """Sets the schedules of this AzureClusterRequest.
-
-
-        :param schedules: The schedules of this AzureClusterRequest.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._schedules = schedules
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The stack_name of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this AzureClusterRequest.
-
-
-        :param stack_name: The stack_name of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
-
-    @property
-    def subscription_id(self):
-        """Gets the subscription_id of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The subscription_id of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._subscription_id
-
-    @subscription_id.setter
-    def subscription_id(self, subscription_id):
-        """Sets the subscription_id of this AzureClusterRequest.
-
-
-        :param subscription_id: The subscription_id of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._subscription_id = subscription_id
-
-    @property
-    def tenant_id(self):
-        """Gets the tenant_id of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The tenant_id of this AzureClusterRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._tenant_id
-
-    @tenant_id.setter
-    def tenant_id(self, tenant_id):
-        """Sets the tenant_id of this AzureClusterRequest.
-
-
-        :param tenant_id: The tenant_id of this AzureClusterRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._tenant_id = tenant_id
-
-    @property
-    def tz(self):
-        """Gets the tz of this AzureClusterRequest.  # noqa: E501
-
-
-        :return: The tz of this AzureClusterRequest.  # noqa: E501
-        :rtype: TimeZone
-        """
-        return self._tz
-
-    @tz.setter
-    def tz(self, tz):
-        """Sets the tz of this AzureClusterRequest.
-
-
-        :param tz: The tz of this AzureClusterRequest.  # noqa: E501
-        :type: TimeZone
-        """
-
-        self._tz = tz
-
-    @property
     def vnet_name(self):
         """Gets the vnet_name of this AzureClusterRequest.  # noqa: E501
 
@@ -699,25 +699,25 @@ class AzureClusterRequest(object):
         self._vnet_name = vnet_name
 
     @property
-    def vpc_cidr(self):
-        """Gets the vpc_cidr of this AzureClusterRequest.  # noqa: E501
+    def resource_group_name(self):
+        """Gets the resource_group_name of this AzureClusterRequest.  # noqa: E501
 
 
-        :return: The vpc_cidr of this AzureClusterRequest.  # noqa: E501
+        :return: The resource_group_name of this AzureClusterRequest.  # noqa: E501
         :rtype: str
         """
-        return self._vpc_cidr
+        return self._resource_group_name
 
-    @vpc_cidr.setter
-    def vpc_cidr(self, vpc_cidr):
-        """Sets the vpc_cidr of this AzureClusterRequest.
+    @resource_group_name.setter
+    def resource_group_name(self, resource_group_name):
+        """Sets the resource_group_name of this AzureClusterRequest.
 
 
-        :param vpc_cidr: The vpc_cidr of this AzureClusterRequest.  # noqa: E501
+        :param resource_group_name: The resource_group_name of this AzureClusterRequest.  # noqa: E501
         :type: str
         """
 
-        self._vpc_cidr = vpc_cidr
+        self._resource_group_name = resource_group_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

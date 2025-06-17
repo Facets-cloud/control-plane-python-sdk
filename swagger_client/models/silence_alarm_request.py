@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,77 @@ class SilenceAlarmRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'comment': 'str',
-        'id': 'str',
         'labels': 'dict(str, str)',
-        'snooze_in_minutes': 'int'
+        'snooze_in_minutes': 'int',
+        'id': 'str',
+        'comment': 'str'
     }
 
     attribute_map = {
-        'comment': 'comment',
-        'id': 'id',
         'labels': 'labels',
-        'snooze_in_minutes': 'snoozeInMinutes'
+        'snooze_in_minutes': 'snoozeInMinutes',
+        'id': 'id',
+        'comment': 'comment'
     }
 
-    def __init__(self, comment=None, id=None, labels=None, snooze_in_minutes=None):  # noqa: E501
+    def __init__(self, labels=None, snooze_in_minutes=None, id=None, comment=None):  # noqa: E501
         """SilenceAlarmRequest - a model defined in Swagger"""  # noqa: E501
-        self._comment = None
-        self._id = None
         self._labels = None
         self._snooze_in_minutes = None
+        self._id = None
+        self._comment = None
         self.discriminator = None
-        if comment is not None:
-            self.comment = comment
+        self.labels = labels
+        self.snooze_in_minutes = snooze_in_minutes
         if id is not None:
             self.id = id
-        if labels is not None:
-            self.labels = labels
-        if snooze_in_minutes is not None:
-            self.snooze_in_minutes = snooze_in_minutes
+        self.comment = comment
 
     @property
-    def comment(self):
-        """Gets the comment of this SilenceAlarmRequest.  # noqa: E501
+    def labels(self):
+        """Gets the labels of this SilenceAlarmRequest.  # noqa: E501
 
 
-        :return: The comment of this SilenceAlarmRequest.  # noqa: E501
-        :rtype: str
+        :return: The labels of this SilenceAlarmRequest.  # noqa: E501
+        :rtype: dict(str, str)
         """
-        return self._comment
+        return self._labels
 
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this SilenceAlarmRequest.
+    @labels.setter
+    def labels(self, labels):
+        """Sets the labels of this SilenceAlarmRequest.
 
 
-        :param comment: The comment of this SilenceAlarmRequest.  # noqa: E501
-        :type: str
+        :param labels: The labels of this SilenceAlarmRequest.  # noqa: E501
+        :type: dict(str, str)
         """
+        if labels is None:
+            raise ValueError("Invalid value for `labels`, must not be `None`")  # noqa: E501
 
-        self._comment = comment
+        self._labels = labels
+
+    @property
+    def snooze_in_minutes(self):
+        """Gets the snooze_in_minutes of this SilenceAlarmRequest.  # noqa: E501
+
+
+        :return: The snooze_in_minutes of this SilenceAlarmRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._snooze_in_minutes
+
+    @snooze_in_minutes.setter
+    def snooze_in_minutes(self, snooze_in_minutes):
+        """Sets the snooze_in_minutes of this SilenceAlarmRequest.
+
+
+        :param snooze_in_minutes: The snooze_in_minutes of this SilenceAlarmRequest.  # noqa: E501
+        :type: int
+        """
+        if snooze_in_minutes is None:
+            raise ValueError("Invalid value for `snooze_in_minutes`, must not be `None`")  # noqa: E501
+
+        self._snooze_in_minutes = snooze_in_minutes
 
     @property
     def id(self):
@@ -100,46 +122,27 @@ class SilenceAlarmRequest(object):
         self._id = id
 
     @property
-    def labels(self):
-        """Gets the labels of this SilenceAlarmRequest.  # noqa: E501
+    def comment(self):
+        """Gets the comment of this SilenceAlarmRequest.  # noqa: E501
 
 
-        :return: The labels of this SilenceAlarmRequest.  # noqa: E501
-        :rtype: dict(str, str)
+        :return: The comment of this SilenceAlarmRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._labels
+        return self._comment
 
-    @labels.setter
-    def labels(self, labels):
-        """Sets the labels of this SilenceAlarmRequest.
+    @comment.setter
+    def comment(self, comment):
+        """Sets the comment of this SilenceAlarmRequest.
 
 
-        :param labels: The labels of this SilenceAlarmRequest.  # noqa: E501
-        :type: dict(str, str)
+        :param comment: The comment of this SilenceAlarmRequest.  # noqa: E501
+        :type: str
         """
+        if comment is None:
+            raise ValueError("Invalid value for `comment`, must not be `None`")  # noqa: E501
 
-        self._labels = labels
-
-    @property
-    def snooze_in_minutes(self):
-        """Gets the snooze_in_minutes of this SilenceAlarmRequest.  # noqa: E501
-
-
-        :return: The snooze_in_minutes of this SilenceAlarmRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._snooze_in_minutes
-
-    @snooze_in_minutes.setter
-    def snooze_in_minutes(self, snooze_in_minutes):
-        """Sets the snooze_in_minutes of this SilenceAlarmRequest.
-
-
-        :param snooze_in_minutes: The snooze_in_minutes of this SilenceAlarmRequest.  # noqa: E501
-        :type: int
-        """
-
-        self._snooze_in_minutes = snooze_in_minutes
+        self._comment = comment
 
     def to_dict(self):
         """Returns the model properties as a dict"""

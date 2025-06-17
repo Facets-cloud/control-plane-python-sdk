@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,28 +29,28 @@ class IntentOutput(object):
     """
     swagger_types = {
         'name': 'str',
-        'title': 'str',
-        'type': 'str'
+        'type': 'str',
+        'title': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'title': 'title',
-        'type': 'type'
+        'type': 'type',
+        'title': 'title'
     }
 
-    def __init__(self, name=None, title=None, type=None):  # noqa: E501
+    def __init__(self, name=None, type=None, title=None):  # noqa: E501
         """IntentOutput - a model defined in Swagger"""  # noqa: E501
         self._name = None
-        self._title = None
         self._type = None
+        self._title = None
         self.discriminator = None
         if name is not None:
             self.name = name
-        if title is not None:
-            self.title = title
         if type is not None:
             self.type = type
+        if title is not None:
+            self.title = title
 
     @property
     def name(self):
@@ -74,27 +74,6 @@ class IntentOutput(object):
         self._name = name
 
     @property
-    def title(self):
-        """Gets the title of this IntentOutput.  # noqa: E501
-
-
-        :return: The title of this IntentOutput.  # noqa: E501
-        :rtype: str
-        """
-        return self._title
-
-    @title.setter
-    def title(self, title):
-        """Sets the title of this IntentOutput.
-
-
-        :param title: The title of this IntentOutput.  # noqa: E501
-        :type: str
-        """
-
-        self._title = title
-
-    @property
     def type(self):
         """Gets the type of this IntentOutput.  # noqa: E501
 
@@ -114,6 +93,27 @@ class IntentOutput(object):
         """
 
         self._type = type
+
+    @property
+    def title(self):
+        """Gets the title of this IntentOutput.  # noqa: E501
+
+
+        :return: The title of this IntentOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this IntentOutput.
+
+
+        :param title: The title of this IntentOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._title = title
 
     def to_dict(self):
         """Returns the model properties as a dict"""

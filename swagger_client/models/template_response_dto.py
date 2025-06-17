@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,107 +28,65 @@ class TemplateResponseDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'clouds': 'list[str]',
-        'description': 'str',
-        'display_name': 'str',
-        'group': 'str',
         'name': 'str',
-        'type': 'str'
+        'group': 'str',
+        'clouds': 'list[str]',
+        'type': 'str',
+        'display_name': 'str',
+        'description': 'str'
     }
 
     attribute_map = {
-        'clouds': 'clouds',
-        'description': 'description',
-        'display_name': 'displayName',
-        'group': 'group',
         'name': 'name',
-        'type': 'type'
+        'group': 'group',
+        'clouds': 'clouds',
+        'type': 'type',
+        'display_name': 'displayName',
+        'description': 'description'
     }
 
-    def __init__(self, clouds=None, description=None, display_name=None, group=None, name=None, type=None):  # noqa: E501
+    def __init__(self, name=None, group=None, clouds=None, type=None, display_name=None, description=None):  # noqa: E501
         """TemplateResponseDTO - a model defined in Swagger"""  # noqa: E501
-        self._clouds = None
-        self._description = None
-        self._display_name = None
-        self._group = None
         self._name = None
+        self._group = None
+        self._clouds = None
         self._type = None
+        self._display_name = None
+        self._description = None
         self.discriminator = None
-        if clouds is not None:
-            self.clouds = clouds
-        if description is not None:
-            self.description = description
-        if display_name is not None:
-            self.display_name = display_name
-        if group is not None:
-            self.group = group
         if name is not None:
             self.name = name
+        if group is not None:
+            self.group = group
+        if clouds is not None:
+            self.clouds = clouds
         if type is not None:
             self.type = type
+        if display_name is not None:
+            self.display_name = display_name
+        if description is not None:
+            self.description = description
 
     @property
-    def clouds(self):
-        """Gets the clouds of this TemplateResponseDTO.  # noqa: E501
+    def name(self):
+        """Gets the name of this TemplateResponseDTO.  # noqa: E501
 
 
-        :return: The clouds of this TemplateResponseDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._clouds
-
-    @clouds.setter
-    def clouds(self, clouds):
-        """Sets the clouds of this TemplateResponseDTO.
-
-
-        :param clouds: The clouds of this TemplateResponseDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._clouds = clouds
-
-    @property
-    def description(self):
-        """Gets the description of this TemplateResponseDTO.  # noqa: E501
-
-
-        :return: The description of this TemplateResponseDTO.  # noqa: E501
+        :return: The name of this TemplateResponseDTO.  # noqa: E501
         :rtype: str
         """
-        return self._description
+        return self._name
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this TemplateResponseDTO.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this TemplateResponseDTO.
 
 
-        :param description: The description of this TemplateResponseDTO.  # noqa: E501
+        :param name: The name of this TemplateResponseDTO.  # noqa: E501
         :type: str
         """
 
-        self._description = description
-
-    @property
-    def display_name(self):
-        """Gets the display_name of this TemplateResponseDTO.  # noqa: E501
-
-
-        :return: The display_name of this TemplateResponseDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """Sets the display_name of this TemplateResponseDTO.
-
-
-        :param display_name: The display_name of this TemplateResponseDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._display_name = display_name
+        self._name = name
 
     @property
     def group(self):
@@ -152,25 +110,25 @@ class TemplateResponseDTO(object):
         self._group = group
 
     @property
-    def name(self):
-        """Gets the name of this TemplateResponseDTO.  # noqa: E501
+    def clouds(self):
+        """Gets the clouds of this TemplateResponseDTO.  # noqa: E501
 
 
-        :return: The name of this TemplateResponseDTO.  # noqa: E501
-        :rtype: str
+        :return: The clouds of this TemplateResponseDTO.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._name
+        return self._clouds
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this TemplateResponseDTO.
+    @clouds.setter
+    def clouds(self, clouds):
+        """Sets the clouds of this TemplateResponseDTO.
 
 
-        :param name: The name of this TemplateResponseDTO.  # noqa: E501
-        :type: str
+        :param clouds: The clouds of this TemplateResponseDTO.  # noqa: E501
+        :type: list[str]
         """
 
-        self._name = name
+        self._clouds = clouds
 
     @property
     def type(self):
@@ -198,6 +156,48 @@ class TemplateResponseDTO(object):
             )
 
         self._type = type
+
+    @property
+    def display_name(self):
+        """Gets the display_name of this TemplateResponseDTO.  # noqa: E501
+
+
+        :return: The display_name of this TemplateResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this TemplateResponseDTO.
+
+
+        :param display_name: The display_name of this TemplateResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._display_name = display_name
+
+    @property
+    def description(self):
+        """Gets the description of this TemplateResponseDTO.  # noqa: E501
+
+
+        :return: The description of this TemplateResponseDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this TemplateResponseDTO.
+
+
+        :param description: The description of this TemplateResponseDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     def to_dict(self):
         """Returns the model properties as a dict"""

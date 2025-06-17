@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,79 +28,75 @@ class CiArtifactResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'applied_rule_id': 'str',
-        'applied_rule_name': 'str',
-        'applied_rule_version_id': 'str',
         'artifact_id': 'str',
+        'external_id': 'str',
         'artifact_name': 'str',
         'artifact_uri': 'str',
         'artifactory': 'str',
         'build_description': 'str',
-        'classified': 'bool',
-        'created_by': 'str',
         'created_on': 'datetime',
-        'external_id': 'str',
-        'metadata': 'dict(str, str)',
-        'promoted': 'bool',
-        'registration_type': 'str',
+        'versioning_key': 'str',
         'registration_value': 'str',
+        'created_by': 'str',
+        'registration_type': 'str',
+        'applied_rule_version_id': 'str',
+        'applied_rule_id': 'str',
+        'applied_rule_name': 'str',
+        'metadata': 'dict(str, str)',
         'repository_name': 'str',
         'tag': 'str',
-        'versioning_key': 'str'
+        'promoted': 'bool',
+        'classified': 'bool'
     }
 
     attribute_map = {
-        'applied_rule_id': 'appliedRuleId',
-        'applied_rule_name': 'appliedRuleName',
-        'applied_rule_version_id': 'appliedRuleVersionId',
         'artifact_id': 'artifactId',
+        'external_id': 'externalId',
         'artifact_name': 'artifactName',
         'artifact_uri': 'artifactUri',
         'artifactory': 'artifactory',
         'build_description': 'buildDescription',
-        'classified': 'classified',
-        'created_by': 'createdBy',
         'created_on': 'createdOn',
-        'external_id': 'externalId',
-        'metadata': 'metadata',
-        'promoted': 'promoted',
-        'registration_type': 'registrationType',
+        'versioning_key': 'versioningKey',
         'registration_value': 'registrationValue',
+        'created_by': 'createdBy',
+        'registration_type': 'registrationType',
+        'applied_rule_version_id': 'appliedRuleVersionId',
+        'applied_rule_id': 'appliedRuleId',
+        'applied_rule_name': 'appliedRuleName',
+        'metadata': 'metadata',
         'repository_name': 'repositoryName',
         'tag': 'tag',
-        'versioning_key': 'versioningKey'
+        'promoted': 'promoted',
+        'classified': 'classified'
     }
 
-    def __init__(self, applied_rule_id=None, applied_rule_name=None, applied_rule_version_id=None, artifact_id=None, artifact_name=None, artifact_uri=None, artifactory=None, build_description=None, classified=None, created_by=None, created_on=None, external_id=None, metadata=None, promoted=None, registration_type=None, registration_value=None, repository_name=None, tag=None, versioning_key=None):  # noqa: E501
+    def __init__(self, artifact_id=None, external_id=None, artifact_name=None, artifact_uri=None, artifactory=None, build_description=None, created_on=None, versioning_key=None, registration_value=None, created_by=None, registration_type=None, applied_rule_version_id=None, applied_rule_id=None, applied_rule_name=None, metadata=None, repository_name=None, tag=None, promoted=None, classified=None):  # noqa: E501
         """CiArtifactResponse - a model defined in Swagger"""  # noqa: E501
-        self._applied_rule_id = None
-        self._applied_rule_name = None
-        self._applied_rule_version_id = None
         self._artifact_id = None
+        self._external_id = None
         self._artifact_name = None
         self._artifact_uri = None
         self._artifactory = None
         self._build_description = None
-        self._classified = None
-        self._created_by = None
         self._created_on = None
-        self._external_id = None
-        self._metadata = None
-        self._promoted = None
-        self._registration_type = None
+        self._versioning_key = None
         self._registration_value = None
+        self._created_by = None
+        self._registration_type = None
+        self._applied_rule_version_id = None
+        self._applied_rule_id = None
+        self._applied_rule_name = None
+        self._metadata = None
         self._repository_name = None
         self._tag = None
-        self._versioning_key = None
+        self._promoted = None
+        self._classified = None
         self.discriminator = None
-        if applied_rule_id is not None:
-            self.applied_rule_id = applied_rule_id
-        if applied_rule_name is not None:
-            self.applied_rule_name = applied_rule_name
-        if applied_rule_version_id is not None:
-            self.applied_rule_version_id = applied_rule_version_id
         if artifact_id is not None:
             self.artifact_id = artifact_id
+        if external_id is not None:
+            self.external_id = external_id
         if artifact_name is not None:
             self.artifact_name = artifact_name
         if artifact_uri is not None:
@@ -109,91 +105,32 @@ class CiArtifactResponse(object):
             self.artifactory = artifactory
         if build_description is not None:
             self.build_description = build_description
-        if classified is not None:
-            self.classified = classified
-        if created_by is not None:
-            self.created_by = created_by
         if created_on is not None:
             self.created_on = created_on
-        if external_id is not None:
-            self.external_id = external_id
-        if metadata is not None:
-            self.metadata = metadata
-        if promoted is not None:
-            self.promoted = promoted
-        if registration_type is not None:
-            self.registration_type = registration_type
+        if versioning_key is not None:
+            self.versioning_key = versioning_key
         if registration_value is not None:
             self.registration_value = registration_value
+        if created_by is not None:
+            self.created_by = created_by
+        if registration_type is not None:
+            self.registration_type = registration_type
+        if applied_rule_version_id is not None:
+            self.applied_rule_version_id = applied_rule_version_id
+        if applied_rule_id is not None:
+            self.applied_rule_id = applied_rule_id
+        if applied_rule_name is not None:
+            self.applied_rule_name = applied_rule_name
+        if metadata is not None:
+            self.metadata = metadata
         if repository_name is not None:
             self.repository_name = repository_name
         if tag is not None:
             self.tag = tag
-        if versioning_key is not None:
-            self.versioning_key = versioning_key
-
-    @property
-    def applied_rule_id(self):
-        """Gets the applied_rule_id of this CiArtifactResponse.  # noqa: E501
-
-
-        :return: The applied_rule_id of this CiArtifactResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._applied_rule_id
-
-    @applied_rule_id.setter
-    def applied_rule_id(self, applied_rule_id):
-        """Sets the applied_rule_id of this CiArtifactResponse.
-
-
-        :param applied_rule_id: The applied_rule_id of this CiArtifactResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._applied_rule_id = applied_rule_id
-
-    @property
-    def applied_rule_name(self):
-        """Gets the applied_rule_name of this CiArtifactResponse.  # noqa: E501
-
-
-        :return: The applied_rule_name of this CiArtifactResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._applied_rule_name
-
-    @applied_rule_name.setter
-    def applied_rule_name(self, applied_rule_name):
-        """Sets the applied_rule_name of this CiArtifactResponse.
-
-
-        :param applied_rule_name: The applied_rule_name of this CiArtifactResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._applied_rule_name = applied_rule_name
-
-    @property
-    def applied_rule_version_id(self):
-        """Gets the applied_rule_version_id of this CiArtifactResponse.  # noqa: E501
-
-
-        :return: The applied_rule_version_id of this CiArtifactResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._applied_rule_version_id
-
-    @applied_rule_version_id.setter
-    def applied_rule_version_id(self, applied_rule_version_id):
-        """Sets the applied_rule_version_id of this CiArtifactResponse.
-
-
-        :param applied_rule_version_id: The applied_rule_version_id of this CiArtifactResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._applied_rule_version_id = applied_rule_version_id
+        if promoted is not None:
+            self.promoted = promoted
+        if classified is not None:
+            self.classified = classified
 
     @property
     def artifact_id(self):
@@ -215,6 +152,27 @@ class CiArtifactResponse(object):
         """
 
         self._artifact_id = artifact_id
+
+    @property
+    def external_id(self):
+        """Gets the external_id of this CiArtifactResponse.  # noqa: E501
+
+
+        :return: The external_id of this CiArtifactResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """Sets the external_id of this CiArtifactResponse.
+
+
+        :param external_id: The external_id of this CiArtifactResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._external_id = external_id
 
     @property
     def artifact_name(self):
@@ -301,48 +259,6 @@ class CiArtifactResponse(object):
         self._build_description = build_description
 
     @property
-    def classified(self):
-        """Gets the classified of this CiArtifactResponse.  # noqa: E501
-
-
-        :return: The classified of this CiArtifactResponse.  # noqa: E501
-        :rtype: bool
-        """
-        return self._classified
-
-    @classified.setter
-    def classified(self, classified):
-        """Sets the classified of this CiArtifactResponse.
-
-
-        :param classified: The classified of this CiArtifactResponse.  # noqa: E501
-        :type: bool
-        """
-
-        self._classified = classified
-
-    @property
-    def created_by(self):
-        """Gets the created_by of this CiArtifactResponse.  # noqa: E501
-
-
-        :return: The created_by of this CiArtifactResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._created_by
-
-    @created_by.setter
-    def created_by(self, created_by):
-        """Sets the created_by of this CiArtifactResponse.
-
-
-        :param created_by: The created_by of this CiArtifactResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._created_by = created_by
-
-    @property
     def created_on(self):
         """Gets the created_on of this CiArtifactResponse.  # noqa: E501
 
@@ -364,67 +280,67 @@ class CiArtifactResponse(object):
         self._created_on = created_on
 
     @property
-    def external_id(self):
-        """Gets the external_id of this CiArtifactResponse.  # noqa: E501
+    def versioning_key(self):
+        """Gets the versioning_key of this CiArtifactResponse.  # noqa: E501
 
 
-        :return: The external_id of this CiArtifactResponse.  # noqa: E501
+        :return: The versioning_key of this CiArtifactResponse.  # noqa: E501
         :rtype: str
         """
-        return self._external_id
+        return self._versioning_key
 
-    @external_id.setter
-    def external_id(self, external_id):
-        """Sets the external_id of this CiArtifactResponse.
+    @versioning_key.setter
+    def versioning_key(self, versioning_key):
+        """Sets the versioning_key of this CiArtifactResponse.
 
 
-        :param external_id: The external_id of this CiArtifactResponse.  # noqa: E501
+        :param versioning_key: The versioning_key of this CiArtifactResponse.  # noqa: E501
         :type: str
         """
 
-        self._external_id = external_id
+        self._versioning_key = versioning_key
 
     @property
-    def metadata(self):
-        """Gets the metadata of this CiArtifactResponse.  # noqa: E501
+    def registration_value(self):
+        """Gets the registration_value of this CiArtifactResponse.  # noqa: E501
 
 
-        :return: The metadata of this CiArtifactResponse.  # noqa: E501
-        :rtype: dict(str, str)
+        :return: The registration_value of this CiArtifactResponse.  # noqa: E501
+        :rtype: str
         """
-        return self._metadata
+        return self._registration_value
 
-    @metadata.setter
-    def metadata(self, metadata):
-        """Sets the metadata of this CiArtifactResponse.
+    @registration_value.setter
+    def registration_value(self, registration_value):
+        """Sets the registration_value of this CiArtifactResponse.
 
 
-        :param metadata: The metadata of this CiArtifactResponse.  # noqa: E501
-        :type: dict(str, str)
+        :param registration_value: The registration_value of this CiArtifactResponse.  # noqa: E501
+        :type: str
         """
 
-        self._metadata = metadata
+        self._registration_value = registration_value
 
     @property
-    def promoted(self):
-        """Gets the promoted of this CiArtifactResponse.  # noqa: E501
+    def created_by(self):
+        """Gets the created_by of this CiArtifactResponse.  # noqa: E501
 
 
-        :return: The promoted of this CiArtifactResponse.  # noqa: E501
-        :rtype: bool
+        :return: The created_by of this CiArtifactResponse.  # noqa: E501
+        :rtype: str
         """
-        return self._promoted
+        return self._created_by
 
-    @promoted.setter
-    def promoted(self, promoted):
-        """Sets the promoted of this CiArtifactResponse.
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this CiArtifactResponse.
 
 
-        :param promoted: The promoted of this CiArtifactResponse.  # noqa: E501
-        :type: bool
+        :param created_by: The created_by of this CiArtifactResponse.  # noqa: E501
+        :type: str
         """
 
-        self._promoted = promoted
+        self._created_by = created_by
 
     @property
     def registration_type(self):
@@ -454,25 +370,88 @@ class CiArtifactResponse(object):
         self._registration_type = registration_type
 
     @property
-    def registration_value(self):
-        """Gets the registration_value of this CiArtifactResponse.  # noqa: E501
+    def applied_rule_version_id(self):
+        """Gets the applied_rule_version_id of this CiArtifactResponse.  # noqa: E501
 
 
-        :return: The registration_value of this CiArtifactResponse.  # noqa: E501
+        :return: The applied_rule_version_id of this CiArtifactResponse.  # noqa: E501
         :rtype: str
         """
-        return self._registration_value
+        return self._applied_rule_version_id
 
-    @registration_value.setter
-    def registration_value(self, registration_value):
-        """Sets the registration_value of this CiArtifactResponse.
+    @applied_rule_version_id.setter
+    def applied_rule_version_id(self, applied_rule_version_id):
+        """Sets the applied_rule_version_id of this CiArtifactResponse.
 
 
-        :param registration_value: The registration_value of this CiArtifactResponse.  # noqa: E501
+        :param applied_rule_version_id: The applied_rule_version_id of this CiArtifactResponse.  # noqa: E501
         :type: str
         """
 
-        self._registration_value = registration_value
+        self._applied_rule_version_id = applied_rule_version_id
+
+    @property
+    def applied_rule_id(self):
+        """Gets the applied_rule_id of this CiArtifactResponse.  # noqa: E501
+
+
+        :return: The applied_rule_id of this CiArtifactResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._applied_rule_id
+
+    @applied_rule_id.setter
+    def applied_rule_id(self, applied_rule_id):
+        """Sets the applied_rule_id of this CiArtifactResponse.
+
+
+        :param applied_rule_id: The applied_rule_id of this CiArtifactResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._applied_rule_id = applied_rule_id
+
+    @property
+    def applied_rule_name(self):
+        """Gets the applied_rule_name of this CiArtifactResponse.  # noqa: E501
+
+
+        :return: The applied_rule_name of this CiArtifactResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._applied_rule_name
+
+    @applied_rule_name.setter
+    def applied_rule_name(self, applied_rule_name):
+        """Sets the applied_rule_name of this CiArtifactResponse.
+
+
+        :param applied_rule_name: The applied_rule_name of this CiArtifactResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._applied_rule_name = applied_rule_name
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this CiArtifactResponse.  # noqa: E501
+
+
+        :return: The metadata of this CiArtifactResponse.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this CiArtifactResponse.
+
+
+        :param metadata: The metadata of this CiArtifactResponse.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._metadata = metadata
 
     @property
     def repository_name(self):
@@ -517,25 +496,46 @@ class CiArtifactResponse(object):
         self._tag = tag
 
     @property
-    def versioning_key(self):
-        """Gets the versioning_key of this CiArtifactResponse.  # noqa: E501
+    def promoted(self):
+        """Gets the promoted of this CiArtifactResponse.  # noqa: E501
 
 
-        :return: The versioning_key of this CiArtifactResponse.  # noqa: E501
-        :rtype: str
+        :return: The promoted of this CiArtifactResponse.  # noqa: E501
+        :rtype: bool
         """
-        return self._versioning_key
+        return self._promoted
 
-    @versioning_key.setter
-    def versioning_key(self, versioning_key):
-        """Sets the versioning_key of this CiArtifactResponse.
+    @promoted.setter
+    def promoted(self, promoted):
+        """Sets the promoted of this CiArtifactResponse.
 
 
-        :param versioning_key: The versioning_key of this CiArtifactResponse.  # noqa: E501
-        :type: str
+        :param promoted: The promoted of this CiArtifactResponse.  # noqa: E501
+        :type: bool
         """
 
-        self._versioning_key = versioning_key
+        self._promoted = promoted
+
+    @property
+    def classified(self):
+        """Gets the classified of this CiArtifactResponse.  # noqa: E501
+
+
+        :return: The classified of this CiArtifactResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._classified
+
+    @classified.setter
+    def classified(self, classified):
+        """Sets the classified of this CiArtifactResponse.
+
+
+        :param classified: The classified of this CiArtifactResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._classified = classified
 
     def to_dict(self):
         """Returns the model properties as a dict"""

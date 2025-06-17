@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,64 +28,111 @@ class StackGitLog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
+        'stack_name': 'str',
         'cluster_id': 'str',
-        'commit_log': 'CommitLog',
         'directory': 'str',
         'filename': 'str',
-        'id': 'str',
-        'number_of_versions': 'int',
-        'resource_name': 'str',
         'resource_type': 'str',
-        'stack_name': 'str',
-        'versioning_key': 'str'
+        'resource_name': 'str',
+        'commit_log': 'CommitLog',
+        'change_log': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
+        'id': 'id',
+        'stack_name': 'stackName',
         'cluster_id': 'clusterId',
-        'commit_log': 'commitLog',
         'directory': 'directory',
         'filename': 'filename',
-        'id': 'id',
-        'number_of_versions': 'numberOfVersions',
-        'resource_name': 'resourceName',
         'resource_type': 'resourceType',
-        'stack_name': 'stackName',
-        'versioning_key': 'versioningKey'
+        'resource_name': 'resourceName',
+        'commit_log': 'commitLog',
+        'change_log': 'changeLog',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, cluster_id=None, commit_log=None, directory=None, filename=None, id=None, number_of_versions=None, resource_name=None, resource_type=None, stack_name=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, stack_name=None, cluster_id=None, directory=None, filename=None, resource_type=None, resource_name=None, commit_log=None, change_log=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """StackGitLog - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._stack_name = None
         self._cluster_id = None
-        self._commit_log = None
         self._directory = None
         self._filename = None
-        self._id = None
-        self._number_of_versions = None
-        self._resource_name = None
         self._resource_type = None
-        self._stack_name = None
+        self._resource_name = None
+        self._commit_log = None
+        self._change_log = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
+        if stack_name is not None:
+            self.stack_name = stack_name
         if cluster_id is not None:
             self.cluster_id = cluster_id
-        if commit_log is not None:
-            self.commit_log = commit_log
         if directory is not None:
             self.directory = directory
         if filename is not None:
             self.filename = filename
-        if id is not None:
-            self.id = id
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
-        if stack_name is not None:
-            self.stack_name = stack_name
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if commit_log is not None:
+            self.commit_log = commit_log
+        if change_log is not None:
+            self.change_log = change_log
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
+
+    @property
+    def id(self):
+        """Gets the id of this StackGitLog.  # noqa: E501
+
+
+        :return: The id of this StackGitLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this StackGitLog.
+
+
+        :param id: The id of this StackGitLog.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this StackGitLog.  # noqa: E501
+
+
+        :return: The stack_name of this StackGitLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this StackGitLog.
+
+
+        :param stack_name: The stack_name of this StackGitLog.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_name = stack_name
 
     @property
     def cluster_id(self):
@@ -107,27 +154,6 @@ class StackGitLog(object):
         """
 
         self._cluster_id = cluster_id
-
-    @property
-    def commit_log(self):
-        """Gets the commit_log of this StackGitLog.  # noqa: E501
-
-
-        :return: The commit_log of this StackGitLog.  # noqa: E501
-        :rtype: CommitLog
-        """
-        return self._commit_log
-
-    @commit_log.setter
-    def commit_log(self, commit_log):
-        """Sets the commit_log of this StackGitLog.
-
-
-        :param commit_log: The commit_log of this StackGitLog.  # noqa: E501
-        :type: CommitLog
-        """
-
-        self._commit_log = commit_log
 
     @property
     def directory(self):
@@ -172,46 +198,25 @@ class StackGitLog(object):
         self._filename = filename
 
     @property
-    def id(self):
-        """Gets the id of this StackGitLog.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this StackGitLog.  # noqa: E501
 
 
-        :return: The id of this StackGitLog.  # noqa: E501
+        :return: The resource_type of this StackGitLog.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._resource_type
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this StackGitLog.
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this StackGitLog.
 
 
-        :param id: The id of this StackGitLog.  # noqa: E501
+        :param resource_type: The resource_type of this StackGitLog.  # noqa: E501
         :type: str
         """
 
-        self._id = id
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this StackGitLog.  # noqa: E501
-
-
-        :return: The number_of_versions of this StackGitLog.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this StackGitLog.
-
-
-        :param number_of_versions: The number_of_versions of this StackGitLog.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
+        self._resource_type = resource_type
 
     @property
     def resource_name(self):
@@ -235,46 +240,46 @@ class StackGitLog(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this StackGitLog.  # noqa: E501
+    def commit_log(self):
+        """Gets the commit_log of this StackGitLog.  # noqa: E501
 
 
-        :return: The resource_type of this StackGitLog.  # noqa: E501
-        :rtype: str
+        :return: The commit_log of this StackGitLog.  # noqa: E501
+        :rtype: CommitLog
         """
-        return self._resource_type
+        return self._commit_log
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this StackGitLog.
+    @commit_log.setter
+    def commit_log(self, commit_log):
+        """Sets the commit_log of this StackGitLog.
 
 
-        :param resource_type: The resource_type of this StackGitLog.  # noqa: E501
-        :type: str
+        :param commit_log: The commit_log of this StackGitLog.  # noqa: E501
+        :type: CommitLog
         """
 
-        self._resource_type = resource_type
+        self._commit_log = commit_log
 
     @property
-    def stack_name(self):
-        """Gets the stack_name of this StackGitLog.  # noqa: E501
+    def change_log(self):
+        """Gets the change_log of this StackGitLog.  # noqa: E501
 
 
-        :return: The stack_name of this StackGitLog.  # noqa: E501
+        :return: The change_log of this StackGitLog.  # noqa: E501
         :rtype: str
         """
-        return self._stack_name
+        return self._change_log
 
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this StackGitLog.
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this StackGitLog.
 
 
-        :param stack_name: The stack_name of this StackGitLog.  # noqa: E501
+        :param change_log: The change_log of this StackGitLog.  # noqa: E501
         :type: str
         """
 
-        self._stack_name = stack_name
+        self._change_log = change_log
 
     @property
     def versioning_key(self):
@@ -296,6 +301,27 @@ class StackGitLog(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this StackGitLog.  # noqa: E501
+
+
+        :return: The number_of_versions of this StackGitLog.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this StackGitLog.
+
+
+        :param number_of_versions: The number_of_versions of this StackGitLog.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

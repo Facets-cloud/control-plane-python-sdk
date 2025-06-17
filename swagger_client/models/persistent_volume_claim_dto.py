@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,54 +28,180 @@ class PersistentVolumeClaimDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'associated_pods': 'list[str]',
-        'capacity': 'str',
         'name': 'str',
-        'pvc_access_modes': 'list[str]',
+        'capacity': 'str',
         'status': 'str',
+        'volume': 'str',
         'storage_class': 'str',
-        'volume': 'str'
+        'pvc_access_modes': 'list[str]',
+        'age_in_seconds': 'int',
+        'associated_pods': 'list[str]'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'associated_pods': 'associatedPods',
-        'capacity': 'capacity',
         'name': 'name',
-        'pvc_access_modes': 'pvcAccessModes',
+        'capacity': 'capacity',
         'status': 'status',
+        'volume': 'volume',
         'storage_class': 'storageClass',
-        'volume': 'volume'
+        'pvc_access_modes': 'pvcAccessModes',
+        'age_in_seconds': 'ageInSeconds',
+        'associated_pods': 'associatedPods'
     }
 
-    def __init__(self, age_in_seconds=None, associated_pods=None, capacity=None, name=None, pvc_access_modes=None, status=None, storage_class=None, volume=None):  # noqa: E501
+    def __init__(self, name=None, capacity=None, status=None, volume=None, storage_class=None, pvc_access_modes=None, age_in_seconds=None, associated_pods=None):  # noqa: E501
         """PersistentVolumeClaimDTO - a model defined in Swagger"""  # noqa: E501
+        self._name = None
+        self._capacity = None
+        self._status = None
+        self._volume = None
+        self._storage_class = None
+        self._pvc_access_modes = None
         self._age_in_seconds = None
         self._associated_pods = None
-        self._capacity = None
-        self._name = None
-        self._pvc_access_modes = None
-        self._status = None
-        self._storage_class = None
-        self._volume = None
         self.discriminator = None
+        if name is not None:
+            self.name = name
+        if capacity is not None:
+            self.capacity = capacity
+        if status is not None:
+            self.status = status
+        if volume is not None:
+            self.volume = volume
+        if storage_class is not None:
+            self.storage_class = storage_class
+        if pvc_access_modes is not None:
+            self.pvc_access_modes = pvc_access_modes
         if age_in_seconds is not None:
             self.age_in_seconds = age_in_seconds
         if associated_pods is not None:
             self.associated_pods = associated_pods
-        if capacity is not None:
-            self.capacity = capacity
-        if name is not None:
-            self.name = name
-        if pvc_access_modes is not None:
-            self.pvc_access_modes = pvc_access_modes
-        if status is not None:
-            self.status = status
-        if storage_class is not None:
-            self.storage_class = storage_class
-        if volume is not None:
-            self.volume = volume
+
+    @property
+    def name(self):
+        """Gets the name of this PersistentVolumeClaimDTO.  # noqa: E501
+
+
+        :return: The name of this PersistentVolumeClaimDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this PersistentVolumeClaimDTO.
+
+
+        :param name: The name of this PersistentVolumeClaimDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def capacity(self):
+        """Gets the capacity of this PersistentVolumeClaimDTO.  # noqa: E501
+
+
+        :return: The capacity of this PersistentVolumeClaimDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._capacity
+
+    @capacity.setter
+    def capacity(self, capacity):
+        """Sets the capacity of this PersistentVolumeClaimDTO.
+
+
+        :param capacity: The capacity of this PersistentVolumeClaimDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._capacity = capacity
+
+    @property
+    def status(self):
+        """Gets the status of this PersistentVolumeClaimDTO.  # noqa: E501
+
+
+        :return: The status of this PersistentVolumeClaimDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this PersistentVolumeClaimDTO.
+
+
+        :param status: The status of this PersistentVolumeClaimDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
+
+    @property
+    def volume(self):
+        """Gets the volume of this PersistentVolumeClaimDTO.  # noqa: E501
+
+
+        :return: The volume of this PersistentVolumeClaimDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._volume
+
+    @volume.setter
+    def volume(self, volume):
+        """Sets the volume of this PersistentVolumeClaimDTO.
+
+
+        :param volume: The volume of this PersistentVolumeClaimDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._volume = volume
+
+    @property
+    def storage_class(self):
+        """Gets the storage_class of this PersistentVolumeClaimDTO.  # noqa: E501
+
+
+        :return: The storage_class of this PersistentVolumeClaimDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._storage_class
+
+    @storage_class.setter
+    def storage_class(self, storage_class):
+        """Sets the storage_class of this PersistentVolumeClaimDTO.
+
+
+        :param storage_class: The storage_class of this PersistentVolumeClaimDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._storage_class = storage_class
+
+    @property
+    def pvc_access_modes(self):
+        """Gets the pvc_access_modes of this PersistentVolumeClaimDTO.  # noqa: E501
+
+
+        :return: The pvc_access_modes of this PersistentVolumeClaimDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._pvc_access_modes
+
+    @pvc_access_modes.setter
+    def pvc_access_modes(self, pvc_access_modes):
+        """Sets the pvc_access_modes of this PersistentVolumeClaimDTO.
+
+
+        :param pvc_access_modes: The pvc_access_modes of this PersistentVolumeClaimDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._pvc_access_modes = pvc_access_modes
 
     @property
     def age_in_seconds(self):
@@ -118,132 +244,6 @@ class PersistentVolumeClaimDTO(object):
         """
 
         self._associated_pods = associated_pods
-
-    @property
-    def capacity(self):
-        """Gets the capacity of this PersistentVolumeClaimDTO.  # noqa: E501
-
-
-        :return: The capacity of this PersistentVolumeClaimDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._capacity
-
-    @capacity.setter
-    def capacity(self, capacity):
-        """Sets the capacity of this PersistentVolumeClaimDTO.
-
-
-        :param capacity: The capacity of this PersistentVolumeClaimDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._capacity = capacity
-
-    @property
-    def name(self):
-        """Gets the name of this PersistentVolumeClaimDTO.  # noqa: E501
-
-
-        :return: The name of this PersistentVolumeClaimDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PersistentVolumeClaimDTO.
-
-
-        :param name: The name of this PersistentVolumeClaimDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def pvc_access_modes(self):
-        """Gets the pvc_access_modes of this PersistentVolumeClaimDTO.  # noqa: E501
-
-
-        :return: The pvc_access_modes of this PersistentVolumeClaimDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._pvc_access_modes
-
-    @pvc_access_modes.setter
-    def pvc_access_modes(self, pvc_access_modes):
-        """Sets the pvc_access_modes of this PersistentVolumeClaimDTO.
-
-
-        :param pvc_access_modes: The pvc_access_modes of this PersistentVolumeClaimDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._pvc_access_modes = pvc_access_modes
-
-    @property
-    def status(self):
-        """Gets the status of this PersistentVolumeClaimDTO.  # noqa: E501
-
-
-        :return: The status of this PersistentVolumeClaimDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this PersistentVolumeClaimDTO.
-
-
-        :param status: The status of this PersistentVolumeClaimDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._status = status
-
-    @property
-    def storage_class(self):
-        """Gets the storage_class of this PersistentVolumeClaimDTO.  # noqa: E501
-
-
-        :return: The storage_class of this PersistentVolumeClaimDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._storage_class
-
-    @storage_class.setter
-    def storage_class(self, storage_class):
-        """Sets the storage_class of this PersistentVolumeClaimDTO.
-
-
-        :param storage_class: The storage_class of this PersistentVolumeClaimDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._storage_class = storage_class
-
-    @property
-    def volume(self):
-        """Gets the volume of this PersistentVolumeClaimDTO.  # noqa: E501
-
-
-        :return: The volume of this PersistentVolumeClaimDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._volume
-
-    @volume.setter
-    def volume(self, volume):
-        """Sets the volume of this PersistentVolumeClaimDTO.
-
-
-        :param volume: The volume of this PersistentVolumeClaimDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._volume = volume
 
     def to_dict(self):
         """Returns the model properties as a dict"""

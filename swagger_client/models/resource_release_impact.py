@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,86 +28,44 @@ class ResourceReleaseImpact(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'changes': 'list[Change]',
-        'cluster_id': 'str',
         'id': 'str',
-        'release_details': 'ReleaseDetails',
+        'cluster_id': 'str',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'release_details': 'ReleaseDetails',
+        'changes': 'list[Change]'
     }
 
     attribute_map = {
-        'changes': 'changes',
-        'cluster_id': 'clusterId',
         'id': 'id',
-        'release_details': 'releaseDetails',
+        'cluster_id': 'clusterId',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'release_details': 'releaseDetails',
+        'changes': 'changes'
     }
 
-    def __init__(self, changes=None, cluster_id=None, id=None, release_details=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, resource_type=None, resource_name=None, release_details=None, changes=None):  # noqa: E501
         """ResourceReleaseImpact - a model defined in Swagger"""  # noqa: E501
-        self._changes = None
-        self._cluster_id = None
         self._id = None
-        self._release_details = None
-        self._resource_name = None
+        self._cluster_id = None
         self._resource_type = None
+        self._resource_name = None
+        self._release_details = None
+        self._changes = None
         self.discriminator = None
-        if changes is not None:
-            self.changes = changes
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
         if id is not None:
             self.id = id
-        if release_details is not None:
-            self.release_details = release_details
-        if resource_name is not None:
-            self.resource_name = resource_name
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if resource_type is not None:
             self.resource_type = resource_type
-
-    @property
-    def changes(self):
-        """Gets the changes of this ResourceReleaseImpact.  # noqa: E501
-
-
-        :return: The changes of this ResourceReleaseImpact.  # noqa: E501
-        :rtype: list[Change]
-        """
-        return self._changes
-
-    @changes.setter
-    def changes(self, changes):
-        """Sets the changes of this ResourceReleaseImpact.
-
-
-        :param changes: The changes of this ResourceReleaseImpact.  # noqa: E501
-        :type: list[Change]
-        """
-
-        self._changes = changes
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ResourceReleaseImpact.  # noqa: E501
-
-
-        :return: The cluster_id of this ResourceReleaseImpact.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ResourceReleaseImpact.
-
-
-        :param cluster_id: The cluster_id of this ResourceReleaseImpact.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if release_details is not None:
+            self.release_details = release_details
+        if changes is not None:
+            self.changes = changes
 
     @property
     def id(self):
@@ -131,25 +89,46 @@ class ResourceReleaseImpact(object):
         self._id = id
 
     @property
-    def release_details(self):
-        """Gets the release_details of this ResourceReleaseImpact.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this ResourceReleaseImpact.  # noqa: E501
 
 
-        :return: The release_details of this ResourceReleaseImpact.  # noqa: E501
-        :rtype: ReleaseDetails
+        :return: The cluster_id of this ResourceReleaseImpact.  # noqa: E501
+        :rtype: str
         """
-        return self._release_details
+        return self._cluster_id
 
-    @release_details.setter
-    def release_details(self, release_details):
-        """Sets the release_details of this ResourceReleaseImpact.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ResourceReleaseImpact.
 
 
-        :param release_details: The release_details of this ResourceReleaseImpact.  # noqa: E501
-        :type: ReleaseDetails
+        :param cluster_id: The cluster_id of this ResourceReleaseImpact.  # noqa: E501
+        :type: str
         """
 
-        self._release_details = release_details
+        self._cluster_id = cluster_id
+
+    @property
+    def resource_type(self):
+        """Gets the resource_type of this ResourceReleaseImpact.  # noqa: E501
+
+
+        :return: The resource_type of this ResourceReleaseImpact.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ResourceReleaseImpact.
+
+
+        :param resource_type: The resource_type of this ResourceReleaseImpact.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_type = resource_type
 
     @property
     def resource_name(self):
@@ -173,25 +152,46 @@ class ResourceReleaseImpact(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this ResourceReleaseImpact.  # noqa: E501
+    def release_details(self):
+        """Gets the release_details of this ResourceReleaseImpact.  # noqa: E501
 
 
-        :return: The resource_type of this ResourceReleaseImpact.  # noqa: E501
-        :rtype: str
+        :return: The release_details of this ResourceReleaseImpact.  # noqa: E501
+        :rtype: ReleaseDetails
         """
-        return self._resource_type
+        return self._release_details
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ResourceReleaseImpact.
+    @release_details.setter
+    def release_details(self, release_details):
+        """Sets the release_details of this ResourceReleaseImpact.
 
 
-        :param resource_type: The resource_type of this ResourceReleaseImpact.  # noqa: E501
-        :type: str
+        :param release_details: The release_details of this ResourceReleaseImpact.  # noqa: E501
+        :type: ReleaseDetails
         """
 
-        self._resource_type = resource_type
+        self._release_details = release_details
+
+    @property
+    def changes(self):
+        """Gets the changes of this ResourceReleaseImpact.  # noqa: E501
+
+
+        :return: The changes of this ResourceReleaseImpact.  # noqa: E501
+        :rtype: list[Change]
+        """
+        return self._changes
+
+    @changes.setter
+    def changes(self, changes):
+        """Sets the changes of this ResourceReleaseImpact.
+
+
+        :param changes: The changes of this ResourceReleaseImpact.  # noqa: E501
+        :type: list[Change]
+        """
+
+        self._changes = changes
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiAssistantControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def continue_chat_using_post(self, body, **kwargs):  # noqa: E501
+    def continue_chat(self, body, **kwargs):  # noqa: E501
         """Continue Chat  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.continue_chat_using_post(body, async_req=True)
+        >>> thread = api.continue_chat(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AssistantRequest body: request (required)
+        :param AssistantRequest body: (required)
         :return: AssistantResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.continue_chat_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.continue_chat_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.continue_chat_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.continue_chat_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def continue_chat_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
+    def continue_chat_with_http_info(self, body, **kwargs):  # noqa: E501
         """Continue Chat  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.continue_chat_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.continue_chat_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AssistantRequest body: request (required)
+        :param AssistantRequest body: (required)
         :return: AssistantResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiAssistantControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method continue_chat_using_post" % key
+                    " to method continue_chat" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `continue_chat_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `continue_chat`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiAssistantControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v2/assistant/chat', 'POST',
@@ -129,12 +129,12 @@ class UiAssistantControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_thread_using_get(self, **kwargs):  # noqa: E501
-        """createThread  # noqa: E501
+    def create_thread(self, **kwargs):  # noqa: E501
+        """create_thread  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_thread_using_get(async_req=True)
+        >>> thread = api.create_thread(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -144,17 +144,17 @@ class UiAssistantControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_thread_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.create_thread_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.create_thread_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.create_thread_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def create_thread_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """createThread  # noqa: E501
+    def create_thread_with_http_info(self, **kwargs):  # noqa: E501
+        """create_thread  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_thread_using_get_with_http_info(async_req=True)
+        >>> thread = api.create_thread_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -174,7 +174,7 @@ class UiAssistantControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_thread_using_get" % key
+                    " to method create_thread" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -193,10 +193,10 @@ class UiAssistantControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v2/assistant/thread', 'GET',
@@ -214,37 +214,37 @@ class UiAssistantControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_chat_using_post(self, thread_id, **kwargs):  # noqa: E501
-        """getChat  # noqa: E501
+    def get_chat(self, thread_id, **kwargs):  # noqa: E501
+        """get_chat  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_chat_using_post(thread_id, async_req=True)
+        >>> thread = api.get_chat(thread_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str thread_id: threadId (required)
+        :param str thread_id: (required)
         :return: AssistantResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_chat_using_post_with_http_info(thread_id, **kwargs)  # noqa: E501
+            return self.get_chat_with_http_info(thread_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_chat_using_post_with_http_info(thread_id, **kwargs)  # noqa: E501
+            (data) = self.get_chat_with_http_info(thread_id, **kwargs)  # noqa: E501
             return data
 
-    def get_chat_using_post_with_http_info(self, thread_id, **kwargs):  # noqa: E501
-        """getChat  # noqa: E501
+    def get_chat_with_http_info(self, thread_id, **kwargs):  # noqa: E501
+        """get_chat  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_chat_using_post_with_http_info(thread_id, async_req=True)
+        >>> thread = api.get_chat_with_http_info(thread_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str thread_id: threadId (required)
+        :param str thread_id: (required)
         :return: AssistantResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -261,14 +261,14 @@ class UiAssistantControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_chat_using_post" % key
+                    " to method get_chat" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'thread_id' is set
         if ('thread_id' not in params or
                 params['thread_id'] is None):
-            raise ValueError("Missing the required parameter `thread_id` when calling `get_chat_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `thread_id` when calling `get_chat`")  # noqa: E501
 
         collection_formats = {}
 
@@ -286,10 +286,10 @@ class UiAssistantControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v2/assistant/{threadId}/getChat', 'POST',

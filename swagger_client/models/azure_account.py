@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,225 +28,135 @@ class AzureAccount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_type': 'str',
-        'associated_to': 'list[AccountAssociationInfo]',
-        'change_log': 'str',
-        'client_id': 'str',
-        'client_secret': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'entity_type': 'str',
-        'id': 'str',
-        'in_use': 'bool',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
-        'number_of_versions': 'int',
+        'account_type': 'str',
         'provider': 'str',
-        'secrets_uid': 'str',
-        'subscription_id': 'str',
+        'change_log': 'str',
         'system_defined': 'bool',
+        'in_use': 'bool',
+        'associated_to': 'list[AccountAssociationInfo]',
+        'subscription_id': 'str',
         'tenant_id': 'str',
-        'versioning_key': 'str'
+        'client_id': 'str',
+        'client_secret': 'str',
+        'entity_type': 'str',
+        'secrets_uid': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'account_type': 'accountType',
-        'associated_to': 'associatedTo',
-        'change_log': 'changeLog',
-        'client_id': 'clientId',
-        'client_secret': 'clientSecret',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'entity_type': 'entityType',
-        'id': 'id',
-        'in_use': 'inUse',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
-        'number_of_versions': 'numberOfVersions',
+        'account_type': 'accountType',
         'provider': 'provider',
-        'secrets_uid': 'secretsUid',
-        'subscription_id': 'subscriptionId',
+        'change_log': 'changeLog',
         'system_defined': 'systemDefined',
+        'in_use': 'inUse',
+        'associated_to': 'associatedTo',
+        'subscription_id': 'subscriptionId',
         'tenant_id': 'tenantId',
-        'versioning_key': 'versioningKey'
+        'client_id': 'clientId',
+        'client_secret': 'clientSecret',
+        'entity_type': 'entityType',
+        'secrets_uid': 'secretsUid',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, account_type=None, associated_to=None, change_log=None, client_id=None, client_secret=None, created_by=None, creation_date=None, entity_type=None, id=None, in_use=None, last_modified_by=None, last_modified_date=None, name=None, number_of_versions=None, provider=None, secrets_uid=None, subscription_id=None, system_defined=None, tenant_id=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, account_type=None, provider=None, change_log=None, system_defined=None, in_use=None, associated_to=None, subscription_id=None, tenant_id=None, client_id=None, client_secret=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """AzureAccount - a model defined in Swagger"""  # noqa: E501
-        self._account_type = None
-        self._associated_to = None
-        self._change_log = None
-        self._client_id = None
-        self._client_secret = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._entity_type = None
-        self._id = None
-        self._in_use = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
-        self._number_of_versions = None
+        self._account_type = None
         self._provider = None
-        self._secrets_uid = None
-        self._subscription_id = None
+        self._change_log = None
         self._system_defined = None
+        self._in_use = None
+        self._associated_to = None
+        self._subscription_id = None
         self._tenant_id = None
+        self._client_id = None
+        self._client_secret = None
+        self._entity_type = None
+        self._secrets_uid = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if account_type is not None:
-            self.account_type = account_type
-        if associated_to is not None:
-            self.associated_to = associated_to
-        if change_log is not None:
-            self.change_log = change_log
-        if client_id is not None:
-            self.client_id = client_id
-        if client_secret is not None:
-            self.client_secret = client_secret
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if id is not None:
-            self.id = id
-        if in_use is not None:
-            self.in_use = in_use
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
         if name is not None:
             self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
+        if account_type is not None:
+            self.account_type = account_type
         if provider is not None:
             self.provider = provider
-        if secrets_uid is not None:
-            self.secrets_uid = secrets_uid
-        if subscription_id is not None:
-            self.subscription_id = subscription_id
+        if change_log is not None:
+            self.change_log = change_log
         if system_defined is not None:
             self.system_defined = system_defined
+        if in_use is not None:
+            self.in_use = in_use
+        if associated_to is not None:
+            self.associated_to = associated_to
+        if subscription_id is not None:
+            self.subscription_id = subscription_id
         if tenant_id is not None:
             self.tenant_id = tenant_id
+        if client_id is not None:
+            self.client_id = client_id
+        if client_secret is not None:
+            self.client_secret = client_secret
+        if entity_type is not None:
+            self.entity_type = entity_type
+        if secrets_uid is not None:
+            self.secrets_uid = secrets_uid
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def account_type(self):
-        """Gets the account_type of this AzureAccount.  # noqa: E501
+    def id(self):
+        """Gets the id of this AzureAccount.  # noqa: E501
 
 
-        :return: The account_type of this AzureAccount.  # noqa: E501
+        :return: The id of this AzureAccount.  # noqa: E501
         :rtype: str
         """
-        return self._account_type
+        return self._id
 
-    @account_type.setter
-    def account_type(self, account_type):
-        """Sets the account_type of this AzureAccount.
-
-
-        :param account_type: The account_type of this AzureAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
-        if account_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(account_type, allowed_values)
-            )
-
-        self._account_type = account_type
-
-    @property
-    def associated_to(self):
-        """Gets the associated_to of this AzureAccount.  # noqa: E501
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AzureAccount.
 
 
-        :return: The associated_to of this AzureAccount.  # noqa: E501
-        :rtype: list[AccountAssociationInfo]
-        """
-        return self._associated_to
-
-    @associated_to.setter
-    def associated_to(self, associated_to):
-        """Sets the associated_to of this AzureAccount.
-
-
-        :param associated_to: The associated_to of this AzureAccount.  # noqa: E501
-        :type: list[AccountAssociationInfo]
-        """
-
-        self._associated_to = associated_to
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this AzureAccount.  # noqa: E501
-
-
-        :return: The change_log of this AzureAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this AzureAccount.
-
-
-        :param change_log: The change_log of this AzureAccount.  # noqa: E501
+        :param id: The id of this AzureAccount.  # noqa: E501
         :type: str
         """
 
-        self._change_log = change_log
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this AzureAccount.  # noqa: E501
-
-
-        :return: The client_id of this AzureAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this AzureAccount.
-
-
-        :param client_id: The client_id of this AzureAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def client_secret(self):
-        """Gets the client_secret of this AzureAccount.  # noqa: E501
-
-
-        :return: The client_secret of this AzureAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_secret
-
-    @client_secret.setter
-    def client_secret(self, client_secret):
-        """Sets the client_secret of this AzureAccount.
-
-
-        :param client_secret: The client_secret of this AzureAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._client_secret = client_secret
+        self._id = id
 
     @property
     def created_by(self):
@@ -291,73 +201,25 @@ class AzureAccount(object):
         self._creation_date = creation_date
 
     @property
-    def entity_type(self):
-        """Gets the entity_type of this AzureAccount.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this AzureAccount.  # noqa: E501
 
 
-        :return: The entity_type of this AzureAccount.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this AzureAccount.  # noqa: E501
+        :rtype: datetime
         """
-        return self._entity_type
+        return self._last_modified_date
 
-    @entity_type.setter
-    def entity_type(self, entity_type):
-        """Sets the entity_type of this AzureAccount.
-
-
-        :param entity_type: The entity_type of this AzureAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
-        if entity_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(entity_type, allowed_values)
-            )
-
-        self._entity_type = entity_type
-
-    @property
-    def id(self):
-        """Gets the id of this AzureAccount.  # noqa: E501
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this AzureAccount.
 
 
-        :return: The id of this AzureAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this AzureAccount.
-
-
-        :param id: The id of this AzureAccount.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this AzureAccount.  # noqa: E501
+        :type: datetime
         """
 
-        self._id = id
-
-    @property
-    def in_use(self):
-        """Gets the in_use of this AzureAccount.  # noqa: E501
-
-
-        :return: The in_use of this AzureAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._in_use
-
-    @in_use.setter
-    def in_use(self, in_use):
-        """Sets the in_use of this AzureAccount.
-
-
-        :param in_use: The in_use of this AzureAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._in_use = in_use
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -381,27 +243,6 @@ class AzureAccount(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this AzureAccount.  # noqa: E501
-
-
-        :return: The last_modified_date of this AzureAccount.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this AzureAccount.
-
-
-        :param last_modified_date: The last_modified_date of this AzureAccount.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
     def name(self):
         """Gets the name of this AzureAccount.  # noqa: E501
 
@@ -423,25 +264,31 @@ class AzureAccount(object):
         self._name = name
 
     @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this AzureAccount.  # noqa: E501
+    def account_type(self):
+        """Gets the account_type of this AzureAccount.  # noqa: E501
 
 
-        :return: The number_of_versions of this AzureAccount.  # noqa: E501
-        :rtype: int
+        :return: The account_type of this AzureAccount.  # noqa: E501
+        :rtype: str
         """
-        return self._number_of_versions
+        return self._account_type
 
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this AzureAccount.
+    @account_type.setter
+    def account_type(self, account_type):
+        """Sets the account_type of this AzureAccount.
 
 
-        :param number_of_versions: The number_of_versions of this AzureAccount.  # noqa: E501
-        :type: int
+        :param account_type: The account_type of this AzureAccount.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
+        if account_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(account_type, allowed_values)
+            )
 
-        self._number_of_versions = number_of_versions
+        self._account_type = account_type
 
     @property
     def provider(self):
@@ -471,46 +318,25 @@ class AzureAccount(object):
         self._provider = provider
 
     @property
-    def secrets_uid(self):
-        """Gets the secrets_uid of this AzureAccount.  # noqa: E501
+    def change_log(self):
+        """Gets the change_log of this AzureAccount.  # noqa: E501
 
 
-        :return: The secrets_uid of this AzureAccount.  # noqa: E501
+        :return: The change_log of this AzureAccount.  # noqa: E501
         :rtype: str
         """
-        return self._secrets_uid
+        return self._change_log
 
-    @secrets_uid.setter
-    def secrets_uid(self, secrets_uid):
-        """Sets the secrets_uid of this AzureAccount.
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this AzureAccount.
 
 
-        :param secrets_uid: The secrets_uid of this AzureAccount.  # noqa: E501
+        :param change_log: The change_log of this AzureAccount.  # noqa: E501
         :type: str
         """
 
-        self._secrets_uid = secrets_uid
-
-    @property
-    def subscription_id(self):
-        """Gets the subscription_id of this AzureAccount.  # noqa: E501
-
-
-        :return: The subscription_id of this AzureAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._subscription_id
-
-    @subscription_id.setter
-    def subscription_id(self, subscription_id):
-        """Sets the subscription_id of this AzureAccount.
-
-
-        :param subscription_id: The subscription_id of this AzureAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._subscription_id = subscription_id
+        self._change_log = change_log
 
     @property
     def system_defined(self):
@@ -534,6 +360,69 @@ class AzureAccount(object):
         self._system_defined = system_defined
 
     @property
+    def in_use(self):
+        """Gets the in_use of this AzureAccount.  # noqa: E501
+
+
+        :return: The in_use of this AzureAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_use
+
+    @in_use.setter
+    def in_use(self, in_use):
+        """Sets the in_use of this AzureAccount.
+
+
+        :param in_use: The in_use of this AzureAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_use = in_use
+
+    @property
+    def associated_to(self):
+        """Gets the associated_to of this AzureAccount.  # noqa: E501
+
+
+        :return: The associated_to of this AzureAccount.  # noqa: E501
+        :rtype: list[AccountAssociationInfo]
+        """
+        return self._associated_to
+
+    @associated_to.setter
+    def associated_to(self, associated_to):
+        """Sets the associated_to of this AzureAccount.
+
+
+        :param associated_to: The associated_to of this AzureAccount.  # noqa: E501
+        :type: list[AccountAssociationInfo]
+        """
+
+        self._associated_to = associated_to
+
+    @property
+    def subscription_id(self):
+        """Gets the subscription_id of this AzureAccount.  # noqa: E501
+
+
+        :return: The subscription_id of this AzureAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """Sets the subscription_id of this AzureAccount.
+
+
+        :param subscription_id: The subscription_id of this AzureAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._subscription_id = subscription_id
+
+    @property
     def tenant_id(self):
         """Gets the tenant_id of this AzureAccount.  # noqa: E501
 
@@ -555,6 +444,96 @@ class AzureAccount(object):
         self._tenant_id = tenant_id
 
     @property
+    def client_id(self):
+        """Gets the client_id of this AzureAccount.  # noqa: E501
+
+
+        :return: The client_id of this AzureAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this AzureAccount.
+
+
+        :param client_id: The client_id of this AzureAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def client_secret(self):
+        """Gets the client_secret of this AzureAccount.  # noqa: E501
+
+
+        :return: The client_secret of this AzureAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_secret
+
+    @client_secret.setter
+    def client_secret(self, client_secret):
+        """Sets the client_secret of this AzureAccount.
+
+
+        :param client_secret: The client_secret of this AzureAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._client_secret = client_secret
+
+    @property
+    def entity_type(self):
+        """Gets the entity_type of this AzureAccount.  # noqa: E501
+
+
+        :return: The entity_type of this AzureAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._entity_type
+
+    @entity_type.setter
+    def entity_type(self, entity_type):
+        """Sets the entity_type of this AzureAccount.
+
+
+        :param entity_type: The entity_type of this AzureAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
+        if entity_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(entity_type, allowed_values)
+            )
+
+        self._entity_type = entity_type
+
+    @property
+    def secrets_uid(self):
+        """Gets the secrets_uid of this AzureAccount.  # noqa: E501
+
+
+        :return: The secrets_uid of this AzureAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._secrets_uid
+
+    @secrets_uid.setter
+    def secrets_uid(self, secrets_uid):
+        """Sets the secrets_uid of this AzureAccount.
+
+
+        :param secrets_uid: The secrets_uid of this AzureAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._secrets_uid = secrets_uid
+
+    @property
     def versioning_key(self):
         """Gets the versioning_key of this AzureAccount.  # noqa: E501
 
@@ -574,6 +553,27 @@ class AzureAccount(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this AzureAccount.  # noqa: E501
+
+
+        :return: The number_of_versions of this AzureAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this AzureAccount.
+
+
+        :param number_of_versions: The number_of_versions of this AzureAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

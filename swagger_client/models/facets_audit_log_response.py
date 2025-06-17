@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,116 +28,137 @@ class FacetsAuditLogResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
-        'cluster_name': 'str',
+        'id': 'str',
+        'performed_by': 'str',
+        'performed_at': 'datetime',
         'entity': 'str',
+        'entity_label': 'str',
         'entity_action': 'str',
         'entity_action_label': 'str',
-        'entity_label': 'str',
-        'id': 'str',
-        'metadata': 'object',
-        'performed_at': 'datetime',
-        'performed_by': 'str',
-        'stack_name': 'str',
-        'target': 'str'
+        'target': 'str',
+        'metadata': 'dict(str, object)',
+        'cluster_id': 'str',
+        'cluster_name': 'str',
+        'stack_name': 'str'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
-        'cluster_name': 'clusterName',
+        'id': 'id',
+        'performed_by': 'performedBy',
+        'performed_at': 'performedAt',
         'entity': 'entity',
+        'entity_label': 'entityLabel',
         'entity_action': 'entityAction',
         'entity_action_label': 'entityActionLabel',
-        'entity_label': 'entityLabel',
-        'id': 'id',
+        'target': 'target',
         'metadata': 'metadata',
-        'performed_at': 'performedAt',
-        'performed_by': 'performedBy',
-        'stack_name': 'stackName',
-        'target': 'target'
+        'cluster_id': 'clusterId',
+        'cluster_name': 'clusterName',
+        'stack_name': 'stackName'
     }
 
-    def __init__(self, cluster_id=None, cluster_name=None, entity=None, entity_action=None, entity_action_label=None, entity_label=None, id=None, metadata=None, performed_at=None, performed_by=None, stack_name=None, target=None):  # noqa: E501
+    def __init__(self, id=None, performed_by=None, performed_at=None, entity=None, entity_label=None, entity_action=None, entity_action_label=None, target=None, metadata=None, cluster_id=None, cluster_name=None, stack_name=None):  # noqa: E501
         """FacetsAuditLogResponse - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
-        self._cluster_name = None
+        self._id = None
+        self._performed_by = None
+        self._performed_at = None
         self._entity = None
+        self._entity_label = None
         self._entity_action = None
         self._entity_action_label = None
-        self._entity_label = None
-        self._id = None
-        self._metadata = None
-        self._performed_at = None
-        self._performed_by = None
-        self._stack_name = None
         self._target = None
+        self._metadata = None
+        self._cluster_id = None
+        self._cluster_name = None
+        self._stack_name = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
+        if id is not None:
+            self.id = id
+        if performed_by is not None:
+            self.performed_by = performed_by
+        if performed_at is not None:
+            self.performed_at = performed_at
         if entity is not None:
             self.entity = entity
+        if entity_label is not None:
+            self.entity_label = entity_label
         if entity_action is not None:
             self.entity_action = entity_action
         if entity_action_label is not None:
             self.entity_action_label = entity_action_label
-        if entity_label is not None:
-            self.entity_label = entity_label
-        if id is not None:
-            self.id = id
-        if metadata is not None:
-            self.metadata = metadata
-        if performed_at is not None:
-            self.performed_at = performed_at
-        if performed_by is not None:
-            self.performed_by = performed_by
-        if stack_name is not None:
-            self.stack_name = stack_name
         if target is not None:
             self.target = target
+        if metadata is not None:
+            self.metadata = metadata
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if cluster_name is not None:
+            self.cluster_name = cluster_name
+        if stack_name is not None:
+            self.stack_name = stack_name
 
     @property
-    def cluster_id(self):
-        """Gets the cluster_id of this FacetsAuditLogResponse.  # noqa: E501
+    def id(self):
+        """Gets the id of this FacetsAuditLogResponse.  # noqa: E501
 
 
-        :return: The cluster_id of this FacetsAuditLogResponse.  # noqa: E501
+        :return: The id of this FacetsAuditLogResponse.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_id
+        return self._id
 
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this FacetsAuditLogResponse.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this FacetsAuditLogResponse.
 
 
-        :param cluster_id: The cluster_id of this FacetsAuditLogResponse.  # noqa: E501
+        :param id: The id of this FacetsAuditLogResponse.  # noqa: E501
         :type: str
         """
 
-        self._cluster_id = cluster_id
+        self._id = id
 
     @property
-    def cluster_name(self):
-        """Gets the cluster_name of this FacetsAuditLogResponse.  # noqa: E501
+    def performed_by(self):
+        """Gets the performed_by of this FacetsAuditLogResponse.  # noqa: E501
 
 
-        :return: The cluster_name of this FacetsAuditLogResponse.  # noqa: E501
+        :return: The performed_by of this FacetsAuditLogResponse.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_name
+        return self._performed_by
 
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
-        """Sets the cluster_name of this FacetsAuditLogResponse.
+    @performed_by.setter
+    def performed_by(self, performed_by):
+        """Sets the performed_by of this FacetsAuditLogResponse.
 
 
-        :param cluster_name: The cluster_name of this FacetsAuditLogResponse.  # noqa: E501
+        :param performed_by: The performed_by of this FacetsAuditLogResponse.  # noqa: E501
         :type: str
         """
 
-        self._cluster_name = cluster_name
+        self._performed_by = performed_by
+
+    @property
+    def performed_at(self):
+        """Gets the performed_at of this FacetsAuditLogResponse.  # noqa: E501
+
+
+        :return: The performed_at of this FacetsAuditLogResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._performed_at
+
+    @performed_at.setter
+    def performed_at(self, performed_at):
+        """Sets the performed_at of this FacetsAuditLogResponse.
+
+
+        :param performed_at: The performed_at of this FacetsAuditLogResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._performed_at = performed_at
 
     @property
     def entity(self):
@@ -165,6 +186,27 @@ class FacetsAuditLogResponse(object):
             )
 
         self._entity = entity
+
+    @property
+    def entity_label(self):
+        """Gets the entity_label of this FacetsAuditLogResponse.  # noqa: E501
+
+
+        :return: The entity_label of this FacetsAuditLogResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._entity_label
+
+    @entity_label.setter
+    def entity_label(self, entity_label):
+        """Sets the entity_label of this FacetsAuditLogResponse.
+
+
+        :param entity_label: The entity_label of this FacetsAuditLogResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._entity_label = entity_label
 
     @property
     def entity_action(self):
@@ -215,46 +257,25 @@ class FacetsAuditLogResponse(object):
         self._entity_action_label = entity_action_label
 
     @property
-    def entity_label(self):
-        """Gets the entity_label of this FacetsAuditLogResponse.  # noqa: E501
+    def target(self):
+        """Gets the target of this FacetsAuditLogResponse.  # noqa: E501
 
 
-        :return: The entity_label of this FacetsAuditLogResponse.  # noqa: E501
+        :return: The target of this FacetsAuditLogResponse.  # noqa: E501
         :rtype: str
         """
-        return self._entity_label
+        return self._target
 
-    @entity_label.setter
-    def entity_label(self, entity_label):
-        """Sets the entity_label of this FacetsAuditLogResponse.
+    @target.setter
+    def target(self, target):
+        """Sets the target of this FacetsAuditLogResponse.
 
 
-        :param entity_label: The entity_label of this FacetsAuditLogResponse.  # noqa: E501
+        :param target: The target of this FacetsAuditLogResponse.  # noqa: E501
         :type: str
         """
 
-        self._entity_label = entity_label
-
-    @property
-    def id(self):
-        """Gets the id of this FacetsAuditLogResponse.  # noqa: E501
-
-
-        :return: The id of this FacetsAuditLogResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this FacetsAuditLogResponse.
-
-
-        :param id: The id of this FacetsAuditLogResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
+        self._target = target
 
     @property
     def metadata(self):
@@ -262,7 +283,7 @@ class FacetsAuditLogResponse(object):
 
 
         :return: The metadata of this FacetsAuditLogResponse.  # noqa: E501
-        :rtype: object
+        :rtype: dict(str, object)
         """
         return self._metadata
 
@@ -272,52 +293,52 @@ class FacetsAuditLogResponse(object):
 
 
         :param metadata: The metadata of this FacetsAuditLogResponse.  # noqa: E501
-        :type: object
+        :type: dict(str, object)
         """
 
         self._metadata = metadata
 
     @property
-    def performed_at(self):
-        """Gets the performed_at of this FacetsAuditLogResponse.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this FacetsAuditLogResponse.  # noqa: E501
 
 
-        :return: The performed_at of this FacetsAuditLogResponse.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._performed_at
-
-    @performed_at.setter
-    def performed_at(self, performed_at):
-        """Sets the performed_at of this FacetsAuditLogResponse.
-
-
-        :param performed_at: The performed_at of this FacetsAuditLogResponse.  # noqa: E501
-        :type: datetime
-        """
-
-        self._performed_at = performed_at
-
-    @property
-    def performed_by(self):
-        """Gets the performed_by of this FacetsAuditLogResponse.  # noqa: E501
-
-
-        :return: The performed_by of this FacetsAuditLogResponse.  # noqa: E501
+        :return: The cluster_id of this FacetsAuditLogResponse.  # noqa: E501
         :rtype: str
         """
-        return self._performed_by
+        return self._cluster_id
 
-    @performed_by.setter
-    def performed_by(self, performed_by):
-        """Sets the performed_by of this FacetsAuditLogResponse.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this FacetsAuditLogResponse.
 
 
-        :param performed_by: The performed_by of this FacetsAuditLogResponse.  # noqa: E501
+        :param cluster_id: The cluster_id of this FacetsAuditLogResponse.  # noqa: E501
         :type: str
         """
 
-        self._performed_by = performed_by
+        self._cluster_id = cluster_id
+
+    @property
+    def cluster_name(self):
+        """Gets the cluster_name of this FacetsAuditLogResponse.  # noqa: E501
+
+
+        :return: The cluster_name of this FacetsAuditLogResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_name
+
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """Sets the cluster_name of this FacetsAuditLogResponse.
+
+
+        :param cluster_name: The cluster_name of this FacetsAuditLogResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_name = cluster_name
 
     @property
     def stack_name(self):
@@ -339,27 +360,6 @@ class FacetsAuditLogResponse(object):
         """
 
         self._stack_name = stack_name
-
-    @property
-    def target(self):
-        """Gets the target of this FacetsAuditLogResponse.  # noqa: E501
-
-
-        :return: The target of this FacetsAuditLogResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._target
-
-    @target.setter
-    def target(self, target):
-        """Sets the target of this FacetsAuditLogResponse.
-
-
-        :param target: The target of this FacetsAuditLogResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._target = target
 
     def to_dict(self):
         """Returns the model properties as a dict"""

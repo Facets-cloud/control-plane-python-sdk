@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class GithubUser(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'html_url': 'str',
-        'login': 'str'
+        'login': 'str',
+        'html_url': 'str'
     }
 
     attribute_map = {
-        'html_url': 'htmlUrl',
-        'login': 'login'
+        'login': 'login',
+        'html_url': 'htmlUrl'
     }
 
-    def __init__(self, html_url=None, login=None):  # noqa: E501
+    def __init__(self, login=None, html_url=None):  # noqa: E501
         """GithubUser - a model defined in Swagger"""  # noqa: E501
-        self._html_url = None
         self._login = None
+        self._html_url = None
         self.discriminator = None
-        if html_url is not None:
-            self.html_url = html_url
         if login is not None:
             self.login = login
-
-    @property
-    def html_url(self):
-        """Gets the html_url of this GithubUser.  # noqa: E501
-
-
-        :return: The html_url of this GithubUser.  # noqa: E501
-        :rtype: str
-        """
-        return self._html_url
-
-    @html_url.setter
-    def html_url(self, html_url):
-        """Sets the html_url of this GithubUser.
-
-
-        :param html_url: The html_url of this GithubUser.  # noqa: E501
-        :type: str
-        """
-
-        self._html_url = html_url
+        if html_url is not None:
+            self.html_url = html_url
 
     @property
     def login(self):
@@ -88,6 +67,27 @@ class GithubUser(object):
         """
 
         self._login = login
+
+    @property
+    def html_url(self):
+        """Gets the html_url of this GithubUser.  # noqa: E501
+
+
+        :return: The html_url of this GithubUser.  # noqa: E501
+        :rtype: str
+        """
+        return self._html_url
+
+    @html_url.setter
+    def html_url(self, html_url):
+        """Sets the html_url of this GithubUser.
+
+
+        :param html_url: The html_url of this GithubUser.  # noqa: E501
+        :type: str
+        """
+
+        self._html_url = html_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

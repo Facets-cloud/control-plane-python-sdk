@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,70 @@ class ResourceGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
         'resource_info': 'list[ResourceInfo]'
     }
 
     attribute_map = {
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
         'resource_info': 'resourceInfo'
     }
 
-    def __init__(self, created_by=None, creation_date=None, id=None, last_modified_by=None, last_modified_date=None, name=None, resource_info=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, resource_info=None):  # noqa: E501
         """ResourceGroup - a model defined in Swagger"""  # noqa: E501
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
         self._resource_info = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
         if name is not None:
             self.name = name
         if resource_info is not None:
             self.resource_info = resource_info
+
+    @property
+    def id(self):
+        """Gets the id of this ResourceGroup.  # noqa: E501
+
+
+        :return: The id of this ResourceGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ResourceGroup.
+
+
+        :param id: The id of this ResourceGroup.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def created_by(self):
@@ -115,25 +136,25 @@ class ResourceGroup(object):
         self._creation_date = creation_date
 
     @property
-    def id(self):
-        """Gets the id of this ResourceGroup.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this ResourceGroup.  # noqa: E501
 
 
-        :return: The id of this ResourceGroup.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this ResourceGroup.  # noqa: E501
+        :rtype: datetime
         """
-        return self._id
+        return self._last_modified_date
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ResourceGroup.
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this ResourceGroup.
 
 
-        :param id: The id of this ResourceGroup.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this ResourceGroup.  # noqa: E501
+        :type: datetime
         """
 
-        self._id = id
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -155,27 +176,6 @@ class ResourceGroup(object):
         """
 
         self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this ResourceGroup.  # noqa: E501
-
-
-        :return: The last_modified_date of this ResourceGroup.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this ResourceGroup.
-
-
-        :param last_modified_date: The last_modified_date of this ResourceGroup.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
 
     @property
     def name(self):

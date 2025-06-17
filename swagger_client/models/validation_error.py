@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,39 @@ class ValidationError(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'directory': 'str',
-        'error': 'str',
         'filename': 'str',
-        'syntax_error': 'bool',
-        'type': 'str'
+        'error': 'str',
+        'directory': 'str',
+        'type': 'str',
+        'syntax_error': 'bool'
     }
 
     attribute_map = {
-        'directory': 'directory',
-        'error': 'error',
         'filename': 'filename',
-        'syntax_error': 'syntaxError',
-        'type': 'type'
+        'error': 'error',
+        'directory': 'directory',
+        'type': 'type',
+        'syntax_error': 'syntaxError'
     }
 
-    def __init__(self, directory=None, error=None, filename=None, syntax_error=None, type=None):  # noqa: E501
+    def __init__(self, filename=None, error=None, directory=None, type=None, syntax_error=None):  # noqa: E501
         """ValidationError - a model defined in Swagger"""  # noqa: E501
-        self._directory = None
-        self._error = None
         self._filename = None
-        self._syntax_error = None
+        self._error = None
+        self._directory = None
         self._type = None
+        self._syntax_error = None
         self.discriminator = None
-        if directory is not None:
-            self.directory = directory
-        if error is not None:
-            self.error = error
         if filename is not None:
             self.filename = filename
-        if syntax_error is not None:
-            self.syntax_error = syntax_error
+        if error is not None:
+            self.error = error
+        if directory is not None:
+            self.directory = directory
         if type is not None:
             self.type = type
-
-    @property
-    def directory(self):
-        """Gets the directory of this ValidationError.  # noqa: E501
-
-
-        :return: The directory of this ValidationError.  # noqa: E501
-        :rtype: str
-        """
-        return self._directory
-
-    @directory.setter
-    def directory(self, directory):
-        """Sets the directory of this ValidationError.
-
-
-        :param directory: The directory of this ValidationError.  # noqa: E501
-        :type: str
-        """
-
-        self._directory = directory
-
-    @property
-    def error(self):
-        """Gets the error of this ValidationError.  # noqa: E501
-
-
-        :return: The error of this ValidationError.  # noqa: E501
-        :rtype: str
-        """
-        return self._error
-
-    @error.setter
-    def error(self, error):
-        """Sets the error of this ValidationError.
-
-
-        :param error: The error of this ValidationError.  # noqa: E501
-        :type: str
-        """
-
-        self._error = error
+        if syntax_error is not None:
+            self.syntax_error = syntax_error
 
     @property
     def filename(self):
@@ -126,25 +84,46 @@ class ValidationError(object):
         self._filename = filename
 
     @property
-    def syntax_error(self):
-        """Gets the syntax_error of this ValidationError.  # noqa: E501
+    def error(self):
+        """Gets the error of this ValidationError.  # noqa: E501
 
 
-        :return: The syntax_error of this ValidationError.  # noqa: E501
-        :rtype: bool
+        :return: The error of this ValidationError.  # noqa: E501
+        :rtype: str
         """
-        return self._syntax_error
+        return self._error
 
-    @syntax_error.setter
-    def syntax_error(self, syntax_error):
-        """Sets the syntax_error of this ValidationError.
+    @error.setter
+    def error(self, error):
+        """Sets the error of this ValidationError.
 
 
-        :param syntax_error: The syntax_error of this ValidationError.  # noqa: E501
-        :type: bool
+        :param error: The error of this ValidationError.  # noqa: E501
+        :type: str
         """
 
-        self._syntax_error = syntax_error
+        self._error = error
+
+    @property
+    def directory(self):
+        """Gets the directory of this ValidationError.  # noqa: E501
+
+
+        :return: The directory of this ValidationError.  # noqa: E501
+        :rtype: str
+        """
+        return self._directory
+
+    @directory.setter
+    def directory(self, directory):
+        """Sets the directory of this ValidationError.
+
+
+        :param directory: The directory of this ValidationError.  # noqa: E501
+        :type: str
+        """
+
+        self._directory = directory
 
     @property
     def type(self):
@@ -172,6 +151,27 @@ class ValidationError(object):
             )
 
         self._type = type
+
+    @property
+    def syntax_error(self):
+        """Gets the syntax_error of this ValidationError.  # noqa: E501
+
+
+        :return: The syntax_error of this ValidationError.  # noqa: E501
+        :rtype: bool
+        """
+        return self._syntax_error
+
+    @syntax_error.setter
+    def syntax_error(self, syntax_error):
+        """Sets the syntax_error of this ValidationError.
+
+
+        :param syntax_error: The syntax_error of this ValidationError.  # noqa: E501
+        :type: bool
+        """
+
+        self._syntax_error = syntax_error
 
     def to_dict(self):
         """Returns the model properties as a dict"""

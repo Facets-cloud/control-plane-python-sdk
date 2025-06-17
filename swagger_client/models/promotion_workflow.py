@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,64 +28,83 @@ class PromotionWorkflow(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'default_workflow': 'bool',
-        'hierarchies': 'list[WorkflowHierarchy]',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'workflow_name': 'str',
+        'hierarchies': 'list[WorkflowHierarchy]',
         'registration_type': 'str',
         'stack_name': 'str',
-        'workflow_name': 'str'
+        'default_workflow': 'bool'
     }
 
     attribute_map = {
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'default_workflow': 'defaultWorkflow',
-        'hierarchies': 'hierarchies',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'workflow_name': 'workflowName',
+        'hierarchies': 'hierarchies',
         'registration_type': 'registrationType',
         'stack_name': 'stackName',
-        'workflow_name': 'workflowName'
+        'default_workflow': 'defaultWorkflow'
     }
 
-    def __init__(self, created_by=None, creation_date=None, default_workflow=None, hierarchies=None, id=None, last_modified_by=None, last_modified_date=None, registration_type=None, stack_name=None, workflow_name=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, workflow_name=None, hierarchies=None, registration_type=None, stack_name=None, default_workflow=None):  # noqa: E501
         """PromotionWorkflow - a model defined in Swagger"""  # noqa: E501
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._default_workflow = None
-        self._hierarchies = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
+        self._workflow_name = None
+        self._hierarchies = None
         self._registration_type = None
         self._stack_name = None
-        self._workflow_name = None
+        self._default_workflow = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if default_workflow is not None:
-            self.default_workflow = default_workflow
-        if hierarchies is not None:
-            self.hierarchies = hierarchies
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if registration_type is not None:
-            self.registration_type = registration_type
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.workflow_name = workflow_name
+        if hierarchies is not None:
+            self.hierarchies = hierarchies
+        self.registration_type = registration_type
         if stack_name is not None:
             self.stack_name = stack_name
-        if workflow_name is not None:
-            self.workflow_name = workflow_name
+        if default_workflow is not None:
+            self.default_workflow = default_workflow
+
+    @property
+    def id(self):
+        """Gets the id of this PromotionWorkflow.  # noqa: E501
+
+
+        :return: The id of this PromotionWorkflow.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this PromotionWorkflow.
+
+
+        :param id: The id of this PromotionWorkflow.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def created_by(self):
@@ -130,67 +149,25 @@ class PromotionWorkflow(object):
         self._creation_date = creation_date
 
     @property
-    def default_workflow(self):
-        """Gets the default_workflow of this PromotionWorkflow.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this PromotionWorkflow.  # noqa: E501
 
 
-        :return: The default_workflow of this PromotionWorkflow.  # noqa: E501
-        :rtype: bool
+        :return: The last_modified_date of this PromotionWorkflow.  # noqa: E501
+        :rtype: datetime
         """
-        return self._default_workflow
+        return self._last_modified_date
 
-    @default_workflow.setter
-    def default_workflow(self, default_workflow):
-        """Sets the default_workflow of this PromotionWorkflow.
-
-
-        :param default_workflow: The default_workflow of this PromotionWorkflow.  # noqa: E501
-        :type: bool
-        """
-
-        self._default_workflow = default_workflow
-
-    @property
-    def hierarchies(self):
-        """Gets the hierarchies of this PromotionWorkflow.  # noqa: E501
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this PromotionWorkflow.
 
 
-        :return: The hierarchies of this PromotionWorkflow.  # noqa: E501
-        :rtype: list[WorkflowHierarchy]
-        """
-        return self._hierarchies
-
-    @hierarchies.setter
-    def hierarchies(self, hierarchies):
-        """Sets the hierarchies of this PromotionWorkflow.
-
-
-        :param hierarchies: The hierarchies of this PromotionWorkflow.  # noqa: E501
-        :type: list[WorkflowHierarchy]
+        :param last_modified_date: The last_modified_date of this PromotionWorkflow.  # noqa: E501
+        :type: datetime
         """
 
-        self._hierarchies = hierarchies
-
-    @property
-    def id(self):
-        """Gets the id of this PromotionWorkflow.  # noqa: E501
-
-
-        :return: The id of this PromotionWorkflow.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PromotionWorkflow.
-
-
-        :param id: The id of this PromotionWorkflow.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -214,25 +191,48 @@ class PromotionWorkflow(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this PromotionWorkflow.  # noqa: E501
+    def workflow_name(self):
+        """Gets the workflow_name of this PromotionWorkflow.  # noqa: E501
 
 
-        :return: The last_modified_date of this PromotionWorkflow.  # noqa: E501
-        :rtype: datetime
+        :return: The workflow_name of this PromotionWorkflow.  # noqa: E501
+        :rtype: str
         """
-        return self._last_modified_date
+        return self._workflow_name
 
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this PromotionWorkflow.
+    @workflow_name.setter
+    def workflow_name(self, workflow_name):
+        """Sets the workflow_name of this PromotionWorkflow.
 
 
-        :param last_modified_date: The last_modified_date of this PromotionWorkflow.  # noqa: E501
-        :type: datetime
+        :param workflow_name: The workflow_name of this PromotionWorkflow.  # noqa: E501
+        :type: str
+        """
+        if workflow_name is None:
+            raise ValueError("Invalid value for `workflow_name`, must not be `None`")  # noqa: E501
+
+        self._workflow_name = workflow_name
+
+    @property
+    def hierarchies(self):
+        """Gets the hierarchies of this PromotionWorkflow.  # noqa: E501
+
+
+        :return: The hierarchies of this PromotionWorkflow.  # noqa: E501
+        :rtype: list[WorkflowHierarchy]
+        """
+        return self._hierarchies
+
+    @hierarchies.setter
+    def hierarchies(self, hierarchies):
+        """Sets the hierarchies of this PromotionWorkflow.
+
+
+        :param hierarchies: The hierarchies of this PromotionWorkflow.  # noqa: E501
+        :type: list[WorkflowHierarchy]
         """
 
-        self._last_modified_date = last_modified_date
+        self._hierarchies = hierarchies
 
     @property
     def registration_type(self):
@@ -252,6 +252,8 @@ class PromotionWorkflow(object):
         :param registration_type: The registration_type of this PromotionWorkflow.  # noqa: E501
         :type: str
         """
+        if registration_type is None:
+            raise ValueError("Invalid value for `registration_type`, must not be `None`")  # noqa: E501
         allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
         if registration_type not in allowed_values:
             raise ValueError(
@@ -283,25 +285,25 @@ class PromotionWorkflow(object):
         self._stack_name = stack_name
 
     @property
-    def workflow_name(self):
-        """Gets the workflow_name of this PromotionWorkflow.  # noqa: E501
+    def default_workflow(self):
+        """Gets the default_workflow of this PromotionWorkflow.  # noqa: E501
 
 
-        :return: The workflow_name of this PromotionWorkflow.  # noqa: E501
-        :rtype: str
+        :return: The default_workflow of this PromotionWorkflow.  # noqa: E501
+        :rtype: bool
         """
-        return self._workflow_name
+        return self._default_workflow
 
-    @workflow_name.setter
-    def workflow_name(self, workflow_name):
-        """Sets the workflow_name of this PromotionWorkflow.
+    @default_workflow.setter
+    def default_workflow(self, default_workflow):
+        """Sets the default_workflow of this PromotionWorkflow.
 
 
-        :param workflow_name: The workflow_name of this PromotionWorkflow.  # noqa: E501
-        :type: str
+        :param default_workflow: The default_workflow of this PromotionWorkflow.  # noqa: E501
+        :type: bool
         """
 
-        self._workflow_name = workflow_name
+        self._default_workflow = default_workflow
 
     def to_dict(self):
         """Returns the model properties as a dict"""

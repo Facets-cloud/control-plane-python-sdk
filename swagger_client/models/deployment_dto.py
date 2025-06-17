@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,39 @@ class DeploymentDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'available': 'int',
         'name': 'str',
         'ready': 'int',
-        'up_to_date': 'int'
+        'up_to_date': 'int',
+        'available': 'int',
+        'age_in_seconds': 'int'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'available': 'available',
         'name': 'name',
         'ready': 'ready',
-        'up_to_date': 'upToDate'
+        'up_to_date': 'upToDate',
+        'available': 'available',
+        'age_in_seconds': 'ageInSeconds'
     }
 
-    def __init__(self, age_in_seconds=None, available=None, name=None, ready=None, up_to_date=None):  # noqa: E501
+    def __init__(self, name=None, ready=None, up_to_date=None, available=None, age_in_seconds=None):  # noqa: E501
         """DeploymentDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._available = None
         self._name = None
         self._ready = None
         self._up_to_date = None
+        self._available = None
+        self._age_in_seconds = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if available is not None:
-            self.available = available
         if name is not None:
             self.name = name
         if ready is not None:
             self.ready = ready
         if up_to_date is not None:
             self.up_to_date = up_to_date
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this DeploymentDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this DeploymentDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this DeploymentDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this DeploymentDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def available(self):
-        """Gets the available of this DeploymentDTO.  # noqa: E501
-
-
-        :return: The available of this DeploymentDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._available
-
-    @available.setter
-    def available(self, available):
-        """Sets the available of this DeploymentDTO.
-
-
-        :param available: The available of this DeploymentDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._available = available
+        if available is not None:
+            self.available = available
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
 
     @property
     def name(self):
@@ -166,6 +124,48 @@ class DeploymentDTO(object):
         """
 
         self._up_to_date = up_to_date
+
+    @property
+    def available(self):
+        """Gets the available of this DeploymentDTO.  # noqa: E501
+
+
+        :return: The available of this DeploymentDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._available
+
+    @available.setter
+    def available(self, available):
+        """Sets the available of this DeploymentDTO.
+
+
+        :param available: The available of this DeploymentDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._available = available
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this DeploymentDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this DeploymentDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this DeploymentDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this DeploymentDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

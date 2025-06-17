@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,16 +28,16 @@ class Event(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'action': 'str',
         'api_version': 'str',
+        'kind': 'str',
+        'metadata': 'ObjectMeta',
+        'action': 'str',
         'count': 'int',
         'event_time': 'MicroTime',
         'first_timestamp': 'str',
         'involved_object': 'ObjectReference',
-        'kind': 'str',
         'last_timestamp': 'str',
         'message': 'str',
-        'metadata': 'ObjectMeta',
         'reason': 'str',
         'related': 'ObjectReference',
         'reporting_component': 'str',
@@ -48,16 +48,16 @@ class Event(object):
     }
 
     attribute_map = {
-        'action': 'action',
         'api_version': 'apiVersion',
+        'kind': 'kind',
+        'metadata': 'metadata',
+        'action': 'action',
         'count': 'count',
         'event_time': 'eventTime',
         'first_timestamp': 'firstTimestamp',
         'involved_object': 'involvedObject',
-        'kind': 'kind',
         'last_timestamp': 'lastTimestamp',
         'message': 'message',
-        'metadata': 'metadata',
         'reason': 'reason',
         'related': 'related',
         'reporting_component': 'reportingComponent',
@@ -67,18 +67,18 @@ class Event(object):
         'type': 'type'
     }
 
-    def __init__(self, action=None, api_version=None, count=None, event_time=None, first_timestamp=None, involved_object=None, kind=None, last_timestamp=None, message=None, metadata=None, reason=None, related=None, reporting_component=None, reporting_instance=None, series=None, source=None, type=None):  # noqa: E501
+    def __init__(self, api_version=None, kind=None, metadata=None, action=None, count=None, event_time=None, first_timestamp=None, involved_object=None, last_timestamp=None, message=None, reason=None, related=None, reporting_component=None, reporting_instance=None, series=None, source=None, type=None):  # noqa: E501
         """Event - a model defined in Swagger"""  # noqa: E501
-        self._action = None
         self._api_version = None
+        self._kind = None
+        self._metadata = None
+        self._action = None
         self._count = None
         self._event_time = None
         self._first_timestamp = None
         self._involved_object = None
-        self._kind = None
         self._last_timestamp = None
         self._message = None
-        self._metadata = None
         self._reason = None
         self._related = None
         self._reporting_component = None
@@ -87,10 +87,14 @@ class Event(object):
         self._source = None
         self._type = None
         self.discriminator = None
-        if action is not None:
-            self.action = action
         if api_version is not None:
             self.api_version = api_version
+        if kind is not None:
+            self.kind = kind
+        if metadata is not None:
+            self.metadata = metadata
+        if action is not None:
+            self.action = action
         if count is not None:
             self.count = count
         if event_time is not None:
@@ -99,14 +103,10 @@ class Event(object):
             self.first_timestamp = first_timestamp
         if involved_object is not None:
             self.involved_object = involved_object
-        if kind is not None:
-            self.kind = kind
         if last_timestamp is not None:
             self.last_timestamp = last_timestamp
         if message is not None:
             self.message = message
-        if metadata is not None:
-            self.metadata = metadata
         if reason is not None:
             self.reason = reason
         if related is not None:
@@ -121,27 +121,6 @@ class Event(object):
             self.source = source
         if type is not None:
             self.type = type
-
-    @property
-    def action(self):
-        """Gets the action of this Event.  # noqa: E501
-
-
-        :return: The action of this Event.  # noqa: E501
-        :rtype: str
-        """
-        return self._action
-
-    @action.setter
-    def action(self, action):
-        """Sets the action of this Event.
-
-
-        :param action: The action of this Event.  # noqa: E501
-        :type: str
-        """
-
-        self._action = action
 
     @property
     def api_version(self):
@@ -163,6 +142,69 @@ class Event(object):
         """
 
         self._api_version = api_version
+
+    @property
+    def kind(self):
+        """Gets the kind of this Event.  # noqa: E501
+
+
+        :return: The kind of this Event.  # noqa: E501
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """Sets the kind of this Event.
+
+
+        :param kind: The kind of this Event.  # noqa: E501
+        :type: str
+        """
+
+        self._kind = kind
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this Event.  # noqa: E501
+
+
+        :return: The metadata of this Event.  # noqa: E501
+        :rtype: ObjectMeta
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this Event.
+
+
+        :param metadata: The metadata of this Event.  # noqa: E501
+        :type: ObjectMeta
+        """
+
+        self._metadata = metadata
+
+    @property
+    def action(self):
+        """Gets the action of this Event.  # noqa: E501
+
+
+        :return: The action of this Event.  # noqa: E501
+        :rtype: str
+        """
+        return self._action
+
+    @action.setter
+    def action(self, action):
+        """Sets the action of this Event.
+
+
+        :param action: The action of this Event.  # noqa: E501
+        :type: str
+        """
+
+        self._action = action
 
     @property
     def count(self):
@@ -249,27 +291,6 @@ class Event(object):
         self._involved_object = involved_object
 
     @property
-    def kind(self):
-        """Gets the kind of this Event.  # noqa: E501
-
-
-        :return: The kind of this Event.  # noqa: E501
-        :rtype: str
-        """
-        return self._kind
-
-    @kind.setter
-    def kind(self, kind):
-        """Sets the kind of this Event.
-
-
-        :param kind: The kind of this Event.  # noqa: E501
-        :type: str
-        """
-
-        self._kind = kind
-
-    @property
     def last_timestamp(self):
         """Gets the last_timestamp of this Event.  # noqa: E501
 
@@ -310,27 +331,6 @@ class Event(object):
         """
 
         self._message = message
-
-    @property
-    def metadata(self):
-        """Gets the metadata of this Event.  # noqa: E501
-
-
-        :return: The metadata of this Event.  # noqa: E501
-        :rtype: ObjectMeta
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """Sets the metadata of this Event.
-
-
-        :param metadata: The metadata of this Event.  # noqa: E501
-        :type: ObjectMeta
-        """
-
-        self._metadata = metadata
 
     @property
     def reason(self):

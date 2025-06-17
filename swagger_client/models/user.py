@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,117 +28,59 @@ class User(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_ids': 'list[str]',
-        'group_id': 'str',
-        'group_ids': 'list[str]',
         'id': 'str',
+        'user_name': 'str',
+        'password': 'str',
         'picture': 'str',
         'roles': 'list[str]',
-        'teams': 'list[str]',
-        'user_name': 'str'
+        'group_id': 'str',
+        'group_ids': 'list[str]',
+        'cluster_ids': 'list[str]',
+        'teams': 'list[str]'
     }
 
     attribute_map = {
-        'cluster_ids': 'clusterIds',
-        'group_id': 'groupId',
-        'group_ids': 'groupIds',
         'id': 'id',
+        'user_name': 'userName',
+        'password': 'password',
         'picture': 'picture',
         'roles': 'roles',
-        'teams': 'teams',
-        'user_name': 'userName'
+        'group_id': 'groupId',
+        'group_ids': 'groupIds',
+        'cluster_ids': 'clusterIds',
+        'teams': 'teams'
     }
 
-    def __init__(self, cluster_ids=None, group_id=None, group_ids=None, id=None, picture=None, roles=None, teams=None, user_name=None):  # noqa: E501
+    def __init__(self, id=None, user_name=None, password=None, picture=None, roles=None, group_id=None, group_ids=None, cluster_ids=None, teams=None):  # noqa: E501
         """User - a model defined in Swagger"""  # noqa: E501
-        self._cluster_ids = None
-        self._group_id = None
-        self._group_ids = None
         self._id = None
+        self._user_name = None
+        self._password = None
         self._picture = None
         self._roles = None
+        self._group_id = None
+        self._group_ids = None
+        self._cluster_ids = None
         self._teams = None
-        self._user_name = None
         self.discriminator = None
-        if cluster_ids is not None:
-            self.cluster_ids = cluster_ids
-        if group_id is not None:
-            self.group_id = group_id
-        if group_ids is not None:
-            self.group_ids = group_ids
         if id is not None:
             self.id = id
+        if user_name is not None:
+            self.user_name = user_name
+        if password is not None:
+            self.password = password
         if picture is not None:
             self.picture = picture
         if roles is not None:
             self.roles = roles
+        if group_id is not None:
+            self.group_id = group_id
+        if group_ids is not None:
+            self.group_ids = group_ids
+        if cluster_ids is not None:
+            self.cluster_ids = cluster_ids
         if teams is not None:
             self.teams = teams
-        if user_name is not None:
-            self.user_name = user_name
-
-    @property
-    def cluster_ids(self):
-        """Gets the cluster_ids of this User.  # noqa: E501
-
-
-        :return: The cluster_ids of this User.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._cluster_ids
-
-    @cluster_ids.setter
-    def cluster_ids(self, cluster_ids):
-        """Sets the cluster_ids of this User.
-
-
-        :param cluster_ids: The cluster_ids of this User.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._cluster_ids = cluster_ids
-
-    @property
-    def group_id(self):
-        """Gets the group_id of this User.  # noqa: E501
-
-
-        :return: The group_id of this User.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_id
-
-    @group_id.setter
-    def group_id(self, group_id):
-        """Sets the group_id of this User.
-
-
-        :param group_id: The group_id of this User.  # noqa: E501
-        :type: str
-        """
-
-        self._group_id = group_id
-
-    @property
-    def group_ids(self):
-        """Gets the group_ids of this User.  # noqa: E501
-
-
-        :return: The group_ids of this User.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._group_ids
-
-    @group_ids.setter
-    def group_ids(self, group_ids):
-        """Sets the group_ids of this User.
-
-
-        :param group_ids: The group_ids of this User.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._group_ids = group_ids
 
     @property
     def id(self):
@@ -160,6 +102,48 @@ class User(object):
         """
 
         self._id = id
+
+    @property
+    def user_name(self):
+        """Gets the user_name of this User.  # noqa: E501
+
+
+        :return: The user_name of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_name
+
+    @user_name.setter
+    def user_name(self, user_name):
+        """Sets the user_name of this User.
+
+
+        :param user_name: The user_name of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._user_name = user_name
+
+    @property
+    def password(self):
+        """Gets the password of this User.  # noqa: E501
+
+
+        :return: The password of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this User.
+
+
+        :param password: The password of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     @property
     def picture(self):
@@ -204,6 +188,69 @@ class User(object):
         self._roles = roles
 
     @property
+    def group_id(self):
+        """Gets the group_id of this User.  # noqa: E501
+
+
+        :return: The group_id of this User.  # noqa: E501
+        :rtype: str
+        """
+        return self._group_id
+
+    @group_id.setter
+    def group_id(self, group_id):
+        """Sets the group_id of this User.
+
+
+        :param group_id: The group_id of this User.  # noqa: E501
+        :type: str
+        """
+
+        self._group_id = group_id
+
+    @property
+    def group_ids(self):
+        """Gets the group_ids of this User.  # noqa: E501
+
+
+        :return: The group_ids of this User.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._group_ids
+
+    @group_ids.setter
+    def group_ids(self, group_ids):
+        """Sets the group_ids of this User.
+
+
+        :param group_ids: The group_ids of this User.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._group_ids = group_ids
+
+    @property
+    def cluster_ids(self):
+        """Gets the cluster_ids of this User.  # noqa: E501
+
+
+        :return: The cluster_ids of this User.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._cluster_ids
+
+    @cluster_ids.setter
+    def cluster_ids(self, cluster_ids):
+        """Sets the cluster_ids of this User.
+
+
+        :param cluster_ids: The cluster_ids of this User.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._cluster_ids = cluster_ids
+
+    @property
     def teams(self):
         """Gets the teams of this User.  # noqa: E501
 
@@ -223,27 +270,6 @@ class User(object):
         """
 
         self._teams = teams
-
-    @property
-    def user_name(self):
-        """Gets the user_name of this User.  # noqa: E501
-
-
-        :return: The user_name of this User.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_name
-
-    @user_name.setter
-    def user_name(self, user_name):
-        """Sets the user_name of this User.
-
-
-        :param user_name: The user_name of this User.  # noqa: E501
-        :type: str
-        """
-
-        self._user_name = user_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

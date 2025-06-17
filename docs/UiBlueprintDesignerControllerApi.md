@@ -1,40 +1,41 @@
 # swagger_client.UiBlueprintDesignerControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_variables_using_post**](UiBlueprintDesignerControllerApi.md#add_variables_using_post) | **POST** /cc-ui/v1/designer/{stackName}/variables | addVariables
-[**apply_template_using_post**](UiBlueprintDesignerControllerApi.md#apply_template_using_post) | **POST** /cc-ui/v1/designer/{stackName}/{templateName}/apply | applyTemplate
-[**bulk_edit_disabled_for_resources_using_put**](UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/resource-enable-disable | bulkEditDisabledForResources
-[**bulk_edit_disabled_for_resources_using_put1**](UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources_using_put1) | **PUT** /cc-ui/v1/designer/{stackName}/resource-enable-disable | bulkEditDisabledForResources
-[**create_branch_using_post**](UiBlueprintDesignerControllerApi.md#create_branch_using_post) | **POST** /cc-ui/v1/designer/{stackName}/{branch}/create-branch | createBranch
-[**create_resources_using_post**](UiBlueprintDesignerControllerApi.md#create_resources_using_post) | **POST** /cc-ui/v1/designer/{stackName}/branch/{branch} | createResources
-[**delete_resources_using_delete**](UiBlueprintDesignerControllerApi.md#delete_resources_using_delete) | **DELETE** /cc-ui/v1/designer/{stackName}/branch/{branch} | deleteResources
-[**delete_variables_using_delete**](UiBlueprintDesignerControllerApi.md#delete_variables_using_delete) | **DELETE** /cc-ui/v1/designer/{stackName}/variables | deleteVariables
-[**get_add_on_modules_using_get**](UiBlueprintDesignerControllerApi.md#get_add_on_modules_using_get) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/add-ons | Get add ons for this resource
-[**get_autocomplete_data_using_get**](UiBlueprintDesignerControllerApi.md#get_autocomplete_data_using_get) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data | getAutocompleteData
-[**get_autocomplete_data_v2_using_get**](UiBlueprintDesignerControllerApi.md#get_autocomplete_data_v2_using_get) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data-v2 | Get autocomplete data with module-specific output trees
-[**get_designer_resources_using_get**](UiBlueprintDesignerControllerApi.md#get_designer_resources_using_get) | **GET** /cc-ui/v1/designer/{stackName}/{branchName}/files | getDesignerResources
-[**get_module_inputs_using_get**](UiBlueprintDesignerControllerApi.md#get_module_inputs_using_get) | **GET** /cc-ui/v1/designer/{stackName}/intent/{intent}/flavor/{flavor}/input | getModuleInputs
-[**get_pull_requests_using_get**](UiBlueprintDesignerControllerApi.md#get_pull_requests_using_get) | **GET** /cc-ui/v1/designer/{stackName}/pulls | getPullRequests
-[**get_pull_requests_using_get1**](UiBlueprintDesignerControllerApi.md#get_pull_requests_using_get1) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/pulls | getPullRequests
-[**get_schema_metadata_using_get**](UiBlueprintDesignerControllerApi.md#get_schema_metadata_using_get) | **GET** /cc-ui/v1/designer/facets-components | getSchemaMetadata
-[**get_workflow_runs_using_get**](UiBlueprintDesignerControllerApi.md#get_workflow_runs_using_get) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/workflow-runs | getWorkflowRuns
-[**get_workflow_runs_using_get1**](UiBlueprintDesignerControllerApi.md#get_workflow_runs_using_get1) | **GET** /cc-ui/v1/designer/{stackName}/workflow-runs | getWorkflowRuns
-[**get_workflows_using_get**](UiBlueprintDesignerControllerApi.md#get_workflows_using_get) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/workflows | getWorkflows
-[**get_workflows_using_get1**](UiBlueprintDesignerControllerApi.md#get_workflows_using_get1) | **GET** /cc-ui/v1/designer/{stackName}/workflows | getWorkflows
-[**list_branches_using_get**](UiBlueprintDesignerControllerApi.md#list_branches_using_get) | **GET** /cc-ui/v1/designer/{stackName}/branch-list | listBranches
-[**list_branches_using_get1**](UiBlueprintDesignerControllerApi.md#list_branches_using_get1) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/branch-list | listBranches
-[**rename_resource_using_put**](UiBlueprintDesignerControllerApi.md#rename_resource_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/rename | renameResource
-[**sync_specified_blueprints_with_templates_using_post**](UiBlueprintDesignerControllerApi.md#sync_specified_blueprints_with_templates_using_post) | **POST** /cc-ui/v1/designer/{templateName}/sync | syncSpecifiedBlueprintsWithTemplates
-[**update_resources_using_put**](UiBlueprintDesignerControllerApi.md#update_resources_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch} | updateResources
-[**update_variables_using_put**](UiBlueprintDesignerControllerApi.md#update_variables_using_put) | **PUT** /cc-ui/v1/designer/{stackName}/variables | updateVariables
+[**add_variables**](UiBlueprintDesignerControllerApi.md#add_variables) | **POST** /cc-ui/v1/designer/{stackName}/variables | 
+[**apply_template**](UiBlueprintDesignerControllerApi.md#apply_template) | **POST** /cc-ui/v1/designer/{stackName}/{templateName}/apply | 
+[**bulk_edit_disabled_for_resources**](UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources) | **PUT** /cc-ui/v1/designer/{stackName}/resource-enable-disable | 
+[**bulk_edit_disabled_for_resources1**](UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources1) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/resource-enable-disable | 
+[**create_branch**](UiBlueprintDesignerControllerApi.md#create_branch) | **POST** /cc-ui/v1/designer/{stackName}/{branch}/create-branch | 
+[**create_resources**](UiBlueprintDesignerControllerApi.md#create_resources) | **POST** /cc-ui/v1/designer/{stackName}/branch/{branch} | 
+[**delete_resources**](UiBlueprintDesignerControllerApi.md#delete_resources) | **DELETE** /cc-ui/v1/designer/{stackName}/branch/{branch} | 
+[**delete_variables**](UiBlueprintDesignerControllerApi.md#delete_variables) | **DELETE** /cc-ui/v1/designer/{stackName}/variables | 
+[**get_add_on_modules**](UiBlueprintDesignerControllerApi.md#get_add_on_modules) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/add-ons | Get add ons for this resource
+[**get_autocomplete_data**](UiBlueprintDesignerControllerApi.md#get_autocomplete_data) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data | 
+[**get_autocomplete_data_v2**](UiBlueprintDesignerControllerApi.md#get_autocomplete_data_v2) | **GET** /cc-ui/v1/designer/{stackName}/ref-autocomplete-data-v2 | Get autocomplete data with module-specific output trees
+[**get_designer_resources**](UiBlueprintDesignerControllerApi.md#get_designer_resources) | **GET** /cc-ui/v1/designer/{stackName}/{branchName}/files | 
+[**get_module_inputs**](UiBlueprintDesignerControllerApi.md#get_module_inputs) | **GET** /cc-ui/v1/designer/{stackName}/intent/{intent}/flavor/{flavor}/input | 
+[**get_pull_requests**](UiBlueprintDesignerControllerApi.md#get_pull_requests) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/pulls | 
+[**get_pull_requests1**](UiBlueprintDesignerControllerApi.md#get_pull_requests1) | **GET** /cc-ui/v1/designer/{stackName}/pulls | 
+[**get_schema_metadata**](UiBlueprintDesignerControllerApi.md#get_schema_metadata) | **GET** /cc-ui/v1/designer/facets-components | 
+[**get_workflow_runs**](UiBlueprintDesignerControllerApi.md#get_workflow_runs) | **GET** /cc-ui/v1/designer/{stackName}/workflow-runs | 
+[**get_workflow_runs1**](UiBlueprintDesignerControllerApi.md#get_workflow_runs1) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/workflow-runs | 
+[**get_workflows**](UiBlueprintDesignerControllerApi.md#get_workflows) | **GET** /cc-ui/v1/designer/{stackName}/workflows | 
+[**get_workflows1**](UiBlueprintDesignerControllerApi.md#get_workflows1) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/workflows | 
+[**list_branches**](UiBlueprintDesignerControllerApi.md#list_branches) | **GET** /cc-ui/v1/designer/{stackName}/resourceType/{resourceType}/resourceName/{resourceName}/branch-list | 
+[**list_branches1**](UiBlueprintDesignerControllerApi.md#list_branches1) | **GET** /cc-ui/v1/designer/{stackName}/branch-list | 
+[**list_providers_exposed_by_module**](UiBlueprintDesignerControllerApi.md#list_providers_exposed_by_module) | **GET** /cc-ui/v1/designer/{stackName}/intent/{intent}/flavor/{flavor}/output-providers | 
+[**rename_resource**](UiBlueprintDesignerControllerApi.md#rename_resource) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/rename | 
+[**sync_specified_blueprints_with_templates**](UiBlueprintDesignerControllerApi.md#sync_specified_blueprints_with_templates) | **POST** /cc-ui/v1/designer/{templateName}/sync | 
+[**update_resources**](UiBlueprintDesignerControllerApi.md#update_resources) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch} | 
+[**update_variables**](UiBlueprintDesignerControllerApi.md#update_variables) | **PUT** /cc-ui/v1/designer/{stackName}/variables | 
 
-# **add_variables_using_post**
-> add_variables_using_post(body, stack_name)
+# **add_variables**
+> add_variables(body, stack_name)
 
-addVariables
+
 
 ### Example
 ```python
@@ -43,29 +44,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = NULL # dict(str, VariableDetails) | variables
-stack_name = 'stack_name_example' # str | stackName
+body = NULL # dict(str, VariableDetails) | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # addVariables
-    api_instance.add_variables_using_post(body, stack_name)
+    api_instance.add_variables(body, stack_name)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->add_variables_using_post: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->add_variables: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, VariableDetails)**](dict.md)| variables | 
- **stack_name** | **str**| stackName | 
+ **body** | [**dict(str, VariableDetails)**](dict.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -73,19 +73,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apply_template_using_post**
-> apply_template_using_post(stack_name, template_name, prefix=prefix, suffix=suffix)
+# **apply_template**
+> apply_template(stack_name, template_name, prefix=prefix, suffix=suffix)
 
-applyTemplate
+
 
 ### Example
 ```python
@@ -94,33 +94,32 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-template_name = 'template_name_example' # str | templateName
-prefix = 'prefix_example' # str | prefix (optional)
-suffix = 'suffix_example' # str | suffix (optional)
+stack_name = 'stack_name_example' # str | 
+template_name = 'template_name_example' # str | 
+prefix = 'prefix_example' # str |  (optional)
+suffix = 'suffix_example' # str |  (optional)
 
 try:
-    # applyTemplate
-    api_instance.apply_template_using_post(stack_name, template_name, prefix=prefix, suffix=suffix)
+    api_instance.apply_template(stack_name, template_name, prefix=prefix, suffix=suffix)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->apply_template_using_post: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->apply_template: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
- **template_name** | **str**| templateName | 
- **prefix** | **str**| prefix | [optional] 
- **suffix** | **str**| suffix | [optional] 
+ **stack_name** | **str**|  | 
+ **template_name** | **str**|  | 
+ **prefix** | **str**|  | [optional] 
+ **suffix** | **str**|  | [optional] 
 
 ### Return type
 
@@ -128,19 +127,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bulk_edit_disabled_for_resources_using_put**
-> bulk_edit_disabled_for_resources_using_put(body, branch, stack_name)
+# **bulk_edit_disabled_for_resources**
+> bulk_edit_disabled_for_resources(body, stack_name)
 
-bulkEditDisabledForResources
+
 
 ### Example
 ```python
@@ -149,31 +148,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceEnableDisableRequest()] # list[ResourceEnableDisableRequest] | resourceEnableDisableRequestList
-branch = 'branch_example' # str | branch
-stack_name = 'stack_name_example' # str | stackName
+body = [swagger_client.ResourceEnableDisableRequest()] # list[ResourceEnableDisableRequest] | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # bulkEditDisabledForResources
-    api_instance.bulk_edit_disabled_for_resources_using_put(body, branch, stack_name)
+    api_instance.bulk_edit_disabled_for_resources(body, stack_name)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->bulk_edit_disabled_for_resources_using_put: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->bulk_edit_disabled_for_resources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceEnableDisableRequest]**](ResourceEnableDisableRequest.md)| resourceEnableDisableRequestList | 
- **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
+ **body** | [**list[ResourceEnableDisableRequest]**](ResourceEnableDisableRequest.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -181,19 +177,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bulk_edit_disabled_for_resources_using_put1**
-> bulk_edit_disabled_for_resources_using_put1(body, stack_name)
+# **bulk_edit_disabled_for_resources1**
+> bulk_edit_disabled_for_resources1(body, stack_name, branch)
 
-bulkEditDisabledForResources
+
 
 ### Example
 ```python
@@ -202,29 +198,30 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceEnableDisableRequest()] # list[ResourceEnableDisableRequest] | resourceEnableDisableRequestList
-stack_name = 'stack_name_example' # str | stackName
+body = [swagger_client.ResourceEnableDisableRequest()] # list[ResourceEnableDisableRequest] | 
+stack_name = 'stack_name_example' # str | 
+branch = 'branch_example' # str | 
 
 try:
-    # bulkEditDisabledForResources
-    api_instance.bulk_edit_disabled_for_resources_using_put1(body, stack_name)
+    api_instance.bulk_edit_disabled_for_resources1(body, stack_name, branch)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->bulk_edit_disabled_for_resources_using_put1: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->bulk_edit_disabled_for_resources1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceEnableDisableRequest]**](ResourceEnableDisableRequest.md)| resourceEnableDisableRequestList | 
- **stack_name** | **str**| stackName | 
+ **body** | [**list[ResourceEnableDisableRequest]**](ResourceEnableDisableRequest.md)|  | 
+ **stack_name** | **str**|  | 
+ **branch** | **str**|  | 
 
 ### Return type
 
@@ -232,19 +229,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_branch_using_post**
-> create_branch_using_post(branch, stack_name)
+# **create_branch**
+> create_branch(stack_name, branch)
 
-createBranch
+
 
 ### Example
 ```python
@@ -253,29 +250,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-branch = 'branch_example' # str | branch
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+branch = 'branch_example' # str | 
 
 try:
-    # createBranch
-    api_instance.create_branch_using_post(branch, stack_name)
+    api_instance.create_branch(stack_name, branch)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->create_branch_using_post: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->create_branch: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **branch** | **str**|  | 
 
 ### Return type
 
@@ -283,19 +279,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_resources_using_post**
-> create_resources_using_post(body, branch, stack_name)
+# **create_resources**
+> create_resources(body, stack_name, branch)
 
-createResources
+
 
 ### Example
 ```python
@@ -304,31 +300,30 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | resourceFileRequests
-branch = 'branch_example' # str | branch
-stack_name = 'stack_name_example' # str | stackName
+body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | 
+stack_name = 'stack_name_example' # str | 
+branch = 'branch_example' # str | 
 
 try:
-    # createResources
-    api_instance.create_resources_using_post(body, branch, stack_name)
+    api_instance.create_resources(body, stack_name, branch)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->create_resources_using_post: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->create_resources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
- **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
+ **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)|  | 
+ **stack_name** | **str**|  | 
+ **branch** | **str**|  | 
 
 ### Return type
 
@@ -336,19 +331,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_resources_using_delete**
-> delete_resources_using_delete(body, branch, stack_name)
+# **delete_resources**
+> delete_resources(body, stack_name, branch)
 
-deleteResources
+
 
 ### Example
 ```python
@@ -357,31 +352,30 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | resourceFileRequests
-branch = 'branch_example' # str | branch
-stack_name = 'stack_name_example' # str | stackName
+body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | 
+stack_name = 'stack_name_example' # str | 
+branch = 'branch_example' # str | 
 
 try:
-    # deleteResources
-    api_instance.delete_resources_using_delete(body, branch, stack_name)
+    api_instance.delete_resources(body, stack_name, branch)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->delete_resources_using_delete: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->delete_resources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
- **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
+ **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)|  | 
+ **stack_name** | **str**|  | 
+ **branch** | **str**|  | 
 
 ### Return type
 
@@ -389,19 +383,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_variables_using_delete**
-> delete_variables_using_delete(body, stack_name)
+# **delete_variables**
+> delete_variables(body, stack_name)
 
-deleteVariables
+
 
 ### Example
 ```python
@@ -410,29 +404,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = ['body_example'] # list[str] | variables
-stack_name = 'stack_name_example' # str | stackName
+body = ['body_example'] # list[str] | 
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # deleteVariables
-    api_instance.delete_variables_using_delete(body, stack_name)
+    api_instance.delete_variables(body, stack_name)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->delete_variables_using_delete: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->delete_variables: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[str]**](str.md)| variables | 
- **stack_name** | **str**| stackName | 
+ **body** | [**list[str]**](str.md)|  | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -440,17 +433,17 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: */*
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_add_on_modules_using_get**
-> list[AddOnDTO] get_add_on_modules_using_get(resource_name, resource_type, stack_name, cloud=cloud)
+# **get_add_on_modules**
+> list[AddOnDTO] get_add_on_modules(stack_name, resource_type, resource_name, cloud=cloud)
 
 Get add ons for this resource
 
@@ -461,34 +454,34 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
-cloud = 'cloud_example' # str | cloud (optional)
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
+cloud = 'cloud_example' # str |  (optional)
 
 try:
     # Get add ons for this resource
-    api_response = api_instance.get_add_on_modules_using_get(resource_name, resource_type, stack_name, cloud=cloud)
+    api_response = api_instance.get_add_on_modules(stack_name, resource_type, resource_name, cloud=cloud)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_add_on_modules_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_add_on_modules: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
- **cloud** | **str**| cloud | [optional] 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **cloud** | **str**|  | [optional] 
 
 ### Return type
 
@@ -496,19 +489,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_autocomplete_data_using_get**
-> AutocompleteResponse get_autocomplete_data_using_get(stack_name)
+# **get_autocomplete_data**
+> AutocompleteResponse get_autocomplete_data(stack_name)
 
-getAutocompleteData
+
 
 ### Example
 ```python
@@ -517,28 +510,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getAutocompleteData
-    api_response = api_instance.get_autocomplete_data_using_get(stack_name)
+    api_response = api_instance.get_autocomplete_data(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_autocomplete_data_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_autocomplete_data: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -546,17 +538,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_autocomplete_data_v2_using_get**
-> AutocompleteResponseV2 get_autocomplete_data_v2_using_get(stack_name)
+# **get_autocomplete_data_v2**
+> AutocompleteResponseV2 get_autocomplete_data_v2(stack_name)
 
 Get autocomplete data with module-specific output trees
 
@@ -569,28 +561,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
     # Get autocomplete data with module-specific output trees
-    api_response = api_instance.get_autocomplete_data_v2_using_get(stack_name)
+    api_response = api_instance.get_autocomplete_data_v2(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_autocomplete_data_v2_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_autocomplete_data_v2: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -598,19 +590,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_designer_resources_using_get**
-> list[BlueprintFile] get_designer_resources_using_get(branch_name, stack_name)
+# **get_designer_resources**
+> list[BlueprintFile] get_designer_resources(stack_name, branch_name)
 
-getDesignerResources
+
 
 ### Example
 ```python
@@ -619,30 +611,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-branch_name = 'branch_name_example' # str | branchName
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+branch_name = 'branch_name_example' # str | 
 
 try:
-    # getDesignerResources
-    api_response = api_instance.get_designer_resources_using_get(branch_name, stack_name)
+    api_response = api_instance.get_designer_resources(stack_name, branch_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_designer_resources_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_designer_resources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **branch_name** | **str**| branchName | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **branch_name** | **str**|  | 
 
 ### Return type
 
@@ -650,19 +641,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_module_inputs_using_get**
-> dict(str, ModuleInputDTO) get_module_inputs_using_get(flavor, intent, stack_name)
+# **get_module_inputs**
+> dict(str, ModuleInputDTO) get_module_inputs(stack_name, intent, flavor)
 
-getModuleInputs
+
 
 ### Example
 ```python
@@ -671,32 +662,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-flavor = 'flavor_example' # str | flavor
-intent = 'intent_example' # str | intent
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+intent = 'intent_example' # str | 
+flavor = 'flavor_example' # str | 
 
 try:
-    # getModuleInputs
-    api_response = api_instance.get_module_inputs_using_get(flavor, intent, stack_name)
+    api_response = api_instance.get_module_inputs(stack_name, intent, flavor)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_module_inputs_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_module_inputs: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **flavor** | **str**| flavor | 
- **intent** | **str**| intent | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **intent** | **str**|  | 
+ **flavor** | **str**|  | 
 
 ### Return type
 
@@ -704,19 +694,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_pull_requests_using_get**
-> ListPullRequestResponse get_pull_requests_using_get(stack_name, created_date=created_date, page_number=page_number, page_size=page_size, query=query, state=state)
+# **get_pull_requests**
+> ListPullRequestResponse get_pull_requests(stack_name, resource_type, resource_name, state=state, page_size=page_size, page_number=page_number, created_date=created_date, query=query)
 
-getPullRequests
+
 
 ### Example
 ```python
@@ -725,38 +715,41 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-created_date = 'created_date_example' # str | createdDate (optional)
-page_number = 1 # int | pageNumber (optional) (default to 1)
-page_size = 10 # int | pageSize (optional) (default to 10)
-query = 'query_example' # str | query (optional)
-state = 'OPEN' # str | state (optional) (default to OPEN)
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
+state = 'OPEN' # str |  (optional) (default to OPEN)
+page_size = 10 # int |  (optional) (default to 10)
+page_number = 1 # int |  (optional) (default to 1)
+created_date = 'created_date_example' # str |  (optional)
+query = 'query_example' # str |  (optional)
 
 try:
-    # getPullRequests
-    api_response = api_instance.get_pull_requests_using_get(stack_name, created_date=created_date, page_number=page_number, page_size=page_size, query=query, state=state)
+    api_response = api_instance.get_pull_requests(stack_name, resource_type, resource_name, state=state, page_size=page_size, page_number=page_number, created_date=created_date, query=query)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_pull_requests_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_pull_requests: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
- **created_date** | **str**| createdDate | [optional] 
- **page_number** | **int**| pageNumber | [optional] [default to 1]
- **page_size** | **int**| pageSize | [optional] [default to 10]
- **query** | **str**| query | [optional] 
- **state** | **str**| state | [optional] [default to OPEN]
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **state** | **str**|  | [optional] [default to OPEN]
+ **page_size** | **int**|  | [optional] [default to 10]
+ **page_number** | **int**|  | [optional] [default to 1]
+ **created_date** | **str**|  | [optional] 
+ **query** | **str**|  | [optional] 
 
 ### Return type
 
@@ -764,19 +757,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_pull_requests_using_get1**
-> ListPullRequestResponse get_pull_requests_using_get1(resource_name, resource_type, stack_name, created_date=created_date, page_number=page_number, page_size=page_size, query=query, state=state)
+# **get_pull_requests1**
+> ListPullRequestResponse get_pull_requests1(stack_name, state=state, page_size=page_size, page_number=page_number, created_date=created_date, query=query)
 
-getPullRequests
+
 
 ### Example
 ```python
@@ -785,42 +778,37 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
-created_date = 'created_date_example' # str | createdDate (optional)
-page_number = 1 # int | pageNumber (optional) (default to 1)
-page_size = 10 # int | pageSize (optional) (default to 10)
-query = 'query_example' # str | query (optional)
-state = 'OPEN' # str | state (optional) (default to OPEN)
+stack_name = 'stack_name_example' # str | 
+state = 'OPEN' # str |  (optional) (default to OPEN)
+page_size = 10 # int |  (optional) (default to 10)
+page_number = 1 # int |  (optional) (default to 1)
+created_date = 'created_date_example' # str |  (optional)
+query = 'query_example' # str |  (optional)
 
 try:
-    # getPullRequests
-    api_response = api_instance.get_pull_requests_using_get1(resource_name, resource_type, stack_name, created_date=created_date, page_number=page_number, page_size=page_size, query=query, state=state)
+    api_response = api_instance.get_pull_requests1(stack_name, state=state, page_size=page_size, page_number=page_number, created_date=created_date, query=query)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_pull_requests_using_get1: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_pull_requests1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
- **created_date** | **str**| createdDate | [optional] 
- **page_number** | **int**| pageNumber | [optional] [default to 1]
- **page_size** | **int**| pageSize | [optional] [default to 10]
- **query** | **str**| query | [optional] 
- **state** | **str**| state | [optional] [default to OPEN]
+ **stack_name** | **str**|  | 
+ **state** | **str**|  | [optional] [default to OPEN]
+ **page_size** | **int**|  | [optional] [default to 10]
+ **page_number** | **int**|  | [optional] [default to 1]
+ **created_date** | **str**|  | [optional] 
+ **query** | **str**|  | [optional] 
 
 ### Return type
 
@@ -828,19 +816,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_schema_metadata_using_get**
-> JsonNode get_schema_metadata_using_get()
+# **get_schema_metadata**
+> JsonNode get_schema_metadata()
 
-getSchemaMetadata
+
 
 ### Example
 ```python
@@ -849,7 +837,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -858,11 +846,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getSchemaMetadata
-    api_response = api_instance.get_schema_metadata_using_get()
+    api_response = api_instance.get_schema_metadata()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_schema_metadata_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_schema_metadata: %s\n" % e)
 ```
 
 ### Parameters
@@ -874,19 +861,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_workflow_runs_using_get**
-> ListWorkflowRunsResponse get_workflow_runs_using_get(resource_name, resource_type, stack_name, actor=actor, branch=branch, event=event, page_number=page_number, page_size=page_size, status=status, workflow_id=workflow_id)
+# **get_workflow_runs**
+> ListWorkflowRunsResponse get_workflow_runs(stack_name, page_size=page_size, page_number=page_number, workflow_id=workflow_id, event=event, status=status, branch=branch, actor=actor)
 
-getWorkflowRuns
+
 
 ### Example
 ```python
@@ -895,46 +882,41 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
-actor = 'actor_example' # str | actor (optional)
-branch = 'branch_example' # str | branch (optional)
-event = 'event_example' # str | event (optional)
-page_number = 1 # int | pageNumber (optional) (default to 1)
-page_size = 10 # int | pageSize (optional) (default to 10)
-status = 'status_example' # str | status (optional)
-workflow_id = 'workflow_id_example' # str | workflowId (optional)
+stack_name = 'stack_name_example' # str | 
+page_size = 10 # int |  (optional) (default to 10)
+page_number = 1 # int |  (optional) (default to 1)
+workflow_id = 'workflow_id_example' # str |  (optional)
+event = 'event_example' # str |  (optional)
+status = 'status_example' # str |  (optional)
+branch = 'branch_example' # str |  (optional)
+actor = 'actor_example' # str |  (optional)
 
 try:
-    # getWorkflowRuns
-    api_response = api_instance.get_workflow_runs_using_get(resource_name, resource_type, stack_name, actor=actor, branch=branch, event=event, page_number=page_number, page_size=page_size, status=status, workflow_id=workflow_id)
+    api_response = api_instance.get_workflow_runs(stack_name, page_size=page_size, page_number=page_number, workflow_id=workflow_id, event=event, status=status, branch=branch, actor=actor)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflow_runs_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflow_runs: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
- **actor** | **str**| actor | [optional] 
- **branch** | **str**| branch | [optional] 
- **event** | **str**| event | [optional] 
- **page_number** | **int**| pageNumber | [optional] [default to 1]
- **page_size** | **int**| pageSize | [optional] [default to 10]
- **status** | **str**| status | [optional] 
- **workflow_id** | **str**| workflowId | [optional] 
+ **stack_name** | **str**|  | 
+ **page_size** | **int**|  | [optional] [default to 10]
+ **page_number** | **int**|  | [optional] [default to 1]
+ **workflow_id** | **str**|  | [optional] 
+ **event** | **str**|  | [optional] 
+ **status** | **str**|  | [optional] 
+ **branch** | **str**|  | [optional] 
+ **actor** | **str**|  | [optional] 
 
 ### Return type
 
@@ -942,19 +924,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_workflow_runs_using_get1**
-> ListWorkflowRunsResponse get_workflow_runs_using_get1(stack_name, actor=actor, branch=branch, event=event, page_number=page_number, page_size=page_size, status=status, workflow_id=workflow_id)
+# **get_workflow_runs1**
+> ListWorkflowRunsResponse get_workflow_runs1(stack_name, resource_type, resource_name, page_size=page_size, page_number=page_number, workflow_id=workflow_id, event=event, status=status, branch=branch, actor=actor)
 
-getWorkflowRuns
+
 
 ### Example
 ```python
@@ -963,42 +945,45 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
-actor = 'actor_example' # str | actor (optional)
-branch = 'branch_example' # str | branch (optional)
-event = 'event_example' # str | event (optional)
-page_number = 1 # int | pageNumber (optional) (default to 1)
-page_size = 10 # int | pageSize (optional) (default to 10)
-status = 'status_example' # str | status (optional)
-workflow_id = 'workflow_id_example' # str | workflowId (optional)
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
+page_size = 10 # int |  (optional) (default to 10)
+page_number = 1 # int |  (optional) (default to 1)
+workflow_id = 'workflow_id_example' # str |  (optional)
+event = 'event_example' # str |  (optional)
+status = 'status_example' # str |  (optional)
+branch = 'branch_example' # str |  (optional)
+actor = 'actor_example' # str |  (optional)
 
 try:
-    # getWorkflowRuns
-    api_response = api_instance.get_workflow_runs_using_get1(stack_name, actor=actor, branch=branch, event=event, page_number=page_number, page_size=page_size, status=status, workflow_id=workflow_id)
+    api_response = api_instance.get_workflow_runs1(stack_name, resource_type, resource_name, page_size=page_size, page_number=page_number, workflow_id=workflow_id, event=event, status=status, branch=branch, actor=actor)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflow_runs_using_get1: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflow_runs1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
- **actor** | **str**| actor | [optional] 
- **branch** | **str**| branch | [optional] 
- **event** | **str**| event | [optional] 
- **page_number** | **int**| pageNumber | [optional] [default to 1]
- **page_size** | **int**| pageSize | [optional] [default to 10]
- **status** | **str**| status | [optional] 
- **workflow_id** | **str**| workflowId | [optional] 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
+ **page_size** | **int**|  | [optional] [default to 10]
+ **page_number** | **int**|  | [optional] [default to 1]
+ **workflow_id** | **str**|  | [optional] 
+ **event** | **str**|  | [optional] 
+ **status** | **str**|  | [optional] 
+ **branch** | **str**|  | [optional] 
+ **actor** | **str**|  | [optional] 
 
 ### Return type
 
@@ -1006,19 +991,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_workflows_using_get**
-> list[Workflow] get_workflows_using_get(resource_name, resource_type, stack_name)
+# **get_workflows**
+> list[Workflow] get_workflows(stack_name)
 
-getWorkflows
+
 
 ### Example
 ```python
@@ -1027,32 +1012,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # getWorkflows
-    api_response = api_instance.get_workflows_using_get(resource_name, resource_type, stack_name)
+    api_response = api_instance.get_workflows(stack_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflows_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflows: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
@@ -1060,19 +1040,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_workflows_using_get1**
-> list[Workflow] get_workflows_using_get1(stack_name)
+# **get_workflows1**
+> list[Workflow] get_workflows1(stack_name, resource_type, resource_name)
 
-getWorkflows
+
 
 ### Example
 ```python
@@ -1081,28 +1061,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # getWorkflows
-    api_response = api_instance.get_workflows_using_get1(stack_name)
+    api_response = api_instance.get_workflows1(stack_name, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflows_using_get1: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->get_workflows1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
@@ -1110,19 +1093,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_branches_using_get**
-> BranchDTO list_branches_using_get(stack_name)
+# **list_branches**
+> list[str] list_branches(stack_name, resource_type, resource_name)
 
-listBranches
+
 
 ### Example
 ```python
@@ -1131,82 +1114,31 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
+resource_type = 'resource_type_example' # str | 
+resource_name = 'resource_name_example' # str | 
 
 try:
-    # listBranches
-    api_response = api_instance.list_branches_using_get(stack_name)
+    api_response = api_instance.list_branches(stack_name, resource_type, resource_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->list_branches_using_get: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->list_branches: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stack_name** | **str**| stackName | 
-
-### Return type
-
-[**BranchDTO**](BranchDTO.md)
-
-### Authorization
-
-[main](../README.md#main)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_branches_using_get1**
-> list[str] list_branches_using_get1(resource_name, resource_type, stack_name)
-
-listBranches
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: main
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-resource_name = 'resource_name_example' # str | resourceName
-resource_type = 'resource_type_example' # str | resourceType
-stack_name = 'stack_name_example' # str | stackName
-
-try:
-    # listBranches
-    api_response = api_instance.list_branches_using_get1(resource_name, resource_type, stack_name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->list_branches_using_get1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **resource_name** | **str**| resourceName | 
- **resource_type** | **str**| resourceType | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
+ **resource_type** | **str**|  | 
+ **resource_name** | **str**|  | 
 
 ### Return type
 
@@ -1214,19 +1146,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **rename_resource_using_put**
-> rename_resource_using_put(body, branch, stack_name)
+# **list_branches1**
+> BranchDTO list_branches1(stack_name)
 
-renameResource
+
 
 ### Example
 ```python
@@ -1235,51 +1167,47 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ResourceRenameRequest() # ResourceRenameRequest | resourceRenameRequest
-branch = 'branch_example' # str | branch
-stack_name = 'stack_name_example' # str | stackName
+stack_name = 'stack_name_example' # str | 
 
 try:
-    # renameResource
-    api_instance.rename_resource_using_put(body, branch, stack_name)
+    api_response = api_instance.list_branches1(stack_name)
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->rename_resource_using_put: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->list_branches1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResourceRenameRequest**](ResourceRenameRequest.md)| resourceRenameRequest | 
- **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
+ **stack_name** | **str**|  | 
 
 ### Return type
 
-void (empty response body)
+[**BranchDTO**](BranchDTO.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync_specified_blueprints_with_templates_using_post**
-> sync_specified_blueprints_with_templates_using_post(body, template_name)
+# **list_providers_exposed_by_module**
+> list[TFProvider] list_providers_exposed_by_module(stack_name, intent, flavor)
 
-syncSpecifiedBlueprintsWithTemplates
+
 
 ### Example
 ```python
@@ -1288,49 +1216,51 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = ['body_example'] # list[str] | blueprintNames
-template_name = 'template_name_example' # str | templateName
+stack_name = 'stack_name_example' # str | 
+intent = 'intent_example' # str | 
+flavor = 'flavor_example' # str | 
 
 try:
-    # syncSpecifiedBlueprintsWithTemplates
-    api_instance.sync_specified_blueprints_with_templates_using_post(body, template_name)
+    api_response = api_instance.list_providers_exposed_by_module(stack_name, intent, flavor)
+    pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->sync_specified_blueprints_with_templates_using_post: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->list_providers_exposed_by_module: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[str]**](str.md)| blueprintNames | 
- **template_name** | **str**| templateName | 
+ **stack_name** | **str**|  | 
+ **intent** | **str**|  | 
+ **flavor** | **str**|  | 
 
 ### Return type
 
-void (empty response body)
+[**list[TFProvider]**](TFProvider.md)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_resources_using_put**
-> update_resources_using_put(body, branch, stack_name)
+# **rename_resource**
+> rename_resource(body, stack_name, branch)
 
-updateResources
+
 
 ### Example
 ```python
@@ -1339,31 +1269,30 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | resourceFileRequests
-branch = 'branch_example' # str | branch
-stack_name = 'stack_name_example' # str | stackName
+body = swagger_client.ResourceRenameRequest() # ResourceRenameRequest | 
+stack_name = 'stack_name_example' # str | 
+branch = 'branch_example' # str | 
 
 try:
-    # updateResources
-    api_instance.update_resources_using_put(body, branch, stack_name)
+    api_instance.rename_resource(body, stack_name, branch)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->update_resources_using_put: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->rename_resource: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)| resourceFileRequests | 
- **branch** | **str**| branch | 
- **stack_name** | **str**| stackName | 
+ **body** | [**ResourceRenameRequest**](ResourceRenameRequest.md)|  | 
+ **stack_name** | **str**|  | 
+ **branch** | **str**|  | 
 
 ### Return type
 
@@ -1371,19 +1300,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_variables_using_put**
-> update_variables_using_put(body, stack_name)
+# **sync_specified_blueprints_with_templates**
+> sync_specified_blueprints_with_templates(body, template_name)
 
-updateVariables
+
 
 ### Example
 ```python
@@ -1392,29 +1321,28 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = NULL # dict(str, VariableDetails) | variables
-stack_name = 'stack_name_example' # str | stackName
+body = ['body_example'] # list[str] | 
+template_name = 'template_name_example' # str | 
 
 try:
-    # updateVariables
-    api_instance.update_variables_using_put(body, stack_name)
+    api_instance.sync_specified_blueprints_with_templates(body, template_name)
 except ApiException as e:
-    print("Exception when calling UiBlueprintDesignerControllerApi->update_variables_using_put: %s\n" % e)
+    print("Exception when calling UiBlueprintDesignerControllerApi->sync_specified_blueprints_with_templates: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, VariableDetails)**](dict.md)| variables | 
- **stack_name** | **str**| stackName | 
+ **body** | [**list[str]**](str.md)|  | 
+ **template_name** | **str**|  | 
 
 ### Return type
 
@@ -1422,12 +1350,114 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_resources**
+> update_resources(body, stack_name, branch)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | 
+stack_name = 'stack_name_example' # str | 
+branch = 'branch_example' # str | 
+
+try:
+    api_instance.update_resources(body, stack_name, branch)
+except ApiException as e:
+    print("Exception when calling UiBlueprintDesignerControllerApi->update_resources: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)|  | 
+ **stack_name** | **str**|  | 
+ **branch** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_variables**
+> update_variables(body, stack_name)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
+body = NULL # dict(str, VariableDetails) | 
+stack_name = 'stack_name_example' # str | 
+
+try:
+    api_instance.update_variables(body, stack_name)
+except ApiException as e:
+    print("Exception when calling UiBlueprintDesignerControllerApi->update_variables: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**dict(str, VariableDetails)**](dict.md)|  | 
+ **stack_name** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

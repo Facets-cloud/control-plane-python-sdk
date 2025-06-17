@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,44 +28,86 @@ class PolicyTemplateDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'template_id': 'str',
+        'template_name': 'str',
         'description': 'str',
         'flavours': 'list[str]',
-        'input_data': 'object',
         'resource_types': 'list[str]',
-        'template_id': 'str',
-        'template_name': 'str'
+        'input_data': 'dict(str, object)'
     }
 
     attribute_map = {
+        'template_id': 'templateId',
+        'template_name': 'templateName',
         'description': 'description',
         'flavours': 'flavours',
-        'input_data': 'inputData',
         'resource_types': 'resourceTypes',
-        'template_id': 'templateId',
-        'template_name': 'templateName'
+        'input_data': 'inputData'
     }
 
-    def __init__(self, description=None, flavours=None, input_data=None, resource_types=None, template_id=None, template_name=None):  # noqa: E501
+    def __init__(self, template_id=None, template_name=None, description=None, flavours=None, resource_types=None, input_data=None):  # noqa: E501
         """PolicyTemplateDTO - a model defined in Swagger"""  # noqa: E501
-        self._description = None
-        self._flavours = None
-        self._input_data = None
-        self._resource_types = None
         self._template_id = None
         self._template_name = None
+        self._description = None
+        self._flavours = None
+        self._resource_types = None
+        self._input_data = None
         self.discriminator = None
-        if description is not None:
-            self.description = description
-        if flavours is not None:
-            self.flavours = flavours
-        if input_data is not None:
-            self.input_data = input_data
-        if resource_types is not None:
-            self.resource_types = resource_types
         if template_id is not None:
             self.template_id = template_id
         if template_name is not None:
             self.template_name = template_name
+        if description is not None:
+            self.description = description
+        if flavours is not None:
+            self.flavours = flavours
+        if resource_types is not None:
+            self.resource_types = resource_types
+        if input_data is not None:
+            self.input_data = input_data
+
+    @property
+    def template_id(self):
+        """Gets the template_id of this PolicyTemplateDTO.  # noqa: E501
+
+
+        :return: The template_id of this PolicyTemplateDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_id
+
+    @template_id.setter
+    def template_id(self, template_id):
+        """Sets the template_id of this PolicyTemplateDTO.
+
+
+        :param template_id: The template_id of this PolicyTemplateDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._template_id = template_id
+
+    @property
+    def template_name(self):
+        """Gets the template_name of this PolicyTemplateDTO.  # noqa: E501
+
+
+        :return: The template_name of this PolicyTemplateDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_name
+
+    @template_name.setter
+    def template_name(self, template_name):
+        """Sets the template_name of this PolicyTemplateDTO.
+
+
+        :param template_name: The template_name of this PolicyTemplateDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._template_name = template_name
 
     @property
     def description(self):
@@ -110,27 +152,6 @@ class PolicyTemplateDTO(object):
         self._flavours = flavours
 
     @property
-    def input_data(self):
-        """Gets the input_data of this PolicyTemplateDTO.  # noqa: E501
-
-
-        :return: The input_data of this PolicyTemplateDTO.  # noqa: E501
-        :rtype: object
-        """
-        return self._input_data
-
-    @input_data.setter
-    def input_data(self, input_data):
-        """Sets the input_data of this PolicyTemplateDTO.
-
-
-        :param input_data: The input_data of this PolicyTemplateDTO.  # noqa: E501
-        :type: object
-        """
-
-        self._input_data = input_data
-
-    @property
     def resource_types(self):
         """Gets the resource_types of this PolicyTemplateDTO.  # noqa: E501
 
@@ -152,46 +173,25 @@ class PolicyTemplateDTO(object):
         self._resource_types = resource_types
 
     @property
-    def template_id(self):
-        """Gets the template_id of this PolicyTemplateDTO.  # noqa: E501
+    def input_data(self):
+        """Gets the input_data of this PolicyTemplateDTO.  # noqa: E501
 
 
-        :return: The template_id of this PolicyTemplateDTO.  # noqa: E501
-        :rtype: str
+        :return: The input_data of this PolicyTemplateDTO.  # noqa: E501
+        :rtype: dict(str, object)
         """
-        return self._template_id
+        return self._input_data
 
-    @template_id.setter
-    def template_id(self, template_id):
-        """Sets the template_id of this PolicyTemplateDTO.
-
-
-        :param template_id: The template_id of this PolicyTemplateDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._template_id = template_id
-
-    @property
-    def template_name(self):
-        """Gets the template_name of this PolicyTemplateDTO.  # noqa: E501
+    @input_data.setter
+    def input_data(self, input_data):
+        """Sets the input_data of this PolicyTemplateDTO.
 
 
-        :return: The template_name of this PolicyTemplateDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._template_name
-
-    @template_name.setter
-    def template_name(self, template_name):
-        """Sets the template_name of this PolicyTemplateDTO.
-
-
-        :param template_name: The template_name of this PolicyTemplateDTO.  # noqa: E501
-        :type: str
+        :param input_data: The input_data of this PolicyTemplateDTO.  # noqa: E501
+        :type: dict(str, object)
         """
 
-        self._template_name = template_name
+        self._input_data = input_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

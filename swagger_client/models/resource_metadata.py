@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,65 +28,86 @@ class ResourceMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_url': 'str',
+        'resource_type': 'str',
+        'resource_name': 'str',
         'commit_id': 'str',
         'override_version': 'int',
         'override_version_id': 'str',
-        'resource_name': 'str',
-        'resource_type': 'str'
+        'artifact_url': 'str'
     }
 
     attribute_map = {
-        'artifact_url': 'artifactUrl',
+        'resource_type': 'resourceType',
+        'resource_name': 'resourceName',
         'commit_id': 'commitId',
         'override_version': 'overrideVersion',
         'override_version_id': 'overrideVersionId',
-        'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'artifact_url': 'artifactUrl'
     }
 
-    def __init__(self, artifact_url=None, commit_id=None, override_version=None, override_version_id=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, commit_id=None, override_version=None, override_version_id=None, artifact_url=None):  # noqa: E501
         """ResourceMetadata - a model defined in Swagger"""  # noqa: E501
-        self._artifact_url = None
+        self._resource_type = None
+        self._resource_name = None
         self._commit_id = None
         self._override_version = None
         self._override_version_id = None
-        self._resource_name = None
-        self._resource_type = None
+        self._artifact_url = None
         self.discriminator = None
-        if artifact_url is not None:
-            self.artifact_url = artifact_url
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
         if commit_id is not None:
             self.commit_id = commit_id
         if override_version is not None:
             self.override_version = override_version
         if override_version_id is not None:
             self.override_version_id = override_version_id
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_type is not None:
-            self.resource_type = resource_type
+        if artifact_url is not None:
+            self.artifact_url = artifact_url
 
     @property
-    def artifact_url(self):
-        """Gets the artifact_url of this ResourceMetadata.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this ResourceMetadata.  # noqa: E501
 
 
-        :return: The artifact_url of this ResourceMetadata.  # noqa: E501
+        :return: The resource_type of this ResourceMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._artifact_url
+        return self._resource_type
 
-    @artifact_url.setter
-    def artifact_url(self, artifact_url):
-        """Sets the artifact_url of this ResourceMetadata.
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ResourceMetadata.
 
 
-        :param artifact_url: The artifact_url of this ResourceMetadata.  # noqa: E501
+        :param resource_type: The resource_type of this ResourceMetadata.  # noqa: E501
         :type: str
         """
 
-        self._artifact_url = artifact_url
+        self._resource_type = resource_type
+
+    @property
+    def resource_name(self):
+        """Gets the resource_name of this ResourceMetadata.  # noqa: E501
+
+
+        :return: The resource_name of this ResourceMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this ResourceMetadata.
+
+
+        :param resource_name: The resource_name of this ResourceMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
 
     @property
     def commit_id(self):
@@ -152,46 +173,25 @@ class ResourceMetadata(object):
         self._override_version_id = override_version_id
 
     @property
-    def resource_name(self):
-        """Gets the resource_name of this ResourceMetadata.  # noqa: E501
+    def artifact_url(self):
+        """Gets the artifact_url of this ResourceMetadata.  # noqa: E501
 
 
-        :return: The resource_name of this ResourceMetadata.  # noqa: E501
+        :return: The artifact_url of this ResourceMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._resource_name
+        return self._artifact_url
 
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this ResourceMetadata.
+    @artifact_url.setter
+    def artifact_url(self, artifact_url):
+        """Sets the artifact_url of this ResourceMetadata.
 
 
-        :param resource_name: The resource_name of this ResourceMetadata.  # noqa: E501
+        :param artifact_url: The artifact_url of this ResourceMetadata.  # noqa: E501
         :type: str
         """
 
-        self._resource_name = resource_name
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this ResourceMetadata.  # noqa: E501
-
-
-        :return: The resource_type of this ResourceMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ResourceMetadata.
-
-
-        :param resource_type: The resource_type of this ResourceMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_type = resource_type
+        self._artifact_url = artifact_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

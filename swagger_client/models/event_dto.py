@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,38 +29,38 @@ class EventDTO(object):
     """
     swagger_types = {
         'last_seen': 'str',
-        'message': 'str',
-        'object': 'str',
+        'type': 'str',
         'reason': 'str',
-        'type': 'str'
+        'object': 'str',
+        'message': 'str'
     }
 
     attribute_map = {
         'last_seen': 'lastSeen',
-        'message': 'message',
-        'object': 'object',
+        'type': 'type',
         'reason': 'reason',
-        'type': 'type'
+        'object': 'object',
+        'message': 'message'
     }
 
-    def __init__(self, last_seen=None, message=None, object=None, reason=None, type=None):  # noqa: E501
+    def __init__(self, last_seen=None, type=None, reason=None, object=None, message=None):  # noqa: E501
         """EventDTO - a model defined in Swagger"""  # noqa: E501
         self._last_seen = None
-        self._message = None
-        self._object = None
-        self._reason = None
         self._type = None
+        self._reason = None
+        self._object = None
+        self._message = None
         self.discriminator = None
         if last_seen is not None:
             self.last_seen = last_seen
-        if message is not None:
-            self.message = message
-        if object is not None:
-            self.object = object
-        if reason is not None:
-            self.reason = reason
         if type is not None:
             self.type = type
+        if reason is not None:
+            self.reason = reason
+        if object is not None:
+            self.object = object
+        if message is not None:
+            self.message = message
 
     @property
     def last_seen(self):
@@ -84,46 +84,25 @@ class EventDTO(object):
         self._last_seen = last_seen
 
     @property
-    def message(self):
-        """Gets the message of this EventDTO.  # noqa: E501
+    def type(self):
+        """Gets the type of this EventDTO.  # noqa: E501
 
 
-        :return: The message of this EventDTO.  # noqa: E501
+        :return: The type of this EventDTO.  # noqa: E501
         :rtype: str
         """
-        return self._message
+        return self._type
 
-    @message.setter
-    def message(self, message):
-        """Sets the message of this EventDTO.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this EventDTO.
 
 
-        :param message: The message of this EventDTO.  # noqa: E501
+        :param type: The type of this EventDTO.  # noqa: E501
         :type: str
         """
 
-        self._message = message
-
-    @property
-    def object(self):
-        """Gets the object of this EventDTO.  # noqa: E501
-
-
-        :return: The object of this EventDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._object
-
-    @object.setter
-    def object(self, object):
-        """Sets the object of this EventDTO.
-
-
-        :param object: The object of this EventDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._object = object
+        self._type = type
 
     @property
     def reason(self):
@@ -147,25 +126,46 @@ class EventDTO(object):
         self._reason = reason
 
     @property
-    def type(self):
-        """Gets the type of this EventDTO.  # noqa: E501
+    def object(self):
+        """Gets the object of this EventDTO.  # noqa: E501
 
 
-        :return: The type of this EventDTO.  # noqa: E501
+        :return: The object of this EventDTO.  # noqa: E501
         :rtype: str
         """
-        return self._type
+        return self._object
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this EventDTO.
+    @object.setter
+    def object(self, object):
+        """Sets the object of this EventDTO.
 
 
-        :param type: The type of this EventDTO.  # noqa: E501
+        :param object: The object of this EventDTO.  # noqa: E501
         :type: str
         """
 
-        self._type = type
+        self._object = object
+
+    @property
+    def message(self):
+        """Gets the message of this EventDTO.  # noqa: E501
+
+
+        :return: The message of this EventDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this EventDTO.
+
+
+        :param message: The message of this EventDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._message = message
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,65 +28,44 @@ class ClusterOverview(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'base_cluster': 'ClusterLite',
         'cluster': 'AbstractCluster',
+        'time_to_next_release': 'str',
         'cluster_state': 'str',
-        'id': 'str',
         'last_release': 'DeploymentLog',
-        'time_to_next_release': 'str'
+        'id': 'str',
+        'base_cluster': 'ClusterLite'
     }
 
     attribute_map = {
-        'base_cluster': 'baseCluster',
         'cluster': 'cluster',
+        'time_to_next_release': 'timeToNextRelease',
         'cluster_state': 'clusterState',
-        'id': 'id',
         'last_release': 'lastRelease',
-        'time_to_next_release': 'timeToNextRelease'
+        'id': 'id',
+        'base_cluster': 'baseCluster'
     }
 
-    def __init__(self, base_cluster=None, cluster=None, cluster_state=None, id=None, last_release=None, time_to_next_release=None):  # noqa: E501
+    def __init__(self, cluster=None, time_to_next_release=None, cluster_state=None, last_release=None, id=None, base_cluster=None):  # noqa: E501
         """ClusterOverview - a model defined in Swagger"""  # noqa: E501
-        self._base_cluster = None
         self._cluster = None
-        self._cluster_state = None
-        self._id = None
-        self._last_release = None
         self._time_to_next_release = None
+        self._cluster_state = None
+        self._last_release = None
+        self._id = None
+        self._base_cluster = None
         self.discriminator = None
-        if base_cluster is not None:
-            self.base_cluster = base_cluster
         if cluster is not None:
             self.cluster = cluster
-        if cluster_state is not None:
-            self.cluster_state = cluster_state
-        if id is not None:
-            self.id = id
-        if last_release is not None:
-            self.last_release = last_release
         if time_to_next_release is not None:
             self.time_to_next_release = time_to_next_release
-
-    @property
-    def base_cluster(self):
-        """Gets the base_cluster of this ClusterOverview.  # noqa: E501
-
-
-        :return: The base_cluster of this ClusterOverview.  # noqa: E501
-        :rtype: ClusterLite
-        """
-        return self._base_cluster
-
-    @base_cluster.setter
-    def base_cluster(self, base_cluster):
-        """Sets the base_cluster of this ClusterOverview.
-
-
-        :param base_cluster: The base_cluster of this ClusterOverview.  # noqa: E501
-        :type: ClusterLite
-        """
-
-        self._base_cluster = base_cluster
+        if cluster_state is not None:
+            self.cluster_state = cluster_state
+        if last_release is not None:
+            self.last_release = last_release
+        if id is not None:
+            self.id = id
+        if base_cluster is not None:
+            self.base_cluster = base_cluster
 
     @property
     def cluster(self):
@@ -108,6 +87,27 @@ class ClusterOverview(object):
         """
 
         self._cluster = cluster
+
+    @property
+    def time_to_next_release(self):
+        """Gets the time_to_next_release of this ClusterOverview.  # noqa: E501
+
+
+        :return: The time_to_next_release of this ClusterOverview.  # noqa: E501
+        :rtype: str
+        """
+        return self._time_to_next_release
+
+    @time_to_next_release.setter
+    def time_to_next_release(self, time_to_next_release):
+        """Sets the time_to_next_release of this ClusterOverview.
+
+
+        :param time_to_next_release: The time_to_next_release of this ClusterOverview.  # noqa: E501
+        :type: str
+        """
+
+        self._time_to_next_release = time_to_next_release
 
     @property
     def cluster_state(self):
@@ -137,27 +137,6 @@ class ClusterOverview(object):
         self._cluster_state = cluster_state
 
     @property
-    def id(self):
-        """Gets the id of this ClusterOverview.  # noqa: E501
-
-
-        :return: The id of this ClusterOverview.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ClusterOverview.
-
-
-        :param id: The id of this ClusterOverview.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
     def last_release(self):
         """Gets the last_release of this ClusterOverview.  # noqa: E501
 
@@ -179,25 +158,46 @@ class ClusterOverview(object):
         self._last_release = last_release
 
     @property
-    def time_to_next_release(self):
-        """Gets the time_to_next_release of this ClusterOverview.  # noqa: E501
+    def id(self):
+        """Gets the id of this ClusterOverview.  # noqa: E501
 
 
-        :return: The time_to_next_release of this ClusterOverview.  # noqa: E501
+        :return: The id of this ClusterOverview.  # noqa: E501
         :rtype: str
         """
-        return self._time_to_next_release
+        return self._id
 
-    @time_to_next_release.setter
-    def time_to_next_release(self, time_to_next_release):
-        """Sets the time_to_next_release of this ClusterOverview.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ClusterOverview.
 
 
-        :param time_to_next_release: The time_to_next_release of this ClusterOverview.  # noqa: E501
+        :param id: The id of this ClusterOverview.  # noqa: E501
         :type: str
         """
 
-        self._time_to_next_release = time_to_next_release
+        self._id = id
+
+    @property
+    def base_cluster(self):
+        """Gets the base_cluster of this ClusterOverview.  # noqa: E501
+
+
+        :return: The base_cluster of this ClusterOverview.  # noqa: E501
+        :rtype: ClusterLite
+        """
+        return self._base_cluster
+
+    @base_cluster.setter
+    def base_cluster(self, base_cluster):
+        """Sets the base_cluster of this ClusterOverview.
+
+
+        :param base_cluster: The base_cluster of this ClusterOverview.  # noqa: E501
+        :type: ClusterLite
+        """
+
+        self._base_cluster = base_cluster
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiResourceGroupControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_using_post(self, body, **kwargs):  # noqa: E501
+    def create(self, body, **kwargs):  # noqa: E501
         """create  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_using_post(body, async_req=True)
+        >>> thread = api.create(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResourceGroupRequest body: resourceGroupRequest (required)
+        :param ResourceGroupRequest body: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
+    def create_with_http_info(self, body, **kwargs):  # noqa: E501
         """create  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResourceGroupRequest body: resourceGroupRequest (required)
+        :param ResourceGroupRequest body: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiResourceGroupControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_using_post" % key
+                    " to method create" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiResourceGroupControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resource-groups', 'POST',
@@ -129,37 +129,37 @@ class UiResourceGroupControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_using_delete1(self, resource_group_id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete1(self, resource_group_id, **kwargs):  # noqa: E501
+        """delete1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_using_delete1(resource_group_id, async_req=True)
+        >>> thread = api.delete1(resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_group_id: resourceGroupId (required)
+        :param str resource_group_id: (required)
         :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_using_delete1_with_http_info(resource_group_id, **kwargs)  # noqa: E501
+            return self.delete1_with_http_info(resource_group_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_using_delete1_with_http_info(resource_group_id, **kwargs)  # noqa: E501
+            (data) = self.delete1_with_http_info(resource_group_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_using_delete1_with_http_info(self, resource_group_id, **kwargs):  # noqa: E501
-        """delete  # noqa: E501
+    def delete1_with_http_info(self, resource_group_id, **kwargs):  # noqa: E501
+        """delete1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_using_delete1_with_http_info(resource_group_id, async_req=True)
+        >>> thread = api.delete1_with_http_info(resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_group_id: resourceGroupId (required)
+        :param str resource_group_id: (required)
         :return: Response
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiResourceGroupControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_using_delete1" % key
+                    " to method delete1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'resource_group_id' is set
         if ('resource_group_id' not in params or
                 params['resource_group_id'] is None):
-            raise ValueError("Missing the required parameter `resource_group_id` when calling `delete_using_delete1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_group_id` when calling `delete1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -201,10 +201,10 @@ class UiResourceGroupControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resource-groups/{resourceGroupId}', 'DELETE',
@@ -222,12 +222,12 @@ class UiResourceGroupControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def find_all_using_get(self, **kwargs):  # noqa: E501
-        """findAll  # noqa: E501
+    def find_all(self, **kwargs):  # noqa: E501
+        """find_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.find_all_using_get(async_req=True)
+        >>> thread = api.find_all(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -237,17 +237,17 @@ class UiResourceGroupControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.find_all_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.find_all_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.find_all_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.find_all_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def find_all_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """findAll  # noqa: E501
+    def find_all_with_http_info(self, **kwargs):  # noqa: E501
+        """find_all  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.find_all_using_get_with_http_info(async_req=True)
+        >>> thread = api.find_all_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -267,7 +267,7 @@ class UiResourceGroupControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method find_all_using_get" % key
+                    " to method find_all" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -286,10 +286,10 @@ class UiResourceGroupControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resource-groups', 'GET',
@@ -307,37 +307,37 @@ class UiResourceGroupControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resource_group_using_get(self, resource_group_id, **kwargs):  # noqa: E501
-        """getResourceGroup  # noqa: E501
+    def get_resource_group(self, resource_group_id, **kwargs):  # noqa: E501
+        """get_resource_group  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_group_using_get(resource_group_id, async_req=True)
+        >>> thread = api.get_resource_group(resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_group_id: resourceGroupId (required)
+        :param str resource_group_id: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_resource_group_using_get_with_http_info(resource_group_id, **kwargs)  # noqa: E501
+            return self.get_resource_group_with_http_info(resource_group_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_resource_group_using_get_with_http_info(resource_group_id, **kwargs)  # noqa: E501
+            (data) = self.get_resource_group_with_http_info(resource_group_id, **kwargs)  # noqa: E501
             return data
 
-    def get_resource_group_using_get_with_http_info(self, resource_group_id, **kwargs):  # noqa: E501
-        """getResourceGroup  # noqa: E501
+    def get_resource_group_with_http_info(self, resource_group_id, **kwargs):  # noqa: E501
+        """get_resource_group  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_group_using_get_with_http_info(resource_group_id, async_req=True)
+        >>> thread = api.get_resource_group_with_http_info(resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str resource_group_id: resourceGroupId (required)
+        :param str resource_group_id: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -354,14 +354,14 @@ class UiResourceGroupControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_resource_group_using_get" % key
+                    " to method get_resource_group" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'resource_group_id' is set
         if ('resource_group_id' not in params or
                 params['resource_group_id'] is None):
-            raise ValueError("Missing the required parameter `resource_group_id` when calling `get_resource_group_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_group_id` when calling `get_resource_group`")  # noqa: E501
 
         collection_formats = {}
 
@@ -379,10 +379,10 @@ class UiResourceGroupControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resource-groups/{resourceGroupId}', 'GET',
@@ -400,12 +400,12 @@ class UiResourceGroupControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_resource_groups_for_session_user_using_get(self, **kwargs):  # noqa: E501
-        """getResourceGroupsForSessionUser  # noqa: E501
+    def get_resource_groups_for_session_user(self, **kwargs):  # noqa: E501
+        """get_resource_groups_for_session_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_groups_for_session_user_using_get(async_req=True)
+        >>> thread = api.get_resource_groups_for_session_user(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -415,17 +415,17 @@ class UiResourceGroupControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_resource_groups_for_session_user_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_resource_groups_for_session_user_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_resource_groups_for_session_user_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_resource_groups_for_session_user_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_resource_groups_for_session_user_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getResourceGroupsForSessionUser  # noqa: E501
+    def get_resource_groups_for_session_user_with_http_info(self, **kwargs):  # noqa: E501
+        """get_resource_groups_for_session_user  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_resource_groups_for_session_user_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_resource_groups_for_session_user_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -445,7 +445,7 @@ class UiResourceGroupControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_resource_groups_for_session_user_using_get" % key
+                    " to method get_resource_groups_for_session_user" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -464,10 +464,10 @@ class UiResourceGroupControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resource-groups/me', 'GET',
@@ -485,39 +485,39 @@ class UiResourceGroupControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_all_resources_using_put(self, body, resource_group_id, **kwargs):  # noqa: E501
-        """updateAllResources  # noqa: E501
+    def update1(self, body, resource_group_id, **kwargs):  # noqa: E501
+        """update1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_all_resources_using_put(body, resource_group_id, async_req=True)
+        >>> thread = api.update1(body, resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ResourceInfo] body: allResourcesUpdateRequest (required)
-        :param str resource_group_id: resourceGroupId (required)
+        :param ResourceGroupRequest body: (required)
+        :param str resource_group_id: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_all_resources_using_put_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
+            return self.update1_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_all_resources_using_put_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
+            (data) = self.update1_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
             return data
 
-    def update_all_resources_using_put_with_http_info(self, body, resource_group_id, **kwargs):  # noqa: E501
-        """updateAllResources  # noqa: E501
+    def update1_with_http_info(self, body, resource_group_id, **kwargs):  # noqa: E501
+        """update1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_all_resources_using_put_with_http_info(body, resource_group_id, async_req=True)
+        >>> thread = api.update1_with_http_info(body, resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ResourceInfo] body: allResourcesUpdateRequest (required)
-        :param str resource_group_id: resourceGroupId (required)
+        :param ResourceGroupRequest body: (required)
+        :param str resource_group_id: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -534,18 +534,18 @@ class UiResourceGroupControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_all_resources_using_put" % key
+                    " to method update1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_all_resources_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update1`")  # noqa: E501
         # verify the required parameter 'resource_group_id' is set
         if ('resource_group_id' not in params or
                 params['resource_group_id'] is None):
-            raise ValueError("Missing the required parameter `resource_group_id` when calling `update_all_resources_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_group_id` when calling `update1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -565,14 +565,119 @@ class UiResourceGroupControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/resource-groups/{resourceGroupId}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ResourceGroup',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_all_resources(self, body, resource_group_id, **kwargs):  # noqa: E501
+        """update_all_resources  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_all_resources(body, resource_group_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[ResourceInfo] body: (required)
+        :param str resource_group_id: (required)
+        :return: ResourceGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_all_resources_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_all_resources_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
+            return data
+
+    def update_all_resources_with_http_info(self, body, resource_group_id, **kwargs):  # noqa: E501
+        """update_all_resources  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_all_resources_with_http_info(body, resource_group_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[ResourceInfo] body: (required)
+        :param str resource_group_id: (required)
+        :return: ResourceGroup
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'resource_group_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_all_resources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `update_all_resources`")  # noqa: E501
+        # verify the required parameter 'resource_group_id' is set
+        if ('resource_group_id' not in params or
+                params['resource_group_id'] is None):
+            raise ValueError("Missing the required parameter `resource_group_id` when calling `update_all_resources`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'resource_group_id' in params:
+            path_params['resourceGroupId'] = params['resource_group_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resource-groups/{resourceGroupId}/resources', 'PUT',
@@ -590,39 +695,39 @@ class UiResourceGroupControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_resource_using_patch(self, body, resource_group_id, **kwargs):  # noqa: E501
-        """updateResource  # noqa: E501
+    def update_resource(self, body, resource_group_id, **kwargs):  # noqa: E501
+        """update_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_resource_using_patch(body, resource_group_id, async_req=True)
+        >>> thread = api.update_resource(body, resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResourceInfo body: resourceUpdateRequest (required)
-        :param str resource_group_id: resourceGroupId (required)
+        :param ResourceInfo body: (required)
+        :param str resource_group_id: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_resource_using_patch_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
+            return self.update_resource_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_resource_using_patch_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
+            (data) = self.update_resource_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
             return data
 
-    def update_resource_using_patch_with_http_info(self, body, resource_group_id, **kwargs):  # noqa: E501
-        """updateResource  # noqa: E501
+    def update_resource_with_http_info(self, body, resource_group_id, **kwargs):  # noqa: E501
+        """update_resource  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_resource_using_patch_with_http_info(body, resource_group_id, async_req=True)
+        >>> thread = api.update_resource_with_http_info(body, resource_group_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param ResourceInfo body: resourceUpdateRequest (required)
-        :param str resource_group_id: resourceGroupId (required)
+        :param ResourceInfo body: (required)
+        :param str resource_group_id: (required)
         :return: ResourceGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -639,18 +744,18 @@ class UiResourceGroupControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_resource_using_patch" % key
+                    " to method update_resource" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_resource_using_patch`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_resource`")  # noqa: E501
         # verify the required parameter 'resource_group_id' is set
         if ('resource_group_id' not in params or
                 params['resource_group_id'] is None):
-            raise ValueError("Missing the required parameter `resource_group_id` when calling `update_resource_using_patch`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_group_id` when calling `update_resource`")  # noqa: E501
 
         collection_formats = {}
 
@@ -670,122 +775,17 @@ class UiResourceGroupControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/resource-groups/{resourceGroupId}/resources', 'PATCH',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ResourceGroup',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def update_using_put1(self, body, resource_group_id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_using_put1(body, resource_group_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ResourceGroupRequest body: resourceGroupRequest (required)
-        :param str resource_group_id: resourceGroupId (required)
-        :return: ResourceGroup
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update_using_put1_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.update_using_put1_with_http_info(body, resource_group_id, **kwargs)  # noqa: E501
-            return data
-
-    def update_using_put1_with_http_info(self, body, resource_group_id, **kwargs):  # noqa: E501
-        """update  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_using_put1_with_http_info(body, resource_group_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param ResourceGroupRequest body: resourceGroupRequest (required)
-        :param str resource_group_id: resourceGroupId (required)
-        :return: ResourceGroup
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'resource_group_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update_using_put1" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in params or
-                params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_using_put1`")  # noqa: E501
-        # verify the required parameter 'resource_group_id' is set
-        if ('resource_group_id' not in params or
-                params['resource_group_id'] is None):
-            raise ValueError("Missing the required parameter `resource_group_id` when calling `update_using_put1`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'resource_group_id' in params:
-            path_params['resourceGroupId'] = params['resource_group_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/resource-groups/{resourceGroupId}', 'PUT',
             path_params,
             query_params,
             header_params,

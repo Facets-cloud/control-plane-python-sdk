@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,34 @@ class PodStatusDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'active': 'int',
         'completions': 'str',
-        'failed': 'int',
-        'succeeded': 'int'
+        'active': 'int',
+        'succeeded': 'int',
+        'failed': 'int'
     }
 
     attribute_map = {
-        'active': 'active',
         'completions': 'completions',
-        'failed': 'failed',
-        'succeeded': 'succeeded'
+        'active': 'active',
+        'succeeded': 'succeeded',
+        'failed': 'failed'
     }
 
-    def __init__(self, active=None, completions=None, failed=None, succeeded=None):  # noqa: E501
+    def __init__(self, completions=None, active=None, succeeded=None, failed=None):  # noqa: E501
         """PodStatusDTO - a model defined in Swagger"""  # noqa: E501
-        self._active = None
         self._completions = None
-        self._failed = None
+        self._active = None
         self._succeeded = None
+        self._failed = None
         self.discriminator = None
-        if active is not None:
-            self.active = active
         if completions is not None:
             self.completions = completions
-        if failed is not None:
-            self.failed = failed
+        if active is not None:
+            self.active = active
         if succeeded is not None:
             self.succeeded = succeeded
-
-    @property
-    def active(self):
-        """Gets the active of this PodStatusDTO.  # noqa: E501
-
-
-        :return: The active of this PodStatusDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._active
-
-    @active.setter
-    def active(self, active):
-        """Sets the active of this PodStatusDTO.
-
-
-        :param active: The active of this PodStatusDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._active = active
+        if failed is not None:
+            self.failed = failed
 
     @property
     def completions(self):
@@ -100,25 +79,25 @@ class PodStatusDTO(object):
         self._completions = completions
 
     @property
-    def failed(self):
-        """Gets the failed of this PodStatusDTO.  # noqa: E501
+    def active(self):
+        """Gets the active of this PodStatusDTO.  # noqa: E501
 
 
-        :return: The failed of this PodStatusDTO.  # noqa: E501
+        :return: The active of this PodStatusDTO.  # noqa: E501
         :rtype: int
         """
-        return self._failed
+        return self._active
 
-    @failed.setter
-    def failed(self, failed):
-        """Sets the failed of this PodStatusDTO.
+    @active.setter
+    def active(self, active):
+        """Sets the active of this PodStatusDTO.
 
 
-        :param failed: The failed of this PodStatusDTO.  # noqa: E501
+        :param active: The active of this PodStatusDTO.  # noqa: E501
         :type: int
         """
 
-        self._failed = failed
+        self._active = active
 
     @property
     def succeeded(self):
@@ -140,6 +119,27 @@ class PodStatusDTO(object):
         """
 
         self._succeeded = succeeded
+
+    @property
+    def failed(self):
+        """Gets the failed of this PodStatusDTO.  # noqa: E501
+
+
+        :return: The failed of this PodStatusDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._failed
+
+    @failed.setter
+    def failed(self, failed):
+        """Sets the failed of this PodStatusDTO.
+
+
+        :param failed: The failed of this PodStatusDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._failed = failed
 
     def to_dict(self):
         """Returns the model properties as a dict"""

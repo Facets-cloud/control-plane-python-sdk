@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class Response(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'code': 'str',
-        'message': 'str'
+        'message': 'str',
+        'code': 'str'
     }
 
     attribute_map = {
-        'code': 'code',
-        'message': 'message'
+        'message': 'message',
+        'code': 'code'
     }
 
-    def __init__(self, code=None, message=None):  # noqa: E501
+    def __init__(self, message=None, code=None):  # noqa: E501
         """Response - a model defined in Swagger"""  # noqa: E501
-        self._code = None
         self._message = None
+        self._code = None
         self.discriminator = None
-        if code is not None:
-            self.code = code
         if message is not None:
             self.message = message
-
-    @property
-    def code(self):
-        """Gets the code of this Response.  # noqa: E501
-
-
-        :return: The code of this Response.  # noqa: E501
-        :rtype: str
-        """
-        return self._code
-
-    @code.setter
-    def code(self, code):
-        """Sets the code of this Response.
-
-
-        :param code: The code of this Response.  # noqa: E501
-        :type: str
-        """
-
-        self._code = code
+        if code is not None:
+            self.code = code
 
     @property
     def message(self):
@@ -88,6 +67,27 @@ class Response(object):
         """
 
         self._message = message
+
+    @property
+    def code(self):
+        """Gets the code of this Response.  # noqa: E501
+
+
+        :return: The code of this Response.  # noqa: E501
+        :rtype: str
+        """
+        return self._code
+
+    @code.setter
+    def code(self, code):
+        """Sets the code of this Response.
+
+
+        :param code: The code of this Response.  # noqa: E501
+        :type: str
+        """
+
+        self._code = code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

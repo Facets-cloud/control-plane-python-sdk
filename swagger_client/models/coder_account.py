@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,209 +28,140 @@ class CoderAccount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_type': 'str',
-        'api_token': 'str',
-        'associated_to': 'list[AccountAssociationInfo]',
-        'change_log': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
+        'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'name': 'str',
+        'account_type': 'str',
+        'provider': 'str',
+        'change_log': 'str',
+        'system_defined': 'bool',
+        'in_use': 'bool',
+        'associated_to': 'list[AccountAssociationInfo]',
+        'url': 'str',
+        'organization_id': 'str',
+        'template_id': 'str',
+        'api_token': 'str',
         'default': 'bool',
         'entity_type': 'str',
-        'id': 'str',
-        'in_use': 'bool',
-        'last_modified_by': 'str',
-        'last_modified_date': 'datetime',
-        'name': 'str',
-        'number_of_versions': 'int',
-        'organization_id': 'str',
-        'provider': 'str',
         'secrets_uid': 'str',
-        'system_defined': 'bool',
-        'template_id': 'str',
-        'url': 'str',
-        'versioning_key': 'str'
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'account_type': 'accountType',
-        'api_token': 'apiToken',
-        'associated_to': 'associatedTo',
-        'change_log': 'changeLog',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
+        'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'name': 'name',
+        'account_type': 'accountType',
+        'provider': 'provider',
+        'change_log': 'changeLog',
+        'system_defined': 'systemDefined',
+        'in_use': 'inUse',
+        'associated_to': 'associatedTo',
+        'url': 'url',
+        'organization_id': 'organizationId',
+        'template_id': 'templateId',
+        'api_token': 'apiToken',
         'default': 'default',
         'entity_type': 'entityType',
-        'id': 'id',
-        'in_use': 'inUse',
-        'last_modified_by': 'lastModifiedBy',
-        'last_modified_date': 'lastModifiedDate',
-        'name': 'name',
-        'number_of_versions': 'numberOfVersions',
-        'organization_id': 'organizationId',
-        'provider': 'provider',
         'secrets_uid': 'secretsUid',
-        'system_defined': 'systemDefined',
-        'template_id': 'templateId',
-        'url': 'url',
-        'versioning_key': 'versioningKey'
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, account_type=None, api_token=None, associated_to=None, change_log=None, created_by=None, creation_date=None, default=None, entity_type=None, id=None, in_use=None, last_modified_by=None, last_modified_date=None, name=None, number_of_versions=None, organization_id=None, provider=None, secrets_uid=None, system_defined=None, template_id=None, url=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, account_type=None, provider=None, change_log=None, system_defined=None, in_use=None, associated_to=None, url=None, organization_id=None, template_id=None, api_token=None, default=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """CoderAccount - a model defined in Swagger"""  # noqa: E501
-        self._account_type = None
-        self._api_token = None
-        self._associated_to = None
-        self._change_log = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
+        self._last_modified_date = None
+        self._last_modified_by = None
+        self._name = None
+        self._account_type = None
+        self._provider = None
+        self._change_log = None
+        self._system_defined = None
+        self._in_use = None
+        self._associated_to = None
+        self._url = None
+        self._organization_id = None
+        self._template_id = None
+        self._api_token = None
         self._default = None
         self._entity_type = None
-        self._id = None
-        self._in_use = None
-        self._last_modified_by = None
-        self._last_modified_date = None
-        self._name = None
-        self._number_of_versions = None
-        self._organization_id = None
-        self._provider = None
         self._secrets_uid = None
-        self._system_defined = None
-        self._template_id = None
-        self._url = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if account_type is not None:
-            self.account_type = account_type
-        if api_token is not None:
-            self.api_token = api_token
-        if associated_to is not None:
-            self.associated_to = associated_to
-        if change_log is not None:
-            self.change_log = change_log
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
+        if last_modified_date is not None:
+            self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if name is not None:
+            self.name = name
+        if account_type is not None:
+            self.account_type = account_type
+        if provider is not None:
+            self.provider = provider
+        if change_log is not None:
+            self.change_log = change_log
+        if system_defined is not None:
+            self.system_defined = system_defined
+        if in_use is not None:
+            self.in_use = in_use
+        if associated_to is not None:
+            self.associated_to = associated_to
+        if url is not None:
+            self.url = url
+        if organization_id is not None:
+            self.organization_id = organization_id
+        if template_id is not None:
+            self.template_id = template_id
+        if api_token is not None:
+            self.api_token = api_token
         if default is not None:
             self.default = default
         if entity_type is not None:
             self.entity_type = entity_type
-        if id is not None:
-            self.id = id
-        if in_use is not None:
-            self.in_use = in_use
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
-        if last_modified_date is not None:
-            self.last_modified_date = last_modified_date
-        if name is not None:
-            self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if organization_id is not None:
-            self.organization_id = organization_id
-        if provider is not None:
-            self.provider = provider
         if secrets_uid is not None:
             self.secrets_uid = secrets_uid
-        if system_defined is not None:
-            self.system_defined = system_defined
-        if template_id is not None:
-            self.template_id = template_id
-        if url is not None:
-            self.url = url
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def account_type(self):
-        """Gets the account_type of this CoderAccount.  # noqa: E501
+    def id(self):
+        """Gets the id of this CoderAccount.  # noqa: E501
 
 
-        :return: The account_type of this CoderAccount.  # noqa: E501
+        :return: The id of this CoderAccount.  # noqa: E501
         :rtype: str
         """
-        return self._account_type
+        return self._id
 
-    @account_type.setter
-    def account_type(self, account_type):
-        """Sets the account_type of this CoderAccount.
-
-
-        :param account_type: The account_type of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
-        if account_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(account_type, allowed_values)
-            )
-
-        self._account_type = account_type
-
-    @property
-    def api_token(self):
-        """Gets the api_token of this CoderAccount.  # noqa: E501
+    @id.setter
+    def id(self, id):
+        """Sets the id of this CoderAccount.
 
 
-        :return: The api_token of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._api_token
-
-    @api_token.setter
-    def api_token(self, api_token):
-        """Sets the api_token of this CoderAccount.
-
-
-        :param api_token: The api_token of this CoderAccount.  # noqa: E501
+        :param id: The id of this CoderAccount.  # noqa: E501
         :type: str
         """
 
-        self._api_token = api_token
-
-    @property
-    def associated_to(self):
-        """Gets the associated_to of this CoderAccount.  # noqa: E501
-
-
-        :return: The associated_to of this CoderAccount.  # noqa: E501
-        :rtype: list[AccountAssociationInfo]
-        """
-        return self._associated_to
-
-    @associated_to.setter
-    def associated_to(self, associated_to):
-        """Sets the associated_to of this CoderAccount.
-
-
-        :param associated_to: The associated_to of this CoderAccount.  # noqa: E501
-        :type: list[AccountAssociationInfo]
-        """
-
-        self._associated_to = associated_to
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this CoderAccount.  # noqa: E501
-
-
-        :return: The change_log of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this CoderAccount.
-
-
-        :param change_log: The change_log of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._change_log = change_log
+        self._id = id
 
     @property
     def created_by(self):
@@ -273,6 +204,291 @@ class CoderAccount(object):
         """
 
         self._creation_date = creation_date
+
+    @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this CoderAccount.  # noqa: E501
+
+
+        :return: The last_modified_date of this CoderAccount.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this CoderAccount.
+
+
+        :param last_modified_date: The last_modified_date of this CoderAccount.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this CoderAccount.  # noqa: E501
+
+
+        :return: The last_modified_by of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this CoderAccount.
+
+
+        :param last_modified_by: The last_modified_by of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def name(self):
+        """Gets the name of this CoderAccount.  # noqa: E501
+
+
+        :return: The name of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this CoderAccount.
+
+
+        :param name: The name of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def account_type(self):
+        """Gets the account_type of this CoderAccount.  # noqa: E501
+
+
+        :return: The account_type of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_type
+
+    @account_type.setter
+    def account_type(self, account_type):
+        """Sets the account_type of this CoderAccount.
+
+
+        :param account_type: The account_type of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
+        if account_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(account_type, allowed_values)
+            )
+
+        self._account_type = account_type
+
+    @property
+    def provider(self):
+        """Gets the provider of this CoderAccount.  # noqa: E501
+
+
+        :return: The provider of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._provider
+
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this CoderAccount.
+
+
+        :param provider: The provider of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB", "AWS", "AZURE", "GCP", "KUBERNETES", "CODER"]  # noqa: E501
+        if provider not in allowed_values:
+            raise ValueError(
+                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
+                .format(provider, allowed_values)
+            )
+
+        self._provider = provider
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this CoderAccount.  # noqa: E501
+
+
+        :return: The change_log of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this CoderAccount.
+
+
+        :param change_log: The change_log of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def system_defined(self):
+        """Gets the system_defined of this CoderAccount.  # noqa: E501
+
+
+        :return: The system_defined of this CoderAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._system_defined
+
+    @system_defined.setter
+    def system_defined(self, system_defined):
+        """Sets the system_defined of this CoderAccount.
+
+
+        :param system_defined: The system_defined of this CoderAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._system_defined = system_defined
+
+    @property
+    def in_use(self):
+        """Gets the in_use of this CoderAccount.  # noqa: E501
+
+
+        :return: The in_use of this CoderAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_use
+
+    @in_use.setter
+    def in_use(self, in_use):
+        """Sets the in_use of this CoderAccount.
+
+
+        :param in_use: The in_use of this CoderAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_use = in_use
+
+    @property
+    def associated_to(self):
+        """Gets the associated_to of this CoderAccount.  # noqa: E501
+
+
+        :return: The associated_to of this CoderAccount.  # noqa: E501
+        :rtype: list[AccountAssociationInfo]
+        """
+        return self._associated_to
+
+    @associated_to.setter
+    def associated_to(self, associated_to):
+        """Sets the associated_to of this CoderAccount.
+
+
+        :param associated_to: The associated_to of this CoderAccount.  # noqa: E501
+        :type: list[AccountAssociationInfo]
+        """
+
+        self._associated_to = associated_to
+
+    @property
+    def url(self):
+        """Gets the url of this CoderAccount.  # noqa: E501
+
+
+        :return: The url of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._url
+
+    @url.setter
+    def url(self, url):
+        """Sets the url of this CoderAccount.
+
+
+        :param url: The url of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._url = url
+
+    @property
+    def organization_id(self):
+        """Gets the organization_id of this CoderAccount.  # noqa: E501
+
+
+        :return: The organization_id of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._organization_id
+
+    @organization_id.setter
+    def organization_id(self, organization_id):
+        """Sets the organization_id of this CoderAccount.
+
+
+        :param organization_id: The organization_id of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._organization_id = organization_id
+
+    @property
+    def template_id(self):
+        """Gets the template_id of this CoderAccount.  # noqa: E501
+
+
+        :return: The template_id of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_id
+
+    @template_id.setter
+    def template_id(self, template_id):
+        """Sets the template_id of this CoderAccount.
+
+
+        :param template_id: The template_id of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._template_id = template_id
+
+    @property
+    def api_token(self):
+        """Gets the api_token of this CoderAccount.  # noqa: E501
+
+
+        :return: The api_token of this CoderAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_token
+
+    @api_token.setter
+    def api_token(self, api_token):
+        """Sets the api_token of this CoderAccount.
+
+
+        :param api_token: The api_token of this CoderAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._api_token = api_token
 
     @property
     def default(self):
@@ -323,180 +539,6 @@ class CoderAccount(object):
         self._entity_type = entity_type
 
     @property
-    def id(self):
-        """Gets the id of this CoderAccount.  # noqa: E501
-
-
-        :return: The id of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this CoderAccount.
-
-
-        :param id: The id of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def in_use(self):
-        """Gets the in_use of this CoderAccount.  # noqa: E501
-
-
-        :return: The in_use of this CoderAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._in_use
-
-    @in_use.setter
-    def in_use(self, in_use):
-        """Sets the in_use of this CoderAccount.
-
-
-        :param in_use: The in_use of this CoderAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._in_use = in_use
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this CoderAccount.  # noqa: E501
-
-
-        :return: The last_modified_by of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this CoderAccount.
-
-
-        :param last_modified_by: The last_modified_by of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this CoderAccount.  # noqa: E501
-
-
-        :return: The last_modified_date of this CoderAccount.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this CoderAccount.
-
-
-        :param last_modified_date: The last_modified_date of this CoderAccount.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def name(self):
-        """Gets the name of this CoderAccount.  # noqa: E501
-
-
-        :return: The name of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this CoderAccount.
-
-
-        :param name: The name of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this CoderAccount.  # noqa: E501
-
-
-        :return: The number_of_versions of this CoderAccount.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this CoderAccount.
-
-
-        :param number_of_versions: The number_of_versions of this CoderAccount.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
-
-    @property
-    def organization_id(self):
-        """Gets the organization_id of this CoderAccount.  # noqa: E501
-
-
-        :return: The organization_id of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._organization_id
-
-    @organization_id.setter
-    def organization_id(self, organization_id):
-        """Sets the organization_id of this CoderAccount.
-
-
-        :param organization_id: The organization_id of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._organization_id = organization_id
-
-    @property
-    def provider(self):
-        """Gets the provider of this CoderAccount.  # noqa: E501
-
-
-        :return: The provider of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._provider
-
-    @provider.setter
-    def provider(self, provider):
-        """Sets the provider of this CoderAccount.
-
-
-        :param provider: The provider of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["GITHUB", "BITBUCKET", "GITLAB", "AWS", "AZURE", "GCP", "KUBERNETES", "CODER"]  # noqa: E501
-        if provider not in allowed_values:
-            raise ValueError(
-                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
-                .format(provider, allowed_values)
-            )
-
-        self._provider = provider
-
-    @property
     def secrets_uid(self):
         """Gets the secrets_uid of this CoderAccount.  # noqa: E501
 
@@ -518,69 +560,6 @@ class CoderAccount(object):
         self._secrets_uid = secrets_uid
 
     @property
-    def system_defined(self):
-        """Gets the system_defined of this CoderAccount.  # noqa: E501
-
-
-        :return: The system_defined of this CoderAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._system_defined
-
-    @system_defined.setter
-    def system_defined(self, system_defined):
-        """Sets the system_defined of this CoderAccount.
-
-
-        :param system_defined: The system_defined of this CoderAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._system_defined = system_defined
-
-    @property
-    def template_id(self):
-        """Gets the template_id of this CoderAccount.  # noqa: E501
-
-
-        :return: The template_id of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._template_id
-
-    @template_id.setter
-    def template_id(self, template_id):
-        """Sets the template_id of this CoderAccount.
-
-
-        :param template_id: The template_id of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._template_id = template_id
-
-    @property
-    def url(self):
-        """Gets the url of this CoderAccount.  # noqa: E501
-
-
-        :return: The url of this CoderAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._url
-
-    @url.setter
-    def url(self, url):
-        """Sets the url of this CoderAccount.
-
-
-        :param url: The url of this CoderAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._url = url
-
-    @property
     def versioning_key(self):
         """Gets the versioning_key of this CoderAccount.  # noqa: E501
 
@@ -600,6 +579,27 @@ class CoderAccount(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this CoderAccount.  # noqa: E501
+
+
+        :return: The number_of_versions of this CoderAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this CoderAccount.
+
+
+        :param number_of_versions: The number_of_versions of this CoderAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

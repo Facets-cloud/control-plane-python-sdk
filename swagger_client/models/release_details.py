@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,36 +29,36 @@ class ReleaseDetails(object):
     """
     swagger_types = {
         'deployment_log_id': 'str',
-        'release_type': 'str',
         'stack_version': 'str',
         'triggered_by': 'str',
+        'release_type': 'str',
         'triggered_on': 'datetime'
     }
 
     attribute_map = {
         'deployment_log_id': 'deploymentLogId',
-        'release_type': 'releaseType',
         'stack_version': 'stackVersion',
         'triggered_by': 'triggeredBy',
+        'release_type': 'releaseType',
         'triggered_on': 'triggeredOn'
     }
 
-    def __init__(self, deployment_log_id=None, release_type=None, stack_version=None, triggered_by=None, triggered_on=None):  # noqa: E501
+    def __init__(self, deployment_log_id=None, stack_version=None, triggered_by=None, release_type=None, triggered_on=None):  # noqa: E501
         """ReleaseDetails - a model defined in Swagger"""  # noqa: E501
         self._deployment_log_id = None
-        self._release_type = None
         self._stack_version = None
         self._triggered_by = None
+        self._release_type = None
         self._triggered_on = None
         self.discriminator = None
         if deployment_log_id is not None:
             self.deployment_log_id = deployment_log_id
-        if release_type is not None:
-            self.release_type = release_type
         if stack_version is not None:
             self.stack_version = stack_version
         if triggered_by is not None:
             self.triggered_by = triggered_by
+        if release_type is not None:
+            self.release_type = release_type
         if triggered_on is not None:
             self.triggered_on = triggered_on
 
@@ -82,33 +82,6 @@ class ReleaseDetails(object):
         """
 
         self._deployment_log_id = deployment_log_id
-
-    @property
-    def release_type(self):
-        """Gets the release_type of this ReleaseDetails.  # noqa: E501
-
-
-        :return: The release_type of this ReleaseDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_type
-
-    @release_type.setter
-    def release_type(self, release_type):
-        """Sets the release_type of this ReleaseDetails.
-
-
-        :param release_type: The release_type of this ReleaseDetails.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
-        if release_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(release_type, allowed_values)
-            )
-
-        self._release_type = release_type
 
     @property
     def stack_version(self):
@@ -151,6 +124,33 @@ class ReleaseDetails(object):
         """
 
         self._triggered_by = triggered_by
+
+    @property
+    def release_type(self):
+        """Gets the release_type of this ReleaseDetails.  # noqa: E501
+
+
+        :return: The release_type of this ReleaseDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_type
+
+    @release_type.setter
+    def release_type(self, release_type):
+        """Sets the release_type of this ReleaseDetails.
+
+
+        :param release_type: The release_type of this ReleaseDetails.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
+        if release_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(release_type, allowed_values)
+            )
+
+        self._release_type = release_type
 
     @property
     def triggered_on(self):

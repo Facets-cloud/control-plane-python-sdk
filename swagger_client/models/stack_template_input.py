@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,39 +28,58 @@ class StackTemplateInput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'uid': 'str',
         'cluster_id': 'str',
-        'data': 'dict(str, str)',
-        'entity_type': 'str',
         'input_type': 'str',
-        'uid': 'str'
+        'data': 'dict(str, str)',
+        'entity_type': 'str'
     }
 
     attribute_map = {
+        'uid': 'uid',
         'cluster_id': 'clusterId',
-        'data': 'data',
-        'entity_type': 'entityType',
         'input_type': 'inputType',
-        'uid': 'uid'
+        'data': 'data',
+        'entity_type': 'entityType'
     }
 
-    def __init__(self, cluster_id=None, data=None, entity_type=None, input_type=None, uid=None):  # noqa: E501
+    def __init__(self, uid=None, cluster_id=None, input_type=None, data=None, entity_type=None):  # noqa: E501
         """StackTemplateInput - a model defined in Swagger"""  # noqa: E501
+        self._uid = None
         self._cluster_id = None
+        self._input_type = None
         self._data = None
         self._entity_type = None
-        self._input_type = None
-        self._uid = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if data is not None:
-            self.data = data
+        self.uid = uid
+        self.cluster_id = cluster_id
+        self.input_type = input_type
+        self.data = data
         if entity_type is not None:
             self.entity_type = entity_type
-        if input_type is not None:
-            self.input_type = input_type
-        if uid is not None:
-            self.uid = uid
+
+    @property
+    def uid(self):
+        """Gets the uid of this StackTemplateInput.  # noqa: E501
+
+
+        :return: The uid of this StackTemplateInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid
+
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this StackTemplateInput.
+
+
+        :param uid: The uid of this StackTemplateInput.  # noqa: E501
+        :type: str
+        """
+        if uid is None:
+            raise ValueError("Invalid value for `uid`, must not be `None`")  # noqa: E501
+
+        self._uid = uid
 
     @property
     def cluster_id(self):
@@ -80,8 +99,33 @@ class StackTemplateInput(object):
         :param cluster_id: The cluster_id of this StackTemplateInput.  # noqa: E501
         :type: str
         """
+        if cluster_id is None:
+            raise ValueError("Invalid value for `cluster_id`, must not be `None`")  # noqa: E501
 
         self._cluster_id = cluster_id
+
+    @property
+    def input_type(self):
+        """Gets the input_type of this StackTemplateInput.  # noqa: E501
+
+
+        :return: The input_type of this StackTemplateInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._input_type
+
+    @input_type.setter
+    def input_type(self, input_type):
+        """Sets the input_type of this StackTemplateInput.
+
+
+        :param input_type: The input_type of this StackTemplateInput.  # noqa: E501
+        :type: str
+        """
+        if input_type is None:
+            raise ValueError("Invalid value for `input_type`, must not be `None`")  # noqa: E501
+
+        self._input_type = input_type
 
     @property
     def data(self):
@@ -101,6 +145,8 @@ class StackTemplateInput(object):
         :param data: The data of this StackTemplateInput.  # noqa: E501
         :type: dict(str, str)
         """
+        if data is None:
+            raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501
 
         self._data = data
 
@@ -130,48 +176,6 @@ class StackTemplateInput(object):
             )
 
         self._entity_type = entity_type
-
-    @property
-    def input_type(self):
-        """Gets the input_type of this StackTemplateInput.  # noqa: E501
-
-
-        :return: The input_type of this StackTemplateInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._input_type
-
-    @input_type.setter
-    def input_type(self, input_type):
-        """Sets the input_type of this StackTemplateInput.
-
-
-        :param input_type: The input_type of this StackTemplateInput.  # noqa: E501
-        :type: str
-        """
-
-        self._input_type = input_type
-
-    @property
-    def uid(self):
-        """Gets the uid of this StackTemplateInput.  # noqa: E501
-
-
-        :return: The uid of this StackTemplateInput.  # noqa: E501
-        :rtype: str
-        """
-        return self._uid
-
-    @uid.setter
-    def uid(self, uid):
-        """Sets the uid of this StackTemplateInput.
-
-
-        :param uid: The uid of this StackTemplateInput.  # noqa: E501
-        :type: str
-        """
-
-        self._uid = uid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

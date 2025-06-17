@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class WorkflowHierarchy(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'registration_value': 'str',
-        'sequence': 'int'
+        'sequence': 'int',
+        'registration_value': 'str'
     }
 
     attribute_map = {
-        'registration_value': 'registrationValue',
-        'sequence': 'sequence'
+        'sequence': 'sequence',
+        'registration_value': 'registrationValue'
     }
 
-    def __init__(self, registration_value=None, sequence=None):  # noqa: E501
+    def __init__(self, sequence=None, registration_value=None):  # noqa: E501
         """WorkflowHierarchy - a model defined in Swagger"""  # noqa: E501
-        self._registration_value = None
         self._sequence = None
+        self._registration_value = None
         self.discriminator = None
-        if registration_value is not None:
-            self.registration_value = registration_value
         if sequence is not None:
             self.sequence = sequence
-
-    @property
-    def registration_value(self):
-        """Gets the registration_value of this WorkflowHierarchy.  # noqa: E501
-
-
-        :return: The registration_value of this WorkflowHierarchy.  # noqa: E501
-        :rtype: str
-        """
-        return self._registration_value
-
-    @registration_value.setter
-    def registration_value(self, registration_value):
-        """Sets the registration_value of this WorkflowHierarchy.
-
-
-        :param registration_value: The registration_value of this WorkflowHierarchy.  # noqa: E501
-        :type: str
-        """
-
-        self._registration_value = registration_value
+        if registration_value is not None:
+            self.registration_value = registration_value
 
     @property
     def sequence(self):
@@ -88,6 +67,27 @@ class WorkflowHierarchy(object):
         """
 
         self._sequence = sequence
+
+    @property
+    def registration_value(self):
+        """Gets the registration_value of this WorkflowHierarchy.  # noqa: E501
+
+
+        :return: The registration_value of this WorkflowHierarchy.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_value
+
+    @registration_value.setter
+    def registration_value(self, registration_value):
+        """Sets the registration_value of this WorkflowHierarchy.
+
+
+        :param registration_value: The registration_value of this WorkflowHierarchy.  # noqa: E501
+        :type: str
+        """
+
+        self._registration_value = registration_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

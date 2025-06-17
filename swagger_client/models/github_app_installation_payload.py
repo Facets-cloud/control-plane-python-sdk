@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -30,32 +30,32 @@ class GithubAppInstallationPayload(object):
     swagger_types = {
         'account_name': 'str',
         'code': 'str',
-        'enterprise_host_name': 'str',
-        'installation_id': 'int'
+        'installation_id': 'int',
+        'enterprise_host_name': 'str'
     }
 
     attribute_map = {
         'account_name': 'accountName',
         'code': 'code',
-        'enterprise_host_name': 'enterpriseHostName',
-        'installation_id': 'installationId'
+        'installation_id': 'installationId',
+        'enterprise_host_name': 'enterpriseHostName'
     }
 
-    def __init__(self, account_name=None, code=None, enterprise_host_name=None, installation_id=None):  # noqa: E501
+    def __init__(self, account_name=None, code=None, installation_id=None, enterprise_host_name=None):  # noqa: E501
         """GithubAppInstallationPayload - a model defined in Swagger"""  # noqa: E501
         self._account_name = None
         self._code = None
-        self._enterprise_host_name = None
         self._installation_id = None
+        self._enterprise_host_name = None
         self.discriminator = None
         if account_name is not None:
             self.account_name = account_name
         if code is not None:
             self.code = code
-        if enterprise_host_name is not None:
-            self.enterprise_host_name = enterprise_host_name
         if installation_id is not None:
             self.installation_id = installation_id
+        if enterprise_host_name is not None:
+            self.enterprise_host_name = enterprise_host_name
 
     @property
     def account_name(self):
@@ -100,27 +100,6 @@ class GithubAppInstallationPayload(object):
         self._code = code
 
     @property
-    def enterprise_host_name(self):
-        """Gets the enterprise_host_name of this GithubAppInstallationPayload.  # noqa: E501
-
-
-        :return: The enterprise_host_name of this GithubAppInstallationPayload.  # noqa: E501
-        :rtype: str
-        """
-        return self._enterprise_host_name
-
-    @enterprise_host_name.setter
-    def enterprise_host_name(self, enterprise_host_name):
-        """Sets the enterprise_host_name of this GithubAppInstallationPayload.
-
-
-        :param enterprise_host_name: The enterprise_host_name of this GithubAppInstallationPayload.  # noqa: E501
-        :type: str
-        """
-
-        self._enterprise_host_name = enterprise_host_name
-
-    @property
     def installation_id(self):
         """Gets the installation_id of this GithubAppInstallationPayload.  # noqa: E501
 
@@ -140,6 +119,27 @@ class GithubAppInstallationPayload(object):
         """
 
         self._installation_id = installation_id
+
+    @property
+    def enterprise_host_name(self):
+        """Gets the enterprise_host_name of this GithubAppInstallationPayload.  # noqa: E501
+
+
+        :return: The enterprise_host_name of this GithubAppInstallationPayload.  # noqa: E501
+        :rtype: str
+        """
+        return self._enterprise_host_name
+
+    @enterprise_host_name.setter
+    def enterprise_host_name(self, enterprise_host_name):
+        """Sets the enterprise_host_name of this GithubAppInstallationPayload.
+
+
+        :param enterprise_host_name: The enterprise_host_name of this GithubAppInstallationPayload.  # noqa: E501
+        :type: str
+        """
+
+        self._enterprise_host_name = enterprise_host_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

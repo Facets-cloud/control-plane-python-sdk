@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,102 +28,43 @@ class UserAccessToken(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created_on': 'datetime',
-        'description': 'str',
-        'name': 'str',
         'token_id': 'str',
-        'user_name': 'str'
+        'name': 'str',
+        'description': 'str',
+        'token': 'str',
+        'user_name': 'str',
+        'created_on': 'datetime'
     }
 
     attribute_map = {
-        'created_on': 'createdOn',
-        'description': 'description',
-        'name': 'name',
         'token_id': 'tokenId',
-        'user_name': 'userName'
+        'name': 'name',
+        'description': 'description',
+        'token': 'token',
+        'user_name': 'userName',
+        'created_on': 'createdOn'
     }
 
-    def __init__(self, created_on=None, description=None, name=None, token_id=None, user_name=None):  # noqa: E501
+    def __init__(self, token_id=None, name=None, description=None, token=None, user_name=None, created_on=None):  # noqa: E501
         """UserAccessToken - a model defined in Swagger"""  # noqa: E501
-        self._created_on = None
-        self._description = None
-        self._name = None
         self._token_id = None
+        self._name = None
+        self._description = None
+        self._token = None
         self._user_name = None
+        self._created_on = None
         self.discriminator = None
-        if created_on is not None:
-            self.created_on = created_on
-        if description is not None:
-            self.description = description
-        if name is not None:
-            self.name = name
         if token_id is not None:
             self.token_id = token_id
+        self.name = name
+        if description is not None:
+            self.description = description
+        if token is not None:
+            self.token = token
         if user_name is not None:
             self.user_name = user_name
-
-    @property
-    def created_on(self):
-        """Gets the created_on of this UserAccessToken.  # noqa: E501
-
-
-        :return: The created_on of this UserAccessToken.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._created_on
-
-    @created_on.setter
-    def created_on(self, created_on):
-        """Sets the created_on of this UserAccessToken.
-
-
-        :param created_on: The created_on of this UserAccessToken.  # noqa: E501
-        :type: datetime
-        """
-
-        self._created_on = created_on
-
-    @property
-    def description(self):
-        """Gets the description of this UserAccessToken.  # noqa: E501
-
-
-        :return: The description of this UserAccessToken.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this UserAccessToken.
-
-
-        :param description: The description of this UserAccessToken.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def name(self):
-        """Gets the name of this UserAccessToken.  # noqa: E501
-
-
-        :return: The name of this UserAccessToken.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this UserAccessToken.
-
-
-        :param name: The name of this UserAccessToken.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
+        if created_on is not None:
+            self.created_on = created_on
 
     @property
     def token_id(self):
@@ -147,6 +88,71 @@ class UserAccessToken(object):
         self._token_id = token_id
 
     @property
+    def name(self):
+        """Gets the name of this UserAccessToken.  # noqa: E501
+
+
+        :return: The name of this UserAccessToken.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this UserAccessToken.
+
+
+        :param name: The name of this UserAccessToken.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def description(self):
+        """Gets the description of this UserAccessToken.  # noqa: E501
+
+
+        :return: The description of this UserAccessToken.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this UserAccessToken.
+
+
+        :param description: The description of this UserAccessToken.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def token(self):
+        """Gets the token of this UserAccessToken.  # noqa: E501
+
+
+        :return: The token of this UserAccessToken.  # noqa: E501
+        :rtype: str
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """Sets the token of this UserAccessToken.
+
+
+        :param token: The token of this UserAccessToken.  # noqa: E501
+        :type: str
+        """
+
+        self._token = token
+
+    @property
     def user_name(self):
         """Gets the user_name of this UserAccessToken.  # noqa: E501
 
@@ -166,6 +172,27 @@ class UserAccessToken(object):
         """
 
         self._user_name = user_name
+
+    @property
+    def created_on(self):
+        """Gets the created_on of this UserAccessToken.  # noqa: E501
+
+
+        :return: The created_on of this UserAccessToken.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_on
+
+    @created_on.setter
+    def created_on(self, created_on):
+        """Sets the created_on of this UserAccessToken.
+
+
+        :param created_on: The created_on of this UserAccessToken.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_on = created_on
 
     def to_dict(self):
         """Returns the model properties as a dict"""

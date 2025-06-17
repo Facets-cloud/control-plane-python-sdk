@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class EnableDisableOPAPolicy(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'disabled': 'bool',
-        'policy_name': 'str'
+        'policy_name': 'str',
+        'disabled': 'bool'
     }
 
     attribute_map = {
-        'disabled': 'disabled',
-        'policy_name': 'policyName'
+        'policy_name': 'policyName',
+        'disabled': 'disabled'
     }
 
-    def __init__(self, disabled=None, policy_name=None):  # noqa: E501
+    def __init__(self, policy_name=None, disabled=None):  # noqa: E501
         """EnableDisableOPAPolicy - a model defined in Swagger"""  # noqa: E501
-        self._disabled = None
         self._policy_name = None
+        self._disabled = None
         self.discriminator = None
-        if disabled is not None:
-            self.disabled = disabled
         if policy_name is not None:
             self.policy_name = policy_name
-
-    @property
-    def disabled(self):
-        """Gets the disabled of this EnableDisableOPAPolicy.  # noqa: E501
-
-
-        :return: The disabled of this EnableDisableOPAPolicy.  # noqa: E501
-        :rtype: bool
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this EnableDisableOPAPolicy.
-
-
-        :param disabled: The disabled of this EnableDisableOPAPolicy.  # noqa: E501
-        :type: bool
-        """
-
-        self._disabled = disabled
+        if disabled is not None:
+            self.disabled = disabled
 
     @property
     def policy_name(self):
@@ -88,6 +67,27 @@ class EnableDisableOPAPolicy(object):
         """
 
         self._policy_name = policy_name
+
+    @property
+    def disabled(self):
+        """Gets the disabled of this EnableDisableOPAPolicy.  # noqa: E501
+
+
+        :return: The disabled of this EnableDisableOPAPolicy.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this EnableDisableOPAPolicy.
+
+
+        :param disabled: The disabled of this EnableDisableOPAPolicy.  # noqa: E501
+        :type: bool
+        """
+
+        self._disabled = disabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

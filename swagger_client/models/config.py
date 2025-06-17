@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class Config(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auto_promote_artifact': 'bool',
-        'requires_sign_off': 'bool'
+        'requires_sign_off': 'bool',
+        'auto_promote_artifact': 'bool'
     }
 
     attribute_map = {
-        'auto_promote_artifact': 'autoPromoteArtifact',
-        'requires_sign_off': 'requiresSignOff'
+        'requires_sign_off': 'requiresSignOff',
+        'auto_promote_artifact': 'autoPromoteArtifact'
     }
 
-    def __init__(self, auto_promote_artifact=None, requires_sign_off=None):  # noqa: E501
+    def __init__(self, requires_sign_off=None, auto_promote_artifact=None):  # noqa: E501
         """Config - a model defined in Swagger"""  # noqa: E501
-        self._auto_promote_artifact = None
         self._requires_sign_off = None
+        self._auto_promote_artifact = None
         self.discriminator = None
-        if auto_promote_artifact is not None:
-            self.auto_promote_artifact = auto_promote_artifact
         if requires_sign_off is not None:
             self.requires_sign_off = requires_sign_off
-
-    @property
-    def auto_promote_artifact(self):
-        """Gets the auto_promote_artifact of this Config.  # noqa: E501
-
-
-        :return: The auto_promote_artifact of this Config.  # noqa: E501
-        :rtype: bool
-        """
-        return self._auto_promote_artifact
-
-    @auto_promote_artifact.setter
-    def auto_promote_artifact(self, auto_promote_artifact):
-        """Sets the auto_promote_artifact of this Config.
-
-
-        :param auto_promote_artifact: The auto_promote_artifact of this Config.  # noqa: E501
-        :type: bool
-        """
-
-        self._auto_promote_artifact = auto_promote_artifact
+        if auto_promote_artifact is not None:
+            self.auto_promote_artifact = auto_promote_artifact
 
     @property
     def requires_sign_off(self):
@@ -88,6 +67,27 @@ class Config(object):
         """
 
         self._requires_sign_off = requires_sign_off
+
+    @property
+    def auto_promote_artifact(self):
+        """Gets the auto_promote_artifact of this Config.  # noqa: E501
+
+
+        :return: The auto_promote_artifact of this Config.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_promote_artifact
+
+    @auto_promote_artifact.setter
+    def auto_promote_artifact(self, auto_promote_artifact):
+        """Sets the auto_promote_artifact of this Config.
+
+
+        :param auto_promote_artifact: The auto_promote_artifact of this Config.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_promote_artifact = auto_promote_artifact
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,18 +1,18 @@
 # swagger_client.UiUserVcsTokenControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_using_post1**](UiUserVcsTokenControllerApi.md#add_using_post1) | **POST** /cc-ui/v1/user-token | add
-[**delete_using_delete2**](UiUserVcsTokenControllerApi.md#delete_using_delete2) | **DELETE** /cc-ui/v1/user-token/{id} | delete
-[**get_all_using_get5**](UiUserVcsTokenControllerApi.md#get_all_using_get5) | **GET** /cc-ui/v1/user-token | getAll
-[**update_using_put2**](UiUserVcsTokenControllerApi.md#update_using_put2) | **PUT** /cc-ui/v1/user-token | update
+[**add**](UiUserVcsTokenControllerApi.md#add) | **POST** /cc-ui/v1/user-token | 
+[**delete**](UiUserVcsTokenControllerApi.md#delete) | **DELETE** /cc-ui/v1/user-token/{id} | 
+[**get_all**](UiUserVcsTokenControllerApi.md#get_all) | **GET** /cc-ui/v1/user-token | 
+[**update**](UiUserVcsTokenControllerApi.md#update) | **PUT** /cc-ui/v1/user-token | 
 
-# **add_using_post1**
-> UserVCSTokenResponse add_using_post1(body)
+# **add**
+> UserVCSTokenResponse add(body)
 
-add
+
 
 ### Example
 ```python
@@ -21,28 +21,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserVcsTokenControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.UserVCSTokenRequest() # UserVCSTokenRequest | userVCSTokenRequest
+body = swagger_client.UserVCSTokenRequest() # UserVCSTokenRequest | 
 
 try:
-    # add
-    api_response = api_instance.add_using_post1(body)
+    api_response = api_instance.add(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserVcsTokenControllerApi->add_using_post1: %s\n" % e)
+    print("Exception when calling UiUserVcsTokenControllerApi->add: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserVCSTokenRequest**](UserVCSTokenRequest.md)| userVCSTokenRequest | 
+ **body** | [**UserVCSTokenRequest**](UserVCSTokenRequest.md)|  | 
 
 ### Return type
 
@@ -50,19 +49,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_using_delete2**
-> delete_using_delete2(id)
+# **delete**
+> delete(id)
 
-delete
+
 
 ### Example
 ```python
@@ -71,27 +70,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserVcsTokenControllerApi(swagger_client.ApiClient(configuration))
-id = 'id_example' # str | id
+id = 'id_example' # str | 
 
 try:
-    # delete
-    api_instance.delete_using_delete2(id)
+    api_instance.delete(id)
 except ApiException as e:
-    print("Exception when calling UiUserVcsTokenControllerApi->delete_using_delete2: %s\n" % e)
+    print("Exception when calling UiUserVcsTokenControllerApi->delete: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| id | 
+ **id** | **str**|  | 
 
 ### Return type
 
@@ -99,19 +97,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_using_get5**
-> list[UserVCSTokenResponse] get_all_using_get5()
+# **get_all**
+> list[UserVCSTokenResponse] get_all()
 
-getAll
+
 
 ### Example
 ```python
@@ -120,7 +118,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -129,11 +127,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiUserVcsTokenControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getAll
-    api_response = api_instance.get_all_using_get5()
+    api_response = api_instance.get_all()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserVcsTokenControllerApi->get_all_using_get5: %s\n" % e)
+    print("Exception when calling UiUserVcsTokenControllerApi->get_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -145,19 +142,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_using_put2**
-> UserVCSTokenResponse update_using_put2(body)
+# **update**
+> UserVCSTokenResponse update(body)
 
-update
+
 
 ### Example
 ```python
@@ -166,28 +163,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiUserVcsTokenControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.UserVCSTokenRequest() # UserVCSTokenRequest | userVCSTokenRequest
+body = swagger_client.UserVCSTokenRequest() # UserVCSTokenRequest | 
 
 try:
-    # update
-    api_response = api_instance.update_using_put2(body)
+    api_response = api_instance.update(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiUserVcsTokenControllerApi->update_using_put2: %s\n" % e)
+    print("Exception when calling UiUserVcsTokenControllerApi->update: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UserVCSTokenRequest**](UserVCSTokenRequest.md)| userVCSTokenRequest | 
+ **body** | [**UserVCSTokenRequest**](UserVCSTokenRequest.md)|  | 
 
 ### Return type
 
@@ -195,12 +191,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

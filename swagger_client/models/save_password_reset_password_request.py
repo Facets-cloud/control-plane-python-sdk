@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class SavePasswordResetPasswordRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'token': 'str',
         'email': 'str',
-        'password': 'str',
-        'token': 'str'
+        'password': 'str'
     }
 
     attribute_map = {
+        'token': 'token',
         'email': 'email',
-        'password': 'password',
-        'token': 'token'
+        'password': 'password'
     }
 
-    def __init__(self, email=None, password=None, token=None):  # noqa: E501
+    def __init__(self, token=None, email=None, password=None):  # noqa: E501
         """SavePasswordResetPasswordRequest - a model defined in Swagger"""  # noqa: E501
+        self._token = None
         self._email = None
         self._password = None
-        self._token = None
         self.discriminator = None
+        if token is not None:
+            self.token = token
         if email is not None:
             self.email = email
         if password is not None:
             self.password = password
-        if token is not None:
-            self.token = token
+
+    @property
+    def token(self):
+        """Gets the token of this SavePasswordResetPasswordRequest.  # noqa: E501
+
+
+        :return: The token of this SavePasswordResetPasswordRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """Sets the token of this SavePasswordResetPasswordRequest.
+
+
+        :param token: The token of this SavePasswordResetPasswordRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._token = token
 
     @property
     def email(self):
@@ -93,27 +114,6 @@ class SavePasswordResetPasswordRequest(object):
         """
 
         self._password = password
-
-    @property
-    def token(self):
-        """Gets the token of this SavePasswordResetPasswordRequest.  # noqa: E501
-
-
-        :return: The token of this SavePasswordResetPasswordRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._token
-
-    @token.setter
-    def token(self, token):
-        """Sets the token of this SavePasswordResetPasswordRequest.
-
-
-        :param token: The token of this SavePasswordResetPasswordRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._token = token
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,107 +28,44 @@ class PipelineNode(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
-        'cluster_name': 'str',
-        'config': 'Config',
         'id': 'str',
+        'stack_name': 'str',
+        'cluster_id': 'str',
         'parent_cluster_id': 'str',
-        'stack_name': 'str'
+        'config': 'Config',
+        'cluster_name': 'str'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
-        'cluster_name': 'clusterName',
-        'config': 'config',
         'id': 'id',
+        'stack_name': 'stackName',
+        'cluster_id': 'clusterId',
         'parent_cluster_id': 'parentClusterId',
-        'stack_name': 'stackName'
+        'config': 'config',
+        'cluster_name': 'clusterName'
     }
 
-    def __init__(self, cluster_id=None, cluster_name=None, config=None, id=None, parent_cluster_id=None, stack_name=None):  # noqa: E501
+    def __init__(self, id=None, stack_name=None, cluster_id=None, parent_cluster_id=None, config=None, cluster_name=None):  # noqa: E501
         """PipelineNode - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
-        self._cluster_name = None
-        self._config = None
         self._id = None
-        self._parent_cluster_id = None
         self._stack_name = None
+        self._cluster_id = None
+        self._parent_cluster_id = None
+        self._config = None
+        self._cluster_name = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
-        if config is not None:
-            self.config = config
         if id is not None:
             self.id = id
-        if parent_cluster_id is not None:
-            self.parent_cluster_id = parent_cluster_id
         if stack_name is not None:
             self.stack_name = stack_name
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this PipelineNode.  # noqa: E501
-
-
-        :return: The cluster_id of this PipelineNode.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this PipelineNode.
-
-
-        :param cluster_id: The cluster_id of this PipelineNode.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
-
-    @property
-    def cluster_name(self):
-        """Gets the cluster_name of this PipelineNode.  # noqa: E501
-
-
-        :return: The cluster_name of this PipelineNode.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_name
-
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
-        """Sets the cluster_name of this PipelineNode.
-
-
-        :param cluster_name: The cluster_name of this PipelineNode.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_name = cluster_name
-
-    @property
-    def config(self):
-        """Gets the config of this PipelineNode.  # noqa: E501
-
-
-        :return: The config of this PipelineNode.  # noqa: E501
-        :rtype: Config
-        """
-        return self._config
-
-    @config.setter
-    def config(self, config):
-        """Sets the config of this PipelineNode.
-
-
-        :param config: The config of this PipelineNode.  # noqa: E501
-        :type: Config
-        """
-
-        self._config = config
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if parent_cluster_id is not None:
+            self.parent_cluster_id = parent_cluster_id
+        if config is not None:
+            self.config = config
+        if cluster_name is not None:
+            self.cluster_name = cluster_name
 
     @property
     def id(self):
@@ -152,6 +89,48 @@ class PipelineNode(object):
         self._id = id
 
     @property
+    def stack_name(self):
+        """Gets the stack_name of this PipelineNode.  # noqa: E501
+
+
+        :return: The stack_name of this PipelineNode.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this PipelineNode.
+
+
+        :param stack_name: The stack_name of this PipelineNode.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_name = stack_name
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this PipelineNode.  # noqa: E501
+
+
+        :return: The cluster_id of this PipelineNode.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this PipelineNode.
+
+
+        :param cluster_id: The cluster_id of this PipelineNode.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
+
+    @property
     def parent_cluster_id(self):
         """Gets the parent_cluster_id of this PipelineNode.  # noqa: E501
 
@@ -173,25 +152,46 @@ class PipelineNode(object):
         self._parent_cluster_id = parent_cluster_id
 
     @property
-    def stack_name(self):
-        """Gets the stack_name of this PipelineNode.  # noqa: E501
+    def config(self):
+        """Gets the config of this PipelineNode.  # noqa: E501
 
 
-        :return: The stack_name of this PipelineNode.  # noqa: E501
+        :return: The config of this PipelineNode.  # noqa: E501
+        :rtype: Config
+        """
+        return self._config
+
+    @config.setter
+    def config(self, config):
+        """Sets the config of this PipelineNode.
+
+
+        :param config: The config of this PipelineNode.  # noqa: E501
+        :type: Config
+        """
+
+        self._config = config
+
+    @property
+    def cluster_name(self):
+        """Gets the cluster_name of this PipelineNode.  # noqa: E501
+
+
+        :return: The cluster_name of this PipelineNode.  # noqa: E501
         :rtype: str
         """
-        return self._stack_name
+        return self._cluster_name
 
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this PipelineNode.
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """Sets the cluster_name of this PipelineNode.
 
 
-        :param stack_name: The stack_name of this PipelineNode.  # noqa: E501
+        :param cluster_name: The cluster_name of this PipelineNode.  # noqa: E501
         :type: str
         """
 
-        self._stack_name = stack_name
+        self._cluster_name = cluster_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,50 @@ class AccessAnalyzerResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'roles': 'list[AccessRoleDetails]',
+        'username': 'str',
         'user_id': 'str',
-        'username': 'str'
+        'roles': 'list[AccessRoleDetails]'
     }
 
     attribute_map = {
-        'roles': 'roles',
+        'username': 'username',
         'user_id': 'userId',
-        'username': 'username'
+        'roles': 'roles'
     }
 
-    def __init__(self, roles=None, user_id=None, username=None):  # noqa: E501
+    def __init__(self, username=None, user_id=None, roles=None):  # noqa: E501
         """AccessAnalyzerResponse - a model defined in Swagger"""  # noqa: E501
-        self._roles = None
-        self._user_id = None
         self._username = None
+        self._user_id = None
+        self._roles = None
         self.discriminator = None
-        if roles is not None:
-            self.roles = roles
-        if user_id is not None:
-            self.user_id = user_id
         if username is not None:
             self.username = username
+        if user_id is not None:
+            self.user_id = user_id
+        if roles is not None:
+            self.roles = roles
 
     @property
-    def roles(self):
-        """Gets the roles of this AccessAnalyzerResponse.  # noqa: E501
+    def username(self):
+        """Gets the username of this AccessAnalyzerResponse.  # noqa: E501
 
 
-        :return: The roles of this AccessAnalyzerResponse.  # noqa: E501
-        :rtype: list[AccessRoleDetails]
+        :return: The username of this AccessAnalyzerResponse.  # noqa: E501
+        :rtype: str
         """
-        return self._roles
+        return self._username
 
-    @roles.setter
-    def roles(self, roles):
-        """Sets the roles of this AccessAnalyzerResponse.
+    @username.setter
+    def username(self, username):
+        """Sets the username of this AccessAnalyzerResponse.
 
 
-        :param roles: The roles of this AccessAnalyzerResponse.  # noqa: E501
-        :type: list[AccessRoleDetails]
+        :param username: The username of this AccessAnalyzerResponse.  # noqa: E501
+        :type: str
         """
 
-        self._roles = roles
+        self._username = username
 
     @property
     def user_id(self):
@@ -95,25 +95,25 @@ class AccessAnalyzerResponse(object):
         self._user_id = user_id
 
     @property
-    def username(self):
-        """Gets the username of this AccessAnalyzerResponse.  # noqa: E501
+    def roles(self):
+        """Gets the roles of this AccessAnalyzerResponse.  # noqa: E501
 
 
-        :return: The username of this AccessAnalyzerResponse.  # noqa: E501
-        :rtype: str
+        :return: The roles of this AccessAnalyzerResponse.  # noqa: E501
+        :rtype: list[AccessRoleDetails]
         """
-        return self._username
+        return self._roles
 
-    @username.setter
-    def username(self, username):
-        """Sets the username of this AccessAnalyzerResponse.
+    @roles.setter
+    def roles(self, roles):
+        """Sets the roles of this AccessAnalyzerResponse.
 
 
-        :param username: The username of this AccessAnalyzerResponse.  # noqa: E501
-        :type: str
+        :param roles: The roles of this AccessAnalyzerResponse.  # noqa: E501
+        :type: list[AccessRoleDetails]
         """
 
-        self._username = username
+        self._roles = roles
 
     def to_dict(self):
         """Returns the model properties as a dict"""

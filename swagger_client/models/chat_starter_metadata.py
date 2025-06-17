@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,34 @@ class ChatStarterMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
         'starter': 'str',
-        'suggestions': 'list[str]',
-        'title': 'str'
+        'description': 'str',
+        'title': 'str',
+        'suggestions': 'list[str]'
     }
 
     attribute_map = {
-        'description': 'description',
         'starter': 'starter',
-        'suggestions': 'suggestions',
-        'title': 'title'
+        'description': 'description',
+        'title': 'title',
+        'suggestions': 'suggestions'
     }
 
-    def __init__(self, description=None, starter=None, suggestions=None, title=None):  # noqa: E501
+    def __init__(self, starter=None, description=None, title=None, suggestions=None):  # noqa: E501
         """ChatStarterMetadata - a model defined in Swagger"""  # noqa: E501
-        self._description = None
         self._starter = None
-        self._suggestions = None
+        self._description = None
         self._title = None
+        self._suggestions = None
         self.discriminator = None
-        if description is not None:
-            self.description = description
         if starter is not None:
             self.starter = starter
-        if suggestions is not None:
-            self.suggestions = suggestions
+        if description is not None:
+            self.description = description
         if title is not None:
             self.title = title
-
-    @property
-    def description(self):
-        """Gets the description of this ChatStarterMetadata.  # noqa: E501
-
-
-        :return: The description of this ChatStarterMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ChatStarterMetadata.
-
-
-        :param description: The description of this ChatStarterMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
+        if suggestions is not None:
+            self.suggestions = suggestions
 
     @property
     def starter(self):
@@ -106,25 +85,25 @@ class ChatStarterMetadata(object):
         self._starter = starter
 
     @property
-    def suggestions(self):
-        """Gets the suggestions of this ChatStarterMetadata.  # noqa: E501
+    def description(self):
+        """Gets the description of this ChatStarterMetadata.  # noqa: E501
 
 
-        :return: The suggestions of this ChatStarterMetadata.  # noqa: E501
-        :rtype: list[str]
+        :return: The description of this ChatStarterMetadata.  # noqa: E501
+        :rtype: str
         """
-        return self._suggestions
+        return self._description
 
-    @suggestions.setter
-    def suggestions(self, suggestions):
-        """Sets the suggestions of this ChatStarterMetadata.
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ChatStarterMetadata.
 
 
-        :param suggestions: The suggestions of this ChatStarterMetadata.  # noqa: E501
-        :type: list[str]
+        :param description: The description of this ChatStarterMetadata.  # noqa: E501
+        :type: str
         """
 
-        self._suggestions = suggestions
+        self._description = description
 
     @property
     def title(self):
@@ -146,6 +125,27 @@ class ChatStarterMetadata(object):
         """
 
         self._title = title
+
+    @property
+    def suggestions(self):
+        """Gets the suggestions of this ChatStarterMetadata.  # noqa: E501
+
+
+        :return: The suggestions of this ChatStarterMetadata.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._suggestions
+
+    @suggestions.setter
+    def suggestions(self, suggestions):
+        """Sets the suggestions of this ChatStarterMetadata.
+
+
+        :param suggestions: The suggestions of this ChatStarterMetadata.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._suggestions = suggestions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

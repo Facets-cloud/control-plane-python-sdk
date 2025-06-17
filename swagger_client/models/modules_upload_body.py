@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,7 +29,7 @@ class ModulesUploadBody(object):
     """
     swagger_types = {
         'file': 'str',
-        'metadata': 'object'
+        'metadata': 'ModuleMetadata'
     }
 
     attribute_map = {
@@ -50,7 +50,6 @@ class ModulesUploadBody(object):
     def file(self):
         """Gets the file of this ModulesUploadBody.  # noqa: E501
 
-        file  # noqa: E501
 
         :return: The file of this ModulesUploadBody.  # noqa: E501
         :rtype: str
@@ -61,7 +60,6 @@ class ModulesUploadBody(object):
     def file(self, file):
         """Sets the file of this ModulesUploadBody.
 
-        file  # noqa: E501
 
         :param file: The file of this ModulesUploadBody.  # noqa: E501
         :type: str
@@ -75,10 +73,9 @@ class ModulesUploadBody(object):
     def metadata(self):
         """Gets the metadata of this ModulesUploadBody.  # noqa: E501
 
-        metadata  # noqa: E501
 
         :return: The metadata of this ModulesUploadBody.  # noqa: E501
-        :rtype: object
+        :rtype: ModuleMetadata
         """
         return self._metadata
 
@@ -86,10 +83,9 @@ class ModulesUploadBody(object):
     def metadata(self, metadata):
         """Sets the metadata of this ModulesUploadBody.
 
-        metadata  # noqa: E501
 
         :param metadata: The metadata of this ModulesUploadBody.  # noqa: E501
-        :type: object
+        :type: ModuleMetadata
         """
 
         self._metadata = metadata

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,39 @@ class ModuleUsageDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
-        'cluster_name': 'str',
         'resource_name': 'str',
         'resource_type': 'str',
+        'cluster_id': 'str',
+        'cluster_name': 'str',
         'stack_name': 'str'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
-        'cluster_name': 'clusterName',
         'resource_name': 'resourceName',
         'resource_type': 'resourceType',
+        'cluster_id': 'clusterId',
+        'cluster_name': 'clusterName',
         'stack_name': 'stackName'
     }
 
-    def __init__(self, cluster_id=None, cluster_name=None, resource_name=None, resource_type=None, stack_name=None):  # noqa: E501
+    def __init__(self, resource_name=None, resource_type=None, cluster_id=None, cluster_name=None, stack_name=None):  # noqa: E501
         """ModuleUsageDTO - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
-        self._cluster_name = None
         self._resource_name = None
         self._resource_type = None
+        self._cluster_id = None
+        self._cluster_name = None
         self._stack_name = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
         if resource_name is not None:
             self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if cluster_name is not None:
+            self.cluster_name = cluster_name
         if stack_name is not None:
             self.stack_name = stack_name
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ModuleUsageDTO.  # noqa: E501
-
-
-        :return: The cluster_id of this ModuleUsageDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ModuleUsageDTO.
-
-
-        :param cluster_id: The cluster_id of this ModuleUsageDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
-
-    @property
-    def cluster_name(self):
-        """Gets the cluster_name of this ModuleUsageDTO.  # noqa: E501
-
-
-        :return: The cluster_name of this ModuleUsageDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_name
-
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
-        """Sets the cluster_name of this ModuleUsageDTO.
-
-
-        :param cluster_name: The cluster_name of this ModuleUsageDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_name = cluster_name
 
     @property
     def resource_name(self):
@@ -145,6 +103,48 @@ class ModuleUsageDTO(object):
         """
 
         self._resource_type = resource_type
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this ModuleUsageDTO.  # noqa: E501
+
+
+        :return: The cluster_id of this ModuleUsageDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ModuleUsageDTO.
+
+
+        :param cluster_id: The cluster_id of this ModuleUsageDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
+
+    @property
+    def cluster_name(self):
+        """Gets the cluster_name of this ModuleUsageDTO.  # noqa: E501
+
+
+        :return: The cluster_name of this ModuleUsageDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_name
+
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """Sets the cluster_name of this ModuleUsageDTO.
+
+
+        :param cluster_name: The cluster_name of this ModuleUsageDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_name = cluster_name
 
     @property
     def stack_name(self):

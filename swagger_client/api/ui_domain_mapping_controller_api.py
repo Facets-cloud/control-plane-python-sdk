@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,49 +32,49 @@ class UiDomainMappingControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_domain_mapping_using_post(self, body, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """addDomainMapping  # noqa: E501
+    def add_domain_mapping(self, body, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """add_domain_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_domain_mapping_using_post(body, cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.add_domain_mapping(body, cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DomainDTO body: domain (required)
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param DomainDTO body: (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_domain_mapping_using_post_with_http_info(body, cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.add_domain_mapping_with_http_info(body, cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_domain_mapping_using_post_with_http_info(body, cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.add_domain_mapping_with_http_info(body, cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def add_domain_mapping_using_post_with_http_info(self, body, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """addDomainMapping  # noqa: E501
+    def add_domain_mapping_with_http_info(self, body, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """add_domain_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_domain_mapping_using_post_with_http_info(body, cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.add_domain_mapping_with_http_info(body, cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DomainDTO body: domain (required)
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param DomainDTO body: (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'cluster_id', 'resource_name', 'resource_type']  # noqa: E501
+        all_params = ['body', 'cluster_id', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -85,36 +85,36 @@ class UiDomainMappingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_domain_mapping_using_post" % key
+                    " to method add_domain_mapping" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_domain_mapping_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add_domain_mapping`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `add_domain_mapping_using_post`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `add_domain_mapping_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `add_domain_mapping`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `add_domain_mapping_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `add_domain_mapping`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `add_domain_mapping`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -126,12 +126,16 @@ class UiDomainMappingControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}', 'POST',
@@ -149,49 +153,49 @@ class UiDomainMappingControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_domain_mapping_using_delete(self, alias, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """deleteDomainMapping  # noqa: E501
+    def delete_domain_mapping(self, cluster_id, resource_type, resource_name, alias, **kwargs):  # noqa: E501
+        """delete_domain_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_domain_mapping_using_delete(alias, cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.delete_domain_mapping(cluster_id, resource_type, resource_name, alias, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str alias: alias (required)
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param str alias: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_domain_mapping_using_delete_with_http_info(alias, cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.delete_domain_mapping_with_http_info(cluster_id, resource_type, resource_name, alias, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_domain_mapping_using_delete_with_http_info(alias, cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.delete_domain_mapping_with_http_info(cluster_id, resource_type, resource_name, alias, **kwargs)  # noqa: E501
             return data
 
-    def delete_domain_mapping_using_delete_with_http_info(self, alias, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """deleteDomainMapping  # noqa: E501
+    def delete_domain_mapping_with_http_info(self, cluster_id, resource_type, resource_name, alias, **kwargs):  # noqa: E501
+        """delete_domain_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_domain_mapping_using_delete_with_http_info(alias, cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.delete_domain_mapping_with_http_info(cluster_id, resource_type, resource_name, alias, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str alias: alias (required)
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
+        :param str alias: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['alias', 'cluster_id', 'resource_name', 'resource_type']  # noqa: E501
+        all_params = ['cluster_id', 'resource_type', 'resource_name', 'alias']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -202,36 +206,36 @@ class UiDomainMappingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_domain_mapping_using_delete" % key
+                    " to method delete_domain_mapping" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'alias' is set
-        if ('alias' not in params or
-                params['alias'] is None):
-            raise ValueError("Missing the required parameter `alias` when calling `delete_domain_mapping_using_delete`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_domain_mapping_using_delete`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `delete_domain_mapping_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `delete_domain_mapping`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `delete_domain_mapping_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `delete_domain_mapping`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `delete_domain_mapping`")  # noqa: E501
+        # verify the required parameter 'alias' is set
+        if ('alias' not in params or
+                params['alias'] is None):
+            raise ValueError("Missing the required parameter `alias` when calling `delete_domain_mapping`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
         if 'alias' in params:
@@ -243,8 +247,12 @@ class UiDomainMappingControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}', 'DELETE',
@@ -262,47 +270,47 @@ class UiDomainMappingControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_domains_using_get(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getAllDomains  # noqa: E501
+    def get_all_domains(self, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_all_domains  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_domains_using_get(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_all_domains(cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: list[DomainDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_domains_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.get_all_domains_with_http_info(cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_domains_using_get_with_http_info(cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.get_all_domains_with_http_info(cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def get_all_domains_using_get_with_http_info(self, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """getAllDomains  # noqa: E501
+    def get_all_domains_with_http_info(self, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """get_all_domains  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_domains_using_get_with_http_info(cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.get_all_domains_with_http_info(cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: list[DomainDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'resource_name', 'resource_type']  # noqa: E501
+        all_params = ['cluster_id', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -313,32 +321,32 @@ class UiDomainMappingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_domains_using_get" % key
+                    " to method get_all_domains" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_domains_using_get`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `get_all_domains_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_all_domains`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `get_all_domains_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `get_all_domains`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `get_all_domains`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -350,10 +358,10 @@ class UiDomainMappingControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}', 'GET',
@@ -371,49 +379,49 @@ class UiDomainMappingControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_domain_mapping_using_put(self, body, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """updateDomainMapping  # noqa: E501
+    def update_domain_mapping(self, body, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """update_domain_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_domain_mapping_using_put(body, cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.update_domain_mapping(body, cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DomainDTO body: domain (required)
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param DomainDTO body: (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_domain_mapping_using_put_with_http_info(body, cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.update_domain_mapping_with_http_info(body, cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_domain_mapping_using_put_with_http_info(body, cluster_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.update_domain_mapping_with_http_info(body, cluster_id, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def update_domain_mapping_using_put_with_http_info(self, body, cluster_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """updateDomainMapping  # noqa: E501
+    def update_domain_mapping_with_http_info(self, body, cluster_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """update_domain_mapping  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_domain_mapping_using_put_with_http_info(body, cluster_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.update_domain_mapping_with_http_info(body, cluster_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DomainDTO body: domain (required)
-        :param str cluster_id: clusterId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param DomainDTO body: (required)
+        :param str cluster_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'cluster_id', 'resource_name', 'resource_type']  # noqa: E501
+        all_params = ['body', 'cluster_id', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -424,36 +432,36 @@ class UiDomainMappingControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_domain_mapping_using_put" % key
+                    " to method update_domain_mapping" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_domain_mapping_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_domain_mapping`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `update_domain_mapping_using_put`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `update_domain_mapping_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `update_domain_mapping`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `update_domain_mapping_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `update_domain_mapping`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `update_domain_mapping`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -465,12 +473,16 @@ class UiDomainMappingControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName}', 'PUT',

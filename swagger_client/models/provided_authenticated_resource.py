@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,128 +28,44 @@ class ProvidedAuthenticatedResource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'endpoint': 'str',
-        'password': 'str',
-        'port': 'str',
-        'resource_name': 'str',
         'resource_type': 'str',
-        'username': 'str'
+        'resource_name': 'str',
+        'endpoint': 'str',
+        'port': 'str',
+        'username': 'str',
+        'password': 'str'
     }
 
     attribute_map = {
-        'endpoint': 'endpoint',
-        'password': 'password',
-        'port': 'port',
-        'resource_name': 'resourceName',
         'resource_type': 'resourceType',
-        'username': 'username'
+        'resource_name': 'resourceName',
+        'endpoint': 'endpoint',
+        'port': 'port',
+        'username': 'username',
+        'password': 'password'
     }
 
-    def __init__(self, endpoint=None, password=None, port=None, resource_name=None, resource_type=None, username=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, endpoint=None, port=None, username=None, password=None):  # noqa: E501
         """ProvidedAuthenticatedResource - a model defined in Swagger"""  # noqa: E501
-        self._endpoint = None
-        self._password = None
-        self._port = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._endpoint = None
+        self._port = None
         self._username = None
+        self._password = None
         self.discriminator = None
-        if endpoint is not None:
-            self.endpoint = endpoint
-        if password is not None:
-            self.password = password
-        if port is not None:
-            self.port = port
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if endpoint is not None:
+            self.endpoint = endpoint
+        if port is not None:
+            self.port = port
         if username is not None:
             self.username = username
-
-    @property
-    def endpoint(self):
-        """Gets the endpoint of this ProvidedAuthenticatedResource.  # noqa: E501
-
-
-        :return: The endpoint of this ProvidedAuthenticatedResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._endpoint
-
-    @endpoint.setter
-    def endpoint(self, endpoint):
-        """Sets the endpoint of this ProvidedAuthenticatedResource.
-
-
-        :param endpoint: The endpoint of this ProvidedAuthenticatedResource.  # noqa: E501
-        :type: str
-        """
-
-        self._endpoint = endpoint
-
-    @property
-    def password(self):
-        """Gets the password of this ProvidedAuthenticatedResource.  # noqa: E501
-
-
-        :return: The password of this ProvidedAuthenticatedResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this ProvidedAuthenticatedResource.
-
-
-        :param password: The password of this ProvidedAuthenticatedResource.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
-    def port(self):
-        """Gets the port of this ProvidedAuthenticatedResource.  # noqa: E501
-
-
-        :return: The port of this ProvidedAuthenticatedResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._port
-
-    @port.setter
-    def port(self, port):
-        """Sets the port of this ProvidedAuthenticatedResource.
-
-
-        :param port: The port of this ProvidedAuthenticatedResource.  # noqa: E501
-        :type: str
-        """
-
-        self._port = port
-
-    @property
-    def resource_name(self):
-        """Gets the resource_name of this ProvidedAuthenticatedResource.  # noqa: E501
-
-
-        :return: The resource_name of this ProvidedAuthenticatedResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_name
-
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this ProvidedAuthenticatedResource.
-
-
-        :param resource_name: The resource_name of this ProvidedAuthenticatedResource.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_name = resource_name
+        if password is not None:
+            self.password = password
 
     @property
     def resource_type(self):
@@ -173,6 +89,69 @@ class ProvidedAuthenticatedResource(object):
         self._resource_type = resource_type
 
     @property
+    def resource_name(self):
+        """Gets the resource_name of this ProvidedAuthenticatedResource.  # noqa: E501
+
+
+        :return: The resource_name of this ProvidedAuthenticatedResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this ProvidedAuthenticatedResource.
+
+
+        :param resource_name: The resource_name of this ProvidedAuthenticatedResource.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_name = resource_name
+
+    @property
+    def endpoint(self):
+        """Gets the endpoint of this ProvidedAuthenticatedResource.  # noqa: E501
+
+
+        :return: The endpoint of this ProvidedAuthenticatedResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._endpoint
+
+    @endpoint.setter
+    def endpoint(self, endpoint):
+        """Sets the endpoint of this ProvidedAuthenticatedResource.
+
+
+        :param endpoint: The endpoint of this ProvidedAuthenticatedResource.  # noqa: E501
+        :type: str
+        """
+
+        self._endpoint = endpoint
+
+    @property
+    def port(self):
+        """Gets the port of this ProvidedAuthenticatedResource.  # noqa: E501
+
+
+        :return: The port of this ProvidedAuthenticatedResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """Sets the port of this ProvidedAuthenticatedResource.
+
+
+        :param port: The port of this ProvidedAuthenticatedResource.  # noqa: E501
+        :type: str
+        """
+
+        self._port = port
+
+    @property
     def username(self):
         """Gets the username of this ProvidedAuthenticatedResource.  # noqa: E501
 
@@ -192,6 +171,27 @@ class ProvidedAuthenticatedResource(object):
         """
 
         self._username = username
+
+    @property
+    def password(self):
+        """Gets the password of this ProvidedAuthenticatedResource.  # noqa: E501
+
+
+        :return: The password of this ProvidedAuthenticatedResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this ProvidedAuthenticatedResource.
+
+
+        :param password: The password of this ProvidedAuthenticatedResource.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
 
     def to_dict(self):
         """Returns the model properties as a dict"""

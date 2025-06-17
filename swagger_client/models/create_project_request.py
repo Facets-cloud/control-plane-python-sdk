@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,118 +28,69 @@ class CreateProjectRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allowed_clouds': 'list[str]',
-        'bitbucket_project_key': 'str',
         'blueprint_name': 'str',
         'cloud': 'str',
+        'allowed_clouds': 'list[str]',
         'description': 'str',
-        'draft_clusters': 'list[DraftClusterRequest]',
         'git_ops_request': 'EnableGitOpsRequest',
+        'draft_clusters': 'list[DraftClusterRequest]',
+        'vcs_account_id': 'str',
         'org_name': 'str',
         'project_type_id': 'str',
-        'template_id': 'str',
-        'vcs_account_id': 'str'
+        'bitbucket_project_key': 'str',
+        'template_id': 'str'
     }
 
     attribute_map = {
-        'allowed_clouds': 'allowedClouds',
-        'bitbucket_project_key': 'bitbucketProjectKey',
         'blueprint_name': 'blueprintName',
         'cloud': 'cloud',
+        'allowed_clouds': 'allowedClouds',
         'description': 'description',
-        'draft_clusters': 'draftClusters',
         'git_ops_request': 'gitOpsRequest',
+        'draft_clusters': 'draftClusters',
+        'vcs_account_id': 'vcsAccountId',
         'org_name': 'orgName',
         'project_type_id': 'projectTypeId',
-        'template_id': 'templateId',
-        'vcs_account_id': 'vcsAccountId'
+        'bitbucket_project_key': 'bitbucketProjectKey',
+        'template_id': 'templateId'
     }
 
-    def __init__(self, allowed_clouds=None, bitbucket_project_key=None, blueprint_name=None, cloud=None, description=None, draft_clusters=None, git_ops_request=None, org_name=None, project_type_id=None, template_id=None, vcs_account_id=None):  # noqa: E501
+    def __init__(self, blueprint_name=None, cloud=None, allowed_clouds=None, description=None, git_ops_request=None, draft_clusters=None, vcs_account_id=None, org_name=None, project_type_id=None, bitbucket_project_key=None, template_id=None):  # noqa: E501
         """CreateProjectRequest - a model defined in Swagger"""  # noqa: E501
-        self._allowed_clouds = None
-        self._bitbucket_project_key = None
         self._blueprint_name = None
         self._cloud = None
+        self._allowed_clouds = None
         self._description = None
-        self._draft_clusters = None
         self._git_ops_request = None
+        self._draft_clusters = None
+        self._vcs_account_id = None
         self._org_name = None
         self._project_type_id = None
+        self._bitbucket_project_key = None
         self._template_id = None
-        self._vcs_account_id = None
         self.discriminator = None
-        if allowed_clouds is not None:
-            self.allowed_clouds = allowed_clouds
-        if bitbucket_project_key is not None:
-            self.bitbucket_project_key = bitbucket_project_key
         if blueprint_name is not None:
             self.blueprint_name = blueprint_name
         if cloud is not None:
             self.cloud = cloud
+        if allowed_clouds is not None:
+            self.allowed_clouds = allowed_clouds
         if description is not None:
             self.description = description
-        if draft_clusters is not None:
-            self.draft_clusters = draft_clusters
         if git_ops_request is not None:
             self.git_ops_request = git_ops_request
+        if draft_clusters is not None:
+            self.draft_clusters = draft_clusters
+        if vcs_account_id is not None:
+            self.vcs_account_id = vcs_account_id
         if org_name is not None:
             self.org_name = org_name
         if project_type_id is not None:
             self.project_type_id = project_type_id
+        if bitbucket_project_key is not None:
+            self.bitbucket_project_key = bitbucket_project_key
         if template_id is not None:
             self.template_id = template_id
-        if vcs_account_id is not None:
-            self.vcs_account_id = vcs_account_id
-
-    @property
-    def allowed_clouds(self):
-        """Gets the allowed_clouds of this CreateProjectRequest.  # noqa: E501
-
-
-        :return: The allowed_clouds of this CreateProjectRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._allowed_clouds
-
-    @allowed_clouds.setter
-    def allowed_clouds(self, allowed_clouds):
-        """Sets the allowed_clouds of this CreateProjectRequest.
-
-
-        :param allowed_clouds: The allowed_clouds of this CreateProjectRequest.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if not set(allowed_clouds).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(allowed_clouds) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._allowed_clouds = allowed_clouds
-
-    @property
-    def bitbucket_project_key(self):
-        """Gets the bitbucket_project_key of this CreateProjectRequest.  # noqa: E501
-
-
-        :return: The bitbucket_project_key of this CreateProjectRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._bitbucket_project_key
-
-    @bitbucket_project_key.setter
-    def bitbucket_project_key(self, bitbucket_project_key):
-        """Sets the bitbucket_project_key of this CreateProjectRequest.
-
-
-        :param bitbucket_project_key: The bitbucket_project_key of this CreateProjectRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._bitbucket_project_key = bitbucket_project_key
 
     @property
     def blueprint_name(self):
@@ -190,6 +141,34 @@ class CreateProjectRequest(object):
         self._cloud = cloud
 
     @property
+    def allowed_clouds(self):
+        """Gets the allowed_clouds of this CreateProjectRequest.  # noqa: E501
+
+
+        :return: The allowed_clouds of this CreateProjectRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_clouds
+
+    @allowed_clouds.setter
+    def allowed_clouds(self, allowed_clouds):
+        """Sets the allowed_clouds of this CreateProjectRequest.
+
+
+        :param allowed_clouds: The allowed_clouds of this CreateProjectRequest.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if not set(allowed_clouds).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(allowed_clouds) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._allowed_clouds = allowed_clouds
+
+    @property
     def description(self):
         """Gets the description of this CreateProjectRequest.  # noqa: E501
 
@@ -209,6 +188,27 @@ class CreateProjectRequest(object):
         """
 
         self._description = description
+
+    @property
+    def git_ops_request(self):
+        """Gets the git_ops_request of this CreateProjectRequest.  # noqa: E501
+
+
+        :return: The git_ops_request of this CreateProjectRequest.  # noqa: E501
+        :rtype: EnableGitOpsRequest
+        """
+        return self._git_ops_request
+
+    @git_ops_request.setter
+    def git_ops_request(self, git_ops_request):
+        """Sets the git_ops_request of this CreateProjectRequest.
+
+
+        :param git_ops_request: The git_ops_request of this CreateProjectRequest.  # noqa: E501
+        :type: EnableGitOpsRequest
+        """
+
+        self._git_ops_request = git_ops_request
 
     @property
     def draft_clusters(self):
@@ -232,25 +232,25 @@ class CreateProjectRequest(object):
         self._draft_clusters = draft_clusters
 
     @property
-    def git_ops_request(self):
-        """Gets the git_ops_request of this CreateProjectRequest.  # noqa: E501
+    def vcs_account_id(self):
+        """Gets the vcs_account_id of this CreateProjectRequest.  # noqa: E501
 
 
-        :return: The git_ops_request of this CreateProjectRequest.  # noqa: E501
-        :rtype: EnableGitOpsRequest
+        :return: The vcs_account_id of this CreateProjectRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._git_ops_request
+        return self._vcs_account_id
 
-    @git_ops_request.setter
-    def git_ops_request(self, git_ops_request):
-        """Sets the git_ops_request of this CreateProjectRequest.
+    @vcs_account_id.setter
+    def vcs_account_id(self, vcs_account_id):
+        """Sets the vcs_account_id of this CreateProjectRequest.
 
 
-        :param git_ops_request: The git_ops_request of this CreateProjectRequest.  # noqa: E501
-        :type: EnableGitOpsRequest
+        :param vcs_account_id: The vcs_account_id of this CreateProjectRequest.  # noqa: E501
+        :type: str
         """
 
-        self._git_ops_request = git_ops_request
+        self._vcs_account_id = vcs_account_id
 
     @property
     def org_name(self):
@@ -295,6 +295,27 @@ class CreateProjectRequest(object):
         self._project_type_id = project_type_id
 
     @property
+    def bitbucket_project_key(self):
+        """Gets the bitbucket_project_key of this CreateProjectRequest.  # noqa: E501
+
+
+        :return: The bitbucket_project_key of this CreateProjectRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._bitbucket_project_key
+
+    @bitbucket_project_key.setter
+    def bitbucket_project_key(self, bitbucket_project_key):
+        """Sets the bitbucket_project_key of this CreateProjectRequest.
+
+
+        :param bitbucket_project_key: The bitbucket_project_key of this CreateProjectRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._bitbucket_project_key = bitbucket_project_key
+
+    @property
     def template_id(self):
         """Gets the template_id of this CreateProjectRequest.  # noqa: E501
 
@@ -314,27 +335,6 @@ class CreateProjectRequest(object):
         """
 
         self._template_id = template_id
-
-    @property
-    def vcs_account_id(self):
-        """Gets the vcs_account_id of this CreateProjectRequest.  # noqa: E501
-
-
-        :return: The vcs_account_id of this CreateProjectRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._vcs_account_id
-
-    @vcs_account_id.setter
-    def vcs_account_id(self, vcs_account_id):
-        """Sets the vcs_account_id of this CreateProjectRequest.
-
-
-        :param vcs_account_id: The vcs_account_id of this CreateProjectRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._vcs_account_id = vcs_account_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

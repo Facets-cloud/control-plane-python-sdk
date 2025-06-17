@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,55 @@ class PushCredentialsResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifactory_uri': 'str',
+        'username': 'str',
         'password': 'str',
-        'repository_uri': 'str',
-        'username': 'str'
+        'artifactory_uri': 'str',
+        'repository_uri': 'str'
     }
 
     attribute_map = {
-        'artifactory_uri': 'artifactoryUri',
+        'username': 'username',
         'password': 'password',
-        'repository_uri': 'repositoryUri',
-        'username': 'username'
+        'artifactory_uri': 'artifactoryUri',
+        'repository_uri': 'repositoryUri'
     }
 
-    def __init__(self, artifactory_uri=None, password=None, repository_uri=None, username=None):  # noqa: E501
+    def __init__(self, username=None, password=None, artifactory_uri=None, repository_uri=None):  # noqa: E501
         """PushCredentialsResponse - a model defined in Swagger"""  # noqa: E501
-        self._artifactory_uri = None
-        self._password = None
-        self._repository_uri = None
         self._username = None
+        self._password = None
+        self._artifactory_uri = None
+        self._repository_uri = None
         self.discriminator = None
-        if artifactory_uri is not None:
-            self.artifactory_uri = artifactory_uri
-        if password is not None:
-            self.password = password
-        if repository_uri is not None:
-            self.repository_uri = repository_uri
         if username is not None:
             self.username = username
+        if password is not None:
+            self.password = password
+        if artifactory_uri is not None:
+            self.artifactory_uri = artifactory_uri
+        if repository_uri is not None:
+            self.repository_uri = repository_uri
 
     @property
-    def artifactory_uri(self):
-        """Gets the artifactory_uri of this PushCredentialsResponse.  # noqa: E501
+    def username(self):
+        """Gets the username of this PushCredentialsResponse.  # noqa: E501
 
 
-        :return: The artifactory_uri of this PushCredentialsResponse.  # noqa: E501
+        :return: The username of this PushCredentialsResponse.  # noqa: E501
         :rtype: str
         """
-        return self._artifactory_uri
+        return self._username
 
-    @artifactory_uri.setter
-    def artifactory_uri(self, artifactory_uri):
-        """Sets the artifactory_uri of this PushCredentialsResponse.
+    @username.setter
+    def username(self, username):
+        """Sets the username of this PushCredentialsResponse.
 
 
-        :param artifactory_uri: The artifactory_uri of this PushCredentialsResponse.  # noqa: E501
+        :param username: The username of this PushCredentialsResponse.  # noqa: E501
         :type: str
         """
 
-        self._artifactory_uri = artifactory_uri
+        self._username = username
 
     @property
     def password(self):
@@ -100,6 +100,27 @@ class PushCredentialsResponse(object):
         self._password = password
 
     @property
+    def artifactory_uri(self):
+        """Gets the artifactory_uri of this PushCredentialsResponse.  # noqa: E501
+
+
+        :return: The artifactory_uri of this PushCredentialsResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory_uri
+
+    @artifactory_uri.setter
+    def artifactory_uri(self, artifactory_uri):
+        """Sets the artifactory_uri of this PushCredentialsResponse.
+
+
+        :param artifactory_uri: The artifactory_uri of this PushCredentialsResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._artifactory_uri = artifactory_uri
+
+    @property
     def repository_uri(self):
         """Gets the repository_uri of this PushCredentialsResponse.  # noqa: E501
 
@@ -119,27 +140,6 @@ class PushCredentialsResponse(object):
         """
 
         self._repository_uri = repository_uri
-
-    @property
-    def username(self):
-        """Gets the username of this PushCredentialsResponse.  # noqa: E501
-
-
-        :return: The username of this PushCredentialsResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this PushCredentialsResponse.
-
-
-        :param username: The username of this PushCredentialsResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

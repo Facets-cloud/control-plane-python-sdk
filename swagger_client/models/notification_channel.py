@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,70 +28,91 @@ class NotificationChannel(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'authorization_header': 'str',
+        'id': 'str',
+        'name': 'str',
         'channel_address': 'str',
         'channel_type': 'str',
-        'email_addresses': 'list[str]',
-        'id': 'str',
         'integration_key': 'str',
-        'name': 'str'
+        'email_addresses': 'list[str]',
+        'authorization_header': 'str'
     }
 
     attribute_map = {
-        'authorization_header': 'authorizationHeader',
+        'id': 'id',
+        'name': 'name',
         'channel_address': 'channelAddress',
         'channel_type': 'channelType',
-        'email_addresses': 'emailAddresses',
-        'id': 'id',
         'integration_key': 'integrationKey',
-        'name': 'name'
+        'email_addresses': 'emailAddresses',
+        'authorization_header': 'authorizationHeader'
     }
 
-    def __init__(self, authorization_header=None, channel_address=None, channel_type=None, email_addresses=None, id=None, integration_key=None, name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, channel_address=None, channel_type=None, integration_key=None, email_addresses=None, authorization_header=None):  # noqa: E501
         """NotificationChannel - a model defined in Swagger"""  # noqa: E501
-        self._authorization_header = None
+        self._id = None
+        self._name = None
         self._channel_address = None
         self._channel_type = None
-        self._email_addresses = None
-        self._id = None
         self._integration_key = None
-        self._name = None
+        self._email_addresses = None
+        self._authorization_header = None
         self.discriminator = None
-        if authorization_header is not None:
-            self.authorization_header = authorization_header
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
         if channel_address is not None:
             self.channel_address = channel_address
         if channel_type is not None:
             self.channel_type = channel_type
-        if email_addresses is not None:
-            self.email_addresses = email_addresses
-        if id is not None:
-            self.id = id
         if integration_key is not None:
             self.integration_key = integration_key
-        if name is not None:
-            self.name = name
+        if email_addresses is not None:
+            self.email_addresses = email_addresses
+        if authorization_header is not None:
+            self.authorization_header = authorization_header
 
     @property
-    def authorization_header(self):
-        """Gets the authorization_header of this NotificationChannel.  # noqa: E501
+    def id(self):
+        """Gets the id of this NotificationChannel.  # noqa: E501
 
 
-        :return: The authorization_header of this NotificationChannel.  # noqa: E501
+        :return: The id of this NotificationChannel.  # noqa: E501
         :rtype: str
         """
-        return self._authorization_header
+        return self._id
 
-    @authorization_header.setter
-    def authorization_header(self, authorization_header):
-        """Sets the authorization_header of this NotificationChannel.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this NotificationChannel.
 
 
-        :param authorization_header: The authorization_header of this NotificationChannel.  # noqa: E501
+        :param id: The id of this NotificationChannel.  # noqa: E501
         :type: str
         """
 
-        self._authorization_header = authorization_header
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this NotificationChannel.  # noqa: E501
+
+
+        :return: The name of this NotificationChannel.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this NotificationChannel.
+
+
+        :param name: The name of this NotificationChannel.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def channel_address(self):
@@ -142,48 +163,6 @@ class NotificationChannel(object):
         self._channel_type = channel_type
 
     @property
-    def email_addresses(self):
-        """Gets the email_addresses of this NotificationChannel.  # noqa: E501
-
-
-        :return: The email_addresses of this NotificationChannel.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._email_addresses
-
-    @email_addresses.setter
-    def email_addresses(self, email_addresses):
-        """Sets the email_addresses of this NotificationChannel.
-
-
-        :param email_addresses: The email_addresses of this NotificationChannel.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._email_addresses = email_addresses
-
-    @property
-    def id(self):
-        """Gets the id of this NotificationChannel.  # noqa: E501
-
-
-        :return: The id of this NotificationChannel.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this NotificationChannel.
-
-
-        :param id: The id of this NotificationChannel.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
     def integration_key(self):
         """Gets the integration_key of this NotificationChannel.  # noqa: E501
 
@@ -205,25 +184,46 @@ class NotificationChannel(object):
         self._integration_key = integration_key
 
     @property
-    def name(self):
-        """Gets the name of this NotificationChannel.  # noqa: E501
+    def email_addresses(self):
+        """Gets the email_addresses of this NotificationChannel.  # noqa: E501
 
 
-        :return: The name of this NotificationChannel.  # noqa: E501
+        :return: The email_addresses of this NotificationChannel.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._email_addresses
+
+    @email_addresses.setter
+    def email_addresses(self, email_addresses):
+        """Sets the email_addresses of this NotificationChannel.
+
+
+        :param email_addresses: The email_addresses of this NotificationChannel.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._email_addresses = email_addresses
+
+    @property
+    def authorization_header(self):
+        """Gets the authorization_header of this NotificationChannel.  # noqa: E501
+
+
+        :return: The authorization_header of this NotificationChannel.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._authorization_header
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this NotificationChannel.
+    @authorization_header.setter
+    def authorization_header(self, authorization_header):
+        """Sets the authorization_header of this NotificationChannel.
 
 
-        :param name: The name of this NotificationChannel.  # noqa: E501
+        :param authorization_header: The authorization_header of this NotificationChannel.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._authorization_header = authorization_header
 
     def to_dict(self):
         """Returns the model properties as a dict"""

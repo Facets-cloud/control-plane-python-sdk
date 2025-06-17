@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class TokenPaginatedResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'log_event_list': 'list[object]',
-        'next_token': 'str'
+        'next_token': 'str',
+        'log_event_list': 'list[object]'
     }
 
     attribute_map = {
-        'log_event_list': 'logEventList',
-        'next_token': 'nextToken'
+        'next_token': 'nextToken',
+        'log_event_list': 'logEventList'
     }
 
-    def __init__(self, log_event_list=None, next_token=None):  # noqa: E501
+    def __init__(self, next_token=None, log_event_list=None):  # noqa: E501
         """TokenPaginatedResponse - a model defined in Swagger"""  # noqa: E501
-        self._log_event_list = None
         self._next_token = None
+        self._log_event_list = None
         self.discriminator = None
-        if log_event_list is not None:
-            self.log_event_list = log_event_list
         if next_token is not None:
             self.next_token = next_token
-
-    @property
-    def log_event_list(self):
-        """Gets the log_event_list of this TokenPaginatedResponse.  # noqa: E501
-
-
-        :return: The log_event_list of this TokenPaginatedResponse.  # noqa: E501
-        :rtype: list[object]
-        """
-        return self._log_event_list
-
-    @log_event_list.setter
-    def log_event_list(self, log_event_list):
-        """Sets the log_event_list of this TokenPaginatedResponse.
-
-
-        :param log_event_list: The log_event_list of this TokenPaginatedResponse.  # noqa: E501
-        :type: list[object]
-        """
-
-        self._log_event_list = log_event_list
+        if log_event_list is not None:
+            self.log_event_list = log_event_list
 
     @property
     def next_token(self):
@@ -88,6 +67,27 @@ class TokenPaginatedResponse(object):
         """
 
         self._next_token = next_token
+
+    @property
+    def log_event_list(self):
+        """Gets the log_event_list of this TokenPaginatedResponse.  # noqa: E501
+
+
+        :return: The log_event_list of this TokenPaginatedResponse.  # noqa: E501
+        :rtype: list[object]
+        """
+        return self._log_event_list
+
+    @log_event_list.setter
+    def log_event_list(self, log_event_list):
+        """Sets the log_event_list of this TokenPaginatedResponse.
+
+
+        :param log_event_list: The log_event_list of this TokenPaginatedResponse.  # noqa: E501
+        :type: list[object]
+        """
+
+        self._log_event_list = log_event_list
 
     def to_dict(self):
         """Returns the model properties as a dict"""

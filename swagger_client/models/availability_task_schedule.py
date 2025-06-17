@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,124 +28,82 @@ class AvailabilityTaskSchedule(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'by_day': 'list[str]',
-        'by_time': 'LocalTime',
-        'cron_expr': 'str',
+        'release_type': 'str',
         'description': 'str',
         'frequency': 'str',
         'interval': 'int',
-        'release_type': 'str',
-        'time_zone': 'TimeZone'
+        'by_day': 'list[str]',
+        'by_time': 'LocalTime',
+        'time_zone': 'MaintenanceWindowDTOTimeZone',
+        'cron_expr': 'str'
     }
 
     attribute_map = {
-        'by_day': 'byDay',
-        'by_time': 'byTime',
-        'cron_expr': 'cronExpr',
+        'release_type': 'releaseType',
         'description': 'description',
         'frequency': 'frequency',
         'interval': 'interval',
-        'release_type': 'releaseType',
-        'time_zone': 'timeZone'
+        'by_day': 'byDay',
+        'by_time': 'byTime',
+        'time_zone': 'timeZone',
+        'cron_expr': 'cronExpr'
     }
 
-    def __init__(self, by_day=None, by_time=None, cron_expr=None, description=None, frequency=None, interval=None, release_type=None, time_zone=None):  # noqa: E501
+    def __init__(self, release_type=None, description=None, frequency=None, interval=None, by_day=None, by_time=None, time_zone=None, cron_expr=None):  # noqa: E501
         """AvailabilityTaskSchedule - a model defined in Swagger"""  # noqa: E501
-        self._by_day = None
-        self._by_time = None
-        self._cron_expr = None
+        self._release_type = None
         self._description = None
         self._frequency = None
         self._interval = None
-        self._release_type = None
+        self._by_day = None
+        self._by_time = None
         self._time_zone = None
+        self._cron_expr = None
         self.discriminator = None
-        if by_day is not None:
-            self.by_day = by_day
-        if by_time is not None:
-            self.by_time = by_time
-        if cron_expr is not None:
-            self.cron_expr = cron_expr
+        self.release_type = release_type
         if description is not None:
             self.description = description
         if frequency is not None:
             self.frequency = frequency
         if interval is not None:
             self.interval = interval
-        if release_type is not None:
-            self.release_type = release_type
+        if by_day is not None:
+            self.by_day = by_day
+        if by_time is not None:
+            self.by_time = by_time
         if time_zone is not None:
             self.time_zone = time_zone
+        if cron_expr is not None:
+            self.cron_expr = cron_expr
 
     @property
-    def by_day(self):
-        """Gets the by_day of this AvailabilityTaskSchedule.  # noqa: E501
+    def release_type(self):
+        """Gets the release_type of this AvailabilityTaskSchedule.  # noqa: E501
 
 
-        :return: The by_day of this AvailabilityTaskSchedule.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._by_day
-
-    @by_day.setter
-    def by_day(self, by_day):
-        """Sets the by_day of this AvailabilityTaskSchedule.
-
-
-        :param by_day: The by_day of this AvailabilityTaskSchedule.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]  # noqa: E501
-        if not set(by_day).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `by_day` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(by_day) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._by_day = by_day
-
-    @property
-    def by_time(self):
-        """Gets the by_time of this AvailabilityTaskSchedule.  # noqa: E501
-
-
-        :return: The by_time of this AvailabilityTaskSchedule.  # noqa: E501
-        :rtype: LocalTime
-        """
-        return self._by_time
-
-    @by_time.setter
-    def by_time(self, by_time):
-        """Sets the by_time of this AvailabilityTaskSchedule.
-
-
-        :param by_time: The by_time of this AvailabilityTaskSchedule.  # noqa: E501
-        :type: LocalTime
-        """
-
-        self._by_time = by_time
-
-    @property
-    def cron_expr(self):
-        """Gets the cron_expr of this AvailabilityTaskSchedule.  # noqa: E501
-
-
-        :return: The cron_expr of this AvailabilityTaskSchedule.  # noqa: E501
+        :return: The release_type of this AvailabilityTaskSchedule.  # noqa: E501
         :rtype: str
         """
-        return self._cron_expr
+        return self._release_type
 
-    @cron_expr.setter
-    def cron_expr(self, cron_expr):
-        """Sets the cron_expr of this AvailabilityTaskSchedule.
+    @release_type.setter
+    def release_type(self, release_type):
+        """Sets the release_type of this AvailabilityTaskSchedule.
 
 
-        :param cron_expr: The cron_expr of this AvailabilityTaskSchedule.  # noqa: E501
+        :param release_type: The release_type of this AvailabilityTaskSchedule.  # noqa: E501
         :type: str
         """
+        if release_type is None:
+            raise ValueError("Invalid value for `release_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
+        if release_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(release_type, allowed_values)
+            )
 
-        self._cron_expr = cron_expr
+        self._release_type = release_type
 
     @property
     def description(self):
@@ -217,31 +175,53 @@ class AvailabilityTaskSchedule(object):
         self._interval = interval
 
     @property
-    def release_type(self):
-        """Gets the release_type of this AvailabilityTaskSchedule.  # noqa: E501
+    def by_day(self):
+        """Gets the by_day of this AvailabilityTaskSchedule.  # noqa: E501
 
 
-        :return: The release_type of this AvailabilityTaskSchedule.  # noqa: E501
-        :rtype: str
+        :return: The by_day of this AvailabilityTaskSchedule.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._release_type
+        return self._by_day
 
-    @release_type.setter
-    def release_type(self, release_type):
-        """Sets the release_type of this AvailabilityTaskSchedule.
+    @by_day.setter
+    def by_day(self, by_day):
+        """Sets the by_day of this AvailabilityTaskSchedule.
 
 
-        :param release_type: The release_type of this AvailabilityTaskSchedule.  # noqa: E501
-        :type: str
+        :param by_day: The by_day of this AvailabilityTaskSchedule.  # noqa: E501
+        :type: list[str]
         """
-        allowed_values = ["HOTFIX", "RELEASE", "LAUNCH", "DESTROY", "CUSTOM", "UNLOCK_STATE", "PLAN", "HOTFIX_PLAN", "APPLY_PLAN", "APPLY_HOTFIX_PLAN", "SCALE_UP", "SCALE_DOWN", "MAINTENANCE", "TERRAFORM_EXPORT", "ROLLBACK_PLAN", "APPLY_ROLLBACK_PLAN"]  # noqa: E501
-        if release_type not in allowed_values:
+        allowed_values = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]  # noqa: E501
+        if not set(by_day).issubset(set(allowed_values)):
             raise ValueError(
-                "Invalid value for `release_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(release_type, allowed_values)
+                "Invalid values for `by_day` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(by_day) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
             )
 
-        self._release_type = release_type
+        self._by_day = by_day
+
+    @property
+    def by_time(self):
+        """Gets the by_time of this AvailabilityTaskSchedule.  # noqa: E501
+
+
+        :return: The by_time of this AvailabilityTaskSchedule.  # noqa: E501
+        :rtype: LocalTime
+        """
+        return self._by_time
+
+    @by_time.setter
+    def by_time(self, by_time):
+        """Sets the by_time of this AvailabilityTaskSchedule.
+
+
+        :param by_time: The by_time of this AvailabilityTaskSchedule.  # noqa: E501
+        :type: LocalTime
+        """
+
+        self._by_time = by_time
 
     @property
     def time_zone(self):
@@ -249,7 +229,7 @@ class AvailabilityTaskSchedule(object):
 
 
         :return: The time_zone of this AvailabilityTaskSchedule.  # noqa: E501
-        :rtype: TimeZone
+        :rtype: MaintenanceWindowDTOTimeZone
         """
         return self._time_zone
 
@@ -259,10 +239,31 @@ class AvailabilityTaskSchedule(object):
 
 
         :param time_zone: The time_zone of this AvailabilityTaskSchedule.  # noqa: E501
-        :type: TimeZone
+        :type: MaintenanceWindowDTOTimeZone
         """
 
         self._time_zone = time_zone
+
+    @property
+    def cron_expr(self):
+        """Gets the cron_expr of this AvailabilityTaskSchedule.  # noqa: E501
+
+
+        :return: The cron_expr of this AvailabilityTaskSchedule.  # noqa: E501
+        :rtype: str
+        """
+        return self._cron_expr
+
+    @cron_expr.setter
+    def cron_expr(self, cron_expr):
+        """Sets the cron_expr of this AvailabilityTaskSchedule.
+
+
+        :param cron_expr: The cron_expr of this AvailabilityTaskSchedule.  # noqa: E501
+        :type: str
+        """
+
+        self._cron_expr = cron_expr
 
     def to_dict(self):
         """Returns the model properties as a dict"""

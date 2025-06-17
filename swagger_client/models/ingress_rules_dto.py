@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class IngressRulesDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'backend': 'IngressBackendDTO',
         'hosts': 'str',
+        'backend': 'IngressBackendDTO',
         'path': 'str'
     }
 
     attribute_map = {
-        'backend': 'backend',
         'hosts': 'hosts',
+        'backend': 'backend',
         'path': 'path'
     }
 
-    def __init__(self, backend=None, hosts=None, path=None):  # noqa: E501
+    def __init__(self, hosts=None, backend=None, path=None):  # noqa: E501
         """IngressRulesDTO - a model defined in Swagger"""  # noqa: E501
-        self._backend = None
         self._hosts = None
+        self._backend = None
         self._path = None
         self.discriminator = None
-        if backend is not None:
-            self.backend = backend
         if hosts is not None:
             self.hosts = hosts
+        if backend is not None:
+            self.backend = backend
         if path is not None:
             self.path = path
-
-    @property
-    def backend(self):
-        """Gets the backend of this IngressRulesDTO.  # noqa: E501
-
-
-        :return: The backend of this IngressRulesDTO.  # noqa: E501
-        :rtype: IngressBackendDTO
-        """
-        return self._backend
-
-    @backend.setter
-    def backend(self, backend):
-        """Sets the backend of this IngressRulesDTO.
-
-
-        :param backend: The backend of this IngressRulesDTO.  # noqa: E501
-        :type: IngressBackendDTO
-        """
-
-        self._backend = backend
 
     @property
     def hosts(self):
@@ -93,6 +72,27 @@ class IngressRulesDTO(object):
         """
 
         self._hosts = hosts
+
+    @property
+    def backend(self):
+        """Gets the backend of this IngressRulesDTO.  # noqa: E501
+
+
+        :return: The backend of this IngressRulesDTO.  # noqa: E501
+        :rtype: IngressBackendDTO
+        """
+        return self._backend
+
+    @backend.setter
+    def backend(self, backend):
+        """Sets the backend of this IngressRulesDTO.
+
+
+        :param backend: The backend of this IngressRulesDTO.  # noqa: E501
+        :type: IngressBackendDTO
+        """
+
+        self._backend = backend
 
     @property
     def path(self):

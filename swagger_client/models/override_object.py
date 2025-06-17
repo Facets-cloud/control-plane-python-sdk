@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,116 +28,95 @@ class OverrideObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'change_log': 'str',
-        'commit_id': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
-        'number_of_versions': 'int',
-        'overrides': 'object',
-        'resource_name': 'str',
+        'last_modified_by': 'str',
         'resource_type': 'str',
-        'versioning_key': 'str'
+        'resource_name': 'str',
+        'overrides': 'dict(str, object)',
+        'change_log': 'str',
+        'commit_id': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'change_log': 'changeLog',
-        'commit_id': 'commitId',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
-        'number_of_versions': 'numberOfVersions',
-        'overrides': 'overrides',
-        'resource_name': 'resourceName',
+        'last_modified_by': 'lastModifiedBy',
         'resource_type': 'resourceType',
-        'versioning_key': 'versioningKey'
+        'resource_name': 'resourceName',
+        'overrides': 'overrides',
+        'change_log': 'changeLog',
+        'commit_id': 'commitId',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, change_log=None, commit_id=None, created_by=None, creation_date=None, id=None, last_modified_by=None, last_modified_date=None, number_of_versions=None, overrides=None, resource_name=None, resource_type=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, resource_type=None, resource_name=None, overrides=None, change_log=None, commit_id=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """OverrideObject - a model defined in Swagger"""  # noqa: E501
-        self._change_log = None
-        self._commit_id = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
-        self._number_of_versions = None
-        self._overrides = None
-        self._resource_name = None
+        self._last_modified_by = None
         self._resource_type = None
+        self._resource_name = None
+        self._overrides = None
+        self._change_log = None
+        self._commit_id = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if change_log is not None:
-            self.change_log = change_log
-        if commit_id is not None:
-            self.commit_id = commit_id
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if overrides is not None:
-            self.overrides = overrides
-        if resource_name is not None:
-            self.resource_name = resource_name
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
         if resource_type is not None:
             self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if overrides is not None:
+            self.overrides = overrides
+        if change_log is not None:
+            self.change_log = change_log
+        if commit_id is not None:
+            self.commit_id = commit_id
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def change_log(self):
-        """Gets the change_log of this OverrideObject.  # noqa: E501
+    def id(self):
+        """Gets the id of this OverrideObject.  # noqa: E501
 
 
-        :return: The change_log of this OverrideObject.  # noqa: E501
+        :return: The id of this OverrideObject.  # noqa: E501
         :rtype: str
         """
-        return self._change_log
+        return self._id
 
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this OverrideObject.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this OverrideObject.
 
 
-        :param change_log: The change_log of this OverrideObject.  # noqa: E501
+        :param id: The id of this OverrideObject.  # noqa: E501
         :type: str
         """
 
-        self._change_log = change_log
-
-    @property
-    def commit_id(self):
-        """Gets the commit_id of this OverrideObject.  # noqa: E501
-
-
-        :return: The commit_id of this OverrideObject.  # noqa: E501
-        :rtype: str
-        """
-        return self._commit_id
-
-    @commit_id.setter
-    def commit_id(self, commit_id):
-        """Sets the commit_id of this OverrideObject.
-
-
-        :param commit_id: The commit_id of this OverrideObject.  # noqa: E501
-        :type: str
-        """
-
-        self._commit_id = commit_id
+        self._id = id
 
     @property
     def created_by(self):
@@ -182,25 +161,25 @@ class OverrideObject(object):
         self._creation_date = creation_date
 
     @property
-    def id(self):
-        """Gets the id of this OverrideObject.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this OverrideObject.  # noqa: E501
 
 
-        :return: The id of this OverrideObject.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this OverrideObject.  # noqa: E501
+        :rtype: datetime
         """
-        return self._id
+        return self._last_modified_date
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this OverrideObject.
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this OverrideObject.
 
 
-        :param id: The id of this OverrideObject.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this OverrideObject.  # noqa: E501
+        :type: datetime
         """
 
-        self._id = id
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -224,67 +203,25 @@ class OverrideObject(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this OverrideObject.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this OverrideObject.  # noqa: E501
 
 
-        :return: The last_modified_date of this OverrideObject.  # noqa: E501
-        :rtype: datetime
+        :return: The resource_type of this OverrideObject.  # noqa: E501
+        :rtype: str
         """
-        return self._last_modified_date
+        return self._resource_type
 
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this OverrideObject.
-
-
-        :param last_modified_date: The last_modified_date of this OverrideObject.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this OverrideObject.  # noqa: E501
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this OverrideObject.
 
 
-        :return: The number_of_versions of this OverrideObject.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this OverrideObject.
-
-
-        :param number_of_versions: The number_of_versions of this OverrideObject.  # noqa: E501
-        :type: int
+        :param resource_type: The resource_type of this OverrideObject.  # noqa: E501
+        :type: str
         """
 
-        self._number_of_versions = number_of_versions
-
-    @property
-    def overrides(self):
-        """Gets the overrides of this OverrideObject.  # noqa: E501
-
-
-        :return: The overrides of this OverrideObject.  # noqa: E501
-        :rtype: object
-        """
-        return self._overrides
-
-    @overrides.setter
-    def overrides(self, overrides):
-        """Sets the overrides of this OverrideObject.
-
-
-        :param overrides: The overrides of this OverrideObject.  # noqa: E501
-        :type: object
-        """
-
-        self._overrides = overrides
+        self._resource_type = resource_type
 
     @property
     def resource_name(self):
@@ -308,25 +245,67 @@ class OverrideObject(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this OverrideObject.  # noqa: E501
+    def overrides(self):
+        """Gets the overrides of this OverrideObject.  # noqa: E501
 
 
-        :return: The resource_type of this OverrideObject.  # noqa: E501
+        :return: The overrides of this OverrideObject.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._overrides
+
+    @overrides.setter
+    def overrides(self, overrides):
+        """Sets the overrides of this OverrideObject.
+
+
+        :param overrides: The overrides of this OverrideObject.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._overrides = overrides
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this OverrideObject.  # noqa: E501
+
+
+        :return: The change_log of this OverrideObject.  # noqa: E501
         :rtype: str
         """
-        return self._resource_type
+        return self._change_log
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this OverrideObject.
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this OverrideObject.
 
 
-        :param resource_type: The resource_type of this OverrideObject.  # noqa: E501
+        :param change_log: The change_log of this OverrideObject.  # noqa: E501
         :type: str
         """
 
-        self._resource_type = resource_type
+        self._change_log = change_log
+
+    @property
+    def commit_id(self):
+        """Gets the commit_id of this OverrideObject.  # noqa: E501
+
+
+        :return: The commit_id of this OverrideObject.  # noqa: E501
+        :rtype: str
+        """
+        return self._commit_id
+
+    @commit_id.setter
+    def commit_id(self, commit_id):
+        """Sets the commit_id of this OverrideObject.
+
+
+        :param commit_id: The commit_id of this OverrideObject.  # noqa: E501
+        :type: str
+        """
+
+        self._commit_id = commit_id
 
     @property
     def versioning_key(self):
@@ -348,6 +327,27 @@ class OverrideObject(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this OverrideObject.  # noqa: E501
+
+
+        :return: The number_of_versions of this OverrideObject.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this OverrideObject.
+
+
+        :param number_of_versions: The number_of_versions of this OverrideObject.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

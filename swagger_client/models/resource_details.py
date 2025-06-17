@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,39 @@ class ResourceDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key': 'str',
         'name': 'str',
-        'resource_name': 'str',
         'resource_type': 'str',
+        'resource_name': 'str',
+        'key': 'str',
         'value': 'str'
     }
 
     attribute_map = {
-        'key': 'key',
         'name': 'name',
-        'resource_name': 'resourceName',
         'resource_type': 'resourceType',
+        'resource_name': 'resourceName',
+        'key': 'key',
         'value': 'value'
     }
 
-    def __init__(self, key=None, name=None, resource_name=None, resource_type=None, value=None):  # noqa: E501
+    def __init__(self, name=None, resource_type=None, resource_name=None, key=None, value=None):  # noqa: E501
         """ResourceDetails - a model defined in Swagger"""  # noqa: E501
-        self._key = None
         self._name = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._key = None
         self._value = None
         self.discriminator = None
-        if key is not None:
-            self.key = key
         if name is not None:
             self.name = name
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if key is not None:
+            self.key = key
         if value is not None:
             self.value = value
-
-    @property
-    def key(self):
-        """Gets the key of this ResourceDetails.  # noqa: E501
-
-
-        :return: The key of this ResourceDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._key
-
-    @key.setter
-    def key(self, key):
-        """Sets the key of this ResourceDetails.
-
-
-        :param key: The key of this ResourceDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._key = key
 
     @property
     def name(self):
@@ -105,6 +84,27 @@ class ResourceDetails(object):
         self._name = name
 
     @property
+    def resource_type(self):
+        """Gets the resource_type of this ResourceDetails.  # noqa: E501
+
+
+        :return: The resource_type of this ResourceDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ResourceDetails.
+
+
+        :param resource_type: The resource_type of this ResourceDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_type = resource_type
+
+    @property
     def resource_name(self):
         """Gets the resource_name of this ResourceDetails.  # noqa: E501
 
@@ -126,25 +126,25 @@ class ResourceDetails(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this ResourceDetails.  # noqa: E501
+    def key(self):
+        """Gets the key of this ResourceDetails.  # noqa: E501
 
 
-        :return: The resource_type of this ResourceDetails.  # noqa: E501
+        :return: The key of this ResourceDetails.  # noqa: E501
         :rtype: str
         """
-        return self._resource_type
+        return self._key
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ResourceDetails.
+    @key.setter
+    def key(self, key):
+        """Sets the key of this ResourceDetails.
 
 
-        :param resource_type: The resource_type of this ResourceDetails.  # noqa: E501
+        :param key: The key of this ResourceDetails.  # noqa: E501
         :type: str
         """
 
-        self._resource_type = resource_type
+        self._key = key
 
     @property
     def value(self):

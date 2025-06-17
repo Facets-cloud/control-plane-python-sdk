@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,236 +28,120 @@ class ECRArtifactory(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifactory_type': 'str',
-        'aws_account_id': 'str',
-        'aws_key': 'str',
-        'aws_region': 'str',
-        'aws_secret': 'str',
-        'change_log': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'entity_type': 'str',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
-        'number_of_versions': 'int',
-        'stacks_associated': 'list[str]',
-        'system_defined': 'bool',
         'uri': 'str',
-        'versioning_key': 'str'
+        'artifactory_type': 'str',
+        'change_log': 'str',
+        'stacks_associated': 'list[str]',
+        'aws_key': 'str',
+        'aws_secret': 'str',
+        'aws_region': 'str',
+        'aws_account_id': 'str',
+        'system_defined': 'bool',
+        'entity_type': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'artifactory_type': 'artifactoryType',
-        'aws_account_id': 'awsAccountId',
-        'aws_key': 'awsKey',
-        'aws_region': 'awsRegion',
-        'aws_secret': 'awsSecret',
-        'change_log': 'changeLog',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'entity_type': 'entityType',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
-        'number_of_versions': 'numberOfVersions',
-        'stacks_associated': 'stacksAssociated',
-        'system_defined': 'systemDefined',
         'uri': 'uri',
-        'versioning_key': 'versioningKey'
+        'artifactory_type': 'artifactoryType',
+        'change_log': 'changeLog',
+        'stacks_associated': 'stacksAssociated',
+        'aws_key': 'awsKey',
+        'aws_secret': 'awsSecret',
+        'aws_region': 'awsRegion',
+        'aws_account_id': 'awsAccountId',
+        'system_defined': 'systemDefined',
+        'entity_type': 'entityType',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, artifactory_type=None, aws_account_id=None, aws_key=None, aws_region=None, aws_secret=None, change_log=None, created_by=None, creation_date=None, entity_type=None, id=None, last_modified_by=None, last_modified_date=None, name=None, number_of_versions=None, stacks_associated=None, system_defined=None, uri=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, uri=None, artifactory_type=None, change_log=None, stacks_associated=None, aws_key=None, aws_secret=None, aws_region=None, aws_account_id=None, system_defined=None, entity_type=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """ECRArtifactory - a model defined in Swagger"""  # noqa: E501
-        self._artifactory_type = None
-        self._aws_account_id = None
-        self._aws_key = None
-        self._aws_region = None
-        self._aws_secret = None
-        self._change_log = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._entity_type = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
-        self._number_of_versions = None
-        self._stacks_associated = None
-        self._system_defined = None
         self._uri = None
+        self._artifactory_type = None
+        self._change_log = None
+        self._stacks_associated = None
+        self._aws_key = None
+        self._aws_secret = None
+        self._aws_region = None
+        self._aws_account_id = None
+        self._system_defined = None
+        self._entity_type = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if artifactory_type is not None:
-            self.artifactory_type = artifactory_type
-        if aws_account_id is not None:
-            self.aws_account_id = aws_account_id
-        if aws_key is not None:
-            self.aws_key = aws_key
-        if aws_region is not None:
-            self.aws_region = aws_region
-        if aws_secret is not None:
-            self.aws_secret = aws_secret
-        if change_log is not None:
-            self.change_log = change_log
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if name is not None:
-            self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if stacks_associated is not None:
-            self.stacks_associated = stacks_associated
-        if system_defined is not None:
-            self.system_defined = system_defined
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.name = name
         if uri is not None:
             self.uri = uri
+        if artifactory_type is not None:
+            self.artifactory_type = artifactory_type
+        if change_log is not None:
+            self.change_log = change_log
+        if stacks_associated is not None:
+            self.stacks_associated = stacks_associated
+        self.aws_key = aws_key
+        self.aws_secret = aws_secret
+        self.aws_region = aws_region
+        self.aws_account_id = aws_account_id
+        if system_defined is not None:
+            self.system_defined = system_defined
+        if entity_type is not None:
+            self.entity_type = entity_type
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def artifactory_type(self):
-        """Gets the artifactory_type of this ECRArtifactory.  # noqa: E501
+    def id(self):
+        """Gets the id of this ECRArtifactory.  # noqa: E501
 
 
-        :return: The artifactory_type of this ECRArtifactory.  # noqa: E501
+        :return: The id of this ECRArtifactory.  # noqa: E501
         :rtype: str
         """
-        return self._artifactory_type
+        return self._id
 
-    @artifactory_type.setter
-    def artifactory_type(self, artifactory_type):
-        """Sets the artifactory_type of this ECRArtifactory.
-
-
-        :param artifactory_type: The artifactory_type of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ECR", "AZURE_CONTAINER_REGISTRY", "GOOGLE_ARTIFACT_REGISTRY", "GOOGLE_CONTAINER_REGISTRY", "NEXUS", "DOCKER_HUB", "JFROG", "OTHERS"]  # noqa: E501
-        if artifactory_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `artifactory_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(artifactory_type, allowed_values)
-            )
-
-        self._artifactory_type = artifactory_type
-
-    @property
-    def aws_account_id(self):
-        """Gets the aws_account_id of this ECRArtifactory.  # noqa: E501
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ECRArtifactory.
 
 
-        :return: The aws_account_id of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._aws_account_id
-
-    @aws_account_id.setter
-    def aws_account_id(self, aws_account_id):
-        """Sets the aws_account_id of this ECRArtifactory.
-
-
-        :param aws_account_id: The aws_account_id of this ECRArtifactory.  # noqa: E501
+        :param id: The id of this ECRArtifactory.  # noqa: E501
         :type: str
         """
 
-        self._aws_account_id = aws_account_id
-
-    @property
-    def aws_key(self):
-        """Gets the aws_key of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The aws_key of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._aws_key
-
-    @aws_key.setter
-    def aws_key(self, aws_key):
-        """Sets the aws_key of this ECRArtifactory.
-
-
-        :param aws_key: The aws_key of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._aws_key = aws_key
-
-    @property
-    def aws_region(self):
-        """Gets the aws_region of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The aws_region of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._aws_region
-
-    @aws_region.setter
-    def aws_region(self, aws_region):
-        """Sets the aws_region of this ECRArtifactory.
-
-
-        :param aws_region: The aws_region of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._aws_region = aws_region
-
-    @property
-    def aws_secret(self):
-        """Gets the aws_secret of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The aws_secret of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._aws_secret
-
-    @aws_secret.setter
-    def aws_secret(self, aws_secret):
-        """Sets the aws_secret of this ECRArtifactory.
-
-
-        :param aws_secret: The aws_secret of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._aws_secret = aws_secret
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The change_log of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this ECRArtifactory.
-
-
-        :param change_log: The change_log of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._change_log = change_log
+        self._id = id
 
     @property
     def created_by(self):
@@ -302,6 +186,274 @@ class ECRArtifactory(object):
         self._creation_date = creation_date
 
     @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The last_modified_date of this ECRArtifactory.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this ECRArtifactory.
+
+
+        :param last_modified_date: The last_modified_date of this ECRArtifactory.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The last_modified_by of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this ECRArtifactory.
+
+
+        :param last_modified_by: The last_modified_by of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def name(self):
+        """Gets the name of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The name of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ECRArtifactory.
+
+
+        :param name: The name of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def uri(self):
+        """Gets the uri of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The uri of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._uri
+
+    @uri.setter
+    def uri(self, uri):
+        """Sets the uri of this ECRArtifactory.
+
+
+        :param uri: The uri of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._uri = uri
+
+    @property
+    def artifactory_type(self):
+        """Gets the artifactory_type of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The artifactory_type of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory_type
+
+    @artifactory_type.setter
+    def artifactory_type(self, artifactory_type):
+        """Sets the artifactory_type of this ECRArtifactory.
+
+
+        :param artifactory_type: The artifactory_type of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ECR", "AZURE_CONTAINER_REGISTRY", "GOOGLE_ARTIFACT_REGISTRY", "GOOGLE_CONTAINER_REGISTRY", "NEXUS", "DOCKER_HUB", "JFROG", "OTHERS"]  # noqa: E501
+        if artifactory_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `artifactory_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(artifactory_type, allowed_values)
+            )
+
+        self._artifactory_type = artifactory_type
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The change_log of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this ECRArtifactory.
+
+
+        :param change_log: The change_log of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def stacks_associated(self):
+        """Gets the stacks_associated of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The stacks_associated of this ECRArtifactory.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._stacks_associated
+
+    @stacks_associated.setter
+    def stacks_associated(self, stacks_associated):
+        """Sets the stacks_associated of this ECRArtifactory.
+
+
+        :param stacks_associated: The stacks_associated of this ECRArtifactory.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._stacks_associated = stacks_associated
+
+    @property
+    def aws_key(self):
+        """Gets the aws_key of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The aws_key of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_key
+
+    @aws_key.setter
+    def aws_key(self, aws_key):
+        """Sets the aws_key of this ECRArtifactory.
+
+
+        :param aws_key: The aws_key of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+        if aws_key is None:
+            raise ValueError("Invalid value for `aws_key`, must not be `None`")  # noqa: E501
+
+        self._aws_key = aws_key
+
+    @property
+    def aws_secret(self):
+        """Gets the aws_secret of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The aws_secret of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_secret
+
+    @aws_secret.setter
+    def aws_secret(self, aws_secret):
+        """Sets the aws_secret of this ECRArtifactory.
+
+
+        :param aws_secret: The aws_secret of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+        if aws_secret is None:
+            raise ValueError("Invalid value for `aws_secret`, must not be `None`")  # noqa: E501
+
+        self._aws_secret = aws_secret
+
+    @property
+    def aws_region(self):
+        """Gets the aws_region of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The aws_region of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_region
+
+    @aws_region.setter
+    def aws_region(self, aws_region):
+        """Sets the aws_region of this ECRArtifactory.
+
+
+        :param aws_region: The aws_region of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+        if aws_region is None:
+            raise ValueError("Invalid value for `aws_region`, must not be `None`")  # noqa: E501
+
+        self._aws_region = aws_region
+
+    @property
+    def aws_account_id(self):
+        """Gets the aws_account_id of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The aws_account_id of this ECRArtifactory.  # noqa: E501
+        :rtype: str
+        """
+        return self._aws_account_id
+
+    @aws_account_id.setter
+    def aws_account_id(self, aws_account_id):
+        """Sets the aws_account_id of this ECRArtifactory.
+
+
+        :param aws_account_id: The aws_account_id of this ECRArtifactory.  # noqa: E501
+        :type: str
+        """
+        if aws_account_id is None:
+            raise ValueError("Invalid value for `aws_account_id`, must not be `None`")  # noqa: E501
+
+        self._aws_account_id = aws_account_id
+
+    @property
+    def system_defined(self):
+        """Gets the system_defined of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The system_defined of this ECRArtifactory.  # noqa: E501
+        :rtype: bool
+        """
+        return self._system_defined
+
+    @system_defined.setter
+    def system_defined(self, system_defined):
+        """Sets the system_defined of this ECRArtifactory.
+
+
+        :param system_defined: The system_defined of this ECRArtifactory.  # noqa: E501
+        :type: bool
+        """
+
+        self._system_defined = system_defined
+
+    @property
     def entity_type(self):
         """Gets the entity_type of this ECRArtifactory.  # noqa: E501
 
@@ -329,88 +481,25 @@ class ECRArtifactory(object):
         self._entity_type = entity_type
 
     @property
-    def id(self):
-        """Gets the id of this ECRArtifactory.  # noqa: E501
+    def versioning_key(self):
+        """Gets the versioning_key of this ECRArtifactory.  # noqa: E501
 
 
-        :return: The id of this ECRArtifactory.  # noqa: E501
+        :return: The versioning_key of this ECRArtifactory.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._versioning_key
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ECRArtifactory.
+    @versioning_key.setter
+    def versioning_key(self, versioning_key):
+        """Sets the versioning_key of this ECRArtifactory.
 
 
-        :param id: The id of this ECRArtifactory.  # noqa: E501
+        :param versioning_key: The versioning_key of this ECRArtifactory.  # noqa: E501
         :type: str
         """
 
-        self._id = id
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The last_modified_by of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this ECRArtifactory.
-
-
-        :param last_modified_by: The last_modified_by of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The last_modified_date of this ECRArtifactory.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this ECRArtifactory.
-
-
-        :param last_modified_date: The last_modified_date of this ECRArtifactory.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def name(self):
-        """Gets the name of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The name of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ECRArtifactory.
-
-
-        :param name: The name of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
+        self._versioning_key = versioning_key
 
     @property
     def number_of_versions(self):
@@ -432,90 +521,6 @@ class ECRArtifactory(object):
         """
 
         self._number_of_versions = number_of_versions
-
-    @property
-    def stacks_associated(self):
-        """Gets the stacks_associated of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The stacks_associated of this ECRArtifactory.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._stacks_associated
-
-    @stacks_associated.setter
-    def stacks_associated(self, stacks_associated):
-        """Sets the stacks_associated of this ECRArtifactory.
-
-
-        :param stacks_associated: The stacks_associated of this ECRArtifactory.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._stacks_associated = stacks_associated
-
-    @property
-    def system_defined(self):
-        """Gets the system_defined of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The system_defined of this ECRArtifactory.  # noqa: E501
-        :rtype: bool
-        """
-        return self._system_defined
-
-    @system_defined.setter
-    def system_defined(self, system_defined):
-        """Sets the system_defined of this ECRArtifactory.
-
-
-        :param system_defined: The system_defined of this ECRArtifactory.  # noqa: E501
-        :type: bool
-        """
-
-        self._system_defined = system_defined
-
-    @property
-    def uri(self):
-        """Gets the uri of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The uri of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._uri
-
-    @uri.setter
-    def uri(self, uri):
-        """Sets the uri of this ECRArtifactory.
-
-
-        :param uri: The uri of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._uri = uri
-
-    @property
-    def versioning_key(self):
-        """Gets the versioning_key of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The versioning_key of this ECRArtifactory.  # noqa: E501
-        :rtype: str
-        """
-        return self._versioning_key
-
-    @versioning_key.setter
-    def versioning_key(self, versioning_key):
-        """Sets the versioning_key of this ECRArtifactory.
-
-
-        :param versioning_key: The versioning_key of this ECRArtifactory.  # noqa: E501
-        :type: str
-        """
-
-        self._versioning_key = versioning_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

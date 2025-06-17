@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,180 +28,54 @@ class ExpandedUserGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'accessible_accounts': 'list[IdName]',
-        'accessible_environments': 'list[EnvInfo]',
-        'accessible_projects': 'list[str]',
-        'associated_resource_groups': 'list[IdName]',
-        'base_role': 'RoleInfo',
-        'env_specific_roles': 'list[EnvSpecificAccess]',
         'group_id': 'str',
-        'group_name': 'str'
+        'group_name': 'str',
+        'base_role': 'RoleInfo',
+        'accessible_projects': 'list[str]',
+        'accessible_environments': 'list[EnvInfo]',
+        'accessible_accounts': 'list[IdName]',
+        'env_specific_roles': 'list[EnvSpecificAccess]',
+        'associated_resource_groups': 'list[IdName]'
     }
 
     attribute_map = {
-        'accessible_accounts': 'accessibleAccounts',
-        'accessible_environments': 'accessibleEnvironments',
-        'accessible_projects': 'accessibleProjects',
-        'associated_resource_groups': 'associatedResourceGroups',
-        'base_role': 'baseRole',
-        'env_specific_roles': 'envSpecificRoles',
         'group_id': 'groupId',
-        'group_name': 'groupName'
+        'group_name': 'groupName',
+        'base_role': 'baseRole',
+        'accessible_projects': 'accessibleProjects',
+        'accessible_environments': 'accessibleEnvironments',
+        'accessible_accounts': 'accessibleAccounts',
+        'env_specific_roles': 'envSpecificRoles',
+        'associated_resource_groups': 'associatedResourceGroups'
     }
 
-    def __init__(self, accessible_accounts=None, accessible_environments=None, accessible_projects=None, associated_resource_groups=None, base_role=None, env_specific_roles=None, group_id=None, group_name=None):  # noqa: E501
+    def __init__(self, group_id=None, group_name=None, base_role=None, accessible_projects=None, accessible_environments=None, accessible_accounts=None, env_specific_roles=None, associated_resource_groups=None):  # noqa: E501
         """ExpandedUserGroup - a model defined in Swagger"""  # noqa: E501
-        self._accessible_accounts = None
-        self._accessible_environments = None
-        self._accessible_projects = None
-        self._associated_resource_groups = None
-        self._base_role = None
-        self._env_specific_roles = None
         self._group_id = None
         self._group_name = None
+        self._base_role = None
+        self._accessible_projects = None
+        self._accessible_environments = None
+        self._accessible_accounts = None
+        self._env_specific_roles = None
+        self._associated_resource_groups = None
         self.discriminator = None
-        if accessible_accounts is not None:
-            self.accessible_accounts = accessible_accounts
-        if accessible_environments is not None:
-            self.accessible_environments = accessible_environments
-        if accessible_projects is not None:
-            self.accessible_projects = accessible_projects
-        if associated_resource_groups is not None:
-            self.associated_resource_groups = associated_resource_groups
-        if base_role is not None:
-            self.base_role = base_role
-        if env_specific_roles is not None:
-            self.env_specific_roles = env_specific_roles
         if group_id is not None:
             self.group_id = group_id
         if group_name is not None:
             self.group_name = group_name
-
-    @property
-    def accessible_accounts(self):
-        """Gets the accessible_accounts of this ExpandedUserGroup.  # noqa: E501
-
-
-        :return: The accessible_accounts of this ExpandedUserGroup.  # noqa: E501
-        :rtype: list[IdName]
-        """
-        return self._accessible_accounts
-
-    @accessible_accounts.setter
-    def accessible_accounts(self, accessible_accounts):
-        """Sets the accessible_accounts of this ExpandedUserGroup.
-
-
-        :param accessible_accounts: The accessible_accounts of this ExpandedUserGroup.  # noqa: E501
-        :type: list[IdName]
-        """
-
-        self._accessible_accounts = accessible_accounts
-
-    @property
-    def accessible_environments(self):
-        """Gets the accessible_environments of this ExpandedUserGroup.  # noqa: E501
-
-
-        :return: The accessible_environments of this ExpandedUserGroup.  # noqa: E501
-        :rtype: list[EnvInfo]
-        """
-        return self._accessible_environments
-
-    @accessible_environments.setter
-    def accessible_environments(self, accessible_environments):
-        """Sets the accessible_environments of this ExpandedUserGroup.
-
-
-        :param accessible_environments: The accessible_environments of this ExpandedUserGroup.  # noqa: E501
-        :type: list[EnvInfo]
-        """
-
-        self._accessible_environments = accessible_environments
-
-    @property
-    def accessible_projects(self):
-        """Gets the accessible_projects of this ExpandedUserGroup.  # noqa: E501
-
-
-        :return: The accessible_projects of this ExpandedUserGroup.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._accessible_projects
-
-    @accessible_projects.setter
-    def accessible_projects(self, accessible_projects):
-        """Sets the accessible_projects of this ExpandedUserGroup.
-
-
-        :param accessible_projects: The accessible_projects of this ExpandedUserGroup.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._accessible_projects = accessible_projects
-
-    @property
-    def associated_resource_groups(self):
-        """Gets the associated_resource_groups of this ExpandedUserGroup.  # noqa: E501
-
-
-        :return: The associated_resource_groups of this ExpandedUserGroup.  # noqa: E501
-        :rtype: list[IdName]
-        """
-        return self._associated_resource_groups
-
-    @associated_resource_groups.setter
-    def associated_resource_groups(self, associated_resource_groups):
-        """Sets the associated_resource_groups of this ExpandedUserGroup.
-
-
-        :param associated_resource_groups: The associated_resource_groups of this ExpandedUserGroup.  # noqa: E501
-        :type: list[IdName]
-        """
-
-        self._associated_resource_groups = associated_resource_groups
-
-    @property
-    def base_role(self):
-        """Gets the base_role of this ExpandedUserGroup.  # noqa: E501
-
-
-        :return: The base_role of this ExpandedUserGroup.  # noqa: E501
-        :rtype: RoleInfo
-        """
-        return self._base_role
-
-    @base_role.setter
-    def base_role(self, base_role):
-        """Sets the base_role of this ExpandedUserGroup.
-
-
-        :param base_role: The base_role of this ExpandedUserGroup.  # noqa: E501
-        :type: RoleInfo
-        """
-
-        self._base_role = base_role
-
-    @property
-    def env_specific_roles(self):
-        """Gets the env_specific_roles of this ExpandedUserGroup.  # noqa: E501
-
-
-        :return: The env_specific_roles of this ExpandedUserGroup.  # noqa: E501
-        :rtype: list[EnvSpecificAccess]
-        """
-        return self._env_specific_roles
-
-    @env_specific_roles.setter
-    def env_specific_roles(self, env_specific_roles):
-        """Sets the env_specific_roles of this ExpandedUserGroup.
-
-
-        :param env_specific_roles: The env_specific_roles of this ExpandedUserGroup.  # noqa: E501
-        :type: list[EnvSpecificAccess]
-        """
-
-        self._env_specific_roles = env_specific_roles
+        if base_role is not None:
+            self.base_role = base_role
+        if accessible_projects is not None:
+            self.accessible_projects = accessible_projects
+        if accessible_environments is not None:
+            self.accessible_environments = accessible_environments
+        if accessible_accounts is not None:
+            self.accessible_accounts = accessible_accounts
+        if env_specific_roles is not None:
+            self.env_specific_roles = env_specific_roles
+        if associated_resource_groups is not None:
+            self.associated_resource_groups = associated_resource_groups
 
     @property
     def group_id(self):
@@ -244,6 +118,132 @@ class ExpandedUserGroup(object):
         """
 
         self._group_name = group_name
+
+    @property
+    def base_role(self):
+        """Gets the base_role of this ExpandedUserGroup.  # noqa: E501
+
+
+        :return: The base_role of this ExpandedUserGroup.  # noqa: E501
+        :rtype: RoleInfo
+        """
+        return self._base_role
+
+    @base_role.setter
+    def base_role(self, base_role):
+        """Sets the base_role of this ExpandedUserGroup.
+
+
+        :param base_role: The base_role of this ExpandedUserGroup.  # noqa: E501
+        :type: RoleInfo
+        """
+
+        self._base_role = base_role
+
+    @property
+    def accessible_projects(self):
+        """Gets the accessible_projects of this ExpandedUserGroup.  # noqa: E501
+
+
+        :return: The accessible_projects of this ExpandedUserGroup.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._accessible_projects
+
+    @accessible_projects.setter
+    def accessible_projects(self, accessible_projects):
+        """Sets the accessible_projects of this ExpandedUserGroup.
+
+
+        :param accessible_projects: The accessible_projects of this ExpandedUserGroup.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._accessible_projects = accessible_projects
+
+    @property
+    def accessible_environments(self):
+        """Gets the accessible_environments of this ExpandedUserGroup.  # noqa: E501
+
+
+        :return: The accessible_environments of this ExpandedUserGroup.  # noqa: E501
+        :rtype: list[EnvInfo]
+        """
+        return self._accessible_environments
+
+    @accessible_environments.setter
+    def accessible_environments(self, accessible_environments):
+        """Sets the accessible_environments of this ExpandedUserGroup.
+
+
+        :param accessible_environments: The accessible_environments of this ExpandedUserGroup.  # noqa: E501
+        :type: list[EnvInfo]
+        """
+
+        self._accessible_environments = accessible_environments
+
+    @property
+    def accessible_accounts(self):
+        """Gets the accessible_accounts of this ExpandedUserGroup.  # noqa: E501
+
+
+        :return: The accessible_accounts of this ExpandedUserGroup.  # noqa: E501
+        :rtype: list[IdName]
+        """
+        return self._accessible_accounts
+
+    @accessible_accounts.setter
+    def accessible_accounts(self, accessible_accounts):
+        """Sets the accessible_accounts of this ExpandedUserGroup.
+
+
+        :param accessible_accounts: The accessible_accounts of this ExpandedUserGroup.  # noqa: E501
+        :type: list[IdName]
+        """
+
+        self._accessible_accounts = accessible_accounts
+
+    @property
+    def env_specific_roles(self):
+        """Gets the env_specific_roles of this ExpandedUserGroup.  # noqa: E501
+
+
+        :return: The env_specific_roles of this ExpandedUserGroup.  # noqa: E501
+        :rtype: list[EnvSpecificAccess]
+        """
+        return self._env_specific_roles
+
+    @env_specific_roles.setter
+    def env_specific_roles(self, env_specific_roles):
+        """Sets the env_specific_roles of this ExpandedUserGroup.
+
+
+        :param env_specific_roles: The env_specific_roles of this ExpandedUserGroup.  # noqa: E501
+        :type: list[EnvSpecificAccess]
+        """
+
+        self._env_specific_roles = env_specific_roles
+
+    @property
+    def associated_resource_groups(self):
+        """Gets the associated_resource_groups of this ExpandedUserGroup.  # noqa: E501
+
+
+        :return: The associated_resource_groups of this ExpandedUserGroup.  # noqa: E501
+        :rtype: list[IdName]
+        """
+        return self._associated_resource_groups
+
+    @associated_resource_groups.setter
+    def associated_resource_groups(self, associated_resource_groups):
+        """Sets the associated_resource_groups of this ExpandedUserGroup.
+
+
+        :param associated_resource_groups: The associated_resource_groups of this ExpandedUserGroup.  # noqa: E501
+        :type: list[IdName]
+        """
+
+        self._associated_resource_groups = associated_resource_groups
 
     def to_dict(self):
         """Returns the model properties as a dict"""

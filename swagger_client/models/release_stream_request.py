@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,51 @@ class ReleaseStreamRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
         'name': 'str',
+        'description': 'str',
         'prod': 'bool'
     }
 
     attribute_map = {
-        'description': 'description',
         'name': 'name',
+        'description': 'description',
         'prod': 'prod'
     }
 
-    def __init__(self, description=None, name=None, prod=None):  # noqa: E501
+    def __init__(self, name=None, description=None, prod=None):  # noqa: E501
         """ReleaseStreamRequest - a model defined in Swagger"""  # noqa: E501
-        self._description = None
         self._name = None
+        self._description = None
         self._prod = None
         self.discriminator = None
+        self.name = name
         if description is not None:
             self.description = description
-        if name is not None:
-            self.name = name
         if prod is not None:
             self.prod = prod
+
+    @property
+    def name(self):
+        """Gets the name of this ReleaseStreamRequest.  # noqa: E501
+
+
+        :return: The name of this ReleaseStreamRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ReleaseStreamRequest.
+
+
+        :param name: The name of this ReleaseStreamRequest.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
 
     @property
     def description(self):
@@ -72,27 +94,6 @@ class ReleaseStreamRequest(object):
         """
 
         self._description = description
-
-    @property
-    def name(self):
-        """Gets the name of this ReleaseStreamRequest.  # noqa: E501
-
-
-        :return: The name of this ReleaseStreamRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ReleaseStreamRequest.
-
-
-        :param name: The name of this ReleaseStreamRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     @property
     def prod(self):
