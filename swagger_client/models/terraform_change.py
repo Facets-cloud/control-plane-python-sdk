@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class TerraformChange(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'resource_key': 'str',
         '_resource_path': 'str',
+        'resource_key': 'str',
         'type': 'str'
     }
 
     attribute_map = {
-        'resource_key': 'resourceKey',
         '_resource_path': 'resourcePath',
+        'resource_key': 'resourceKey',
         'type': 'type'
     }
 
-    def __init__(self, resource_key=None, _resource_path=None, type=None):  # noqa: E501
+    def __init__(self, _resource_path=None, resource_key=None, type=None):  # noqa: E501
         """TerraformChange - a model defined in Swagger"""  # noqa: E501
-        self._resource_key = None
         self.__resource_path = None
+        self._resource_key = None
         self._type = None
         self.discriminator = None
-        if resource_key is not None:
-            self.resource_key = resource_key
         if _resource_path is not None:
             self._resource_path = _resource_path
+        if resource_key is not None:
+            self.resource_key = resource_key
         if type is not None:
             self.type = type
-
-    @property
-    def resource_key(self):
-        """Gets the resource_key of this TerraformChange.  # noqa: E501
-
-
-        :return: The resource_key of this TerraformChange.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_key
-
-    @resource_key.setter
-    def resource_key(self, resource_key):
-        """Sets the resource_key of this TerraformChange.
-
-
-        :param resource_key: The resource_key of this TerraformChange.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_key = resource_key
 
     @property
     def _resource_path(self):
@@ -93,6 +72,27 @@ class TerraformChange(object):
         """
 
         self.__resource_path = _resource_path
+
+    @property
+    def resource_key(self):
+        """Gets the resource_key of this TerraformChange.  # noqa: E501
+
+
+        :return: The resource_key of this TerraformChange.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_key
+
+    @resource_key.setter
+    def resource_key(self, resource_key):
+        """Sets the resource_key of this TerraformChange.
+
+
+        :param resource_key: The resource_key of this TerraformChange.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_key = resource_key
 
     @property
     def type(self):

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,40 +28,146 @@ class CiCdDto(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ci_system': 'str',
-        'map_to_all_cis': 'bool',
-        'promotion_hierarchies': 'list[WorkflowHierarchy]',
         'registration_type': 'str',
+        'stack_name': 'str',
         'routing_rules': 'list[Criterion]',
-        'stack_name': 'str'
+        'promotion_hierarchies': 'list[WorkflowHierarchy]',
+        'ci_system': 'str',
+        'map_to_all_cis': 'bool'
     }
 
     attribute_map = {
-        'ci_system': 'ciSystem',
-        'map_to_all_cis': 'mapToAllCis',
-        'promotion_hierarchies': 'promotionHierarchies',
         'registration_type': 'registrationType',
+        'stack_name': 'stackName',
         'routing_rules': 'routingRules',
-        'stack_name': 'stackName'
+        'promotion_hierarchies': 'promotionHierarchies',
+        'ci_system': 'ciSystem',
+        'map_to_all_cis': 'mapToAllCis'
     }
 
-    def __init__(self, ci_system=None, map_to_all_cis=None, promotion_hierarchies=None, registration_type=None, routing_rules=None, stack_name=None):  # noqa: E501
+    def __init__(self, registration_type=None, stack_name=None, routing_rules=None, promotion_hierarchies=None, ci_system=None, map_to_all_cis=None):  # noqa: E501
         """CiCdDto - a model defined in Swagger"""  # noqa: E501
+        self._registration_type = None
+        self._stack_name = None
+        self._routing_rules = None
+        self._promotion_hierarchies = None
         self._ci_system = None
         self._map_to_all_cis = None
-        self._promotion_hierarchies = None
-        self._registration_type = None
-        self._routing_rules = None
-        self._stack_name = None
         self.discriminator = None
+        self.registration_type = registration_type
+        self.stack_name = stack_name
+        self.routing_rules = routing_rules
+        self.promotion_hierarchies = promotion_hierarchies
         if ci_system is not None:
             self.ci_system = ci_system
         if map_to_all_cis is not None:
             self.map_to_all_cis = map_to_all_cis
-        self.promotion_hierarchies = promotion_hierarchies
-        self.registration_type = registration_type
-        self.routing_rules = routing_rules
-        self.stack_name = stack_name
+
+    @property
+    def registration_type(self):
+        """Gets the registration_type of this CiCdDto.  # noqa: E501
+
+        Registration type for the CI/CD setup.  # noqa: E501
+
+        :return: The registration_type of this CiCdDto.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_type
+
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """Sets the registration_type of this CiCdDto.
+
+        Registration type for the CI/CD setup.  # noqa: E501
+
+        :param registration_type: The registration_type of this CiCdDto.  # noqa: E501
+        :type: str
+        """
+        if registration_type is None:
+            raise ValueError("Invalid value for `registration_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
+        if registration_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(registration_type, allowed_values)
+            )
+
+        self._registration_type = registration_type
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this CiCdDto.  # noqa: E501
+
+        Name of the project.  # noqa: E501
+
+        :return: The stack_name of this CiCdDto.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this CiCdDto.
+
+        Name of the project.  # noqa: E501
+
+        :param stack_name: The stack_name of this CiCdDto.  # noqa: E501
+        :type: str
+        """
+        if stack_name is None:
+            raise ValueError("Invalid value for `stack_name`, must not be `None`")  # noqa: E501
+
+        self._stack_name = stack_name
+
+    @property
+    def routing_rules(self):
+        """Gets the routing_rules of this CiCdDto.  # noqa: E501
+
+        Routing rules for artifact promotion.  # noqa: E501
+
+        :return: The routing_rules of this CiCdDto.  # noqa: E501
+        :rtype: list[Criterion]
+        """
+        return self._routing_rules
+
+    @routing_rules.setter
+    def routing_rules(self, routing_rules):
+        """Sets the routing_rules of this CiCdDto.
+
+        Routing rules for artifact promotion.  # noqa: E501
+
+        :param routing_rules: The routing_rules of this CiCdDto.  # noqa: E501
+        :type: list[Criterion]
+        """
+        if routing_rules is None:
+            raise ValueError("Invalid value for `routing_rules`, must not be `None`")  # noqa: E501
+
+        self._routing_rules = routing_rules
+
+    @property
+    def promotion_hierarchies(self):
+        """Gets the promotion_hierarchies of this CiCdDto.  # noqa: E501
+
+        Promotion workflow hierarchies.  # noqa: E501
+
+        :return: The promotion_hierarchies of this CiCdDto.  # noqa: E501
+        :rtype: list[WorkflowHierarchy]
+        """
+        return self._promotion_hierarchies
+
+    @promotion_hierarchies.setter
+    def promotion_hierarchies(self, promotion_hierarchies):
+        """Sets the promotion_hierarchies of this CiCdDto.
+
+        Promotion workflow hierarchies.  # noqa: E501
+
+        :param promotion_hierarchies: The promotion_hierarchies of this CiCdDto.  # noqa: E501
+        :type: list[WorkflowHierarchy]
+        """
+        if promotion_hierarchies is None:
+            raise ValueError("Invalid value for `promotion_hierarchies`, must not be `None`")  # noqa: E501
+
+        self._promotion_hierarchies = promotion_hierarchies
 
     @property
     def ci_system(self):
@@ -114,112 +220,6 @@ class CiCdDto(object):
         """
 
         self._map_to_all_cis = map_to_all_cis
-
-    @property
-    def promotion_hierarchies(self):
-        """Gets the promotion_hierarchies of this CiCdDto.  # noqa: E501
-
-        Promotion workflow hierarchies.  # noqa: E501
-
-        :return: The promotion_hierarchies of this CiCdDto.  # noqa: E501
-        :rtype: list[WorkflowHierarchy]
-        """
-        return self._promotion_hierarchies
-
-    @promotion_hierarchies.setter
-    def promotion_hierarchies(self, promotion_hierarchies):
-        """Sets the promotion_hierarchies of this CiCdDto.
-
-        Promotion workflow hierarchies.  # noqa: E501
-
-        :param promotion_hierarchies: The promotion_hierarchies of this CiCdDto.  # noqa: E501
-        :type: list[WorkflowHierarchy]
-        """
-        if promotion_hierarchies is None:
-            raise ValueError("Invalid value for `promotion_hierarchies`, must not be `None`")  # noqa: E501
-
-        self._promotion_hierarchies = promotion_hierarchies
-
-    @property
-    def registration_type(self):
-        """Gets the registration_type of this CiCdDto.  # noqa: E501
-
-        Registration type for the CI/CD setup.  # noqa: E501
-
-        :return: The registration_type of this CiCdDto.  # noqa: E501
-        :rtype: str
-        """
-        return self._registration_type
-
-    @registration_type.setter
-    def registration_type(self, registration_type):
-        """Sets the registration_type of this CiCdDto.
-
-        Registration type for the CI/CD setup.  # noqa: E501
-
-        :param registration_type: The registration_type of this CiCdDto.  # noqa: E501
-        :type: str
-        """
-        if registration_type is None:
-            raise ValueError("Invalid value for `registration_type`, must not be `None`")  # noqa: E501
-        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
-        if registration_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(registration_type, allowed_values)
-            )
-
-        self._registration_type = registration_type
-
-    @property
-    def routing_rules(self):
-        """Gets the routing_rules of this CiCdDto.  # noqa: E501
-
-        Routing rules for artifact promotion.  # noqa: E501
-
-        :return: The routing_rules of this CiCdDto.  # noqa: E501
-        :rtype: list[Criterion]
-        """
-        return self._routing_rules
-
-    @routing_rules.setter
-    def routing_rules(self, routing_rules):
-        """Sets the routing_rules of this CiCdDto.
-
-        Routing rules for artifact promotion.  # noqa: E501
-
-        :param routing_rules: The routing_rules of this CiCdDto.  # noqa: E501
-        :type: list[Criterion]
-        """
-        if routing_rules is None:
-            raise ValueError("Invalid value for `routing_rules`, must not be `None`")  # noqa: E501
-
-        self._routing_rules = routing_rules
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this CiCdDto.  # noqa: E501
-
-        Name of the project.  # noqa: E501
-
-        :return: The stack_name of this CiCdDto.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this CiCdDto.
-
-        Name of the project.  # noqa: E501
-
-        :param stack_name: The stack_name of this CiCdDto.  # noqa: E501
-        :type: str
-        """
-        if stack_name is None:
-            raise ValueError("Invalid value for `stack_name`, must not be `None`")  # noqa: E501
-
-        self._stack_name = stack_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

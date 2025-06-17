@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**created_by** | **str** |  | [optional] 
-**creation_date** | **datetime** |  | [optional] 
-**criteria** | [**list[Criterion]**](Criterion.md) |  | [optional] 
-**default** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 
 **registration_type** | **str** |  | [optional] 
+**criteria** | [**list[Criterion]**](Criterion.md) |  | [optional] 
 **rule_name** | **str** |  | [optional] 
+**created_by** | **str** |  | [optional] 
 **stack_name** | **str** |  | [optional] 
+**creation_date** | **datetime** |  | [optional] 
+**default** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

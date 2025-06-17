@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,57 +28,50 @@ class CopyConfigurationsRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'configuration_types': 'list[str]',
+        'source_cluster_id': 'str',
         'selection_mode': 'str',
-        'source_cluster_id': 'str'
+        'configuration_types': 'list[str]'
     }
 
     attribute_map = {
-        'configuration_types': 'configurationTypes',
+        'source_cluster_id': 'sourceClusterId',
         'selection_mode': 'selectionMode',
-        'source_cluster_id': 'sourceClusterId'
+        'configuration_types': 'configurationTypes'
     }
 
-    def __init__(self, configuration_types=None, selection_mode=None, source_cluster_id=None):  # noqa: E501
+    def __init__(self, source_cluster_id=None, selection_mode=None, configuration_types=None):  # noqa: E501
         """CopyConfigurationsRequest - a model defined in Swagger"""  # noqa: E501
-        self._configuration_types = None
-        self._selection_mode = None
         self._source_cluster_id = None
+        self._selection_mode = None
+        self._configuration_types = None
         self.discriminator = None
-        if configuration_types is not None:
-            self.configuration_types = configuration_types
-        if selection_mode is not None:
-            self.selection_mode = selection_mode
         if source_cluster_id is not None:
             self.source_cluster_id = source_cluster_id
+        if selection_mode is not None:
+            self.selection_mode = selection_mode
+        if configuration_types is not None:
+            self.configuration_types = configuration_types
 
     @property
-    def configuration_types(self):
-        """Gets the configuration_types of this CopyConfigurationsRequest.  # noqa: E501
+    def source_cluster_id(self):
+        """Gets the source_cluster_id of this CopyConfigurationsRequest.  # noqa: E501
 
 
-        :return: The configuration_types of this CopyConfigurationsRequest.  # noqa: E501
-        :rtype: list[str]
+        :return: The source_cluster_id of this CopyConfigurationsRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._configuration_types
+        return self._source_cluster_id
 
-    @configuration_types.setter
-    def configuration_types(self, configuration_types):
-        """Sets the configuration_types of this CopyConfigurationsRequest.
+    @source_cluster_id.setter
+    def source_cluster_id(self, source_cluster_id):
+        """Sets the source_cluster_id of this CopyConfigurationsRequest.
 
 
-        :param configuration_types: The configuration_types of this CopyConfigurationsRequest.  # noqa: E501
-        :type: list[str]
+        :param source_cluster_id: The source_cluster_id of this CopyConfigurationsRequest.  # noqa: E501
+        :type: str
         """
-        allowed_values = ["VARIABLES_SECRETS", "ARTIFACTS", "ENVIRONMENT_SETTINGS", "SCHEDULES", "AVAILABILITY_SCHEDULES", "OVERRIDES", "TEMPLATE_INPUTS"]  # noqa: E501
-        if not set(configuration_types).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `configuration_types` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(configuration_types) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
 
-        self._configuration_types = configuration_types
+        self._source_cluster_id = source_cluster_id
 
     @property
     def selection_mode(self):
@@ -108,25 +101,32 @@ class CopyConfigurationsRequest(object):
         self._selection_mode = selection_mode
 
     @property
-    def source_cluster_id(self):
-        """Gets the source_cluster_id of this CopyConfigurationsRequest.  # noqa: E501
+    def configuration_types(self):
+        """Gets the configuration_types of this CopyConfigurationsRequest.  # noqa: E501
 
 
-        :return: The source_cluster_id of this CopyConfigurationsRequest.  # noqa: E501
-        :rtype: str
+        :return: The configuration_types of this CopyConfigurationsRequest.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._source_cluster_id
+        return self._configuration_types
 
-    @source_cluster_id.setter
-    def source_cluster_id(self, source_cluster_id):
-        """Sets the source_cluster_id of this CopyConfigurationsRequest.
+    @configuration_types.setter
+    def configuration_types(self, configuration_types):
+        """Sets the configuration_types of this CopyConfigurationsRequest.
 
 
-        :param source_cluster_id: The source_cluster_id of this CopyConfigurationsRequest.  # noqa: E501
-        :type: str
+        :param configuration_types: The configuration_types of this CopyConfigurationsRequest.  # noqa: E501
+        :type: list[str]
         """
+        allowed_values = ["VARIABLES_SECRETS", "ARTIFACTS", "ENVIRONMENT_SETTINGS", "SCHEDULES", "AVAILABILITY_SCHEDULES", "OVERRIDES", "TEMPLATE_INPUTS"]  # noqa: E501
+        if not set(configuration_types).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `configuration_types` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(configuration_types) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
 
-        self._source_cluster_id = source_cluster_id
+        self._configuration_types = configuration_types
 
     def to_dict(self):
         """Returns the model properties as a dict"""

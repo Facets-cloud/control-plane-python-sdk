@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,102 +28,39 @@ class IngressDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'addresses': 'list[str]',
-        'age': 'int',
-        'ingress_class': 'str',
         'name': 'str',
-        'rules': 'list[IngressRulesDTO]'
+        'ingress_class': 'str',
+        'addresses': 'list[str]',
+        'rules': 'list[IngressRulesDTO]',
+        'age': 'int'
     }
 
     attribute_map = {
-        'addresses': 'addresses',
-        'age': 'age',
-        'ingress_class': 'ingressClass',
         'name': 'name',
-        'rules': 'rules'
+        'ingress_class': 'ingressClass',
+        'addresses': 'addresses',
+        'rules': 'rules',
+        'age': 'age'
     }
 
-    def __init__(self, addresses=None, age=None, ingress_class=None, name=None, rules=None):  # noqa: E501
+    def __init__(self, name=None, ingress_class=None, addresses=None, rules=None, age=None):  # noqa: E501
         """IngressDTO - a model defined in Swagger"""  # noqa: E501
-        self._addresses = None
-        self._age = None
-        self._ingress_class = None
         self._name = None
+        self._ingress_class = None
+        self._addresses = None
         self._rules = None
+        self._age = None
         self.discriminator = None
-        if addresses is not None:
-            self.addresses = addresses
-        if age is not None:
-            self.age = age
-        if ingress_class is not None:
-            self.ingress_class = ingress_class
         if name is not None:
             self.name = name
+        if ingress_class is not None:
+            self.ingress_class = ingress_class
+        if addresses is not None:
+            self.addresses = addresses
         if rules is not None:
             self.rules = rules
-
-    @property
-    def addresses(self):
-        """Gets the addresses of this IngressDTO.  # noqa: E501
-
-
-        :return: The addresses of this IngressDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._addresses
-
-    @addresses.setter
-    def addresses(self, addresses):
-        """Sets the addresses of this IngressDTO.
-
-
-        :param addresses: The addresses of this IngressDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._addresses = addresses
-
-    @property
-    def age(self):
-        """Gets the age of this IngressDTO.  # noqa: E501
-
-
-        :return: The age of this IngressDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age
-
-    @age.setter
-    def age(self, age):
-        """Sets the age of this IngressDTO.
-
-
-        :param age: The age of this IngressDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age = age
-
-    @property
-    def ingress_class(self):
-        """Gets the ingress_class of this IngressDTO.  # noqa: E501
-
-
-        :return: The ingress_class of this IngressDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._ingress_class
-
-    @ingress_class.setter
-    def ingress_class(self, ingress_class):
-        """Sets the ingress_class of this IngressDTO.
-
-
-        :param ingress_class: The ingress_class of this IngressDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._ingress_class = ingress_class
+        if age is not None:
+            self.age = age
 
     @property
     def name(self):
@@ -147,6 +84,48 @@ class IngressDTO(object):
         self._name = name
 
     @property
+    def ingress_class(self):
+        """Gets the ingress_class of this IngressDTO.  # noqa: E501
+
+
+        :return: The ingress_class of this IngressDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._ingress_class
+
+    @ingress_class.setter
+    def ingress_class(self, ingress_class):
+        """Sets the ingress_class of this IngressDTO.
+
+
+        :param ingress_class: The ingress_class of this IngressDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._ingress_class = ingress_class
+
+    @property
+    def addresses(self):
+        """Gets the addresses of this IngressDTO.  # noqa: E501
+
+
+        :return: The addresses of this IngressDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._addresses
+
+    @addresses.setter
+    def addresses(self, addresses):
+        """Sets the addresses of this IngressDTO.
+
+
+        :param addresses: The addresses of this IngressDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._addresses = addresses
+
+    @property
     def rules(self):
         """Gets the rules of this IngressDTO.  # noqa: E501
 
@@ -166,6 +145,27 @@ class IngressDTO(object):
         """
 
         self._rules = rules
+
+    @property
+    def age(self):
+        """Gets the age of this IngressDTO.  # noqa: E501
+
+
+        :return: The age of this IngressDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        """Sets the age of this IngressDTO.
+
+
+        :param age: The age of this IngressDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age = age
 
     def to_dict(self):
         """Returns the model properties as a dict"""

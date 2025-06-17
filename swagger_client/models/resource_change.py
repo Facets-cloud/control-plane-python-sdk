@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,38 +29,38 @@ class ResourceChange(object):
     """
     swagger_types = {
         'change_type': 'str',
-        'changed_attributes': 'list[ChangedAttribute]',
-        'flavor': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'resource_type': 'str',
+        'changed_attributes': 'list[ChangedAttribute]',
+        'flavor': 'str'
     }
 
     attribute_map = {
         'change_type': 'changeType',
-        'changed_attributes': 'changedAttributes',
-        'flavor': 'flavor',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'resource_type': 'resourceType',
+        'changed_attributes': 'changedAttributes',
+        'flavor': 'flavor'
     }
 
-    def __init__(self, change_type=None, changed_attributes=None, flavor=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, change_type=None, resource_name=None, resource_type=None, changed_attributes=None, flavor=None):  # noqa: E501
         """ResourceChange - a model defined in Swagger"""  # noqa: E501
         self._change_type = None
-        self._changed_attributes = None
-        self._flavor = None
         self._resource_name = None
         self._resource_type = None
+        self._changed_attributes = None
+        self._flavor = None
         self.discriminator = None
         if change_type is not None:
             self.change_type = change_type
-        if changed_attributes is not None:
-            self.changed_attributes = changed_attributes
-        if flavor is not None:
-            self.flavor = flavor
         if resource_name is not None:
             self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if changed_attributes is not None:
+            self.changed_attributes = changed_attributes
+        if flavor is not None:
+            self.flavor = flavor
 
     @property
     def change_type(self):
@@ -88,48 +88,6 @@ class ResourceChange(object):
             )
 
         self._change_type = change_type
-
-    @property
-    def changed_attributes(self):
-        """Gets the changed_attributes of this ResourceChange.  # noqa: E501
-
-
-        :return: The changed_attributes of this ResourceChange.  # noqa: E501
-        :rtype: list[ChangedAttribute]
-        """
-        return self._changed_attributes
-
-    @changed_attributes.setter
-    def changed_attributes(self, changed_attributes):
-        """Sets the changed_attributes of this ResourceChange.
-
-
-        :param changed_attributes: The changed_attributes of this ResourceChange.  # noqa: E501
-        :type: list[ChangedAttribute]
-        """
-
-        self._changed_attributes = changed_attributes
-
-    @property
-    def flavor(self):
-        """Gets the flavor of this ResourceChange.  # noqa: E501
-
-
-        :return: The flavor of this ResourceChange.  # noqa: E501
-        :rtype: str
-        """
-        return self._flavor
-
-    @flavor.setter
-    def flavor(self, flavor):
-        """Sets the flavor of this ResourceChange.
-
-
-        :param flavor: The flavor of this ResourceChange.  # noqa: E501
-        :type: str
-        """
-
-        self._flavor = flavor
 
     @property
     def resource_name(self):
@@ -172,6 +130,48 @@ class ResourceChange(object):
         """
 
         self._resource_type = resource_type
+
+    @property
+    def changed_attributes(self):
+        """Gets the changed_attributes of this ResourceChange.  # noqa: E501
+
+
+        :return: The changed_attributes of this ResourceChange.  # noqa: E501
+        :rtype: list[ChangedAttribute]
+        """
+        return self._changed_attributes
+
+    @changed_attributes.setter
+    def changed_attributes(self, changed_attributes):
+        """Sets the changed_attributes of this ResourceChange.
+
+
+        :param changed_attributes: The changed_attributes of this ResourceChange.  # noqa: E501
+        :type: list[ChangedAttribute]
+        """
+
+        self._changed_attributes = changed_attributes
+
+    @property
+    def flavor(self):
+        """Gets the flavor of this ResourceChange.  # noqa: E501
+
+
+        :return: The flavor of this ResourceChange.  # noqa: E501
+        :rtype: str
+        """
+        return self._flavor
+
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this ResourceChange.
+
+
+        :param flavor: The flavor of this ResourceChange.  # noqa: E501
+        :type: str
+        """
+
+        self._flavor = flavor
 
     def to_dict(self):
         """Returns the model properties as a dict"""

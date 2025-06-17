@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,85 +28,64 @@ class SnapshotInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cloud_specific_id': 'str',
         'cluster_id': 'str',
-        'end_time': 'datetime',
-        'instance_name': 'str',
         'name': 'str',
-        'pinned': 'bool',
+        'cloud_specific_id': 'str',
         'resource_type': 'str',
+        'instance_name': 'str',
         'source': 'str',
         'start_time': 'datetime',
-        'storage_size': 'int'
+        'end_time': 'datetime',
+        'storage_size': 'int',
+        'pinned': 'bool'
     }
 
     attribute_map = {
-        'cloud_specific_id': 'cloudSpecificId',
         'cluster_id': 'clusterId',
-        'end_time': 'endTime',
-        'instance_name': 'instanceName',
         'name': 'name',
-        'pinned': 'pinned',
+        'cloud_specific_id': 'cloudSpecificId',
         'resource_type': 'resourceType',
+        'instance_name': 'instanceName',
         'source': 'source',
         'start_time': 'startTime',
-        'storage_size': 'storageSize'
+        'end_time': 'endTime',
+        'storage_size': 'storageSize',
+        'pinned': 'pinned'
     }
 
-    def __init__(self, cloud_specific_id=None, cluster_id=None, end_time=None, instance_name=None, name=None, pinned=None, resource_type=None, source=None, start_time=None, storage_size=None):  # noqa: E501
+    def __init__(self, cluster_id=None, name=None, cloud_specific_id=None, resource_type=None, instance_name=None, source=None, start_time=None, end_time=None, storage_size=None, pinned=None):  # noqa: E501
         """SnapshotInfo - a model defined in Swagger"""  # noqa: E501
-        self._cloud_specific_id = None
         self._cluster_id = None
-        self._end_time = None
-        self._instance_name = None
         self._name = None
-        self._pinned = None
+        self._cloud_specific_id = None
         self._resource_type = None
+        self._instance_name = None
         self._source = None
         self._start_time = None
+        self._end_time = None
         self._storage_size = None
+        self._pinned = None
         self.discriminator = None
-        if cloud_specific_id is not None:
-            self.cloud_specific_id = cloud_specific_id
         if cluster_id is not None:
             self.cluster_id = cluster_id
-        if end_time is not None:
-            self.end_time = end_time
-        if instance_name is not None:
-            self.instance_name = instance_name
         if name is not None:
             self.name = name
-        if pinned is not None:
-            self.pinned = pinned
+        if cloud_specific_id is not None:
+            self.cloud_specific_id = cloud_specific_id
         if resource_type is not None:
             self.resource_type = resource_type
+        if instance_name is not None:
+            self.instance_name = instance_name
         if source is not None:
             self.source = source
         if start_time is not None:
             self.start_time = start_time
+        if end_time is not None:
+            self.end_time = end_time
         if storage_size is not None:
             self.storage_size = storage_size
-
-    @property
-    def cloud_specific_id(self):
-        """Gets the cloud_specific_id of this SnapshotInfo.  # noqa: E501
-
-
-        :return: The cloud_specific_id of this SnapshotInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_specific_id
-
-    @cloud_specific_id.setter
-    def cloud_specific_id(self, cloud_specific_id):
-        """Sets the cloud_specific_id of this SnapshotInfo.
-
-
-        :param cloud_specific_id: The cloud_specific_id of this SnapshotInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._cloud_specific_id = cloud_specific_id
+        if pinned is not None:
+            self.pinned = pinned
 
     @property
     def cluster_id(self):
@@ -130,48 +109,6 @@ class SnapshotInfo(object):
         self._cluster_id = cluster_id
 
     @property
-    def end_time(self):
-        """Gets the end_time of this SnapshotInfo.  # noqa: E501
-
-
-        :return: The end_time of this SnapshotInfo.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._end_time
-
-    @end_time.setter
-    def end_time(self, end_time):
-        """Sets the end_time of this SnapshotInfo.
-
-
-        :param end_time: The end_time of this SnapshotInfo.  # noqa: E501
-        :type: datetime
-        """
-
-        self._end_time = end_time
-
-    @property
-    def instance_name(self):
-        """Gets the instance_name of this SnapshotInfo.  # noqa: E501
-
-
-        :return: The instance_name of this SnapshotInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._instance_name
-
-    @instance_name.setter
-    def instance_name(self, instance_name):
-        """Sets the instance_name of this SnapshotInfo.
-
-
-        :param instance_name: The instance_name of this SnapshotInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._instance_name = instance_name
-
-    @property
     def name(self):
         """Gets the name of this SnapshotInfo.  # noqa: E501
 
@@ -193,25 +130,25 @@ class SnapshotInfo(object):
         self._name = name
 
     @property
-    def pinned(self):
-        """Gets the pinned of this SnapshotInfo.  # noqa: E501
+    def cloud_specific_id(self):
+        """Gets the cloud_specific_id of this SnapshotInfo.  # noqa: E501
 
 
-        :return: The pinned of this SnapshotInfo.  # noqa: E501
-        :rtype: bool
+        :return: The cloud_specific_id of this SnapshotInfo.  # noqa: E501
+        :rtype: str
         """
-        return self._pinned
+        return self._cloud_specific_id
 
-    @pinned.setter
-    def pinned(self, pinned):
-        """Sets the pinned of this SnapshotInfo.
+    @cloud_specific_id.setter
+    def cloud_specific_id(self, cloud_specific_id):
+        """Sets the cloud_specific_id of this SnapshotInfo.
 
 
-        :param pinned: The pinned of this SnapshotInfo.  # noqa: E501
-        :type: bool
+        :param cloud_specific_id: The cloud_specific_id of this SnapshotInfo.  # noqa: E501
+        :type: str
         """
 
-        self._pinned = pinned
+        self._cloud_specific_id = cloud_specific_id
 
     @property
     def resource_type(self):
@@ -233,6 +170,27 @@ class SnapshotInfo(object):
         """
 
         self._resource_type = resource_type
+
+    @property
+    def instance_name(self):
+        """Gets the instance_name of this SnapshotInfo.  # noqa: E501
+
+
+        :return: The instance_name of this SnapshotInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._instance_name
+
+    @instance_name.setter
+    def instance_name(self, instance_name):
+        """Sets the instance_name of this SnapshotInfo.
+
+
+        :param instance_name: The instance_name of this SnapshotInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._instance_name = instance_name
 
     @property
     def source(self):
@@ -277,6 +235,27 @@ class SnapshotInfo(object):
         self._start_time = start_time
 
     @property
+    def end_time(self):
+        """Gets the end_time of this SnapshotInfo.  # noqa: E501
+
+
+        :return: The end_time of this SnapshotInfo.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._end_time
+
+    @end_time.setter
+    def end_time(self, end_time):
+        """Sets the end_time of this SnapshotInfo.
+
+
+        :param end_time: The end_time of this SnapshotInfo.  # noqa: E501
+        :type: datetime
+        """
+
+        self._end_time = end_time
+
+    @property
     def storage_size(self):
         """Gets the storage_size of this SnapshotInfo.  # noqa: E501
 
@@ -296,6 +275,27 @@ class SnapshotInfo(object):
         """
 
         self._storage_size = storage_size
+
+    @property
+    def pinned(self):
+        """Gets the pinned of this SnapshotInfo.  # noqa: E501
+
+
+        :return: The pinned of this SnapshotInfo.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pinned
+
+    @pinned.setter
+    def pinned(self, pinned):
+        """Sets the pinned of this SnapshotInfo.
+
+
+        :param pinned: The pinned of this SnapshotInfo.  # noqa: E501
+        :type: bool
+        """
+
+        self._pinned = pinned
 
     def to_dict(self):
         """Returns the model properties as a dict"""

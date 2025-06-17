@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_group** | **str** |  | [optional] 
 **kind** | **str** |  | [optional] 
+**api_group** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **namespace** | **str** |  | [optional] 
 

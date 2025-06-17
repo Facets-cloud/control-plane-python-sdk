@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class RegionAndZone(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'availability_zones': 'list[str]',
-        'region': 'str'
+        'region': 'str',
+        'availability_zones': 'list[str]'
     }
 
     attribute_map = {
-        'availability_zones': 'availabilityZones',
-        'region': 'region'
+        'region': 'region',
+        'availability_zones': 'availabilityZones'
     }
 
-    def __init__(self, availability_zones=None, region=None):  # noqa: E501
+    def __init__(self, region=None, availability_zones=None):  # noqa: E501
         """RegionAndZone - a model defined in Swagger"""  # noqa: E501
-        self._availability_zones = None
         self._region = None
+        self._availability_zones = None
         self.discriminator = None
-        if availability_zones is not None:
-            self.availability_zones = availability_zones
         if region is not None:
             self.region = region
-
-    @property
-    def availability_zones(self):
-        """Gets the availability_zones of this RegionAndZone.  # noqa: E501
-
-
-        :return: The availability_zones of this RegionAndZone.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._availability_zones
-
-    @availability_zones.setter
-    def availability_zones(self, availability_zones):
-        """Sets the availability_zones of this RegionAndZone.
-
-
-        :param availability_zones: The availability_zones of this RegionAndZone.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._availability_zones = availability_zones
+        if availability_zones is not None:
+            self.availability_zones = availability_zones
 
     @property
     def region(self):
@@ -88,6 +67,27 @@ class RegionAndZone(object):
         """
 
         self._region = region
+
+    @property
+    def availability_zones(self):
+        """Gets the availability_zones of this RegionAndZone.  # noqa: E501
+
+
+        :return: The availability_zones of this RegionAndZone.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._availability_zones
+
+    @availability_zones.setter
+    def availability_zones(self, availability_zones):
+        """Sets the availability_zones of this RegionAndZone.
+
+
+        :param availability_zones: The availability_zones of this RegionAndZone.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._availability_zones = availability_zones
 
     def to_dict(self):
         """Returns the model properties as a dict"""

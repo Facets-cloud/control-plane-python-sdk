@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -30,32 +30,32 @@ class Team(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'notification_channels': 'list[NotificationChannel]',
-        'resources': 'list[TeamResource]'
+        'resources': 'list[TeamResource]',
+        'notification_channels': 'list[NotificationChannel]'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'notification_channels': 'notificationChannels',
-        'resources': 'resources'
+        'resources': 'resources',
+        'notification_channels': 'notificationChannels'
     }
 
-    def __init__(self, id=None, name=None, notification_channels=None, resources=None):  # noqa: E501
+    def __init__(self, id=None, name=None, resources=None, notification_channels=None):  # noqa: E501
         """Team - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
-        self._notification_channels = None
         self._resources = None
+        self._notification_channels = None
         self.discriminator = None
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
-        if notification_channels is not None:
-            self.notification_channels = notification_channels
         if resources is not None:
             self.resources = resources
+        if notification_channels is not None:
+            self.notification_channels = notification_channels
 
     @property
     def id(self):
@@ -100,27 +100,6 @@ class Team(object):
         self._name = name
 
     @property
-    def notification_channels(self):
-        """Gets the notification_channels of this Team.  # noqa: E501
-
-
-        :return: The notification_channels of this Team.  # noqa: E501
-        :rtype: list[NotificationChannel]
-        """
-        return self._notification_channels
-
-    @notification_channels.setter
-    def notification_channels(self, notification_channels):
-        """Sets the notification_channels of this Team.
-
-
-        :param notification_channels: The notification_channels of this Team.  # noqa: E501
-        :type: list[NotificationChannel]
-        """
-
-        self._notification_channels = notification_channels
-
-    @property
     def resources(self):
         """Gets the resources of this Team.  # noqa: E501
 
@@ -140,6 +119,27 @@ class Team(object):
         """
 
         self._resources = resources
+
+    @property
+    def notification_channels(self):
+        """Gets the notification_channels of this Team.  # noqa: E501
+
+
+        :return: The notification_channels of this Team.  # noqa: E501
+        :rtype: list[NotificationChannel]
+        """
+        return self._notification_channels
+
+    @notification_channels.setter
+    def notification_channels(self, notification_channels):
+        """Sets the notification_channels of this Team.
+
+
+        :param notification_channels: The notification_channels of this Team.  # noqa: E501
+        :type: list[NotificationChannel]
+        """
+
+        self._notification_channels = notification_channels
 
     def to_dict(self):
         """Returns the model properties as a dict"""

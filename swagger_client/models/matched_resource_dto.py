@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class MatchedResourceDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'matched': 'bool',
-        'module_ref': 'str'
+        'module_ref': 'str',
+        'matched': 'bool'
     }
 
     attribute_map = {
-        'matched': 'matched',
-        'module_ref': 'moduleRef'
+        'module_ref': 'moduleRef',
+        'matched': 'matched'
     }
 
-    def __init__(self, matched=None, module_ref=None):  # noqa: E501
+    def __init__(self, module_ref=None, matched=None):  # noqa: E501
         """MatchedResourceDTO - a model defined in Swagger"""  # noqa: E501
-        self._matched = None
         self._module_ref = None
+        self._matched = None
         self.discriminator = None
-        if matched is not None:
-            self.matched = matched
         if module_ref is not None:
             self.module_ref = module_ref
-
-    @property
-    def matched(self):
-        """Gets the matched of this MatchedResourceDTO.  # noqa: E501
-
-
-        :return: The matched of this MatchedResourceDTO.  # noqa: E501
-        :rtype: bool
-        """
-        return self._matched
-
-    @matched.setter
-    def matched(self, matched):
-        """Sets the matched of this MatchedResourceDTO.
-
-
-        :param matched: The matched of this MatchedResourceDTO.  # noqa: E501
-        :type: bool
-        """
-
-        self._matched = matched
+        if matched is not None:
+            self.matched = matched
 
     @property
     def module_ref(self):
@@ -88,6 +67,27 @@ class MatchedResourceDTO(object):
         """
 
         self._module_ref = module_ref
+
+    @property
+    def matched(self):
+        """Gets the matched of this MatchedResourceDTO.  # noqa: E501
+
+
+        :return: The matched of this MatchedResourceDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._matched
+
+    @matched.setter
+    def matched(self, matched):
+        """Sets the matched of this MatchedResourceDTO.
+
+
+        :param matched: The matched of this MatchedResourceDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._matched = matched
 
     def to_dict(self):
         """Returns the model properties as a dict"""

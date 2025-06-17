@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,417 +28,149 @@ class Artifact(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'application_name': 'str',
-        'applied_rule_id': 'str',
-        'applied_rule_name': 'str',
-        'applied_rule_version_id': 'str',
-        'artifact_uri': 'str',
-        'artifactory': 'str',
-        'build_description': 'str',
-        'build_id': 'str',
-        'classified': 'bool',
-        'cluster_id': 'str',
-        'created_by': 'str',
-        'created_on': 'datetime',
-        'creation_date': 'datetime',
         'id': 'str',
-        'last_modified_by': 'str',
+        'created_by': 'str',
+        'creation_date': 'datetime',
         'last_modified_date': 'datetime',
-        'metadata': 'dict(str, str)',
-        'number_of_versions': 'int',
-        'promoted': 'bool',
-        'registration_type': 'str',
-        'registration_value': 'str',
+        'last_modified_by': 'str',
+        'build_id': 'str',
+        'application_name': 'str',
+        'artifact_uri': 'str',
+        'cluster_id': 'str',
         'release_stream': 'str',
         'release_type': 'str',
+        'artifactory': 'str',
+        'build_description': 'str',
+        'created_on': 'datetime',
+        'metadata': 'dict(str, str)',
+        'applied_rule_version_id': 'str',
+        'applied_rule_id': 'str',
+        'applied_rule_name': 'str',
         'repository_name': 'str',
         'tag': 'str',
-        'versioning_key': 'str'
+        'registration_type': 'str',
+        'change_log': 'str',
+        'registration_value': 'str',
+        'promoted': 'bool',
+        'classified': 'bool',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'application_name': 'applicationName',
-        'applied_rule_id': 'appliedRuleId',
-        'applied_rule_name': 'appliedRuleName',
-        'applied_rule_version_id': 'appliedRuleVersionId',
-        'artifact_uri': 'artifactUri',
-        'artifactory': 'artifactory',
-        'build_description': 'buildDescription',
-        'build_id': 'buildId',
-        'classified': 'classified',
-        'cluster_id': 'clusterId',
-        'created_by': 'createdBy',
-        'created_on': 'createdOn',
-        'creation_date': 'creationDate',
         'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
+        'created_by': 'createdBy',
+        'creation_date': 'creationDate',
         'last_modified_date': 'lastModifiedDate',
-        'metadata': 'metadata',
-        'number_of_versions': 'numberOfVersions',
-        'promoted': 'promoted',
-        'registration_type': 'registrationType',
-        'registration_value': 'registrationValue',
+        'last_modified_by': 'lastModifiedBy',
+        'build_id': 'buildId',
+        'application_name': 'applicationName',
+        'artifact_uri': 'artifactUri',
+        'cluster_id': 'clusterId',
         'release_stream': 'releaseStream',
         'release_type': 'releaseType',
+        'artifactory': 'artifactory',
+        'build_description': 'buildDescription',
+        'created_on': 'createdOn',
+        'metadata': 'metadata',
+        'applied_rule_version_id': 'appliedRuleVersionId',
+        'applied_rule_id': 'appliedRuleId',
+        'applied_rule_name': 'appliedRuleName',
         'repository_name': 'repositoryName',
         'tag': 'tag',
-        'versioning_key': 'versioningKey'
+        'registration_type': 'registrationType',
+        'change_log': 'changeLog',
+        'registration_value': 'registrationValue',
+        'promoted': 'promoted',
+        'classified': 'classified',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, application_name=None, applied_rule_id=None, applied_rule_name=None, applied_rule_version_id=None, artifact_uri=None, artifactory=None, build_description=None, build_id=None, classified=None, cluster_id=None, created_by=None, created_on=None, creation_date=None, id=None, last_modified_by=None, last_modified_date=None, metadata=None, number_of_versions=None, promoted=None, registration_type=None, registration_value=None, release_stream=None, release_type=None, repository_name=None, tag=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, build_id=None, application_name=None, artifact_uri=None, cluster_id=None, release_stream=None, release_type=None, artifactory=None, build_description=None, created_on=None, metadata=None, applied_rule_version_id=None, applied_rule_id=None, applied_rule_name=None, repository_name=None, tag=None, registration_type=None, change_log=None, registration_value=None, promoted=None, classified=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Artifact - a model defined in Swagger"""  # noqa: E501
-        self._application_name = None
-        self._applied_rule_id = None
-        self._applied_rule_name = None
-        self._applied_rule_version_id = None
-        self._artifact_uri = None
-        self._artifactory = None
-        self._build_description = None
-        self._build_id = None
-        self._classified = None
-        self._cluster_id = None
-        self._created_by = None
-        self._created_on = None
-        self._creation_date = None
         self._id = None
-        self._last_modified_by = None
+        self._created_by = None
+        self._creation_date = None
         self._last_modified_date = None
-        self._metadata = None
-        self._number_of_versions = None
-        self._promoted = None
-        self._registration_type = None
-        self._registration_value = None
+        self._last_modified_by = None
+        self._build_id = None
+        self._application_name = None
+        self._artifact_uri = None
+        self._cluster_id = None
         self._release_stream = None
         self._release_type = None
+        self._artifactory = None
+        self._build_description = None
+        self._created_on = None
+        self._metadata = None
+        self._applied_rule_version_id = None
+        self._applied_rule_id = None
+        self._applied_rule_name = None
         self._repository_name = None
         self._tag = None
+        self._registration_type = None
+        self._change_log = None
+        self._registration_value = None
+        self._promoted = None
+        self._classified = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if application_name is not None:
-            self.application_name = application_name
-        if applied_rule_id is not None:
-            self.applied_rule_id = applied_rule_id
-        if applied_rule_name is not None:
-            self.applied_rule_name = applied_rule_name
-        if applied_rule_version_id is not None:
-            self.applied_rule_version_id = applied_rule_version_id
-        if artifact_uri is not None:
-            self.artifact_uri = artifact_uri
-        if artifactory is not None:
-            self.artifactory = artifactory
-        if build_description is not None:
-            self.build_description = build_description
-        if build_id is not None:
-            self.build_id = build_id
-        if classified is not None:
-            self.classified = classified
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if created_by is not None:
-            self.created_by = created_by
-        if created_on is not None:
-            self.created_on = created_on
-        if creation_date is not None:
-            self.creation_date = creation_date
         if id is not None:
             self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
+        if created_by is not None:
+            self.created_by = created_by
+        if creation_date is not None:
+            self.creation_date = creation_date
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if metadata is not None:
-            self.metadata = metadata
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if promoted is not None:
-            self.promoted = promoted
-        if registration_type is not None:
-            self.registration_type = registration_type
-        if registration_value is not None:
-            self.registration_value = registration_value
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if build_id is not None:
+            self.build_id = build_id
+        if application_name is not None:
+            self.application_name = application_name
+        if artifact_uri is not None:
+            self.artifact_uri = artifact_uri
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if release_stream is not None:
             self.release_stream = release_stream
         if release_type is not None:
             self.release_type = release_type
+        if artifactory is not None:
+            self.artifactory = artifactory
+        if build_description is not None:
+            self.build_description = build_description
+        if created_on is not None:
+            self.created_on = created_on
+        if metadata is not None:
+            self.metadata = metadata
+        if applied_rule_version_id is not None:
+            self.applied_rule_version_id = applied_rule_version_id
+        if applied_rule_id is not None:
+            self.applied_rule_id = applied_rule_id
+        if applied_rule_name is not None:
+            self.applied_rule_name = applied_rule_name
         if repository_name is not None:
             self.repository_name = repository_name
         if tag is not None:
             self.tag = tag
+        if registration_type is not None:
+            self.registration_type = registration_type
+        if change_log is not None:
+            self.change_log = change_log
+        if registration_value is not None:
+            self.registration_value = registration_value
+        if promoted is not None:
+            self.promoted = promoted
+        if classified is not None:
+            self.classified = classified
         if versioning_key is not None:
             self.versioning_key = versioning_key
-
-    @property
-    def application_name(self):
-        """Gets the application_name of this Artifact.  # noqa: E501
-
-
-        :return: The application_name of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._application_name
-
-    @application_name.setter
-    def application_name(self, application_name):
-        """Sets the application_name of this Artifact.
-
-
-        :param application_name: The application_name of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._application_name = application_name
-
-    @property
-    def applied_rule_id(self):
-        """Gets the applied_rule_id of this Artifact.  # noqa: E501
-
-
-        :return: The applied_rule_id of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._applied_rule_id
-
-    @applied_rule_id.setter
-    def applied_rule_id(self, applied_rule_id):
-        """Sets the applied_rule_id of this Artifact.
-
-
-        :param applied_rule_id: The applied_rule_id of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._applied_rule_id = applied_rule_id
-
-    @property
-    def applied_rule_name(self):
-        """Gets the applied_rule_name of this Artifact.  # noqa: E501
-
-
-        :return: The applied_rule_name of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._applied_rule_name
-
-    @applied_rule_name.setter
-    def applied_rule_name(self, applied_rule_name):
-        """Sets the applied_rule_name of this Artifact.
-
-
-        :param applied_rule_name: The applied_rule_name of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._applied_rule_name = applied_rule_name
-
-    @property
-    def applied_rule_version_id(self):
-        """Gets the applied_rule_version_id of this Artifact.  # noqa: E501
-
-
-        :return: The applied_rule_version_id of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._applied_rule_version_id
-
-    @applied_rule_version_id.setter
-    def applied_rule_version_id(self, applied_rule_version_id):
-        """Sets the applied_rule_version_id of this Artifact.
-
-
-        :param applied_rule_version_id: The applied_rule_version_id of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._applied_rule_version_id = applied_rule_version_id
-
-    @property
-    def artifact_uri(self):
-        """Gets the artifact_uri of this Artifact.  # noqa: E501
-
-
-        :return: The artifact_uri of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifact_uri
-
-    @artifact_uri.setter
-    def artifact_uri(self, artifact_uri):
-        """Sets the artifact_uri of this Artifact.
-
-
-        :param artifact_uri: The artifact_uri of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._artifact_uri = artifact_uri
-
-    @property
-    def artifactory(self):
-        """Gets the artifactory of this Artifact.  # noqa: E501
-
-
-        :return: The artifactory of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifactory
-
-    @artifactory.setter
-    def artifactory(self, artifactory):
-        """Sets the artifactory of this Artifact.
-
-
-        :param artifactory: The artifactory of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._artifactory = artifactory
-
-    @property
-    def build_description(self):
-        """Gets the build_description of this Artifact.  # noqa: E501
-
-
-        :return: The build_description of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._build_description
-
-    @build_description.setter
-    def build_description(self, build_description):
-        """Sets the build_description of this Artifact.
-
-
-        :param build_description: The build_description of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._build_description = build_description
-
-    @property
-    def build_id(self):
-        """Gets the build_id of this Artifact.  # noqa: E501
-
-
-        :return: The build_id of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._build_id
-
-    @build_id.setter
-    def build_id(self, build_id):
-        """Sets the build_id of this Artifact.
-
-
-        :param build_id: The build_id of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._build_id = build_id
-
-    @property
-    def classified(self):
-        """Gets the classified of this Artifact.  # noqa: E501
-
-
-        :return: The classified of this Artifact.  # noqa: E501
-        :rtype: bool
-        """
-        return self._classified
-
-    @classified.setter
-    def classified(self, classified):
-        """Sets the classified of this Artifact.
-
-
-        :param classified: The classified of this Artifact.  # noqa: E501
-        :type: bool
-        """
-
-        self._classified = classified
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this Artifact.  # noqa: E501
-
-
-        :return: The cluster_id of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this Artifact.
-
-
-        :param cluster_id: The cluster_id of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
-
-    @property
-    def created_by(self):
-        """Gets the created_by of this Artifact.  # noqa: E501
-
-
-        :return: The created_by of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._created_by
-
-    @created_by.setter
-    def created_by(self, created_by):
-        """Sets the created_by of this Artifact.
-
-
-        :param created_by: The created_by of this Artifact.  # noqa: E501
-        :type: str
-        """
-
-        self._created_by = created_by
-
-    @property
-    def created_on(self):
-        """Gets the created_on of this Artifact.  # noqa: E501
-
-
-        :return: The created_on of this Artifact.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._created_on
-
-    @created_on.setter
-    def created_on(self, created_on):
-        """Sets the created_on of this Artifact.
-
-
-        :param created_on: The created_on of this Artifact.  # noqa: E501
-        :type: datetime
-        """
-
-        self._created_on = created_on
-
-    @property
-    def creation_date(self):
-        """Gets the creation_date of this Artifact.  # noqa: E501
-
-
-        :return: The creation_date of this Artifact.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._creation_date
-
-    @creation_date.setter
-    def creation_date(self, creation_date):
-        """Sets the creation_date of this Artifact.
-
-
-        :param creation_date: The creation_date of this Artifact.  # noqa: E501
-        :type: datetime
-        """
-
-        self._creation_date = creation_date
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
     def id(self):
@@ -462,25 +194,46 @@ class Artifact(object):
         self._id = id
 
     @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this Artifact.  # noqa: E501
+    def created_by(self):
+        """Gets the created_by of this Artifact.  # noqa: E501
 
 
-        :return: The last_modified_by of this Artifact.  # noqa: E501
+        :return: The created_by of this Artifact.  # noqa: E501
         :rtype: str
         """
-        return self._last_modified_by
+        return self._created_by
 
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this Artifact.
+    @created_by.setter
+    def created_by(self, created_by):
+        """Sets the created_by of this Artifact.
 
 
-        :param last_modified_by: The last_modified_by of this Artifact.  # noqa: E501
+        :param created_by: The created_by of this Artifact.  # noqa: E501
         :type: str
         """
 
-        self._last_modified_by = last_modified_by
+        self._created_by = created_by
+
+    @property
+    def creation_date(self):
+        """Gets the creation_date of this Artifact.  # noqa: E501
+
+
+        :return: The creation_date of this Artifact.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._creation_date
+
+    @creation_date.setter
+    def creation_date(self, creation_date):
+        """Sets the creation_date of this Artifact.
+
+
+        :param creation_date: The creation_date of this Artifact.  # noqa: E501
+        :type: datetime
+        """
+
+        self._creation_date = creation_date
 
     @property
     def last_modified_date(self):
@@ -504,115 +257,109 @@ class Artifact(object):
         self._last_modified_date = last_modified_date
 
     @property
-    def metadata(self):
-        """Gets the metadata of this Artifact.  # noqa: E501
+    def last_modified_by(self):
+        """Gets the last_modified_by of this Artifact.  # noqa: E501
 
 
-        :return: The metadata of this Artifact.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata):
-        """Sets the metadata of this Artifact.
-
-
-        :param metadata: The metadata of this Artifact.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._metadata = metadata
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this Artifact.  # noqa: E501
-
-
-        :return: The number_of_versions of this Artifact.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this Artifact.
-
-
-        :param number_of_versions: The number_of_versions of this Artifact.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
-
-    @property
-    def promoted(self):
-        """Gets the promoted of this Artifact.  # noqa: E501
-
-
-        :return: The promoted of this Artifact.  # noqa: E501
-        :rtype: bool
-        """
-        return self._promoted
-
-    @promoted.setter
-    def promoted(self, promoted):
-        """Sets the promoted of this Artifact.
-
-
-        :param promoted: The promoted of this Artifact.  # noqa: E501
-        :type: bool
-        """
-
-        self._promoted = promoted
-
-    @property
-    def registration_type(self):
-        """Gets the registration_type of this Artifact.  # noqa: E501
-
-
-        :return: The registration_type of this Artifact.  # noqa: E501
+        :return: The last_modified_by of this Artifact.  # noqa: E501
         :rtype: str
         """
-        return self._registration_type
+        return self._last_modified_by
 
-    @registration_type.setter
-    def registration_type(self, registration_type):
-        """Sets the registration_type of this Artifact.
-
-
-        :param registration_type: The registration_type of this Artifact.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
-        if registration_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(registration_type, allowed_values)
-            )
-
-        self._registration_type = registration_type
-
-    @property
-    def registration_value(self):
-        """Gets the registration_value of this Artifact.  # noqa: E501
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this Artifact.
 
 
-        :return: The registration_value of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._registration_value
-
-    @registration_value.setter
-    def registration_value(self, registration_value):
-        """Sets the registration_value of this Artifact.
-
-
-        :param registration_value: The registration_value of this Artifact.  # noqa: E501
+        :param last_modified_by: The last_modified_by of this Artifact.  # noqa: E501
         :type: str
         """
 
-        self._registration_value = registration_value
+        self._last_modified_by = last_modified_by
+
+    @property
+    def build_id(self):
+        """Gets the build_id of this Artifact.  # noqa: E501
+
+
+        :return: The build_id of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._build_id
+
+    @build_id.setter
+    def build_id(self, build_id):
+        """Sets the build_id of this Artifact.
+
+
+        :param build_id: The build_id of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._build_id = build_id
+
+    @property
+    def application_name(self):
+        """Gets the application_name of this Artifact.  # noqa: E501
+
+
+        :return: The application_name of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._application_name
+
+    @application_name.setter
+    def application_name(self, application_name):
+        """Sets the application_name of this Artifact.
+
+
+        :param application_name: The application_name of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._application_name = application_name
+
+    @property
+    def artifact_uri(self):
+        """Gets the artifact_uri of this Artifact.  # noqa: E501
+
+
+        :return: The artifact_uri of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifact_uri
+
+    @artifact_uri.setter
+    def artifact_uri(self, artifact_uri):
+        """Sets the artifact_uri of this Artifact.
+
+
+        :param artifact_uri: The artifact_uri of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._artifact_uri = artifact_uri
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this Artifact.  # noqa: E501
+
+
+        :return: The cluster_id of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this Artifact.
+
+
+        :param cluster_id: The cluster_id of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
 
     @property
     def release_stream(self):
@@ -663,6 +410,153 @@ class Artifact(object):
         self._release_type = release_type
 
     @property
+    def artifactory(self):
+        """Gets the artifactory of this Artifact.  # noqa: E501
+
+
+        :return: The artifactory of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory
+
+    @artifactory.setter
+    def artifactory(self, artifactory):
+        """Sets the artifactory of this Artifact.
+
+
+        :param artifactory: The artifactory of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._artifactory = artifactory
+
+    @property
+    def build_description(self):
+        """Gets the build_description of this Artifact.  # noqa: E501
+
+
+        :return: The build_description of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._build_description
+
+    @build_description.setter
+    def build_description(self, build_description):
+        """Sets the build_description of this Artifact.
+
+
+        :param build_description: The build_description of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._build_description = build_description
+
+    @property
+    def created_on(self):
+        """Gets the created_on of this Artifact.  # noqa: E501
+
+
+        :return: The created_on of this Artifact.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_on
+
+    @created_on.setter
+    def created_on(self, created_on):
+        """Sets the created_on of this Artifact.
+
+
+        :param created_on: The created_on of this Artifact.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_on = created_on
+
+    @property
+    def metadata(self):
+        """Gets the metadata of this Artifact.  # noqa: E501
+
+
+        :return: The metadata of this Artifact.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """Sets the metadata of this Artifact.
+
+
+        :param metadata: The metadata of this Artifact.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._metadata = metadata
+
+    @property
+    def applied_rule_version_id(self):
+        """Gets the applied_rule_version_id of this Artifact.  # noqa: E501
+
+
+        :return: The applied_rule_version_id of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._applied_rule_version_id
+
+    @applied_rule_version_id.setter
+    def applied_rule_version_id(self, applied_rule_version_id):
+        """Sets the applied_rule_version_id of this Artifact.
+
+
+        :param applied_rule_version_id: The applied_rule_version_id of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._applied_rule_version_id = applied_rule_version_id
+
+    @property
+    def applied_rule_id(self):
+        """Gets the applied_rule_id of this Artifact.  # noqa: E501
+
+
+        :return: The applied_rule_id of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._applied_rule_id
+
+    @applied_rule_id.setter
+    def applied_rule_id(self, applied_rule_id):
+        """Sets the applied_rule_id of this Artifact.
+
+
+        :param applied_rule_id: The applied_rule_id of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._applied_rule_id = applied_rule_id
+
+    @property
+    def applied_rule_name(self):
+        """Gets the applied_rule_name of this Artifact.  # noqa: E501
+
+
+        :return: The applied_rule_name of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._applied_rule_name
+
+    @applied_rule_name.setter
+    def applied_rule_name(self, applied_rule_name):
+        """Sets the applied_rule_name of this Artifact.
+
+
+        :param applied_rule_name: The applied_rule_name of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._applied_rule_name = applied_rule_name
+
+    @property
     def repository_name(self):
         """Gets the repository_name of this Artifact.  # noqa: E501
 
@@ -705,6 +599,117 @@ class Artifact(object):
         self._tag = tag
 
     @property
+    def registration_type(self):
+        """Gets the registration_type of this Artifact.  # noqa: E501
+
+
+        :return: The registration_type of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_type
+
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """Sets the registration_type of this Artifact.
+
+
+        :param registration_type: The registration_type of this Artifact.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
+        if registration_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(registration_type, allowed_values)
+            )
+
+        self._registration_type = registration_type
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this Artifact.  # noqa: E501
+
+
+        :return: The change_log of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this Artifact.
+
+
+        :param change_log: The change_log of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def registration_value(self):
+        """Gets the registration_value of this Artifact.  # noqa: E501
+
+
+        :return: The registration_value of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_value
+
+    @registration_value.setter
+    def registration_value(self, registration_value):
+        """Sets the registration_value of this Artifact.
+
+
+        :param registration_value: The registration_value of this Artifact.  # noqa: E501
+        :type: str
+        """
+
+        self._registration_value = registration_value
+
+    @property
+    def promoted(self):
+        """Gets the promoted of this Artifact.  # noqa: E501
+
+
+        :return: The promoted of this Artifact.  # noqa: E501
+        :rtype: bool
+        """
+        return self._promoted
+
+    @promoted.setter
+    def promoted(self, promoted):
+        """Sets the promoted of this Artifact.
+
+
+        :param promoted: The promoted of this Artifact.  # noqa: E501
+        :type: bool
+        """
+
+        self._promoted = promoted
+
+    @property
+    def classified(self):
+        """Gets the classified of this Artifact.  # noqa: E501
+
+
+        :return: The classified of this Artifact.  # noqa: E501
+        :rtype: bool
+        """
+        return self._classified
+
+    @classified.setter
+    def classified(self, classified):
+        """Sets the classified of this Artifact.
+
+
+        :param classified: The classified of this Artifact.  # noqa: E501
+        :type: bool
+        """
+
+        self._classified = classified
+
+    @property
     def versioning_key(self):
         """Gets the versioning_key of this Artifact.  # noqa: E501
 
@@ -724,6 +729,27 @@ class Artifact(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this Artifact.  # noqa: E501
+
+
+        :return: The number_of_versions of this Artifact.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this Artifact.
+
+
+        :param number_of_versions: The number_of_versions of this Artifact.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

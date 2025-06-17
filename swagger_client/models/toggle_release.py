@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class ToggleRelease(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'pause_releases': 'bool',
-        'stack_name': 'str'
+        'stack_name': 'str',
+        'pause_releases': 'bool'
     }
 
     attribute_map = {
-        'pause_releases': 'pauseReleases',
-        'stack_name': 'stackName'
+        'stack_name': 'stackName',
+        'pause_releases': 'pauseReleases'
     }
 
-    def __init__(self, pause_releases=None, stack_name=None):  # noqa: E501
+    def __init__(self, stack_name=None, pause_releases=None):  # noqa: E501
         """ToggleRelease - a model defined in Swagger"""  # noqa: E501
-        self._pause_releases = None
         self._stack_name = None
+        self._pause_releases = None
         self.discriminator = None
-        if pause_releases is not None:
-            self.pause_releases = pause_releases
         if stack_name is not None:
             self.stack_name = stack_name
-
-    @property
-    def pause_releases(self):
-        """Gets the pause_releases of this ToggleRelease.  # noqa: E501
-
-
-        :return: The pause_releases of this ToggleRelease.  # noqa: E501
-        :rtype: bool
-        """
-        return self._pause_releases
-
-    @pause_releases.setter
-    def pause_releases(self, pause_releases):
-        """Sets the pause_releases of this ToggleRelease.
-
-
-        :param pause_releases: The pause_releases of this ToggleRelease.  # noqa: E501
-        :type: bool
-        """
-
-        self._pause_releases = pause_releases
+        if pause_releases is not None:
+            self.pause_releases = pause_releases
 
     @property
     def stack_name(self):
@@ -88,6 +67,27 @@ class ToggleRelease(object):
         """
 
         self._stack_name = stack_name
+
+    @property
+    def pause_releases(self):
+        """Gets the pause_releases of this ToggleRelease.  # noqa: E501
+
+
+        :return: The pause_releases of this ToggleRelease.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pause_releases
+
+    @pause_releases.setter
+    def pause_releases(self, pause_releases):
+        """Sets the pause_releases of this ToggleRelease.
+
+
+        :param pause_releases: The pause_releases of this ToggleRelease.  # noqa: E501
+        :type: bool
+        """
+
+        self._pause_releases = pause_releases
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,154 +28,45 @@ class ArtifactByEnvironmentRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'external_id': 'str',
         'application_name': 'str',
         'artifact_uri': 'str',
-        'artifactory': 'str',
+        'stack_name': 'str',
         'cluster_name': 'str',
-        'description': 'str',
-        'external_id': 'str',
-        'stack_name': 'str'
+        'artifactory': 'str',
+        'description': 'str'
     }
 
     attribute_map = {
+        'external_id': 'externalId',
         'application_name': 'applicationName',
         'artifact_uri': 'artifactUri',
-        'artifactory': 'artifactory',
+        'stack_name': 'stackName',
         'cluster_name': 'clusterName',
-        'description': 'description',
-        'external_id': 'externalId',
-        'stack_name': 'stackName'
+        'artifactory': 'artifactory',
+        'description': 'description'
     }
 
-    def __init__(self, application_name=None, artifact_uri=None, artifactory=None, cluster_name=None, description=None, external_id=None, stack_name=None):  # noqa: E501
+    def __init__(self, external_id=None, application_name=None, artifact_uri=None, stack_name=None, cluster_name=None, artifactory=None, description=None):  # noqa: E501
         """ArtifactByEnvironmentRequest - a model defined in Swagger"""  # noqa: E501
+        self._external_id = None
         self._application_name = None
         self._artifact_uri = None
-        self._artifactory = None
-        self._cluster_name = None
-        self._description = None
-        self._external_id = None
         self._stack_name = None
+        self._cluster_name = None
+        self._artifactory = None
+        self._description = None
         self.discriminator = None
-        if application_name is not None:
-            self.application_name = application_name
-        if artifact_uri is not None:
-            self.artifact_uri = artifact_uri
-        if artifactory is not None:
-            self.artifactory = artifactory
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
-        if description is not None:
-            self.description = description
         if external_id is not None:
             self.external_id = external_id
-        if stack_name is not None:
-            self.stack_name = stack_name
-
-    @property
-    def application_name(self):
-        """Gets the application_name of this ArtifactByEnvironmentRequest.  # noqa: E501
-
-
-        :return: The application_name of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._application_name
-
-    @application_name.setter
-    def application_name(self, application_name):
-        """Sets the application_name of this ArtifactByEnvironmentRequest.
-
-
-        :param application_name: The application_name of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._application_name = application_name
-
-    @property
-    def artifact_uri(self):
-        """Gets the artifact_uri of this ArtifactByEnvironmentRequest.  # noqa: E501
-
-
-        :return: The artifact_uri of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifact_uri
-
-    @artifact_uri.setter
-    def artifact_uri(self, artifact_uri):
-        """Sets the artifact_uri of this ArtifactByEnvironmentRequest.
-
-
-        :param artifact_uri: The artifact_uri of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._artifact_uri = artifact_uri
-
-    @property
-    def artifactory(self):
-        """Gets the artifactory of this ArtifactByEnvironmentRequest.  # noqa: E501
-
-
-        :return: The artifactory of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifactory
-
-    @artifactory.setter
-    def artifactory(self, artifactory):
-        """Sets the artifactory of this ArtifactByEnvironmentRequest.
-
-
-        :param artifactory: The artifactory of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._artifactory = artifactory
-
-    @property
-    def cluster_name(self):
-        """Gets the cluster_name of this ArtifactByEnvironmentRequest.  # noqa: E501
-
-
-        :return: The cluster_name of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_name
-
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
-        """Sets the cluster_name of this ArtifactByEnvironmentRequest.
-
-
-        :param cluster_name: The cluster_name of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_name = cluster_name
-
-    @property
-    def description(self):
-        """Gets the description of this ArtifactByEnvironmentRequest.  # noqa: E501
-
-
-        :return: The description of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ArtifactByEnvironmentRequest.
-
-
-        :param description: The description of this ArtifactByEnvironmentRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
+        self.application_name = application_name
+        self.artifact_uri = artifact_uri
+        self.stack_name = stack_name
+        self.cluster_name = cluster_name
+        if artifactory is not None:
+            self.artifactory = artifactory
+        if description is not None:
+            self.description = description
 
     @property
     def external_id(self):
@@ -199,6 +90,52 @@ class ArtifactByEnvironmentRequest(object):
         self._external_id = external_id
 
     @property
+    def application_name(self):
+        """Gets the application_name of this ArtifactByEnvironmentRequest.  # noqa: E501
+
+
+        :return: The application_name of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._application_name
+
+    @application_name.setter
+    def application_name(self, application_name):
+        """Sets the application_name of this ArtifactByEnvironmentRequest.
+
+
+        :param application_name: The application_name of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :type: str
+        """
+        if application_name is None:
+            raise ValueError("Invalid value for `application_name`, must not be `None`")  # noqa: E501
+
+        self._application_name = application_name
+
+    @property
+    def artifact_uri(self):
+        """Gets the artifact_uri of this ArtifactByEnvironmentRequest.  # noqa: E501
+
+
+        :return: The artifact_uri of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifact_uri
+
+    @artifact_uri.setter
+    def artifact_uri(self, artifact_uri):
+        """Sets the artifact_uri of this ArtifactByEnvironmentRequest.
+
+
+        :param artifact_uri: The artifact_uri of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :type: str
+        """
+        if artifact_uri is None:
+            raise ValueError("Invalid value for `artifact_uri`, must not be `None`")  # noqa: E501
+
+        self._artifact_uri = artifact_uri
+
+    @property
     def stack_name(self):
         """Gets the stack_name of this ArtifactByEnvironmentRequest.  # noqa: E501
 
@@ -216,8 +153,75 @@ class ArtifactByEnvironmentRequest(object):
         :param stack_name: The stack_name of this ArtifactByEnvironmentRequest.  # noqa: E501
         :type: str
         """
+        if stack_name is None:
+            raise ValueError("Invalid value for `stack_name`, must not be `None`")  # noqa: E501
 
         self._stack_name = stack_name
+
+    @property
+    def cluster_name(self):
+        """Gets the cluster_name of this ArtifactByEnvironmentRequest.  # noqa: E501
+
+
+        :return: The cluster_name of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_name
+
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """Sets the cluster_name of this ArtifactByEnvironmentRequest.
+
+
+        :param cluster_name: The cluster_name of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :type: str
+        """
+        if cluster_name is None:
+            raise ValueError("Invalid value for `cluster_name`, must not be `None`")  # noqa: E501
+
+        self._cluster_name = cluster_name
+
+    @property
+    def artifactory(self):
+        """Gets the artifactory of this ArtifactByEnvironmentRequest.  # noqa: E501
+
+
+        :return: The artifactory of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory
+
+    @artifactory.setter
+    def artifactory(self, artifactory):
+        """Sets the artifactory of this ArtifactByEnvironmentRequest.
+
+
+        :param artifactory: The artifactory of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._artifactory = artifactory
+
+    @property
+    def description(self):
+        """Gets the description of this ArtifactByEnvironmentRequest.  # noqa: E501
+
+
+        :return: The description of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ArtifactByEnvironmentRequest.
+
+
+        :param description: The description of this ArtifactByEnvironmentRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     def to_dict(self):
         """Returns the model properties as a dict"""

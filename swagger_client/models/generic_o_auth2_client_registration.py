@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,168 +28,131 @@ class GenericOAuth2ClientRegistration(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'authorization_uri': 'str',
-        'client_authentication_method': 'ClientAuthenticationMethod',
+        'registration_id': 'str',
+        'provider': 'str',
+        'issuer_url': 'str',
         'client_id': 'str',
         'client_secret': 'str',
-        'issuer_url': 'str',
-        'jwk_set_uri': 'str',
-        'login_button_text': 'str',
-        'provider': 'str',
-        'registration_id': 'str',
         'scope': 'str',
-        'secrets_uid': 'str',
-        'system_configured': 'bool',
+        'is_system_configured': 'bool',
+        'login_button_text': 'str',
         'token_uri': 'str',
-        'user_info_uri': 'str'
+        'authorization_uri': 'str',
+        'user_info_uri': 'str',
+        'jwk_set_uri': 'str',
+        'client_authentication_method': 'ClientAuthenticationMethod',
+        'system_configured': 'bool',
+        'secrets_uid': 'str'
     }
 
     attribute_map = {
-        'authorization_uri': 'authorizationUri',
-        'client_authentication_method': 'clientAuthenticationMethod',
+        'registration_id': 'registrationId',
+        'provider': 'provider',
+        'issuer_url': 'issuerUrl',
         'client_id': 'clientId',
         'client_secret': 'clientSecret',
-        'issuer_url': 'issuerUrl',
-        'jwk_set_uri': 'jwkSetUri',
-        'login_button_text': 'loginButtonText',
-        'provider': 'provider',
-        'registration_id': 'registrationId',
         'scope': 'scope',
-        'secrets_uid': 'secretsUid',
-        'system_configured': 'systemConfigured',
+        'is_system_configured': 'isSystemConfigured',
+        'login_button_text': 'loginButtonText',
         'token_uri': 'tokenUri',
-        'user_info_uri': 'userInfoUri'
+        'authorization_uri': 'authorizationUri',
+        'user_info_uri': 'userInfoUri',
+        'jwk_set_uri': 'jwkSetUri',
+        'client_authentication_method': 'clientAuthenticationMethod',
+        'system_configured': 'systemConfigured',
+        'secrets_uid': 'secretsUid'
     }
 
-    def __init__(self, authorization_uri=None, client_authentication_method=None, client_id=None, client_secret=None, issuer_url=None, jwk_set_uri=None, login_button_text=None, provider=None, registration_id=None, scope=None, secrets_uid=None, system_configured=None, token_uri=None, user_info_uri=None):  # noqa: E501
+    def __init__(self, registration_id=None, provider=None, issuer_url=None, client_id=None, client_secret=None, scope=None, is_system_configured=None, login_button_text=None, token_uri=None, authorization_uri=None, user_info_uri=None, jwk_set_uri=None, client_authentication_method=None, system_configured=None, secrets_uid=None):  # noqa: E501
         """GenericOAuth2ClientRegistration - a model defined in Swagger"""  # noqa: E501
-        self._authorization_uri = None
-        self._client_authentication_method = None
+        self._registration_id = None
+        self._provider = None
+        self._issuer_url = None
         self._client_id = None
         self._client_secret = None
-        self._issuer_url = None
-        self._jwk_set_uri = None
-        self._login_button_text = None
-        self._provider = None
-        self._registration_id = None
         self._scope = None
-        self._secrets_uid = None
-        self._system_configured = None
+        self._is_system_configured = None
+        self._login_button_text = None
         self._token_uri = None
+        self._authorization_uri = None
         self._user_info_uri = None
+        self._jwk_set_uri = None
+        self._client_authentication_method = None
+        self._system_configured = None
+        self._secrets_uid = None
         self.discriminator = None
-        if authorization_uri is not None:
-            self.authorization_uri = authorization_uri
-        if client_authentication_method is not None:
-            self.client_authentication_method = client_authentication_method
-        if client_id is not None:
-            self.client_id = client_id
-        if client_secret is not None:
-            self.client_secret = client_secret
+        self.registration_id = registration_id
+        self.provider = provider
         if issuer_url is not None:
             self.issuer_url = issuer_url
-        if jwk_set_uri is not None:
-            self.jwk_set_uri = jwk_set_uri
-        if login_button_text is not None:
-            self.login_button_text = login_button_text
-        if provider is not None:
-            self.provider = provider
-        if registration_id is not None:
-            self.registration_id = registration_id
-        if scope is not None:
-            self.scope = scope
-        if secrets_uid is not None:
-            self.secrets_uid = secrets_uid
+        self.client_id = client_id
+        self.client_secret = client_secret
+        self.scope = scope
+        if is_system_configured is not None:
+            self.is_system_configured = is_system_configured
+        self.login_button_text = login_button_text
+        self.token_uri = token_uri
+        self.authorization_uri = authorization_uri
+        self.user_info_uri = user_info_uri
+        self.jwk_set_uri = jwk_set_uri
+        if client_authentication_method is not None:
+            self.client_authentication_method = client_authentication_method
         if system_configured is not None:
             self.system_configured = system_configured
-        if token_uri is not None:
-            self.token_uri = token_uri
-        if user_info_uri is not None:
-            self.user_info_uri = user_info_uri
+        if secrets_uid is not None:
+            self.secrets_uid = secrets_uid
 
     @property
-    def authorization_uri(self):
-        """Gets the authorization_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+    def registration_id(self):
+        """Gets the registration_id of this GenericOAuth2ClientRegistration.  # noqa: E501
 
 
-        :return: The authorization_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :return: The registration_id of this GenericOAuth2ClientRegistration.  # noqa: E501
         :rtype: str
         """
-        return self._authorization_uri
+        return self._registration_id
 
-    @authorization_uri.setter
-    def authorization_uri(self, authorization_uri):
-        """Sets the authorization_uri of this GenericOAuth2ClientRegistration.
+    @registration_id.setter
+    def registration_id(self, registration_id):
+        """Sets the registration_id of this GenericOAuth2ClientRegistration.
 
 
-        :param authorization_uri: The authorization_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :param registration_id: The registration_id of this GenericOAuth2ClientRegistration.  # noqa: E501
         :type: str
         """
+        if registration_id is None:
+            raise ValueError("Invalid value for `registration_id`, must not be `None`")  # noqa: E501
 
-        self._authorization_uri = authorization_uri
-
-    @property
-    def client_authentication_method(self):
-        """Gets the client_authentication_method of this GenericOAuth2ClientRegistration.  # noqa: E501
-
-
-        :return: The client_authentication_method of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :rtype: ClientAuthenticationMethod
-        """
-        return self._client_authentication_method
-
-    @client_authentication_method.setter
-    def client_authentication_method(self, client_authentication_method):
-        """Sets the client_authentication_method of this GenericOAuth2ClientRegistration.
-
-
-        :param client_authentication_method: The client_authentication_method of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :type: ClientAuthenticationMethod
-        """
-
-        self._client_authentication_method = client_authentication_method
+        self._registration_id = registration_id
 
     @property
-    def client_id(self):
-        """Gets the client_id of this GenericOAuth2ClientRegistration.  # noqa: E501
+    def provider(self):
+        """Gets the provider of this GenericOAuth2ClientRegistration.  # noqa: E501
 
 
-        :return: The client_id of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :return: The provider of this GenericOAuth2ClientRegistration.  # noqa: E501
         :rtype: str
         """
-        return self._client_id
+        return self._provider
 
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this GenericOAuth2ClientRegistration.
+    @provider.setter
+    def provider(self, provider):
+        """Sets the provider of this GenericOAuth2ClientRegistration.
 
 
-        :param client_id: The client_id of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :param provider: The provider of this GenericOAuth2ClientRegistration.  # noqa: E501
         :type: str
         """
+        if provider is None:
+            raise ValueError("Invalid value for `provider`, must not be `None`")  # noqa: E501
+        allowed_values = ["GOOGLE", "OKTA", "ONE_LOGIN", "AZURE_AD", "JUMP_CLOUD", "OPEN_ID"]  # noqa: E501
+        if provider not in allowed_values:
+            raise ValueError(
+                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
+                .format(provider, allowed_values)
+            )
 
-        self._client_id = client_id
-
-    @property
-    def client_secret(self):
-        """Gets the client_secret of this GenericOAuth2ClientRegistration.  # noqa: E501
-
-
-        :return: The client_secret of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_secret
-
-    @client_secret.setter
-    def client_secret(self, client_secret):
-        """Sets the client_secret of this GenericOAuth2ClientRegistration.
-
-
-        :param client_secret: The client_secret of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :type: str
-        """
-
-        self._client_secret = client_secret
+        self._provider = provider
 
     @property
     def issuer_url(self):
@@ -213,94 +176,50 @@ class GenericOAuth2ClientRegistration(object):
         self._issuer_url = issuer_url
 
     @property
-    def jwk_set_uri(self):
-        """Gets the jwk_set_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+    def client_id(self):
+        """Gets the client_id of this GenericOAuth2ClientRegistration.  # noqa: E501
 
 
-        :return: The jwk_set_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :return: The client_id of this GenericOAuth2ClientRegistration.  # noqa: E501
         :rtype: str
         """
-        return self._jwk_set_uri
+        return self._client_id
 
-    @jwk_set_uri.setter
-    def jwk_set_uri(self, jwk_set_uri):
-        """Sets the jwk_set_uri of this GenericOAuth2ClientRegistration.
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this GenericOAuth2ClientRegistration.
 
 
-        :param jwk_set_uri: The jwk_set_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :param client_id: The client_id of this GenericOAuth2ClientRegistration.  # noqa: E501
         :type: str
         """
+        if client_id is None:
+            raise ValueError("Invalid value for `client_id`, must not be `None`")  # noqa: E501
 
-        self._jwk_set_uri = jwk_set_uri
+        self._client_id = client_id
 
     @property
-    def login_button_text(self):
-        """Gets the login_button_text of this GenericOAuth2ClientRegistration.  # noqa: E501
+    def client_secret(self):
+        """Gets the client_secret of this GenericOAuth2ClientRegistration.  # noqa: E501
 
 
-        :return: The login_button_text of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :return: The client_secret of this GenericOAuth2ClientRegistration.  # noqa: E501
         :rtype: str
         """
-        return self._login_button_text
+        return self._client_secret
 
-    @login_button_text.setter
-    def login_button_text(self, login_button_text):
-        """Sets the login_button_text of this GenericOAuth2ClientRegistration.
+    @client_secret.setter
+    def client_secret(self, client_secret):
+        """Sets the client_secret of this GenericOAuth2ClientRegistration.
 
 
-        :param login_button_text: The login_button_text of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :param client_secret: The client_secret of this GenericOAuth2ClientRegistration.  # noqa: E501
         :type: str
         """
+        if client_secret is None:
+            raise ValueError("Invalid value for `client_secret`, must not be `None`")  # noqa: E501
 
-        self._login_button_text = login_button_text
-
-    @property
-    def provider(self):
-        """Gets the provider of this GenericOAuth2ClientRegistration.  # noqa: E501
-
-
-        :return: The provider of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :rtype: str
-        """
-        return self._provider
-
-    @provider.setter
-    def provider(self, provider):
-        """Sets the provider of this GenericOAuth2ClientRegistration.
-
-
-        :param provider: The provider of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["GOOGLE", "OKTA", "ONE_LOGIN", "AZURE_AD", "JUMP_CLOUD", "OPEN_ID"]  # noqa: E501
-        if provider not in allowed_values:
-            raise ValueError(
-                "Invalid value for `provider` ({0}), must be one of {1}"  # noqa: E501
-                .format(provider, allowed_values)
-            )
-
-        self._provider = provider
-
-    @property
-    def registration_id(self):
-        """Gets the registration_id of this GenericOAuth2ClientRegistration.  # noqa: E501
-
-
-        :return: The registration_id of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :rtype: str
-        """
-        return self._registration_id
-
-    @registration_id.setter
-    def registration_id(self, registration_id):
-        """Sets the registration_id of this GenericOAuth2ClientRegistration.
-
-
-        :param registration_id: The registration_id of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :type: str
-        """
-
-        self._registration_id = registration_id
+        self._client_secret = client_secret
 
     @property
     def scope(self):
@@ -320,29 +239,167 @@ class GenericOAuth2ClientRegistration(object):
         :param scope: The scope of this GenericOAuth2ClientRegistration.  # noqa: E501
         :type: str
         """
+        if scope is None:
+            raise ValueError("Invalid value for `scope`, must not be `None`")  # noqa: E501
 
         self._scope = scope
 
     @property
-    def secrets_uid(self):
-        """Gets the secrets_uid of this GenericOAuth2ClientRegistration.  # noqa: E501
+    def is_system_configured(self):
+        """Gets the is_system_configured of this GenericOAuth2ClientRegistration.  # noqa: E501
 
 
-        :return: The secrets_uid of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :return: The is_system_configured of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_system_configured
+
+    @is_system_configured.setter
+    def is_system_configured(self, is_system_configured):
+        """Sets the is_system_configured of this GenericOAuth2ClientRegistration.
+
+
+        :param is_system_configured: The is_system_configured of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_system_configured = is_system_configured
+
+    @property
+    def login_button_text(self):
+        """Gets the login_button_text of this GenericOAuth2ClientRegistration.  # noqa: E501
+
+
+        :return: The login_button_text of this GenericOAuth2ClientRegistration.  # noqa: E501
         :rtype: str
         """
-        return self._secrets_uid
+        return self._login_button_text
 
-    @secrets_uid.setter
-    def secrets_uid(self, secrets_uid):
-        """Sets the secrets_uid of this GenericOAuth2ClientRegistration.
+    @login_button_text.setter
+    def login_button_text(self, login_button_text):
+        """Sets the login_button_text of this GenericOAuth2ClientRegistration.
 
 
-        :param secrets_uid: The secrets_uid of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :param login_button_text: The login_button_text of this GenericOAuth2ClientRegistration.  # noqa: E501
         :type: str
         """
+        if login_button_text is None:
+            raise ValueError("Invalid value for `login_button_text`, must not be `None`")  # noqa: E501
 
-        self._secrets_uid = secrets_uid
+        self._login_button_text = login_button_text
+
+    @property
+    def token_uri(self):
+        """Gets the token_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+
+
+        :return: The token_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :rtype: str
+        """
+        return self._token_uri
+
+    @token_uri.setter
+    def token_uri(self, token_uri):
+        """Sets the token_uri of this GenericOAuth2ClientRegistration.
+
+
+        :param token_uri: The token_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :type: str
+        """
+        if token_uri is None:
+            raise ValueError("Invalid value for `token_uri`, must not be `None`")  # noqa: E501
+
+        self._token_uri = token_uri
+
+    @property
+    def authorization_uri(self):
+        """Gets the authorization_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+
+
+        :return: The authorization_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :rtype: str
+        """
+        return self._authorization_uri
+
+    @authorization_uri.setter
+    def authorization_uri(self, authorization_uri):
+        """Sets the authorization_uri of this GenericOAuth2ClientRegistration.
+
+
+        :param authorization_uri: The authorization_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :type: str
+        """
+        if authorization_uri is None:
+            raise ValueError("Invalid value for `authorization_uri`, must not be `None`")  # noqa: E501
+
+        self._authorization_uri = authorization_uri
+
+    @property
+    def user_info_uri(self):
+        """Gets the user_info_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+
+
+        :return: The user_info_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_info_uri
+
+    @user_info_uri.setter
+    def user_info_uri(self, user_info_uri):
+        """Sets the user_info_uri of this GenericOAuth2ClientRegistration.
+
+
+        :param user_info_uri: The user_info_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :type: str
+        """
+        if user_info_uri is None:
+            raise ValueError("Invalid value for `user_info_uri`, must not be `None`")  # noqa: E501
+
+        self._user_info_uri = user_info_uri
+
+    @property
+    def jwk_set_uri(self):
+        """Gets the jwk_set_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+
+
+        :return: The jwk_set_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :rtype: str
+        """
+        return self._jwk_set_uri
+
+    @jwk_set_uri.setter
+    def jwk_set_uri(self, jwk_set_uri):
+        """Sets the jwk_set_uri of this GenericOAuth2ClientRegistration.
+
+
+        :param jwk_set_uri: The jwk_set_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :type: str
+        """
+        if jwk_set_uri is None:
+            raise ValueError("Invalid value for `jwk_set_uri`, must not be `None`")  # noqa: E501
+
+        self._jwk_set_uri = jwk_set_uri
+
+    @property
+    def client_authentication_method(self):
+        """Gets the client_authentication_method of this GenericOAuth2ClientRegistration.  # noqa: E501
+
+
+        :return: The client_authentication_method of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :rtype: ClientAuthenticationMethod
+        """
+        return self._client_authentication_method
+
+    @client_authentication_method.setter
+    def client_authentication_method(self, client_authentication_method):
+        """Sets the client_authentication_method of this GenericOAuth2ClientRegistration.
+
+
+        :param client_authentication_method: The client_authentication_method of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :type: ClientAuthenticationMethod
+        """
+
+        self._client_authentication_method = client_authentication_method
 
     @property
     def system_configured(self):
@@ -366,46 +423,25 @@ class GenericOAuth2ClientRegistration(object):
         self._system_configured = system_configured
 
     @property
-    def token_uri(self):
-        """Gets the token_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+    def secrets_uid(self):
+        """Gets the secrets_uid of this GenericOAuth2ClientRegistration.  # noqa: E501
 
 
-        :return: The token_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :return: The secrets_uid of this GenericOAuth2ClientRegistration.  # noqa: E501
         :rtype: str
         """
-        return self._token_uri
+        return self._secrets_uid
 
-    @token_uri.setter
-    def token_uri(self, token_uri):
-        """Sets the token_uri of this GenericOAuth2ClientRegistration.
+    @secrets_uid.setter
+    def secrets_uid(self, secrets_uid):
+        """Sets the secrets_uid of this GenericOAuth2ClientRegistration.
 
 
-        :param token_uri: The token_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
+        :param secrets_uid: The secrets_uid of this GenericOAuth2ClientRegistration.  # noqa: E501
         :type: str
         """
 
-        self._token_uri = token_uri
-
-    @property
-    def user_info_uri(self):
-        """Gets the user_info_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
-
-
-        :return: The user_info_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :rtype: str
-        """
-        return self._user_info_uri
-
-    @user_info_uri.setter
-    def user_info_uri(self, user_info_uri):
-        """Sets the user_info_uri of this GenericOAuth2ClientRegistration.
-
-
-        :param user_info_uri: The user_info_uri of this GenericOAuth2ClientRegistration.  # noqa: E501
-        :type: str
-        """
-
-        self._user_info_uri = user_info_uri
+        self._secrets_uid = secrets_uid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,86 +28,49 @@ class Version(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'archive_date': 'datetime',
-        'entity': 'Versioned',
         'id': 'str',
-        'sequence_key': 'str',
+        'versioning_key': 'str',
+        'entity': 'Versioned',
         'version': 'int',
-        'versioning_key': 'str'
+        'archive_date': 'datetime',
+        'sequence_key': 'str',
+        'sequence': 'int'
     }
 
     attribute_map = {
-        'archive_date': 'archiveDate',
-        'entity': 'entity',
         'id': 'id',
-        'sequence_key': 'sequenceKey',
+        'versioning_key': 'versioningKey',
+        'entity': 'entity',
         'version': 'version',
-        'versioning_key': 'versioningKey'
+        'archive_date': 'archiveDate',
+        'sequence_key': 'sequenceKey',
+        'sequence': 'sequence'
     }
 
-    def __init__(self, archive_date=None, entity=None, id=None, sequence_key=None, version=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, versioning_key=None, entity=None, version=None, archive_date=None, sequence_key=None, sequence=None):  # noqa: E501
         """Version - a model defined in Swagger"""  # noqa: E501
-        self._archive_date = None
-        self._entity = None
         self._id = None
-        self._sequence_key = None
-        self._version = None
         self._versioning_key = None
+        self._entity = None
+        self._version = None
+        self._archive_date = None
+        self._sequence_key = None
+        self._sequence = None
         self.discriminator = None
-        if archive_date is not None:
-            self.archive_date = archive_date
-        if entity is not None:
-            self.entity = entity
         if id is not None:
             self.id = id
-        if sequence_key is not None:
-            self.sequence_key = sequence_key
-        if version is not None:
-            self.version = version
         if versioning_key is not None:
             self.versioning_key = versioning_key
-
-    @property
-    def archive_date(self):
-        """Gets the archive_date of this Version.  # noqa: E501
-
-
-        :return: The archive_date of this Version.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._archive_date
-
-    @archive_date.setter
-    def archive_date(self, archive_date):
-        """Sets the archive_date of this Version.
-
-
-        :param archive_date: The archive_date of this Version.  # noqa: E501
-        :type: datetime
-        """
-
-        self._archive_date = archive_date
-
-    @property
-    def entity(self):
-        """Gets the entity of this Version.  # noqa: E501
-
-
-        :return: The entity of this Version.  # noqa: E501
-        :rtype: Versioned
-        """
-        return self._entity
-
-    @entity.setter
-    def entity(self, entity):
-        """Sets the entity of this Version.
-
-
-        :param entity: The entity of this Version.  # noqa: E501
-        :type: Versioned
-        """
-
-        self._entity = entity
+        if entity is not None:
+            self.entity = entity
+        if version is not None:
+            self.version = version
+        if archive_date is not None:
+            self.archive_date = archive_date
+        if sequence_key is not None:
+            self.sequence_key = sequence_key
+        if sequence is not None:
+            self.sequence = sequence
 
     @property
     def id(self):
@@ -131,25 +94,46 @@ class Version(object):
         self._id = id
 
     @property
-    def sequence_key(self):
-        """Gets the sequence_key of this Version.  # noqa: E501
+    def versioning_key(self):
+        """Gets the versioning_key of this Version.  # noqa: E501
 
 
-        :return: The sequence_key of this Version.  # noqa: E501
+        :return: The versioning_key of this Version.  # noqa: E501
         :rtype: str
         """
-        return self._sequence_key
+        return self._versioning_key
 
-    @sequence_key.setter
-    def sequence_key(self, sequence_key):
-        """Sets the sequence_key of this Version.
+    @versioning_key.setter
+    def versioning_key(self, versioning_key):
+        """Sets the versioning_key of this Version.
 
 
-        :param sequence_key: The sequence_key of this Version.  # noqa: E501
+        :param versioning_key: The versioning_key of this Version.  # noqa: E501
         :type: str
         """
 
-        self._sequence_key = sequence_key
+        self._versioning_key = versioning_key
+
+    @property
+    def entity(self):
+        """Gets the entity of this Version.  # noqa: E501
+
+
+        :return: The entity of this Version.  # noqa: E501
+        :rtype: Versioned
+        """
+        return self._entity
+
+    @entity.setter
+    def entity(self, entity):
+        """Sets the entity of this Version.
+
+
+        :param entity: The entity of this Version.  # noqa: E501
+        :type: Versioned
+        """
+
+        self._entity = entity
 
     @property
     def version(self):
@@ -173,25 +157,67 @@ class Version(object):
         self._version = version
 
     @property
-    def versioning_key(self):
-        """Gets the versioning_key of this Version.  # noqa: E501
+    def archive_date(self):
+        """Gets the archive_date of this Version.  # noqa: E501
 
 
-        :return: The versioning_key of this Version.  # noqa: E501
+        :return: The archive_date of this Version.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._archive_date
+
+    @archive_date.setter
+    def archive_date(self, archive_date):
+        """Sets the archive_date of this Version.
+
+
+        :param archive_date: The archive_date of this Version.  # noqa: E501
+        :type: datetime
+        """
+
+        self._archive_date = archive_date
+
+    @property
+    def sequence_key(self):
+        """Gets the sequence_key of this Version.  # noqa: E501
+
+
+        :return: The sequence_key of this Version.  # noqa: E501
         :rtype: str
         """
-        return self._versioning_key
+        return self._sequence_key
 
-    @versioning_key.setter
-    def versioning_key(self, versioning_key):
-        """Sets the versioning_key of this Version.
+    @sequence_key.setter
+    def sequence_key(self, sequence_key):
+        """Sets the sequence_key of this Version.
 
 
-        :param versioning_key: The versioning_key of this Version.  # noqa: E501
+        :param sequence_key: The sequence_key of this Version.  # noqa: E501
         :type: str
         """
 
-        self._versioning_key = versioning_key
+        self._sequence_key = sequence_key
+
+    @property
+    def sequence(self):
+        """Gets the sequence of this Version.  # noqa: E501
+
+
+        :return: The sequence of this Version.  # noqa: E501
+        :rtype: int
+        """
+        return self._sequence
+
+    @sequence.setter
+    def sequence(self, sequence):
+        """Sets the sequence of this Version.
+
+
+        :param sequence: The sequence of this Version.  # noqa: E501
+        :type: int
+        """
+
+        self._sequence = sequence
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,85 +28,85 @@ class Repository(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'display_name': 'str',
+        'url': 'str',
         'kind': 'int',
         'name': 'str',
         'official': 'bool',
-        'organization_display_name': 'str',
-        'organization_name': 'str',
+        'display_name': 'str',
         'repository_id': 'str',
         'scanner_disabled': 'bool',
-        'url': 'str',
-        'verified_publisher': 'bool'
+        'organization_name': 'str',
+        'verified_publisher': 'bool',
+        'organization_display_name': 'str'
     }
 
     attribute_map = {
-        'display_name': 'display_name',
+        'url': 'url',
         'kind': 'kind',
         'name': 'name',
         'official': 'official',
-        'organization_display_name': 'organization_display_name',
-        'organization_name': 'organization_name',
+        'display_name': 'display_name',
         'repository_id': 'repository_id',
         'scanner_disabled': 'scanner_disabled',
-        'url': 'url',
-        'verified_publisher': 'verified_publisher'
+        'organization_name': 'organization_name',
+        'verified_publisher': 'verified_publisher',
+        'organization_display_name': 'organization_display_name'
     }
 
-    def __init__(self, display_name=None, kind=None, name=None, official=None, organization_display_name=None, organization_name=None, repository_id=None, scanner_disabled=None, url=None, verified_publisher=None):  # noqa: E501
+    def __init__(self, url=None, kind=None, name=None, official=None, display_name=None, repository_id=None, scanner_disabled=None, organization_name=None, verified_publisher=None, organization_display_name=None):  # noqa: E501
         """Repository - a model defined in Swagger"""  # noqa: E501
-        self._display_name = None
+        self._url = None
         self._kind = None
         self._name = None
         self._official = None
-        self._organization_display_name = None
-        self._organization_name = None
+        self._display_name = None
         self._repository_id = None
         self._scanner_disabled = None
-        self._url = None
+        self._organization_name = None
         self._verified_publisher = None
+        self._organization_display_name = None
         self.discriminator = None
-        if display_name is not None:
-            self.display_name = display_name
+        if url is not None:
+            self.url = url
         if kind is not None:
             self.kind = kind
         if name is not None:
             self.name = name
         if official is not None:
             self.official = official
-        if organization_display_name is not None:
-            self.organization_display_name = organization_display_name
-        if organization_name is not None:
-            self.organization_name = organization_name
+        if display_name is not None:
+            self.display_name = display_name
         if repository_id is not None:
             self.repository_id = repository_id
         if scanner_disabled is not None:
             self.scanner_disabled = scanner_disabled
-        if url is not None:
-            self.url = url
+        if organization_name is not None:
+            self.organization_name = organization_name
         if verified_publisher is not None:
             self.verified_publisher = verified_publisher
+        if organization_display_name is not None:
+            self.organization_display_name = organization_display_name
 
     @property
-    def display_name(self):
-        """Gets the display_name of this Repository.  # noqa: E501
+    def url(self):
+        """Gets the url of this Repository.  # noqa: E501
 
 
-        :return: The display_name of this Repository.  # noqa: E501
+        :return: The url of this Repository.  # noqa: E501
         :rtype: str
         """
-        return self._display_name
+        return self._url
 
-    @display_name.setter
-    def display_name(self, display_name):
-        """Sets the display_name of this Repository.
+    @url.setter
+    def url(self, url):
+        """Sets the url of this Repository.
 
 
-        :param display_name: The display_name of this Repository.  # noqa: E501
+        :param url: The url of this Repository.  # noqa: E501
         :type: str
         """
 
-        self._display_name = display_name
+        self._url = url
 
     @property
     def kind(self):
@@ -172,46 +172,25 @@ class Repository(object):
         self._official = official
 
     @property
-    def organization_display_name(self):
-        """Gets the organization_display_name of this Repository.  # noqa: E501
+    def display_name(self):
+        """Gets the display_name of this Repository.  # noqa: E501
 
 
-        :return: The organization_display_name of this Repository.  # noqa: E501
+        :return: The display_name of this Repository.  # noqa: E501
         :rtype: str
         """
-        return self._organization_display_name
+        return self._display_name
 
-    @organization_display_name.setter
-    def organization_display_name(self, organization_display_name):
-        """Sets the organization_display_name of this Repository.
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this Repository.
 
 
-        :param organization_display_name: The organization_display_name of this Repository.  # noqa: E501
+        :param display_name: The display_name of this Repository.  # noqa: E501
         :type: str
         """
 
-        self._organization_display_name = organization_display_name
-
-    @property
-    def organization_name(self):
-        """Gets the organization_name of this Repository.  # noqa: E501
-
-
-        :return: The organization_name of this Repository.  # noqa: E501
-        :rtype: str
-        """
-        return self._organization_name
-
-    @organization_name.setter
-    def organization_name(self, organization_name):
-        """Sets the organization_name of this Repository.
-
-
-        :param organization_name: The organization_name of this Repository.  # noqa: E501
-        :type: str
-        """
-
-        self._organization_name = organization_name
+        self._display_name = display_name
 
     @property
     def repository_id(self):
@@ -256,25 +235,25 @@ class Repository(object):
         self._scanner_disabled = scanner_disabled
 
     @property
-    def url(self):
-        """Gets the url of this Repository.  # noqa: E501
+    def organization_name(self):
+        """Gets the organization_name of this Repository.  # noqa: E501
 
 
-        :return: The url of this Repository.  # noqa: E501
+        :return: The organization_name of this Repository.  # noqa: E501
         :rtype: str
         """
-        return self._url
+        return self._organization_name
 
-    @url.setter
-    def url(self, url):
-        """Sets the url of this Repository.
+    @organization_name.setter
+    def organization_name(self, organization_name):
+        """Sets the organization_name of this Repository.
 
 
-        :param url: The url of this Repository.  # noqa: E501
+        :param organization_name: The organization_name of this Repository.  # noqa: E501
         :type: str
         """
 
-        self._url = url
+        self._organization_name = organization_name
 
     @property
     def verified_publisher(self):
@@ -296,6 +275,27 @@ class Repository(object):
         """
 
         self._verified_publisher = verified_publisher
+
+    @property
+    def organization_display_name(self):
+        """Gets the organization_display_name of this Repository.  # noqa: E501
+
+
+        :return: The organization_display_name of this Repository.  # noqa: E501
+        :rtype: str
+        """
+        return self._organization_display_name
+
+    @organization_display_name.setter
+    def organization_display_name(self, organization_display_name):
+        """Sets the organization_display_name of this Repository.
+
+
+        :param organization_display_name: The organization_display_name of this Repository.  # noqa: E501
+        :type: str
+        """
+
+        self._organization_display_name = organization_display_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

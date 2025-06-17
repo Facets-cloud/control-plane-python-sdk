@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,39 +32,39 @@ class UiAwsClusterControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def configure_draft_cluster_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """configureDraftCluster  # noqa: E501
+    def configure_draft_cluster2(self, body, cluster_id, **kwargs):  # noqa: E501
+        """configure_draft_cluster2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configure_draft_cluster_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.configure_draft_cluster2(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AwsClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.configure_draft_cluster_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.configure_draft_cluster2_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.configure_draft_cluster_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.configure_draft_cluster2_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def configure_draft_cluster_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """configureDraftCluster  # noqa: E501
+    def configure_draft_cluster2_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """configure_draft_cluster2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.configure_draft_cluster_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.configure_draft_cluster2_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AwsClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,18 +81,18 @@ class UiAwsClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method configure_draft_cluster_using_post" % key
+                    " to method configure_draft_cluster2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `configure_draft_cluster_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `configure_draft_cluster2`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `configure_draft_cluster_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `configure_draft_cluster2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -112,14 +112,14 @@ class UiAwsClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/aws/clusters/configure/{clusterId}', 'POST',
@@ -146,7 +146,7 @@ class UiAwsClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsClusterRequest body: request (required)
+        :param AwsClusterRequest body: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -167,7 +167,7 @@ class UiAwsClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsClusterRequest body: request (required)
+        :param AwsClusterRequest body: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -209,14 +209,14 @@ class UiAwsClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/aws/clusters', 'POST',
@@ -235,7 +235,7 @@ class UiAwsClusterControllerApi(object):
             collection_formats=collection_formats)
 
     def get_cluster_using_get2(self, cluster_id, **kwargs):  # noqa: E501
-        """getCluster  # noqa: E501
+        """get_cluster_using_get2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -243,7 +243,7 @@ class UiAwsClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -256,7 +256,7 @@ class UiAwsClusterControllerApi(object):
             return data
 
     def get_cluster_using_get2_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getCluster  # noqa: E501
+        """get_cluster_using_get2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -264,7 +264,7 @@ class UiAwsClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -306,10 +306,10 @@ class UiAwsClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/aws/clusters/{clusterId}', 'GET',
@@ -327,37 +327,37 @@ class UiAwsClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def onboard_customer_using_post(self, body, **kwargs):  # noqa: E501
-        """onboardCustomer  # noqa: E501
+    def onboard_customer(self, body, **kwargs):  # noqa: E501
+        """onboard_customer  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.onboard_customer_using_post(body, async_req=True)
+        >>> thread = api.onboard_customer(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomerOnboardRequest body: request (required)
+        :param CustomerOnboardRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.onboard_customer_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.onboard_customer_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.onboard_customer_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.onboard_customer_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def onboard_customer_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """onboardCustomer  # noqa: E501
+    def onboard_customer_with_http_info(self, body, **kwargs):  # noqa: E501
+        """onboard_customer  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.onboard_customer_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.onboard_customer_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomerOnboardRequest body: request (required)
+        :param CustomerOnboardRequest body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -374,14 +374,14 @@ class UiAwsClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method onboard_customer_using_post" % key
+                    " to method onboard_customer" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `onboard_customer_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `onboard_customer`")  # noqa: E501
 
         collection_formats = {}
 
@@ -397,12 +397,16 @@ class UiAwsClusterControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/aws/clusters/onboard-customer', 'POST',
@@ -421,7 +425,7 @@ class UiAwsClusterControllerApi(object):
             collection_formats=collection_formats)
 
     def update_cluster_using_put2(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateCluster  # noqa: E501
+        """update_cluster_using_put2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -429,8 +433,8 @@ class UiAwsClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AwsClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -443,7 +447,7 @@ class UiAwsClusterControllerApi(object):
             return data
 
     def update_cluster_using_put2_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """updateCluster  # noqa: E501
+        """update_cluster_using_put2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -451,8 +455,8 @@ class UiAwsClusterControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AwsClusterRequest body: request (required)
-        :param str cluster_id: clusterId (required)
+        :param AwsClusterRequest body: (required)
+        :param str cluster_id: (required)
         :return: AwsCluster
                  If the method is called asynchronously,
                  returns the request thread.
@@ -500,14 +504,14 @@ class UiAwsClusterControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/aws/clusters/{clusterId}', 'PUT',
@@ -525,47 +529,47 @@ class UiAwsClusterControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def validate_vpc_id_using_get(self, account_id, region, vpc_id, **kwargs):  # noqa: E501
-        """validateVpcId  # noqa: E501
+    def validate_vpc_id1(self, vpc_id, region, account_id, **kwargs):  # noqa: E501
+        """validate_vpc_id1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_vpc_id_using_get(account_id, region, vpc_id, async_req=True)
+        >>> thread = api.validate_vpc_id1(vpc_id, region, account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str region: region (required)
-        :param str vpc_id: vpcId (required)
+        :param str vpc_id: (required)
+        :param str region: (required)
+        :param str account_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.validate_vpc_id_using_get_with_http_info(account_id, region, vpc_id, **kwargs)  # noqa: E501
+            return self.validate_vpc_id1_with_http_info(vpc_id, region, account_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.validate_vpc_id_using_get_with_http_info(account_id, region, vpc_id, **kwargs)  # noqa: E501
+            (data) = self.validate_vpc_id1_with_http_info(vpc_id, region, account_id, **kwargs)  # noqa: E501
             return data
 
-    def validate_vpc_id_using_get_with_http_info(self, account_id, region, vpc_id, **kwargs):  # noqa: E501
-        """validateVpcId  # noqa: E501
+    def validate_vpc_id1_with_http_info(self, vpc_id, region, account_id, **kwargs):  # noqa: E501
+        """validate_vpc_id1  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.validate_vpc_id_using_get_with_http_info(account_id, region, vpc_id, async_req=True)
+        >>> thread = api.validate_vpc_id1_with_http_info(vpc_id, region, account_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str account_id: accountId (required)
-        :param str region: region (required)
-        :param str vpc_id: vpcId (required)
+        :param str vpc_id: (required)
+        :param str region: (required)
+        :param str account_id: (required)
         :return: bool
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'region', 'vpc_id']  # noqa: E501
+        all_params = ['vpc_id', 'region', 'account_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -576,34 +580,34 @@ class UiAwsClusterControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method validate_vpc_id_using_get" % key
+                    " to method validate_vpc_id1" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if ('account_id' not in params or
-                params['account_id'] is None):
-            raise ValueError("Missing the required parameter `account_id` when calling `validate_vpc_id_using_get`")  # noqa: E501
-        # verify the required parameter 'region' is set
-        if ('region' not in params or
-                params['region'] is None):
-            raise ValueError("Missing the required parameter `region` when calling `validate_vpc_id_using_get`")  # noqa: E501
         # verify the required parameter 'vpc_id' is set
         if ('vpc_id' not in params or
                 params['vpc_id'] is None):
-            raise ValueError("Missing the required parameter `vpc_id` when calling `validate_vpc_id_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `vpc_id` when calling `validate_vpc_id1`")  # noqa: E501
+        # verify the required parameter 'region' is set
+        if ('region' not in params or
+                params['region'] is None):
+            raise ValueError("Missing the required parameter `region` when calling `validate_vpc_id1`")  # noqa: E501
+        # verify the required parameter 'account_id' is set
+        if ('account_id' not in params or
+                params['account_id'] is None):
+            raise ValueError("Missing the required parameter `account_id` when calling `validate_vpc_id1`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'account_id' in params:
-            query_params.append(('accountId', params['account_id']))  # noqa: E501
-        if 'region' in params:
-            query_params.append(('region', params['region']))  # noqa: E501
         if 'vpc_id' in params:
             query_params.append(('vpcId', params['vpc_id']))  # noqa: E501
+        if 'region' in params:
+            query_params.append(('region', params['region']))  # noqa: E501
+        if 'account_id' in params:
+            query_params.append(('accountId', params['account_id']))  # noqa: E501
 
         header_params = {}
 
@@ -613,10 +617,10 @@ class UiAwsClusterControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/aws/clusters/validate-vpcId', 'GET',

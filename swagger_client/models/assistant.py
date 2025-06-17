@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,39 @@ class Assistant(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ability': 'str',
-        'conversational': 'bool',
         'id': 'str',
         'name': 'str',
-        'prompt': 'str'
+        'prompt': 'str',
+        'ability': 'str',
+        'conversational': 'bool'
     }
 
     attribute_map = {
-        'ability': 'ability',
-        'conversational': 'conversational',
         'id': 'id',
         'name': 'name',
-        'prompt': 'prompt'
+        'prompt': 'prompt',
+        'ability': 'ability',
+        'conversational': 'conversational'
     }
 
-    def __init__(self, ability=None, conversational=None, id=None, name=None, prompt=None):  # noqa: E501
+    def __init__(self, id=None, name=None, prompt=None, ability=None, conversational=None):  # noqa: E501
         """Assistant - a model defined in Swagger"""  # noqa: E501
-        self._ability = None
-        self._conversational = None
         self._id = None
         self._name = None
         self._prompt = None
+        self._ability = None
+        self._conversational = None
         self.discriminator = None
-        if ability is not None:
-            self.ability = ability
-        if conversational is not None:
-            self.conversational = conversational
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
         if prompt is not None:
             self.prompt = prompt
-
-    @property
-    def ability(self):
-        """Gets the ability of this Assistant.  # noqa: E501
-
-
-        :return: The ability of this Assistant.  # noqa: E501
-        :rtype: str
-        """
-        return self._ability
-
-    @ability.setter
-    def ability(self, ability):
-        """Sets the ability of this Assistant.
-
-
-        :param ability: The ability of this Assistant.  # noqa: E501
-        :type: str
-        """
-
-        self._ability = ability
-
-    @property
-    def conversational(self):
-        """Gets the conversational of this Assistant.  # noqa: E501
-
-
-        :return: The conversational of this Assistant.  # noqa: E501
-        :rtype: bool
-        """
-        return self._conversational
-
-    @conversational.setter
-    def conversational(self, conversational):
-        """Sets the conversational of this Assistant.
-
-
-        :param conversational: The conversational of this Assistant.  # noqa: E501
-        :type: bool
-        """
-
-        self._conversational = conversational
+        if ability is not None:
+            self.ability = ability
+        if conversational is not None:
+            self.conversational = conversational
 
     @property
     def id(self):
@@ -166,6 +124,48 @@ class Assistant(object):
         """
 
         self._prompt = prompt
+
+    @property
+    def ability(self):
+        """Gets the ability of this Assistant.  # noqa: E501
+
+
+        :return: The ability of this Assistant.  # noqa: E501
+        :rtype: str
+        """
+        return self._ability
+
+    @ability.setter
+    def ability(self, ability):
+        """Sets the ability of this Assistant.
+
+
+        :param ability: The ability of this Assistant.  # noqa: E501
+        :type: str
+        """
+
+        self._ability = ability
+
+    @property
+    def conversational(self):
+        """Gets the conversational of this Assistant.  # noqa: E501
+
+
+        :return: The conversational of this Assistant.  # noqa: E501
+        :rtype: bool
+        """
+        return self._conversational
+
+    @conversational.setter
+    def conversational(self, conversational):
+        """Sets the conversational of this Assistant.
+
+
+        :param conversational: The conversational of this Assistant.  # noqa: E501
+        :type: bool
+        """
+
+        self._conversational = conversational
 
     def to_dict(self):
         """Returns the model properties as a dict"""

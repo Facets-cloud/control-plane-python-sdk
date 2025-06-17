@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class IngressBackendDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'port': 'int',
-        'service_name': 'str'
+        'service_name': 'str',
+        'port': 'int'
     }
 
     attribute_map = {
-        'port': 'port',
-        'service_name': 'serviceName'
+        'service_name': 'serviceName',
+        'port': 'port'
     }
 
-    def __init__(self, port=None, service_name=None):  # noqa: E501
+    def __init__(self, service_name=None, port=None):  # noqa: E501
         """IngressBackendDTO - a model defined in Swagger"""  # noqa: E501
-        self._port = None
         self._service_name = None
+        self._port = None
         self.discriminator = None
-        if port is not None:
-            self.port = port
         if service_name is not None:
             self.service_name = service_name
-
-    @property
-    def port(self):
-        """Gets the port of this IngressBackendDTO.  # noqa: E501
-
-
-        :return: The port of this IngressBackendDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._port
-
-    @port.setter
-    def port(self, port):
-        """Sets the port of this IngressBackendDTO.
-
-
-        :param port: The port of this IngressBackendDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._port = port
+        if port is not None:
+            self.port = port
 
     @property
     def service_name(self):
@@ -88,6 +67,27 @@ class IngressBackendDTO(object):
         """
 
         self._service_name = service_name
+
+    @property
+    def port(self):
+        """Gets the port of this IngressBackendDTO.  # noqa: E501
+
+
+        :return: The port of this IngressBackendDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._port
+
+    @port.setter
+    def port(self, port):
+        """Sets the port of this IngressBackendDTO.
+
+
+        :param port: The port of this IngressBackendDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._port = port
 
     def to_dict(self):
         """Returns the model properties as a dict"""

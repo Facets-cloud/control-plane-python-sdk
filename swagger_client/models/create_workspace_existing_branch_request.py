@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,22 @@ class CreateWorkspaceExistingBranchRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'existing_branch': 'str',
-        'workspace_name': 'str'
+        'workspace_name': 'str',
+        'existing_branch': 'str'
     }
 
     attribute_map = {
-        'existing_branch': 'existingBranch',
-        'workspace_name': 'workspaceName'
+        'workspace_name': 'workspaceName',
+        'existing_branch': 'existingBranch'
     }
 
-    def __init__(self, existing_branch=None, workspace_name=None):  # noqa: E501
+    def __init__(self, workspace_name=None, existing_branch=None):  # noqa: E501
         """CreateWorkspaceExistingBranchRequest - a model defined in Swagger"""  # noqa: E501
-        self._existing_branch = None
         self._workspace_name = None
+        self._existing_branch = None
         self.discriminator = None
-        if existing_branch is not None:
-            self.existing_branch = existing_branch
-        if workspace_name is not None:
-            self.workspace_name = workspace_name
-
-    @property
-    def existing_branch(self):
-        """Gets the existing_branch of this CreateWorkspaceExistingBranchRequest.  # noqa: E501
-
-
-        :return: The existing_branch of this CreateWorkspaceExistingBranchRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._existing_branch
-
-    @existing_branch.setter
-    def existing_branch(self, existing_branch):
-        """Sets the existing_branch of this CreateWorkspaceExistingBranchRequest.
-
-
-        :param existing_branch: The existing_branch of this CreateWorkspaceExistingBranchRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._existing_branch = existing_branch
+        self.workspace_name = workspace_name
+        self.existing_branch = existing_branch
 
     @property
     def workspace_name(self):
@@ -86,8 +63,33 @@ class CreateWorkspaceExistingBranchRequest(object):
         :param workspace_name: The workspace_name of this CreateWorkspaceExistingBranchRequest.  # noqa: E501
         :type: str
         """
+        if workspace_name is None:
+            raise ValueError("Invalid value for `workspace_name`, must not be `None`")  # noqa: E501
 
         self._workspace_name = workspace_name
+
+    @property
+    def existing_branch(self):
+        """Gets the existing_branch of this CreateWorkspaceExistingBranchRequest.  # noqa: E501
+
+
+        :return: The existing_branch of this CreateWorkspaceExistingBranchRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._existing_branch
+
+    @existing_branch.setter
+    def existing_branch(self, existing_branch):
+        """Sets the existing_branch of this CreateWorkspaceExistingBranchRequest.
+
+
+        :param existing_branch: The existing_branch of this CreateWorkspaceExistingBranchRequest.  # noqa: E501
+        :type: str
+        """
+        if existing_branch is None:
+            raise ValueError("Invalid value for `existing_branch`, must not be `None`")  # noqa: E501
+
+        self._existing_branch = existing_branch
 
     def to_dict(self):
         """Returns the model properties as a dict"""

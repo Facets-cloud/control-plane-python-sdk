@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,32 +28,34 @@ class AzureDiskVolumeSource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'kind': 'str',
         'caching_mode': 'str',
         'disk_name': 'str',
         'disk_uri': 'str',
         'fs_type': 'str',
-        'kind': 'str',
         'read_only': 'bool'
     }
 
     attribute_map = {
+        'kind': 'kind',
         'caching_mode': 'cachingMode',
         'disk_name': 'diskName',
         'disk_uri': 'diskURI',
         'fs_type': 'fsType',
-        'kind': 'kind',
         'read_only': 'readOnly'
     }
 
-    def __init__(self, caching_mode=None, disk_name=None, disk_uri=None, fs_type=None, kind=None, read_only=None):  # noqa: E501
+    def __init__(self, kind=None, caching_mode=None, disk_name=None, disk_uri=None, fs_type=None, read_only=None):  # noqa: E501
         """AzureDiskVolumeSource - a model defined in Swagger"""  # noqa: E501
+        self._kind = None
         self._caching_mode = None
         self._disk_name = None
         self._disk_uri = None
         self._fs_type = None
-        self._kind = None
         self._read_only = None
         self.discriminator = None
+        if kind is not None:
+            self.kind = kind
         if caching_mode is not None:
             self.caching_mode = caching_mode
         if disk_name is not None:
@@ -62,10 +64,29 @@ class AzureDiskVolumeSource(object):
             self.disk_uri = disk_uri
         if fs_type is not None:
             self.fs_type = fs_type
-        if kind is not None:
-            self.kind = kind
         if read_only is not None:
             self.read_only = read_only
+
+    @property
+    def kind(self):
+        """Gets the kind of this AzureDiskVolumeSource.  # noqa: E501
+
+
+        :return: The kind of this AzureDiskVolumeSource.  # noqa: E501
+        :rtype: str
+        """
+        return self._kind
+
+    @kind.setter
+    def kind(self, kind):
+        """Sets the kind of this AzureDiskVolumeSource.
+
+
+        :param kind: The kind of this AzureDiskVolumeSource.  # noqa: E501
+        :type: str
+        """
+
+        self._kind = kind
 
     @property
     def caching_mode(self):
@@ -150,27 +171,6 @@ class AzureDiskVolumeSource(object):
         """
 
         self._fs_type = fs_type
-
-    @property
-    def kind(self):
-        """Gets the kind of this AzureDiskVolumeSource.  # noqa: E501
-
-
-        :return: The kind of this AzureDiskVolumeSource.  # noqa: E501
-        :rtype: str
-        """
-        return self._kind
-
-    @kind.setter
-    def kind(self, kind):
-        """Sets the kind of this AzureDiskVolumeSource.
-
-
-        :param kind: The kind of this AzureDiskVolumeSource.  # noqa: E501
-        :type: str
-        """
-
-        self._kind = kind
 
     @property
     def read_only(self):

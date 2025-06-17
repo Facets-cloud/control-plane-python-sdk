@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,34 @@ class ArtifactoryMirror(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
         'id': 'str',
-        'mirror_artifactory': 'str',
-        'source_artifactory': 'str'
+        'cluster_id': 'str',
+        'source_artifactory': 'str',
+        'mirror_artifactory': 'str'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
         'id': 'id',
-        'mirror_artifactory': 'mirrorArtifactory',
-        'source_artifactory': 'sourceArtifactory'
+        'cluster_id': 'clusterId',
+        'source_artifactory': 'sourceArtifactory',
+        'mirror_artifactory': 'mirrorArtifactory'
     }
 
-    def __init__(self, cluster_id=None, id=None, mirror_artifactory=None, source_artifactory=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, source_artifactory=None, mirror_artifactory=None):  # noqa: E501
         """ArtifactoryMirror - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
         self._id = None
-        self._mirror_artifactory = None
+        self._cluster_id = None
         self._source_artifactory = None
+        self._mirror_artifactory = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
         if id is not None:
             self.id = id
-        if mirror_artifactory is not None:
-            self.mirror_artifactory = mirror_artifactory
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if source_artifactory is not None:
             self.source_artifactory = source_artifactory
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ArtifactoryMirror.  # noqa: E501
-
-
-        :return: The cluster_id of this ArtifactoryMirror.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ArtifactoryMirror.
-
-
-        :param cluster_id: The cluster_id of this ArtifactoryMirror.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
+        if mirror_artifactory is not None:
+            self.mirror_artifactory = mirror_artifactory
 
     @property
     def id(self):
@@ -100,25 +79,25 @@ class ArtifactoryMirror(object):
         self._id = id
 
     @property
-    def mirror_artifactory(self):
-        """Gets the mirror_artifactory of this ArtifactoryMirror.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this ArtifactoryMirror.  # noqa: E501
 
 
-        :return: The mirror_artifactory of this ArtifactoryMirror.  # noqa: E501
+        :return: The cluster_id of this ArtifactoryMirror.  # noqa: E501
         :rtype: str
         """
-        return self._mirror_artifactory
+        return self._cluster_id
 
-    @mirror_artifactory.setter
-    def mirror_artifactory(self, mirror_artifactory):
-        """Sets the mirror_artifactory of this ArtifactoryMirror.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ArtifactoryMirror.
 
 
-        :param mirror_artifactory: The mirror_artifactory of this ArtifactoryMirror.  # noqa: E501
+        :param cluster_id: The cluster_id of this ArtifactoryMirror.  # noqa: E501
         :type: str
         """
 
-        self._mirror_artifactory = mirror_artifactory
+        self._cluster_id = cluster_id
 
     @property
     def source_artifactory(self):
@@ -140,6 +119,27 @@ class ArtifactoryMirror(object):
         """
 
         self._source_artifactory = source_artifactory
+
+    @property
+    def mirror_artifactory(self):
+        """Gets the mirror_artifactory of this ArtifactoryMirror.  # noqa: E501
+
+
+        :return: The mirror_artifactory of this ArtifactoryMirror.  # noqa: E501
+        :rtype: str
+        """
+        return self._mirror_artifactory
+
+    @mirror_artifactory.setter
+    def mirror_artifactory(self, mirror_artifactory):
+        """Sets the mirror_artifactory of this ArtifactoryMirror.
+
+
+        :param mirror_artifactory: The mirror_artifactory of this ArtifactoryMirror.  # noqa: E501
+        :type: str
+        """
+
+        self._mirror_artifactory = mirror_artifactory
 
     def to_dict(self):
         """Returns the model properties as a dict"""

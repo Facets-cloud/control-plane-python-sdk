@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class OtherVersion(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'version': 'str'
+        'version': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'version': 'version'
+        'version': 'version',
+        'id': 'id'
     }
 
-    def __init__(self, id=None, version=None):  # noqa: E501
+    def __init__(self, version=None, id=None):  # noqa: E501
         """OtherVersion - a model defined in Swagger"""  # noqa: E501
-        self._id = None
         self._version = None
+        self._id = None
         self.discriminator = None
-        if id is not None:
-            self.id = id
         if version is not None:
             self.version = version
-
-    @property
-    def id(self):
-        """Gets the id of this OtherVersion.  # noqa: E501
-
-
-        :return: The id of this OtherVersion.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this OtherVersion.
-
-
-        :param id: The id of this OtherVersion.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
+        if id is not None:
+            self.id = id
 
     @property
     def version(self):
@@ -88,6 +67,27 @@ class OtherVersion(object):
         """
 
         self._version = version
+
+    @property
+    def id(self):
+        """Gets the id of this OtherVersion.  # noqa: E501
+
+
+        :return: The id of this OtherVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this OtherVersion.
+
+
+        :param id: The id of this OtherVersion.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

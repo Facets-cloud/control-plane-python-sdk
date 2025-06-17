@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,70 +28,91 @@ class ReleaseStreamResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'built_in': 'bool',
+        'name': 'str',
+        'description': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'description': 'str',
         'mapped_cluster_names': 'list[str]',
-        'name': 'str',
-        'prod': 'bool'
+        'prod': 'bool',
+        'built_in': 'bool'
     }
 
     attribute_map = {
-        'built_in': 'builtIn',
+        'name': 'name',
+        'description': 'description',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'description': 'description',
         'mapped_cluster_names': 'mappedClusterNames',
-        'name': 'name',
-        'prod': 'prod'
+        'prod': 'prod',
+        'built_in': 'builtIn'
     }
 
-    def __init__(self, built_in=None, created_by=None, creation_date=None, description=None, mapped_cluster_names=None, name=None, prod=None):  # noqa: E501
+    def __init__(self, name=None, description=None, created_by=None, creation_date=None, mapped_cluster_names=None, prod=None, built_in=None):  # noqa: E501
         """ReleaseStreamResponse - a model defined in Swagger"""  # noqa: E501
-        self._built_in = None
+        self._name = None
+        self._description = None
         self._created_by = None
         self._creation_date = None
-        self._description = None
         self._mapped_cluster_names = None
-        self._name = None
         self._prod = None
+        self._built_in = None
         self.discriminator = None
-        if built_in is not None:
-            self.built_in = built_in
+        if name is not None:
+            self.name = name
+        if description is not None:
+            self.description = description
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if description is not None:
-            self.description = description
         if mapped_cluster_names is not None:
             self.mapped_cluster_names = mapped_cluster_names
-        if name is not None:
-            self.name = name
         if prod is not None:
             self.prod = prod
+        if built_in is not None:
+            self.built_in = built_in
 
     @property
-    def built_in(self):
-        """Gets the built_in of this ReleaseStreamResponse.  # noqa: E501
+    def name(self):
+        """Gets the name of this ReleaseStreamResponse.  # noqa: E501
 
 
-        :return: The built_in of this ReleaseStreamResponse.  # noqa: E501
-        :rtype: bool
+        :return: The name of this ReleaseStreamResponse.  # noqa: E501
+        :rtype: str
         """
-        return self._built_in
+        return self._name
 
-    @built_in.setter
-    def built_in(self, built_in):
-        """Sets the built_in of this ReleaseStreamResponse.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ReleaseStreamResponse.
 
 
-        :param built_in: The built_in of this ReleaseStreamResponse.  # noqa: E501
-        :type: bool
+        :param name: The name of this ReleaseStreamResponse.  # noqa: E501
+        :type: str
         """
 
-        self._built_in = built_in
+        self._name = name
+
+    @property
+    def description(self):
+        """Gets the description of this ReleaseStreamResponse.  # noqa: E501
+
+
+        :return: The description of this ReleaseStreamResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ReleaseStreamResponse.
+
+
+        :param description: The description of this ReleaseStreamResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def created_by(self):
@@ -136,27 +157,6 @@ class ReleaseStreamResponse(object):
         self._creation_date = creation_date
 
     @property
-    def description(self):
-        """Gets the description of this ReleaseStreamResponse.  # noqa: E501
-
-
-        :return: The description of this ReleaseStreamResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ReleaseStreamResponse.
-
-
-        :param description: The description of this ReleaseStreamResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
     def mapped_cluster_names(self):
         """Gets the mapped_cluster_names of this ReleaseStreamResponse.  # noqa: E501
 
@@ -178,27 +178,6 @@ class ReleaseStreamResponse(object):
         self._mapped_cluster_names = mapped_cluster_names
 
     @property
-    def name(self):
-        """Gets the name of this ReleaseStreamResponse.  # noqa: E501
-
-
-        :return: The name of this ReleaseStreamResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ReleaseStreamResponse.
-
-
-        :param name: The name of this ReleaseStreamResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
     def prod(self):
         """Gets the prod of this ReleaseStreamResponse.  # noqa: E501
 
@@ -218,6 +197,27 @@ class ReleaseStreamResponse(object):
         """
 
         self._prod = prod
+
+    @property
+    def built_in(self):
+        """Gets the built_in of this ReleaseStreamResponse.  # noqa: E501
+
+
+        :return: The built_in of this ReleaseStreamResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._built_in
+
+    @built_in.setter
+    def built_in(self, built_in):
+        """Sets the built_in of this ReleaseStreamResponse.
+
+
+        :param built_in: The built_in of this ReleaseStreamResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._built_in = built_in
 
     def to_dict(self):
         """Returns the model properties as a dict"""

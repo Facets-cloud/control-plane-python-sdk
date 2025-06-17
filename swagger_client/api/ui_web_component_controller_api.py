@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiWebComponentControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_component_using_post(self, body, **kwargs):  # noqa: E501
-        """createComponent  # noqa: E501
+    def create_component(self, body, **kwargs):  # noqa: E501
+        """create_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_component_using_post(body, async_req=True)
+        >>> thread = api.create_component(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param WebComponentDTO body: component (required)
+        :param WebComponentDTO body: (required)
         :return: WebComponentDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_component_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.create_component_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_component_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.create_component_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_component_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """createComponent  # noqa: E501
+    def create_component_with_http_info(self, body, **kwargs):  # noqa: E501
+        """create_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_component_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.create_component_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param WebComponentDTO body: component (required)
+        :param WebComponentDTO body: (required)
         :return: WebComponentDTO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiWebComponentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_component_using_post" % key
+                    " to method create_component" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_component_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_component`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiWebComponentControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/web-components', 'POST',
@@ -129,37 +129,37 @@ class UiWebComponentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_component_using_delete(self, web_component_id, **kwargs):  # noqa: E501
-        """deleteComponent  # noqa: E501
+    def delete_component(self, web_component_id, **kwargs):  # noqa: E501
+        """delete_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_component_using_delete(web_component_id, async_req=True)
+        >>> thread = api.delete_component(web_component_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str web_component_id: webComponentId (required)
+        :param str web_component_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_component_using_delete_with_http_info(web_component_id, **kwargs)  # noqa: E501
+            return self.delete_component_with_http_info(web_component_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_component_using_delete_with_http_info(web_component_id, **kwargs)  # noqa: E501
+            (data) = self.delete_component_with_http_info(web_component_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_component_using_delete_with_http_info(self, web_component_id, **kwargs):  # noqa: E501
-        """deleteComponent  # noqa: E501
+    def delete_component_with_http_info(self, web_component_id, **kwargs):  # noqa: E501
+        """delete_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_component_using_delete_with_http_info(web_component_id, async_req=True)
+        >>> thread = api.delete_component_with_http_info(web_component_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str web_component_id: webComponentId (required)
+        :param str web_component_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiWebComponentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_component_using_delete" % key
+                    " to method delete_component" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'web_component_id' is set
         if ('web_component_id' not in params or
                 params['web_component_id'] is None):
-            raise ValueError("Missing the required parameter `web_component_id` when calling `delete_component_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `web_component_id` when calling `delete_component`")  # noqa: E501
 
         collection_formats = {}
 
@@ -199,8 +199,12 @@ class UiWebComponentControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/web-components/{webComponentId}', 'DELETE',
@@ -218,12 +222,12 @@ class UiWebComponentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_components_using_get(self, **kwargs):  # noqa: E501
-        """getAllComponents  # noqa: E501
+    def get_all_components(self, **kwargs):  # noqa: E501
+        """get_all_components  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_components_using_get(async_req=True)
+        >>> thread = api.get_all_components(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -233,17 +237,17 @@ class UiWebComponentControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_components_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_components_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_components_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_components_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_components_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllComponents  # noqa: E501
+    def get_all_components_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_components  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_components_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_components_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -263,7 +267,7 @@ class UiWebComponentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_components_using_get" % key
+                    " to method get_all_components" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -282,10 +286,10 @@ class UiWebComponentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/web-components', 'GET',
@@ -303,37 +307,37 @@ class UiWebComponentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_component_using_get(self, web_component_id, **kwargs):  # noqa: E501
-        """getComponent  # noqa: E501
+    def get_component(self, web_component_id, **kwargs):  # noqa: E501
+        """get_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_component_using_get(web_component_id, async_req=True)
+        >>> thread = api.get_component(web_component_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str web_component_id: webComponentId (required)
+        :param str web_component_id: (required)
         :return: WebComponentDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_component_using_get_with_http_info(web_component_id, **kwargs)  # noqa: E501
+            return self.get_component_with_http_info(web_component_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_component_using_get_with_http_info(web_component_id, **kwargs)  # noqa: E501
+            (data) = self.get_component_with_http_info(web_component_id, **kwargs)  # noqa: E501
             return data
 
-    def get_component_using_get_with_http_info(self, web_component_id, **kwargs):  # noqa: E501
-        """getComponent  # noqa: E501
+    def get_component_with_http_info(self, web_component_id, **kwargs):  # noqa: E501
+        """get_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_component_using_get_with_http_info(web_component_id, async_req=True)
+        >>> thread = api.get_component_with_http_info(web_component_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str web_component_id: webComponentId (required)
+        :param str web_component_id: (required)
         :return: WebComponentDTO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -350,14 +354,14 @@ class UiWebComponentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_component_using_get" % key
+                    " to method get_component" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'web_component_id' is set
         if ('web_component_id' not in params or
                 params['web_component_id'] is None):
-            raise ValueError("Missing the required parameter `web_component_id` when calling `get_component_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `web_component_id` when calling `get_component`")  # noqa: E501
 
         collection_formats = {}
 
@@ -375,10 +379,10 @@ class UiWebComponentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/web-components/{webComponentId}', 'GET',
@@ -396,39 +400,39 @@ class UiWebComponentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_component_using_put(self, body, web_component_id, **kwargs):  # noqa: E501
-        """updateComponent  # noqa: E501
+    def update_component(self, body, web_component_id, **kwargs):  # noqa: E501
+        """update_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_component_using_put(body, web_component_id, async_req=True)
+        >>> thread = api.update_component(body, web_component_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param WebComponentDTO body: component (required)
-        :param str web_component_id: webComponentId (required)
+        :param WebComponentDTO body: (required)
+        :param str web_component_id: (required)
         :return: WebComponentDTO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_component_using_put_with_http_info(body, web_component_id, **kwargs)  # noqa: E501
+            return self.update_component_with_http_info(body, web_component_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_component_using_put_with_http_info(body, web_component_id, **kwargs)  # noqa: E501
+            (data) = self.update_component_with_http_info(body, web_component_id, **kwargs)  # noqa: E501
             return data
 
-    def update_component_using_put_with_http_info(self, body, web_component_id, **kwargs):  # noqa: E501
-        """updateComponent  # noqa: E501
+    def update_component_with_http_info(self, body, web_component_id, **kwargs):  # noqa: E501
+        """update_component  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_component_using_put_with_http_info(body, web_component_id, async_req=True)
+        >>> thread = api.update_component_with_http_info(body, web_component_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param WebComponentDTO body: component (required)
-        :param str web_component_id: webComponentId (required)
+        :param WebComponentDTO body: (required)
+        :param str web_component_id: (required)
         :return: WebComponentDTO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -445,18 +449,18 @@ class UiWebComponentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_component_using_put" % key
+                    " to method update_component" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_component_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_component`")  # noqa: E501
         # verify the required parameter 'web_component_id' is set
         if ('web_component_id' not in params or
                 params['web_component_id'] is None):
-            raise ValueError("Missing the required parameter `web_component_id` when calling `update_component_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `web_component_id` when calling `update_component`")  # noqa: E501
 
         collection_formats = {}
 
@@ -476,14 +480,14 @@ class UiWebComponentControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/web-components/{webComponentId}', 'PUT',

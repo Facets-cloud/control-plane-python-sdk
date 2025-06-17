@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class CloudLinkingRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_name': 'str',
-        'webhook': 'OneTimeWebhook'
+        'webhook': 'OneTimeWebhook',
+        'account_name': 'str'
     }
 
     attribute_map = {
-        'account_name': 'accountName',
-        'webhook': 'webhook'
+        'webhook': 'webhook',
+        'account_name': 'accountName'
     }
 
-    def __init__(self, account_name=None, webhook=None):  # noqa: E501
+    def __init__(self, webhook=None, account_name=None):  # noqa: E501
         """CloudLinkingRequest - a model defined in Swagger"""  # noqa: E501
-        self._account_name = None
         self._webhook = None
+        self._account_name = None
         self.discriminator = None
-        if account_name is not None:
-            self.account_name = account_name
         if webhook is not None:
             self.webhook = webhook
-
-    @property
-    def account_name(self):
-        """Gets the account_name of this CloudLinkingRequest.  # noqa: E501
-
-
-        :return: The account_name of this CloudLinkingRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_name
-
-    @account_name.setter
-    def account_name(self, account_name):
-        """Sets the account_name of this CloudLinkingRequest.
-
-
-        :param account_name: The account_name of this CloudLinkingRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._account_name = account_name
+        if account_name is not None:
+            self.account_name = account_name
 
     @property
     def webhook(self):
@@ -88,6 +67,27 @@ class CloudLinkingRequest(object):
         """
 
         self._webhook = webhook
+
+    @property
+    def account_name(self):
+        """Gets the account_name of this CloudLinkingRequest.  # noqa: E501
+
+
+        :return: The account_name of this CloudLinkingRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_name
+
+    @account_name.setter
+    def account_name(self, account_name):
+        """Sets the account_name of this CloudLinkingRequest.
+
+
+        :param account_name: The account_name of this CloudLinkingRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._account_name = account_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

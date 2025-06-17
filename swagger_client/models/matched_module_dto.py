@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class MatchedModuleDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'modules': 'dict(str, ModuleDTO)',
-        'resources': 'dict(str, MatchedResourceDTO)'
+        'resources': 'dict(str, MatchedResourceDTO)',
+        'modules': 'dict(str, ModuleDTO)'
     }
 
     attribute_map = {
-        'modules': 'modules',
-        'resources': 'resources'
+        'resources': 'resources',
+        'modules': 'modules'
     }
 
-    def __init__(self, modules=None, resources=None):  # noqa: E501
+    def __init__(self, resources=None, modules=None):  # noqa: E501
         """MatchedModuleDTO - a model defined in Swagger"""  # noqa: E501
-        self._modules = None
         self._resources = None
+        self._modules = None
         self.discriminator = None
-        if modules is not None:
-            self.modules = modules
         if resources is not None:
             self.resources = resources
-
-    @property
-    def modules(self):
-        """Gets the modules of this MatchedModuleDTO.  # noqa: E501
-
-
-        :return: The modules of this MatchedModuleDTO.  # noqa: E501
-        :rtype: dict(str, ModuleDTO)
-        """
-        return self._modules
-
-    @modules.setter
-    def modules(self, modules):
-        """Sets the modules of this MatchedModuleDTO.
-
-
-        :param modules: The modules of this MatchedModuleDTO.  # noqa: E501
-        :type: dict(str, ModuleDTO)
-        """
-
-        self._modules = modules
+        if modules is not None:
+            self.modules = modules
 
     @property
     def resources(self):
@@ -88,6 +67,27 @@ class MatchedModuleDTO(object):
         """
 
         self._resources = resources
+
+    @property
+    def modules(self):
+        """Gets the modules of this MatchedModuleDTO.  # noqa: E501
+
+
+        :return: The modules of this MatchedModuleDTO.  # noqa: E501
+        :rtype: dict(str, ModuleDTO)
+        """
+        return self._modules
+
+    @modules.setter
+    def modules(self, modules):
+        """Sets the modules of this MatchedModuleDTO.
+
+
+        :param modules: The modules of this MatchedModuleDTO.  # noqa: E501
+        :type: dict(str, ModuleDTO)
+        """
+
+        self._modules = modules
 
     def to_dict(self):
         """Returns the model properties as a dict"""

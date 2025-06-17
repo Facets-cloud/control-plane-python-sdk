@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,231 +28,84 @@ class WorkflowRun(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'actor': 'GithubUser',
-        'conclusion': 'str',
-        'created_at': 'datetime',
-        'display_title': 'str',
-        'head_branch': 'str',
-        'head_commit': 'Commit',
-        'html_url': 'str',
         'name': 'str',
-        'run_number': 'int',
-        'run_started_at': 'datetime',
+        'display_title': 'str',
+        'html_url': 'str',
         'status': 'str',
+        'conclusion': 'str',
+        'workflow_id': 'int',
+        'run_number': 'int',
+        'actor': 'GithubUser',
         'triggering_actor': 'GithubUser',
-        'updated_at': 'datetime',
-        'workflow_id': 'int'
+        'head_commit': 'Commit',
+        'head_branch': 'str',
+        'run_started_at': 'datetime',
+        'created_at': 'datetime',
+        'updated_at': 'datetime'
     }
 
     attribute_map = {
-        'actor': 'actor',
-        'conclusion': 'conclusion',
-        'created_at': 'createdAt',
-        'display_title': 'displayTitle',
-        'head_branch': 'headBranch',
-        'head_commit': 'headCommit',
-        'html_url': 'htmlUrl',
         'name': 'name',
-        'run_number': 'runNumber',
-        'run_started_at': 'runStartedAt',
+        'display_title': 'displayTitle',
+        'html_url': 'htmlUrl',
         'status': 'status',
+        'conclusion': 'conclusion',
+        'workflow_id': 'workflowId',
+        'run_number': 'runNumber',
+        'actor': 'actor',
         'triggering_actor': 'triggeringActor',
-        'updated_at': 'updatedAt',
-        'workflow_id': 'workflowId'
+        'head_commit': 'headCommit',
+        'head_branch': 'headBranch',
+        'run_started_at': 'runStartedAt',
+        'created_at': 'createdAt',
+        'updated_at': 'updatedAt'
     }
 
-    def __init__(self, actor=None, conclusion=None, created_at=None, display_title=None, head_branch=None, head_commit=None, html_url=None, name=None, run_number=None, run_started_at=None, status=None, triggering_actor=None, updated_at=None, workflow_id=None):  # noqa: E501
+    def __init__(self, name=None, display_title=None, html_url=None, status=None, conclusion=None, workflow_id=None, run_number=None, actor=None, triggering_actor=None, head_commit=None, head_branch=None, run_started_at=None, created_at=None, updated_at=None):  # noqa: E501
         """WorkflowRun - a model defined in Swagger"""  # noqa: E501
-        self._actor = None
-        self._conclusion = None
-        self._created_at = None
-        self._display_title = None
-        self._head_branch = None
-        self._head_commit = None
-        self._html_url = None
         self._name = None
-        self._run_number = None
-        self._run_started_at = None
+        self._display_title = None
+        self._html_url = None
         self._status = None
-        self._triggering_actor = None
-        self._updated_at = None
+        self._conclusion = None
         self._workflow_id = None
+        self._run_number = None
+        self._actor = None
+        self._triggering_actor = None
+        self._head_commit = None
+        self._head_branch = None
+        self._run_started_at = None
+        self._created_at = None
+        self._updated_at = None
         self.discriminator = None
-        if actor is not None:
-            self.actor = actor
-        if conclusion is not None:
-            self.conclusion = conclusion
-        if created_at is not None:
-            self.created_at = created_at
-        if display_title is not None:
-            self.display_title = display_title
-        if head_branch is not None:
-            self.head_branch = head_branch
-        if head_commit is not None:
-            self.head_commit = head_commit
-        if html_url is not None:
-            self.html_url = html_url
         if name is not None:
             self.name = name
-        if run_number is not None:
-            self.run_number = run_number
-        if run_started_at is not None:
-            self.run_started_at = run_started_at
+        if display_title is not None:
+            self.display_title = display_title
+        if html_url is not None:
+            self.html_url = html_url
         if status is not None:
             self.status = status
-        if triggering_actor is not None:
-            self.triggering_actor = triggering_actor
-        if updated_at is not None:
-            self.updated_at = updated_at
+        if conclusion is not None:
+            self.conclusion = conclusion
         if workflow_id is not None:
             self.workflow_id = workflow_id
-
-    @property
-    def actor(self):
-        """Gets the actor of this WorkflowRun.  # noqa: E501
-
-
-        :return: The actor of this WorkflowRun.  # noqa: E501
-        :rtype: GithubUser
-        """
-        return self._actor
-
-    @actor.setter
-    def actor(self, actor):
-        """Sets the actor of this WorkflowRun.
-
-
-        :param actor: The actor of this WorkflowRun.  # noqa: E501
-        :type: GithubUser
-        """
-
-        self._actor = actor
-
-    @property
-    def conclusion(self):
-        """Gets the conclusion of this WorkflowRun.  # noqa: E501
-
-
-        :return: The conclusion of this WorkflowRun.  # noqa: E501
-        :rtype: str
-        """
-        return self._conclusion
-
-    @conclusion.setter
-    def conclusion(self, conclusion):
-        """Sets the conclusion of this WorkflowRun.
-
-
-        :param conclusion: The conclusion of this WorkflowRun.  # noqa: E501
-        :type: str
-        """
-
-        self._conclusion = conclusion
-
-    @property
-    def created_at(self):
-        """Gets the created_at of this WorkflowRun.  # noqa: E501
-
-
-        :return: The created_at of this WorkflowRun.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._created_at
-
-    @created_at.setter
-    def created_at(self, created_at):
-        """Sets the created_at of this WorkflowRun.
-
-
-        :param created_at: The created_at of this WorkflowRun.  # noqa: E501
-        :type: datetime
-        """
-
-        self._created_at = created_at
-
-    @property
-    def display_title(self):
-        """Gets the display_title of this WorkflowRun.  # noqa: E501
-
-
-        :return: The display_title of this WorkflowRun.  # noqa: E501
-        :rtype: str
-        """
-        return self._display_title
-
-    @display_title.setter
-    def display_title(self, display_title):
-        """Sets the display_title of this WorkflowRun.
-
-
-        :param display_title: The display_title of this WorkflowRun.  # noqa: E501
-        :type: str
-        """
-
-        self._display_title = display_title
-
-    @property
-    def head_branch(self):
-        """Gets the head_branch of this WorkflowRun.  # noqa: E501
-
-
-        :return: The head_branch of this WorkflowRun.  # noqa: E501
-        :rtype: str
-        """
-        return self._head_branch
-
-    @head_branch.setter
-    def head_branch(self, head_branch):
-        """Sets the head_branch of this WorkflowRun.
-
-
-        :param head_branch: The head_branch of this WorkflowRun.  # noqa: E501
-        :type: str
-        """
-
-        self._head_branch = head_branch
-
-    @property
-    def head_commit(self):
-        """Gets the head_commit of this WorkflowRun.  # noqa: E501
-
-
-        :return: The head_commit of this WorkflowRun.  # noqa: E501
-        :rtype: Commit
-        """
-        return self._head_commit
-
-    @head_commit.setter
-    def head_commit(self, head_commit):
-        """Sets the head_commit of this WorkflowRun.
-
-
-        :param head_commit: The head_commit of this WorkflowRun.  # noqa: E501
-        :type: Commit
-        """
-
-        self._head_commit = head_commit
-
-    @property
-    def html_url(self):
-        """Gets the html_url of this WorkflowRun.  # noqa: E501
-
-
-        :return: The html_url of this WorkflowRun.  # noqa: E501
-        :rtype: str
-        """
-        return self._html_url
-
-    @html_url.setter
-    def html_url(self, html_url):
-        """Sets the html_url of this WorkflowRun.
-
-
-        :param html_url: The html_url of this WorkflowRun.  # noqa: E501
-        :type: str
-        """
-
-        self._html_url = html_url
+        if run_number is not None:
+            self.run_number = run_number
+        if actor is not None:
+            self.actor = actor
+        if triggering_actor is not None:
+            self.triggering_actor = triggering_actor
+        if head_commit is not None:
+            self.head_commit = head_commit
+        if head_branch is not None:
+            self.head_branch = head_branch
+        if run_started_at is not None:
+            self.run_started_at = run_started_at
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
 
     @property
     def name(self):
@@ -276,46 +129,46 @@ class WorkflowRun(object):
         self._name = name
 
     @property
-    def run_number(self):
-        """Gets the run_number of this WorkflowRun.  # noqa: E501
+    def display_title(self):
+        """Gets the display_title of this WorkflowRun.  # noqa: E501
 
 
-        :return: The run_number of this WorkflowRun.  # noqa: E501
-        :rtype: int
+        :return: The display_title of this WorkflowRun.  # noqa: E501
+        :rtype: str
         """
-        return self._run_number
+        return self._display_title
 
-    @run_number.setter
-    def run_number(self, run_number):
-        """Sets the run_number of this WorkflowRun.
+    @display_title.setter
+    def display_title(self, display_title):
+        """Sets the display_title of this WorkflowRun.
 
 
-        :param run_number: The run_number of this WorkflowRun.  # noqa: E501
-        :type: int
+        :param display_title: The display_title of this WorkflowRun.  # noqa: E501
+        :type: str
         """
 
-        self._run_number = run_number
+        self._display_title = display_title
 
     @property
-    def run_started_at(self):
-        """Gets the run_started_at of this WorkflowRun.  # noqa: E501
+    def html_url(self):
+        """Gets the html_url of this WorkflowRun.  # noqa: E501
 
 
-        :return: The run_started_at of this WorkflowRun.  # noqa: E501
-        :rtype: datetime
+        :return: The html_url of this WorkflowRun.  # noqa: E501
+        :rtype: str
         """
-        return self._run_started_at
+        return self._html_url
 
-    @run_started_at.setter
-    def run_started_at(self, run_started_at):
-        """Sets the run_started_at of this WorkflowRun.
+    @html_url.setter
+    def html_url(self, html_url):
+        """Sets the html_url of this WorkflowRun.
 
 
-        :param run_started_at: The run_started_at of this WorkflowRun.  # noqa: E501
-        :type: datetime
+        :param html_url: The html_url of this WorkflowRun.  # noqa: E501
+        :type: str
         """
 
-        self._run_started_at = run_started_at
+        self._html_url = html_url
 
     @property
     def status(self):
@@ -339,46 +192,25 @@ class WorkflowRun(object):
         self._status = status
 
     @property
-    def triggering_actor(self):
-        """Gets the triggering_actor of this WorkflowRun.  # noqa: E501
+    def conclusion(self):
+        """Gets the conclusion of this WorkflowRun.  # noqa: E501
 
 
-        :return: The triggering_actor of this WorkflowRun.  # noqa: E501
-        :rtype: GithubUser
+        :return: The conclusion of this WorkflowRun.  # noqa: E501
+        :rtype: str
         """
-        return self._triggering_actor
+        return self._conclusion
 
-    @triggering_actor.setter
-    def triggering_actor(self, triggering_actor):
-        """Sets the triggering_actor of this WorkflowRun.
-
-
-        :param triggering_actor: The triggering_actor of this WorkflowRun.  # noqa: E501
-        :type: GithubUser
-        """
-
-        self._triggering_actor = triggering_actor
-
-    @property
-    def updated_at(self):
-        """Gets the updated_at of this WorkflowRun.  # noqa: E501
+    @conclusion.setter
+    def conclusion(self, conclusion):
+        """Sets the conclusion of this WorkflowRun.
 
 
-        :return: The updated_at of this WorkflowRun.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._updated_at
-
-    @updated_at.setter
-    def updated_at(self, updated_at):
-        """Sets the updated_at of this WorkflowRun.
-
-
-        :param updated_at: The updated_at of this WorkflowRun.  # noqa: E501
-        :type: datetime
+        :param conclusion: The conclusion of this WorkflowRun.  # noqa: E501
+        :type: str
         """
 
-        self._updated_at = updated_at
+        self._conclusion = conclusion
 
     @property
     def workflow_id(self):
@@ -400,6 +232,174 @@ class WorkflowRun(object):
         """
 
         self._workflow_id = workflow_id
+
+    @property
+    def run_number(self):
+        """Gets the run_number of this WorkflowRun.  # noqa: E501
+
+
+        :return: The run_number of this WorkflowRun.  # noqa: E501
+        :rtype: int
+        """
+        return self._run_number
+
+    @run_number.setter
+    def run_number(self, run_number):
+        """Sets the run_number of this WorkflowRun.
+
+
+        :param run_number: The run_number of this WorkflowRun.  # noqa: E501
+        :type: int
+        """
+
+        self._run_number = run_number
+
+    @property
+    def actor(self):
+        """Gets the actor of this WorkflowRun.  # noqa: E501
+
+
+        :return: The actor of this WorkflowRun.  # noqa: E501
+        :rtype: GithubUser
+        """
+        return self._actor
+
+    @actor.setter
+    def actor(self, actor):
+        """Sets the actor of this WorkflowRun.
+
+
+        :param actor: The actor of this WorkflowRun.  # noqa: E501
+        :type: GithubUser
+        """
+
+        self._actor = actor
+
+    @property
+    def triggering_actor(self):
+        """Gets the triggering_actor of this WorkflowRun.  # noqa: E501
+
+
+        :return: The triggering_actor of this WorkflowRun.  # noqa: E501
+        :rtype: GithubUser
+        """
+        return self._triggering_actor
+
+    @triggering_actor.setter
+    def triggering_actor(self, triggering_actor):
+        """Sets the triggering_actor of this WorkflowRun.
+
+
+        :param triggering_actor: The triggering_actor of this WorkflowRun.  # noqa: E501
+        :type: GithubUser
+        """
+
+        self._triggering_actor = triggering_actor
+
+    @property
+    def head_commit(self):
+        """Gets the head_commit of this WorkflowRun.  # noqa: E501
+
+
+        :return: The head_commit of this WorkflowRun.  # noqa: E501
+        :rtype: Commit
+        """
+        return self._head_commit
+
+    @head_commit.setter
+    def head_commit(self, head_commit):
+        """Sets the head_commit of this WorkflowRun.
+
+
+        :param head_commit: The head_commit of this WorkflowRun.  # noqa: E501
+        :type: Commit
+        """
+
+        self._head_commit = head_commit
+
+    @property
+    def head_branch(self):
+        """Gets the head_branch of this WorkflowRun.  # noqa: E501
+
+
+        :return: The head_branch of this WorkflowRun.  # noqa: E501
+        :rtype: str
+        """
+        return self._head_branch
+
+    @head_branch.setter
+    def head_branch(self, head_branch):
+        """Sets the head_branch of this WorkflowRun.
+
+
+        :param head_branch: The head_branch of this WorkflowRun.  # noqa: E501
+        :type: str
+        """
+
+        self._head_branch = head_branch
+
+    @property
+    def run_started_at(self):
+        """Gets the run_started_at of this WorkflowRun.  # noqa: E501
+
+
+        :return: The run_started_at of this WorkflowRun.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._run_started_at
+
+    @run_started_at.setter
+    def run_started_at(self, run_started_at):
+        """Sets the run_started_at of this WorkflowRun.
+
+
+        :param run_started_at: The run_started_at of this WorkflowRun.  # noqa: E501
+        :type: datetime
+        """
+
+        self._run_started_at = run_started_at
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this WorkflowRun.  # noqa: E501
+
+
+        :return: The created_at of this WorkflowRun.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this WorkflowRun.
+
+
+        :param created_at: The created_at of this WorkflowRun.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this WorkflowRun.  # noqa: E501
+
+
+        :return: The updated_at of this WorkflowRun.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this WorkflowRun.
+
+
+        :param updated_at: The updated_at of this WorkflowRun.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,258 +28,69 @@ class PageChat(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'content': 'list[Chat]',
-        'empty': 'bool',
-        'first': 'bool',
-        'last': 'bool',
-        'number': 'int',
-        'number_of_elements': 'int',
-        'pageable': 'Pageable',
-        'size': 'int',
-        'sort': 'Sort',
         'total_elements': 'int',
-        'total_pages': 'int'
+        'total_pages': 'int',
+        'pageable': 'PageableObject',
+        'first': 'bool',
+        'sort': 'SortObject',
+        'number_of_elements': 'int',
+        'last': 'bool',
+        'size': 'int',
+        'content': 'list[Chat]',
+        'number': 'int',
+        'empty': 'bool'
     }
 
     attribute_map = {
-        'content': 'content',
-        'empty': 'empty',
-        'first': 'first',
-        'last': 'last',
-        'number': 'number',
-        'number_of_elements': 'numberOfElements',
-        'pageable': 'pageable',
-        'size': 'size',
-        'sort': 'sort',
         'total_elements': 'totalElements',
-        'total_pages': 'totalPages'
+        'total_pages': 'totalPages',
+        'pageable': 'pageable',
+        'first': 'first',
+        'sort': 'sort',
+        'number_of_elements': 'numberOfElements',
+        'last': 'last',
+        'size': 'size',
+        'content': 'content',
+        'number': 'number',
+        'empty': 'empty'
     }
 
-    def __init__(self, content=None, empty=None, first=None, last=None, number=None, number_of_elements=None, pageable=None, size=None, sort=None, total_elements=None, total_pages=None):  # noqa: E501
+    def __init__(self, total_elements=None, total_pages=None, pageable=None, first=None, sort=None, number_of_elements=None, last=None, size=None, content=None, number=None, empty=None):  # noqa: E501
         """PageChat - a model defined in Swagger"""  # noqa: E501
-        self._content = None
-        self._empty = None
-        self._first = None
-        self._last = None
-        self._number = None
-        self._number_of_elements = None
-        self._pageable = None
-        self._size = None
-        self._sort = None
         self._total_elements = None
         self._total_pages = None
+        self._pageable = None
+        self._first = None
+        self._sort = None
+        self._number_of_elements = None
+        self._last = None
+        self._size = None
+        self._content = None
+        self._number = None
+        self._empty = None
         self.discriminator = None
-        if content is not None:
-            self.content = content
-        if empty is not None:
-            self.empty = empty
-        if first is not None:
-            self.first = first
-        if last is not None:
-            self.last = last
-        if number is not None:
-            self.number = number
-        if number_of_elements is not None:
-            self.number_of_elements = number_of_elements
-        if pageable is not None:
-            self.pageable = pageable
-        if size is not None:
-            self.size = size
-        if sort is not None:
-            self.sort = sort
         if total_elements is not None:
             self.total_elements = total_elements
         if total_pages is not None:
             self.total_pages = total_pages
-
-    @property
-    def content(self):
-        """Gets the content of this PageChat.  # noqa: E501
-
-
-        :return: The content of this PageChat.  # noqa: E501
-        :rtype: list[Chat]
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this PageChat.
-
-
-        :param content: The content of this PageChat.  # noqa: E501
-        :type: list[Chat]
-        """
-
-        self._content = content
-
-    @property
-    def empty(self):
-        """Gets the empty of this PageChat.  # noqa: E501
-
-
-        :return: The empty of this PageChat.  # noqa: E501
-        :rtype: bool
-        """
-        return self._empty
-
-    @empty.setter
-    def empty(self, empty):
-        """Sets the empty of this PageChat.
-
-
-        :param empty: The empty of this PageChat.  # noqa: E501
-        :type: bool
-        """
-
-        self._empty = empty
-
-    @property
-    def first(self):
-        """Gets the first of this PageChat.  # noqa: E501
-
-
-        :return: The first of this PageChat.  # noqa: E501
-        :rtype: bool
-        """
-        return self._first
-
-    @first.setter
-    def first(self, first):
-        """Sets the first of this PageChat.
-
-
-        :param first: The first of this PageChat.  # noqa: E501
-        :type: bool
-        """
-
-        self._first = first
-
-    @property
-    def last(self):
-        """Gets the last of this PageChat.  # noqa: E501
-
-
-        :return: The last of this PageChat.  # noqa: E501
-        :rtype: bool
-        """
-        return self._last
-
-    @last.setter
-    def last(self, last):
-        """Sets the last of this PageChat.
-
-
-        :param last: The last of this PageChat.  # noqa: E501
-        :type: bool
-        """
-
-        self._last = last
-
-    @property
-    def number(self):
-        """Gets the number of this PageChat.  # noqa: E501
-
-
-        :return: The number of this PageChat.  # noqa: E501
-        :rtype: int
-        """
-        return self._number
-
-    @number.setter
-    def number(self, number):
-        """Sets the number of this PageChat.
-
-
-        :param number: The number of this PageChat.  # noqa: E501
-        :type: int
-        """
-
-        self._number = number
-
-    @property
-    def number_of_elements(self):
-        """Gets the number_of_elements of this PageChat.  # noqa: E501
-
-
-        :return: The number_of_elements of this PageChat.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_elements
-
-    @number_of_elements.setter
-    def number_of_elements(self, number_of_elements):
-        """Sets the number_of_elements of this PageChat.
-
-
-        :param number_of_elements: The number_of_elements of this PageChat.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_elements = number_of_elements
-
-    @property
-    def pageable(self):
-        """Gets the pageable of this PageChat.  # noqa: E501
-
-
-        :return: The pageable of this PageChat.  # noqa: E501
-        :rtype: Pageable
-        """
-        return self._pageable
-
-    @pageable.setter
-    def pageable(self, pageable):
-        """Sets the pageable of this PageChat.
-
-
-        :param pageable: The pageable of this PageChat.  # noqa: E501
-        :type: Pageable
-        """
-
-        self._pageable = pageable
-
-    @property
-    def size(self):
-        """Gets the size of this PageChat.  # noqa: E501
-
-
-        :return: The size of this PageChat.  # noqa: E501
-        :rtype: int
-        """
-        return self._size
-
-    @size.setter
-    def size(self, size):
-        """Sets the size of this PageChat.
-
-
-        :param size: The size of this PageChat.  # noqa: E501
-        :type: int
-        """
-
-        self._size = size
-
-    @property
-    def sort(self):
-        """Gets the sort of this PageChat.  # noqa: E501
-
-
-        :return: The sort of this PageChat.  # noqa: E501
-        :rtype: Sort
-        """
-        return self._sort
-
-    @sort.setter
-    def sort(self, sort):
-        """Sets the sort of this PageChat.
-
-
-        :param sort: The sort of this PageChat.  # noqa: E501
-        :type: Sort
-        """
-
-        self._sort = sort
+        if pageable is not None:
+            self.pageable = pageable
+        if first is not None:
+            self.first = first
+        if sort is not None:
+            self.sort = sort
+        if number_of_elements is not None:
+            self.number_of_elements = number_of_elements
+        if last is not None:
+            self.last = last
+        if size is not None:
+            self.size = size
+        if content is not None:
+            self.content = content
+        if number is not None:
+            self.number = number
+        if empty is not None:
+            self.empty = empty
 
     @property
     def total_elements(self):
@@ -322,6 +133,195 @@ class PageChat(object):
         """
 
         self._total_pages = total_pages
+
+    @property
+    def pageable(self):
+        """Gets the pageable of this PageChat.  # noqa: E501
+
+
+        :return: The pageable of this PageChat.  # noqa: E501
+        :rtype: PageableObject
+        """
+        return self._pageable
+
+    @pageable.setter
+    def pageable(self, pageable):
+        """Sets the pageable of this PageChat.
+
+
+        :param pageable: The pageable of this PageChat.  # noqa: E501
+        :type: PageableObject
+        """
+
+        self._pageable = pageable
+
+    @property
+    def first(self):
+        """Gets the first of this PageChat.  # noqa: E501
+
+
+        :return: The first of this PageChat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._first
+
+    @first.setter
+    def first(self, first):
+        """Sets the first of this PageChat.
+
+
+        :param first: The first of this PageChat.  # noqa: E501
+        :type: bool
+        """
+
+        self._first = first
+
+    @property
+    def sort(self):
+        """Gets the sort of this PageChat.  # noqa: E501
+
+
+        :return: The sort of this PageChat.  # noqa: E501
+        :rtype: SortObject
+        """
+        return self._sort
+
+    @sort.setter
+    def sort(self, sort):
+        """Sets the sort of this PageChat.
+
+
+        :param sort: The sort of this PageChat.  # noqa: E501
+        :type: SortObject
+        """
+
+        self._sort = sort
+
+    @property
+    def number_of_elements(self):
+        """Gets the number_of_elements of this PageChat.  # noqa: E501
+
+
+        :return: The number_of_elements of this PageChat.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_elements
+
+    @number_of_elements.setter
+    def number_of_elements(self, number_of_elements):
+        """Sets the number_of_elements of this PageChat.
+
+
+        :param number_of_elements: The number_of_elements of this PageChat.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_elements = number_of_elements
+
+    @property
+    def last(self):
+        """Gets the last of this PageChat.  # noqa: E501
+
+
+        :return: The last of this PageChat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._last
+
+    @last.setter
+    def last(self, last):
+        """Sets the last of this PageChat.
+
+
+        :param last: The last of this PageChat.  # noqa: E501
+        :type: bool
+        """
+
+        self._last = last
+
+    @property
+    def size(self):
+        """Gets the size of this PageChat.  # noqa: E501
+
+
+        :return: The size of this PageChat.  # noqa: E501
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """Sets the size of this PageChat.
+
+
+        :param size: The size of this PageChat.  # noqa: E501
+        :type: int
+        """
+
+        self._size = size
+
+    @property
+    def content(self):
+        """Gets the content of this PageChat.  # noqa: E501
+
+
+        :return: The content of this PageChat.  # noqa: E501
+        :rtype: list[Chat]
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this PageChat.
+
+
+        :param content: The content of this PageChat.  # noqa: E501
+        :type: list[Chat]
+        """
+
+        self._content = content
+
+    @property
+    def number(self):
+        """Gets the number of this PageChat.  # noqa: E501
+
+
+        :return: The number of this PageChat.  # noqa: E501
+        :rtype: int
+        """
+        return self._number
+
+    @number.setter
+    def number(self, number):
+        """Sets the number of this PageChat.
+
+
+        :param number: The number of this PageChat.  # noqa: E501
+        :type: int
+        """
+
+        self._number = number
+
+    @property
+    def empty(self):
+        """Gets the empty of this PageChat.  # noqa: E501
+
+
+        :return: The empty of this PageChat.  # noqa: E501
+        :rtype: bool
+        """
+        return self._empty
+
+    @empty.setter
+    def empty(self, empty):
+        """Sets the empty of this PageChat.
+
+
+        :param empty: The empty of this PageChat.  # noqa: E501
+        :type: bool
+        """
+
+        self._empty = empty
 
     def to_dict(self):
         """Returns the model properties as a dict"""

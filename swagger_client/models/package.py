@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,251 +28,104 @@ class Package(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'all_containers_images_whitelisted': 'bool',
-        'app_version': 'str',
-        'category': 'int',
-        'deprecated': 'bool',
-        'description': 'str',
-        'has_values_schema': 'bool',
-        'logo_image_id': 'str',
         'name': 'str',
-        'normalized_name': 'str',
-        'official': 'bool',
-        'package_id': 'str',
-        'production_organizations_count': 'int',
-        'repository': 'Repository',
-        'security_report_summary': 'SecurityReportSummary',
-        'signed': 'bool',
+        'category': 'int',
         'stars': 'int',
+        'official': 'bool',
+        'description': 'str',
+        'version': 'str',
+        'deprecated': 'bool',
+        'signed': 'bool',
         'ts': 'int',
-        'version': 'str'
+        'repository': 'Repository',
+        'package_id': 'str',
+        'normalized_name': 'str',
+        'logo_image_id': 'str',
+        'app_version': 'str',
+        'has_values_schema': 'bool',
+        'security_report_summary': 'SecurityReportSummary',
+        'all_containers_images_whitelisted': 'bool',
+        'production_organizations_count': 'int'
     }
 
     attribute_map = {
-        'all_containers_images_whitelisted': 'all_containers_images_whitelisted',
-        'app_version': 'app_version',
-        'category': 'category',
-        'deprecated': 'deprecated',
-        'description': 'description',
-        'has_values_schema': 'has_values_schema',
-        'logo_image_id': 'logo_image_id',
         'name': 'name',
-        'normalized_name': 'normalized_name',
-        'official': 'official',
-        'package_id': 'package_id',
-        'production_organizations_count': 'production_organizations_count',
-        'repository': 'repository',
-        'security_report_summary': 'security_report_summary',
-        'signed': 'signed',
+        'category': 'category',
         'stars': 'stars',
+        'official': 'official',
+        'description': 'description',
+        'version': 'version',
+        'deprecated': 'deprecated',
+        'signed': 'signed',
         'ts': 'ts',
-        'version': 'version'
+        'repository': 'repository',
+        'package_id': 'package_id',
+        'normalized_name': 'normalized_name',
+        'logo_image_id': 'logo_image_id',
+        'app_version': 'app_version',
+        'has_values_schema': 'has_values_schema',
+        'security_report_summary': 'security_report_summary',
+        'all_containers_images_whitelisted': 'all_containers_images_whitelisted',
+        'production_organizations_count': 'production_organizations_count'
     }
 
-    def __init__(self, all_containers_images_whitelisted=None, app_version=None, category=None, deprecated=None, description=None, has_values_schema=None, logo_image_id=None, name=None, normalized_name=None, official=None, package_id=None, production_organizations_count=None, repository=None, security_report_summary=None, signed=None, stars=None, ts=None, version=None):  # noqa: E501
+    def __init__(self, name=None, category=None, stars=None, official=None, description=None, version=None, deprecated=None, signed=None, ts=None, repository=None, package_id=None, normalized_name=None, logo_image_id=None, app_version=None, has_values_schema=None, security_report_summary=None, all_containers_images_whitelisted=None, production_organizations_count=None):  # noqa: E501
         """Package - a model defined in Swagger"""  # noqa: E501
-        self._all_containers_images_whitelisted = None
-        self._app_version = None
-        self._category = None
-        self._deprecated = None
-        self._description = None
-        self._has_values_schema = None
-        self._logo_image_id = None
         self._name = None
-        self._normalized_name = None
-        self._official = None
-        self._package_id = None
-        self._production_organizations_count = None
-        self._repository = None
-        self._security_report_summary = None
-        self._signed = None
+        self._category = None
         self._stars = None
-        self._ts = None
+        self._official = None
+        self._description = None
         self._version = None
+        self._deprecated = None
+        self._signed = None
+        self._ts = None
+        self._repository = None
+        self._package_id = None
+        self._normalized_name = None
+        self._logo_image_id = None
+        self._app_version = None
+        self._has_values_schema = None
+        self._security_report_summary = None
+        self._all_containers_images_whitelisted = None
+        self._production_organizations_count = None
         self.discriminator = None
-        if all_containers_images_whitelisted is not None:
-            self.all_containers_images_whitelisted = all_containers_images_whitelisted
-        if app_version is not None:
-            self.app_version = app_version
-        if category is not None:
-            self.category = category
-        if deprecated is not None:
-            self.deprecated = deprecated
-        if description is not None:
-            self.description = description
-        if has_values_schema is not None:
-            self.has_values_schema = has_values_schema
-        if logo_image_id is not None:
-            self.logo_image_id = logo_image_id
         if name is not None:
             self.name = name
-        if normalized_name is not None:
-            self.normalized_name = normalized_name
-        if official is not None:
-            self.official = official
-        if package_id is not None:
-            self.package_id = package_id
-        if production_organizations_count is not None:
-            self.production_organizations_count = production_organizations_count
-        if repository is not None:
-            self.repository = repository
-        if security_report_summary is not None:
-            self.security_report_summary = security_report_summary
-        if signed is not None:
-            self.signed = signed
+        if category is not None:
+            self.category = category
         if stars is not None:
             self.stars = stars
-        if ts is not None:
-            self.ts = ts
+        if official is not None:
+            self.official = official
+        if description is not None:
+            self.description = description
         if version is not None:
             self.version = version
-
-    @property
-    def all_containers_images_whitelisted(self):
-        """Gets the all_containers_images_whitelisted of this Package.  # noqa: E501
-
-
-        :return: The all_containers_images_whitelisted of this Package.  # noqa: E501
-        :rtype: bool
-        """
-        return self._all_containers_images_whitelisted
-
-    @all_containers_images_whitelisted.setter
-    def all_containers_images_whitelisted(self, all_containers_images_whitelisted):
-        """Sets the all_containers_images_whitelisted of this Package.
-
-
-        :param all_containers_images_whitelisted: The all_containers_images_whitelisted of this Package.  # noqa: E501
-        :type: bool
-        """
-
-        self._all_containers_images_whitelisted = all_containers_images_whitelisted
-
-    @property
-    def app_version(self):
-        """Gets the app_version of this Package.  # noqa: E501
-
-
-        :return: The app_version of this Package.  # noqa: E501
-        :rtype: str
-        """
-        return self._app_version
-
-    @app_version.setter
-    def app_version(self, app_version):
-        """Sets the app_version of this Package.
-
-
-        :param app_version: The app_version of this Package.  # noqa: E501
-        :type: str
-        """
-
-        self._app_version = app_version
-
-    @property
-    def category(self):
-        """Gets the category of this Package.  # noqa: E501
-
-
-        :return: The category of this Package.  # noqa: E501
-        :rtype: int
-        """
-        return self._category
-
-    @category.setter
-    def category(self, category):
-        """Sets the category of this Package.
-
-
-        :param category: The category of this Package.  # noqa: E501
-        :type: int
-        """
-
-        self._category = category
-
-    @property
-    def deprecated(self):
-        """Gets the deprecated of this Package.  # noqa: E501
-
-
-        :return: The deprecated of this Package.  # noqa: E501
-        :rtype: bool
-        """
-        return self._deprecated
-
-    @deprecated.setter
-    def deprecated(self, deprecated):
-        """Sets the deprecated of this Package.
-
-
-        :param deprecated: The deprecated of this Package.  # noqa: E501
-        :type: bool
-        """
-
-        self._deprecated = deprecated
-
-    @property
-    def description(self):
-        """Gets the description of this Package.  # noqa: E501
-
-
-        :return: The description of this Package.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Package.
-
-
-        :param description: The description of this Package.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def has_values_schema(self):
-        """Gets the has_values_schema of this Package.  # noqa: E501
-
-
-        :return: The has_values_schema of this Package.  # noqa: E501
-        :rtype: bool
-        """
-        return self._has_values_schema
-
-    @has_values_schema.setter
-    def has_values_schema(self, has_values_schema):
-        """Sets the has_values_schema of this Package.
-
-
-        :param has_values_schema: The has_values_schema of this Package.  # noqa: E501
-        :type: bool
-        """
-
-        self._has_values_schema = has_values_schema
-
-    @property
-    def logo_image_id(self):
-        """Gets the logo_image_id of this Package.  # noqa: E501
-
-
-        :return: The logo_image_id of this Package.  # noqa: E501
-        :rtype: str
-        """
-        return self._logo_image_id
-
-    @logo_image_id.setter
-    def logo_image_id(self, logo_image_id):
-        """Sets the logo_image_id of this Package.
-
-
-        :param logo_image_id: The logo_image_id of this Package.  # noqa: E501
-        :type: str
-        """
-
-        self._logo_image_id = logo_image_id
+        if deprecated is not None:
+            self.deprecated = deprecated
+        if signed is not None:
+            self.signed = signed
+        if ts is not None:
+            self.ts = ts
+        if repository is not None:
+            self.repository = repository
+        if package_id is not None:
+            self.package_id = package_id
+        if normalized_name is not None:
+            self.normalized_name = normalized_name
+        if logo_image_id is not None:
+            self.logo_image_id = logo_image_id
+        if app_version is not None:
+            self.app_version = app_version
+        if has_values_schema is not None:
+            self.has_values_schema = has_values_schema
+        if security_report_summary is not None:
+            self.security_report_summary = security_report_summary
+        if all_containers_images_whitelisted is not None:
+            self.all_containers_images_whitelisted = all_containers_images_whitelisted
+        if production_organizations_count is not None:
+            self.production_organizations_count = production_organizations_count
 
     @property
     def name(self):
@@ -296,151 +149,25 @@ class Package(object):
         self._name = name
 
     @property
-    def normalized_name(self):
-        """Gets the normalized_name of this Package.  # noqa: E501
+    def category(self):
+        """Gets the category of this Package.  # noqa: E501
 
 
-        :return: The normalized_name of this Package.  # noqa: E501
-        :rtype: str
-        """
-        return self._normalized_name
-
-    @normalized_name.setter
-    def normalized_name(self, normalized_name):
-        """Sets the normalized_name of this Package.
-
-
-        :param normalized_name: The normalized_name of this Package.  # noqa: E501
-        :type: str
-        """
-
-        self._normalized_name = normalized_name
-
-    @property
-    def official(self):
-        """Gets the official of this Package.  # noqa: E501
-
-
-        :return: The official of this Package.  # noqa: E501
-        :rtype: bool
-        """
-        return self._official
-
-    @official.setter
-    def official(self, official):
-        """Sets the official of this Package.
-
-
-        :param official: The official of this Package.  # noqa: E501
-        :type: bool
-        """
-
-        self._official = official
-
-    @property
-    def package_id(self):
-        """Gets the package_id of this Package.  # noqa: E501
-
-
-        :return: The package_id of this Package.  # noqa: E501
-        :rtype: str
-        """
-        return self._package_id
-
-    @package_id.setter
-    def package_id(self, package_id):
-        """Sets the package_id of this Package.
-
-
-        :param package_id: The package_id of this Package.  # noqa: E501
-        :type: str
-        """
-
-        self._package_id = package_id
-
-    @property
-    def production_organizations_count(self):
-        """Gets the production_organizations_count of this Package.  # noqa: E501
-
-
-        :return: The production_organizations_count of this Package.  # noqa: E501
+        :return: The category of this Package.  # noqa: E501
         :rtype: int
         """
-        return self._production_organizations_count
+        return self._category
 
-    @production_organizations_count.setter
-    def production_organizations_count(self, production_organizations_count):
-        """Sets the production_organizations_count of this Package.
+    @category.setter
+    def category(self, category):
+        """Sets the category of this Package.
 
 
-        :param production_organizations_count: The production_organizations_count of this Package.  # noqa: E501
+        :param category: The category of this Package.  # noqa: E501
         :type: int
         """
 
-        self._production_organizations_count = production_organizations_count
-
-    @property
-    def repository(self):
-        """Gets the repository of this Package.  # noqa: E501
-
-
-        :return: The repository of this Package.  # noqa: E501
-        :rtype: Repository
-        """
-        return self._repository
-
-    @repository.setter
-    def repository(self, repository):
-        """Sets the repository of this Package.
-
-
-        :param repository: The repository of this Package.  # noqa: E501
-        :type: Repository
-        """
-
-        self._repository = repository
-
-    @property
-    def security_report_summary(self):
-        """Gets the security_report_summary of this Package.  # noqa: E501
-
-
-        :return: The security_report_summary of this Package.  # noqa: E501
-        :rtype: SecurityReportSummary
-        """
-        return self._security_report_summary
-
-    @security_report_summary.setter
-    def security_report_summary(self, security_report_summary):
-        """Sets the security_report_summary of this Package.
-
-
-        :param security_report_summary: The security_report_summary of this Package.  # noqa: E501
-        :type: SecurityReportSummary
-        """
-
-        self._security_report_summary = security_report_summary
-
-    @property
-    def signed(self):
-        """Gets the signed of this Package.  # noqa: E501
-
-
-        :return: The signed of this Package.  # noqa: E501
-        :rtype: bool
-        """
-        return self._signed
-
-    @signed.setter
-    def signed(self, signed):
-        """Sets the signed of this Package.
-
-
-        :param signed: The signed of this Package.  # noqa: E501
-        :type: bool
-        """
-
-        self._signed = signed
+        self._category = category
 
     @property
     def stars(self):
@@ -464,25 +191,46 @@ class Package(object):
         self._stars = stars
 
     @property
-    def ts(self):
-        """Gets the ts of this Package.  # noqa: E501
+    def official(self):
+        """Gets the official of this Package.  # noqa: E501
 
 
-        :return: The ts of this Package.  # noqa: E501
-        :rtype: int
+        :return: The official of this Package.  # noqa: E501
+        :rtype: bool
         """
-        return self._ts
+        return self._official
 
-    @ts.setter
-    def ts(self, ts):
-        """Sets the ts of this Package.
+    @official.setter
+    def official(self, official):
+        """Sets the official of this Package.
 
 
-        :param ts: The ts of this Package.  # noqa: E501
-        :type: int
+        :param official: The official of this Package.  # noqa: E501
+        :type: bool
         """
 
-        self._ts = ts
+        self._official = official
+
+    @property
+    def description(self):
+        """Gets the description of this Package.  # noqa: E501
+
+
+        :return: The description of this Package.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Package.
+
+
+        :param description: The description of this Package.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def version(self):
@@ -504,6 +252,258 @@ class Package(object):
         """
 
         self._version = version
+
+    @property
+    def deprecated(self):
+        """Gets the deprecated of this Package.  # noqa: E501
+
+
+        :return: The deprecated of this Package.  # noqa: E501
+        :rtype: bool
+        """
+        return self._deprecated
+
+    @deprecated.setter
+    def deprecated(self, deprecated):
+        """Sets the deprecated of this Package.
+
+
+        :param deprecated: The deprecated of this Package.  # noqa: E501
+        :type: bool
+        """
+
+        self._deprecated = deprecated
+
+    @property
+    def signed(self):
+        """Gets the signed of this Package.  # noqa: E501
+
+
+        :return: The signed of this Package.  # noqa: E501
+        :rtype: bool
+        """
+        return self._signed
+
+    @signed.setter
+    def signed(self, signed):
+        """Sets the signed of this Package.
+
+
+        :param signed: The signed of this Package.  # noqa: E501
+        :type: bool
+        """
+
+        self._signed = signed
+
+    @property
+    def ts(self):
+        """Gets the ts of this Package.  # noqa: E501
+
+
+        :return: The ts of this Package.  # noqa: E501
+        :rtype: int
+        """
+        return self._ts
+
+    @ts.setter
+    def ts(self, ts):
+        """Sets the ts of this Package.
+
+
+        :param ts: The ts of this Package.  # noqa: E501
+        :type: int
+        """
+
+        self._ts = ts
+
+    @property
+    def repository(self):
+        """Gets the repository of this Package.  # noqa: E501
+
+
+        :return: The repository of this Package.  # noqa: E501
+        :rtype: Repository
+        """
+        return self._repository
+
+    @repository.setter
+    def repository(self, repository):
+        """Sets the repository of this Package.
+
+
+        :param repository: The repository of this Package.  # noqa: E501
+        :type: Repository
+        """
+
+        self._repository = repository
+
+    @property
+    def package_id(self):
+        """Gets the package_id of this Package.  # noqa: E501
+
+
+        :return: The package_id of this Package.  # noqa: E501
+        :rtype: str
+        """
+        return self._package_id
+
+    @package_id.setter
+    def package_id(self, package_id):
+        """Sets the package_id of this Package.
+
+
+        :param package_id: The package_id of this Package.  # noqa: E501
+        :type: str
+        """
+
+        self._package_id = package_id
+
+    @property
+    def normalized_name(self):
+        """Gets the normalized_name of this Package.  # noqa: E501
+
+
+        :return: The normalized_name of this Package.  # noqa: E501
+        :rtype: str
+        """
+        return self._normalized_name
+
+    @normalized_name.setter
+    def normalized_name(self, normalized_name):
+        """Sets the normalized_name of this Package.
+
+
+        :param normalized_name: The normalized_name of this Package.  # noqa: E501
+        :type: str
+        """
+
+        self._normalized_name = normalized_name
+
+    @property
+    def logo_image_id(self):
+        """Gets the logo_image_id of this Package.  # noqa: E501
+
+
+        :return: The logo_image_id of this Package.  # noqa: E501
+        :rtype: str
+        """
+        return self._logo_image_id
+
+    @logo_image_id.setter
+    def logo_image_id(self, logo_image_id):
+        """Sets the logo_image_id of this Package.
+
+
+        :param logo_image_id: The logo_image_id of this Package.  # noqa: E501
+        :type: str
+        """
+
+        self._logo_image_id = logo_image_id
+
+    @property
+    def app_version(self):
+        """Gets the app_version of this Package.  # noqa: E501
+
+
+        :return: The app_version of this Package.  # noqa: E501
+        :rtype: str
+        """
+        return self._app_version
+
+    @app_version.setter
+    def app_version(self, app_version):
+        """Sets the app_version of this Package.
+
+
+        :param app_version: The app_version of this Package.  # noqa: E501
+        :type: str
+        """
+
+        self._app_version = app_version
+
+    @property
+    def has_values_schema(self):
+        """Gets the has_values_schema of this Package.  # noqa: E501
+
+
+        :return: The has_values_schema of this Package.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_values_schema
+
+    @has_values_schema.setter
+    def has_values_schema(self, has_values_schema):
+        """Sets the has_values_schema of this Package.
+
+
+        :param has_values_schema: The has_values_schema of this Package.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_values_schema = has_values_schema
+
+    @property
+    def security_report_summary(self):
+        """Gets the security_report_summary of this Package.  # noqa: E501
+
+
+        :return: The security_report_summary of this Package.  # noqa: E501
+        :rtype: SecurityReportSummary
+        """
+        return self._security_report_summary
+
+    @security_report_summary.setter
+    def security_report_summary(self, security_report_summary):
+        """Sets the security_report_summary of this Package.
+
+
+        :param security_report_summary: The security_report_summary of this Package.  # noqa: E501
+        :type: SecurityReportSummary
+        """
+
+        self._security_report_summary = security_report_summary
+
+    @property
+    def all_containers_images_whitelisted(self):
+        """Gets the all_containers_images_whitelisted of this Package.  # noqa: E501
+
+
+        :return: The all_containers_images_whitelisted of this Package.  # noqa: E501
+        :rtype: bool
+        """
+        return self._all_containers_images_whitelisted
+
+    @all_containers_images_whitelisted.setter
+    def all_containers_images_whitelisted(self, all_containers_images_whitelisted):
+        """Sets the all_containers_images_whitelisted of this Package.
+
+
+        :param all_containers_images_whitelisted: The all_containers_images_whitelisted of this Package.  # noqa: E501
+        :type: bool
+        """
+
+        self._all_containers_images_whitelisted = all_containers_images_whitelisted
+
+    @property
+    def production_organizations_count(self):
+        """Gets the production_organizations_count of this Package.  # noqa: E501
+
+
+        :return: The production_organizations_count of this Package.  # noqa: E501
+        :rtype: int
+        """
+        return self._production_organizations_count
+
+    @production_organizations_count.setter
+    def production_organizations_count(self, production_organizations_count):
+        """Sets the production_organizations_count of this Package.
+
+
+        :param production_organizations_count: The production_organizations_count of this Package.  # noqa: E501
+        :type: int
+        """
+
+        self._production_organizations_count = production_organizations_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

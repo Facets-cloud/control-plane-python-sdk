@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class DeploymentStatusCountDto(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'count': 'int',
         '_date': 'date',
-        'status': 'str'
+        'status': 'str',
+        'count': 'int'
     }
 
     attribute_map = {
-        'count': 'count',
         '_date': 'date',
-        'status': 'status'
+        'status': 'status',
+        'count': 'count'
     }
 
-    def __init__(self, count=None, _date=None, status=None):  # noqa: E501
+    def __init__(self, _date=None, status=None, count=None):  # noqa: E501
         """DeploymentStatusCountDto - a model defined in Swagger"""  # noqa: E501
-        self._count = None
         self.__date = None
         self._status = None
+        self._count = None
         self.discriminator = None
-        if count is not None:
-            self.count = count
         if _date is not None:
             self._date = _date
         if status is not None:
             self.status = status
-
-    @property
-    def count(self):
-        """Gets the count of this DeploymentStatusCountDto.  # noqa: E501
-
-
-        :return: The count of this DeploymentStatusCountDto.  # noqa: E501
-        :rtype: int
-        """
-        return self._count
-
-    @count.setter
-    def count(self, count):
-        """Sets the count of this DeploymentStatusCountDto.
-
-
-        :param count: The count of this DeploymentStatusCountDto.  # noqa: E501
-        :type: int
-        """
-
-        self._count = count
+        if count is not None:
+            self.count = count
 
     @property
     def _date(self):
@@ -120,6 +99,27 @@ class DeploymentStatusCountDto(object):
             )
 
         self._status = status
+
+    @property
+    def count(self):
+        """Gets the count of this DeploymentStatusCountDto.  # noqa: E501
+
+
+        :return: The count of this DeploymentStatusCountDto.  # noqa: E501
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """Sets the count of this DeploymentStatusCountDto.
+
+
+        :param count: The count of this DeploymentStatusCountDto.  # noqa: E501
+        :type: int
+        """
+
+        self._count = count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

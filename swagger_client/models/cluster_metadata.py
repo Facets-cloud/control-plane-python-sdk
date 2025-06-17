@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,71 +28,65 @@ class ClusterMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cloud': 'str',
-        'cluster_id': 'str',
-        'cluster_name': 'str',
-        'cluster_state': 'str',
         'id': 'str',
+        'cluster_id': 'str',
+        'cluster_state': 'str',
+        'cluster_name': 'str',
+        'cloud': 'str',
         'stack_name': 'str'
     }
 
     attribute_map = {
-        'cloud': 'cloud',
-        'cluster_id': 'clusterId',
-        'cluster_name': 'clusterName',
-        'cluster_state': 'clusterState',
         'id': 'id',
+        'cluster_id': 'clusterId',
+        'cluster_state': 'clusterState',
+        'cluster_name': 'clusterName',
+        'cloud': 'cloud',
         'stack_name': 'stackName'
     }
 
-    def __init__(self, cloud=None, cluster_id=None, cluster_name=None, cluster_state=None, id=None, stack_name=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, cluster_state=None, cluster_name=None, cloud=None, stack_name=None):  # noqa: E501
         """ClusterMetadata - a model defined in Swagger"""  # noqa: E501
-        self._cloud = None
-        self._cluster_id = None
-        self._cluster_name = None
-        self._cluster_state = None
         self._id = None
+        self._cluster_id = None
+        self._cluster_state = None
+        self._cluster_name = None
+        self._cloud = None
         self._stack_name = None
         self.discriminator = None
-        if cloud is not None:
-            self.cloud = cloud
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if cluster_name is not None:
-            self.cluster_name = cluster_name
-        if cluster_state is not None:
-            self.cluster_state = cluster_state
         if id is not None:
             self.id = id
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if cluster_state is not None:
+            self.cluster_state = cluster_state
+        if cluster_name is not None:
+            self.cluster_name = cluster_name
+        if cloud is not None:
+            self.cloud = cloud
         if stack_name is not None:
             self.stack_name = stack_name
 
     @property
-    def cloud(self):
-        """Gets the cloud of this ClusterMetadata.  # noqa: E501
+    def id(self):
+        """Gets the id of this ClusterMetadata.  # noqa: E501
 
 
-        :return: The cloud of this ClusterMetadata.  # noqa: E501
+        :return: The id of this ClusterMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._cloud
+        return self._id
 
-    @cloud.setter
-    def cloud(self, cloud):
-        """Sets the cloud of this ClusterMetadata.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ClusterMetadata.
 
 
-        :param cloud: The cloud of this ClusterMetadata.  # noqa: E501
+        :param id: The id of this ClusterMetadata.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if cloud not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
-                .format(cloud, allowed_values)
-            )
 
-        self._cloud = cloud
+        self._id = id
 
     @property
     def cluster_id(self):
@@ -114,27 +108,6 @@ class ClusterMetadata(object):
         """
 
         self._cluster_id = cluster_id
-
-    @property
-    def cluster_name(self):
-        """Gets the cluster_name of this ClusterMetadata.  # noqa: E501
-
-
-        :return: The cluster_name of this ClusterMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_name
-
-    @cluster_name.setter
-    def cluster_name(self, cluster_name):
-        """Sets the cluster_name of this ClusterMetadata.
-
-
-        :param cluster_name: The cluster_name of this ClusterMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_name = cluster_name
 
     @property
     def cluster_state(self):
@@ -164,25 +137,52 @@ class ClusterMetadata(object):
         self._cluster_state = cluster_state
 
     @property
-    def id(self):
-        """Gets the id of this ClusterMetadata.  # noqa: E501
+    def cluster_name(self):
+        """Gets the cluster_name of this ClusterMetadata.  # noqa: E501
 
 
-        :return: The id of this ClusterMetadata.  # noqa: E501
+        :return: The cluster_name of this ClusterMetadata.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._cluster_name
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this ClusterMetadata.
+    @cluster_name.setter
+    def cluster_name(self, cluster_name):
+        """Sets the cluster_name of this ClusterMetadata.
 
 
-        :param id: The id of this ClusterMetadata.  # noqa: E501
+        :param cluster_name: The cluster_name of this ClusterMetadata.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._cluster_name = cluster_name
+
+    @property
+    def cloud(self):
+        """Gets the cloud of this ClusterMetadata.  # noqa: E501
+
+
+        :return: The cloud of this ClusterMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud
+
+    @cloud.setter
+    def cloud(self, cloud):
+        """Sets the cloud of this ClusterMetadata.
+
+
+        :param cloud: The cloud of this ClusterMetadata.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if cloud not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
+                .format(cloud, allowed_values)
+            )
+
+        self._cloud = cloud
 
     @property
     def stack_name(self):

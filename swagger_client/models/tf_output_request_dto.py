@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,65 +28,66 @@ class TFOutputRequestDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'inferred_from_module': 'bool',
-        'lookup_tree': 'str',
         'name': 'str',
-        'namespace': 'str',
+        'lookup_tree': 'str',
+        'inferred_from_module': 'bool',
         'properties': 'JsonNode',
+        'namespace': 'str',
         'providers': 'list[TFProvider]'
     }
 
     attribute_map = {
-        'inferred_from_module': 'inferredFromModule',
-        'lookup_tree': 'lookupTree',
         'name': 'name',
-        'namespace': 'namespace',
+        'lookup_tree': 'lookupTree',
+        'inferred_from_module': 'inferredFromModule',
         'properties': 'properties',
+        'namespace': 'namespace',
         'providers': 'providers'
     }
 
-    def __init__(self, inferred_from_module=None, lookup_tree=None, name=None, namespace=None, properties=None, providers=None):  # noqa: E501
+    def __init__(self, name=None, lookup_tree=None, inferred_from_module=None, properties=None, namespace=None, providers=None):  # noqa: E501
         """TFOutputRequestDTO - a model defined in Swagger"""  # noqa: E501
-        self._inferred_from_module = None
-        self._lookup_tree = None
         self._name = None
-        self._namespace = None
+        self._lookup_tree = None
+        self._inferred_from_module = None
         self._properties = None
+        self._namespace = None
         self._providers = None
         self.discriminator = None
-        if inferred_from_module is not None:
-            self.inferred_from_module = inferred_from_module
+        self.name = name
         if lookup_tree is not None:
             self.lookup_tree = lookup_tree
-        if name is not None:
-            self.name = name
-        if namespace is not None:
-            self.namespace = namespace
+        if inferred_from_module is not None:
+            self.inferred_from_module = inferred_from_module
         if properties is not None:
             self.properties = properties
+        if namespace is not None:
+            self.namespace = namespace
         if providers is not None:
             self.providers = providers
 
     @property
-    def inferred_from_module(self):
-        """Gets the inferred_from_module of this TFOutputRequestDTO.  # noqa: E501
+    def name(self):
+        """Gets the name of this TFOutputRequestDTO.  # noqa: E501
 
 
-        :return: The inferred_from_module of this TFOutputRequestDTO.  # noqa: E501
-        :rtype: bool
+        :return: The name of this TFOutputRequestDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._inferred_from_module
+        return self._name
 
-    @inferred_from_module.setter
-    def inferred_from_module(self, inferred_from_module):
-        """Sets the inferred_from_module of this TFOutputRequestDTO.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this TFOutputRequestDTO.
 
 
-        :param inferred_from_module: The inferred_from_module of this TFOutputRequestDTO.  # noqa: E501
-        :type: bool
+        :param name: The name of this TFOutputRequestDTO.  # noqa: E501
+        :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
-        self._inferred_from_module = inferred_from_module
+        self._name = name
 
     @property
     def lookup_tree(self):
@@ -110,46 +111,25 @@ class TFOutputRequestDTO(object):
         self._lookup_tree = lookup_tree
 
     @property
-    def name(self):
-        """Gets the name of this TFOutputRequestDTO.  # noqa: E501
+    def inferred_from_module(self):
+        """Gets the inferred_from_module of this TFOutputRequestDTO.  # noqa: E501
 
 
-        :return: The name of this TFOutputRequestDTO.  # noqa: E501
-        :rtype: str
+        :return: The inferred_from_module of this TFOutputRequestDTO.  # noqa: E501
+        :rtype: bool
         """
-        return self._name
+        return self._inferred_from_module
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this TFOutputRequestDTO.
-
-
-        :param name: The name of this TFOutputRequestDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def namespace(self):
-        """Gets the namespace of this TFOutputRequestDTO.  # noqa: E501
+    @inferred_from_module.setter
+    def inferred_from_module(self, inferred_from_module):
+        """Sets the inferred_from_module of this TFOutputRequestDTO.
 
 
-        :return: The namespace of this TFOutputRequestDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """Sets the namespace of this TFOutputRequestDTO.
-
-
-        :param namespace: The namespace of this TFOutputRequestDTO.  # noqa: E501
-        :type: str
+        :param inferred_from_module: The inferred_from_module of this TFOutputRequestDTO.  # noqa: E501
+        :type: bool
         """
 
-        self._namespace = namespace
+        self._inferred_from_module = inferred_from_module
 
     @property
     def properties(self):
@@ -171,6 +151,27 @@ class TFOutputRequestDTO(object):
         """
 
         self._properties = properties
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this TFOutputRequestDTO.  # noqa: E501
+
+
+        :return: The namespace of this TFOutputRequestDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this TFOutputRequestDTO.
+
+
+        :param namespace: The namespace of this TFOutputRequestDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
 
     @property
     def providers(self):

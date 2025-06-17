@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,39 +28,82 @@ class CustomRoleRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'description': 'str',
-        'k8s_cluster_role': 'str',
-        'k8s_role': 'str',
+        'role_name': 'str',
         'permissions': 'list[str]',
-        'role_name': 'str'
+        'description': 'str',
+        'k8s_role': 'str',
+        'k8s_cluster_role': 'str'
     }
 
     attribute_map = {
-        'description': 'description',
-        'k8s_cluster_role': 'k8sClusterRole',
-        'k8s_role': 'k8sRole',
+        'role_name': 'roleName',
         'permissions': 'permissions',
-        'role_name': 'roleName'
+        'description': 'description',
+        'k8s_role': 'k8sRole',
+        'k8s_cluster_role': 'k8sClusterRole'
     }
 
-    def __init__(self, description=None, k8s_cluster_role=None, k8s_role=None, permissions=None, role_name=None):  # noqa: E501
+    def __init__(self, role_name=None, permissions=None, description=None, k8s_role=None, k8s_cluster_role=None):  # noqa: E501
         """CustomRoleRequest - a model defined in Swagger"""  # noqa: E501
-        self._description = None
-        self._k8s_cluster_role = None
-        self._k8s_role = None
-        self._permissions = None
         self._role_name = None
+        self._permissions = None
+        self._description = None
+        self._k8s_role = None
+        self._k8s_cluster_role = None
         self.discriminator = None
-        if description is not None:
-            self.description = description
-        if k8s_cluster_role is not None:
-            self.k8s_cluster_role = k8s_cluster_role
-        if k8s_role is not None:
-            self.k8s_role = k8s_role
-        if permissions is not None:
-            self.permissions = permissions
         if role_name is not None:
             self.role_name = role_name
+        self.permissions = permissions
+        if description is not None:
+            self.description = description
+        if k8s_role is not None:
+            self.k8s_role = k8s_role
+        if k8s_cluster_role is not None:
+            self.k8s_cluster_role = k8s_cluster_role
+
+    @property
+    def role_name(self):
+        """Gets the role_name of this CustomRoleRequest.  # noqa: E501
+
+
+        :return: The role_name of this CustomRoleRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_name
+
+    @role_name.setter
+    def role_name(self, role_name):
+        """Sets the role_name of this CustomRoleRequest.
+
+
+        :param role_name: The role_name of this CustomRoleRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._role_name = role_name
+
+    @property
+    def permissions(self):
+        """Gets the permissions of this CustomRoleRequest.  # noqa: E501
+
+
+        :return: The permissions of this CustomRoleRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._permissions
+
+    @permissions.setter
+    def permissions(self, permissions):
+        """Sets the permissions of this CustomRoleRequest.
+
+
+        :param permissions: The permissions of this CustomRoleRequest.  # noqa: E501
+        :type: list[str]
+        """
+        if permissions is None:
+            raise ValueError("Invalid value for `permissions`, must not be `None`")  # noqa: E501
+
+        self._permissions = permissions
 
     @property
     def description(self):
@@ -84,27 +127,6 @@ class CustomRoleRequest(object):
         self._description = description
 
     @property
-    def k8s_cluster_role(self):
-        """Gets the k8s_cluster_role of this CustomRoleRequest.  # noqa: E501
-
-
-        :return: The k8s_cluster_role of this CustomRoleRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._k8s_cluster_role
-
-    @k8s_cluster_role.setter
-    def k8s_cluster_role(self, k8s_cluster_role):
-        """Sets the k8s_cluster_role of this CustomRoleRequest.
-
-
-        :param k8s_cluster_role: The k8s_cluster_role of this CustomRoleRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._k8s_cluster_role = k8s_cluster_role
-
-    @property
     def k8s_role(self):
         """Gets the k8s_role of this CustomRoleRequest.  # noqa: E501
 
@@ -126,46 +148,25 @@ class CustomRoleRequest(object):
         self._k8s_role = k8s_role
 
     @property
-    def permissions(self):
-        """Gets the permissions of this CustomRoleRequest.  # noqa: E501
+    def k8s_cluster_role(self):
+        """Gets the k8s_cluster_role of this CustomRoleRequest.  # noqa: E501
 
 
-        :return: The permissions of this CustomRoleRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._permissions
-
-    @permissions.setter
-    def permissions(self, permissions):
-        """Sets the permissions of this CustomRoleRequest.
-
-
-        :param permissions: The permissions of this CustomRoleRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._permissions = permissions
-
-    @property
-    def role_name(self):
-        """Gets the role_name of this CustomRoleRequest.  # noqa: E501
-
-
-        :return: The role_name of this CustomRoleRequest.  # noqa: E501
+        :return: The k8s_cluster_role of this CustomRoleRequest.  # noqa: E501
         :rtype: str
         """
-        return self._role_name
+        return self._k8s_cluster_role
 
-    @role_name.setter
-    def role_name(self, role_name):
-        """Sets the role_name of this CustomRoleRequest.
+    @k8s_cluster_role.setter
+    def k8s_cluster_role(self, k8s_cluster_role):
+        """Sets the k8s_cluster_role of this CustomRoleRequest.
 
 
-        :param role_name: The role_name of this CustomRoleRequest.  # noqa: E501
+        :param k8s_cluster_role: The k8s_cluster_role of this CustomRoleRequest.  # noqa: E501
         :type: str
         """
 
-        self._role_name = role_name
+        self._k8s_cluster_role = k8s_cluster_role
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class MigrateOverridesRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'branch_name': 'str',
         'git_override_url': 'str',
+        'branch_name': 'str',
         'stack_name': 'str'
     }
 
     attribute_map = {
-        'branch_name': 'branchName',
         'git_override_url': 'gitOverrideUrl',
+        'branch_name': 'branchName',
         'stack_name': 'stackName'
     }
 
-    def __init__(self, branch_name=None, git_override_url=None, stack_name=None):  # noqa: E501
+    def __init__(self, git_override_url=None, branch_name=None, stack_name=None):  # noqa: E501
         """MigrateOverridesRequest - a model defined in Swagger"""  # noqa: E501
-        self._branch_name = None
         self._git_override_url = None
+        self._branch_name = None
         self._stack_name = None
         self.discriminator = None
-        if branch_name is not None:
-            self.branch_name = branch_name
         if git_override_url is not None:
             self.git_override_url = git_override_url
+        if branch_name is not None:
+            self.branch_name = branch_name
         if stack_name is not None:
             self.stack_name = stack_name
-
-    @property
-    def branch_name(self):
-        """Gets the branch_name of this MigrateOverridesRequest.  # noqa: E501
-
-
-        :return: The branch_name of this MigrateOverridesRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch_name
-
-    @branch_name.setter
-    def branch_name(self, branch_name):
-        """Sets the branch_name of this MigrateOverridesRequest.
-
-
-        :param branch_name: The branch_name of this MigrateOverridesRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._branch_name = branch_name
 
     @property
     def git_override_url(self):
@@ -93,6 +72,27 @@ class MigrateOverridesRequest(object):
         """
 
         self._git_override_url = git_override_url
+
+    @property
+    def branch_name(self):
+        """Gets the branch_name of this MigrateOverridesRequest.  # noqa: E501
+
+
+        :return: The branch_name of this MigrateOverridesRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._branch_name
+
+    @branch_name.setter
+    def branch_name(self, branch_name):
+        """Sets the branch_name of this MigrateOverridesRequest.
+
+
+        :param branch_name: The branch_name of this MigrateOverridesRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._branch_name = branch_name
 
     @property
     def stack_name(self):

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,34 @@ class ClusterCostDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
         'cluster_name': 'str',
-        'costs': 'list[CostDTO]',
-        'total': 'float'
+        'cluster_id': 'str',
+        'total': 'float',
+        'costs': 'list[CostDTO]'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
         'cluster_name': 'clusterName',
-        'costs': 'costs',
-        'total': 'total'
+        'cluster_id': 'clusterId',
+        'total': 'total',
+        'costs': 'costs'
     }
 
-    def __init__(self, cluster_id=None, cluster_name=None, costs=None, total=None):  # noqa: E501
+    def __init__(self, cluster_name=None, cluster_id=None, total=None, costs=None):  # noqa: E501
         """ClusterCostDTO - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
         self._cluster_name = None
-        self._costs = None
+        self._cluster_id = None
         self._total = None
+        self._costs = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
         if cluster_name is not None:
             self.cluster_name = cluster_name
-        if costs is not None:
-            self.costs = costs
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if total is not None:
             self.total = total
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ClusterCostDTO.  # noqa: E501
-
-
-        :return: The cluster_id of this ClusterCostDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ClusterCostDTO.
-
-
-        :param cluster_id: The cluster_id of this ClusterCostDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
+        if costs is not None:
+            self.costs = costs
 
     @property
     def cluster_name(self):
@@ -100,25 +79,25 @@ class ClusterCostDTO(object):
         self._cluster_name = cluster_name
 
     @property
-    def costs(self):
-        """Gets the costs of this ClusterCostDTO.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this ClusterCostDTO.  # noqa: E501
 
 
-        :return: The costs of this ClusterCostDTO.  # noqa: E501
-        :rtype: list[CostDTO]
+        :return: The cluster_id of this ClusterCostDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._costs
+        return self._cluster_id
 
-    @costs.setter
-    def costs(self, costs):
-        """Sets the costs of this ClusterCostDTO.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ClusterCostDTO.
 
 
-        :param costs: The costs of this ClusterCostDTO.  # noqa: E501
-        :type: list[CostDTO]
+        :param cluster_id: The cluster_id of this ClusterCostDTO.  # noqa: E501
+        :type: str
         """
 
-        self._costs = costs
+        self._cluster_id = cluster_id
 
     @property
     def total(self):
@@ -140,6 +119,27 @@ class ClusterCostDTO(object):
         """
 
         self._total = total
+
+    @property
+    def costs(self):
+        """Gets the costs of this ClusterCostDTO.  # noqa: E501
+
+
+        :return: The costs of this ClusterCostDTO.  # noqa: E501
+        :rtype: list[CostDTO]
+        """
+        return self._costs
+
+    @costs.setter
+    def costs(self, costs):
+        """Sets the costs of this ClusterCostDTO.
+
+
+        :param costs: The costs of this ClusterCostDTO.  # noqa: E501
+        :type: list[CostDTO]
+        """
+
+        self._costs = costs
 
     def to_dict(self):
         """Returns the model properties as a dict"""

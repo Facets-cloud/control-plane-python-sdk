@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,76 @@ class ModuleMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auto_create': 'bool',
-        'feature_branch': 'bool',
+        'git_url': 'str',
         'git_ref': 'str',
-        'git_url': 'str'
+        'auto_create': 'bool',
+        'feature_branch': 'bool'
     }
 
     attribute_map = {
-        'auto_create': 'autoCreate',
-        'feature_branch': 'featureBranch',
+        'git_url': 'gitUrl',
         'git_ref': 'gitRef',
-        'git_url': 'gitUrl'
+        'auto_create': 'autoCreate',
+        'feature_branch': 'featureBranch'
     }
 
-    def __init__(self, auto_create=None, feature_branch=None, git_ref=None, git_url=None):  # noqa: E501
+    def __init__(self, git_url=None, git_ref=None, auto_create=None, feature_branch=None):  # noqa: E501
         """ModuleMetadata - a model defined in Swagger"""  # noqa: E501
+        self._git_url = None
+        self._git_ref = None
         self._auto_create = None
         self._feature_branch = None
-        self._git_ref = None
-        self._git_url = None
         self.discriminator = None
+        if git_url is not None:
+            self.git_url = git_url
+        if git_ref is not None:
+            self.git_ref = git_ref
         if auto_create is not None:
             self.auto_create = auto_create
         if feature_branch is not None:
             self.feature_branch = feature_branch
-        if git_ref is not None:
-            self.git_ref = git_ref
-        if git_url is not None:
-            self.git_url = git_url
+
+    @property
+    def git_url(self):
+        """Gets the git_url of this ModuleMetadata.  # noqa: E501
+
+
+        :return: The git_url of this ModuleMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_url
+
+    @git_url.setter
+    def git_url(self, git_url):
+        """Sets the git_url of this ModuleMetadata.
+
+
+        :param git_url: The git_url of this ModuleMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._git_url = git_url
+
+    @property
+    def git_ref(self):
+        """Gets the git_ref of this ModuleMetadata.  # noqa: E501
+
+
+        :return: The git_ref of this ModuleMetadata.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_ref
+
+    @git_ref.setter
+    def git_ref(self, git_ref):
+        """Sets the git_ref of this ModuleMetadata.
+
+
+        :param git_ref: The git_ref of this ModuleMetadata.  # noqa: E501
+        :type: str
+        """
+
+        self._git_ref = git_ref
 
     @property
     def auto_create(self):
@@ -98,48 +140,6 @@ class ModuleMetadata(object):
         """
 
         self._feature_branch = feature_branch
-
-    @property
-    def git_ref(self):
-        """Gets the git_ref of this ModuleMetadata.  # noqa: E501
-
-
-        :return: The git_ref of this ModuleMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_ref
-
-    @git_ref.setter
-    def git_ref(self, git_ref):
-        """Sets the git_ref of this ModuleMetadata.
-
-
-        :param git_ref: The git_ref of this ModuleMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._git_ref = git_ref
-
-    @property
-    def git_url(self):
-        """Gets the git_url of this ModuleMetadata.  # noqa: E501
-
-
-        :return: The git_url of this ModuleMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_url
-
-    @git_url.setter
-    def git_url(self, git_url):
-        """Sets the git_url of this ModuleMetadata.
-
-
-        :param git_url: The git_url of this ModuleMetadata.  # noqa: E501
-        :type: str
-        """
-
-        self._git_url = git_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,28 +29,26 @@ class DomainDTO(object):
     """
     swagger_types = {
         'alias': 'str',
-        'certificate_reference': 'str',
-        'domain': 'str'
+        'domain': 'str',
+        'certificate_reference': 'str'
     }
 
     attribute_map = {
         'alias': 'alias',
-        'certificate_reference': 'certificateReference',
-        'domain': 'domain'
+        'domain': 'domain',
+        'certificate_reference': 'certificateReference'
     }
 
-    def __init__(self, alias=None, certificate_reference=None, domain=None):  # noqa: E501
+    def __init__(self, alias=None, domain=None, certificate_reference=None):  # noqa: E501
         """DomainDTO - a model defined in Swagger"""  # noqa: E501
         self._alias = None
-        self._certificate_reference = None
         self._domain = None
+        self._certificate_reference = None
         self.discriminator = None
-        if alias is not None:
-            self.alias = alias
+        self.alias = alias
+        self.domain = domain
         if certificate_reference is not None:
             self.certificate_reference = certificate_reference
-        if domain is not None:
-            self.domain = domain
 
     @property
     def alias(self):
@@ -70,8 +68,33 @@ class DomainDTO(object):
         :param alias: The alias of this DomainDTO.  # noqa: E501
         :type: str
         """
+        if alias is None:
+            raise ValueError("Invalid value for `alias`, must not be `None`")  # noqa: E501
 
         self._alias = alias
+
+    @property
+    def domain(self):
+        """Gets the domain of this DomainDTO.  # noqa: E501
+
+
+        :return: The domain of this DomainDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._domain
+
+    @domain.setter
+    def domain(self, domain):
+        """Sets the domain of this DomainDTO.
+
+
+        :param domain: The domain of this DomainDTO.  # noqa: E501
+        :type: str
+        """
+        if domain is None:
+            raise ValueError("Invalid value for `domain`, must not be `None`")  # noqa: E501
+
+        self._domain = domain
 
     @property
     def certificate_reference(self):
@@ -93,27 +116,6 @@ class DomainDTO(object):
         """
 
         self._certificate_reference = certificate_reference
-
-    @property
-    def domain(self):
-        """Gets the domain of this DomainDTO.  # noqa: E501
-
-
-        :return: The domain of this DomainDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._domain
-
-    @domain.setter
-    def domain(self, domain):
-        """Sets the domain of this DomainDTO.
-
-
-        :param domain: The domain of this DomainDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._domain = domain
 
     def to_dict(self):
         """Returns the model properties as a dict"""

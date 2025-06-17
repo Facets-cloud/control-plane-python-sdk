@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,75 +28,54 @@ class PullRequestResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created_at': 'datetime',
         'html_url': 'str',
-        'labels': 'list[GithubLabel]',
-        'merged_at': 'datetime',
+        'title': 'str',
         'number': 'str',
         'state': 'str',
-        'title': 'str',
-        'user': 'GithubUser'
+        'user': 'GithubUser',
+        'labels': 'list[GithubLabel]',
+        'created_at': 'datetime',
+        'merged_at': 'datetime'
     }
 
     attribute_map = {
-        'created_at': 'createdAt',
         'html_url': 'htmlUrl',
-        'labels': 'labels',
-        'merged_at': 'mergedAt',
+        'title': 'title',
         'number': 'number',
         'state': 'state',
-        'title': 'title',
-        'user': 'user'
+        'user': 'user',
+        'labels': 'labels',
+        'created_at': 'createdAt',
+        'merged_at': 'mergedAt'
     }
 
-    def __init__(self, created_at=None, html_url=None, labels=None, merged_at=None, number=None, state=None, title=None, user=None):  # noqa: E501
+    def __init__(self, html_url=None, title=None, number=None, state=None, user=None, labels=None, created_at=None, merged_at=None):  # noqa: E501
         """PullRequestResponse - a model defined in Swagger"""  # noqa: E501
-        self._created_at = None
         self._html_url = None
-        self._labels = None
-        self._merged_at = None
+        self._title = None
         self._number = None
         self._state = None
-        self._title = None
         self._user = None
+        self._labels = None
+        self._created_at = None
+        self._merged_at = None
         self.discriminator = None
-        if created_at is not None:
-            self.created_at = created_at
         if html_url is not None:
             self.html_url = html_url
-        if labels is not None:
-            self.labels = labels
-        if merged_at is not None:
-            self.merged_at = merged_at
+        if title is not None:
+            self.title = title
         if number is not None:
             self.number = number
         if state is not None:
             self.state = state
-        if title is not None:
-            self.title = title
         if user is not None:
             self.user = user
-
-    @property
-    def created_at(self):
-        """Gets the created_at of this PullRequestResponse.  # noqa: E501
-
-
-        :return: The created_at of this PullRequestResponse.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._created_at
-
-    @created_at.setter
-    def created_at(self, created_at):
-        """Sets the created_at of this PullRequestResponse.
-
-
-        :param created_at: The created_at of this PullRequestResponse.  # noqa: E501
-        :type: datetime
-        """
-
-        self._created_at = created_at
+        if labels is not None:
+            self.labels = labels
+        if created_at is not None:
+            self.created_at = created_at
+        if merged_at is not None:
+            self.merged_at = merged_at
 
     @property
     def html_url(self):
@@ -120,46 +99,25 @@ class PullRequestResponse(object):
         self._html_url = html_url
 
     @property
-    def labels(self):
-        """Gets the labels of this PullRequestResponse.  # noqa: E501
+    def title(self):
+        """Gets the title of this PullRequestResponse.  # noqa: E501
 
 
-        :return: The labels of this PullRequestResponse.  # noqa: E501
-        :rtype: list[GithubLabel]
+        :return: The title of this PullRequestResponse.  # noqa: E501
+        :rtype: str
         """
-        return self._labels
+        return self._title
 
-    @labels.setter
-    def labels(self, labels):
-        """Sets the labels of this PullRequestResponse.
-
-
-        :param labels: The labels of this PullRequestResponse.  # noqa: E501
-        :type: list[GithubLabel]
-        """
-
-        self._labels = labels
-
-    @property
-    def merged_at(self):
-        """Gets the merged_at of this PullRequestResponse.  # noqa: E501
+    @title.setter
+    def title(self, title):
+        """Sets the title of this PullRequestResponse.
 
 
-        :return: The merged_at of this PullRequestResponse.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._merged_at
-
-    @merged_at.setter
-    def merged_at(self, merged_at):
-        """Sets the merged_at of this PullRequestResponse.
-
-
-        :param merged_at: The merged_at of this PullRequestResponse.  # noqa: E501
-        :type: datetime
+        :param title: The title of this PullRequestResponse.  # noqa: E501
+        :type: str
         """
 
-        self._merged_at = merged_at
+        self._title = title
 
     @property
     def number(self):
@@ -204,27 +162,6 @@ class PullRequestResponse(object):
         self._state = state
 
     @property
-    def title(self):
-        """Gets the title of this PullRequestResponse.  # noqa: E501
-
-
-        :return: The title of this PullRequestResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._title
-
-    @title.setter
-    def title(self, title):
-        """Sets the title of this PullRequestResponse.
-
-
-        :param title: The title of this PullRequestResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._title = title
-
-    @property
     def user(self):
         """Gets the user of this PullRequestResponse.  # noqa: E501
 
@@ -244,6 +181,69 @@ class PullRequestResponse(object):
         """
 
         self._user = user
+
+    @property
+    def labels(self):
+        """Gets the labels of this PullRequestResponse.  # noqa: E501
+
+
+        :return: The labels of this PullRequestResponse.  # noqa: E501
+        :rtype: list[GithubLabel]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels):
+        """Sets the labels of this PullRequestResponse.
+
+
+        :param labels: The labels of this PullRequestResponse.  # noqa: E501
+        :type: list[GithubLabel]
+        """
+
+        self._labels = labels
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this PullRequestResponse.  # noqa: E501
+
+
+        :return: The created_at of this PullRequestResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this PullRequestResponse.
+
+
+        :param created_at: The created_at of this PullRequestResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def merged_at(self):
+        """Gets the merged_at of this PullRequestResponse.  # noqa: E501
+
+
+        :return: The merged_at of this PullRequestResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._merged_at
+
+    @merged_at.setter
+    def merged_at(self, merged_at):
+        """Sets the merged_at of this PullRequestResponse.
+
+
+        :param merged_at: The merged_at of this PullRequestResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._merged_at = merged_at
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class GroupedCountDto(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'int',
-        'total': 'int'
+        'total': 'int',
+        'enabled': 'int'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
-        'total': 'total'
+        'total': 'total',
+        'enabled': 'enabled'
     }
 
-    def __init__(self, enabled=None, total=None):  # noqa: E501
+    def __init__(self, total=None, enabled=None):  # noqa: E501
         """GroupedCountDto - a model defined in Swagger"""  # noqa: E501
-        self._enabled = None
         self._total = None
+        self._enabled = None
         self.discriminator = None
-        if enabled is not None:
-            self.enabled = enabled
         if total is not None:
             self.total = total
-
-    @property
-    def enabled(self):
-        """Gets the enabled of this GroupedCountDto.  # noqa: E501
-
-
-        :return: The enabled of this GroupedCountDto.  # noqa: E501
-        :rtype: int
-        """
-        return self._enabled
-
-    @enabled.setter
-    def enabled(self, enabled):
-        """Sets the enabled of this GroupedCountDto.
-
-
-        :param enabled: The enabled of this GroupedCountDto.  # noqa: E501
-        :type: int
-        """
-
-        self._enabled = enabled
+        if enabled is not None:
+            self.enabled = enabled
 
     @property
     def total(self):
@@ -88,6 +67,27 @@ class GroupedCountDto(object):
         """
 
         self._total = total
+
+    @property
+    def enabled(self):
+        """Gets the enabled of this GroupedCountDto.  # noqa: E501
+
+
+        :return: The enabled of this GroupedCountDto.  # noqa: E501
+        :rtype: int
+        """
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled):
+        """Sets the enabled of this GroupedCountDto.
+
+
+        :param enabled: The enabled of this GroupedCountDto.  # noqa: E501
+        :type: int
+        """
+
+        self._enabled = enabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

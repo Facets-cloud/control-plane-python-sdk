@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,50 @@ class ConfigMapDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age': 'int',
+        'name': 'str',
         'keys': 'list[str]',
-        'name': 'str'
+        'age': 'int'
     }
 
     attribute_map = {
-        'age': 'age',
+        'name': 'name',
         'keys': 'keys',
-        'name': 'name'
+        'age': 'age'
     }
 
-    def __init__(self, age=None, keys=None, name=None):  # noqa: E501
+    def __init__(self, name=None, keys=None, age=None):  # noqa: E501
         """ConfigMapDTO - a model defined in Swagger"""  # noqa: E501
-        self._age = None
-        self._keys = None
         self._name = None
+        self._keys = None
+        self._age = None
         self.discriminator = None
-        if age is not None:
-            self.age = age
-        if keys is not None:
-            self.keys = keys
         if name is not None:
             self.name = name
+        if keys is not None:
+            self.keys = keys
+        if age is not None:
+            self.age = age
 
     @property
-    def age(self):
-        """Gets the age of this ConfigMapDTO.  # noqa: E501
+    def name(self):
+        """Gets the name of this ConfigMapDTO.  # noqa: E501
 
 
-        :return: The age of this ConfigMapDTO.  # noqa: E501
-        :rtype: int
+        :return: The name of this ConfigMapDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._age
+        return self._name
 
-    @age.setter
-    def age(self, age):
-        """Sets the age of this ConfigMapDTO.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ConfigMapDTO.
 
 
-        :param age: The age of this ConfigMapDTO.  # noqa: E501
-        :type: int
+        :param name: The name of this ConfigMapDTO.  # noqa: E501
+        :type: str
         """
 
-        self._age = age
+        self._name = name
 
     @property
     def keys(self):
@@ -95,25 +95,25 @@ class ConfigMapDTO(object):
         self._keys = keys
 
     @property
-    def name(self):
-        """Gets the name of this ConfigMapDTO.  # noqa: E501
+    def age(self):
+        """Gets the age of this ConfigMapDTO.  # noqa: E501
 
 
-        :return: The name of this ConfigMapDTO.  # noqa: E501
-        :rtype: str
+        :return: The age of this ConfigMapDTO.  # noqa: E501
+        :rtype: int
         """
-        return self._name
+        return self._age
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ConfigMapDTO.
+    @age.setter
+    def age(self, age):
+        """Sets the age of this ConfigMapDTO.
 
 
-        :param name: The name of this ConfigMapDTO.  # noqa: E501
-        :type: str
+        :param age: The age of this ConfigMapDTO.  # noqa: E501
+        :type: int
         """
 
-        self._name = name
+        self._age = age
 
     def to_dict(self):
         """Returns the model properties as a dict"""

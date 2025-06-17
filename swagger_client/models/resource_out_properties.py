@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,91 +28,49 @@ class ResourceOutProperties(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'attributes': 'object',
-        'cluster_id': 'str',
         'id': 'str',
-        'interfaces': 'object',
         'resource_name': 'str',
         'resource_type': 'str',
+        'cluster_id': 'str',
+        'interfaces': 'dict(str, object)',
+        'attributes': 'dict(str, object)',
         'updated_at': 'datetime'
     }
 
     attribute_map = {
-        'attributes': 'attributes',
-        'cluster_id': 'clusterId',
         'id': 'id',
-        'interfaces': 'interfaces',
         'resource_name': 'resourceName',
         'resource_type': 'resourceType',
+        'cluster_id': 'clusterId',
+        'interfaces': 'interfaces',
+        'attributes': 'attributes',
         'updated_at': 'updatedAt'
     }
 
-    def __init__(self, attributes=None, cluster_id=None, id=None, interfaces=None, resource_name=None, resource_type=None, updated_at=None):  # noqa: E501
+    def __init__(self, id=None, resource_name=None, resource_type=None, cluster_id=None, interfaces=None, attributes=None, updated_at=None):  # noqa: E501
         """ResourceOutProperties - a model defined in Swagger"""  # noqa: E501
-        self._attributes = None
-        self._cluster_id = None
         self._id = None
-        self._interfaces = None
         self._resource_name = None
         self._resource_type = None
+        self._cluster_id = None
+        self._interfaces = None
+        self._attributes = None
         self._updated_at = None
         self.discriminator = None
-        if attributes is not None:
-            self.attributes = attributes
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
         if id is not None:
             self.id = id
-        if interfaces is not None:
-            self.interfaces = interfaces
         if resource_name is not None:
             self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
+        if interfaces is not None:
+            self.interfaces = interfaces
+        if attributes is not None:
+            self.attributes = attributes
         if updated_at is not None:
             self.updated_at = updated_at
-
-    @property
-    def attributes(self):
-        """Gets the attributes of this ResourceOutProperties.  # noqa: E501
-
-
-        :return: The attributes of this ResourceOutProperties.  # noqa: E501
-        :rtype: object
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """Sets the attributes of this ResourceOutProperties.
-
-
-        :param attributes: The attributes of this ResourceOutProperties.  # noqa: E501
-        :type: object
-        """
-
-        self._attributes = attributes
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ResourceOutProperties.  # noqa: E501
-
-
-        :return: The cluster_id of this ResourceOutProperties.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ResourceOutProperties.
-
-
-        :param cluster_id: The cluster_id of this ResourceOutProperties.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
 
     @property
     def id(self):
@@ -134,27 +92,6 @@ class ResourceOutProperties(object):
         """
 
         self._id = id
-
-    @property
-    def interfaces(self):
-        """Gets the interfaces of this ResourceOutProperties.  # noqa: E501
-
-
-        :return: The interfaces of this ResourceOutProperties.  # noqa: E501
-        :rtype: object
-        """
-        return self._interfaces
-
-    @interfaces.setter
-    def interfaces(self, interfaces):
-        """Sets the interfaces of this ResourceOutProperties.
-
-
-        :param interfaces: The interfaces of this ResourceOutProperties.  # noqa: E501
-        :type: object
-        """
-
-        self._interfaces = interfaces
 
     @property
     def resource_name(self):
@@ -197,6 +134,69 @@ class ResourceOutProperties(object):
         """
 
         self._resource_type = resource_type
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this ResourceOutProperties.  # noqa: E501
+
+
+        :return: The cluster_id of this ResourceOutProperties.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ResourceOutProperties.
+
+
+        :param cluster_id: The cluster_id of this ResourceOutProperties.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
+
+    @property
+    def interfaces(self):
+        """Gets the interfaces of this ResourceOutProperties.  # noqa: E501
+
+
+        :return: The interfaces of this ResourceOutProperties.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._interfaces
+
+    @interfaces.setter
+    def interfaces(self, interfaces):
+        """Sets the interfaces of this ResourceOutProperties.
+
+
+        :param interfaces: The interfaces of this ResourceOutProperties.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._interfaces = interfaces
+
+    @property
+    def attributes(self):
+        """Gets the attributes of this ResourceOutProperties.  # noqa: E501
+
+
+        :return: The attributes of this ResourceOutProperties.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this ResourceOutProperties.
+
+
+        :param attributes: The attributes of this ResourceOutProperties.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._attributes = attributes
 
     @property
     def updated_at(self):

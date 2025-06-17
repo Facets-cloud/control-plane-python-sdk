@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -29,43 +29,38 @@ class BasicDockerDTO(object):
     """
     swagger_types = {
         'artifactory_name': 'str',
-        'artifactory_type': 'str',
-        'password': 'str',
-        'stacks_associated': 'list[str]',
         'uri': 'str',
-        'username': 'str'
+        'username': 'str',
+        'password': 'str',
+        'artifactory_type': 'str',
+        'stacks_associated': 'list[str]'
     }
 
     attribute_map = {
         'artifactory_name': 'artifactoryName',
-        'artifactory_type': 'artifactoryType',
-        'password': 'password',
-        'stacks_associated': 'stacksAssociated',
         'uri': 'uri',
-        'username': 'username'
+        'username': 'username',
+        'password': 'password',
+        'artifactory_type': 'artifactoryType',
+        'stacks_associated': 'stacksAssociated'
     }
 
-    def __init__(self, artifactory_name=None, artifactory_type=None, password=None, stacks_associated=None, uri=None, username=None):  # noqa: E501
+    def __init__(self, artifactory_name=None, uri=None, username=None, password=None, artifactory_type=None, stacks_associated=None):  # noqa: E501
         """BasicDockerDTO - a model defined in Swagger"""  # noqa: E501
         self._artifactory_name = None
-        self._artifactory_type = None
-        self._password = None
-        self._stacks_associated = None
         self._uri = None
         self._username = None
+        self._password = None
+        self._artifactory_type = None
+        self._stacks_associated = None
         self.discriminator = None
-        if artifactory_name is not None:
-            self.artifactory_name = artifactory_name
-        if artifactory_type is not None:
-            self.artifactory_type = artifactory_type
-        if password is not None:
-            self.password = password
+        self.artifactory_name = artifactory_name
+        self.uri = uri
+        self.username = username
+        self.password = password
+        self.artifactory_type = artifactory_type
         if stacks_associated is not None:
             self.stacks_associated = stacks_associated
-        if uri is not None:
-            self.uri = uri
-        if username is not None:
-            self.username = username
 
     @property
     def artifactory_name(self):
@@ -85,77 +80,10 @@ class BasicDockerDTO(object):
         :param artifactory_name: The artifactory_name of this BasicDockerDTO.  # noqa: E501
         :type: str
         """
+        if artifactory_name is None:
+            raise ValueError("Invalid value for `artifactory_name`, must not be `None`")  # noqa: E501
 
         self._artifactory_name = artifactory_name
-
-    @property
-    def artifactory_type(self):
-        """Gets the artifactory_type of this BasicDockerDTO.  # noqa: E501
-
-
-        :return: The artifactory_type of this BasicDockerDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._artifactory_type
-
-    @artifactory_type.setter
-    def artifactory_type(self, artifactory_type):
-        """Sets the artifactory_type of this BasicDockerDTO.
-
-
-        :param artifactory_type: The artifactory_type of this BasicDockerDTO.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ECR", "AZURE_CONTAINER_REGISTRY", "GOOGLE_ARTIFACT_REGISTRY", "GOOGLE_CONTAINER_REGISTRY", "NEXUS", "DOCKER_HUB", "JFROG", "OTHERS"]  # noqa: E501
-        if artifactory_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `artifactory_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(artifactory_type, allowed_values)
-            )
-
-        self._artifactory_type = artifactory_type
-
-    @property
-    def password(self):
-        """Gets the password of this BasicDockerDTO.  # noqa: E501
-
-
-        :return: The password of this BasicDockerDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._password
-
-    @password.setter
-    def password(self, password):
-        """Sets the password of this BasicDockerDTO.
-
-
-        :param password: The password of this BasicDockerDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._password = password
-
-    @property
-    def stacks_associated(self):
-        """Gets the stacks_associated of this BasicDockerDTO.  # noqa: E501
-
-
-        :return: The stacks_associated of this BasicDockerDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._stacks_associated
-
-    @stacks_associated.setter
-    def stacks_associated(self, stacks_associated):
-        """Sets the stacks_associated of this BasicDockerDTO.
-
-
-        :param stacks_associated: The stacks_associated of this BasicDockerDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._stacks_associated = stacks_associated
 
     @property
     def uri(self):
@@ -175,6 +103,8 @@ class BasicDockerDTO(object):
         :param uri: The uri of this BasicDockerDTO.  # noqa: E501
         :type: str
         """
+        if uri is None:
+            raise ValueError("Invalid value for `uri`, must not be `None`")  # noqa: E501
 
         self._uri = uri
 
@@ -196,8 +126,83 @@ class BasicDockerDTO(object):
         :param username: The username of this BasicDockerDTO.  # noqa: E501
         :type: str
         """
+        if username is None:
+            raise ValueError("Invalid value for `username`, must not be `None`")  # noqa: E501
 
         self._username = username
+
+    @property
+    def password(self):
+        """Gets the password of this BasicDockerDTO.  # noqa: E501
+
+
+        :return: The password of this BasicDockerDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this BasicDockerDTO.
+
+
+        :param password: The password of this BasicDockerDTO.  # noqa: E501
+        :type: str
+        """
+        if password is None:
+            raise ValueError("Invalid value for `password`, must not be `None`")  # noqa: E501
+
+        self._password = password
+
+    @property
+    def artifactory_type(self):
+        """Gets the artifactory_type of this BasicDockerDTO.  # noqa: E501
+
+
+        :return: The artifactory_type of this BasicDockerDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._artifactory_type
+
+    @artifactory_type.setter
+    def artifactory_type(self, artifactory_type):
+        """Sets the artifactory_type of this BasicDockerDTO.
+
+
+        :param artifactory_type: The artifactory_type of this BasicDockerDTO.  # noqa: E501
+        :type: str
+        """
+        if artifactory_type is None:
+            raise ValueError("Invalid value for `artifactory_type`, must not be `None`")  # noqa: E501
+        allowed_values = ["ECR", "AZURE_CONTAINER_REGISTRY", "GOOGLE_ARTIFACT_REGISTRY", "GOOGLE_CONTAINER_REGISTRY", "NEXUS", "DOCKER_HUB", "JFROG", "OTHERS"]  # noqa: E501
+        if artifactory_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `artifactory_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(artifactory_type, allowed_values)
+            )
+
+        self._artifactory_type = artifactory_type
+
+    @property
+    def stacks_associated(self):
+        """Gets the stacks_associated of this BasicDockerDTO.  # noqa: E501
+
+
+        :return: The stacks_associated of this BasicDockerDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._stacks_associated
+
+    @stacks_associated.setter
+    def stacks_associated(self, stacks_associated):
+        """Sets the stacks_associated of this BasicDockerDTO.
+
+
+        :param stacks_associated: The stacks_associated of this BasicDockerDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._stacks_associated = stacks_associated
 
     def to_dict(self):
         """Returns the model properties as a dict"""

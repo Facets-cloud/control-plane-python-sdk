@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class KubernetesCredential(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cacert': 'str',
         'endpoint': 'str',
+        'cacert': 'str',
         'token': 'str'
     }
 
     attribute_map = {
-        'cacert': 'cacert',
         'endpoint': 'endpoint',
+        'cacert': 'cacert',
         'token': 'token'
     }
 
-    def __init__(self, cacert=None, endpoint=None, token=None):  # noqa: E501
+    def __init__(self, endpoint=None, cacert=None, token=None):  # noqa: E501
         """KubernetesCredential - a model defined in Swagger"""  # noqa: E501
-        self._cacert = None
         self._endpoint = None
+        self._cacert = None
         self._token = None
         self.discriminator = None
-        if cacert is not None:
-            self.cacert = cacert
         if endpoint is not None:
             self.endpoint = endpoint
+        if cacert is not None:
+            self.cacert = cacert
         if token is not None:
             self.token = token
-
-    @property
-    def cacert(self):
-        """Gets the cacert of this KubernetesCredential.  # noqa: E501
-
-
-        :return: The cacert of this KubernetesCredential.  # noqa: E501
-        :rtype: str
-        """
-        return self._cacert
-
-    @cacert.setter
-    def cacert(self, cacert):
-        """Sets the cacert of this KubernetesCredential.
-
-
-        :param cacert: The cacert of this KubernetesCredential.  # noqa: E501
-        :type: str
-        """
-
-        self._cacert = cacert
 
     @property
     def endpoint(self):
@@ -93,6 +72,27 @@ class KubernetesCredential(object):
         """
 
         self._endpoint = endpoint
+
+    @property
+    def cacert(self):
+        """Gets the cacert of this KubernetesCredential.  # noqa: E501
+
+
+        :return: The cacert of this KubernetesCredential.  # noqa: E501
+        :rtype: str
+        """
+        return self._cacert
+
+    @cacert.setter
+    def cacert(self, cacert):
+        """Sets the cacert of this KubernetesCredential.
+
+
+        :param cacert: The cacert of this KubernetesCredential.  # noqa: E501
+        :type: str
+        """
+
+        self._cacert = cacert
 
     @property
     def token(self):

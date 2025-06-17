@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class BlueprintFileSummaryDto(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'total': 'int',
         'enabled': 'int',
-        'grouped': 'dict(str, GroupedCountDto)',
-        'total': 'int'
+        'grouped': 'dict(str, GroupedCountDto)'
     }
 
     attribute_map = {
+        'total': 'total',
         'enabled': 'enabled',
-        'grouped': 'grouped',
-        'total': 'total'
+        'grouped': 'grouped'
     }
 
-    def __init__(self, enabled=None, grouped=None, total=None):  # noqa: E501
+    def __init__(self, total=None, enabled=None, grouped=None):  # noqa: E501
         """BlueprintFileSummaryDto - a model defined in Swagger"""  # noqa: E501
+        self._total = None
         self._enabled = None
         self._grouped = None
-        self._total = None
         self.discriminator = None
+        if total is not None:
+            self.total = total
         if enabled is not None:
             self.enabled = enabled
         if grouped is not None:
             self.grouped = grouped
-        if total is not None:
-            self.total = total
+
+    @property
+    def total(self):
+        """Gets the total of this BlueprintFileSummaryDto.  # noqa: E501
+
+
+        :return: The total of this BlueprintFileSummaryDto.  # noqa: E501
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total):
+        """Sets the total of this BlueprintFileSummaryDto.
+
+
+        :param total: The total of this BlueprintFileSummaryDto.  # noqa: E501
+        :type: int
+        """
+
+        self._total = total
 
     @property
     def enabled(self):
@@ -93,27 +114,6 @@ class BlueprintFileSummaryDto(object):
         """
 
         self._grouped = grouped
-
-    @property
-    def total(self):
-        """Gets the total of this BlueprintFileSummaryDto.  # noqa: E501
-
-
-        :return: The total of this BlueprintFileSummaryDto.  # noqa: E501
-        :rtype: int
-        """
-        return self._total
-
-    @total.setter
-    def total(self, total):
-        """Sets the total of this BlueprintFileSummaryDto.
-
-
-        :param total: The total of this BlueprintFileSummaryDto.  # noqa: E501
-        :type: int
-        """
-
-        self._total = total
 
     def to_dict(self):
         """Returns the model properties as a dict"""

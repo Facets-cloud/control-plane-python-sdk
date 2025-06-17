@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,60 @@ class AssistantMessage(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'assistant': 'Assistant',
-        'context': 'object',
+        'role': 'str',
         'created_at': 'datetime',
+        'assistant': 'Assistant',
         'message': 'str',
-        'role': 'str'
+        'context': 'object'
     }
 
     attribute_map = {
-        'assistant': 'assistant',
-        'context': 'context',
+        'role': 'role',
         'created_at': 'createdAt',
+        'assistant': 'assistant',
         'message': 'message',
-        'role': 'role'
+        'context': 'context'
     }
 
-    def __init__(self, assistant=None, context=None, created_at=None, message=None, role=None):  # noqa: E501
+    def __init__(self, role=None, created_at=None, assistant=None, message=None, context=None):  # noqa: E501
         """AssistantMessage - a model defined in Swagger"""  # noqa: E501
-        self._assistant = None
-        self._context = None
-        self._created_at = None
-        self._message = None
         self._role = None
+        self._created_at = None
+        self._assistant = None
+        self._message = None
+        self._context = None
         self.discriminator = None
-        if assistant is not None:
-            self.assistant = assistant
-        if context is not None:
-            self.context = context
-        if created_at is not None:
-            self.created_at = created_at
-        if message is not None:
-            self.message = message
         if role is not None:
             self.role = role
+        if created_at is not None:
+            self.created_at = created_at
+        if assistant is not None:
+            self.assistant = assistant
+        if message is not None:
+            self.message = message
+        if context is not None:
+            self.context = context
 
     @property
-    def assistant(self):
-        """Gets the assistant of this AssistantMessage.  # noqa: E501
+    def role(self):
+        """Gets the role of this AssistantMessage.  # noqa: E501
 
 
-        :return: The assistant of this AssistantMessage.  # noqa: E501
-        :rtype: Assistant
+        :return: The role of this AssistantMessage.  # noqa: E501
+        :rtype: str
         """
-        return self._assistant
+        return self._role
 
-    @assistant.setter
-    def assistant(self, assistant):
-        """Sets the assistant of this AssistantMessage.
-
-
-        :param assistant: The assistant of this AssistantMessage.  # noqa: E501
-        :type: Assistant
-        """
-
-        self._assistant = assistant
-
-    @property
-    def context(self):
-        """Gets the context of this AssistantMessage.  # noqa: E501
+    @role.setter
+    def role(self, role):
+        """Sets the role of this AssistantMessage.
 
 
-        :return: The context of this AssistantMessage.  # noqa: E501
-        :rtype: object
-        """
-        return self._context
-
-    @context.setter
-    def context(self, context):
-        """Sets the context of this AssistantMessage.
-
-
-        :param context: The context of this AssistantMessage.  # noqa: E501
-        :type: object
+        :param role: The role of this AssistantMessage.  # noqa: E501
+        :type: str
         """
 
-        self._context = context
+        self._role = role
 
     @property
     def created_at(self):
@@ -126,6 +105,27 @@ class AssistantMessage(object):
         self._created_at = created_at
 
     @property
+    def assistant(self):
+        """Gets the assistant of this AssistantMessage.  # noqa: E501
+
+
+        :return: The assistant of this AssistantMessage.  # noqa: E501
+        :rtype: Assistant
+        """
+        return self._assistant
+
+    @assistant.setter
+    def assistant(self, assistant):
+        """Sets the assistant of this AssistantMessage.
+
+
+        :param assistant: The assistant of this AssistantMessage.  # noqa: E501
+        :type: Assistant
+        """
+
+        self._assistant = assistant
+
+    @property
     def message(self):
         """Gets the message of this AssistantMessage.  # noqa: E501
 
@@ -147,25 +147,25 @@ class AssistantMessage(object):
         self._message = message
 
     @property
-    def role(self):
-        """Gets the role of this AssistantMessage.  # noqa: E501
+    def context(self):
+        """Gets the context of this AssistantMessage.  # noqa: E501
 
 
-        :return: The role of this AssistantMessage.  # noqa: E501
-        :rtype: str
+        :return: The context of this AssistantMessage.  # noqa: E501
+        :rtype: object
         """
-        return self._role
+        return self._context
 
-    @role.setter
-    def role(self, role):
-        """Sets the role of this AssistantMessage.
+    @context.setter
+    def context(self, context):
+        """Sets the context of this AssistantMessage.
 
 
-        :param role: The role of this AssistantMessage.  # noqa: E501
-        :type: str
+        :param context: The context of this AssistantMessage.  # noqa: E501
+        :type: object
         """
 
-        self._role = role
+        self._context = context
 
     def to_dict(self):
         """Returns the model properties as a dict"""

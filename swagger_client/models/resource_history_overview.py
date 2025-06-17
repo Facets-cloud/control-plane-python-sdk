@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,111 +28,138 @@ class ResourceHistoryOverview(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifact_version': 'ResourceStatusMetadata',
-        'blueprint_version': 'ResourceStatusMetadata',
+        'resource_name': 'str',
+        'resource_type': 'str',
+        'resource_status': 'str',
         'cluster_id': 'str',
         'cluster_name': 'str',
-        'disabled': 'bool',
-        'overridden': 'bool',
+        'blueprint_version': 'ResourceStatusMetadata',
         'override_version': 'ResourceStatusMetadata',
+        'artifact_version': 'ResourceStatusMetadata',
+        'disabled': 'bool',
         'release_button_status': 'ReleaseButtonStatus',
-        'resource_name': 'str',
-        'resource_status': 'str',
-        'resource_type': 'str'
+        'overridden': 'bool'
     }
 
     attribute_map = {
-        'artifact_version': 'artifactVersion',
-        'blueprint_version': 'blueprintVersion',
+        'resource_name': 'resourceName',
+        'resource_type': 'resourceType',
+        'resource_status': 'resourceStatus',
         'cluster_id': 'clusterId',
         'cluster_name': 'clusterName',
-        'disabled': 'disabled',
-        'overridden': 'overridden',
+        'blueprint_version': 'blueprintVersion',
         'override_version': 'overrideVersion',
+        'artifact_version': 'artifactVersion',
+        'disabled': 'disabled',
         'release_button_status': 'releaseButtonStatus',
-        'resource_name': 'resourceName',
-        'resource_status': 'resourceStatus',
-        'resource_type': 'resourceType'
+        'overridden': 'overridden'
     }
 
-    def __init__(self, artifact_version=None, blueprint_version=None, cluster_id=None, cluster_name=None, disabled=None, overridden=None, override_version=None, release_button_status=None, resource_name=None, resource_status=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_name=None, resource_type=None, resource_status=None, cluster_id=None, cluster_name=None, blueprint_version=None, override_version=None, artifact_version=None, disabled=None, release_button_status=None, overridden=None):  # noqa: E501
         """ResourceHistoryOverview - a model defined in Swagger"""  # noqa: E501
-        self._artifact_version = None
-        self._blueprint_version = None
+        self._resource_name = None
+        self._resource_type = None
+        self._resource_status = None
         self._cluster_id = None
         self._cluster_name = None
-        self._disabled = None
-        self._overridden = None
+        self._blueprint_version = None
         self._override_version = None
+        self._artifact_version = None
+        self._disabled = None
         self._release_button_status = None
-        self._resource_name = None
-        self._resource_status = None
-        self._resource_type = None
+        self._overridden = None
         self.discriminator = None
-        if artifact_version is not None:
-            self.artifact_version = artifact_version
-        if blueprint_version is not None:
-            self.blueprint_version = blueprint_version
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if resource_status is not None:
+            self.resource_status = resource_status
         if cluster_id is not None:
             self.cluster_id = cluster_id
         if cluster_name is not None:
             self.cluster_name = cluster_name
-        if disabled is not None:
-            self.disabled = disabled
-        if overridden is not None:
-            self.overridden = overridden
+        if blueprint_version is not None:
+            self.blueprint_version = blueprint_version
         if override_version is not None:
             self.override_version = override_version
+        if artifact_version is not None:
+            self.artifact_version = artifact_version
+        if disabled is not None:
+            self.disabled = disabled
         if release_button_status is not None:
             self.release_button_status = release_button_status
-        if resource_name is not None:
-            self.resource_name = resource_name
-        if resource_status is not None:
-            self.resource_status = resource_status
-        if resource_type is not None:
-            self.resource_type = resource_type
+        if overridden is not None:
+            self.overridden = overridden
 
     @property
-    def artifact_version(self):
-        """Gets the artifact_version of this ResourceHistoryOverview.  # noqa: E501
+    def resource_name(self):
+        """Gets the resource_name of this ResourceHistoryOverview.  # noqa: E501
 
 
-        :return: The artifact_version of this ResourceHistoryOverview.  # noqa: E501
-        :rtype: ResourceStatusMetadata
+        :return: The resource_name of this ResourceHistoryOverview.  # noqa: E501
+        :rtype: str
         """
-        return self._artifact_version
+        return self._resource_name
 
-    @artifact_version.setter
-    def artifact_version(self, artifact_version):
-        """Sets the artifact_version of this ResourceHistoryOverview.
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """Sets the resource_name of this ResourceHistoryOverview.
 
 
-        :param artifact_version: The artifact_version of this ResourceHistoryOverview.  # noqa: E501
-        :type: ResourceStatusMetadata
+        :param resource_name: The resource_name of this ResourceHistoryOverview.  # noqa: E501
+        :type: str
         """
 
-        self._artifact_version = artifact_version
+        self._resource_name = resource_name
 
     @property
-    def blueprint_version(self):
-        """Gets the blueprint_version of this ResourceHistoryOverview.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this ResourceHistoryOverview.  # noqa: E501
 
 
-        :return: The blueprint_version of this ResourceHistoryOverview.  # noqa: E501
-        :rtype: ResourceStatusMetadata
+        :return: The resource_type of this ResourceHistoryOverview.  # noqa: E501
+        :rtype: str
         """
-        return self._blueprint_version
+        return self._resource_type
 
-    @blueprint_version.setter
-    def blueprint_version(self, blueprint_version):
-        """Sets the blueprint_version of this ResourceHistoryOverview.
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ResourceHistoryOverview.
 
 
-        :param blueprint_version: The blueprint_version of this ResourceHistoryOverview.  # noqa: E501
-        :type: ResourceStatusMetadata
+        :param resource_type: The resource_type of this ResourceHistoryOverview.  # noqa: E501
+        :type: str
         """
 
-        self._blueprint_version = blueprint_version
+        self._resource_type = resource_type
+
+    @property
+    def resource_status(self):
+        """Gets the resource_status of this ResourceHistoryOverview.  # noqa: E501
+
+
+        :return: The resource_status of this ResourceHistoryOverview.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_status
+
+    @resource_status.setter
+    def resource_status(self, resource_status):
+        """Sets the resource_status of this ResourceHistoryOverview.
+
+
+        :param resource_status: The resource_status of this ResourceHistoryOverview.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["RUNNING", "STOPPED"]  # noqa: E501
+        if resource_status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `resource_status` ({0}), must be one of {1}"  # noqa: E501
+                .format(resource_status, allowed_values)
+            )
+
+        self._resource_status = resource_status
 
     @property
     def cluster_id(self):
@@ -177,46 +204,25 @@ class ResourceHistoryOverview(object):
         self._cluster_name = cluster_name
 
     @property
-    def disabled(self):
-        """Gets the disabled of this ResourceHistoryOverview.  # noqa: E501
+    def blueprint_version(self):
+        """Gets the blueprint_version of this ResourceHistoryOverview.  # noqa: E501
 
 
-        :return: The disabled of this ResourceHistoryOverview.  # noqa: E501
-        :rtype: bool
+        :return: The blueprint_version of this ResourceHistoryOverview.  # noqa: E501
+        :rtype: ResourceStatusMetadata
         """
-        return self._disabled
+        return self._blueprint_version
 
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this ResourceHistoryOverview.
-
-
-        :param disabled: The disabled of this ResourceHistoryOverview.  # noqa: E501
-        :type: bool
-        """
-
-        self._disabled = disabled
-
-    @property
-    def overridden(self):
-        """Gets the overridden of this ResourceHistoryOverview.  # noqa: E501
+    @blueprint_version.setter
+    def blueprint_version(self, blueprint_version):
+        """Sets the blueprint_version of this ResourceHistoryOverview.
 
 
-        :return: The overridden of this ResourceHistoryOverview.  # noqa: E501
-        :rtype: bool
-        """
-        return self._overridden
-
-    @overridden.setter
-    def overridden(self, overridden):
-        """Sets the overridden of this ResourceHistoryOverview.
-
-
-        :param overridden: The overridden of this ResourceHistoryOverview.  # noqa: E501
-        :type: bool
+        :param blueprint_version: The blueprint_version of this ResourceHistoryOverview.  # noqa: E501
+        :type: ResourceStatusMetadata
         """
 
-        self._overridden = overridden
+        self._blueprint_version = blueprint_version
 
     @property
     def override_version(self):
@@ -240,6 +246,48 @@ class ResourceHistoryOverview(object):
         self._override_version = override_version
 
     @property
+    def artifact_version(self):
+        """Gets the artifact_version of this ResourceHistoryOverview.  # noqa: E501
+
+
+        :return: The artifact_version of this ResourceHistoryOverview.  # noqa: E501
+        :rtype: ResourceStatusMetadata
+        """
+        return self._artifact_version
+
+    @artifact_version.setter
+    def artifact_version(self, artifact_version):
+        """Sets the artifact_version of this ResourceHistoryOverview.
+
+
+        :param artifact_version: The artifact_version of this ResourceHistoryOverview.  # noqa: E501
+        :type: ResourceStatusMetadata
+        """
+
+        self._artifact_version = artifact_version
+
+    @property
+    def disabled(self):
+        """Gets the disabled of this ResourceHistoryOverview.  # noqa: E501
+
+
+        :return: The disabled of this ResourceHistoryOverview.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this ResourceHistoryOverview.
+
+
+        :param disabled: The disabled of this ResourceHistoryOverview.  # noqa: E501
+        :type: bool
+        """
+
+        self._disabled = disabled
+
+    @property
     def release_button_status(self):
         """Gets the release_button_status of this ResourceHistoryOverview.  # noqa: E501
 
@@ -261,73 +309,25 @@ class ResourceHistoryOverview(object):
         self._release_button_status = release_button_status
 
     @property
-    def resource_name(self):
-        """Gets the resource_name of this ResourceHistoryOverview.  # noqa: E501
+    def overridden(self):
+        """Gets the overridden of this ResourceHistoryOverview.  # noqa: E501
 
 
-        :return: The resource_name of this ResourceHistoryOverview.  # noqa: E501
-        :rtype: str
+        :return: The overridden of this ResourceHistoryOverview.  # noqa: E501
+        :rtype: bool
         """
-        return self._resource_name
+        return self._overridden
 
-    @resource_name.setter
-    def resource_name(self, resource_name):
-        """Sets the resource_name of this ResourceHistoryOverview.
-
-
-        :param resource_name: The resource_name of this ResourceHistoryOverview.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_name = resource_name
-
-    @property
-    def resource_status(self):
-        """Gets the resource_status of this ResourceHistoryOverview.  # noqa: E501
+    @overridden.setter
+    def overridden(self, overridden):
+        """Sets the overridden of this ResourceHistoryOverview.
 
 
-        :return: The resource_status of this ResourceHistoryOverview.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_status
-
-    @resource_status.setter
-    def resource_status(self, resource_status):
-        """Sets the resource_status of this ResourceHistoryOverview.
-
-
-        :param resource_status: The resource_status of this ResourceHistoryOverview.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["RUNNING", "STOPPED"]  # noqa: E501
-        if resource_status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `resource_status` ({0}), must be one of {1}"  # noqa: E501
-                .format(resource_status, allowed_values)
-            )
-
-        self._resource_status = resource_status
-
-    @property
-    def resource_type(self):
-        """Gets the resource_type of this ResourceHistoryOverview.  # noqa: E501
-
-
-        :return: The resource_type of this ResourceHistoryOverview.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ResourceHistoryOverview.
-
-
-        :param resource_type: The resource_type of this ResourceHistoryOverview.  # noqa: E501
-        :type: str
+        :param overridden: The overridden of this ResourceHistoryOverview.  # noqa: E501
+        :type: bool
         """
 
-        self._resource_type = resource_type
+        self._overridden = overridden
 
     def to_dict(self):
         """Returns the model properties as a dict"""

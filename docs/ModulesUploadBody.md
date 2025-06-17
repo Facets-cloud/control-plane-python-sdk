@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file** | **str** | file | 
-**metadata** | **object** | metadata | [optional] 
+**file** | **str** |  | 
+**metadata** | [**ModuleMetadata**](ModuleMetadata.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

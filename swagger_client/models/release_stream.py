@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,44 +28,86 @@ class ReleaseStream(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'name': 'str',
+        'description': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'description': 'str',
-        'name': 'str',
-        'prod': 'bool',
-        'version': 'int'
+        'version': 'int',
+        'prod': 'bool'
     }
 
     attribute_map = {
+        'name': 'name',
+        'description': 'description',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'description': 'description',
-        'name': 'name',
-        'prod': 'prod',
-        'version': 'version'
+        'version': 'version',
+        'prod': 'prod'
     }
 
-    def __init__(self, created_by=None, creation_date=None, description=None, name=None, prod=None, version=None):  # noqa: E501
+    def __init__(self, name=None, description=None, created_by=None, creation_date=None, version=None, prod=None):  # noqa: E501
         """ReleaseStream - a model defined in Swagger"""  # noqa: E501
+        self._name = None
+        self._description = None
         self._created_by = None
         self._creation_date = None
-        self._description = None
-        self._name = None
-        self._prod = None
         self._version = None
+        self._prod = None
         self.discriminator = None
+        if name is not None:
+            self.name = name
+        if description is not None:
+            self.description = description
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if description is not None:
-            self.description = description
-        if name is not None:
-            self.name = name
-        if prod is not None:
-            self.prod = prod
         if version is not None:
             self.version = version
+        if prod is not None:
+            self.prod = prod
+
+    @property
+    def name(self):
+        """Gets the name of this ReleaseStream.  # noqa: E501
+
+
+        :return: The name of this ReleaseStream.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ReleaseStream.
+
+
+        :param name: The name of this ReleaseStream.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def description(self):
+        """Gets the description of this ReleaseStream.  # noqa: E501
+
+
+        :return: The description of this ReleaseStream.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this ReleaseStream.
+
+
+        :param description: The description of this ReleaseStream.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     @property
     def created_by(self):
@@ -110,46 +152,25 @@ class ReleaseStream(object):
         self._creation_date = creation_date
 
     @property
-    def description(self):
-        """Gets the description of this ReleaseStream.  # noqa: E501
+    def version(self):
+        """Gets the version of this ReleaseStream.  # noqa: E501
 
 
-        :return: The description of this ReleaseStream.  # noqa: E501
-        :rtype: str
+        :return: The version of this ReleaseStream.  # noqa: E501
+        :rtype: int
         """
-        return self._description
+        return self._version
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this ReleaseStream.
-
-
-        :param description: The description of this ReleaseStream.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def name(self):
-        """Gets the name of this ReleaseStream.  # noqa: E501
+    @version.setter
+    def version(self, version):
+        """Sets the version of this ReleaseStream.
 
 
-        :return: The name of this ReleaseStream.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ReleaseStream.
-
-
-        :param name: The name of this ReleaseStream.  # noqa: E501
-        :type: str
+        :param version: The version of this ReleaseStream.  # noqa: E501
+        :type: int
         """
 
-        self._name = name
+        self._version = version
 
     @property
     def prod(self):
@@ -171,27 +192,6 @@ class ReleaseStream(object):
         """
 
         self._prod = prod
-
-    @property
-    def version(self):
-        """Gets the version of this ReleaseStream.  # noqa: E501
-
-
-        :return: The version of this ReleaseStream.  # noqa: E501
-        :rtype: int
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this ReleaseStream.
-
-
-        :param version: The version of this ReleaseStream.  # noqa: E501
-        :type: int
-        """
-
-        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

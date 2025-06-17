@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,85 +28,132 @@ class SimpleOauth2User(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allowed_accounts': 'list[str]',
+        'granted_authorities': 'list[GrantedAuthority]',
+        'attributes': 'dict(str, object)',
+        'name': 'str',
         'allowed_cluster_ids': 'list[str]',
         'allowed_stack_names': 'list[str]',
-        'associated_to_resource_group': 'bool',
-        'attributes': 'object',
-        'authorities': 'list[GrantedAuthority]',
         'cluster_role_binding': 'dict(str, str)',
-        'name': 'str',
         'stack_resources': 'list[StackResource]',
-        'user_id': 'str'
+        'allowed_accounts': 'list[str]',
+        'user_id': 'str',
+        'authorities': 'list[GrantedAuthority]',
+        'associated_to_resource_group': 'bool'
     }
 
     attribute_map = {
-        'allowed_accounts': 'allowedAccounts',
+        'granted_authorities': 'grantedAuthorities',
+        'attributes': 'attributes',
+        'name': 'name',
         'allowed_cluster_ids': 'allowedClusterIds',
         'allowed_stack_names': 'allowedStackNames',
-        'associated_to_resource_group': 'associatedToResourceGroup',
-        'attributes': 'attributes',
-        'authorities': 'authorities',
         'cluster_role_binding': 'clusterRoleBinding',
-        'name': 'name',
         'stack_resources': 'stackResources',
-        'user_id': 'userId'
+        'allowed_accounts': 'allowedAccounts',
+        'user_id': 'userId',
+        'authorities': 'authorities',
+        'associated_to_resource_group': 'associatedToResourceGroup'
     }
 
-    def __init__(self, allowed_accounts=None, allowed_cluster_ids=None, allowed_stack_names=None, associated_to_resource_group=None, attributes=None, authorities=None, cluster_role_binding=None, name=None, stack_resources=None, user_id=None):  # noqa: E501
+    def __init__(self, granted_authorities=None, attributes=None, name=None, allowed_cluster_ids=None, allowed_stack_names=None, cluster_role_binding=None, stack_resources=None, allowed_accounts=None, user_id=None, authorities=None, associated_to_resource_group=None):  # noqa: E501
         """SimpleOauth2User - a model defined in Swagger"""  # noqa: E501
-        self._allowed_accounts = None
+        self._granted_authorities = None
+        self._attributes = None
+        self._name = None
         self._allowed_cluster_ids = None
         self._allowed_stack_names = None
-        self._associated_to_resource_group = None
-        self._attributes = None
-        self._authorities = None
         self._cluster_role_binding = None
-        self._name = None
         self._stack_resources = None
+        self._allowed_accounts = None
         self._user_id = None
+        self._authorities = None
+        self._associated_to_resource_group = None
         self.discriminator = None
-        if allowed_accounts is not None:
-            self.allowed_accounts = allowed_accounts
+        if granted_authorities is not None:
+            self.granted_authorities = granted_authorities
+        if attributes is not None:
+            self.attributes = attributes
+        if name is not None:
+            self.name = name
         if allowed_cluster_ids is not None:
             self.allowed_cluster_ids = allowed_cluster_ids
         if allowed_stack_names is not None:
             self.allowed_stack_names = allowed_stack_names
-        if associated_to_resource_group is not None:
-            self.associated_to_resource_group = associated_to_resource_group
-        if attributes is not None:
-            self.attributes = attributes
-        if authorities is not None:
-            self.authorities = authorities
         if cluster_role_binding is not None:
             self.cluster_role_binding = cluster_role_binding
-        if name is not None:
-            self.name = name
         if stack_resources is not None:
             self.stack_resources = stack_resources
+        if allowed_accounts is not None:
+            self.allowed_accounts = allowed_accounts
         if user_id is not None:
             self.user_id = user_id
+        if authorities is not None:
+            self.authorities = authorities
+        if associated_to_resource_group is not None:
+            self.associated_to_resource_group = associated_to_resource_group
 
     @property
-    def allowed_accounts(self):
-        """Gets the allowed_accounts of this SimpleOauth2User.  # noqa: E501
+    def granted_authorities(self):
+        """Gets the granted_authorities of this SimpleOauth2User.  # noqa: E501
 
 
-        :return: The allowed_accounts of this SimpleOauth2User.  # noqa: E501
-        :rtype: list[str]
+        :return: The granted_authorities of this SimpleOauth2User.  # noqa: E501
+        :rtype: list[GrantedAuthority]
         """
-        return self._allowed_accounts
+        return self._granted_authorities
 
-    @allowed_accounts.setter
-    def allowed_accounts(self, allowed_accounts):
-        """Sets the allowed_accounts of this SimpleOauth2User.
+    @granted_authorities.setter
+    def granted_authorities(self, granted_authorities):
+        """Sets the granted_authorities of this SimpleOauth2User.
 
 
-        :param allowed_accounts: The allowed_accounts of this SimpleOauth2User.  # noqa: E501
-        :type: list[str]
+        :param granted_authorities: The granted_authorities of this SimpleOauth2User.  # noqa: E501
+        :type: list[GrantedAuthority]
         """
 
-        self._allowed_accounts = allowed_accounts
+        self._granted_authorities = granted_authorities
+
+    @property
+    def attributes(self):
+        """Gets the attributes of this SimpleOauth2User.  # noqa: E501
+
+
+        :return: The attributes of this SimpleOauth2User.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this SimpleOauth2User.
+
+
+        :param attributes: The attributes of this SimpleOauth2User.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._attributes = attributes
+
+    @property
+    def name(self):
+        """Gets the name of this SimpleOauth2User.  # noqa: E501
+
+
+        :return: The name of this SimpleOauth2User.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SimpleOauth2User.
+
+
+        :param name: The name of this SimpleOauth2User.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def allowed_cluster_ids(self):
@@ -151,69 +198,6 @@ class SimpleOauth2User(object):
         self._allowed_stack_names = allowed_stack_names
 
     @property
-    def associated_to_resource_group(self):
-        """Gets the associated_to_resource_group of this SimpleOauth2User.  # noqa: E501
-
-
-        :return: The associated_to_resource_group of this SimpleOauth2User.  # noqa: E501
-        :rtype: bool
-        """
-        return self._associated_to_resource_group
-
-    @associated_to_resource_group.setter
-    def associated_to_resource_group(self, associated_to_resource_group):
-        """Sets the associated_to_resource_group of this SimpleOauth2User.
-
-
-        :param associated_to_resource_group: The associated_to_resource_group of this SimpleOauth2User.  # noqa: E501
-        :type: bool
-        """
-
-        self._associated_to_resource_group = associated_to_resource_group
-
-    @property
-    def attributes(self):
-        """Gets the attributes of this SimpleOauth2User.  # noqa: E501
-
-
-        :return: The attributes of this SimpleOauth2User.  # noqa: E501
-        :rtype: object
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """Sets the attributes of this SimpleOauth2User.
-
-
-        :param attributes: The attributes of this SimpleOauth2User.  # noqa: E501
-        :type: object
-        """
-
-        self._attributes = attributes
-
-    @property
-    def authorities(self):
-        """Gets the authorities of this SimpleOauth2User.  # noqa: E501
-
-
-        :return: The authorities of this SimpleOauth2User.  # noqa: E501
-        :rtype: list[GrantedAuthority]
-        """
-        return self._authorities
-
-    @authorities.setter
-    def authorities(self, authorities):
-        """Sets the authorities of this SimpleOauth2User.
-
-
-        :param authorities: The authorities of this SimpleOauth2User.  # noqa: E501
-        :type: list[GrantedAuthority]
-        """
-
-        self._authorities = authorities
-
-    @property
     def cluster_role_binding(self):
         """Gets the cluster_role_binding of this SimpleOauth2User.  # noqa: E501
 
@@ -233,27 +217,6 @@ class SimpleOauth2User(object):
         """
 
         self._cluster_role_binding = cluster_role_binding
-
-    @property
-    def name(self):
-        """Gets the name of this SimpleOauth2User.  # noqa: E501
-
-
-        :return: The name of this SimpleOauth2User.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SimpleOauth2User.
-
-
-        :param name: The name of this SimpleOauth2User.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     @property
     def stack_resources(self):
@@ -277,6 +240,27 @@ class SimpleOauth2User(object):
         self._stack_resources = stack_resources
 
     @property
+    def allowed_accounts(self):
+        """Gets the allowed_accounts of this SimpleOauth2User.  # noqa: E501
+
+
+        :return: The allowed_accounts of this SimpleOauth2User.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_accounts
+
+    @allowed_accounts.setter
+    def allowed_accounts(self, allowed_accounts):
+        """Sets the allowed_accounts of this SimpleOauth2User.
+
+
+        :param allowed_accounts: The allowed_accounts of this SimpleOauth2User.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_accounts = allowed_accounts
+
+    @property
     def user_id(self):
         """Gets the user_id of this SimpleOauth2User.  # noqa: E501
 
@@ -296,6 +280,48 @@ class SimpleOauth2User(object):
         """
 
         self._user_id = user_id
+
+    @property
+    def authorities(self):
+        """Gets the authorities of this SimpleOauth2User.  # noqa: E501
+
+
+        :return: The authorities of this SimpleOauth2User.  # noqa: E501
+        :rtype: list[GrantedAuthority]
+        """
+        return self._authorities
+
+    @authorities.setter
+    def authorities(self, authorities):
+        """Sets the authorities of this SimpleOauth2User.
+
+
+        :param authorities: The authorities of this SimpleOauth2User.  # noqa: E501
+        :type: list[GrantedAuthority]
+        """
+
+        self._authorities = authorities
+
+    @property
+    def associated_to_resource_group(self):
+        """Gets the associated_to_resource_group of this SimpleOauth2User.  # noqa: E501
+
+
+        :return: The associated_to_resource_group of this SimpleOauth2User.  # noqa: E501
+        :rtype: bool
+        """
+        return self._associated_to_resource_group
+
+    @associated_to_resource_group.setter
+    def associated_to_resource_group(self, associated_to_resource_group):
+        """Sets the associated_to_resource_group of this SimpleOauth2User.
+
+
+        :param associated_to_resource_group: The associated_to_resource_group of this SimpleOauth2User.  # noqa: E501
+        :type: bool
+        """
+
+        self._associated_to_resource_group = associated_to_resource_group
 
     def to_dict(self):
         """Returns the model properties as a dict"""

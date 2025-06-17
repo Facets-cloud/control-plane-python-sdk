@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,106 +28,85 @@ class Chat(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
-        'context': 'list[ChatMessage]',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
-        'metadata': 'ChatStarterMetadata',
+        'last_modified_by': 'str',
+        'cluster_id': 'str',
         'title': 'str',
+        'metadata': 'ChatStarterMetadata',
+        'context': 'list[ChatMessage]',
         'total_tokens': 'int'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
-        'context': 'context',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
-        'metadata': 'metadata',
+        'last_modified_by': 'lastModifiedBy',
+        'cluster_id': 'clusterId',
         'title': 'title',
+        'metadata': 'metadata',
+        'context': 'context',
         'total_tokens': 'totalTokens'
     }
 
-    def __init__(self, cluster_id=None, context=None, created_by=None, creation_date=None, id=None, last_modified_by=None, last_modified_date=None, metadata=None, title=None, total_tokens=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, cluster_id=None, title=None, metadata=None, context=None, total_tokens=None):  # noqa: E501
         """Chat - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
-        self._context = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
-        self._metadata = None
+        self._last_modified_by = None
+        self._cluster_id = None
         self._title = None
+        self._metadata = None
+        self._context = None
         self._total_tokens = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
-        if context is not None:
-            self.context = context
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if metadata is not None:
-            self.metadata = metadata
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if title is not None:
             self.title = title
+        if metadata is not None:
+            self.metadata = metadata
+        if context is not None:
+            self.context = context
         if total_tokens is not None:
             self.total_tokens = total_tokens
 
     @property
-    def cluster_id(self):
-        """Gets the cluster_id of this Chat.  # noqa: E501
+    def id(self):
+        """Gets the id of this Chat.  # noqa: E501
 
 
-        :return: The cluster_id of this Chat.  # noqa: E501
+        :return: The id of this Chat.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_id
+        return self._id
 
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this Chat.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Chat.
 
 
-        :param cluster_id: The cluster_id of this Chat.  # noqa: E501
+        :param id: The id of this Chat.  # noqa: E501
         :type: str
         """
 
-        self._cluster_id = cluster_id
-
-    @property
-    def context(self):
-        """Gets the context of this Chat.  # noqa: E501
-
-
-        :return: The context of this Chat.  # noqa: E501
-        :rtype: list[ChatMessage]
-        """
-        return self._context
-
-    @context.setter
-    def context(self, context):
-        """Sets the context of this Chat.
-
-
-        :param context: The context of this Chat.  # noqa: E501
-        :type: list[ChatMessage]
-        """
-
-        self._context = context
+        self._id = id
 
     @property
     def created_by(self):
@@ -172,25 +151,25 @@ class Chat(object):
         self._creation_date = creation_date
 
     @property
-    def id(self):
-        """Gets the id of this Chat.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this Chat.  # noqa: E501
 
 
-        :return: The id of this Chat.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this Chat.  # noqa: E501
+        :rtype: datetime
         """
-        return self._id
+        return self._last_modified_date
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Chat.
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this Chat.
 
 
-        :param id: The id of this Chat.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this Chat.  # noqa: E501
+        :type: datetime
         """
 
-        self._id = id
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -214,25 +193,46 @@ class Chat(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this Chat.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this Chat.  # noqa: E501
 
 
-        :return: The last_modified_date of this Chat.  # noqa: E501
-        :rtype: datetime
+        :return: The cluster_id of this Chat.  # noqa: E501
+        :rtype: str
         """
-        return self._last_modified_date
+        return self._cluster_id
 
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this Chat.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this Chat.
 
 
-        :param last_modified_date: The last_modified_date of this Chat.  # noqa: E501
-        :type: datetime
+        :param cluster_id: The cluster_id of this Chat.  # noqa: E501
+        :type: str
         """
 
-        self._last_modified_date = last_modified_date
+        self._cluster_id = cluster_id
+
+    @property
+    def title(self):
+        """Gets the title of this Chat.  # noqa: E501
+
+
+        :return: The title of this Chat.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this Chat.
+
+
+        :param title: The title of this Chat.  # noqa: E501
+        :type: str
+        """
+
+        self._title = title
 
     @property
     def metadata(self):
@@ -256,25 +256,25 @@ class Chat(object):
         self._metadata = metadata
 
     @property
-    def title(self):
-        """Gets the title of this Chat.  # noqa: E501
+    def context(self):
+        """Gets the context of this Chat.  # noqa: E501
 
 
-        :return: The title of this Chat.  # noqa: E501
-        :rtype: str
+        :return: The context of this Chat.  # noqa: E501
+        :rtype: list[ChatMessage]
         """
-        return self._title
+        return self._context
 
-    @title.setter
-    def title(self, title):
-        """Sets the title of this Chat.
+    @context.setter
+    def context(self, context):
+        """Sets the context of this Chat.
 
 
-        :param title: The title of this Chat.  # noqa: E501
-        :type: str
+        :param context: The context of this Chat.  # noqa: E501
+        :type: list[ChatMessage]
         """
 
-        self._title = title
+        self._context = context
 
     @property
     def total_tokens(self):

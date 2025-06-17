@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class ValidationResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'errors': 'list[ValidationError]',
-        'valid': 'bool'
+        'valid': 'bool',
+        'errors': 'list[ValidationError]'
     }
 
     attribute_map = {
-        'errors': 'errors',
-        'valid': 'valid'
+        'valid': 'valid',
+        'errors': 'errors'
     }
 
-    def __init__(self, errors=None, valid=None):  # noqa: E501
+    def __init__(self, valid=None, errors=None):  # noqa: E501
         """ValidationResult - a model defined in Swagger"""  # noqa: E501
-        self._errors = None
         self._valid = None
+        self._errors = None
         self.discriminator = None
-        if errors is not None:
-            self.errors = errors
         if valid is not None:
             self.valid = valid
-
-    @property
-    def errors(self):
-        """Gets the errors of this ValidationResult.  # noqa: E501
-
-
-        :return: The errors of this ValidationResult.  # noqa: E501
-        :rtype: list[ValidationError]
-        """
-        return self._errors
-
-    @errors.setter
-    def errors(self, errors):
-        """Sets the errors of this ValidationResult.
-
-
-        :param errors: The errors of this ValidationResult.  # noqa: E501
-        :type: list[ValidationError]
-        """
-
-        self._errors = errors
+        if errors is not None:
+            self.errors = errors
 
     @property
     def valid(self):
@@ -88,6 +67,27 @@ class ValidationResult(object):
         """
 
         self._valid = valid
+
+    @property
+    def errors(self):
+        """Gets the errors of this ValidationResult.  # noqa: E501
+
+
+        :return: The errors of this ValidationResult.  # noqa: E501
+        :rtype: list[ValidationError]
+        """
+        return self._errors
+
+    @errors.setter
+    def errors(self, errors):
+        """Sets the errors of this ValidationResult.
+
+
+        :param errors: The errors of this ValidationResult.  # noqa: E501
+        :type: list[ValidationError]
+        """
+
+        self._errors = errors
 
     def to_dict(self):
         """Returns the model properties as a dict"""

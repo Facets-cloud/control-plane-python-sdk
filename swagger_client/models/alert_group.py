@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,65 +28,86 @@ class AlertGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alerts': 'list[Alert]',
+        'id': 'str',
+        'stack_name': 'str',
         'cluster_id': 'str',
         'cluster_name': 'str',
         'group_key': 'str',
-        'id': 'str',
-        'stack_name': 'str'
+        'alerts': 'list[Alert]'
     }
 
     attribute_map = {
-        'alerts': 'alerts',
+        'id': 'id',
+        'stack_name': 'stackName',
         'cluster_id': 'clusterId',
         'cluster_name': 'clusterName',
         'group_key': 'groupKey',
-        'id': 'id',
-        'stack_name': 'stackName'
+        'alerts': 'alerts'
     }
 
-    def __init__(self, alerts=None, cluster_id=None, cluster_name=None, group_key=None, id=None, stack_name=None):  # noqa: E501
+    def __init__(self, id=None, stack_name=None, cluster_id=None, cluster_name=None, group_key=None, alerts=None):  # noqa: E501
         """AlertGroup - a model defined in Swagger"""  # noqa: E501
-        self._alerts = None
+        self._id = None
+        self._stack_name = None
         self._cluster_id = None
         self._cluster_name = None
         self._group_key = None
-        self._id = None
-        self._stack_name = None
+        self._alerts = None
         self.discriminator = None
-        if alerts is not None:
-            self.alerts = alerts
+        if id is not None:
+            self.id = id
+        if stack_name is not None:
+            self.stack_name = stack_name
         if cluster_id is not None:
             self.cluster_id = cluster_id
         if cluster_name is not None:
             self.cluster_name = cluster_name
         if group_key is not None:
             self.group_key = group_key
-        if id is not None:
-            self.id = id
-        if stack_name is not None:
-            self.stack_name = stack_name
+        if alerts is not None:
+            self.alerts = alerts
 
     @property
-    def alerts(self):
-        """Gets the alerts of this AlertGroup.  # noqa: E501
+    def id(self):
+        """Gets the id of this AlertGroup.  # noqa: E501
 
 
-        :return: The alerts of this AlertGroup.  # noqa: E501
-        :rtype: list[Alert]
+        :return: The id of this AlertGroup.  # noqa: E501
+        :rtype: str
         """
-        return self._alerts
+        return self._id
 
-    @alerts.setter
-    def alerts(self, alerts):
-        """Sets the alerts of this AlertGroup.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AlertGroup.
 
 
-        :param alerts: The alerts of this AlertGroup.  # noqa: E501
-        :type: list[Alert]
+        :param id: The id of this AlertGroup.  # noqa: E501
+        :type: str
         """
 
-        self._alerts = alerts
+        self._id = id
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this AlertGroup.  # noqa: E501
+
+
+        :return: The stack_name of this AlertGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this AlertGroup.
+
+
+        :param stack_name: The stack_name of this AlertGroup.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_name = stack_name
 
     @property
     def cluster_id(self):
@@ -152,46 +173,25 @@ class AlertGroup(object):
         self._group_key = group_key
 
     @property
-    def id(self):
-        """Gets the id of this AlertGroup.  # noqa: E501
+    def alerts(self):
+        """Gets the alerts of this AlertGroup.  # noqa: E501
 
 
-        :return: The id of this AlertGroup.  # noqa: E501
-        :rtype: str
+        :return: The alerts of this AlertGroup.  # noqa: E501
+        :rtype: list[Alert]
         """
-        return self._id
+        return self._alerts
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this AlertGroup.
-
-
-        :param id: The id of this AlertGroup.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this AlertGroup.  # noqa: E501
+    @alerts.setter
+    def alerts(self, alerts):
+        """Sets the alerts of this AlertGroup.
 
 
-        :return: The stack_name of this AlertGroup.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this AlertGroup.
-
-
-        :param stack_name: The stack_name of this AlertGroup.  # noqa: E501
-        :type: str
+        :param alerts: The alerts of this AlertGroup.  # noqa: E501
+        :type: list[Alert]
         """
 
-        self._stack_name = stack_name
+        self._alerts = alerts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

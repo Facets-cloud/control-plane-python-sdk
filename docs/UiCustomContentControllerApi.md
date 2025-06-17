@@ -1,19 +1,19 @@
 # swagger_client.UiCustomContentControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_content_file_using_post**](UiCustomContentControllerApi.md#create_content_file_using_post) | **POST** /cc-ui/v1/content/files | createContentFile
-[**delete_content_file_using_delete**](UiCustomContentControllerApi.md#delete_content_file_using_delete) | **DELETE** /cc-ui/v1/content/files/{contentId} | deleteContentFile
-[**get_content_files_by_selectors_using_get**](UiCustomContentControllerApi.md#get_content_files_by_selectors_using_get) | **GET** /cc-ui/v1/content/files/selectors/{contentType} | getContentFilesBySelectors
-[**render_content_using_post**](UiCustomContentControllerApi.md#render_content_using_post) | **POST** /cc-ui/v1/content/files/{contentId}/render | renderContent
-[**update_content_file_using_put**](UiCustomContentControllerApi.md#update_content_file_using_put) | **PUT** /cc-ui/v1/content/files/{contentId} | updateContentFile
+[**create_content_file**](UiCustomContentControllerApi.md#create_content_file) | **POST** /cc-ui/v1/content/files | 
+[**delete_content_file**](UiCustomContentControllerApi.md#delete_content_file) | **DELETE** /cc-ui/v1/content/files/{contentId} | 
+[**get_content_files_by_selectors**](UiCustomContentControllerApi.md#get_content_files_by_selectors) | **GET** /cc-ui/v1/content/files/selectors/{contentType} | 
+[**render_content**](UiCustomContentControllerApi.md#render_content) | **POST** /cc-ui/v1/content/files/{contentId}/render | 
+[**update_content_file**](UiCustomContentControllerApi.md#update_content_file) | **PUT** /cc-ui/v1/content/files/{contentId} | 
 
-# **create_content_file_using_post**
-> ContentFile create_content_file_using_post(body)
+# **create_content_file**
+> ContentFile create_content_file(body)
 
-createContentFile
+
 
 ### Example
 ```python
@@ -22,28 +22,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ContentFile() # ContentFile | contentFile
+body = swagger_client.ContentFile() # ContentFile | 
 
 try:
-    # createContentFile
-    api_response = api_instance.create_content_file_using_post(body)
+    api_response = api_instance.create_content_file(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCustomContentControllerApi->create_content_file_using_post: %s\n" % e)
+    print("Exception when calling UiCustomContentControllerApi->create_content_file: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentFile**](ContentFile.md)| contentFile | 
+ **body** | [**ContentFile**](ContentFile.md)|  | 
 
 ### Return type
 
@@ -51,19 +50,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_content_file_using_delete**
-> delete_content_file_using_delete(content_id)
+# **delete_content_file**
+> delete_content_file(content_id)
 
-deleteContentFile
+
 
 ### Example
 ```python
@@ -72,27 +71,26 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
-content_id = 'content_id_example' # str | contentId
+content_id = 'content_id_example' # str | 
 
 try:
-    # deleteContentFile
-    api_instance.delete_content_file_using_delete(content_id)
+    api_instance.delete_content_file(content_id)
 except ApiException as e:
-    print("Exception when calling UiCustomContentControllerApi->delete_content_file_using_delete: %s\n" % e)
+    print("Exception when calling UiCustomContentControllerApi->delete_content_file: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_id** | **str**| contentId | 
+ **content_id** | **str**|  | 
 
 ### Return type
 
@@ -100,19 +98,19 @@ void (empty response body)
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_content_files_by_selectors_using_get**
-> list[ContentFile] get_content_files_by_selectors_using_get(content_type, display_type=display_type, resource_name=resource_name, resource_type=resource_type, sub_type=sub_type)
+# **get_content_files_by_selectors**
+> list[ContentFile] get_content_files_by_selectors(content_type, resource_type=resource_type, resource_name=resource_name, display_type=display_type, sub_type=sub_type)
 
-getContentFilesBySelectors
+
 
 ### Example
 ```python
@@ -121,36 +119,35 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
-content_type = 'content_type_example' # str | contentType
-display_type = 'display_type_example' # str | displayType (optional)
-resource_name = 'resource_name_example' # str | resourceName (optional)
-resource_type = 'resource_type_example' # str | resourceType (optional)
-sub_type = 'sub_type_example' # str | subType (optional)
+content_type = 'content_type_example' # str | 
+resource_type = 'resource_type_example' # str |  (optional)
+resource_name = 'resource_name_example' # str |  (optional)
+display_type = 'display_type_example' # str |  (optional)
+sub_type = 'sub_type_example' # str |  (optional)
 
 try:
-    # getContentFilesBySelectors
-    api_response = api_instance.get_content_files_by_selectors_using_get(content_type, display_type=display_type, resource_name=resource_name, resource_type=resource_type, sub_type=sub_type)
+    api_response = api_instance.get_content_files_by_selectors(content_type, resource_type=resource_type, resource_name=resource_name, display_type=display_type, sub_type=sub_type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCustomContentControllerApi->get_content_files_by_selectors_using_get: %s\n" % e)
+    print("Exception when calling UiCustomContentControllerApi->get_content_files_by_selectors: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_type** | **str**| contentType | 
- **display_type** | **str**| displayType | [optional] 
- **resource_name** | **str**| resourceName | [optional] 
- **resource_type** | **str**| resourceType | [optional] 
- **sub_type** | **str**| subType | [optional] 
+ **content_type** | **str**|  | 
+ **resource_type** | **str**|  | [optional] 
+ **resource_name** | **str**|  | [optional] 
+ **display_type** | **str**|  | [optional] 
+ **sub_type** | **str**|  | [optional] 
 
 ### Return type
 
@@ -158,19 +155,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **render_content_using_post**
-> str render_content_using_post(body, content_id)
+# **render_content**
+> str render_content(body, content_id)
 
-renderContent
+
 
 ### Example
 ```python
@@ -179,30 +176,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
-body = NULL # dict(str, str) | payload
-content_id = 'content_id_example' # str | contentId
+body = NULL # dict(str, str) | 
+content_id = 'content_id_example' # str | 
 
 try:
-    # renderContent
-    api_response = api_instance.render_content_using_post(body, content_id)
+    api_response = api_instance.render_content(body, content_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCustomContentControllerApi->render_content_using_post: %s\n" % e)
+    print("Exception when calling UiCustomContentControllerApi->render_content: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**dict(str, str)**](dict.md)| payload | 
- **content_id** | **str**| contentId | 
+ **body** | [**dict(str, str)**](dict.md)|  | 
+ **content_id** | **str**|  | 
 
 ### Return type
 
@@ -210,19 +206,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_content_file_using_put**
-> ContentFile update_content_file_using_put(body, content_id)
+# **update_content_file**
+> ContentFile update_content_file(body, content_id)
 
-updateContentFile
+
 
 ### Example
 ```python
@@ -231,30 +227,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiCustomContentControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ContentFile() # ContentFile | updatedContent
-content_id = 'content_id_example' # str | contentId
+body = swagger_client.ContentFile() # ContentFile | 
+content_id = 'content_id_example' # str | 
 
 try:
-    # updateContentFile
-    api_response = api_instance.update_content_file_using_put(body, content_id)
+    api_response = api_instance.update_content_file(body, content_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCustomContentControllerApi->update_content_file_using_put: %s\n" % e)
+    print("Exception when calling UiCustomContentControllerApi->update_content_file: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentFile**](ContentFile.md)| updatedContent | 
- **content_id** | **str**| contentId | 
+ **body** | [**ContentFile**](ContentFile.md)|  | 
+ **content_id** | **str**|  | 
 
 ### Return type
 
@@ -262,12 +257,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

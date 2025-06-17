@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class ChatContext(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'content': 'str',
-        'role': 'str'
+        'role': 'str',
+        'content': 'str'
     }
 
     attribute_map = {
-        'content': 'content',
-        'role': 'role'
+        'role': 'role',
+        'content': 'content'
     }
 
-    def __init__(self, content=None, role=None):  # noqa: E501
+    def __init__(self, role=None, content=None):  # noqa: E501
         """ChatContext - a model defined in Swagger"""  # noqa: E501
-        self._content = None
         self._role = None
+        self._content = None
         self.discriminator = None
-        if content is not None:
-            self.content = content
         if role is not None:
             self.role = role
-
-    @property
-    def content(self):
-        """Gets the content of this ChatContext.  # noqa: E501
-
-
-        :return: The content of this ChatContext.  # noqa: E501
-        :rtype: str
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this ChatContext.
-
-
-        :param content: The content of this ChatContext.  # noqa: E501
-        :type: str
-        """
-
-        self._content = content
+        if content is not None:
+            self.content = content
 
     @property
     def role(self):
@@ -94,6 +73,27 @@ class ChatContext(object):
             )
 
         self._role = role
+
+    @property
+    def content(self):
+        """Gets the content of this ChatContext.  # noqa: E501
+
+
+        :return: The content of this ChatContext.  # noqa: E501
+        :rtype: str
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this ChatContext.
+
+
+        :param content: The content of this ChatContext.  # noqa: E501
+        :type: str
+        """
+
+        self._content = content
 
     def to_dict(self):
         """Returns the model properties as a dict"""

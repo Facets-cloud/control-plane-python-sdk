@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,125 +28,104 @@ class DeploymentContext(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'artifactory_details': 'list[Artifactory]',
         'artifacts': 'dict(str, dict(str, Artifact))',
-        'can_skip_approval': 'bool',
-        'extra_env': 'dict(str, str)',
-        'maintenance_window': 'MaintenanceWindowDTO',
-        'modules': 'dict(str, ModuleDTO)',
+        'artifactory_details': 'list[Artifactory]',
         'overrides': 'list[OverrideObject]',
-        'parallel_release': 'bool',
-        'provided_resources': 'ProvidedResources',
-        'provided_secrets_id': 'str',
-        'resource_metadata': 'dict(str, list[ResourceMetadata])',
-        'resources': 'dict(str, MatchedResourceDTO)',
-        'secrets_context': 'SecretsContextDTO',
-        'settings': 'dict(str, dict(str, object))',
         'snapshots': 'dict(str, dict(str, SnapshotInfo))',
-        'stack_source_version': 'str',
+        'extra_env': 'dict(str, str)',
+        'provided_resources': 'ProvidedResources',
+        'settings': 'dict(str, dict(str, object))',
         'template_inputs': 'dict(str, list[StackTemplateInput])',
-        'tf_version': 'TfVersion'
+        'stack_source_version': 'str',
+        'tf_version': 'TfVersion',
+        'resource_metadata': 'dict(str, list[ResourceMetadata])',
+        'provided_secrets_id': 'str',
+        'can_skip_approval': 'bool',
+        'resources': 'dict(str, MatchedResourceDTO)',
+        'modules': 'dict(str, ModuleDTO)',
+        'maintenance_window': 'MaintenanceWindowDTO',
+        'secrets_context': 'SecretsContextDTO',
+        'parallel_release': 'bool'
     }
 
     attribute_map = {
-        'artifactory_details': 'artifactoryDetails',
         'artifacts': 'artifacts',
-        'can_skip_approval': 'canSkipApproval',
-        'extra_env': 'extraEnv',
-        'maintenance_window': 'maintenanceWindow',
-        'modules': 'modules',
+        'artifactory_details': 'artifactoryDetails',
         'overrides': 'overrides',
-        'parallel_release': 'parallelRelease',
-        'provided_resources': 'providedResources',
-        'provided_secrets_id': 'providedSecretsId',
-        'resource_metadata': 'resourceMetadata',
-        'resources': 'resources',
-        'secrets_context': 'secretsContext',
-        'settings': 'settings',
         'snapshots': 'snapshots',
-        'stack_source_version': 'stackSourceVersion',
+        'extra_env': 'extraEnv',
+        'provided_resources': 'providedResources',
+        'settings': 'settings',
         'template_inputs': 'templateInputs',
-        'tf_version': 'tfVersion'
+        'stack_source_version': 'stackSourceVersion',
+        'tf_version': 'tfVersion',
+        'resource_metadata': 'resourceMetadata',
+        'provided_secrets_id': 'providedSecretsId',
+        'can_skip_approval': 'canSkipApproval',
+        'resources': 'resources',
+        'modules': 'modules',
+        'maintenance_window': 'maintenanceWindow',
+        'secrets_context': 'secretsContext',
+        'parallel_release': 'parallelRelease'
     }
 
-    def __init__(self, artifactory_details=None, artifacts=None, can_skip_approval=None, extra_env=None, maintenance_window=None, modules=None, overrides=None, parallel_release=None, provided_resources=None, provided_secrets_id=None, resource_metadata=None, resources=None, secrets_context=None, settings=None, snapshots=None, stack_source_version=None, template_inputs=None, tf_version=None):  # noqa: E501
+    def __init__(self, artifacts=None, artifactory_details=None, overrides=None, snapshots=None, extra_env=None, provided_resources=None, settings=None, template_inputs=None, stack_source_version=None, tf_version=None, resource_metadata=None, provided_secrets_id=None, can_skip_approval=None, resources=None, modules=None, maintenance_window=None, secrets_context=None, parallel_release=None):  # noqa: E501
         """DeploymentContext - a model defined in Swagger"""  # noqa: E501
-        self._artifactory_details = None
         self._artifacts = None
-        self._can_skip_approval = None
-        self._extra_env = None
-        self._maintenance_window = None
-        self._modules = None
+        self._artifactory_details = None
         self._overrides = None
-        self._parallel_release = None
-        self._provided_resources = None
-        self._provided_secrets_id = None
-        self._resource_metadata = None
-        self._resources = None
-        self._secrets_context = None
-        self._settings = None
         self._snapshots = None
-        self._stack_source_version = None
+        self._extra_env = None
+        self._provided_resources = None
+        self._settings = None
         self._template_inputs = None
+        self._stack_source_version = None
         self._tf_version = None
+        self._resource_metadata = None
+        self._provided_secrets_id = None
+        self._can_skip_approval = None
+        self._resources = None
+        self._modules = None
+        self._maintenance_window = None
+        self._secrets_context = None
+        self._parallel_release = None
         self.discriminator = None
-        if artifactory_details is not None:
-            self.artifactory_details = artifactory_details
         if artifacts is not None:
             self.artifacts = artifacts
-        if can_skip_approval is not None:
-            self.can_skip_approval = can_skip_approval
-        if extra_env is not None:
-            self.extra_env = extra_env
-        if maintenance_window is not None:
-            self.maintenance_window = maintenance_window
-        if modules is not None:
-            self.modules = modules
+        if artifactory_details is not None:
+            self.artifactory_details = artifactory_details
         if overrides is not None:
             self.overrides = overrides
-        if parallel_release is not None:
-            self.parallel_release = parallel_release
-        if provided_resources is not None:
-            self.provided_resources = provided_resources
-        if provided_secrets_id is not None:
-            self.provided_secrets_id = provided_secrets_id
-        if resource_metadata is not None:
-            self.resource_metadata = resource_metadata
-        if resources is not None:
-            self.resources = resources
-        if secrets_context is not None:
-            self.secrets_context = secrets_context
-        if settings is not None:
-            self.settings = settings
         if snapshots is not None:
             self.snapshots = snapshots
-        if stack_source_version is not None:
-            self.stack_source_version = stack_source_version
+        if extra_env is not None:
+            self.extra_env = extra_env
+        if provided_resources is not None:
+            self.provided_resources = provided_resources
+        if settings is not None:
+            self.settings = settings
         if template_inputs is not None:
             self.template_inputs = template_inputs
+        if stack_source_version is not None:
+            self.stack_source_version = stack_source_version
         if tf_version is not None:
             self.tf_version = tf_version
-
-    @property
-    def artifactory_details(self):
-        """Gets the artifactory_details of this DeploymentContext.  # noqa: E501
-
-
-        :return: The artifactory_details of this DeploymentContext.  # noqa: E501
-        :rtype: list[Artifactory]
-        """
-        return self._artifactory_details
-
-    @artifactory_details.setter
-    def artifactory_details(self, artifactory_details):
-        """Sets the artifactory_details of this DeploymentContext.
-
-
-        :param artifactory_details: The artifactory_details of this DeploymentContext.  # noqa: E501
-        :type: list[Artifactory]
-        """
-
-        self._artifactory_details = artifactory_details
+        if resource_metadata is not None:
+            self.resource_metadata = resource_metadata
+        if provided_secrets_id is not None:
+            self.provided_secrets_id = provided_secrets_id
+        if can_skip_approval is not None:
+            self.can_skip_approval = can_skip_approval
+        if resources is not None:
+            self.resources = resources
+        if modules is not None:
+            self.modules = modules
+        if maintenance_window is not None:
+            self.maintenance_window = maintenance_window
+        if secrets_context is not None:
+            self.secrets_context = secrets_context
+        if parallel_release is not None:
+            self.parallel_release = parallel_release
 
     @property
     def artifacts(self):
@@ -170,88 +149,25 @@ class DeploymentContext(object):
         self._artifacts = artifacts
 
     @property
-    def can_skip_approval(self):
-        """Gets the can_skip_approval of this DeploymentContext.  # noqa: E501
+    def artifactory_details(self):
+        """Gets the artifactory_details of this DeploymentContext.  # noqa: E501
 
 
-        :return: The can_skip_approval of this DeploymentContext.  # noqa: E501
-        :rtype: bool
+        :return: The artifactory_details of this DeploymentContext.  # noqa: E501
+        :rtype: list[Artifactory]
         """
-        return self._can_skip_approval
+        return self._artifactory_details
 
-    @can_skip_approval.setter
-    def can_skip_approval(self, can_skip_approval):
-        """Sets the can_skip_approval of this DeploymentContext.
-
-
-        :param can_skip_approval: The can_skip_approval of this DeploymentContext.  # noqa: E501
-        :type: bool
-        """
-
-        self._can_skip_approval = can_skip_approval
-
-    @property
-    def extra_env(self):
-        """Gets the extra_env of this DeploymentContext.  # noqa: E501
+    @artifactory_details.setter
+    def artifactory_details(self, artifactory_details):
+        """Sets the artifactory_details of this DeploymentContext.
 
 
-        :return: The extra_env of this DeploymentContext.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._extra_env
-
-    @extra_env.setter
-    def extra_env(self, extra_env):
-        """Sets the extra_env of this DeploymentContext.
-
-
-        :param extra_env: The extra_env of this DeploymentContext.  # noqa: E501
-        :type: dict(str, str)
+        :param artifactory_details: The artifactory_details of this DeploymentContext.  # noqa: E501
+        :type: list[Artifactory]
         """
 
-        self._extra_env = extra_env
-
-    @property
-    def maintenance_window(self):
-        """Gets the maintenance_window of this DeploymentContext.  # noqa: E501
-
-
-        :return: The maintenance_window of this DeploymentContext.  # noqa: E501
-        :rtype: MaintenanceWindowDTO
-        """
-        return self._maintenance_window
-
-    @maintenance_window.setter
-    def maintenance_window(self, maintenance_window):
-        """Sets the maintenance_window of this DeploymentContext.
-
-
-        :param maintenance_window: The maintenance_window of this DeploymentContext.  # noqa: E501
-        :type: MaintenanceWindowDTO
-        """
-
-        self._maintenance_window = maintenance_window
-
-    @property
-    def modules(self):
-        """Gets the modules of this DeploymentContext.  # noqa: E501
-
-
-        :return: The modules of this DeploymentContext.  # noqa: E501
-        :rtype: dict(str, ModuleDTO)
-        """
-        return self._modules
-
-    @modules.setter
-    def modules(self, modules):
-        """Sets the modules of this DeploymentContext.
-
-
-        :param modules: The modules of this DeploymentContext.  # noqa: E501
-        :type: dict(str, ModuleDTO)
-        """
-
-        self._modules = modules
+        self._artifactory_details = artifactory_details
 
     @property
     def overrides(self):
@@ -275,25 +191,46 @@ class DeploymentContext(object):
         self._overrides = overrides
 
     @property
-    def parallel_release(self):
-        """Gets the parallel_release of this DeploymentContext.  # noqa: E501
+    def snapshots(self):
+        """Gets the snapshots of this DeploymentContext.  # noqa: E501
 
 
-        :return: The parallel_release of this DeploymentContext.  # noqa: E501
-        :rtype: bool
+        :return: The snapshots of this DeploymentContext.  # noqa: E501
+        :rtype: dict(str, dict(str, SnapshotInfo))
         """
-        return self._parallel_release
+        return self._snapshots
 
-    @parallel_release.setter
-    def parallel_release(self, parallel_release):
-        """Sets the parallel_release of this DeploymentContext.
+    @snapshots.setter
+    def snapshots(self, snapshots):
+        """Sets the snapshots of this DeploymentContext.
 
 
-        :param parallel_release: The parallel_release of this DeploymentContext.  # noqa: E501
-        :type: bool
+        :param snapshots: The snapshots of this DeploymentContext.  # noqa: E501
+        :type: dict(str, dict(str, SnapshotInfo))
         """
 
-        self._parallel_release = parallel_release
+        self._snapshots = snapshots
+
+    @property
+    def extra_env(self):
+        """Gets the extra_env of this DeploymentContext.  # noqa: E501
+
+
+        :return: The extra_env of this DeploymentContext.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._extra_env
+
+    @extra_env.setter
+    def extra_env(self, extra_env):
+        """Sets the extra_env of this DeploymentContext.
+
+
+        :param extra_env: The extra_env of this DeploymentContext.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._extra_env = extra_env
 
     @property
     def provided_resources(self):
@@ -317,90 +254,6 @@ class DeploymentContext(object):
         self._provided_resources = provided_resources
 
     @property
-    def provided_secrets_id(self):
-        """Gets the provided_secrets_id of this DeploymentContext.  # noqa: E501
-
-
-        :return: The provided_secrets_id of this DeploymentContext.  # noqa: E501
-        :rtype: str
-        """
-        return self._provided_secrets_id
-
-    @provided_secrets_id.setter
-    def provided_secrets_id(self, provided_secrets_id):
-        """Sets the provided_secrets_id of this DeploymentContext.
-
-
-        :param provided_secrets_id: The provided_secrets_id of this DeploymentContext.  # noqa: E501
-        :type: str
-        """
-
-        self._provided_secrets_id = provided_secrets_id
-
-    @property
-    def resource_metadata(self):
-        """Gets the resource_metadata of this DeploymentContext.  # noqa: E501
-
-
-        :return: The resource_metadata of this DeploymentContext.  # noqa: E501
-        :rtype: dict(str, list[ResourceMetadata])
-        """
-        return self._resource_metadata
-
-    @resource_metadata.setter
-    def resource_metadata(self, resource_metadata):
-        """Sets the resource_metadata of this DeploymentContext.
-
-
-        :param resource_metadata: The resource_metadata of this DeploymentContext.  # noqa: E501
-        :type: dict(str, list[ResourceMetadata])
-        """
-
-        self._resource_metadata = resource_metadata
-
-    @property
-    def resources(self):
-        """Gets the resources of this DeploymentContext.  # noqa: E501
-
-
-        :return: The resources of this DeploymentContext.  # noqa: E501
-        :rtype: dict(str, MatchedResourceDTO)
-        """
-        return self._resources
-
-    @resources.setter
-    def resources(self, resources):
-        """Sets the resources of this DeploymentContext.
-
-
-        :param resources: The resources of this DeploymentContext.  # noqa: E501
-        :type: dict(str, MatchedResourceDTO)
-        """
-
-        self._resources = resources
-
-    @property
-    def secrets_context(self):
-        """Gets the secrets_context of this DeploymentContext.  # noqa: E501
-
-
-        :return: The secrets_context of this DeploymentContext.  # noqa: E501
-        :rtype: SecretsContextDTO
-        """
-        return self._secrets_context
-
-    @secrets_context.setter
-    def secrets_context(self, secrets_context):
-        """Sets the secrets_context of this DeploymentContext.
-
-
-        :param secrets_context: The secrets_context of this DeploymentContext.  # noqa: E501
-        :type: SecretsContextDTO
-        """
-
-        self._secrets_context = secrets_context
-
-    @property
     def settings(self):
         """Gets the settings of this DeploymentContext.  # noqa: E501
 
@@ -420,48 +273,6 @@ class DeploymentContext(object):
         """
 
         self._settings = settings
-
-    @property
-    def snapshots(self):
-        """Gets the snapshots of this DeploymentContext.  # noqa: E501
-
-
-        :return: The snapshots of this DeploymentContext.  # noqa: E501
-        :rtype: dict(str, dict(str, SnapshotInfo))
-        """
-        return self._snapshots
-
-    @snapshots.setter
-    def snapshots(self, snapshots):
-        """Sets the snapshots of this DeploymentContext.
-
-
-        :param snapshots: The snapshots of this DeploymentContext.  # noqa: E501
-        :type: dict(str, dict(str, SnapshotInfo))
-        """
-
-        self._snapshots = snapshots
-
-    @property
-    def stack_source_version(self):
-        """Gets the stack_source_version of this DeploymentContext.  # noqa: E501
-
-
-        :return: The stack_source_version of this DeploymentContext.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_source_version
-
-    @stack_source_version.setter
-    def stack_source_version(self, stack_source_version):
-        """Sets the stack_source_version of this DeploymentContext.
-
-
-        :param stack_source_version: The stack_source_version of this DeploymentContext.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_source_version = stack_source_version
 
     @property
     def template_inputs(self):
@@ -485,6 +296,27 @@ class DeploymentContext(object):
         self._template_inputs = template_inputs
 
     @property
+    def stack_source_version(self):
+        """Gets the stack_source_version of this DeploymentContext.  # noqa: E501
+
+
+        :return: The stack_source_version of this DeploymentContext.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_source_version
+
+    @stack_source_version.setter
+    def stack_source_version(self, stack_source_version):
+        """Sets the stack_source_version of this DeploymentContext.
+
+
+        :param stack_source_version: The stack_source_version of this DeploymentContext.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_source_version = stack_source_version
+
+    @property
     def tf_version(self):
         """Gets the tf_version of this DeploymentContext.  # noqa: E501
 
@@ -504,6 +336,174 @@ class DeploymentContext(object):
         """
 
         self._tf_version = tf_version
+
+    @property
+    def resource_metadata(self):
+        """Gets the resource_metadata of this DeploymentContext.  # noqa: E501
+
+
+        :return: The resource_metadata of this DeploymentContext.  # noqa: E501
+        :rtype: dict(str, list[ResourceMetadata])
+        """
+        return self._resource_metadata
+
+    @resource_metadata.setter
+    def resource_metadata(self, resource_metadata):
+        """Sets the resource_metadata of this DeploymentContext.
+
+
+        :param resource_metadata: The resource_metadata of this DeploymentContext.  # noqa: E501
+        :type: dict(str, list[ResourceMetadata])
+        """
+
+        self._resource_metadata = resource_metadata
+
+    @property
+    def provided_secrets_id(self):
+        """Gets the provided_secrets_id of this DeploymentContext.  # noqa: E501
+
+
+        :return: The provided_secrets_id of this DeploymentContext.  # noqa: E501
+        :rtype: str
+        """
+        return self._provided_secrets_id
+
+    @provided_secrets_id.setter
+    def provided_secrets_id(self, provided_secrets_id):
+        """Sets the provided_secrets_id of this DeploymentContext.
+
+
+        :param provided_secrets_id: The provided_secrets_id of this DeploymentContext.  # noqa: E501
+        :type: str
+        """
+
+        self._provided_secrets_id = provided_secrets_id
+
+    @property
+    def can_skip_approval(self):
+        """Gets the can_skip_approval of this DeploymentContext.  # noqa: E501
+
+
+        :return: The can_skip_approval of this DeploymentContext.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_skip_approval
+
+    @can_skip_approval.setter
+    def can_skip_approval(self, can_skip_approval):
+        """Sets the can_skip_approval of this DeploymentContext.
+
+
+        :param can_skip_approval: The can_skip_approval of this DeploymentContext.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_skip_approval = can_skip_approval
+
+    @property
+    def resources(self):
+        """Gets the resources of this DeploymentContext.  # noqa: E501
+
+
+        :return: The resources of this DeploymentContext.  # noqa: E501
+        :rtype: dict(str, MatchedResourceDTO)
+        """
+        return self._resources
+
+    @resources.setter
+    def resources(self, resources):
+        """Sets the resources of this DeploymentContext.
+
+
+        :param resources: The resources of this DeploymentContext.  # noqa: E501
+        :type: dict(str, MatchedResourceDTO)
+        """
+
+        self._resources = resources
+
+    @property
+    def modules(self):
+        """Gets the modules of this DeploymentContext.  # noqa: E501
+
+
+        :return: The modules of this DeploymentContext.  # noqa: E501
+        :rtype: dict(str, ModuleDTO)
+        """
+        return self._modules
+
+    @modules.setter
+    def modules(self, modules):
+        """Sets the modules of this DeploymentContext.
+
+
+        :param modules: The modules of this DeploymentContext.  # noqa: E501
+        :type: dict(str, ModuleDTO)
+        """
+
+        self._modules = modules
+
+    @property
+    def maintenance_window(self):
+        """Gets the maintenance_window of this DeploymentContext.  # noqa: E501
+
+
+        :return: The maintenance_window of this DeploymentContext.  # noqa: E501
+        :rtype: MaintenanceWindowDTO
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """Sets the maintenance_window of this DeploymentContext.
+
+
+        :param maintenance_window: The maintenance_window of this DeploymentContext.  # noqa: E501
+        :type: MaintenanceWindowDTO
+        """
+
+        self._maintenance_window = maintenance_window
+
+    @property
+    def secrets_context(self):
+        """Gets the secrets_context of this DeploymentContext.  # noqa: E501
+
+
+        :return: The secrets_context of this DeploymentContext.  # noqa: E501
+        :rtype: SecretsContextDTO
+        """
+        return self._secrets_context
+
+    @secrets_context.setter
+    def secrets_context(self, secrets_context):
+        """Sets the secrets_context of this DeploymentContext.
+
+
+        :param secrets_context: The secrets_context of this DeploymentContext.  # noqa: E501
+        :type: SecretsContextDTO
+        """
+
+        self._secrets_context = secrets_context
+
+    @property
+    def parallel_release(self):
+        """Gets the parallel_release of this DeploymentContext.  # noqa: E501
+
+
+        :return: The parallel_release of this DeploymentContext.  # noqa: E501
+        :rtype: bool
+        """
+        return self._parallel_release
+
+    @parallel_release.setter
+    def parallel_release(self, parallel_release):
+        """Sets the parallel_release of this DeploymentContext.
+
+
+        :param parallel_release: The parallel_release of this DeploymentContext.  # noqa: E501
+        :type: bool
+        """
+
+        self._parallel_release = parallel_release
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,91 +28,49 @@ class StatefulSetDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'desired_replicas': 'int',
         'name': 'str',
+        'replicas': 'int',
         'pod_count': 'int',
         'ready_replicas': 'int',
-        'replicas': 'int',
-        'status': 'str'
+        'desired_replicas': 'int',
+        'status': 'str',
+        'age_in_seconds': 'int'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'desired_replicas': 'desiredReplicas',
         'name': 'name',
+        'replicas': 'replicas',
         'pod_count': 'podCount',
         'ready_replicas': 'readyReplicas',
-        'replicas': 'replicas',
-        'status': 'status'
+        'desired_replicas': 'desiredReplicas',
+        'status': 'status',
+        'age_in_seconds': 'ageInSeconds'
     }
 
-    def __init__(self, age_in_seconds=None, desired_replicas=None, name=None, pod_count=None, ready_replicas=None, replicas=None, status=None):  # noqa: E501
+    def __init__(self, name=None, replicas=None, pod_count=None, ready_replicas=None, desired_replicas=None, status=None, age_in_seconds=None):  # noqa: E501
         """StatefulSetDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._desired_replicas = None
         self._name = None
+        self._replicas = None
         self._pod_count = None
         self._ready_replicas = None
-        self._replicas = None
+        self._desired_replicas = None
         self._status = None
+        self._age_in_seconds = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if desired_replicas is not None:
-            self.desired_replicas = desired_replicas
         if name is not None:
             self.name = name
+        if replicas is not None:
+            self.replicas = replicas
         if pod_count is not None:
             self.pod_count = pod_count
         if ready_replicas is not None:
             self.ready_replicas = ready_replicas
-        if replicas is not None:
-            self.replicas = replicas
+        if desired_replicas is not None:
+            self.desired_replicas = desired_replicas
         if status is not None:
             self.status = status
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this StatefulSetDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this StatefulSetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this StatefulSetDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this StatefulSetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def desired_replicas(self):
-        """Gets the desired_replicas of this StatefulSetDTO.  # noqa: E501
-
-
-        :return: The desired_replicas of this StatefulSetDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._desired_replicas
-
-    @desired_replicas.setter
-    def desired_replicas(self, desired_replicas):
-        """Sets the desired_replicas of this StatefulSetDTO.
-
-
-        :param desired_replicas: The desired_replicas of this StatefulSetDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._desired_replicas = desired_replicas
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
 
     @property
     def name(self):
@@ -134,6 +92,27 @@ class StatefulSetDTO(object):
         """
 
         self._name = name
+
+    @property
+    def replicas(self):
+        """Gets the replicas of this StatefulSetDTO.  # noqa: E501
+
+
+        :return: The replicas of this StatefulSetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._replicas
+
+    @replicas.setter
+    def replicas(self, replicas):
+        """Sets the replicas of this StatefulSetDTO.
+
+
+        :param replicas: The replicas of this StatefulSetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._replicas = replicas
 
     @property
     def pod_count(self):
@@ -178,25 +157,25 @@ class StatefulSetDTO(object):
         self._ready_replicas = ready_replicas
 
     @property
-    def replicas(self):
-        """Gets the replicas of this StatefulSetDTO.  # noqa: E501
+    def desired_replicas(self):
+        """Gets the desired_replicas of this StatefulSetDTO.  # noqa: E501
 
 
-        :return: The replicas of this StatefulSetDTO.  # noqa: E501
+        :return: The desired_replicas of this StatefulSetDTO.  # noqa: E501
         :rtype: int
         """
-        return self._replicas
+        return self._desired_replicas
 
-    @replicas.setter
-    def replicas(self, replicas):
-        """Sets the replicas of this StatefulSetDTO.
+    @desired_replicas.setter
+    def desired_replicas(self, desired_replicas):
+        """Sets the desired_replicas of this StatefulSetDTO.
 
 
-        :param replicas: The replicas of this StatefulSetDTO.  # noqa: E501
+        :param desired_replicas: The desired_replicas of this StatefulSetDTO.  # noqa: E501
         :type: int
         """
 
-        self._replicas = replicas
+        self._desired_replicas = desired_replicas
 
     @property
     def status(self):
@@ -218,6 +197,27 @@ class StatefulSetDTO(object):
         """
 
         self._status = status
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this StatefulSetDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this StatefulSetDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this StatefulSetDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this StatefulSetDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

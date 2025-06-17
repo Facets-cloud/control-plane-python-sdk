@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,76 +28,55 @@ class ProvidedCloudResource(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'region': 'str',
+        'resource_type': 'str',
         'resource_name': 'str',
-        'resource_type': 'str'
+        'region': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'region': 'region',
+        'resource_type': 'resourceType',
         'resource_name': 'resourceName',
-        'resource_type': 'resourceType'
+        'region': 'region',
+        'name': 'name'
     }
 
-    def __init__(self, name=None, region=None, resource_name=None, resource_type=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, region=None, name=None):  # noqa: E501
         """ProvidedCloudResource - a model defined in Swagger"""  # noqa: E501
-        self._name = None
-        self._region = None
-        self._resource_name = None
         self._resource_type = None
+        self._resource_name = None
+        self._region = None
+        self._name = None
         self.discriminator = None
-        if name is not None:
-            self.name = name
-        if region is not None:
-            self.region = region
-        if resource_name is not None:
-            self.resource_name = resource_name
         if resource_type is not None:
             self.resource_type = resource_type
+        if resource_name is not None:
+            self.resource_name = resource_name
+        if region is not None:
+            self.region = region
+        if name is not None:
+            self.name = name
 
     @property
-    def name(self):
-        """Gets the name of this ProvidedCloudResource.  # noqa: E501
+    def resource_type(self):
+        """Gets the resource_type of this ProvidedCloudResource.  # noqa: E501
 
 
-        :return: The name of this ProvidedCloudResource.  # noqa: E501
+        :return: The resource_type of this ProvidedCloudResource.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._resource_type
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ProvidedCloudResource.
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """Sets the resource_type of this ProvidedCloudResource.
 
 
-        :param name: The name of this ProvidedCloudResource.  # noqa: E501
+        :param resource_type: The resource_type of this ProvidedCloudResource.  # noqa: E501
         :type: str
         """
 
-        self._name = name
-
-    @property
-    def region(self):
-        """Gets the region of this ProvidedCloudResource.  # noqa: E501
-
-
-        :return: The region of this ProvidedCloudResource.  # noqa: E501
-        :rtype: str
-        """
-        return self._region
-
-    @region.setter
-    def region(self, region):
-        """Sets the region of this ProvidedCloudResource.
-
-
-        :param region: The region of this ProvidedCloudResource.  # noqa: E501
-        :type: str
-        """
-
-        self._region = region
+        self._resource_type = resource_type
 
     @property
     def resource_name(self):
@@ -121,25 +100,46 @@ class ProvidedCloudResource(object):
         self._resource_name = resource_name
 
     @property
-    def resource_type(self):
-        """Gets the resource_type of this ProvidedCloudResource.  # noqa: E501
+    def region(self):
+        """Gets the region of this ProvidedCloudResource.  # noqa: E501
 
 
-        :return: The resource_type of this ProvidedCloudResource.  # noqa: E501
+        :return: The region of this ProvidedCloudResource.  # noqa: E501
         :rtype: str
         """
-        return self._resource_type
+        return self._region
 
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """Sets the resource_type of this ProvidedCloudResource.
+    @region.setter
+    def region(self, region):
+        """Sets the region of this ProvidedCloudResource.
 
 
-        :param resource_type: The resource_type of this ProvidedCloudResource.  # noqa: E501
+        :param region: The region of this ProvidedCloudResource.  # noqa: E501
         :type: str
         """
 
-        self._resource_type = resource_type
+        self._region = region
+
+    @property
+    def name(self):
+        """Gets the name of this ProvidedCloudResource.  # noqa: E501
+
+
+        :return: The name of this ProvidedCloudResource.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ProvidedCloudResource.
+
+
+        :param name: The name of this ProvidedCloudResource.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

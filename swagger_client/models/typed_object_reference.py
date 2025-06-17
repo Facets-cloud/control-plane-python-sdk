@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,34 @@ class TypedObjectReference(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'api_group': 'str',
         'kind': 'str',
+        'api_group': 'str',
         'name': 'str',
         'namespace': 'str'
     }
 
     attribute_map = {
-        'api_group': 'apiGroup',
         'kind': 'kind',
+        'api_group': 'apiGroup',
         'name': 'name',
         'namespace': 'namespace'
     }
 
-    def __init__(self, api_group=None, kind=None, name=None, namespace=None):  # noqa: E501
+    def __init__(self, kind=None, api_group=None, name=None, namespace=None):  # noqa: E501
         """TypedObjectReference - a model defined in Swagger"""  # noqa: E501
-        self._api_group = None
         self._kind = None
+        self._api_group = None
         self._name = None
         self._namespace = None
         self.discriminator = None
-        if api_group is not None:
-            self.api_group = api_group
         if kind is not None:
             self.kind = kind
+        if api_group is not None:
+            self.api_group = api_group
         if name is not None:
             self.name = name
         if namespace is not None:
             self.namespace = namespace
-
-    @property
-    def api_group(self):
-        """Gets the api_group of this TypedObjectReference.  # noqa: E501
-
-
-        :return: The api_group of this TypedObjectReference.  # noqa: E501
-        :rtype: str
-        """
-        return self._api_group
-
-    @api_group.setter
-    def api_group(self, api_group):
-        """Sets the api_group of this TypedObjectReference.
-
-
-        :param api_group: The api_group of this TypedObjectReference.  # noqa: E501
-        :type: str
-        """
-
-        self._api_group = api_group
 
     @property
     def kind(self):
@@ -98,6 +77,27 @@ class TypedObjectReference(object):
         """
 
         self._kind = kind
+
+    @property
+    def api_group(self):
+        """Gets the api_group of this TypedObjectReference.  # noqa: E501
+
+
+        :return: The api_group of this TypedObjectReference.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_group
+
+    @api_group.setter
+    def api_group(self, api_group):
+        """Sets the api_group of this TypedObjectReference.
+
+
+        :param api_group: The api_group of this TypedObjectReference.  # noqa: E501
+        :type: str
+        """
+
+        self._api_group = api_group
 
     @property
     def name(self):

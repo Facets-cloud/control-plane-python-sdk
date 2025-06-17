@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,70 +28,69 @@ class AvailabilitySchedule(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'id': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'cluster_id': 'str',
         'schedules': 'list[AvailabilityTaskSchedule]'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'id': 'id',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'cluster_id': 'clusterId',
         'schedules': 'schedules'
     }
 
-    def __init__(self, cluster_id=None, created_by=None, creation_date=None, id=None, last_modified_by=None, last_modified_date=None, schedules=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, cluster_id=None, schedules=None):  # noqa: E501
         """AvailabilitySchedule - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._id = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
+        self._cluster_id = None
         self._schedules = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if id is not None:
-            self.id = id
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.cluster_id = cluster_id
         if schedules is not None:
             self.schedules = schedules
 
     @property
-    def cluster_id(self):
-        """Gets the cluster_id of this AvailabilitySchedule.  # noqa: E501
+    def id(self):
+        """Gets the id of this AvailabilitySchedule.  # noqa: E501
 
 
-        :return: The cluster_id of this AvailabilitySchedule.  # noqa: E501
+        :return: The id of this AvailabilitySchedule.  # noqa: E501
         :rtype: str
         """
-        return self._cluster_id
+        return self._id
 
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this AvailabilitySchedule.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AvailabilitySchedule.
 
 
-        :param cluster_id: The cluster_id of this AvailabilitySchedule.  # noqa: E501
+        :param id: The id of this AvailabilitySchedule.  # noqa: E501
         :type: str
         """
 
-        self._cluster_id = cluster_id
+        self._id = id
 
     @property
     def created_by(self):
@@ -136,25 +135,25 @@ class AvailabilitySchedule(object):
         self._creation_date = creation_date
 
     @property
-    def id(self):
-        """Gets the id of this AvailabilitySchedule.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this AvailabilitySchedule.  # noqa: E501
 
 
-        :return: The id of this AvailabilitySchedule.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this AvailabilitySchedule.  # noqa: E501
+        :rtype: datetime
         """
-        return self._id
+        return self._last_modified_date
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this AvailabilitySchedule.
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this AvailabilitySchedule.
 
 
-        :param id: The id of this AvailabilitySchedule.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this AvailabilitySchedule.  # noqa: E501
+        :type: datetime
         """
 
-        self._id = id
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -178,25 +177,27 @@ class AvailabilitySchedule(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this AvailabilitySchedule.  # noqa: E501
+    def cluster_id(self):
+        """Gets the cluster_id of this AvailabilitySchedule.  # noqa: E501
 
 
-        :return: The last_modified_date of this AvailabilitySchedule.  # noqa: E501
-        :rtype: datetime
+        :return: The cluster_id of this AvailabilitySchedule.  # noqa: E501
+        :rtype: str
         """
-        return self._last_modified_date
+        return self._cluster_id
 
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this AvailabilitySchedule.
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this AvailabilitySchedule.
 
 
-        :param last_modified_date: The last_modified_date of this AvailabilitySchedule.  # noqa: E501
-        :type: datetime
+        :param cluster_id: The cluster_id of this AvailabilitySchedule.  # noqa: E501
+        :type: str
         """
+        if cluster_id is None:
+            raise ValueError("Invalid value for `cluster_id`, must not be `None`")  # noqa: E501
 
-        self._last_modified_date = last_modified_date
+        self._cluster_id = cluster_id
 
     @property
     def schedules(self):

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,71 +28,26 @@ class CreateWorkspaceNewBranchRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'new_branch': 'str',
+        'workspace_name': 'str',
         'source_branch': 'str',
-        'workspace_name': 'str'
+        'new_branch': 'str'
     }
 
     attribute_map = {
-        'new_branch': 'newBranch',
+        'workspace_name': 'workspaceName',
         'source_branch': 'sourceBranch',
-        'workspace_name': 'workspaceName'
+        'new_branch': 'newBranch'
     }
 
-    def __init__(self, new_branch=None, source_branch=None, workspace_name=None):  # noqa: E501
+    def __init__(self, workspace_name=None, source_branch=None, new_branch=None):  # noqa: E501
         """CreateWorkspaceNewBranchRequest - a model defined in Swagger"""  # noqa: E501
-        self._new_branch = None
-        self._source_branch = None
         self._workspace_name = None
+        self._source_branch = None
+        self._new_branch = None
         self.discriminator = None
-        if new_branch is not None:
-            self.new_branch = new_branch
-        if source_branch is not None:
-            self.source_branch = source_branch
-        if workspace_name is not None:
-            self.workspace_name = workspace_name
-
-    @property
-    def new_branch(self):
-        """Gets the new_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
-
-
-        :return: The new_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._new_branch
-
-    @new_branch.setter
-    def new_branch(self, new_branch):
-        """Sets the new_branch of this CreateWorkspaceNewBranchRequest.
-
-
-        :param new_branch: The new_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._new_branch = new_branch
-
-    @property
-    def source_branch(self):
-        """Gets the source_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
-
-
-        :return: The source_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._source_branch
-
-    @source_branch.setter
-    def source_branch(self, source_branch):
-        """Sets the source_branch of this CreateWorkspaceNewBranchRequest.
-
-
-        :param source_branch: The source_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._source_branch = source_branch
+        self.workspace_name = workspace_name
+        self.source_branch = source_branch
+        self.new_branch = new_branch
 
     @property
     def workspace_name(self):
@@ -112,8 +67,56 @@ class CreateWorkspaceNewBranchRequest(object):
         :param workspace_name: The workspace_name of this CreateWorkspaceNewBranchRequest.  # noqa: E501
         :type: str
         """
+        if workspace_name is None:
+            raise ValueError("Invalid value for `workspace_name`, must not be `None`")  # noqa: E501
 
         self._workspace_name = workspace_name
+
+    @property
+    def source_branch(self):
+        """Gets the source_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
+
+
+        :return: The source_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._source_branch
+
+    @source_branch.setter
+    def source_branch(self, source_branch):
+        """Sets the source_branch of this CreateWorkspaceNewBranchRequest.
+
+
+        :param source_branch: The source_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
+        :type: str
+        """
+        if source_branch is None:
+            raise ValueError("Invalid value for `source_branch`, must not be `None`")  # noqa: E501
+
+        self._source_branch = source_branch
+
+    @property
+    def new_branch(self):
+        """Gets the new_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
+
+
+        :return: The new_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._new_branch
+
+    @new_branch.setter
+    def new_branch(self, new_branch):
+        """Sets the new_branch of this CreateWorkspaceNewBranchRequest.
+
+
+        :param new_branch: The new_branch of this CreateWorkspaceNewBranchRequest.  # noqa: E501
+        :type: str
+        """
+        if new_branch is None:
+            raise ValueError("Invalid value for `new_branch`, must not be `None`")  # noqa: E501
+
+        self._new_branch = new_branch
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class RoleInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'label': 'str',
-        'role_name': 'str'
+        'role_name': 'str',
+        'label': 'str'
     }
 
     attribute_map = {
-        'label': 'label',
-        'role_name': 'roleName'
+        'role_name': 'roleName',
+        'label': 'label'
     }
 
-    def __init__(self, label=None, role_name=None):  # noqa: E501
+    def __init__(self, role_name=None, label=None):  # noqa: E501
         """RoleInfo - a model defined in Swagger"""  # noqa: E501
-        self._label = None
         self._role_name = None
+        self._label = None
         self.discriminator = None
-        if label is not None:
-            self.label = label
         if role_name is not None:
             self.role_name = role_name
-
-    @property
-    def label(self):
-        """Gets the label of this RoleInfo.  # noqa: E501
-
-
-        :return: The label of this RoleInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._label
-
-    @label.setter
-    def label(self, label):
-        """Sets the label of this RoleInfo.
-
-
-        :param label: The label of this RoleInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._label = label
+        if label is not None:
+            self.label = label
 
     @property
     def role_name(self):
@@ -88,6 +67,27 @@ class RoleInfo(object):
         """
 
         self._role_name = role_name
+
+    @property
+    def label(self):
+        """Gets the label of this RoleInfo.  # noqa: E501
+
+
+        :return: The label of this RoleInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        """Sets the label of this RoleInfo.
+
+
+        :param label: The label of this RoleInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._label = label
 
     def to_dict(self):
         """Returns the model properties as a dict"""

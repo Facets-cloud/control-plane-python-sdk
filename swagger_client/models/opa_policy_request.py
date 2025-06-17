@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,105 +28,126 @@ class OpaPolicyRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_ids': 'list[str]',
-        'description': 'str',
-        'disabled': 'bool',
-        'flavours': 'list[str]',
-        'input_data': 'object',
-        'package_name': 'str',
         'policy_name': 'str',
-        'policy_type': 'str',
-        'raw_policy': 'str',
-        'resource_type_and_resource_names_map': 'dict(str, list[str])',
-        'resource_types': 'list[str]',
-        'severity': 'str',
         'stack_name': 'str',
-        'template_id': 'str'
+        'description': 'str',
+        'raw_policy': 'str',
+        'cluster_ids': 'list[str]',
+        'resource_types': 'list[str]',
+        'resource_type_and_resource_names_map': 'dict(str, list[str])',
+        'policy_type': 'str',
+        'template_id': 'str',
+        'flavours': 'list[str]',
+        'input_data': 'dict(str, object)',
+        'severity': 'str',
+        'package_name': 'str',
+        'disabled': 'bool'
     }
 
     attribute_map = {
-        'cluster_ids': 'clusterIds',
+        'policy_name': 'policyName',
+        'stack_name': 'stackName',
         'description': 'description',
-        'disabled': 'disabled',
+        'raw_policy': 'rawPolicy',
+        'cluster_ids': 'clusterIds',
+        'resource_types': 'resourceTypes',
+        'resource_type_and_resource_names_map': 'resourceTypeAndResourceNamesMap',
+        'policy_type': 'policyType',
+        'template_id': 'templateId',
         'flavours': 'flavours',
         'input_data': 'inputData',
-        'package_name': 'packageName',
-        'policy_name': 'policyName',
-        'policy_type': 'policyType',
-        'raw_policy': 'rawPolicy',
-        'resource_type_and_resource_names_map': 'resourceTypeAndResourceNamesMap',
-        'resource_types': 'resourceTypes',
         'severity': 'severity',
-        'stack_name': 'stackName',
-        'template_id': 'templateId'
+        'package_name': 'packageName',
+        'disabled': 'disabled'
     }
 
-    def __init__(self, cluster_ids=None, description=None, disabled=None, flavours=None, input_data=None, package_name=None, policy_name=None, policy_type=None, raw_policy=None, resource_type_and_resource_names_map=None, resource_types=None, severity=None, stack_name=None, template_id=None):  # noqa: E501
+    def __init__(self, policy_name=None, stack_name=None, description=None, raw_policy=None, cluster_ids=None, resource_types=None, resource_type_and_resource_names_map=None, policy_type=None, template_id=None, flavours=None, input_data=None, severity=None, package_name=None, disabled=None):  # noqa: E501
         """OpaPolicyRequest - a model defined in Swagger"""  # noqa: E501
-        self._cluster_ids = None
+        self._policy_name = None
+        self._stack_name = None
         self._description = None
-        self._disabled = None
+        self._raw_policy = None
+        self._cluster_ids = None
+        self._resource_types = None
+        self._resource_type_and_resource_names_map = None
+        self._policy_type = None
+        self._template_id = None
         self._flavours = None
         self._input_data = None
-        self._package_name = None
-        self._policy_name = None
-        self._policy_type = None
-        self._raw_policy = None
-        self._resource_type_and_resource_names_map = None
-        self._resource_types = None
         self._severity = None
-        self._stack_name = None
-        self._template_id = None
+        self._package_name = None
+        self._disabled = None
         self.discriminator = None
-        if cluster_ids is not None:
-            self.cluster_ids = cluster_ids
+        if policy_name is not None:
+            self.policy_name = policy_name
+        if stack_name is not None:
+            self.stack_name = stack_name
         if description is not None:
             self.description = description
-        if disabled is not None:
-            self.disabled = disabled
+        if raw_policy is not None:
+            self.raw_policy = raw_policy
+        if cluster_ids is not None:
+            self.cluster_ids = cluster_ids
+        if resource_types is not None:
+            self.resource_types = resource_types
+        if resource_type_and_resource_names_map is not None:
+            self.resource_type_and_resource_names_map = resource_type_and_resource_names_map
+        if policy_type is not None:
+            self.policy_type = policy_type
+        if template_id is not None:
+            self.template_id = template_id
         if flavours is not None:
             self.flavours = flavours
         if input_data is not None:
             self.input_data = input_data
-        if package_name is not None:
-            self.package_name = package_name
-        if policy_name is not None:
-            self.policy_name = policy_name
-        if policy_type is not None:
-            self.policy_type = policy_type
-        if raw_policy is not None:
-            self.raw_policy = raw_policy
-        if resource_type_and_resource_names_map is not None:
-            self.resource_type_and_resource_names_map = resource_type_and_resource_names_map
-        if resource_types is not None:
-            self.resource_types = resource_types
         if severity is not None:
             self.severity = severity
-        if stack_name is not None:
-            self.stack_name = stack_name
-        if template_id is not None:
-            self.template_id = template_id
+        if package_name is not None:
+            self.package_name = package_name
+        if disabled is not None:
+            self.disabled = disabled
 
     @property
-    def cluster_ids(self):
-        """Gets the cluster_ids of this OpaPolicyRequest.  # noqa: E501
+    def policy_name(self):
+        """Gets the policy_name of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The cluster_ids of this OpaPolicyRequest.  # noqa: E501
-        :rtype: list[str]
+        :return: The policy_name of this OpaPolicyRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._cluster_ids
+        return self._policy_name
 
-    @cluster_ids.setter
-    def cluster_ids(self, cluster_ids):
-        """Sets the cluster_ids of this OpaPolicyRequest.
+    @policy_name.setter
+    def policy_name(self, policy_name):
+        """Sets the policy_name of this OpaPolicyRequest.
 
 
-        :param cluster_ids: The cluster_ids of this OpaPolicyRequest.  # noqa: E501
-        :type: list[str]
+        :param policy_name: The policy_name of this OpaPolicyRequest.  # noqa: E501
+        :type: str
         """
 
-        self._cluster_ids = cluster_ids
+        self._policy_name = policy_name
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this OpaPolicyRequest.  # noqa: E501
+
+
+        :return: The stack_name of this OpaPolicyRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this OpaPolicyRequest.
+
+
+        :param stack_name: The stack_name of this OpaPolicyRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_name = stack_name
 
     @property
     def description(self):
@@ -150,109 +171,88 @@ class OpaPolicyRequest(object):
         self._description = description
 
     @property
-    def disabled(self):
-        """Gets the disabled of this OpaPolicyRequest.  # noqa: E501
+    def raw_policy(self):
+        """Gets the raw_policy of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The disabled of this OpaPolicyRequest.  # noqa: E501
-        :rtype: bool
+        :return: The raw_policy of this OpaPolicyRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._disabled
+        return self._raw_policy
 
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this OpaPolicyRequest.
+    @raw_policy.setter
+    def raw_policy(self, raw_policy):
+        """Sets the raw_policy of this OpaPolicyRequest.
 
 
-        :param disabled: The disabled of this OpaPolicyRequest.  # noqa: E501
-        :type: bool
+        :param raw_policy: The raw_policy of this OpaPolicyRequest.  # noqa: E501
+        :type: str
         """
 
-        self._disabled = disabled
+        self._raw_policy = raw_policy
 
     @property
-    def flavours(self):
-        """Gets the flavours of this OpaPolicyRequest.  # noqa: E501
+    def cluster_ids(self):
+        """Gets the cluster_ids of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The flavours of this OpaPolicyRequest.  # noqa: E501
+        :return: The cluster_ids of this OpaPolicyRequest.  # noqa: E501
         :rtype: list[str]
         """
-        return self._flavours
+        return self._cluster_ids
 
-    @flavours.setter
-    def flavours(self, flavours):
-        """Sets the flavours of this OpaPolicyRequest.
+    @cluster_ids.setter
+    def cluster_ids(self, cluster_ids):
+        """Sets the cluster_ids of this OpaPolicyRequest.
 
 
-        :param flavours: The flavours of this OpaPolicyRequest.  # noqa: E501
+        :param cluster_ids: The cluster_ids of this OpaPolicyRequest.  # noqa: E501
         :type: list[str]
         """
 
-        self._flavours = flavours
+        self._cluster_ids = cluster_ids
 
     @property
-    def input_data(self):
-        """Gets the input_data of this OpaPolicyRequest.  # noqa: E501
+    def resource_types(self):
+        """Gets the resource_types of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The input_data of this OpaPolicyRequest.  # noqa: E501
-        :rtype: object
+        :return: The resource_types of this OpaPolicyRequest.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._input_data
+        return self._resource_types
 
-    @input_data.setter
-    def input_data(self, input_data):
-        """Sets the input_data of this OpaPolicyRequest.
+    @resource_types.setter
+    def resource_types(self, resource_types):
+        """Sets the resource_types of this OpaPolicyRequest.
 
 
-        :param input_data: The input_data of this OpaPolicyRequest.  # noqa: E501
-        :type: object
+        :param resource_types: The resource_types of this OpaPolicyRequest.  # noqa: E501
+        :type: list[str]
         """
 
-        self._input_data = input_data
+        self._resource_types = resource_types
 
     @property
-    def package_name(self):
-        """Gets the package_name of this OpaPolicyRequest.  # noqa: E501
+    def resource_type_and_resource_names_map(self):
+        """Gets the resource_type_and_resource_names_map of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The package_name of this OpaPolicyRequest.  # noqa: E501
-        :rtype: str
+        :return: The resource_type_and_resource_names_map of this OpaPolicyRequest.  # noqa: E501
+        :rtype: dict(str, list[str])
         """
-        return self._package_name
+        return self._resource_type_and_resource_names_map
 
-    @package_name.setter
-    def package_name(self, package_name):
-        """Sets the package_name of this OpaPolicyRequest.
-
-
-        :param package_name: The package_name of this OpaPolicyRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._package_name = package_name
-
-    @property
-    def policy_name(self):
-        """Gets the policy_name of this OpaPolicyRequest.  # noqa: E501
+    @resource_type_and_resource_names_map.setter
+    def resource_type_and_resource_names_map(self, resource_type_and_resource_names_map):
+        """Sets the resource_type_and_resource_names_map of this OpaPolicyRequest.
 
 
-        :return: The policy_name of this OpaPolicyRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._policy_name
-
-    @policy_name.setter
-    def policy_name(self, policy_name):
-        """Sets the policy_name of this OpaPolicyRequest.
-
-
-        :param policy_name: The policy_name of this OpaPolicyRequest.  # noqa: E501
-        :type: str
+        :param resource_type_and_resource_names_map: The resource_type_and_resource_names_map of this OpaPolicyRequest.  # noqa: E501
+        :type: dict(str, list[str])
         """
 
-        self._policy_name = policy_name
+        self._resource_type_and_resource_names_map = resource_type_and_resource_names_map
 
     @property
     def policy_type(self):
@@ -282,67 +282,67 @@ class OpaPolicyRequest(object):
         self._policy_type = policy_type
 
     @property
-    def raw_policy(self):
-        """Gets the raw_policy of this OpaPolicyRequest.  # noqa: E501
+    def template_id(self):
+        """Gets the template_id of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The raw_policy of this OpaPolicyRequest.  # noqa: E501
+        :return: The template_id of this OpaPolicyRequest.  # noqa: E501
         :rtype: str
         """
-        return self._raw_policy
+        return self._template_id
 
-    @raw_policy.setter
-    def raw_policy(self, raw_policy):
-        """Sets the raw_policy of this OpaPolicyRequest.
+    @template_id.setter
+    def template_id(self, template_id):
+        """Sets the template_id of this OpaPolicyRequest.
 
 
-        :param raw_policy: The raw_policy of this OpaPolicyRequest.  # noqa: E501
+        :param template_id: The template_id of this OpaPolicyRequest.  # noqa: E501
         :type: str
         """
 
-        self._raw_policy = raw_policy
+        self._template_id = template_id
 
     @property
-    def resource_type_and_resource_names_map(self):
-        """Gets the resource_type_and_resource_names_map of this OpaPolicyRequest.  # noqa: E501
+    def flavours(self):
+        """Gets the flavours of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The resource_type_and_resource_names_map of this OpaPolicyRequest.  # noqa: E501
-        :rtype: dict(str, list[str])
-        """
-        return self._resource_type_and_resource_names_map
-
-    @resource_type_and_resource_names_map.setter
-    def resource_type_and_resource_names_map(self, resource_type_and_resource_names_map):
-        """Sets the resource_type_and_resource_names_map of this OpaPolicyRequest.
-
-
-        :param resource_type_and_resource_names_map: The resource_type_and_resource_names_map of this OpaPolicyRequest.  # noqa: E501
-        :type: dict(str, list[str])
-        """
-
-        self._resource_type_and_resource_names_map = resource_type_and_resource_names_map
-
-    @property
-    def resource_types(self):
-        """Gets the resource_types of this OpaPolicyRequest.  # noqa: E501
-
-
-        :return: The resource_types of this OpaPolicyRequest.  # noqa: E501
+        :return: The flavours of this OpaPolicyRequest.  # noqa: E501
         :rtype: list[str]
         """
-        return self._resource_types
+        return self._flavours
 
-    @resource_types.setter
-    def resource_types(self, resource_types):
-        """Sets the resource_types of this OpaPolicyRequest.
+    @flavours.setter
+    def flavours(self, flavours):
+        """Sets the flavours of this OpaPolicyRequest.
 
 
-        :param resource_types: The resource_types of this OpaPolicyRequest.  # noqa: E501
+        :param flavours: The flavours of this OpaPolicyRequest.  # noqa: E501
         :type: list[str]
         """
 
-        self._resource_types = resource_types
+        self._flavours = flavours
+
+    @property
+    def input_data(self):
+        """Gets the input_data of this OpaPolicyRequest.  # noqa: E501
+
+
+        :return: The input_data of this OpaPolicyRequest.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._input_data
+
+    @input_data.setter
+    def input_data(self, input_data):
+        """Sets the input_data of this OpaPolicyRequest.
+
+
+        :param input_data: The input_data of this OpaPolicyRequest.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._input_data = input_data
 
     @property
     def severity(self):
@@ -372,46 +372,46 @@ class OpaPolicyRequest(object):
         self._severity = severity
 
     @property
-    def stack_name(self):
-        """Gets the stack_name of this OpaPolicyRequest.  # noqa: E501
+    def package_name(self):
+        """Gets the package_name of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The stack_name of this OpaPolicyRequest.  # noqa: E501
+        :return: The package_name of this OpaPolicyRequest.  # noqa: E501
         :rtype: str
         """
-        return self._stack_name
+        return self._package_name
 
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this OpaPolicyRequest.
+    @package_name.setter
+    def package_name(self, package_name):
+        """Sets the package_name of this OpaPolicyRequest.
 
 
-        :param stack_name: The stack_name of this OpaPolicyRequest.  # noqa: E501
+        :param package_name: The package_name of this OpaPolicyRequest.  # noqa: E501
         :type: str
         """
 
-        self._stack_name = stack_name
+        self._package_name = package_name
 
     @property
-    def template_id(self):
-        """Gets the template_id of this OpaPolicyRequest.  # noqa: E501
+    def disabled(self):
+        """Gets the disabled of this OpaPolicyRequest.  # noqa: E501
 
 
-        :return: The template_id of this OpaPolicyRequest.  # noqa: E501
-        :rtype: str
+        :return: The disabled of this OpaPolicyRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._template_id
+        return self._disabled
 
-    @template_id.setter
-    def template_id(self, template_id):
-        """Sets the template_id of this OpaPolicyRequest.
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this OpaPolicyRequest.
 
 
-        :param template_id: The template_id of this OpaPolicyRequest.  # noqa: E501
-        :type: str
+        :param disabled: The disabled of this OpaPolicyRequest.  # noqa: E501
+        :type: bool
         """
 
-        self._template_id = template_id
+        self._disabled = disabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,122 +28,59 @@ class PersistentVolumeDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age_in_seconds': 'int',
-        'capacity': 'str',
-        'claim': 'str',
         'name': 'str',
-        'pv_access_modes': 'list[str]',
-        'reason': 'str',
-        'reclaim_policy': 'str',
+        'capacity': 'str',
         'status': 'str',
-        'storage_class': 'str'
+        'storage_class': 'str',
+        'pv_access_modes': 'list[str]',
+        'reclaim_policy': 'str',
+        'age_in_seconds': 'int',
+        'claim': 'str',
+        'reason': 'str'
     }
 
     attribute_map = {
-        'age_in_seconds': 'ageInSeconds',
-        'capacity': 'capacity',
-        'claim': 'claim',
         'name': 'name',
-        'pv_access_modes': 'pvAccessModes',
-        'reason': 'reason',
-        'reclaim_policy': 'reclaimPolicy',
+        'capacity': 'capacity',
         'status': 'status',
-        'storage_class': 'storageClass'
+        'storage_class': 'storageClass',
+        'pv_access_modes': 'pvAccessModes',
+        'reclaim_policy': 'reclaimPolicy',
+        'age_in_seconds': 'ageInSeconds',
+        'claim': 'claim',
+        'reason': 'reason'
     }
 
-    def __init__(self, age_in_seconds=None, capacity=None, claim=None, name=None, pv_access_modes=None, reason=None, reclaim_policy=None, status=None, storage_class=None):  # noqa: E501
+    def __init__(self, name=None, capacity=None, status=None, storage_class=None, pv_access_modes=None, reclaim_policy=None, age_in_seconds=None, claim=None, reason=None):  # noqa: E501
         """PersistentVolumeDTO - a model defined in Swagger"""  # noqa: E501
-        self._age_in_seconds = None
-        self._capacity = None
-        self._claim = None
         self._name = None
-        self._pv_access_modes = None
-        self._reason = None
-        self._reclaim_policy = None
+        self._capacity = None
         self._status = None
         self._storage_class = None
+        self._pv_access_modes = None
+        self._reclaim_policy = None
+        self._age_in_seconds = None
+        self._claim = None
+        self._reason = None
         self.discriminator = None
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if capacity is not None:
-            self.capacity = capacity
-        if claim is not None:
-            self.claim = claim
         if name is not None:
             self.name = name
-        if pv_access_modes is not None:
-            self.pv_access_modes = pv_access_modes
-        if reason is not None:
-            self.reason = reason
-        if reclaim_policy is not None:
-            self.reclaim_policy = reclaim_policy
+        if capacity is not None:
+            self.capacity = capacity
         if status is not None:
             self.status = status
         if storage_class is not None:
             self.storage_class = storage_class
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this PersistentVolumeDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this PersistentVolumeDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this PersistentVolumeDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this PersistentVolumeDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def capacity(self):
-        """Gets the capacity of this PersistentVolumeDTO.  # noqa: E501
-
-
-        :return: The capacity of this PersistentVolumeDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._capacity
-
-    @capacity.setter
-    def capacity(self, capacity):
-        """Sets the capacity of this PersistentVolumeDTO.
-
-
-        :param capacity: The capacity of this PersistentVolumeDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._capacity = capacity
-
-    @property
-    def claim(self):
-        """Gets the claim of this PersistentVolumeDTO.  # noqa: E501
-
-
-        :return: The claim of this PersistentVolumeDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._claim
-
-    @claim.setter
-    def claim(self, claim):
-        """Sets the claim of this PersistentVolumeDTO.
-
-
-        :param claim: The claim of this PersistentVolumeDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._claim = claim
+        if pv_access_modes is not None:
+            self.pv_access_modes = pv_access_modes
+        if reclaim_policy is not None:
+            self.reclaim_policy = reclaim_policy
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
+        if claim is not None:
+            self.claim = claim
+        if reason is not None:
+            self.reason = reason
 
     @property
     def name(self):
@@ -167,67 +104,25 @@ class PersistentVolumeDTO(object):
         self._name = name
 
     @property
-    def pv_access_modes(self):
-        """Gets the pv_access_modes of this PersistentVolumeDTO.  # noqa: E501
+    def capacity(self):
+        """Gets the capacity of this PersistentVolumeDTO.  # noqa: E501
 
 
-        :return: The pv_access_modes of this PersistentVolumeDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._pv_access_modes
-
-    @pv_access_modes.setter
-    def pv_access_modes(self, pv_access_modes):
-        """Sets the pv_access_modes of this PersistentVolumeDTO.
-
-
-        :param pv_access_modes: The pv_access_modes of this PersistentVolumeDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._pv_access_modes = pv_access_modes
-
-    @property
-    def reason(self):
-        """Gets the reason of this PersistentVolumeDTO.  # noqa: E501
-
-
-        :return: The reason of this PersistentVolumeDTO.  # noqa: E501
+        :return: The capacity of this PersistentVolumeDTO.  # noqa: E501
         :rtype: str
         """
-        return self._reason
+        return self._capacity
 
-    @reason.setter
-    def reason(self, reason):
-        """Sets the reason of this PersistentVolumeDTO.
+    @capacity.setter
+    def capacity(self, capacity):
+        """Sets the capacity of this PersistentVolumeDTO.
 
 
-        :param reason: The reason of this PersistentVolumeDTO.  # noqa: E501
+        :param capacity: The capacity of this PersistentVolumeDTO.  # noqa: E501
         :type: str
         """
 
-        self._reason = reason
-
-    @property
-    def reclaim_policy(self):
-        """Gets the reclaim_policy of this PersistentVolumeDTO.  # noqa: E501
-
-
-        :return: The reclaim_policy of this PersistentVolumeDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._reclaim_policy
-
-    @reclaim_policy.setter
-    def reclaim_policy(self, reclaim_policy):
-        """Sets the reclaim_policy of this PersistentVolumeDTO.
-
-
-        :param reclaim_policy: The reclaim_policy of this PersistentVolumeDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._reclaim_policy = reclaim_policy
+        self._capacity = capacity
 
     @property
     def status(self):
@@ -270,6 +165,111 @@ class PersistentVolumeDTO(object):
         """
 
         self._storage_class = storage_class
+
+    @property
+    def pv_access_modes(self):
+        """Gets the pv_access_modes of this PersistentVolumeDTO.  # noqa: E501
+
+
+        :return: The pv_access_modes of this PersistentVolumeDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._pv_access_modes
+
+    @pv_access_modes.setter
+    def pv_access_modes(self, pv_access_modes):
+        """Sets the pv_access_modes of this PersistentVolumeDTO.
+
+
+        :param pv_access_modes: The pv_access_modes of this PersistentVolumeDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._pv_access_modes = pv_access_modes
+
+    @property
+    def reclaim_policy(self):
+        """Gets the reclaim_policy of this PersistentVolumeDTO.  # noqa: E501
+
+
+        :return: The reclaim_policy of this PersistentVolumeDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._reclaim_policy
+
+    @reclaim_policy.setter
+    def reclaim_policy(self, reclaim_policy):
+        """Sets the reclaim_policy of this PersistentVolumeDTO.
+
+
+        :param reclaim_policy: The reclaim_policy of this PersistentVolumeDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._reclaim_policy = reclaim_policy
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this PersistentVolumeDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this PersistentVolumeDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this PersistentVolumeDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this PersistentVolumeDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
+
+    @property
+    def claim(self):
+        """Gets the claim of this PersistentVolumeDTO.  # noqa: E501
+
+
+        :return: The claim of this PersistentVolumeDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._claim
+
+    @claim.setter
+    def claim(self, claim):
+        """Sets the claim of this PersistentVolumeDTO.
+
+
+        :param claim: The claim of this PersistentVolumeDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._claim = claim
+
+    @property
+    def reason(self):
+        """Gets the reason of this PersistentVolumeDTO.  # noqa: E501
+
+
+        :return: The reason of this PersistentVolumeDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._reason
+
+    @reason.setter
+    def reason(self, reason):
+        """Sets the reason of this PersistentVolumeDTO.
+
+
+        :param reason: The reason of this PersistentVolumeDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._reason = reason
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiOAuthControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_generic_o_auth_integration_using_post(self, body, **kwargs):  # noqa: E501
-        """addGenericOAuthIntegration  # noqa: E501
+    def add_generic_o_auth_integration(self, body, **kwargs):  # noqa: E501
+        """add_generic_o_auth_integration  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_generic_o_auth_integration_using_post(body, async_req=True)
+        >>> thread = api.add_generic_o_auth_integration(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GenericOAuth2ClientRegistration body: client (required)
+        :param GenericOAuth2ClientRegistration body: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_generic_o_auth_integration_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.add_generic_o_auth_integration_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_generic_o_auth_integration_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.add_generic_o_auth_integration_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def add_generic_o_auth_integration_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """addGenericOAuthIntegration  # noqa: E501
+    def add_generic_o_auth_integration_with_http_info(self, body, **kwargs):  # noqa: E501
+        """add_generic_o_auth_integration  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_generic_o_auth_integration_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.add_generic_o_auth_integration_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GenericOAuth2ClientRegistration body: client (required)
+        :param GenericOAuth2ClientRegistration body: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiOAuthControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_generic_o_auth_integration_using_post" % key
+                    " to method add_generic_o_auth_integration" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_generic_o_auth_integration_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add_generic_o_auth_integration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -104,14 +104,14 @@ class UiOAuthControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/oauth/generic-oauth-integration', 'POST',
@@ -129,37 +129,37 @@ class UiOAuthControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def add_integrations_using_post(self, body, **kwargs):  # noqa: E501
-        """addIntegrations  # noqa: E501
+    def add_integrations(self, body, **kwargs):  # noqa: E501
+        """add_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_integrations_using_post(body, async_req=True)
+        >>> thread = api.add_integrations(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomOAuth2ClientRegistration body: client (required)
+        :param CustomOAuth2ClientRegistration body: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.add_integrations_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.add_integrations_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_integrations_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.add_integrations_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def add_integrations_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """addIntegrations  # noqa: E501
+    def add_integrations_with_http_info(self, body, **kwargs):  # noqa: E501
+        """add_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_integrations_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.add_integrations_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomOAuth2ClientRegistration body: client (required)
+        :param CustomOAuth2ClientRegistration body: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -176,14 +176,14 @@ class UiOAuthControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_integrations_using_post" % key
+                    " to method add_integrations" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `add_integrations_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `add_integrations`")  # noqa: E501
 
         collection_formats = {}
 
@@ -201,14 +201,14 @@ class UiOAuthControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/oauth', 'POST',
@@ -226,37 +226,37 @@ class UiOAuthControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_integrations_using_delete(self, registration_id, **kwargs):  # noqa: E501
-        """deleteIntegrations  # noqa: E501
+    def delete_integrations(self, registration_id, **kwargs):  # noqa: E501
+        """delete_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_integrations_using_delete(registration_id, async_req=True)
+        >>> thread = api.delete_integrations(registration_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str registration_id: registrationId (required)
+        :param str registration_id: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_integrations_using_delete_with_http_info(registration_id, **kwargs)  # noqa: E501
+            return self.delete_integrations_with_http_info(registration_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_integrations_using_delete_with_http_info(registration_id, **kwargs)  # noqa: E501
+            (data) = self.delete_integrations_with_http_info(registration_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_integrations_using_delete_with_http_info(self, registration_id, **kwargs):  # noqa: E501
-        """deleteIntegrations  # noqa: E501
+    def delete_integrations_with_http_info(self, registration_id, **kwargs):  # noqa: E501
+        """delete_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_integrations_using_delete_with_http_info(registration_id, async_req=True)
+        >>> thread = api.delete_integrations_with_http_info(registration_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str registration_id: registrationId (required)
+        :param str registration_id: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -273,14 +273,14 @@ class UiOAuthControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_integrations_using_delete" % key
+                    " to method delete_integrations" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'registration_id' is set
         if ('registration_id' not in params or
                 params['registration_id'] is None):
-            raise ValueError("Missing the required parameter `registration_id` when calling `delete_integrations_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `registration_id` when calling `delete_integrations`")  # noqa: E501
 
         collection_formats = {}
 
@@ -298,10 +298,10 @@ class UiOAuthControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/oauth/{registrationId}', 'DELETE',
@@ -319,39 +319,39 @@ class UiOAuthControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def edit_generic_o_auth_integration_using_put(self, body, **kwargs):  # noqa: E501
-        """editGenericOAuthIntegration  # noqa: E501
+    def edit_generic_o_auth_integration(self, body, registration_id, **kwargs):  # noqa: E501
+        """edit_generic_o_auth_integration  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_generic_o_auth_integration_using_put(body, async_req=True)
+        >>> thread = api.edit_generic_o_auth_integration(body, registration_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GenericOAuth2ClientRegistration body: client (required)
-        :param str registration_id: registrationId
+        :param GenericOAuth2ClientRegistration body: (required)
+        :param str registration_id: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.edit_generic_o_auth_integration_using_put_with_http_info(body, **kwargs)  # noqa: E501
+            return self.edit_generic_o_auth_integration_with_http_info(body, registration_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.edit_generic_o_auth_integration_using_put_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.edit_generic_o_auth_integration_with_http_info(body, registration_id, **kwargs)  # noqa: E501
             return data
 
-    def edit_generic_o_auth_integration_using_put_with_http_info(self, body, **kwargs):  # noqa: E501
-        """editGenericOAuthIntegration  # noqa: E501
+    def edit_generic_o_auth_integration_with_http_info(self, body, registration_id, **kwargs):  # noqa: E501
+        """edit_generic_o_auth_integration  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_generic_o_auth_integration_using_put_with_http_info(body, async_req=True)
+        >>> thread = api.edit_generic_o_auth_integration_with_http_info(body, registration_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param GenericOAuth2ClientRegistration body: client (required)
-        :param str registration_id: registrationId
+        :param GenericOAuth2ClientRegistration body: (required)
+        :param str registration_id: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -368,14 +368,18 @@ class UiOAuthControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method edit_generic_o_auth_integration_using_put" % key
+                    " to method edit_generic_o_auth_integration" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `edit_generic_o_auth_integration_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `edit_generic_o_auth_integration`")  # noqa: E501
+        # verify the required parameter 'registration_id' is set
+        if ('registration_id' not in params or
+                params['registration_id'] is None):
+            raise ValueError("Missing the required parameter `registration_id` when calling `edit_generic_o_auth_integration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -395,14 +399,14 @@ class UiOAuthControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/oauth/generic-oauth-integration', 'PUT',
@@ -420,12 +424,12 @@ class UiOAuthControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_integrations_using_get(self, **kwargs):  # noqa: E501
-        """getAllIntegrations  # noqa: E501
+    def get_all_integrations(self, **kwargs):  # noqa: E501
+        """get_all_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_integrations_using_get(async_req=True)
+        >>> thread = api.get_all_integrations(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -435,17 +439,17 @@ class UiOAuthControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_integrations_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_integrations_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_integrations_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_integrations_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_integrations_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllIntegrations  # noqa: E501
+    def get_all_integrations_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_integrations_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_integrations_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -465,7 +469,7 @@ class UiOAuthControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_integrations_using_get" % key
+                    " to method get_all_integrations" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -484,10 +488,10 @@ class UiOAuthControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/oauth', 'GET',
@@ -505,39 +509,39 @@ class UiOAuthControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_integrations_using_put(self, body, registration_id, **kwargs):  # noqa: E501
-        """updateIntegrations  # noqa: E501
+    def update_integrations(self, body, registration_id, **kwargs):  # noqa: E501
+        """update_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_integrations_using_put(body, registration_id, async_req=True)
+        >>> thread = api.update_integrations(body, registration_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomOAuth2ClientRegistration body: client (required)
-        :param str registration_id: registrationId (required)
+        :param CustomOAuth2ClientRegistration body: (required)
+        :param str registration_id: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_integrations_using_put_with_http_info(body, registration_id, **kwargs)  # noqa: E501
+            return self.update_integrations_with_http_info(body, registration_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_integrations_using_put_with_http_info(body, registration_id, **kwargs)  # noqa: E501
+            (data) = self.update_integrations_with_http_info(body, registration_id, **kwargs)  # noqa: E501
             return data
 
-    def update_integrations_using_put_with_http_info(self, body, registration_id, **kwargs):  # noqa: E501
-        """updateIntegrations  # noqa: E501
+    def update_integrations_with_http_info(self, body, registration_id, **kwargs):  # noqa: E501
+        """update_integrations  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_integrations_using_put_with_http_info(body, registration_id, async_req=True)
+        >>> thread = api.update_integrations_with_http_info(body, registration_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomOAuth2ClientRegistration body: client (required)
-        :param str registration_id: registrationId (required)
+        :param CustomOAuth2ClientRegistration body: (required)
+        :param str registration_id: (required)
         :return: list[CustomOAuth2ClientRegistration]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -554,18 +558,18 @@ class UiOAuthControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_integrations_using_put" % key
+                    " to method update_integrations" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `update_integrations_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `update_integrations`")  # noqa: E501
         # verify the required parameter 'registration_id' is set
         if ('registration_id' not in params or
                 params['registration_id'] is None):
-            raise ValueError("Missing the required parameter `registration_id` when calling `update_integrations_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `registration_id` when calling `update_integrations`")  # noqa: E501
 
         collection_formats = {}
 
@@ -585,14 +589,14 @@ class UiOAuthControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/oauth/{registrationId}', 'PUT',

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,60 +28,35 @@ class Criterion(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'metadata_key': 'str',
         'operator': 'str',
-        'priority': 'int',
+        'value': 'str',
         'route_to': 'str',
-        'value': 'str'
+        'priority': 'int',
+        'metadata_key': 'str'
     }
 
     attribute_map = {
-        'metadata_key': 'metadataKey',
         'operator': 'operator',
-        'priority': 'priority',
+        'value': 'value',
         'route_to': 'routeTo',
-        'value': 'value'
+        'priority': 'priority',
+        'metadata_key': 'metadataKey'
     }
 
-    def __init__(self, metadata_key=None, operator=None, priority=None, route_to=None, value=None):  # noqa: E501
+    def __init__(self, operator=None, value=None, route_to=None, priority=None, metadata_key=None):  # noqa: E501
         """Criterion - a model defined in Swagger"""  # noqa: E501
-        self._metadata_key = None
         self._operator = None
-        self._priority = None
-        self._route_to = None
         self._value = None
+        self._route_to = None
+        self._priority = None
+        self._metadata_key = None
         self.discriminator = None
-        if metadata_key is not None:
-            self.metadata_key = metadata_key
-        if operator is not None:
-            self.operator = operator
+        self.operator = operator
+        self.value = value
+        self.route_to = route_to
         if priority is not None:
             self.priority = priority
-        if route_to is not None:
-            self.route_to = route_to
-        if value is not None:
-            self.value = value
-
-    @property
-    def metadata_key(self):
-        """Gets the metadata_key of this Criterion.  # noqa: E501
-
-
-        :return: The metadata_key of this Criterion.  # noqa: E501
-        :rtype: str
-        """
-        return self._metadata_key
-
-    @metadata_key.setter
-    def metadata_key(self, metadata_key):
-        """Sets the metadata_key of this Criterion.
-
-
-        :param metadata_key: The metadata_key of this Criterion.  # noqa: E501
-        :type: str
-        """
-
-        self._metadata_key = metadata_key
+        self.metadata_key = metadata_key
 
     @property
     def operator(self):
@@ -101,6 +76,8 @@ class Criterion(object):
         :param operator: The operator of this Criterion.  # noqa: E501
         :type: str
         """
+        if operator is None:
+            raise ValueError("Invalid value for `operator`, must not be `None`")  # noqa: E501
         allowed_values = ["EQUALS", "STARTS_WITH", "ENDS_WITH", "CONTAINS"]  # noqa: E501
         if operator not in allowed_values:
             raise ValueError(
@@ -109,6 +86,52 @@ class Criterion(object):
             )
 
         self._operator = operator
+
+    @property
+    def value(self):
+        """Gets the value of this Criterion.  # noqa: E501
+
+
+        :return: The value of this Criterion.  # noqa: E501
+        :rtype: str
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this Criterion.
+
+
+        :param value: The value of this Criterion.  # noqa: E501
+        :type: str
+        """
+        if value is None:
+            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
+
+        self._value = value
+
+    @property
+    def route_to(self):
+        """Gets the route_to of this Criterion.  # noqa: E501
+
+
+        :return: The route_to of this Criterion.  # noqa: E501
+        :rtype: str
+        """
+        return self._route_to
+
+    @route_to.setter
+    def route_to(self, route_to):
+        """Sets the route_to of this Criterion.
+
+
+        :param route_to: The route_to of this Criterion.  # noqa: E501
+        :type: str
+        """
+        if route_to is None:
+            raise ValueError("Invalid value for `route_to`, must not be `None`")  # noqa: E501
+
+        self._route_to = route_to
 
     @property
     def priority(self):
@@ -132,46 +155,27 @@ class Criterion(object):
         self._priority = priority
 
     @property
-    def route_to(self):
-        """Gets the route_to of this Criterion.  # noqa: E501
+    def metadata_key(self):
+        """Gets the metadata_key of this Criterion.  # noqa: E501
 
 
-        :return: The route_to of this Criterion.  # noqa: E501
+        :return: The metadata_key of this Criterion.  # noqa: E501
         :rtype: str
         """
-        return self._route_to
+        return self._metadata_key
 
-    @route_to.setter
-    def route_to(self, route_to):
-        """Sets the route_to of this Criterion.
+    @metadata_key.setter
+    def metadata_key(self, metadata_key):
+        """Sets the metadata_key of this Criterion.
 
 
-        :param route_to: The route_to of this Criterion.  # noqa: E501
+        :param metadata_key: The metadata_key of this Criterion.  # noqa: E501
         :type: str
         """
+        if metadata_key is None:
+            raise ValueError("Invalid value for `metadata_key`, must not be `None`")  # noqa: E501
 
-        self._route_to = route_to
-
-    @property
-    def value(self):
-        """Gets the value of this Criterion.  # noqa: E501
-
-
-        :return: The value of this Criterion.  # noqa: E501
-        :rtype: str
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value):
-        """Sets the value of this Criterion.
-
-
-        :param value: The value of this Criterion.  # noqa: E501
-        :type: str
-        """
-
-        self._value = value
+        self._metadata_key = metadata_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

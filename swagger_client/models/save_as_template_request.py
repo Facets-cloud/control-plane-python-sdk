@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,64 +28,169 @@ class SaveAsTemplateRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'clouds': 'list[str]',
-        'description': 'str',
-        'git_ref': 'str',
-        'git_url': 'str',
-        'group': 'str',
         'name': 'str',
-        'organisation_name': 'str',
+        'description': 'str',
+        'git_url': 'str',
+        'git_ref': 'str',
         'relative_path': 'str',
-        'type': 'str'
+        'account_id': 'str',
+        'group': 'str',
+        'clouds': 'list[str]',
+        'type': 'str',
+        'organisation_name': 'str'
     }
 
     attribute_map = {
-        'account_id': 'accountId',
-        'clouds': 'clouds',
-        'description': 'description',
-        'git_ref': 'gitRef',
-        'git_url': 'gitUrl',
-        'group': 'group',
         'name': 'name',
-        'organisation_name': 'organisationName',
+        'description': 'description',
+        'git_url': 'gitUrl',
+        'git_ref': 'gitRef',
         'relative_path': 'relativePath',
-        'type': 'type'
+        'account_id': 'accountId',
+        'group': 'group',
+        'clouds': 'clouds',
+        'type': 'type',
+        'organisation_name': 'organisationName'
     }
 
-    def __init__(self, account_id=None, clouds=None, description=None, git_ref=None, git_url=None, group=None, name=None, organisation_name=None, relative_path=None, type=None):  # noqa: E501
+    def __init__(self, name=None, description=None, git_url=None, git_ref=None, relative_path=None, account_id=None, group=None, clouds=None, type=None, organisation_name=None):  # noqa: E501
         """SaveAsTemplateRequest - a model defined in Swagger"""  # noqa: E501
-        self._account_id = None
-        self._clouds = None
-        self._description = None
-        self._git_ref = None
-        self._git_url = None
-        self._group = None
         self._name = None
-        self._organisation_name = None
+        self._description = None
+        self._git_url = None
+        self._git_ref = None
         self._relative_path = None
+        self._account_id = None
+        self._group = None
+        self._clouds = None
         self._type = None
+        self._organisation_name = None
         self.discriminator = None
-        if account_id is not None:
-            self.account_id = account_id
-        if clouds is not None:
-            self.clouds = clouds
+        self.name = name
         if description is not None:
             self.description = description
-        if git_ref is not None:
-            self.git_ref = git_ref
         if git_url is not None:
             self.git_url = git_url
-        if group is not None:
-            self.group = group
-        if name is not None:
-            self.name = name
-        if organisation_name is not None:
-            self.organisation_name = organisation_name
+        if git_ref is not None:
+            self.git_ref = git_ref
         if relative_path is not None:
             self.relative_path = relative_path
+        self.account_id = account_id
+        if group is not None:
+            self.group = group
+        if clouds is not None:
+            self.clouds = clouds
         if type is not None:
             self.type = type
+        if organisation_name is not None:
+            self.organisation_name = organisation_name
+
+    @property
+    def name(self):
+        """Gets the name of this SaveAsTemplateRequest.  # noqa: E501
+
+
+        :return: The name of this SaveAsTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SaveAsTemplateRequest.
+
+
+        :param name: The name of this SaveAsTemplateRequest.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def description(self):
+        """Gets the description of this SaveAsTemplateRequest.  # noqa: E501
+
+
+        :return: The description of this SaveAsTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SaveAsTemplateRequest.
+
+
+        :param description: The description of this SaveAsTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def git_url(self):
+        """Gets the git_url of this SaveAsTemplateRequest.  # noqa: E501
+
+
+        :return: The git_url of this SaveAsTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_url
+
+    @git_url.setter
+    def git_url(self, git_url):
+        """Sets the git_url of this SaveAsTemplateRequest.
+
+
+        :param git_url: The git_url of this SaveAsTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._git_url = git_url
+
+    @property
+    def git_ref(self):
+        """Gets the git_ref of this SaveAsTemplateRequest.  # noqa: E501
+
+
+        :return: The git_ref of this SaveAsTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_ref
+
+    @git_ref.setter
+    def git_ref(self, git_ref):
+        """Sets the git_ref of this SaveAsTemplateRequest.
+
+
+        :param git_ref: The git_ref of this SaveAsTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._git_ref = git_ref
+
+    @property
+    def relative_path(self):
+        """Gets the relative_path of this SaveAsTemplateRequest.  # noqa: E501
+
+
+        :return: The relative_path of this SaveAsTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._relative_path
+
+    @relative_path.setter
+    def relative_path(self, relative_path):
+        """Sets the relative_path of this SaveAsTemplateRequest.
+
+
+        :param relative_path: The relative_path of this SaveAsTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._relative_path = relative_path
 
     @property
     def account_id(self):
@@ -105,8 +210,31 @@ class SaveAsTemplateRequest(object):
         :param account_id: The account_id of this SaveAsTemplateRequest.  # noqa: E501
         :type: str
         """
+        if account_id is None:
+            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
 
         self._account_id = account_id
+
+    @property
+    def group(self):
+        """Gets the group of this SaveAsTemplateRequest.  # noqa: E501
+
+
+        :return: The group of this SaveAsTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._group
+
+    @group.setter
+    def group(self, group):
+        """Sets the group of this SaveAsTemplateRequest.
+
+
+        :param group: The group of this SaveAsTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._group = group
 
     @property
     def clouds(self):
@@ -137,153 +265,6 @@ class SaveAsTemplateRequest(object):
         self._clouds = clouds
 
     @property
-    def description(self):
-        """Gets the description of this SaveAsTemplateRequest.  # noqa: E501
-
-
-        :return: The description of this SaveAsTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this SaveAsTemplateRequest.
-
-
-        :param description: The description of this SaveAsTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def git_ref(self):
-        """Gets the git_ref of this SaveAsTemplateRequest.  # noqa: E501
-
-
-        :return: The git_ref of this SaveAsTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_ref
-
-    @git_ref.setter
-    def git_ref(self, git_ref):
-        """Sets the git_ref of this SaveAsTemplateRequest.
-
-
-        :param git_ref: The git_ref of this SaveAsTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._git_ref = git_ref
-
-    @property
-    def git_url(self):
-        """Gets the git_url of this SaveAsTemplateRequest.  # noqa: E501
-
-
-        :return: The git_url of this SaveAsTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_url
-
-    @git_url.setter
-    def git_url(self, git_url):
-        """Sets the git_url of this SaveAsTemplateRequest.
-
-
-        :param git_url: The git_url of this SaveAsTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._git_url = git_url
-
-    @property
-    def group(self):
-        """Gets the group of this SaveAsTemplateRequest.  # noqa: E501
-
-
-        :return: The group of this SaveAsTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._group
-
-    @group.setter
-    def group(self, group):
-        """Sets the group of this SaveAsTemplateRequest.
-
-
-        :param group: The group of this SaveAsTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._group = group
-
-    @property
-    def name(self):
-        """Gets the name of this SaveAsTemplateRequest.  # noqa: E501
-
-
-        :return: The name of this SaveAsTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SaveAsTemplateRequest.
-
-
-        :param name: The name of this SaveAsTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def organisation_name(self):
-        """Gets the organisation_name of this SaveAsTemplateRequest.  # noqa: E501
-
-
-        :return: The organisation_name of this SaveAsTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._organisation_name
-
-    @organisation_name.setter
-    def organisation_name(self, organisation_name):
-        """Sets the organisation_name of this SaveAsTemplateRequest.
-
-
-        :param organisation_name: The organisation_name of this SaveAsTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._organisation_name = organisation_name
-
-    @property
-    def relative_path(self):
-        """Gets the relative_path of this SaveAsTemplateRequest.  # noqa: E501
-
-
-        :return: The relative_path of this SaveAsTemplateRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._relative_path
-
-    @relative_path.setter
-    def relative_path(self, relative_path):
-        """Sets the relative_path of this SaveAsTemplateRequest.
-
-
-        :param relative_path: The relative_path of this SaveAsTemplateRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._relative_path = relative_path
-
-    @property
     def type(self):
         """Gets the type of this SaveAsTemplateRequest.  # noqa: E501
 
@@ -309,6 +290,27 @@ class SaveAsTemplateRequest(object):
             )
 
         self._type = type
+
+    @property
+    def organisation_name(self):
+        """Gets the organisation_name of this SaveAsTemplateRequest.  # noqa: E501
+
+
+        :return: The organisation_name of this SaveAsTemplateRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._organisation_name
+
+    @organisation_name.setter
+    def organisation_name(self, organisation_name):
+        """Sets the organisation_name of this SaveAsTemplateRequest.
+
+
+        :param organisation_name: The organisation_name of this SaveAsTemplateRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._organisation_name = organisation_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

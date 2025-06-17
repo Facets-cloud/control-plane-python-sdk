@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,302 +28,215 @@ class TFModule(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'alias_flavors': 'list[str]',
-        'allowed_test_projects': 'list[str]',
-        'clouds': 'list[str]',
-        'contains_overridable_fields': 'bool',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'description': 'str',
-        'facets_yaml': 'str',
-        'feature_branch': 'bool',
-        'flavor': 'str',
-        'git_ref': 'str',
-        'git_url': 'str',
-        'iac_tool': 'list[str]',
-        'id': 'str',
-        'inputs': 'dict(str, Input)',
-        'intent': 'str',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
+        'intent': 'str',
+        'flavor': 'str',
+        'alias_flavors': 'list[str]',
+        'version': 'str',
+        'git_url': 'str',
+        'git_ref': 'str',
+        'relative_path': 'str',
+        'account_id': 'str',
+        'facets_yaml': 'str',
+        'clouds': 'list[str]',
+        'sample_json': 'str',
+        'spec': 'str',
         'metadata': 'str',
-        'module_group_id': 'str',
-        'number_of_versions': 'int',
+        'type': 'str',
+        'source': 'str',
+        'inputs': 'dict(str, Input)',
         'outputs': 'list[IntentOutput]',
         'path': 'TFModulePath',
-        'readme_md': 'str',
-        'relative_path': 'str',
-        'sample_json': 'str',
-        'source': 'str',
-        'spec': 'str',
-        'spec_modeled': 'bool',
         'stage': 'str',
+        'allowed_test_projects': 'list[str]',
+        'description': 'str',
+        'readme_md': 'str',
+        'contains_overridable_fields': 'bool',
         'tags': 'list[str]',
-        'type': 'str',
-        'version': 'str',
-        'versioning_key': 'str'
+        'iac_tool': 'list[str]',
+        'module_group_id': 'str',
+        'feature_branch': 'bool',
+        'spec_modeled': 'bool',
+        'change_log': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'account_id': 'accountId',
-        'alias_flavors': 'aliasFlavors',
-        'allowed_test_projects': 'allowedTestProjects',
-        'clouds': 'clouds',
-        'contains_overridable_fields': 'containsOverridableFields',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'description': 'description',
-        'facets_yaml': 'facetsYaml',
-        'feature_branch': 'featureBranch',
-        'flavor': 'flavor',
-        'git_ref': 'gitRef',
-        'git_url': 'gitUrl',
-        'iac_tool': 'iacTool',
-        'id': 'id',
-        'inputs': 'inputs',
-        'intent': 'intent',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
+        'intent': 'intent',
+        'flavor': 'flavor',
+        'alias_flavors': 'aliasFlavors',
+        'version': 'version',
+        'git_url': 'gitUrl',
+        'git_ref': 'gitRef',
+        'relative_path': 'relativePath',
+        'account_id': 'accountId',
+        'facets_yaml': 'facetsYaml',
+        'clouds': 'clouds',
+        'sample_json': 'sampleJson',
+        'spec': 'spec',
         'metadata': 'metadata',
-        'module_group_id': 'moduleGroupId',
-        'number_of_versions': 'numberOfVersions',
+        'type': 'type',
+        'source': 'source',
+        'inputs': 'inputs',
         'outputs': 'outputs',
         'path': 'path',
-        'readme_md': 'readmeMd',
-        'relative_path': 'relativePath',
-        'sample_json': 'sampleJson',
-        'source': 'source',
-        'spec': 'spec',
-        'spec_modeled': 'specModeled',
         'stage': 'stage',
+        'allowed_test_projects': 'allowedTestProjects',
+        'description': 'description',
+        'readme_md': 'readmeMd',
+        'contains_overridable_fields': 'containsOverridableFields',
         'tags': 'tags',
-        'type': 'type',
-        'version': 'version',
-        'versioning_key': 'versioningKey'
+        'iac_tool': 'iacTool',
+        'module_group_id': 'moduleGroupId',
+        'feature_branch': 'featureBranch',
+        'spec_modeled': 'specModeled',
+        'change_log': 'changeLog',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, account_id=None, alias_flavors=None, allowed_test_projects=None, clouds=None, contains_overridable_fields=None, created_by=None, creation_date=None, description=None, facets_yaml=None, feature_branch=None, flavor=None, git_ref=None, git_url=None, iac_tool=None, id=None, inputs=None, intent=None, last_modified_by=None, last_modified_date=None, metadata=None, module_group_id=None, number_of_versions=None, outputs=None, path=None, readme_md=None, relative_path=None, sample_json=None, source=None, spec=None, spec_modeled=None, stage=None, tags=None, type=None, version=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent=None, flavor=None, alias_flavors=None, version=None, git_url=None, git_ref=None, relative_path=None, account_id=None, facets_yaml=None, clouds=None, sample_json=None, spec=None, metadata=None, type=None, source=None, inputs=None, outputs=None, path=None, stage=None, allowed_test_projects=None, description=None, readme_md=None, contains_overridable_fields=None, tags=None, iac_tool=None, module_group_id=None, feature_branch=None, spec_modeled=None, change_log=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """TFModule - a model defined in Swagger"""  # noqa: E501
-        self._account_id = None
-        self._alias_flavors = None
-        self._allowed_test_projects = None
-        self._clouds = None
-        self._contains_overridable_fields = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._description = None
-        self._facets_yaml = None
-        self._feature_branch = None
-        self._flavor = None
-        self._git_ref = None
-        self._git_url = None
-        self._iac_tool = None
-        self._id = None
-        self._inputs = None
-        self._intent = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
+        self._intent = None
+        self._flavor = None
+        self._alias_flavors = None
+        self._version = None
+        self._git_url = None
+        self._git_ref = None
+        self._relative_path = None
+        self._account_id = None
+        self._facets_yaml = None
+        self._clouds = None
+        self._sample_json = None
+        self._spec = None
         self._metadata = None
-        self._module_group_id = None
-        self._number_of_versions = None
+        self._type = None
+        self._source = None
+        self._inputs = None
         self._outputs = None
         self._path = None
-        self._readme_md = None
-        self._relative_path = None
-        self._sample_json = None
-        self._source = None
-        self._spec = None
-        self._spec_modeled = None
         self._stage = None
+        self._allowed_test_projects = None
+        self._description = None
+        self._readme_md = None
+        self._contains_overridable_fields = None
         self._tags = None
-        self._type = None
-        self._version = None
+        self._iac_tool = None
+        self._module_group_id = None
+        self._feature_branch = None
+        self._spec_modeled = None
+        self._change_log = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if account_id is not None:
-            self.account_id = account_id
-        if alias_flavors is not None:
-            self.alias_flavors = alias_flavors
-        if allowed_test_projects is not None:
-            self.allowed_test_projects = allowed_test_projects
-        if clouds is not None:
-            self.clouds = clouds
-        if contains_overridable_fields is not None:
-            self.contains_overridable_fields = contains_overridable_fields
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if description is not None:
-            self.description = description
-        if facets_yaml is not None:
-            self.facets_yaml = facets_yaml
-        if feature_branch is not None:
-            self.feature_branch = feature_branch
-        if flavor is not None:
-            self.flavor = flavor
-        if git_ref is not None:
-            self.git_ref = git_ref
-        if git_url is not None:
-            self.git_url = git_url
-        if iac_tool is not None:
-            self.iac_tool = iac_tool
-        if id is not None:
-            self.id = id
-        if inputs is not None:
-            self.inputs = inputs
-        if intent is not None:
-            self.intent = intent
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        if intent is not None:
+            self.intent = intent
+        if flavor is not None:
+            self.flavor = flavor
+        if alias_flavors is not None:
+            self.alias_flavors = alias_flavors
+        if version is not None:
+            self.version = version
+        if git_url is not None:
+            self.git_url = git_url
+        if git_ref is not None:
+            self.git_ref = git_ref
+        if relative_path is not None:
+            self.relative_path = relative_path
+        if account_id is not None:
+            self.account_id = account_id
+        if facets_yaml is not None:
+            self.facets_yaml = facets_yaml
+        if clouds is not None:
+            self.clouds = clouds
+        if sample_json is not None:
+            self.sample_json = sample_json
+        if spec is not None:
+            self.spec = spec
         if metadata is not None:
             self.metadata = metadata
-        if module_group_id is not None:
-            self.module_group_id = module_group_id
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
+        if type is not None:
+            self.type = type
+        if source is not None:
+            self.source = source
+        if inputs is not None:
+            self.inputs = inputs
         if outputs is not None:
             self.outputs = outputs
         if path is not None:
             self.path = path
-        if readme_md is not None:
-            self.readme_md = readme_md
-        if relative_path is not None:
-            self.relative_path = relative_path
-        if sample_json is not None:
-            self.sample_json = sample_json
-        if source is not None:
-            self.source = source
-        if spec is not None:
-            self.spec = spec
-        if spec_modeled is not None:
-            self.spec_modeled = spec_modeled
         if stage is not None:
             self.stage = stage
+        if allowed_test_projects is not None:
+            self.allowed_test_projects = allowed_test_projects
+        if description is not None:
+            self.description = description
+        if readme_md is not None:
+            self.readme_md = readme_md
+        if contains_overridable_fields is not None:
+            self.contains_overridable_fields = contains_overridable_fields
         if tags is not None:
             self.tags = tags
-        if type is not None:
-            self.type = type
-        if version is not None:
-            self.version = version
+        if iac_tool is not None:
+            self.iac_tool = iac_tool
+        if module_group_id is not None:
+            self.module_group_id = module_group_id
+        if feature_branch is not None:
+            self.feature_branch = feature_branch
+        if spec_modeled is not None:
+            self.spec_modeled = spec_modeled
+        if change_log is not None:
+            self.change_log = change_log
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def account_id(self):
-        """Gets the account_id of this TFModule.  # noqa: E501
+    def id(self):
+        """Gets the id of this TFModule.  # noqa: E501
 
-        Account identifier  # noqa: E501
 
-        :return: The account_id of this TFModule.  # noqa: E501
+        :return: The id of this TFModule.  # noqa: E501
         :rtype: str
         """
-        return self._account_id
+        return self._id
 
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this TFModule.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this TFModule.
 
-        Account identifier  # noqa: E501
 
-        :param account_id: The account_id of this TFModule.  # noqa: E501
+        :param id: The id of this TFModule.  # noqa: E501
         :type: str
         """
 
-        self._account_id = account_id
-
-    @property
-    def alias_flavors(self):
-        """Gets the alias_flavors of this TFModule.  # noqa: E501
-
-        Alias flavors for the module  # noqa: E501
-
-        :return: The alias_flavors of this TFModule.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._alias_flavors
-
-    @alias_flavors.setter
-    def alias_flavors(self, alias_flavors):
-        """Sets the alias_flavors of this TFModule.
-
-        Alias flavors for the module  # noqa: E501
-
-        :param alias_flavors: The alias_flavors of this TFModule.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._alias_flavors = alias_flavors
-
-    @property
-    def allowed_test_projects(self):
-        """Gets the allowed_test_projects of this TFModule.  # noqa: E501
-
-        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
-
-        :return: The allowed_test_projects of this TFModule.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._allowed_test_projects
-
-    @allowed_test_projects.setter
-    def allowed_test_projects(self, allowed_test_projects):
-        """Sets the allowed_test_projects of this TFModule.
-
-        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
-
-        :param allowed_test_projects: The allowed_test_projects of this TFModule.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._allowed_test_projects = allowed_test_projects
-
-    @property
-    def clouds(self):
-        """Gets the clouds of this TFModule.  # noqa: E501
-
-        Supported cloud providers for this module  # noqa: E501
-
-        :return: The clouds of this TFModule.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._clouds
-
-    @clouds.setter
-    def clouds(self, clouds):
-        """Sets the clouds of this TFModule.
-
-        Supported cloud providers for this module  # noqa: E501
-
-        :param clouds: The clouds of this TFModule.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._clouds = clouds
-
-    @property
-    def contains_overridable_fields(self):
-        """Gets the contains_overridable_fields of this TFModule.  # noqa: E501
-
-
-        :return: The contains_overridable_fields of this TFModule.  # noqa: E501
-        :rtype: bool
-        """
-        return self._contains_overridable_fields
-
-    @contains_overridable_fields.setter
-    def contains_overridable_fields(self, contains_overridable_fields):
-        """Sets the contains_overridable_fields of this TFModule.
-
-
-        :param contains_overridable_fields: The contains_overridable_fields of this TFModule.  # noqa: E501
-        :type: bool
-        """
-
-        self._contains_overridable_fields = contains_overridable_fields
+        self._id = id
 
     @property
     def created_by(self):
@@ -368,210 +281,46 @@ class TFModule(object):
         self._creation_date = creation_date
 
     @property
-    def description(self):
-        """Gets the description of this TFModule.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this TFModule.  # noqa: E501
 
 
-        :return: The description of this TFModule.  # noqa: E501
+        :return: The last_modified_date of this TFModule.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this TFModule.
+
+
+        :param last_modified_date: The last_modified_date of this TFModule.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this TFModule.  # noqa: E501
+
+
+        :return: The last_modified_by of this TFModule.  # noqa: E501
         :rtype: str
         """
-        return self._description
+        return self._last_modified_by
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this TFModule.
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this TFModule.
 
 
-        :param description: The description of this TFModule.  # noqa: E501
+        :param last_modified_by: The last_modified_by of this TFModule.  # noqa: E501
         :type: str
         """
 
-        self._description = description
-
-    @property
-    def facets_yaml(self):
-        """Gets the facets_yaml of this TFModule.  # noqa: E501
-
-        Facets YAML content  # noqa: E501
-
-        :return: The facets_yaml of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._facets_yaml
-
-    @facets_yaml.setter
-    def facets_yaml(self, facets_yaml):
-        """Sets the facets_yaml of this TFModule.
-
-        Facets YAML content  # noqa: E501
-
-        :param facets_yaml: The facets_yaml of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._facets_yaml = facets_yaml
-
-    @property
-    def feature_branch(self):
-        """Gets the feature_branch of this TFModule.  # noqa: E501
-
-
-        :return: The feature_branch of this TFModule.  # noqa: E501
-        :rtype: bool
-        """
-        return self._feature_branch
-
-    @feature_branch.setter
-    def feature_branch(self, feature_branch):
-        """Sets the feature_branch of this TFModule.
-
-
-        :param feature_branch: The feature_branch of this TFModule.  # noqa: E501
-        :type: bool
-        """
-
-        self._feature_branch = feature_branch
-
-    @property
-    def flavor(self):
-        """Gets the flavor of this TFModule.  # noqa: E501
-
-        Flavor of the TF Module  # noqa: E501
-
-        :return: The flavor of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._flavor
-
-    @flavor.setter
-    def flavor(self, flavor):
-        """Sets the flavor of this TFModule.
-
-        Flavor of the TF Module  # noqa: E501
-
-        :param flavor: The flavor of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._flavor = flavor
-
-    @property
-    def git_ref(self):
-        """Gets the git_ref of this TFModule.  # noqa: E501
-
-        Reference to a specific GIT branch or commit  # noqa: E501
-
-        :return: The git_ref of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_ref
-
-    @git_ref.setter
-    def git_ref(self, git_ref):
-        """Sets the git_ref of this TFModule.
-
-        Reference to a specific GIT branch or commit  # noqa: E501
-
-        :param git_ref: The git_ref of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._git_ref = git_ref
-
-    @property
-    def git_url(self):
-        """Gets the git_url of this TFModule.  # noqa: E501
-
-        URL of the GIT repository  # noqa: E501
-
-        :return: The git_url of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._git_url
-
-    @git_url.setter
-    def git_url(self, git_url):
-        """Sets the git_url of this TFModule.
-
-        URL of the GIT repository  # noqa: E501
-
-        :param git_url: The git_url of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._git_url = git_url
-
-    @property
-    def iac_tool(self):
-        """Gets the iac_tool of this TFModule.  # noqa: E501
-
-
-        :return: The iac_tool of this TFModule.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._iac_tool
-
-    @iac_tool.setter
-    def iac_tool(self, iac_tool):
-        """Sets the iac_tool of this TFModule.
-
-
-        :param iac_tool: The iac_tool of this TFModule.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
-        if not set(iac_tool).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._iac_tool = iac_tool
-
-    @property
-    def id(self):
-        """Gets the id of this TFModule.  # noqa: E501
-
-
-        :return: The id of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this TFModule.
-
-
-        :param id: The id of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def inputs(self):
-        """Gets the inputs of this TFModule.  # noqa: E501
-
-        Input parameters for this module  # noqa: E501
-
-        :return: The inputs of this TFModule.  # noqa: E501
-        :rtype: dict(str, Input)
-        """
-        return self._inputs
-
-    @inputs.setter
-    def inputs(self, inputs):
-        """Sets the inputs of this TFModule.
-
-        Input parameters for this module  # noqa: E501
-
-        :param inputs: The inputs of this TFModule.  # noqa: E501
-        :type: dict(str, Input)
-        """
-
-        self._inputs = inputs
+        self._last_modified_by = last_modified_by
 
     @property
     def intent(self):
@@ -597,46 +346,257 @@ class TFModule(object):
         self._intent = intent
 
     @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this TFModule.  # noqa: E501
+    def flavor(self):
+        """Gets the flavor of this TFModule.  # noqa: E501
 
+        Flavor of the TF Module  # noqa: E501
 
-        :return: The last_modified_by of this TFModule.  # noqa: E501
+        :return: The flavor of this TFModule.  # noqa: E501
         :rtype: str
         """
-        return self._last_modified_by
+        return self._flavor
 
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this TFModule.
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this TFModule.
 
+        Flavor of the TF Module  # noqa: E501
 
-        :param last_modified_by: The last_modified_by of this TFModule.  # noqa: E501
+        :param flavor: The flavor of this TFModule.  # noqa: E501
         :type: str
         """
 
-        self._last_modified_by = last_modified_by
+        self._flavor = flavor
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this TFModule.  # noqa: E501
+    def alias_flavors(self):
+        """Gets the alias_flavors of this TFModule.  # noqa: E501
 
+        Alias flavors for the module  # noqa: E501
 
-        :return: The last_modified_date of this TFModule.  # noqa: E501
-        :rtype: datetime
+        :return: The alias_flavors of this TFModule.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._last_modified_date
+        return self._alias_flavors
 
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this TFModule.
+    @alias_flavors.setter
+    def alias_flavors(self, alias_flavors):
+        """Sets the alias_flavors of this TFModule.
 
+        Alias flavors for the module  # noqa: E501
 
-        :param last_modified_date: The last_modified_date of this TFModule.  # noqa: E501
-        :type: datetime
+        :param alias_flavors: The alias_flavors of this TFModule.  # noqa: E501
+        :type: list[str]
         """
 
-        self._last_modified_date = last_modified_date
+        self._alias_flavors = alias_flavors
+
+    @property
+    def version(self):
+        """Gets the version of this TFModule.  # noqa: E501
+
+        Version of the TF Module  # noqa: E501
+
+        :return: The version of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this TFModule.
+
+        Version of the TF Module  # noqa: E501
+
+        :param version: The version of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
+
+    @property
+    def git_url(self):
+        """Gets the git_url of this TFModule.  # noqa: E501
+
+        URL of the GIT repository  # noqa: E501
+
+        :return: The git_url of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_url
+
+    @git_url.setter
+    def git_url(self, git_url):
+        """Sets the git_url of this TFModule.
+
+        URL of the GIT repository  # noqa: E501
+
+        :param git_url: The git_url of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._git_url = git_url
+
+    @property
+    def git_ref(self):
+        """Gets the git_ref of this TFModule.  # noqa: E501
+
+        Reference to a specific GIT branch or commit  # noqa: E501
+
+        :return: The git_ref of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._git_ref
+
+    @git_ref.setter
+    def git_ref(self, git_ref):
+        """Sets the git_ref of this TFModule.
+
+        Reference to a specific GIT branch or commit  # noqa: E501
+
+        :param git_ref: The git_ref of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._git_ref = git_ref
+
+    @property
+    def relative_path(self):
+        """Gets the relative_path of this TFModule.  # noqa: E501
+
+        Relative path within the repository  # noqa: E501
+
+        :return: The relative_path of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._relative_path
+
+    @relative_path.setter
+    def relative_path(self, relative_path):
+        """Sets the relative_path of this TFModule.
+
+        Relative path within the repository  # noqa: E501
+
+        :param relative_path: The relative_path of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._relative_path = relative_path
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this TFModule.  # noqa: E501
+
+        Account identifier  # noqa: E501
+
+        :return: The account_id of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this TFModule.
+
+        Account identifier  # noqa: E501
+
+        :param account_id: The account_id of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
+
+    @property
+    def facets_yaml(self):
+        """Gets the facets_yaml of this TFModule.  # noqa: E501
+
+        Facets YAML content  # noqa: E501
+
+        :return: The facets_yaml of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._facets_yaml
+
+    @facets_yaml.setter
+    def facets_yaml(self, facets_yaml):
+        """Sets the facets_yaml of this TFModule.
+
+        Facets YAML content  # noqa: E501
+
+        :param facets_yaml: The facets_yaml of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._facets_yaml = facets_yaml
+
+    @property
+    def clouds(self):
+        """Gets the clouds of this TFModule.  # noqa: E501
+
+        Supported cloud providers for this module  # noqa: E501
+
+        :return: The clouds of this TFModule.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._clouds
+
+    @clouds.setter
+    def clouds(self, clouds):
+        """Sets the clouds of this TFModule.
+
+        Supported cloud providers for this module  # noqa: E501
+
+        :param clouds: The clouds of this TFModule.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._clouds = clouds
+
+    @property
+    def sample_json(self):
+        """Gets the sample_json of this TFModule.  # noqa: E501
+
+        Sample JSON configuration  # noqa: E501
+
+        :return: The sample_json of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._sample_json
+
+    @sample_json.setter
+    def sample_json(self, sample_json):
+        """Sets the sample_json of this TFModule.
+
+        Sample JSON configuration  # noqa: E501
+
+        :param sample_json: The sample_json of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._sample_json = sample_json
+
+    @property
+    def spec(self):
+        """Gets the spec of this TFModule.  # noqa: E501
+
+        Specification details of the module  # noqa: E501
+
+        :return: The spec of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._spec
+
+    @spec.setter
+    def spec(self, spec):
+        """Sets the spec of this TFModule.
+
+        Specification details of the module  # noqa: E501
+
+        :param spec: The spec of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._spec = spec
 
     @property
     def metadata(self):
@@ -660,46 +620,85 @@ class TFModule(object):
         self._metadata = metadata
 
     @property
-    def module_group_id(self):
-        """Gets the module_group_id of this TFModule.  # noqa: E501
+    def type(self):
+        """Gets the type of this TFModule.  # noqa: E501
 
+        Type of the TF Module  # noqa: E501
 
-        :return: The module_group_id of this TFModule.  # noqa: E501
+        :return: The type of this TFModule.  # noqa: E501
         :rtype: str
         """
-        return self._module_group_id
+        return self._type
 
-    @module_group_id.setter
-    def module_group_id(self, module_group_id):
-        """Sets the module_group_id of this TFModule.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this TFModule.
 
+        Type of the TF Module  # noqa: E501
 
-        :param module_group_id: The module_group_id of this TFModule.  # noqa: E501
+        :param type: The type of this TFModule.  # noqa: E501
         :type: str
         """
+        allowed_values = ["SIMPLE", "ADD_ON"]  # noqa: E501
+        if type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
+                .format(type, allowed_values)
+            )
 
-        self._module_group_id = module_group_id
+        self._type = type
 
     @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this TFModule.  # noqa: E501
+    def source(self):
+        """Gets the source of this TFModule.  # noqa: E501
 
+        Source of the module  # noqa: E501
 
-        :return: The number_of_versions of this TFModule.  # noqa: E501
-        :rtype: int
+        :return: The source of this TFModule.  # noqa: E501
+        :rtype: str
         """
-        return self._number_of_versions
+        return self._source
 
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this TFModule.
+    @source.setter
+    def source(self, source):
+        """Sets the source of this TFModule.
 
+        Source of the module  # noqa: E501
 
-        :param number_of_versions: The number_of_versions of this TFModule.  # noqa: E501
-        :type: int
+        :param source: The source of this TFModule.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["BUILT_IN", "CUSTOM"]  # noqa: E501
+        if source not in allowed_values:
+            raise ValueError(
+                "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501
+                .format(source, allowed_values)
+            )
+
+        self._source = source
+
+    @property
+    def inputs(self):
+        """Gets the inputs of this TFModule.  # noqa: E501
+
+        Input parameters for this module  # noqa: E501
+
+        :return: The inputs of this TFModule.  # noqa: E501
+        :rtype: dict(str, Input)
+        """
+        return self._inputs
+
+    @inputs.setter
+    def inputs(self, inputs):
+        """Sets the inputs of this TFModule.
+
+        Input parameters for this module  # noqa: E501
+
+        :param inputs: The inputs of this TFModule.  # noqa: E501
+        :type: dict(str, Input)
         """
 
-        self._number_of_versions = number_of_versions
+        self._inputs = inputs
 
     @property
     def outputs(self):
@@ -744,146 +743,6 @@ class TFModule(object):
         self._path = path
 
     @property
-    def readme_md(self):
-        """Gets the readme_md of this TFModule.  # noqa: E501
-
-
-        :return: The readme_md of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._readme_md
-
-    @readme_md.setter
-    def readme_md(self, readme_md):
-        """Sets the readme_md of this TFModule.
-
-
-        :param readme_md: The readme_md of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._readme_md = readme_md
-
-    @property
-    def relative_path(self):
-        """Gets the relative_path of this TFModule.  # noqa: E501
-
-        Relative path within the repository  # noqa: E501
-
-        :return: The relative_path of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._relative_path
-
-    @relative_path.setter
-    def relative_path(self, relative_path):
-        """Sets the relative_path of this TFModule.
-
-        Relative path within the repository  # noqa: E501
-
-        :param relative_path: The relative_path of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._relative_path = relative_path
-
-    @property
-    def sample_json(self):
-        """Gets the sample_json of this TFModule.  # noqa: E501
-
-        Sample JSON configuration  # noqa: E501
-
-        :return: The sample_json of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._sample_json
-
-    @sample_json.setter
-    def sample_json(self, sample_json):
-        """Sets the sample_json of this TFModule.
-
-        Sample JSON configuration  # noqa: E501
-
-        :param sample_json: The sample_json of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._sample_json = sample_json
-
-    @property
-    def source(self):
-        """Gets the source of this TFModule.  # noqa: E501
-
-        Source of the module  # noqa: E501
-
-        :return: The source of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._source
-
-    @source.setter
-    def source(self, source):
-        """Sets the source of this TFModule.
-
-        Source of the module  # noqa: E501
-
-        :param source: The source of this TFModule.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["BUILT_IN", "CUSTOM"]  # noqa: E501
-        if source not in allowed_values:
-            raise ValueError(
-                "Invalid value for `source` ({0}), must be one of {1}"  # noqa: E501
-                .format(source, allowed_values)
-            )
-
-        self._source = source
-
-    @property
-    def spec(self):
-        """Gets the spec of this TFModule.  # noqa: E501
-
-        Specification details of the module  # noqa: E501
-
-        :return: The spec of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._spec
-
-    @spec.setter
-    def spec(self, spec):
-        """Sets the spec of this TFModule.
-
-        Specification details of the module  # noqa: E501
-
-        :param spec: The spec of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._spec = spec
-
-    @property
-    def spec_modeled(self):
-        """Gets the spec_modeled of this TFModule.  # noqa: E501
-
-
-        :return: The spec_modeled of this TFModule.  # noqa: E501
-        :rtype: bool
-        """
-        return self._spec_modeled
-
-    @spec_modeled.setter
-    def spec_modeled(self, spec_modeled):
-        """Sets the spec_modeled of this TFModule.
-
-
-        :param spec_modeled: The spec_modeled of this TFModule.  # noqa: E501
-        :type: bool
-        """
-
-        self._spec_modeled = spec_modeled
-
-    @property
     def stage(self):
         """Gets the stage of this TFModule.  # noqa: E501
 
@@ -913,6 +772,92 @@ class TFModule(object):
         self._stage = stage
 
     @property
+    def allowed_test_projects(self):
+        """Gets the allowed_test_projects of this TFModule.  # noqa: E501
+
+        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
+
+        :return: The allowed_test_projects of this TFModule.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_test_projects
+
+    @allowed_test_projects.setter
+    def allowed_test_projects(self, allowed_test_projects):
+        """Sets the allowed_test_projects of this TFModule.
+
+        List of test projects where this module will be available. If absent, it is available globally.  # noqa: E501
+
+        :param allowed_test_projects: The allowed_test_projects of this TFModule.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_test_projects = allowed_test_projects
+
+    @property
+    def description(self):
+        """Gets the description of this TFModule.  # noqa: E501
+
+
+        :return: The description of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this TFModule.
+
+
+        :param description: The description of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def readme_md(self):
+        """Gets the readme_md of this TFModule.  # noqa: E501
+
+
+        :return: The readme_md of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._readme_md
+
+    @readme_md.setter
+    def readme_md(self, readme_md):
+        """Sets the readme_md of this TFModule.
+
+
+        :param readme_md: The readme_md of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._readme_md = readme_md
+
+    @property
+    def contains_overridable_fields(self):
+        """Gets the contains_overridable_fields of this TFModule.  # noqa: E501
+
+
+        :return: The contains_overridable_fields of this TFModule.  # noqa: E501
+        :rtype: bool
+        """
+        return self._contains_overridable_fields
+
+    @contains_overridable_fields.setter
+    def contains_overridable_fields(self, contains_overridable_fields):
+        """Sets the contains_overridable_fields of this TFModule.
+
+
+        :param contains_overridable_fields: The contains_overridable_fields of this TFModule.  # noqa: E501
+        :type: bool
+        """
+
+        self._contains_overridable_fields = contains_overridable_fields
+
+    @property
     def tags(self):
         """Gets the tags of this TFModule.  # noqa: E501
 
@@ -934,56 +879,116 @@ class TFModule(object):
         self._tags = tags
 
     @property
-    def type(self):
-        """Gets the type of this TFModule.  # noqa: E501
+    def iac_tool(self):
+        """Gets the iac_tool of this TFModule.  # noqa: E501
 
-        Type of the TF Module  # noqa: E501
 
-        :return: The type of this TFModule.  # noqa: E501
-        :rtype: str
+        :return: The iac_tool of this TFModule.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._type
+        return self._iac_tool
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this TFModule.
+    @iac_tool.setter
+    def iac_tool(self, iac_tool):
+        """Sets the iac_tool of this TFModule.
 
-        Type of the TF Module  # noqa: E501
 
-        :param type: The type of this TFModule.  # noqa: E501
-        :type: str
+        :param iac_tool: The iac_tool of this TFModule.  # noqa: E501
+        :type: list[str]
         """
-        allowed_values = ["SIMPLE", "ADD_ON"]  # noqa: E501
-        if type not in allowed_values:
+        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
+        if not set(iac_tool).issubset(set(allowed_values)):
             raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
-                .format(type, allowed_values)
+                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
             )
 
-        self._type = type
+        self._iac_tool = iac_tool
 
     @property
-    def version(self):
-        """Gets the version of this TFModule.  # noqa: E501
+    def module_group_id(self):
+        """Gets the module_group_id of this TFModule.  # noqa: E501
 
-        Version of the TF Module  # noqa: E501
 
-        :return: The version of this TFModule.  # noqa: E501
+        :return: The module_group_id of this TFModule.  # noqa: E501
         :rtype: str
         """
-        return self._version
+        return self._module_group_id
 
-    @version.setter
-    def version(self, version):
-        """Sets the version of this TFModule.
+    @module_group_id.setter
+    def module_group_id(self, module_group_id):
+        """Sets the module_group_id of this TFModule.
 
-        Version of the TF Module  # noqa: E501
 
-        :param version: The version of this TFModule.  # noqa: E501
+        :param module_group_id: The module_group_id of this TFModule.  # noqa: E501
         :type: str
         """
 
-        self._version = version
+        self._module_group_id = module_group_id
+
+    @property
+    def feature_branch(self):
+        """Gets the feature_branch of this TFModule.  # noqa: E501
+
+
+        :return: The feature_branch of this TFModule.  # noqa: E501
+        :rtype: bool
+        """
+        return self._feature_branch
+
+    @feature_branch.setter
+    def feature_branch(self, feature_branch):
+        """Sets the feature_branch of this TFModule.
+
+
+        :param feature_branch: The feature_branch of this TFModule.  # noqa: E501
+        :type: bool
+        """
+
+        self._feature_branch = feature_branch
+
+    @property
+    def spec_modeled(self):
+        """Gets the spec_modeled of this TFModule.  # noqa: E501
+
+
+        :return: The spec_modeled of this TFModule.  # noqa: E501
+        :rtype: bool
+        """
+        return self._spec_modeled
+
+    @spec_modeled.setter
+    def spec_modeled(self, spec_modeled):
+        """Sets the spec_modeled of this TFModule.
+
+
+        :param spec_modeled: The spec_modeled of this TFModule.  # noqa: E501
+        :type: bool
+        """
+
+        self._spec_modeled = spec_modeled
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this TFModule.  # noqa: E501
+
+
+        :return: The change_log of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this TFModule.
+
+
+        :param change_log: The change_log of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
 
     @property
     def versioning_key(self):
@@ -1005,6 +1010,27 @@ class TFModule(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this TFModule.  # noqa: E501
+
+
+        :return: The number_of_versions of this TFModule.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this TFModule.
+
+
+        :param number_of_versions: The number_of_versions of this TFModule.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

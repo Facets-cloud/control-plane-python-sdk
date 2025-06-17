@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,56 +28,80 @@ class ProjectTypeRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allowed_clouds': 'list[str]',
-        'base_project_name': 'str',
-        'description': 'str',
-        'iac_tool': 'str',
-        'iac_tool_version': 'str',
-        'mapped_resources': 'list[ProjectTypeMappedResource]',
         'name': 'str',
+        'allowed_clouds': 'list[str]',
+        'description': 'str',
         'template_git_details': 'TemplateGitDetails',
-        'use_branch': 'bool'
+        'use_branch': 'bool',
+        'base_project_name': 'str',
+        'mapped_resources': 'list[ProjectTypeMappedResource]',
+        'iac_tool': 'str',
+        'iac_tool_version': 'str'
     }
 
     attribute_map = {
-        'allowed_clouds': 'allowedClouds',
-        'base_project_name': 'baseProjectName',
-        'description': 'description',
-        'iac_tool': 'iacTool',
-        'iac_tool_version': 'iacToolVersion',
-        'mapped_resources': 'mappedResources',
         'name': 'name',
+        'allowed_clouds': 'allowedClouds',
+        'description': 'description',
         'template_git_details': 'templateGitDetails',
-        'use_branch': 'useBranch'
+        'use_branch': 'useBranch',
+        'base_project_name': 'baseProjectName',
+        'mapped_resources': 'mappedResources',
+        'iac_tool': 'iacTool',
+        'iac_tool_version': 'iacToolVersion'
     }
 
-    def __init__(self, allowed_clouds=None, base_project_name=None, description=None, iac_tool=None, iac_tool_version=None, mapped_resources=None, name=None, template_git_details=None, use_branch=None):  # noqa: E501
+    def __init__(self, name=None, allowed_clouds=None, description=None, template_git_details=None, use_branch=None, base_project_name=None, mapped_resources=None, iac_tool=None, iac_tool_version=None):  # noqa: E501
         """ProjectTypeRequest - a model defined in Swagger"""  # noqa: E501
-        self._allowed_clouds = None
-        self._base_project_name = None
-        self._description = None
-        self._iac_tool = None
-        self._iac_tool_version = None
-        self._mapped_resources = None
         self._name = None
+        self._allowed_clouds = None
+        self._description = None
         self._template_git_details = None
         self._use_branch = None
+        self._base_project_name = None
+        self._mapped_resources = None
+        self._iac_tool = None
+        self._iac_tool_version = None
         self.discriminator = None
+        self.name = name
         self.allowed_clouds = allowed_clouds
-        if base_project_name is not None:
-            self.base_project_name = base_project_name
         if description is not None:
             self.description = description
-        if iac_tool is not None:
-            self.iac_tool = iac_tool
-        if iac_tool_version is not None:
-            self.iac_tool_version = iac_tool_version
-        if mapped_resources is not None:
-            self.mapped_resources = mapped_resources
-        self.name = name
         self.template_git_details = template_git_details
         if use_branch is not None:
             self.use_branch = use_branch
+        if base_project_name is not None:
+            self.base_project_name = base_project_name
+        if mapped_resources is not None:
+            self.mapped_resources = mapped_resources
+        self.iac_tool = iac_tool
+        if iac_tool_version is not None:
+            self.iac_tool_version = iac_tool_version
+
+    @property
+    def name(self):
+        """Gets the name of this ProjectTypeRequest.  # noqa: E501
+
+        Name of the project type  # noqa: E501
+
+        :return: The name of this ProjectTypeRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ProjectTypeRequest.
+
+        Name of the project type  # noqa: E501
+
+        :param name: The name of this ProjectTypeRequest.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
 
     @property
     def allowed_clouds(self):
@@ -112,29 +136,6 @@ class ProjectTypeRequest(object):
         self._allowed_clouds = allowed_clouds
 
     @property
-    def base_project_name(self):
-        """Gets the base_project_name of this ProjectTypeRequest.  # noqa: E501
-
-        Base project name  # noqa: E501
-
-        :return: The base_project_name of this ProjectTypeRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_project_name
-
-    @base_project_name.setter
-    def base_project_name(self, base_project_name):
-        """Sets the base_project_name of this ProjectTypeRequest.
-
-        Base project name  # noqa: E501
-
-        :param base_project_name: The base_project_name of this ProjectTypeRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._base_project_name = base_project_name
-
-    @property
     def description(self):
         """Gets the description of this ProjectTypeRequest.  # noqa: E501
 
@@ -156,104 +157,6 @@ class ProjectTypeRequest(object):
         """
 
         self._description = description
-
-    @property
-    def iac_tool(self):
-        """Gets the iac_tool of this ProjectTypeRequest.  # noqa: E501
-
-        IAC tool used for the project  # noqa: E501
-
-        :return: The iac_tool of this ProjectTypeRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._iac_tool
-
-    @iac_tool.setter
-    def iac_tool(self, iac_tool):
-        """Sets the iac_tool of this ProjectTypeRequest.
-
-        IAC tool used for the project  # noqa: E501
-
-        :param iac_tool: The iac_tool of this ProjectTypeRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
-        if iac_tool not in allowed_values:
-            raise ValueError(
-                "Invalid value for `iac_tool` ({0}), must be one of {1}"  # noqa: E501
-                .format(iac_tool, allowed_values)
-            )
-
-        self._iac_tool = iac_tool
-
-    @property
-    def iac_tool_version(self):
-        """Gets the iac_tool_version of this ProjectTypeRequest.  # noqa: E501
-
-
-        :return: The iac_tool_version of this ProjectTypeRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._iac_tool_version
-
-    @iac_tool_version.setter
-    def iac_tool_version(self, iac_tool_version):
-        """Sets the iac_tool_version of this ProjectTypeRequest.
-
-
-        :param iac_tool_version: The iac_tool_version of this ProjectTypeRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._iac_tool_version = iac_tool_version
-
-    @property
-    def mapped_resources(self):
-        """Gets the mapped_resources of this ProjectTypeRequest.  # noqa: E501
-
-        Allowed modules for the project  # noqa: E501
-
-        :return: The mapped_resources of this ProjectTypeRequest.  # noqa: E501
-        :rtype: list[ProjectTypeMappedResource]
-        """
-        return self._mapped_resources
-
-    @mapped_resources.setter
-    def mapped_resources(self, mapped_resources):
-        """Sets the mapped_resources of this ProjectTypeRequest.
-
-        Allowed modules for the project  # noqa: E501
-
-        :param mapped_resources: The mapped_resources of this ProjectTypeRequest.  # noqa: E501
-        :type: list[ProjectTypeMappedResource]
-        """
-
-        self._mapped_resources = mapped_resources
-
-    @property
-    def name(self):
-        """Gets the name of this ProjectTypeRequest.  # noqa: E501
-
-        Name of the project type  # noqa: E501
-
-        :return: The name of this ProjectTypeRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ProjectTypeRequest.
-
-        Name of the project type  # noqa: E501
-
-        :param name: The name of this ProjectTypeRequest.  # noqa: E501
-        :type: str
-        """
-        if name is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-
-        self._name = name
 
     @property
     def template_git_details(self):
@@ -300,6 +203,104 @@ class ProjectTypeRequest(object):
         """
 
         self._use_branch = use_branch
+
+    @property
+    def base_project_name(self):
+        """Gets the base_project_name of this ProjectTypeRequest.  # noqa: E501
+
+        Base project name  # noqa: E501
+
+        :return: The base_project_name of this ProjectTypeRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_project_name
+
+    @base_project_name.setter
+    def base_project_name(self, base_project_name):
+        """Sets the base_project_name of this ProjectTypeRequest.
+
+        Base project name  # noqa: E501
+
+        :param base_project_name: The base_project_name of this ProjectTypeRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._base_project_name = base_project_name
+
+    @property
+    def mapped_resources(self):
+        """Gets the mapped_resources of this ProjectTypeRequest.  # noqa: E501
+
+        Allowed modules for the project  # noqa: E501
+
+        :return: The mapped_resources of this ProjectTypeRequest.  # noqa: E501
+        :rtype: list[ProjectTypeMappedResource]
+        """
+        return self._mapped_resources
+
+    @mapped_resources.setter
+    def mapped_resources(self, mapped_resources):
+        """Sets the mapped_resources of this ProjectTypeRequest.
+
+        Allowed modules for the project  # noqa: E501
+
+        :param mapped_resources: The mapped_resources of this ProjectTypeRequest.  # noqa: E501
+        :type: list[ProjectTypeMappedResource]
+        """
+
+        self._mapped_resources = mapped_resources
+
+    @property
+    def iac_tool(self):
+        """Gets the iac_tool of this ProjectTypeRequest.  # noqa: E501
+
+        IAC tool used for the project  # noqa: E501
+
+        :return: The iac_tool of this ProjectTypeRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._iac_tool
+
+    @iac_tool.setter
+    def iac_tool(self, iac_tool):
+        """Sets the iac_tool of this ProjectTypeRequest.
+
+        IAC tool used for the project  # noqa: E501
+
+        :param iac_tool: The iac_tool of this ProjectTypeRequest.  # noqa: E501
+        :type: str
+        """
+        if iac_tool is None:
+            raise ValueError("Invalid value for `iac_tool`, must not be `None`")  # noqa: E501
+        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
+        if iac_tool not in allowed_values:
+            raise ValueError(
+                "Invalid value for `iac_tool` ({0}), must be one of {1}"  # noqa: E501
+                .format(iac_tool, allowed_values)
+            )
+
+        self._iac_tool = iac_tool
+
+    @property
+    def iac_tool_version(self):
+        """Gets the iac_tool_version of this ProjectTypeRequest.  # noqa: E501
+
+
+        :return: The iac_tool_version of this ProjectTypeRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._iac_tool_version
+
+    @iac_tool_version.setter
+    def iac_tool_version(self, iac_tool_version):
+        """Sets the iac_tool_version of this ProjectTypeRequest.
+
+
+        :param iac_tool_version: The iac_tool_version of this ProjectTypeRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._iac_tool_version = iac_tool_version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class HistoryMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'versions': 'list[Version]',
         'live_version_id': 'str',
-        'preview_version_id': 'str',
-        'versions': 'list[Version]'
+        'preview_version_id': 'str'
     }
 
     attribute_map = {
+        'versions': 'versions',
         'live_version_id': 'liveVersionId',
-        'preview_version_id': 'previewVersionId',
-        'versions': 'versions'
+        'preview_version_id': 'previewVersionId'
     }
 
-    def __init__(self, live_version_id=None, preview_version_id=None, versions=None):  # noqa: E501
+    def __init__(self, versions=None, live_version_id=None, preview_version_id=None):  # noqa: E501
         """HistoryMetadata - a model defined in Swagger"""  # noqa: E501
+        self._versions = None
         self._live_version_id = None
         self._preview_version_id = None
-        self._versions = None
         self.discriminator = None
+        if versions is not None:
+            self.versions = versions
         if live_version_id is not None:
             self.live_version_id = live_version_id
         if preview_version_id is not None:
             self.preview_version_id = preview_version_id
-        if versions is not None:
-            self.versions = versions
+
+    @property
+    def versions(self):
+        """Gets the versions of this HistoryMetadata.  # noqa: E501
+
+
+        :return: The versions of this HistoryMetadata.  # noqa: E501
+        :rtype: list[Version]
+        """
+        return self._versions
+
+    @versions.setter
+    def versions(self, versions):
+        """Sets the versions of this HistoryMetadata.
+
+
+        :param versions: The versions of this HistoryMetadata.  # noqa: E501
+        :type: list[Version]
+        """
+
+        self._versions = versions
 
     @property
     def live_version_id(self):
@@ -93,27 +114,6 @@ class HistoryMetadata(object):
         """
 
         self._preview_version_id = preview_version_id
-
-    @property
-    def versions(self):
-        """Gets the versions of this HistoryMetadata.  # noqa: E501
-
-
-        :return: The versions of this HistoryMetadata.  # noqa: E501
-        :rtype: list[Version]
-        """
-        return self._versions
-
-    @versions.setter
-    def versions(self, versions):
-        """Sets the versions of this HistoryMetadata.
-
-
-        :param versions: The versions of this HistoryMetadata.  # noqa: E501
-        :type: list[Version]
-        """
-
-        self._versions = versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

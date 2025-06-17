@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,29 +28,50 @@ class ServiceCostDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'service_name': 'str',
         'cost': 'float',
-        'previous_cost': 'float',
-        'service_name': 'str'
+        'previous_cost': 'float'
     }
 
     attribute_map = {
+        'service_name': 'serviceName',
         'cost': 'cost',
-        'previous_cost': 'previousCost',
-        'service_name': 'serviceName'
+        'previous_cost': 'previousCost'
     }
 
-    def __init__(self, cost=None, previous_cost=None, service_name=None):  # noqa: E501
+    def __init__(self, service_name=None, cost=None, previous_cost=None):  # noqa: E501
         """ServiceCostDTO - a model defined in Swagger"""  # noqa: E501
+        self._service_name = None
         self._cost = None
         self._previous_cost = None
-        self._service_name = None
         self.discriminator = None
+        if service_name is not None:
+            self.service_name = service_name
         if cost is not None:
             self.cost = cost
         if previous_cost is not None:
             self.previous_cost = previous_cost
-        if service_name is not None:
-            self.service_name = service_name
+
+    @property
+    def service_name(self):
+        """Gets the service_name of this ServiceCostDTO.  # noqa: E501
+
+
+        :return: The service_name of this ServiceCostDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._service_name
+
+    @service_name.setter
+    def service_name(self, service_name):
+        """Sets the service_name of this ServiceCostDTO.
+
+
+        :param service_name: The service_name of this ServiceCostDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._service_name = service_name
 
     @property
     def cost(self):
@@ -93,27 +114,6 @@ class ServiceCostDTO(object):
         """
 
         self._previous_cost = previous_cost
-
-    @property
-    def service_name(self):
-        """Gets the service_name of this ServiceCostDTO.  # noqa: E501
-
-
-        :return: The service_name of this ServiceCostDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._service_name
-
-    @service_name.setter
-    def service_name(self, service_name):
-        """Sets the service_name of this ServiceCostDTO.
-
-
-        :param service_name: The service_name of this ServiceCostDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._service_name = service_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

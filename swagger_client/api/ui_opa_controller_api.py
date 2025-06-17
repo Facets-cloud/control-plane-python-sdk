@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,37 +32,37 @@ class UiOpaControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def bulk_edit_opa_policy_state_using_post(self, body, **kwargs):  # noqa: E501
-        """bulkEditOpaPolicyState  # noqa: E501
+    def bulk_edit_opa_policy_state(self, body, **kwargs):  # noqa: E501
+        """bulk_edit_opa_policy_state  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.bulk_edit_opa_policy_state_using_post(body, async_req=True)
+        >>> thread = api.bulk_edit_opa_policy_state(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[EnableDisableOPAPolicy] body: enableDisableOPAPoliciesList (required)
+        :param list[EnableDisableOPAPolicy] body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.bulk_edit_opa_policy_state_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            return self.bulk_edit_opa_policy_state_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.bulk_edit_opa_policy_state_using_post_with_http_info(body, **kwargs)  # noqa: E501
+            (data) = self.bulk_edit_opa_policy_state_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def bulk_edit_opa_policy_state_using_post_with_http_info(self, body, **kwargs):  # noqa: E501
-        """bulkEditOpaPolicyState  # noqa: E501
+    def bulk_edit_opa_policy_state_with_http_info(self, body, **kwargs):  # noqa: E501
+        """bulk_edit_opa_policy_state  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.bulk_edit_opa_policy_state_using_post_with_http_info(body, async_req=True)
+        >>> thread = api.bulk_edit_opa_policy_state_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[EnableDisableOPAPolicy] body: enableDisableOPAPoliciesList (required)
+        :param list[EnableDisableOPAPolicy] body: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method bulk_edit_opa_policy_state_using_post" % key
+                    " to method bulk_edit_opa_policy_state" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `bulk_edit_opa_policy_state_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `bulk_edit_opa_policy_state`")  # noqa: E501
 
         collection_formats = {}
 
@@ -102,12 +102,16 @@ class UiOpaControllerApi(object):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa/enable-disable-policies', 'POST',
@@ -125,39 +129,39 @@ class UiOpaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_policy_using_post(self, body, policy_name, **kwargs):  # noqa: E501
-        """createPolicy  # noqa: E501
+    def create_policy(self, body, policy_name, **kwargs):  # noqa: E501
+        """create_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_policy_using_post(body, policy_name, async_req=True)
+        >>> thread = api.create_policy(body, policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OpaPolicyRequest body: opaRequest (required)
-        :param str policy_name: policyName (required)
+        :param OpaPolicyRequest body: (required)
+        :param str policy_name: (required)
         :return: OpaPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_policy_using_post_with_http_info(body, policy_name, **kwargs)  # noqa: E501
+            return self.create_policy_with_http_info(body, policy_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_policy_using_post_with_http_info(body, policy_name, **kwargs)  # noqa: E501
+            (data) = self.create_policy_with_http_info(body, policy_name, **kwargs)  # noqa: E501
             return data
 
-    def create_policy_using_post_with_http_info(self, body, policy_name, **kwargs):  # noqa: E501
-        """createPolicy  # noqa: E501
+    def create_policy_with_http_info(self, body, policy_name, **kwargs):  # noqa: E501
+        """create_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_policy_using_post_with_http_info(body, policy_name, async_req=True)
+        >>> thread = api.create_policy_with_http_info(body, policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OpaPolicyRequest body: opaRequest (required)
-        :param str policy_name: policyName (required)
+        :param OpaPolicyRequest body: (required)
+        :param str policy_name: (required)
         :return: OpaPolicy
                  If the method is called asynchronously,
                  returns the request thread.
@@ -174,18 +178,18 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_policy_using_post" % key
+                    " to method create_policy" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_policy_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_policy`")  # noqa: E501
         # verify the required parameter 'policy_name' is set
         if ('policy_name' not in params or
                 params['policy_name'] is None):
-            raise ValueError("Missing the required parameter `policy_name` when calling `create_policy_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `policy_name` when calling `create_policy`")  # noqa: E501
 
         collection_formats = {}
 
@@ -205,14 +209,14 @@ class UiOpaControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa/{policyName}', 'POST',
@@ -230,37 +234,37 @@ class UiOpaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_policy_using_delete(self, policy_name, **kwargs):  # noqa: E501
-        """deletePolicy  # noqa: E501
+    def delete_policy(self, policy_name, **kwargs):  # noqa: E501
+        """delete_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_policy_using_delete(policy_name, async_req=True)
+        >>> thread = api.delete_policy(policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str policy_name: policyName (required)
+        :param str policy_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_policy_using_delete_with_http_info(policy_name, **kwargs)  # noqa: E501
+            return self.delete_policy_with_http_info(policy_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_policy_using_delete_with_http_info(policy_name, **kwargs)  # noqa: E501
+            (data) = self.delete_policy_with_http_info(policy_name, **kwargs)  # noqa: E501
             return data
 
-    def delete_policy_using_delete_with_http_info(self, policy_name, **kwargs):  # noqa: E501
-        """deletePolicy  # noqa: E501
+    def delete_policy_with_http_info(self, policy_name, **kwargs):  # noqa: E501
+        """delete_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_policy_using_delete_with_http_info(policy_name, async_req=True)
+        >>> thread = api.delete_policy_with_http_info(policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str policy_name: policyName (required)
+        :param str policy_name: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -277,14 +281,14 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_policy_using_delete" % key
+                    " to method delete_policy" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'policy_name' is set
         if ('policy_name' not in params or
                 params['policy_name'] is None):
-            raise ValueError("Missing the required parameter `policy_name` when calling `delete_policy_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `policy_name` when calling `delete_policy`")  # noqa: E501
 
         collection_formats = {}
 
@@ -300,8 +304,12 @@ class UiOpaControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa/{policyName}', 'DELETE',
@@ -319,39 +327,39 @@ class UiOpaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def edit_policy_using_put(self, body, policy_name, **kwargs):  # noqa: E501
-        """editPolicy  # noqa: E501
+    def edit_policy(self, body, policy_name, **kwargs):  # noqa: E501
+        """edit_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_policy_using_put(body, policy_name, async_req=True)
+        >>> thread = api.edit_policy(body, policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OpaPolicyRequest body: opaRequest (required)
-        :param str policy_name: policyName (required)
+        :param OpaPolicyRequest body: (required)
+        :param str policy_name: (required)
         :return: OpaPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.edit_policy_using_put_with_http_info(body, policy_name, **kwargs)  # noqa: E501
+            return self.edit_policy_with_http_info(body, policy_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.edit_policy_using_put_with_http_info(body, policy_name, **kwargs)  # noqa: E501
+            (data) = self.edit_policy_with_http_info(body, policy_name, **kwargs)  # noqa: E501
             return data
 
-    def edit_policy_using_put_with_http_info(self, body, policy_name, **kwargs):  # noqa: E501
-        """editPolicy  # noqa: E501
+    def edit_policy_with_http_info(self, body, policy_name, **kwargs):  # noqa: E501
+        """edit_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.edit_policy_using_put_with_http_info(body, policy_name, async_req=True)
+        >>> thread = api.edit_policy_with_http_info(body, policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param OpaPolicyRequest body: opaRequest (required)
-        :param str policy_name: policyName (required)
+        :param OpaPolicyRequest body: (required)
+        :param str policy_name: (required)
         :return: OpaPolicy
                  If the method is called asynchronously,
                  returns the request thread.
@@ -368,18 +376,18 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method edit_policy_using_put" % key
+                    " to method edit_policy" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `edit_policy_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `edit_policy`")  # noqa: E501
         # verify the required parameter 'policy_name' is set
         if ('policy_name' not in params or
                 params['policy_name'] is None):
-            raise ValueError("Missing the required parameter `policy_name` when calling `edit_policy_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `policy_name` when calling `edit_policy`")  # noqa: E501
 
         collection_formats = {}
 
@@ -399,14 +407,14 @@ class UiOpaControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa/{policyName}', 'PUT',
@@ -424,39 +432,39 @@ class UiOpaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def execute_policy_using_post(self, body, policy_name, **kwargs):  # noqa: E501
-        """executePolicy  # noqa: E501
+    def execute_policy(self, body, policy_name, **kwargs):  # noqa: E501
+        """execute_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.execute_policy_using_post(body, policy_name, async_req=True)
+        >>> thread = api.execute_policy(body, policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str body: inputJson (required)
-        :param str policy_name: policyName (required)
+        :param str body: (required)
+        :param str policy_name: (required)
         :return: OpaPolicyExecutionResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.execute_policy_using_post_with_http_info(body, policy_name, **kwargs)  # noqa: E501
+            return self.execute_policy_with_http_info(body, policy_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.execute_policy_using_post_with_http_info(body, policy_name, **kwargs)  # noqa: E501
+            (data) = self.execute_policy_with_http_info(body, policy_name, **kwargs)  # noqa: E501
             return data
 
-    def execute_policy_using_post_with_http_info(self, body, policy_name, **kwargs):  # noqa: E501
-        """executePolicy  # noqa: E501
+    def execute_policy_with_http_info(self, body, policy_name, **kwargs):  # noqa: E501
+        """execute_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.execute_policy_using_post_with_http_info(body, policy_name, async_req=True)
+        >>> thread = api.execute_policy_with_http_info(body, policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str body: inputJson (required)
-        :param str policy_name: policyName (required)
+        :param str body: (required)
+        :param str policy_name: (required)
         :return: OpaPolicyExecutionResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -473,18 +481,18 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method execute_policy_using_post" % key
+                    " to method execute_policy" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `execute_policy_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `execute_policy`")  # noqa: E501
         # verify the required parameter 'policy_name' is set
         if ('policy_name' not in params or
                 params['policy_name'] is None):
-            raise ValueError("Missing the required parameter `policy_name` when calling `execute_policy_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `policy_name` when calling `execute_policy`")  # noqa: E501
 
         collection_formats = {}
 
@@ -504,14 +512,14 @@ class UiOpaControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa/{policyName}/execute', 'POST',
@@ -529,12 +537,12 @@ class UiOpaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_policies_using_get(self, **kwargs):  # noqa: E501
-        """getAllPolicies  # noqa: E501
+    def get_all_policies(self, **kwargs):  # noqa: E501
+        """get_all_policies  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_policies_using_get(async_req=True)
+        >>> thread = api.get_all_policies(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -544,17 +552,17 @@ class UiOpaControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_policies_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_policies_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_policies_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_policies_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_policies_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllPolicies  # noqa: E501
+    def get_all_policies_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_policies  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_policies_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_policies_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -574,7 +582,7 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_policies_using_get" % key
+                    " to method get_all_policies" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -593,10 +601,10 @@ class UiOpaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa', 'GET',
@@ -614,12 +622,12 @@ class UiOpaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_policy_templates_using_get(self, **kwargs):  # noqa: E501
-        """getAllPolicyTemplates  # noqa: E501
+    def get_all_policy_templates(self, **kwargs):  # noqa: E501
+        """get_all_policy_templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_policy_templates_using_get(async_req=True)
+        >>> thread = api.get_all_policy_templates(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -629,17 +637,17 @@ class UiOpaControllerApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_all_policy_templates_using_get_with_http_info(**kwargs)  # noqa: E501
+            return self.get_all_policy_templates_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_policy_templates_using_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.get_all_policy_templates_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_all_policy_templates_using_get_with_http_info(self, **kwargs):  # noqa: E501
-        """getAllPolicyTemplates  # noqa: E501
+    def get_all_policy_templates_with_http_info(self, **kwargs):  # noqa: E501
+        """get_all_policy_templates  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_all_policy_templates_using_get_with_http_info(async_req=True)
+        >>> thread = api.get_all_policy_templates_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -659,7 +667,7 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_all_policy_templates_using_get" % key
+                    " to method get_all_policy_templates" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -678,10 +686,10 @@ class UiOpaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa/policy-templates', 'GET',
@@ -699,37 +707,37 @@ class UiOpaControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_policy_using_get(self, policy_name, **kwargs):  # noqa: E501
-        """getPolicy  # noqa: E501
+    def get_policy(self, policy_name, **kwargs):  # noqa: E501
+        """get_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_policy_using_get(policy_name, async_req=True)
+        >>> thread = api.get_policy(policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str policy_name: policyName (required)
+        :param str policy_name: (required)
         :return: OpaPolicy
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_policy_using_get_with_http_info(policy_name, **kwargs)  # noqa: E501
+            return self.get_policy_with_http_info(policy_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_policy_using_get_with_http_info(policy_name, **kwargs)  # noqa: E501
+            (data) = self.get_policy_with_http_info(policy_name, **kwargs)  # noqa: E501
             return data
 
-    def get_policy_using_get_with_http_info(self, policy_name, **kwargs):  # noqa: E501
-        """getPolicy  # noqa: E501
+    def get_policy_with_http_info(self, policy_name, **kwargs):  # noqa: E501
+        """get_policy  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_policy_using_get_with_http_info(policy_name, async_req=True)
+        >>> thread = api.get_policy_with_http_info(policy_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str policy_name: policyName (required)
+        :param str policy_name: (required)
         :return: OpaPolicy
                  If the method is called asynchronously,
                  returns the request thread.
@@ -746,14 +754,14 @@ class UiOpaControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_policy_using_get" % key
+                    " to method get_policy" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'policy_name' is set
         if ('policy_name' not in params or
                 params['policy_name'] is None):
-            raise ValueError("Missing the required parameter `policy_name` when calling `get_policy_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `policy_name` when calling `get_policy`")  # noqa: E501
 
         collection_formats = {}
 
@@ -771,10 +779,10 @@ class UiOpaControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/opa/{policyName}', 'GET',

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,34 +28,55 @@ class ServiceCost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'service_name': 'str',
         'cost': 'float',
         'currency': 'str',
-        '_date': 'date',
-        'service_name': 'str'
+        '_date': 'date'
     }
 
     attribute_map = {
+        'service_name': 'serviceName',
         'cost': 'cost',
         'currency': 'currency',
-        '_date': 'date',
-        'service_name': 'serviceName'
+        '_date': 'date'
     }
 
-    def __init__(self, cost=None, currency=None, _date=None, service_name=None):  # noqa: E501
+    def __init__(self, service_name=None, cost=None, currency=None, _date=None):  # noqa: E501
         """ServiceCost - a model defined in Swagger"""  # noqa: E501
+        self._service_name = None
         self._cost = None
         self._currency = None
         self.__date = None
-        self._service_name = None
         self.discriminator = None
+        if service_name is not None:
+            self.service_name = service_name
         if cost is not None:
             self.cost = cost
         if currency is not None:
             self.currency = currency
         if _date is not None:
             self._date = _date
-        if service_name is not None:
-            self.service_name = service_name
+
+    @property
+    def service_name(self):
+        """Gets the service_name of this ServiceCost.  # noqa: E501
+
+
+        :return: The service_name of this ServiceCost.  # noqa: E501
+        :rtype: str
+        """
+        return self._service_name
+
+    @service_name.setter
+    def service_name(self, service_name):
+        """Sets the service_name of this ServiceCost.
+
+
+        :param service_name: The service_name of this ServiceCost.  # noqa: E501
+        :type: str
+        """
+
+        self._service_name = service_name
 
     @property
     def cost(self):
@@ -119,27 +140,6 @@ class ServiceCost(object):
         """
 
         self.__date = _date
-
-    @property
-    def service_name(self):
-        """Gets the service_name of this ServiceCost.  # noqa: E501
-
-
-        :return: The service_name of this ServiceCost.  # noqa: E501
-        :rtype: str
-        """
-        return self._service_name
-
-    @service_name.setter
-    def service_name(self, service_name):
-        """Sets the service_name of this ServiceCost.
-
-
-        :param service_name: The service_name of this ServiceCost.  # noqa: E501
-        :type: str
-        """
-
-        self._service_name = service_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

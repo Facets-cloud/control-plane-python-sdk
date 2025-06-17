@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class OneTimePayloadBitbucketOauthAppPayload(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'payload': 'BitbucketOauthAppPayload',
-        'webhook_id': 'str'
+        'webhook_id': 'str',
+        'payload': 'BitbucketOauthAppPayload'
     }
 
     attribute_map = {
-        'payload': 'payload',
-        'webhook_id': 'webhookId'
+        'webhook_id': 'webhookId',
+        'payload': 'payload'
     }
 
-    def __init__(self, payload=None, webhook_id=None):  # noqa: E501
+    def __init__(self, webhook_id=None, payload=None):  # noqa: E501
         """OneTimePayloadBitbucketOauthAppPayload - a model defined in Swagger"""  # noqa: E501
-        self._payload = None
         self._webhook_id = None
+        self._payload = None
         self.discriminator = None
-        if payload is not None:
-            self.payload = payload
         if webhook_id is not None:
             self.webhook_id = webhook_id
-
-    @property
-    def payload(self):
-        """Gets the payload of this OneTimePayloadBitbucketOauthAppPayload.  # noqa: E501
-
-
-        :return: The payload of this OneTimePayloadBitbucketOauthAppPayload.  # noqa: E501
-        :rtype: BitbucketOauthAppPayload
-        """
-        return self._payload
-
-    @payload.setter
-    def payload(self, payload):
-        """Sets the payload of this OneTimePayloadBitbucketOauthAppPayload.
-
-
-        :param payload: The payload of this OneTimePayloadBitbucketOauthAppPayload.  # noqa: E501
-        :type: BitbucketOauthAppPayload
-        """
-
-        self._payload = payload
+        if payload is not None:
+            self.payload = payload
 
     @property
     def webhook_id(self):
@@ -88,6 +67,27 @@ class OneTimePayloadBitbucketOauthAppPayload(object):
         """
 
         self._webhook_id = webhook_id
+
+    @property
+    def payload(self):
+        """Gets the payload of this OneTimePayloadBitbucketOauthAppPayload.  # noqa: E501
+
+
+        :return: The payload of this OneTimePayloadBitbucketOauthAppPayload.  # noqa: E501
+        :rtype: BitbucketOauthAppPayload
+        """
+        return self._payload
+
+    @payload.setter
+    def payload(self, payload):
+        """Sets the payload of this OneTimePayloadBitbucketOauthAppPayload.
+
+
+        :param payload: The payload of this OneTimePayloadBitbucketOauthAppPayload.  # noqa: E501
+        :type: BitbucketOauthAppPayload
+        """
+
+        self._payload = payload
 
     def to_dict(self):
         """Returns the model properties as a dict"""

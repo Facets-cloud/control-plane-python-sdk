@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,50 +28,29 @@ class ResourceStatusResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'environment_name': 'str',
         'project_name': 'str',
+        'environment_name': 'str',
         'resource_statuses': 'list[ResourceStatus]'
     }
 
     attribute_map = {
-        'environment_name': 'environmentName',
         'project_name': 'projectName',
+        'environment_name': 'environmentName',
         'resource_statuses': 'resourceStatuses'
     }
 
-    def __init__(self, environment_name=None, project_name=None, resource_statuses=None):  # noqa: E501
+    def __init__(self, project_name=None, environment_name=None, resource_statuses=None):  # noqa: E501
         """ResourceStatusResponse - a model defined in Swagger"""  # noqa: E501
-        self._environment_name = None
         self._project_name = None
+        self._environment_name = None
         self._resource_statuses = None
         self.discriminator = None
-        if environment_name is not None:
-            self.environment_name = environment_name
         if project_name is not None:
             self.project_name = project_name
+        if environment_name is not None:
+            self.environment_name = environment_name
         if resource_statuses is not None:
             self.resource_statuses = resource_statuses
-
-    @property
-    def environment_name(self):
-        """Gets the environment_name of this ResourceStatusResponse.  # noqa: E501
-
-
-        :return: The environment_name of this ResourceStatusResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._environment_name
-
-    @environment_name.setter
-    def environment_name(self, environment_name):
-        """Sets the environment_name of this ResourceStatusResponse.
-
-
-        :param environment_name: The environment_name of this ResourceStatusResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._environment_name = environment_name
 
     @property
     def project_name(self):
@@ -93,6 +72,27 @@ class ResourceStatusResponse(object):
         """
 
         self._project_name = project_name
+
+    @property
+    def environment_name(self):
+        """Gets the environment_name of this ResourceStatusResponse.  # noqa: E501
+
+
+        :return: The environment_name of this ResourceStatusResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._environment_name
+
+    @environment_name.setter
+    def environment_name(self, environment_name):
+        """Sets the environment_name of this ResourceStatusResponse.
+
+
+        :param environment_name: The environment_name of this ResourceStatusResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._environment_name = environment_name
 
     @property
     def resource_statuses(self):

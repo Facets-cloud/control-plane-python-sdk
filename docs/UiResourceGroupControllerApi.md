@@ -1,22 +1,22 @@
 # swagger_client.UiResourceGroupControllerApi
 
-All URIs are relative to *//facetsdemo.console.facets.cloud/*
+All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_using_post**](UiResourceGroupControllerApi.md#create_using_post) | **POST** /cc-ui/v1/resource-groups | create
-[**delete_using_delete1**](UiResourceGroupControllerApi.md#delete_using_delete1) | **DELETE** /cc-ui/v1/resource-groups/{resourceGroupId} | delete
-[**find_all_using_get**](UiResourceGroupControllerApi.md#find_all_using_get) | **GET** /cc-ui/v1/resource-groups | findAll
-[**get_resource_group_using_get**](UiResourceGroupControllerApi.md#get_resource_group_using_get) | **GET** /cc-ui/v1/resource-groups/{resourceGroupId} | getResourceGroup
-[**get_resource_groups_for_session_user_using_get**](UiResourceGroupControllerApi.md#get_resource_groups_for_session_user_using_get) | **GET** /cc-ui/v1/resource-groups/me | getResourceGroupsForSessionUser
-[**update_all_resources_using_put**](UiResourceGroupControllerApi.md#update_all_resources_using_put) | **PUT** /cc-ui/v1/resource-groups/{resourceGroupId}/resources | updateAllResources
-[**update_resource_using_patch**](UiResourceGroupControllerApi.md#update_resource_using_patch) | **PATCH** /cc-ui/v1/resource-groups/{resourceGroupId}/resources | updateResource
-[**update_using_put1**](UiResourceGroupControllerApi.md#update_using_put1) | **PUT** /cc-ui/v1/resource-groups/{resourceGroupId} | update
+[**create**](UiResourceGroupControllerApi.md#create) | **POST** /cc-ui/v1/resource-groups | 
+[**delete1**](UiResourceGroupControllerApi.md#delete1) | **DELETE** /cc-ui/v1/resource-groups/{resourceGroupId} | 
+[**find_all**](UiResourceGroupControllerApi.md#find_all) | **GET** /cc-ui/v1/resource-groups | 
+[**get_resource_group**](UiResourceGroupControllerApi.md#get_resource_group) | **GET** /cc-ui/v1/resource-groups/{resourceGroupId} | 
+[**get_resource_groups_for_session_user**](UiResourceGroupControllerApi.md#get_resource_groups_for_session_user) | **GET** /cc-ui/v1/resource-groups/me | 
+[**update1**](UiResourceGroupControllerApi.md#update1) | **PUT** /cc-ui/v1/resource-groups/{resourceGroupId} | 
+[**update_all_resources**](UiResourceGroupControllerApi.md#update_all_resources) | **PUT** /cc-ui/v1/resource-groups/{resourceGroupId}/resources | 
+[**update_resource**](UiResourceGroupControllerApi.md#update_resource) | **PATCH** /cc-ui/v1/resource-groups/{resourceGroupId}/resources | 
 
-# **create_using_post**
-> ResourceGroup create_using_post(body)
+# **create**
+> ResourceGroup create(body)
 
-create
+
 
 ### Example
 ```python
@@ -25,28 +25,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | resourceGroupRequest
+body = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | 
 
 try:
-    # create
-    api_response = api_instance.create_using_post(body)
+    api_response = api_instance.create(body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->create_using_post: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->create: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResourceGroupRequest**](ResourceGroupRequest.md)| resourceGroupRequest | 
+ **body** | [**ResourceGroupRequest**](ResourceGroupRequest.md)|  | 
 
 ### Return type
 
@@ -54,19 +53,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_using_delete1**
-> Response delete_using_delete1(resource_group_id)
+# **delete1**
+> Response delete1(resource_group_id)
 
-delete
+
 
 ### Example
 ```python
@@ -75,28 +74,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-resource_group_id = 'resource_group_id_example' # str | resourceGroupId
+resource_group_id = 'resource_group_id_example' # str | 
 
 try:
-    # delete
-    api_response = api_instance.delete_using_delete1(resource_group_id)
+    api_response = api_instance.delete1(resource_group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->delete_using_delete1: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->delete1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_group_id** | **str**| resourceGroupId | 
+ **resource_group_id** | **str**|  | 
 
 ### Return type
 
@@ -104,19 +102,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **find_all_using_get**
-> list[ResourceGroup] find_all_using_get()
+# **find_all**
+> list[ResourceGroup] find_all()
 
-findAll
+
 
 ### Example
 ```python
@@ -125,7 +123,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -134,11 +132,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # findAll
-    api_response = api_instance.find_all_using_get()
+    api_response = api_instance.find_all()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->find_all_using_get: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->find_all: %s\n" % e)
 ```
 
 ### Parameters
@@ -150,19 +147,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_group_using_get**
-> ResourceGroup get_resource_group_using_get(resource_group_id)
+# **get_resource_group**
+> ResourceGroup get_resource_group(resource_group_id)
 
-getResourceGroup
+
 
 ### Example
 ```python
@@ -171,28 +168,27 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-resource_group_id = 'resource_group_id_example' # str | resourceGroupId
+resource_group_id = 'resource_group_id_example' # str | 
 
 try:
-    # getResourceGroup
-    api_response = api_instance.get_resource_group_using_get(resource_group_id)
+    api_response = api_instance.get_resource_group(resource_group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->get_resource_group_using_get: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->get_resource_group: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource_group_id** | **str**| resourceGroupId | 
+ **resource_group_id** | **str**|  | 
 
 ### Return type
 
@@ -200,19 +196,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_resource_groups_for_session_user_using_get**
-> list[ResourceGroup] get_resource_groups_for_session_user_using_get()
+# **get_resource_groups_for_session_user**
+> list[ResourceGroup] get_resource_groups_for_session_user()
 
-getResourceGroupsForSessionUser
+
 
 ### Example
 ```python
@@ -221,7 +217,7 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
@@ -230,11 +226,10 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
 
 try:
-    # getResourceGroupsForSessionUser
-    api_response = api_instance.get_resource_groups_for_session_user_using_get()
+    api_response = api_instance.get_resource_groups_for_session_user()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->get_resource_groups_for_session_user_using_get: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->get_resource_groups_for_session_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -246,19 +241,19 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_all_resources_using_put**
-> ResourceGroup update_all_resources_using_put(body, resource_group_id)
+# **update1**
+> ResourceGroup update1(body, resource_group_id)
 
-updateAllResources
+
 
 ### Example
 ```python
@@ -267,30 +262,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceInfo()] # list[ResourceInfo] | allResourcesUpdateRequest
-resource_group_id = 'resource_group_id_example' # str | resourceGroupId
+body = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | 
+resource_group_id = 'resource_group_id_example' # str | 
 
 try:
-    # updateAllResources
-    api_response = api_instance.update_all_resources_using_put(body, resource_group_id)
+    api_response = api_instance.update1(body, resource_group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->update_all_resources_using_put: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->update1: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceInfo]**](ResourceInfo.md)| allResourcesUpdateRequest | 
- **resource_group_id** | **str**| resourceGroupId | 
+ **body** | [**ResourceGroupRequest**](ResourceGroupRequest.md)|  | 
+ **resource_group_id** | **str**|  | 
 
 ### Return type
 
@@ -298,19 +292,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_resource_using_patch**
-> ResourceGroup update_resource_using_patch(body, resource_group_id)
+# **update_all_resources**
+> ResourceGroup update_all_resources(body, resource_group_id)
 
-updateResource
+
 
 ### Example
 ```python
@@ -319,30 +313,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ResourceInfo() # ResourceInfo | resourceUpdateRequest
-resource_group_id = 'resource_group_id_example' # str | resourceGroupId
+body = [swagger_client.ResourceInfo()] # list[ResourceInfo] | 
+resource_group_id = 'resource_group_id_example' # str | 
 
 try:
-    # updateResource
-    api_response = api_instance.update_resource_using_patch(body, resource_group_id)
+    api_response = api_instance.update_all_resources(body, resource_group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->update_resource_using_patch: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->update_all_resources: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResourceInfo**](ResourceInfo.md)| resourceUpdateRequest | 
- **resource_group_id** | **str**| resourceGroupId | 
+ **body** | [**list[ResourceInfo]**](ResourceInfo.md)|  | 
+ **resource_group_id** | **str**|  | 
 
 ### Return type
 
@@ -350,19 +343,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_using_put1**
-> ResourceGroup update_using_put1(body, resource_group_id)
+# **update_resource**
+> ResourceGroup update_resource(body, resource_group_id)
 
-update
+
 
 ### Example
 ```python
@@ -371,30 +364,29 @@ import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
-# Configure HTTP basic authorization: main
+# Configure HTTP basic authorization: basicAuth
 configuration = swagger_client.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiResourceGroupControllerApi(swagger_client.ApiClient(configuration))
-body = swagger_client.ResourceGroupRequest() # ResourceGroupRequest | resourceGroupRequest
-resource_group_id = 'resource_group_id_example' # str | resourceGroupId
+body = swagger_client.ResourceInfo() # ResourceInfo | 
+resource_group_id = 'resource_group_id_example' # str | 
 
 try:
-    # update
-    api_response = api_instance.update_using_put1(body, resource_group_id)
+    api_response = api_instance.update_resource(body, resource_group_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiResourceGroupControllerApi->update_using_put1: %s\n" % e)
+    print("Exception when calling UiResourceGroupControllerApi->update_resource: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResourceGroupRequest**](ResourceGroupRequest.md)| resourceGroupRequest | 
- **resource_group_id** | **str**| resourceGroupId | 
+ **body** | [**ResourceInfo**](ResourceInfo.md)|  | 
+ **resource_group_id** | **str**|  | 
 
 ### Return type
 
@@ -402,12 +394,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[main](../README.md#main)
+[basicAuth](../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

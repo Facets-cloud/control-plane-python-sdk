@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,70 +28,91 @@ class ServiceDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'age': 'int',
+        'name': 'str',
+        'type': 'str',
         'cluster_ip': 'str',
         'external_ip': 'str',
         'ip_families': 'list[str]',
-        'name': 'str',
         'port': 'list[ServicePortDTO]',
-        'type': 'str'
+        'age': 'int'
     }
 
     attribute_map = {
-        'age': 'age',
+        'name': 'name',
+        'type': 'type',
         'cluster_ip': 'clusterIp',
         'external_ip': 'externalIp',
         'ip_families': 'ipFamilies',
-        'name': 'name',
         'port': 'port',
-        'type': 'type'
+        'age': 'age'
     }
 
-    def __init__(self, age=None, cluster_ip=None, external_ip=None, ip_families=None, name=None, port=None, type=None):  # noqa: E501
+    def __init__(self, name=None, type=None, cluster_ip=None, external_ip=None, ip_families=None, port=None, age=None):  # noqa: E501
         """ServiceDTO - a model defined in Swagger"""  # noqa: E501
-        self._age = None
+        self._name = None
+        self._type = None
         self._cluster_ip = None
         self._external_ip = None
         self._ip_families = None
-        self._name = None
         self._port = None
-        self._type = None
+        self._age = None
         self.discriminator = None
-        if age is not None:
-            self.age = age
+        if name is not None:
+            self.name = name
+        if type is not None:
+            self.type = type
         if cluster_ip is not None:
             self.cluster_ip = cluster_ip
         if external_ip is not None:
             self.external_ip = external_ip
         if ip_families is not None:
             self.ip_families = ip_families
-        if name is not None:
-            self.name = name
         if port is not None:
             self.port = port
-        if type is not None:
-            self.type = type
+        if age is not None:
+            self.age = age
 
     @property
-    def age(self):
-        """Gets the age of this ServiceDTO.  # noqa: E501
+    def name(self):
+        """Gets the name of this ServiceDTO.  # noqa: E501
 
 
-        :return: The age of this ServiceDTO.  # noqa: E501
-        :rtype: int
+        :return: The name of this ServiceDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._age
+        return self._name
 
-    @age.setter
-    def age(self, age):
-        """Sets the age of this ServiceDTO.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ServiceDTO.
 
 
-        :param age: The age of this ServiceDTO.  # noqa: E501
-        :type: int
+        :param name: The name of this ServiceDTO.  # noqa: E501
+        :type: str
         """
 
-        self._age = age
+        self._name = name
+
+    @property
+    def type(self):
+        """Gets the type of this ServiceDTO.  # noqa: E501
+
+
+        :return: The type of this ServiceDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this ServiceDTO.
+
+
+        :param type: The type of this ServiceDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     @property
     def cluster_ip(self):
@@ -157,27 +178,6 @@ class ServiceDTO(object):
         self._ip_families = ip_families
 
     @property
-    def name(self):
-        """Gets the name of this ServiceDTO.  # noqa: E501
-
-
-        :return: The name of this ServiceDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ServiceDTO.
-
-
-        :param name: The name of this ServiceDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
     def port(self):
         """Gets the port of this ServiceDTO.  # noqa: E501
 
@@ -199,25 +199,25 @@ class ServiceDTO(object):
         self._port = port
 
     @property
-    def type(self):
-        """Gets the type of this ServiceDTO.  # noqa: E501
+    def age(self):
+        """Gets the age of this ServiceDTO.  # noqa: E501
 
 
-        :return: The type of this ServiceDTO.  # noqa: E501
-        :rtype: str
+        :return: The age of this ServiceDTO.  # noqa: E501
+        :rtype: int
         """
-        return self._type
+        return self._age
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this ServiceDTO.
+    @age.setter
+    def age(self, age):
+        """Sets the age of this ServiceDTO.
 
 
-        :param type: The type of this ServiceDTO.  # noqa: E501
-        :type: str
+        :param age: The age of this ServiceDTO.  # noqa: E501
+        :type: int
         """
 
-        self._type = type
+        self._age = age
 
     def to_dict(self):
         """Returns the model properties as a dict"""

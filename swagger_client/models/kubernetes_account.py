@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,199 +28,130 @@ class KubernetesAccount(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_type': 'str',
-        'associated_to': 'list[AccountAssociationInfo]',
-        'certificate_authority': 'str',
-        'change_log': 'str',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'entity_type': 'str',
-        'host': 'str',
-        'id': 'str',
-        'in_use': 'bool',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
-        'number_of_versions': 'int',
+        'account_type': 'str',
         'provider': 'str',
-        'secrets_uid': 'str',
+        'change_log': 'str',
         'system_defined': 'bool',
+        'in_use': 'bool',
+        'associated_to': 'list[AccountAssociationInfo]',
+        'host': 'str',
+        'certificate_authority': 'str',
         'token': 'str',
-        'versioning_key': 'str'
+        'entity_type': 'str',
+        'secrets_uid': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'account_type': 'accountType',
-        'associated_to': 'associatedTo',
-        'certificate_authority': 'certificateAuthority',
-        'change_log': 'changeLog',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'entity_type': 'entityType',
-        'host': 'host',
-        'id': 'id',
-        'in_use': 'inUse',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
-        'number_of_versions': 'numberOfVersions',
+        'account_type': 'accountType',
         'provider': 'provider',
-        'secrets_uid': 'secretsUid',
+        'change_log': 'changeLog',
         'system_defined': 'systemDefined',
+        'in_use': 'inUse',
+        'associated_to': 'associatedTo',
+        'host': 'host',
+        'certificate_authority': 'certificateAuthority',
         'token': 'token',
-        'versioning_key': 'versioningKey'
+        'entity_type': 'entityType',
+        'secrets_uid': 'secretsUid',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, account_type=None, associated_to=None, certificate_authority=None, change_log=None, created_by=None, creation_date=None, entity_type=None, host=None, id=None, in_use=None, last_modified_by=None, last_modified_date=None, name=None, number_of_versions=None, provider=None, secrets_uid=None, system_defined=None, token=None, versioning_key=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, account_type=None, provider=None, change_log=None, system_defined=None, in_use=None, associated_to=None, host=None, certificate_authority=None, token=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """KubernetesAccount - a model defined in Swagger"""  # noqa: E501
-        self._account_type = None
-        self._associated_to = None
-        self._certificate_authority = None
-        self._change_log = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._entity_type = None
-        self._host = None
-        self._id = None
-        self._in_use = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
-        self._number_of_versions = None
+        self._account_type = None
         self._provider = None
-        self._secrets_uid = None
+        self._change_log = None
         self._system_defined = None
+        self._in_use = None
+        self._associated_to = None
+        self._host = None
+        self._certificate_authority = None
         self._token = None
+        self._entity_type = None
+        self._secrets_uid = None
         self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if account_type is not None:
-            self.account_type = account_type
-        if associated_to is not None:
-            self.associated_to = associated_to
-        if certificate_authority is not None:
-            self.certificate_authority = certificate_authority
-        if change_log is not None:
-            self.change_log = change_log
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if host is not None:
-            self.host = host
-        if id is not None:
-            self.id = id
-        if in_use is not None:
-            self.in_use = in_use
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
         if name is not None:
             self.name = name
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
+        if account_type is not None:
+            self.account_type = account_type
         if provider is not None:
             self.provider = provider
-        if secrets_uid is not None:
-            self.secrets_uid = secrets_uid
+        if change_log is not None:
+            self.change_log = change_log
         if system_defined is not None:
             self.system_defined = system_defined
+        if in_use is not None:
+            self.in_use = in_use
+        if associated_to is not None:
+            self.associated_to = associated_to
+        if host is not None:
+            self.host = host
+        if certificate_authority is not None:
+            self.certificate_authority = certificate_authority
         if token is not None:
             self.token = token
+        if entity_type is not None:
+            self.entity_type = entity_type
+        if secrets_uid is not None:
+            self.secrets_uid = secrets_uid
         if versioning_key is not None:
             self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def account_type(self):
-        """Gets the account_type of this KubernetesAccount.  # noqa: E501
+    def id(self):
+        """Gets the id of this KubernetesAccount.  # noqa: E501
 
 
-        :return: The account_type of this KubernetesAccount.  # noqa: E501
+        :return: The id of this KubernetesAccount.  # noqa: E501
         :rtype: str
         """
-        return self._account_type
+        return self._id
 
-    @account_type.setter
-    def account_type(self, account_type):
-        """Sets the account_type of this KubernetesAccount.
-
-
-        :param account_type: The account_type of this KubernetesAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
-        if account_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(account_type, allowed_values)
-            )
-
-        self._account_type = account_type
-
-    @property
-    def associated_to(self):
-        """Gets the associated_to of this KubernetesAccount.  # noqa: E501
+    @id.setter
+    def id(self, id):
+        """Sets the id of this KubernetesAccount.
 
 
-        :return: The associated_to of this KubernetesAccount.  # noqa: E501
-        :rtype: list[AccountAssociationInfo]
-        """
-        return self._associated_to
-
-    @associated_to.setter
-    def associated_to(self, associated_to):
-        """Sets the associated_to of this KubernetesAccount.
-
-
-        :param associated_to: The associated_to of this KubernetesAccount.  # noqa: E501
-        :type: list[AccountAssociationInfo]
-        """
-
-        self._associated_to = associated_to
-
-    @property
-    def certificate_authority(self):
-        """Gets the certificate_authority of this KubernetesAccount.  # noqa: E501
-
-
-        :return: The certificate_authority of this KubernetesAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._certificate_authority
-
-    @certificate_authority.setter
-    def certificate_authority(self, certificate_authority):
-        """Sets the certificate_authority of this KubernetesAccount.
-
-
-        :param certificate_authority: The certificate_authority of this KubernetesAccount.  # noqa: E501
+        :param id: The id of this KubernetesAccount.  # noqa: E501
         :type: str
         """
 
-        self._certificate_authority = certificate_authority
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this KubernetesAccount.  # noqa: E501
-
-
-        :return: The change_log of this KubernetesAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this KubernetesAccount.
-
-
-        :param change_log: The change_log of this KubernetesAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._change_log = change_log
+        self._id = id
 
     @property
     def created_by(self):
@@ -265,94 +196,25 @@ class KubernetesAccount(object):
         self._creation_date = creation_date
 
     @property
-    def entity_type(self):
-        """Gets the entity_type of this KubernetesAccount.  # noqa: E501
+    def last_modified_date(self):
+        """Gets the last_modified_date of this KubernetesAccount.  # noqa: E501
 
 
-        :return: The entity_type of this KubernetesAccount.  # noqa: E501
-        :rtype: str
+        :return: The last_modified_date of this KubernetesAccount.  # noqa: E501
+        :rtype: datetime
         """
-        return self._entity_type
+        return self._last_modified_date
 
-    @entity_type.setter
-    def entity_type(self, entity_type):
-        """Sets the entity_type of this KubernetesAccount.
-
-
-        :param entity_type: The entity_type of this KubernetesAccount.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
-        if entity_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(entity_type, allowed_values)
-            )
-
-        self._entity_type = entity_type
-
-    @property
-    def host(self):
-        """Gets the host of this KubernetesAccount.  # noqa: E501
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this KubernetesAccount.
 
 
-        :return: The host of this KubernetesAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._host
-
-    @host.setter
-    def host(self, host):
-        """Sets the host of this KubernetesAccount.
-
-
-        :param host: The host of this KubernetesAccount.  # noqa: E501
-        :type: str
+        :param last_modified_date: The last_modified_date of this KubernetesAccount.  # noqa: E501
+        :type: datetime
         """
 
-        self._host = host
-
-    @property
-    def id(self):
-        """Gets the id of this KubernetesAccount.  # noqa: E501
-
-
-        :return: The id of this KubernetesAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this KubernetesAccount.
-
-
-        :param id: The id of this KubernetesAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def in_use(self):
-        """Gets the in_use of this KubernetesAccount.  # noqa: E501
-
-
-        :return: The in_use of this KubernetesAccount.  # noqa: E501
-        :rtype: bool
-        """
-        return self._in_use
-
-    @in_use.setter
-    def in_use(self, in_use):
-        """Sets the in_use of this KubernetesAccount.
-
-
-        :param in_use: The in_use of this KubernetesAccount.  # noqa: E501
-        :type: bool
-        """
-
-        self._in_use = in_use
+        self._last_modified_date = last_modified_date
 
     @property
     def last_modified_by(self):
@@ -376,27 +238,6 @@ class KubernetesAccount(object):
         self._last_modified_by = last_modified_by
 
     @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this KubernetesAccount.  # noqa: E501
-
-
-        :return: The last_modified_date of this KubernetesAccount.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this KubernetesAccount.
-
-
-        :param last_modified_date: The last_modified_date of this KubernetesAccount.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
     def name(self):
         """Gets the name of this KubernetesAccount.  # noqa: E501
 
@@ -418,25 +259,31 @@ class KubernetesAccount(object):
         self._name = name
 
     @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this KubernetesAccount.  # noqa: E501
+    def account_type(self):
+        """Gets the account_type of this KubernetesAccount.  # noqa: E501
 
 
-        :return: The number_of_versions of this KubernetesAccount.  # noqa: E501
-        :rtype: int
+        :return: The account_type of this KubernetesAccount.  # noqa: E501
+        :rtype: str
         """
-        return self._number_of_versions
+        return self._account_type
 
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this KubernetesAccount.
+    @account_type.setter
+    def account_type(self, account_type):
+        """Sets the account_type of this KubernetesAccount.
 
 
-        :param number_of_versions: The number_of_versions of this KubernetesAccount.  # noqa: E501
-        :type: int
+        :param account_type: The account_type of this KubernetesAccount.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["VERSION_CONTROL", "CLOUD", "CODER"]  # noqa: E501
+        if account_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `account_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(account_type, allowed_values)
+            )
 
-        self._number_of_versions = number_of_versions
+        self._account_type = account_type
 
     @property
     def provider(self):
@@ -466,25 +313,25 @@ class KubernetesAccount(object):
         self._provider = provider
 
     @property
-    def secrets_uid(self):
-        """Gets the secrets_uid of this KubernetesAccount.  # noqa: E501
+    def change_log(self):
+        """Gets the change_log of this KubernetesAccount.  # noqa: E501
 
 
-        :return: The secrets_uid of this KubernetesAccount.  # noqa: E501
+        :return: The change_log of this KubernetesAccount.  # noqa: E501
         :rtype: str
         """
-        return self._secrets_uid
+        return self._change_log
 
-    @secrets_uid.setter
-    def secrets_uid(self, secrets_uid):
-        """Sets the secrets_uid of this KubernetesAccount.
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this KubernetesAccount.
 
 
-        :param secrets_uid: The secrets_uid of this KubernetesAccount.  # noqa: E501
+        :param change_log: The change_log of this KubernetesAccount.  # noqa: E501
         :type: str
         """
 
-        self._secrets_uid = secrets_uid
+        self._change_log = change_log
 
     @property
     def system_defined(self):
@@ -508,6 +355,90 @@ class KubernetesAccount(object):
         self._system_defined = system_defined
 
     @property
+    def in_use(self):
+        """Gets the in_use of this KubernetesAccount.  # noqa: E501
+
+
+        :return: The in_use of this KubernetesAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_use
+
+    @in_use.setter
+    def in_use(self, in_use):
+        """Sets the in_use of this KubernetesAccount.
+
+
+        :param in_use: The in_use of this KubernetesAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_use = in_use
+
+    @property
+    def associated_to(self):
+        """Gets the associated_to of this KubernetesAccount.  # noqa: E501
+
+
+        :return: The associated_to of this KubernetesAccount.  # noqa: E501
+        :rtype: list[AccountAssociationInfo]
+        """
+        return self._associated_to
+
+    @associated_to.setter
+    def associated_to(self, associated_to):
+        """Sets the associated_to of this KubernetesAccount.
+
+
+        :param associated_to: The associated_to of this KubernetesAccount.  # noqa: E501
+        :type: list[AccountAssociationInfo]
+        """
+
+        self._associated_to = associated_to
+
+    @property
+    def host(self):
+        """Gets the host of this KubernetesAccount.  # noqa: E501
+
+
+        :return: The host of this KubernetesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._host
+
+    @host.setter
+    def host(self, host):
+        """Sets the host of this KubernetesAccount.
+
+
+        :param host: The host of this KubernetesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._host = host
+
+    @property
+    def certificate_authority(self):
+        """Gets the certificate_authority of this KubernetesAccount.  # noqa: E501
+
+
+        :return: The certificate_authority of this KubernetesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._certificate_authority
+
+    @certificate_authority.setter
+    def certificate_authority(self, certificate_authority):
+        """Sets the certificate_authority of this KubernetesAccount.
+
+
+        :param certificate_authority: The certificate_authority of this KubernetesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._certificate_authority = certificate_authority
+
+    @property
     def token(self):
         """Gets the token of this KubernetesAccount.  # noqa: E501
 
@@ -529,6 +460,54 @@ class KubernetesAccount(object):
         self._token = token
 
     @property
+    def entity_type(self):
+        """Gets the entity_type of this KubernetesAccount.  # noqa: E501
+
+
+        :return: The entity_type of this KubernetesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._entity_type
+
+    @entity_type.setter
+    def entity_type(self, entity_type):
+        """Sets the entity_type of this KubernetesAccount.
+
+
+        :param entity_type: The entity_type of this KubernetesAccount.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CLUSTER", "BLUE_PRINT", "TEMPLATE_INPUT", "CONTROL_PLANE", "IAC", "ARTIFACT_CI", "USER_GROUP", "ACCOUNT", "ARTIFACTORY"]  # noqa: E501
+        if entity_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `entity_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(entity_type, allowed_values)
+            )
+
+        self._entity_type = entity_type
+
+    @property
+    def secrets_uid(self):
+        """Gets the secrets_uid of this KubernetesAccount.  # noqa: E501
+
+
+        :return: The secrets_uid of this KubernetesAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._secrets_uid
+
+    @secrets_uid.setter
+    def secrets_uid(self, secrets_uid):
+        """Sets the secrets_uid of this KubernetesAccount.
+
+
+        :param secrets_uid: The secrets_uid of this KubernetesAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._secrets_uid = secrets_uid
+
+    @property
     def versioning_key(self):
         """Gets the versioning_key of this KubernetesAccount.  # noqa: E501
 
@@ -548,6 +527,27 @@ class KubernetesAccount(object):
         """
 
         self._versioning_key = versioning_key
+
+    @property
+    def number_of_versions(self):
+        """Gets the number_of_versions of this KubernetesAccount.  # noqa: E501
+
+
+        :return: The number_of_versions of this KubernetesAccount.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_versions
+
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this KubernetesAccount.
+
+
+        :param number_of_versions: The number_of_versions of this KubernetesAccount.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

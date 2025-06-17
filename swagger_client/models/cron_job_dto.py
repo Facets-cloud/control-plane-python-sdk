@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,107 +28,44 @@ class CronJobDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'active': 'int',
-        'age_in_seconds': 'int',
-        'last_schedule': 'str',
         'name': 'str',
         'schedule': 'str',
-        'suspend': 'bool'
+        'suspend': 'bool',
+        'active': 'int',
+        'last_schedule': 'str',
+        'age_in_seconds': 'int'
     }
 
     attribute_map = {
-        'active': 'active',
-        'age_in_seconds': 'ageInSeconds',
-        'last_schedule': 'lastSchedule',
         'name': 'name',
         'schedule': 'schedule',
-        'suspend': 'suspend'
+        'suspend': 'suspend',
+        'active': 'active',
+        'last_schedule': 'lastSchedule',
+        'age_in_seconds': 'ageInSeconds'
     }
 
-    def __init__(self, active=None, age_in_seconds=None, last_schedule=None, name=None, schedule=None, suspend=None):  # noqa: E501
+    def __init__(self, name=None, schedule=None, suspend=None, active=None, last_schedule=None, age_in_seconds=None):  # noqa: E501
         """CronJobDTO - a model defined in Swagger"""  # noqa: E501
-        self._active = None
-        self._age_in_seconds = None
-        self._last_schedule = None
         self._name = None
         self._schedule = None
         self._suspend = None
+        self._active = None
+        self._last_schedule = None
+        self._age_in_seconds = None
         self.discriminator = None
-        if active is not None:
-            self.active = active
-        if age_in_seconds is not None:
-            self.age_in_seconds = age_in_seconds
-        if last_schedule is not None:
-            self.last_schedule = last_schedule
         if name is not None:
             self.name = name
         if schedule is not None:
             self.schedule = schedule
         if suspend is not None:
             self.suspend = suspend
-
-    @property
-    def active(self):
-        """Gets the active of this CronJobDTO.  # noqa: E501
-
-
-        :return: The active of this CronJobDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._active
-
-    @active.setter
-    def active(self, active):
-        """Sets the active of this CronJobDTO.
-
-
-        :param active: The active of this CronJobDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._active = active
-
-    @property
-    def age_in_seconds(self):
-        """Gets the age_in_seconds of this CronJobDTO.  # noqa: E501
-
-
-        :return: The age_in_seconds of this CronJobDTO.  # noqa: E501
-        :rtype: int
-        """
-        return self._age_in_seconds
-
-    @age_in_seconds.setter
-    def age_in_seconds(self, age_in_seconds):
-        """Sets the age_in_seconds of this CronJobDTO.
-
-
-        :param age_in_seconds: The age_in_seconds of this CronJobDTO.  # noqa: E501
-        :type: int
-        """
-
-        self._age_in_seconds = age_in_seconds
-
-    @property
-    def last_schedule(self):
-        """Gets the last_schedule of this CronJobDTO.  # noqa: E501
-
-
-        :return: The last_schedule of this CronJobDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_schedule
-
-    @last_schedule.setter
-    def last_schedule(self, last_schedule):
-        """Sets the last_schedule of this CronJobDTO.
-
-
-        :param last_schedule: The last_schedule of this CronJobDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._last_schedule = last_schedule
+        if active is not None:
+            self.active = active
+        if last_schedule is not None:
+            self.last_schedule = last_schedule
+        if age_in_seconds is not None:
+            self.age_in_seconds = age_in_seconds
 
     @property
     def name(self):
@@ -192,6 +129,69 @@ class CronJobDTO(object):
         """
 
         self._suspend = suspend
+
+    @property
+    def active(self):
+        """Gets the active of this CronJobDTO.  # noqa: E501
+
+
+        :return: The active of this CronJobDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """Sets the active of this CronJobDTO.
+
+
+        :param active: The active of this CronJobDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._active = active
+
+    @property
+    def last_schedule(self):
+        """Gets the last_schedule of this CronJobDTO.  # noqa: E501
+
+
+        :return: The last_schedule of this CronJobDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_schedule
+
+    @last_schedule.setter
+    def last_schedule(self, last_schedule):
+        """Sets the last_schedule of this CronJobDTO.
+
+
+        :param last_schedule: The last_schedule of this CronJobDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._last_schedule = last_schedule
+
+    @property
+    def age_in_seconds(self):
+        """Gets the age_in_seconds of this CronJobDTO.  # noqa: E501
+
+
+        :return: The age_in_seconds of this CronJobDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._age_in_seconds
+
+    @age_in_seconds.setter
+    def age_in_seconds(self, age_in_seconds):
+        """Sets the age_in_seconds of this CronJobDTO.
+
+
+        :param age_in_seconds: The age_in_seconds of this CronJobDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._age_in_seconds = age_in_seconds
 
     def to_dict(self):
         """Returns the model properties as a dict"""

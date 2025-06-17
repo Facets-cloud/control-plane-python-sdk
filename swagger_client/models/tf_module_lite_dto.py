@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,215 +28,74 @@ class TFModuleLiteDTO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allowed_test_projects': 'list[str]',
-        'clouds': 'list[str]',
-        'flavor': 'str',
-        'iac_tool': 'list[str]',
-        'id': 'str',
-        'inputs': 'dict(str, Input)',
         'intent': 'str',
         'intent_type': 'str',
+        'flavor': 'str',
+        'version': 'str',
+        'clouds': 'list[str]',
+        'inputs': 'dict(str, Input)',
         'source': 'str',
-        'stage': 'str',
         'tags': 'list[str]',
-        'version': 'str'
+        'allowed_test_projects': 'list[str]',
+        'id': 'str',
+        'stage': 'str',
+        'iac_tool': 'list[str]'
     }
 
     attribute_map = {
-        'allowed_test_projects': 'allowedTestProjects',
-        'clouds': 'clouds',
-        'flavor': 'flavor',
-        'iac_tool': 'iacTool',
-        'id': 'id',
-        'inputs': 'inputs',
         'intent': 'intent',
         'intent_type': 'intentType',
+        'flavor': 'flavor',
+        'version': 'version',
+        'clouds': 'clouds',
+        'inputs': 'inputs',
         'source': 'source',
-        'stage': 'stage',
         'tags': 'tags',
-        'version': 'version'
+        'allowed_test_projects': 'allowedTestProjects',
+        'id': 'id',
+        'stage': 'stage',
+        'iac_tool': 'iacTool'
     }
 
-    def __init__(self, allowed_test_projects=None, clouds=None, flavor=None, iac_tool=None, id=None, inputs=None, intent=None, intent_type=None, source=None, stage=None, tags=None, version=None):  # noqa: E501
+    def __init__(self, intent=None, intent_type=None, flavor=None, version=None, clouds=None, inputs=None, source=None, tags=None, allowed_test_projects=None, id=None, stage=None, iac_tool=None):  # noqa: E501
         """TFModuleLiteDTO - a model defined in Swagger"""  # noqa: E501
-        self._allowed_test_projects = None
-        self._clouds = None
-        self._flavor = None
-        self._iac_tool = None
-        self._id = None
-        self._inputs = None
         self._intent = None
         self._intent_type = None
-        self._source = None
-        self._stage = None
-        self._tags = None
+        self._flavor = None
         self._version = None
+        self._clouds = None
+        self._inputs = None
+        self._source = None
+        self._tags = None
+        self._allowed_test_projects = None
+        self._id = None
+        self._stage = None
+        self._iac_tool = None
         self.discriminator = None
-        if allowed_test_projects is not None:
-            self.allowed_test_projects = allowed_test_projects
-        if clouds is not None:
-            self.clouds = clouds
-        if flavor is not None:
-            self.flavor = flavor
-        if iac_tool is not None:
-            self.iac_tool = iac_tool
-        if id is not None:
-            self.id = id
-        if inputs is not None:
-            self.inputs = inputs
         if intent is not None:
             self.intent = intent
         if intent_type is not None:
             self.intent_type = intent_type
-        if source is not None:
-            self.source = source
-        if stage is not None:
-            self.stage = stage
-        if tags is not None:
-            self.tags = tags
+        if flavor is not None:
+            self.flavor = flavor
         if version is not None:
             self.version = version
-
-    @property
-    def allowed_test_projects(self):
-        """Gets the allowed_test_projects of this TFModuleLiteDTO.  # noqa: E501
-
-        List of test projects where this module will be available  # noqa: E501
-
-        :return: The allowed_test_projects of this TFModuleLiteDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._allowed_test_projects
-
-    @allowed_test_projects.setter
-    def allowed_test_projects(self, allowed_test_projects):
-        """Sets the allowed_test_projects of this TFModuleLiteDTO.
-
-        List of test projects where this module will be available  # noqa: E501
-
-        :param allowed_test_projects: The allowed_test_projects of this TFModuleLiteDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._allowed_test_projects = allowed_test_projects
-
-    @property
-    def clouds(self):
-        """Gets the clouds of this TFModuleLiteDTO.  # noqa: E501
-
-        Supported cloud providers  # noqa: E501
-
-        :return: The clouds of this TFModuleLiteDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._clouds
-
-    @clouds.setter
-    def clouds(self, clouds):
-        """Sets the clouds of this TFModuleLiteDTO.
-
-        Supported cloud providers  # noqa: E501
-
-        :param clouds: The clouds of this TFModuleLiteDTO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._clouds = clouds
-
-    @property
-    def flavor(self):
-        """Gets the flavor of this TFModuleLiteDTO.  # noqa: E501
-
-        Flavor of the TF Module  # noqa: E501
-
-        :return: The flavor of this TFModuleLiteDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._flavor
-
-    @flavor.setter
-    def flavor(self, flavor):
-        """Sets the flavor of this TFModuleLiteDTO.
-
-        Flavor of the TF Module  # noqa: E501
-
-        :param flavor: The flavor of this TFModuleLiteDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._flavor = flavor
-
-    @property
-    def iac_tool(self):
-        """Gets the iac_tool of this TFModuleLiteDTO.  # noqa: E501
-
-
-        :return: The iac_tool of this TFModuleLiteDTO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._iac_tool
-
-    @iac_tool.setter
-    def iac_tool(self, iac_tool):
-        """Sets the iac_tool of this TFModuleLiteDTO.
-
-
-        :param iac_tool: The iac_tool of this TFModuleLiteDTO.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
-        if not set(iac_tool).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._iac_tool = iac_tool
-
-    @property
-    def id(self):
-        """Gets the id of this TFModuleLiteDTO.  # noqa: E501
-
-
-        :return: The id of this TFModuleLiteDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this TFModuleLiteDTO.
-
-
-        :param id: The id of this TFModuleLiteDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def inputs(self):
-        """Gets the inputs of this TFModuleLiteDTO.  # noqa: E501
-
-        Input parameters for the module  # noqa: E501
-
-        :return: The inputs of this TFModuleLiteDTO.  # noqa: E501
-        :rtype: dict(str, Input)
-        """
-        return self._inputs
-
-    @inputs.setter
-    def inputs(self, inputs):
-        """Sets the inputs of this TFModuleLiteDTO.
-
-        Input parameters for the module  # noqa: E501
-
-        :param inputs: The inputs of this TFModuleLiteDTO.  # noqa: E501
-        :type: dict(str, Input)
-        """
-
-        self._inputs = inputs
+        if clouds is not None:
+            self.clouds = clouds
+        if inputs is not None:
+            self.inputs = inputs
+        if source is not None:
+            self.source = source
+        if tags is not None:
+            self.tags = tags
+        if allowed_test_projects is not None:
+            self.allowed_test_projects = allowed_test_projects
+        if id is not None:
+            self.id = id
+        if stage is not None:
+            self.stage = stage
+        if iac_tool is not None:
+            self.iac_tool = iac_tool
 
     @property
     def intent(self):
@@ -283,6 +142,98 @@ class TFModuleLiteDTO(object):
         self._intent_type = intent_type
 
     @property
+    def flavor(self):
+        """Gets the flavor of this TFModuleLiteDTO.  # noqa: E501
+
+        Flavor of the TF Module  # noqa: E501
+
+        :return: The flavor of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._flavor
+
+    @flavor.setter
+    def flavor(self, flavor):
+        """Sets the flavor of this TFModuleLiteDTO.
+
+        Flavor of the TF Module  # noqa: E501
+
+        :param flavor: The flavor of this TFModuleLiteDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._flavor = flavor
+
+    @property
+    def version(self):
+        """Gets the version of this TFModuleLiteDTO.  # noqa: E501
+
+        Version of the TF Module  # noqa: E501
+
+        :return: The version of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this TFModuleLiteDTO.
+
+        Version of the TF Module  # noqa: E501
+
+        :param version: The version of this TFModuleLiteDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
+
+    @property
+    def clouds(self):
+        """Gets the clouds of this TFModuleLiteDTO.  # noqa: E501
+
+        Supported cloud providers  # noqa: E501
+
+        :return: The clouds of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._clouds
+
+    @clouds.setter
+    def clouds(self, clouds):
+        """Sets the clouds of this TFModuleLiteDTO.
+
+        Supported cloud providers  # noqa: E501
+
+        :param clouds: The clouds of this TFModuleLiteDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._clouds = clouds
+
+    @property
+    def inputs(self):
+        """Gets the inputs of this TFModuleLiteDTO.  # noqa: E501
+
+        Input parameters for the module  # noqa: E501
+
+        :return: The inputs of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: dict(str, Input)
+        """
+        return self._inputs
+
+    @inputs.setter
+    def inputs(self, inputs):
+        """Sets the inputs of this TFModuleLiteDTO.
+
+        Input parameters for the module  # noqa: E501
+
+        :param inputs: The inputs of this TFModuleLiteDTO.  # noqa: E501
+        :type: dict(str, Input)
+        """
+
+        self._inputs = inputs
+
+    @property
     def source(self):
         """Gets the source of this TFModuleLiteDTO.  # noqa: E501
 
@@ -312,6 +263,73 @@ class TFModuleLiteDTO(object):
         self._source = source
 
     @property
+    def tags(self):
+        """Gets the tags of this TFModuleLiteDTO.  # noqa: E501
+
+        Tags associated with the module  # noqa: E501
+
+        :return: The tags of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this TFModuleLiteDTO.
+
+        Tags associated with the module  # noqa: E501
+
+        :param tags: The tags of this TFModuleLiteDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
+
+    @property
+    def allowed_test_projects(self):
+        """Gets the allowed_test_projects of this TFModuleLiteDTO.  # noqa: E501
+
+        List of test projects where this module will be available  # noqa: E501
+
+        :return: The allowed_test_projects of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._allowed_test_projects
+
+    @allowed_test_projects.setter
+    def allowed_test_projects(self, allowed_test_projects):
+        """Sets the allowed_test_projects of this TFModuleLiteDTO.
+
+        List of test projects where this module will be available  # noqa: E501
+
+        :param allowed_test_projects: The allowed_test_projects of this TFModuleLiteDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._allowed_test_projects = allowed_test_projects
+
+    @property
+    def id(self):
+        """Gets the id of this TFModuleLiteDTO.  # noqa: E501
+
+
+        :return: The id of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this TFModuleLiteDTO.
+
+
+        :param id: The id of this TFModuleLiteDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
     def stage(self):
         """Gets the stage of this TFModuleLiteDTO.  # noqa: E501
 
@@ -339,50 +357,32 @@ class TFModuleLiteDTO(object):
         self._stage = stage
 
     @property
-    def tags(self):
-        """Gets the tags of this TFModuleLiteDTO.  # noqa: E501
+    def iac_tool(self):
+        """Gets the iac_tool of this TFModuleLiteDTO.  # noqa: E501
 
-        Tags associated with the module  # noqa: E501
 
-        :return: The tags of this TFModuleLiteDTO.  # noqa: E501
+        :return: The iac_tool of this TFModuleLiteDTO.  # noqa: E501
         :rtype: list[str]
         """
-        return self._tags
+        return self._iac_tool
 
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this TFModuleLiteDTO.
+    @iac_tool.setter
+    def iac_tool(self, iac_tool):
+        """Sets the iac_tool of this TFModuleLiteDTO.
 
-        Tags associated with the module  # noqa: E501
 
-        :param tags: The tags of this TFModuleLiteDTO.  # noqa: E501
+        :param iac_tool: The iac_tool of this TFModuleLiteDTO.  # noqa: E501
         :type: list[str]
         """
+        allowed_values = ["TERRAFORM", "OPENTOFU"]  # noqa: E501
+        if not set(iac_tool).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `iac_tool` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(iac_tool) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
 
-        self._tags = tags
-
-    @property
-    def version(self):
-        """Gets the version of this TFModuleLiteDTO.  # noqa: E501
-
-        Version of the TF Module  # noqa: E501
-
-        :return: The version of this TFModuleLiteDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this TFModuleLiteDTO.
-
-        Version of the TF Module  # noqa: E501
-
-        :param version: The version of this TFModuleLiteDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
+        self._iac_tool = iac_tool
 
     def to_dict(self):
         """Returns the model properties as a dict"""

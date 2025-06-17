@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,104 +28,278 @@ class CreateBlueprintRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allowed_clouds': 'list[str]',
-        'branch': 'str',
-        'coder_account_id': 'str',
-        'description': 'str',
-        'git_ops_enabled': 'bool',
-        'github_account_id': 'str',
-        'github_organisation_name': 'str',
-        'is_imported_project': 'bool',
-        'mono_repo': 'bool',
         'name': 'str',
-        'primary_cloud': 'str',
-        'project_type_id': 'str',
-        'relative_path': 'str',
-        'repo_name': 'str',
-        'template': 'bool',
-        'template_id': 'str',
+        'github_account_id': 'str',
         'template_name': 'str',
-        'vcs_url': 'str'
+        'template_id': 'str',
+        'github_organisation_name': 'str',
+        'description': 'str',
+        'coder_account_id': 'str',
+        'primary_cloud': 'str',
+        'allowed_clouds': 'list[str]',
+        'relative_path': 'str',
+        'is_imported_project': 'bool',
+        'vcs_url': 'str',
+        'branch': 'str',
+        'repo_name': 'str',
+        'git_ops_enabled': 'bool',
+        'project_type_id': 'str',
+        'template': 'bool',
+        'mono_repo': 'bool'
     }
 
     attribute_map = {
-        'allowed_clouds': 'allowedClouds',
-        'branch': 'branch',
-        'coder_account_id': 'coderAccountId',
-        'description': 'description',
-        'git_ops_enabled': 'gitOpsEnabled',
-        'github_account_id': 'githubAccountId',
-        'github_organisation_name': 'githubOrganisationName',
-        'is_imported_project': 'isImportedProject',
-        'mono_repo': 'monoRepo',
         'name': 'name',
-        'primary_cloud': 'primaryCloud',
-        'project_type_id': 'projectTypeId',
-        'relative_path': 'relativePath',
-        'repo_name': 'repoName',
-        'template': 'template',
-        'template_id': 'templateId',
+        'github_account_id': 'githubAccountId',
         'template_name': 'templateName',
-        'vcs_url': 'vcsUrl'
+        'template_id': 'templateId',
+        'github_organisation_name': 'githubOrganisationName',
+        'description': 'description',
+        'coder_account_id': 'coderAccountId',
+        'primary_cloud': 'primaryCloud',
+        'allowed_clouds': 'allowedClouds',
+        'relative_path': 'relativePath',
+        'is_imported_project': 'isImportedProject',
+        'vcs_url': 'vcsUrl',
+        'branch': 'branch',
+        'repo_name': 'repoName',
+        'git_ops_enabled': 'gitOpsEnabled',
+        'project_type_id': 'projectTypeId',
+        'template': 'template',
+        'mono_repo': 'monoRepo'
     }
 
-    def __init__(self, allowed_clouds=None, branch=None, coder_account_id=None, description=None, git_ops_enabled=None, github_account_id=None, github_organisation_name=None, is_imported_project=None, mono_repo=None, name=None, primary_cloud=None, project_type_id=None, relative_path=None, repo_name=None, template=None, template_id=None, template_name=None, vcs_url=None):  # noqa: E501
+    def __init__(self, name=None, github_account_id=None, template_name=None, template_id=None, github_organisation_name=None, description=None, coder_account_id=None, primary_cloud=None, allowed_clouds=None, relative_path=None, is_imported_project=None, vcs_url=None, branch=None, repo_name=None, git_ops_enabled=None, project_type_id=None, template=None, mono_repo=None):  # noqa: E501
         """CreateBlueprintRequest - a model defined in Swagger"""  # noqa: E501
-        self._allowed_clouds = None
-        self._branch = None
-        self._coder_account_id = None
-        self._description = None
-        self._git_ops_enabled = None
-        self._github_account_id = None
-        self._github_organisation_name = None
-        self._is_imported_project = None
-        self._mono_repo = None
         self._name = None
-        self._primary_cloud = None
-        self._project_type_id = None
-        self._relative_path = None
-        self._repo_name = None
-        self._template = None
-        self._template_id = None
+        self._github_account_id = None
         self._template_name = None
+        self._template_id = None
+        self._github_organisation_name = None
+        self._description = None
+        self._coder_account_id = None
+        self._primary_cloud = None
+        self._allowed_clouds = None
+        self._relative_path = None
+        self._is_imported_project = None
         self._vcs_url = None
+        self._branch = None
+        self._repo_name = None
+        self._git_ops_enabled = None
+        self._project_type_id = None
+        self._template = None
+        self._mono_repo = None
         self.discriminator = None
-        if allowed_clouds is not None:
-            self.allowed_clouds = allowed_clouds
-        if branch is not None:
-            self.branch = branch
-        if coder_account_id is not None:
-            self.coder_account_id = coder_account_id
-        if description is not None:
-            self.description = description
-        if git_ops_enabled is not None:
-            self.git_ops_enabled = git_ops_enabled
-        if github_account_id is not None:
-            self.github_account_id = github_account_id
-        if github_organisation_name is not None:
-            self.github_organisation_name = github_organisation_name
-        if is_imported_project is not None:
-            self.is_imported_project = is_imported_project
-        if mono_repo is not None:
-            self.mono_repo = mono_repo
         if name is not None:
             self.name = name
-        if primary_cloud is not None:
-            self.primary_cloud = primary_cloud
-        if project_type_id is not None:
-            self.project_type_id = project_type_id
-        if relative_path is not None:
-            self.relative_path = relative_path
-        if repo_name is not None:
-            self.repo_name = repo_name
-        if template is not None:
-            self.template = template
-        if template_id is not None:
-            self.template_id = template_id
+        if github_account_id is not None:
+            self.github_account_id = github_account_id
         if template_name is not None:
             self.template_name = template_name
+        if template_id is not None:
+            self.template_id = template_id
+        if github_organisation_name is not None:
+            self.github_organisation_name = github_organisation_name
+        if description is not None:
+            self.description = description
+        if coder_account_id is not None:
+            self.coder_account_id = coder_account_id
+        if primary_cloud is not None:
+            self.primary_cloud = primary_cloud
+        if allowed_clouds is not None:
+            self.allowed_clouds = allowed_clouds
+        if relative_path is not None:
+            self.relative_path = relative_path
+        if is_imported_project is not None:
+            self.is_imported_project = is_imported_project
         if vcs_url is not None:
             self.vcs_url = vcs_url
+        if branch is not None:
+            self.branch = branch
+        if repo_name is not None:
+            self.repo_name = repo_name
+        if git_ops_enabled is not None:
+            self.git_ops_enabled = git_ops_enabled
+        if project_type_id is not None:
+            self.project_type_id = project_type_id
+        if template is not None:
+            self.template = template
+        if mono_repo is not None:
+            self.mono_repo = mono_repo
+
+    @property
+    def name(self):
+        """Gets the name of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The name of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this CreateBlueprintRequest.
+
+
+        :param name: The name of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
+    def github_account_id(self):
+        """Gets the github_account_id of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The github_account_id of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_account_id
+
+    @github_account_id.setter
+    def github_account_id(self, github_account_id):
+        """Sets the github_account_id of this CreateBlueprintRequest.
+
+
+        :param github_account_id: The github_account_id of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._github_account_id = github_account_id
+
+    @property
+    def template_name(self):
+        """Gets the template_name of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The template_name of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_name
+
+    @template_name.setter
+    def template_name(self, template_name):
+        """Sets the template_name of this CreateBlueprintRequest.
+
+
+        :param template_name: The template_name of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._template_name = template_name
+
+    @property
+    def template_id(self):
+        """Gets the template_id of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The template_id of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_id
+
+    @template_id.setter
+    def template_id(self, template_id):
+        """Sets the template_id of this CreateBlueprintRequest.
+
+
+        :param template_id: The template_id of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._template_id = template_id
+
+    @property
+    def github_organisation_name(self):
+        """Gets the github_organisation_name of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The github_organisation_name of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._github_organisation_name
+
+    @github_organisation_name.setter
+    def github_organisation_name(self, github_organisation_name):
+        """Sets the github_organisation_name of this CreateBlueprintRequest.
+
+
+        :param github_organisation_name: The github_organisation_name of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._github_organisation_name = github_organisation_name
+
+    @property
+    def description(self):
+        """Gets the description of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The description of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this CreateBlueprintRequest.
+
+
+        :param description: The description of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def coder_account_id(self):
+        """Gets the coder_account_id of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The coder_account_id of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._coder_account_id
+
+    @coder_account_id.setter
+    def coder_account_id(self, coder_account_id):
+        """Sets the coder_account_id of this CreateBlueprintRequest.
+
+
+        :param coder_account_id: The coder_account_id of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._coder_account_id = coder_account_id
+
+    @property
+    def primary_cloud(self):
+        """Gets the primary_cloud of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The primary_cloud of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._primary_cloud
+
+    @primary_cloud.setter
+    def primary_cloud(self, primary_cloud):
+        """Sets the primary_cloud of this CreateBlueprintRequest.
+
+
+        :param primary_cloud: The primary_cloud of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if primary_cloud not in allowed_values:
+            raise ValueError(
+                "Invalid value for `primary_cloud` ({0}), must be one of {1}"  # noqa: E501
+                .format(primary_cloud, allowed_values)
+            )
+
+        self._primary_cloud = primary_cloud
 
     @property
     def allowed_clouds(self):
@@ -156,130 +330,25 @@ class CreateBlueprintRequest(object):
         self._allowed_clouds = allowed_clouds
 
     @property
-    def branch(self):
-        """Gets the branch of this CreateBlueprintRequest.  # noqa: E501
+    def relative_path(self):
+        """Gets the relative_path of this CreateBlueprintRequest.  # noqa: E501
 
 
-        :return: The branch of this CreateBlueprintRequest.  # noqa: E501
+        :return: The relative_path of this CreateBlueprintRequest.  # noqa: E501
         :rtype: str
         """
-        return self._branch
+        return self._relative_path
 
-    @branch.setter
-    def branch(self, branch):
-        """Sets the branch of this CreateBlueprintRequest.
+    @relative_path.setter
+    def relative_path(self, relative_path):
+        """Sets the relative_path of this CreateBlueprintRequest.
 
 
-        :param branch: The branch of this CreateBlueprintRequest.  # noqa: E501
+        :param relative_path: The relative_path of this CreateBlueprintRequest.  # noqa: E501
         :type: str
         """
 
-        self._branch = branch
-
-    @property
-    def coder_account_id(self):
-        """Gets the coder_account_id of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The coder_account_id of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._coder_account_id
-
-    @coder_account_id.setter
-    def coder_account_id(self, coder_account_id):
-        """Sets the coder_account_id of this CreateBlueprintRequest.
-
-
-        :param coder_account_id: The coder_account_id of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._coder_account_id = coder_account_id
-
-    @property
-    def description(self):
-        """Gets the description of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The description of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this CreateBlueprintRequest.
-
-
-        :param description: The description of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def git_ops_enabled(self):
-        """Gets the git_ops_enabled of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The git_ops_enabled of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._git_ops_enabled
-
-    @git_ops_enabled.setter
-    def git_ops_enabled(self, git_ops_enabled):
-        """Sets the git_ops_enabled of this CreateBlueprintRequest.
-
-
-        :param git_ops_enabled: The git_ops_enabled of this CreateBlueprintRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._git_ops_enabled = git_ops_enabled
-
-    @property
-    def github_account_id(self):
-        """Gets the github_account_id of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The github_account_id of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._github_account_id
-
-    @github_account_id.setter
-    def github_account_id(self, github_account_id):
-        """Sets the github_account_id of this CreateBlueprintRequest.
-
-
-        :param github_account_id: The github_account_id of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._github_account_id = github_account_id
-
-    @property
-    def github_organisation_name(self):
-        """Gets the github_organisation_name of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The github_organisation_name of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._github_organisation_name
-
-    @github_organisation_name.setter
-    def github_organisation_name(self, github_organisation_name):
-        """Sets the github_organisation_name of this CreateBlueprintRequest.
-
-
-        :param github_organisation_name: The github_organisation_name of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._github_organisation_name = github_organisation_name
+        self._relative_path = relative_path
 
     @property
     def is_imported_project(self):
@@ -303,115 +372,46 @@ class CreateBlueprintRequest(object):
         self._is_imported_project = is_imported_project
 
     @property
-    def mono_repo(self):
-        """Gets the mono_repo of this CreateBlueprintRequest.  # noqa: E501
+    def vcs_url(self):
+        """Gets the vcs_url of this CreateBlueprintRequest.  # noqa: E501
 
 
-        :return: The mono_repo of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._mono_repo
-
-    @mono_repo.setter
-    def mono_repo(self, mono_repo):
-        """Sets the mono_repo of this CreateBlueprintRequest.
-
-
-        :param mono_repo: The mono_repo of this CreateBlueprintRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._mono_repo = mono_repo
-
-    @property
-    def name(self):
-        """Gets the name of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The name of this CreateBlueprintRequest.  # noqa: E501
+        :return: The vcs_url of this CreateBlueprintRequest.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._vcs_url
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this CreateBlueprintRequest.
+    @vcs_url.setter
+    def vcs_url(self, vcs_url):
+        """Sets the vcs_url of this CreateBlueprintRequest.
 
 
-        :param name: The name of this CreateBlueprintRequest.  # noqa: E501
+        :param vcs_url: The vcs_url of this CreateBlueprintRequest.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._vcs_url = vcs_url
 
     @property
-    def primary_cloud(self):
-        """Gets the primary_cloud of this CreateBlueprintRequest.  # noqa: E501
+    def branch(self):
+        """Gets the branch of this CreateBlueprintRequest.  # noqa: E501
 
 
-        :return: The primary_cloud of this CreateBlueprintRequest.  # noqa: E501
+        :return: The branch of this CreateBlueprintRequest.  # noqa: E501
         :rtype: str
         """
-        return self._primary_cloud
+        return self._branch
 
-    @primary_cloud.setter
-    def primary_cloud(self, primary_cloud):
-        """Sets the primary_cloud of this CreateBlueprintRequest.
-
-
-        :param primary_cloud: The primary_cloud of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if primary_cloud not in allowed_values:
-            raise ValueError(
-                "Invalid value for `primary_cloud` ({0}), must be one of {1}"  # noqa: E501
-                .format(primary_cloud, allowed_values)
-            )
-
-        self._primary_cloud = primary_cloud
-
-    @property
-    def project_type_id(self):
-        """Gets the project_type_id of this CreateBlueprintRequest.  # noqa: E501
+    @branch.setter
+    def branch(self, branch):
+        """Sets the branch of this CreateBlueprintRequest.
 
 
-        :return: The project_type_id of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._project_type_id
-
-    @project_type_id.setter
-    def project_type_id(self, project_type_id):
-        """Sets the project_type_id of this CreateBlueprintRequest.
-
-
-        :param project_type_id: The project_type_id of this CreateBlueprintRequest.  # noqa: E501
+        :param branch: The branch of this CreateBlueprintRequest.  # noqa: E501
         :type: str
         """
 
-        self._project_type_id = project_type_id
-
-    @property
-    def relative_path(self):
-        """Gets the relative_path of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The relative_path of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._relative_path
-
-    @relative_path.setter
-    def relative_path(self, relative_path):
-        """Sets the relative_path of this CreateBlueprintRequest.
-
-
-        :param relative_path: The relative_path of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._relative_path = relative_path
+        self._branch = branch
 
     @property
     def repo_name(self):
@@ -435,6 +435,48 @@ class CreateBlueprintRequest(object):
         self._repo_name = repo_name
 
     @property
+    def git_ops_enabled(self):
+        """Gets the git_ops_enabled of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The git_ops_enabled of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._git_ops_enabled
+
+    @git_ops_enabled.setter
+    def git_ops_enabled(self, git_ops_enabled):
+        """Sets the git_ops_enabled of this CreateBlueprintRequest.
+
+
+        :param git_ops_enabled: The git_ops_enabled of this CreateBlueprintRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._git_ops_enabled = git_ops_enabled
+
+    @property
+    def project_type_id(self):
+        """Gets the project_type_id of this CreateBlueprintRequest.  # noqa: E501
+
+
+        :return: The project_type_id of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._project_type_id
+
+    @project_type_id.setter
+    def project_type_id(self, project_type_id):
+        """Sets the project_type_id of this CreateBlueprintRequest.
+
+
+        :param project_type_id: The project_type_id of this CreateBlueprintRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._project_type_id = project_type_id
+
+    @property
     def template(self):
         """Gets the template of this CreateBlueprintRequest.  # noqa: E501
 
@@ -456,67 +498,25 @@ class CreateBlueprintRequest(object):
         self._template = template
 
     @property
-    def template_id(self):
-        """Gets the template_id of this CreateBlueprintRequest.  # noqa: E501
+    def mono_repo(self):
+        """Gets the mono_repo of this CreateBlueprintRequest.  # noqa: E501
 
 
-        :return: The template_id of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
+        :return: The mono_repo of this CreateBlueprintRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._template_id
+        return self._mono_repo
 
-    @template_id.setter
-    def template_id(self, template_id):
-        """Sets the template_id of this CreateBlueprintRequest.
-
-
-        :param template_id: The template_id of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._template_id = template_id
-
-    @property
-    def template_name(self):
-        """Gets the template_name of this CreateBlueprintRequest.  # noqa: E501
+    @mono_repo.setter
+    def mono_repo(self, mono_repo):
+        """Sets the mono_repo of this CreateBlueprintRequest.
 
 
-        :return: The template_name of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._template_name
-
-    @template_name.setter
-    def template_name(self, template_name):
-        """Sets the template_name of this CreateBlueprintRequest.
-
-
-        :param template_name: The template_name of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
+        :param mono_repo: The mono_repo of this CreateBlueprintRequest.  # noqa: E501
+        :type: bool
         """
 
-        self._template_name = template_name
-
-    @property
-    def vcs_url(self):
-        """Gets the vcs_url of this CreateBlueprintRequest.  # noqa: E501
-
-
-        :return: The vcs_url of this CreateBlueprintRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._vcs_url
-
-    @vcs_url.setter
-    def vcs_url(self, vcs_url):
-        """Sets the vcs_url of this CreateBlueprintRequest.
-
-
-        :param vcs_url: The vcs_url of this CreateBlueprintRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._vcs_url = vcs_url
+        self._mono_repo = mono_repo
 
     def to_dict(self):
         """Returns the model properties as a dict"""

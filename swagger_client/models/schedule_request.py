@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,97 @@ class ScheduleRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'by_day': 'list[str]',
-        'by_time': 'LocalTime',
         'frequency': 'str',
         'interval': 'int',
-        'pause_release_schedule': 'bool',
+        'by_day': 'list[str]',
+        'by_time': 'LocalTime',
         'release_type': 'str',
-        'time_zone': 'TimeZone'
+        'time_zone': 'MaintenanceWindowDTOTimeZone',
+        'pause_release_schedule': 'bool'
     }
 
     attribute_map = {
-        'by_day': 'byDay',
-        'by_time': 'byTime',
         'frequency': 'frequency',
         'interval': 'interval',
-        'pause_release_schedule': 'pauseReleaseSchedule',
+        'by_day': 'byDay',
+        'by_time': 'byTime',
         'release_type': 'releaseType',
-        'time_zone': 'timeZone'
+        'time_zone': 'timeZone',
+        'pause_release_schedule': 'pauseReleaseSchedule'
     }
 
-    def __init__(self, by_day=None, by_time=None, frequency=None, interval=None, pause_release_schedule=None, release_type=None, time_zone=None):  # noqa: E501
+    def __init__(self, frequency=None, interval=None, by_day=None, by_time=None, release_type=None, time_zone=None, pause_release_schedule=None):  # noqa: E501
         """ScheduleRequest - a model defined in Swagger"""  # noqa: E501
-        self._by_day = None
-        self._by_time = None
         self._frequency = None
         self._interval = None
-        self._pause_release_schedule = None
+        self._by_day = None
+        self._by_time = None
         self._release_type = None
         self._time_zone = None
+        self._pause_release_schedule = None
         self.discriminator = None
-        if by_day is not None:
-            self.by_day = by_day
-        if by_time is not None:
-            self.by_time = by_time
         if frequency is not None:
             self.frequency = frequency
         if interval is not None:
             self.interval = interval
-        if pause_release_schedule is not None:
-            self.pause_release_schedule = pause_release_schedule
+        if by_day is not None:
+            self.by_day = by_day
+        if by_time is not None:
+            self.by_time = by_time
         if release_type is not None:
             self.release_type = release_type
         if time_zone is not None:
             self.time_zone = time_zone
+        if pause_release_schedule is not None:
+            self.pause_release_schedule = pause_release_schedule
+
+    @property
+    def frequency(self):
+        """Gets the frequency of this ScheduleRequest.  # noqa: E501
+
+
+        :return: The frequency of this ScheduleRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._frequency
+
+    @frequency.setter
+    def frequency(self, frequency):
+        """Sets the frequency of this ScheduleRequest.
+
+
+        :param frequency: The frequency of this ScheduleRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["PER_MINUTE", "HOURLY", "DAILY", "WEEKLY"]  # noqa: E501
+        if frequency not in allowed_values:
+            raise ValueError(
+                "Invalid value for `frequency` ({0}), must be one of {1}"  # noqa: E501
+                .format(frequency, allowed_values)
+            )
+
+        self._frequency = frequency
+
+    @property
+    def interval(self):
+        """Gets the interval of this ScheduleRequest.  # noqa: E501
+
+
+        :return: The interval of this ScheduleRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._interval
+
+    @interval.setter
+    def interval(self, interval):
+        """Sets the interval of this ScheduleRequest.
+
+
+        :param interval: The interval of this ScheduleRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._interval = interval
 
     @property
     def by_day(self):
@@ -122,75 +170,6 @@ class ScheduleRequest(object):
         self._by_time = by_time
 
     @property
-    def frequency(self):
-        """Gets the frequency of this ScheduleRequest.  # noqa: E501
-
-
-        :return: The frequency of this ScheduleRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._frequency
-
-    @frequency.setter
-    def frequency(self, frequency):
-        """Sets the frequency of this ScheduleRequest.
-
-
-        :param frequency: The frequency of this ScheduleRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["PER_MINUTE", "HOURLY", "DAILY", "WEEKLY"]  # noqa: E501
-        if frequency not in allowed_values:
-            raise ValueError(
-                "Invalid value for `frequency` ({0}), must be one of {1}"  # noqa: E501
-                .format(frequency, allowed_values)
-            )
-
-        self._frequency = frequency
-
-    @property
-    def interval(self):
-        """Gets the interval of this ScheduleRequest.  # noqa: E501
-
-
-        :return: The interval of this ScheduleRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._interval
-
-    @interval.setter
-    def interval(self, interval):
-        """Sets the interval of this ScheduleRequest.
-
-
-        :param interval: The interval of this ScheduleRequest.  # noqa: E501
-        :type: int
-        """
-
-        self._interval = interval
-
-    @property
-    def pause_release_schedule(self):
-        """Gets the pause_release_schedule of this ScheduleRequest.  # noqa: E501
-
-
-        :return: The pause_release_schedule of this ScheduleRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._pause_release_schedule
-
-    @pause_release_schedule.setter
-    def pause_release_schedule(self, pause_release_schedule):
-        """Sets the pause_release_schedule of this ScheduleRequest.
-
-
-        :param pause_release_schedule: The pause_release_schedule of this ScheduleRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._pause_release_schedule = pause_release_schedule
-
-    @property
     def release_type(self):
         """Gets the release_type of this ScheduleRequest.  # noqa: E501
 
@@ -223,7 +202,7 @@ class ScheduleRequest(object):
 
 
         :return: The time_zone of this ScheduleRequest.  # noqa: E501
-        :rtype: TimeZone
+        :rtype: MaintenanceWindowDTOTimeZone
         """
         return self._time_zone
 
@@ -233,10 +212,31 @@ class ScheduleRequest(object):
 
 
         :param time_zone: The time_zone of this ScheduleRequest.  # noqa: E501
-        :type: TimeZone
+        :type: MaintenanceWindowDTOTimeZone
         """
 
         self._time_zone = time_zone
+
+    @property
+    def pause_release_schedule(self):
+        """Gets the pause_release_schedule of this ScheduleRequest.  # noqa: E501
+
+
+        :return: The pause_release_schedule of this ScheduleRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pause_release_schedule
+
+    @pause_release_schedule.setter
+    def pause_release_schedule(self, pause_release_schedule):
+        """Sets the pause_release_schedule of this ScheduleRequest.
+
+
+        :param pause_release_schedule: The pause_release_schedule of this ScheduleRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._pause_release_schedule = pause_release_schedule
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,136 @@ class CustomerOnboardRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'azs': 'list[str]',
         'customer_name': 'str',
         'external_id': 'str',
-        'region': 'str',
-        'release_stream': 'str',
         'role_arn': 'str',
+        'region': 'str',
+        'azs': 'list[str]',
+        'release_stream': 'str',
         'timezone': 'str'
     }
 
     attribute_map = {
-        'azs': 'azs',
         'customer_name': 'customerName',
         'external_id': 'externalId',
-        'region': 'region',
-        'release_stream': 'releaseStream',
         'role_arn': 'roleARN',
+        'region': 'region',
+        'azs': 'azs',
+        'release_stream': 'releaseStream',
         'timezone': 'timezone'
     }
 
-    def __init__(self, azs=None, customer_name=None, external_id=None, region=None, release_stream=None, role_arn=None, timezone=None):  # noqa: E501
+    def __init__(self, customer_name=None, external_id=None, role_arn=None, region=None, azs=None, release_stream=None, timezone=None):  # noqa: E501
         """CustomerOnboardRequest - a model defined in Swagger"""  # noqa: E501
-        self._azs = None
         self._customer_name = None
         self._external_id = None
-        self._region = None
-        self._release_stream = None
         self._role_arn = None
+        self._region = None
+        self._azs = None
+        self._release_stream = None
         self._timezone = None
         self.discriminator = None
+        self.customer_name = customer_name
+        self.external_id = external_id
+        self.role_arn = role_arn
+        self.region = region
         if azs is not None:
             self.azs = azs
-        if customer_name is not None:
-            self.customer_name = customer_name
-        if external_id is not None:
-            self.external_id = external_id
-        if region is not None:
-            self.region = region
-        if release_stream is not None:
-            self.release_stream = release_stream
-        if role_arn is not None:
-            self.role_arn = role_arn
+        self.release_stream = release_stream
         if timezone is not None:
             self.timezone = timezone
+
+    @property
+    def customer_name(self):
+        """Gets the customer_name of this CustomerOnboardRequest.  # noqa: E501
+
+
+        :return: The customer_name of this CustomerOnboardRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._customer_name
+
+    @customer_name.setter
+    def customer_name(self, customer_name):
+        """Sets the customer_name of this CustomerOnboardRequest.
+
+
+        :param customer_name: The customer_name of this CustomerOnboardRequest.  # noqa: E501
+        :type: str
+        """
+        if customer_name is None:
+            raise ValueError("Invalid value for `customer_name`, must not be `None`")  # noqa: E501
+
+        self._customer_name = customer_name
+
+    @property
+    def external_id(self):
+        """Gets the external_id of this CustomerOnboardRequest.  # noqa: E501
+
+
+        :return: The external_id of this CustomerOnboardRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id):
+        """Sets the external_id of this CustomerOnboardRequest.
+
+
+        :param external_id: The external_id of this CustomerOnboardRequest.  # noqa: E501
+        :type: str
+        """
+        if external_id is None:
+            raise ValueError("Invalid value for `external_id`, must not be `None`")  # noqa: E501
+
+        self._external_id = external_id
+
+    @property
+    def role_arn(self):
+        """Gets the role_arn of this CustomerOnboardRequest.  # noqa: E501
+
+
+        :return: The role_arn of this CustomerOnboardRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._role_arn
+
+    @role_arn.setter
+    def role_arn(self, role_arn):
+        """Sets the role_arn of this CustomerOnboardRequest.
+
+
+        :param role_arn: The role_arn of this CustomerOnboardRequest.  # noqa: E501
+        :type: str
+        """
+        if role_arn is None:
+            raise ValueError("Invalid value for `role_arn`, must not be `None`")  # noqa: E501
+
+        self._role_arn = role_arn
+
+    @property
+    def region(self):
+        """Gets the region of this CustomerOnboardRequest.  # noqa: E501
+
+
+        :return: The region of this CustomerOnboardRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this CustomerOnboardRequest.
+
+
+        :param region: The region of this CustomerOnboardRequest.  # noqa: E501
+        :type: str
+        """
+        if region is None:
+            raise ValueError("Invalid value for `region`, must not be `None`")  # noqa: E501
+
+        self._region = region
 
     @property
     def azs(self):
@@ -94,69 +181,6 @@ class CustomerOnboardRequest(object):
         self._azs = azs
 
     @property
-    def customer_name(self):
-        """Gets the customer_name of this CustomerOnboardRequest.  # noqa: E501
-
-
-        :return: The customer_name of this CustomerOnboardRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._customer_name
-
-    @customer_name.setter
-    def customer_name(self, customer_name):
-        """Sets the customer_name of this CustomerOnboardRequest.
-
-
-        :param customer_name: The customer_name of this CustomerOnboardRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._customer_name = customer_name
-
-    @property
-    def external_id(self):
-        """Gets the external_id of this CustomerOnboardRequest.  # noqa: E501
-
-
-        :return: The external_id of this CustomerOnboardRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_id
-
-    @external_id.setter
-    def external_id(self, external_id):
-        """Sets the external_id of this CustomerOnboardRequest.
-
-
-        :param external_id: The external_id of this CustomerOnboardRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._external_id = external_id
-
-    @property
-    def region(self):
-        """Gets the region of this CustomerOnboardRequest.  # noqa: E501
-
-
-        :return: The region of this CustomerOnboardRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._region
-
-    @region.setter
-    def region(self, region):
-        """Sets the region of this CustomerOnboardRequest.
-
-
-        :param region: The region of this CustomerOnboardRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._region = region
-
-    @property
     def release_stream(self):
         """Gets the release_stream of this CustomerOnboardRequest.  # noqa: E501
 
@@ -174,29 +198,10 @@ class CustomerOnboardRequest(object):
         :param release_stream: The release_stream of this CustomerOnboardRequest.  # noqa: E501
         :type: str
         """
+        if release_stream is None:
+            raise ValueError("Invalid value for `release_stream`, must not be `None`")  # noqa: E501
 
         self._release_stream = release_stream
-
-    @property
-    def role_arn(self):
-        """Gets the role_arn of this CustomerOnboardRequest.  # noqa: E501
-
-
-        :return: The role_arn of this CustomerOnboardRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._role_arn
-
-    @role_arn.setter
-    def role_arn(self, role_arn):
-        """Sets the role_arn of this CustomerOnboardRequest.
-
-
-        :param role_arn: The role_arn of this CustomerOnboardRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._role_arn = role_arn
 
     @property
     def timezone(self):

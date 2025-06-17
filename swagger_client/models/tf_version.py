@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,54 @@ class TfVersion(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'last_modified': 'datetime',
+        'tf_stream': 'str',
         'major_version': 'int',
         'minor_version': 'str',
-        'tf_stream': 'str'
+        'last_modified': 'datetime'
     }
 
     attribute_map = {
-        'last_modified': 'lastModified',
+        'tf_stream': 'tfStream',
         'major_version': 'majorVersion',
         'minor_version': 'minorVersion',
-        'tf_stream': 'tfStream'
+        'last_modified': 'lastModified'
     }
 
-    def __init__(self, last_modified=None, major_version=None, minor_version=None, tf_stream=None):  # noqa: E501
+    def __init__(self, tf_stream=None, major_version=None, minor_version=None, last_modified=None):  # noqa: E501
         """TfVersion - a model defined in Swagger"""  # noqa: E501
-        self._last_modified = None
+        self._tf_stream = None
         self._major_version = None
         self._minor_version = None
-        self._tf_stream = None
+        self._last_modified = None
         self.discriminator = None
+        self.tf_stream = tf_stream
+        self.major_version = major_version
+        self.minor_version = minor_version
         if last_modified is not None:
             self.last_modified = last_modified
-        if major_version is not None:
-            self.major_version = major_version
-        if minor_version is not None:
-            self.minor_version = minor_version
-        if tf_stream is not None:
-            self.tf_stream = tf_stream
 
     @property
-    def last_modified(self):
-        """Gets the last_modified of this TfVersion.  # noqa: E501
+    def tf_stream(self):
+        """Gets the tf_stream of this TfVersion.  # noqa: E501
 
 
-        :return: The last_modified of this TfVersion.  # noqa: E501
-        :rtype: datetime
+        :return: The tf_stream of this TfVersion.  # noqa: E501
+        :rtype: str
         """
-        return self._last_modified
+        return self._tf_stream
 
-    @last_modified.setter
-    def last_modified(self, last_modified):
-        """Sets the last_modified of this TfVersion.
+    @tf_stream.setter
+    def tf_stream(self, tf_stream):
+        """Sets the tf_stream of this TfVersion.
 
 
-        :param last_modified: The last_modified of this TfVersion.  # noqa: E501
-        :type: datetime
+        :param tf_stream: The tf_stream of this TfVersion.  # noqa: E501
+        :type: str
         """
+        if tf_stream is None:
+            raise ValueError("Invalid value for `tf_stream`, must not be `None`")  # noqa: E501
 
-        self._last_modified = last_modified
+        self._tf_stream = tf_stream
 
     @property
     def major_version(self):
@@ -96,6 +95,8 @@ class TfVersion(object):
         :param major_version: The major_version of this TfVersion.  # noqa: E501
         :type: int
         """
+        if major_version is None:
+            raise ValueError("Invalid value for `major_version`, must not be `None`")  # noqa: E501
 
         self._major_version = major_version
 
@@ -119,29 +120,31 @@ class TfVersion(object):
         :param minor_version: The minor_version of this TfVersion.  # noqa: E501
         :type: str
         """
+        if minor_version is None:
+            raise ValueError("Invalid value for `minor_version`, must not be `None`")  # noqa: E501
 
         self._minor_version = minor_version
 
     @property
-    def tf_stream(self):
-        """Gets the tf_stream of this TfVersion.  # noqa: E501
+    def last_modified(self):
+        """Gets the last_modified of this TfVersion.  # noqa: E501
 
 
-        :return: The tf_stream of this TfVersion.  # noqa: E501
-        :rtype: str
+        :return: The last_modified of this TfVersion.  # noqa: E501
+        :rtype: datetime
         """
-        return self._tf_stream
+        return self._last_modified
 
-    @tf_stream.setter
-    def tf_stream(self, tf_stream):
-        """Sets the tf_stream of this TfVersion.
+    @last_modified.setter
+    def last_modified(self, last_modified):
+        """Sets the last_modified of this TfVersion.
 
 
-        :param tf_stream: The tf_stream of this TfVersion.  # noqa: E501
-        :type: str
+        :param last_modified: The last_modified of this TfVersion.  # noqa: E501
+        :type: datetime
         """
 
-        self._tf_stream = tf_stream
+        self._last_modified = last_modified
 
     def to_dict(self):
         """Returns the model properties as a dict"""

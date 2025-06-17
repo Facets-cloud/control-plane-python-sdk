@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,49 +28,70 @@ class Input(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'type': 'str',
         'adds_capability': 'bool',
-        'block_edits': 'bool',
-        'default_resource': 'InputOutputResource',
+        'optional': 'bool',
         'description': 'str',
         'display_name': 'str',
-        'optional': 'bool',
-        'type': 'str'
+        'default_resource': 'InputOutputResource',
+        'block_edits': 'bool'
     }
 
     attribute_map = {
+        'type': 'type',
         'adds_capability': 'addsCapability',
-        'block_edits': 'blockEdits',
-        'default_resource': 'defaultResource',
+        'optional': 'optional',
         'description': 'description',
         'display_name': 'displayName',
-        'optional': 'optional',
-        'type': 'type'
+        'default_resource': 'defaultResource',
+        'block_edits': 'blockEdits'
     }
 
-    def __init__(self, adds_capability=None, block_edits=None, default_resource=None, description=None, display_name=None, optional=None, type=None):  # noqa: E501
+    def __init__(self, type=None, adds_capability=None, optional=None, description=None, display_name=None, default_resource=None, block_edits=None):  # noqa: E501
         """Input - a model defined in Swagger"""  # noqa: E501
+        self._type = None
         self._adds_capability = None
-        self._block_edits = None
-        self._default_resource = None
+        self._optional = None
         self._description = None
         self._display_name = None
-        self._optional = None
-        self._type = None
+        self._default_resource = None
+        self._block_edits = None
         self.discriminator = None
+        if type is not None:
+            self.type = type
         if adds_capability is not None:
             self.adds_capability = adds_capability
-        if block_edits is not None:
-            self.block_edits = block_edits
-        if default_resource is not None:
-            self.default_resource = default_resource
+        if optional is not None:
+            self.optional = optional
         if description is not None:
             self.description = description
         if display_name is not None:
             self.display_name = display_name
-        if optional is not None:
-            self.optional = optional
-        if type is not None:
-            self.type = type
+        if default_resource is not None:
+            self.default_resource = default_resource
+        if block_edits is not None:
+            self.block_edits = block_edits
+
+    @property
+    def type(self):
+        """Gets the type of this Input.  # noqa: E501
+
+
+        :return: The type of this Input.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Input.
+
+
+        :param type: The type of this Input.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     @property
     def adds_capability(self):
@@ -94,46 +115,25 @@ class Input(object):
         self._adds_capability = adds_capability
 
     @property
-    def block_edits(self):
-        """Gets the block_edits of this Input.  # noqa: E501
+    def optional(self):
+        """Gets the optional of this Input.  # noqa: E501
 
 
-        :return: The block_edits of this Input.  # noqa: E501
+        :return: The optional of this Input.  # noqa: E501
         :rtype: bool
         """
-        return self._block_edits
+        return self._optional
 
-    @block_edits.setter
-    def block_edits(self, block_edits):
-        """Sets the block_edits of this Input.
+    @optional.setter
+    def optional(self, optional):
+        """Sets the optional of this Input.
 
 
-        :param block_edits: The block_edits of this Input.  # noqa: E501
+        :param optional: The optional of this Input.  # noqa: E501
         :type: bool
         """
 
-        self._block_edits = block_edits
-
-    @property
-    def default_resource(self):
-        """Gets the default_resource of this Input.  # noqa: E501
-
-
-        :return: The default_resource of this Input.  # noqa: E501
-        :rtype: InputOutputResource
-        """
-        return self._default_resource
-
-    @default_resource.setter
-    def default_resource(self, default_resource):
-        """Sets the default_resource of this Input.
-
-
-        :param default_resource: The default_resource of this Input.  # noqa: E501
-        :type: InputOutputResource
-        """
-
-        self._default_resource = default_resource
+        self._optional = optional
 
     @property
     def description(self):
@@ -178,46 +178,46 @@ class Input(object):
         self._display_name = display_name
 
     @property
-    def optional(self):
-        """Gets the optional of this Input.  # noqa: E501
+    def default_resource(self):
+        """Gets the default_resource of this Input.  # noqa: E501
 
 
-        :return: The optional of this Input.  # noqa: E501
+        :return: The default_resource of this Input.  # noqa: E501
+        :rtype: InputOutputResource
+        """
+        return self._default_resource
+
+    @default_resource.setter
+    def default_resource(self, default_resource):
+        """Sets the default_resource of this Input.
+
+
+        :param default_resource: The default_resource of this Input.  # noqa: E501
+        :type: InputOutputResource
+        """
+
+        self._default_resource = default_resource
+
+    @property
+    def block_edits(self):
+        """Gets the block_edits of this Input.  # noqa: E501
+
+
+        :return: The block_edits of this Input.  # noqa: E501
         :rtype: bool
         """
-        return self._optional
+        return self._block_edits
 
-    @optional.setter
-    def optional(self, optional):
-        """Sets the optional of this Input.
+    @block_edits.setter
+    def block_edits(self, block_edits):
+        """Sets the block_edits of this Input.
 
 
-        :param optional: The optional of this Input.  # noqa: E501
+        :param block_edits: The block_edits of this Input.  # noqa: E501
         :type: bool
         """
 
-        self._optional = optional
-
-    @property
-    def type(self):
-        """Gets the type of this Input.  # noqa: E501
-
-
-        :return: The type of this Input.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this Input.
-
-
-        :param type: The type of this Input.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
+        self._block_edits = block_edits
 
     def to_dict(self):
         """Returns the model properties as a dict"""

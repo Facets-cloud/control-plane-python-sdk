@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,357 +28,210 @@ class DeploymentLog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'allow_destroy': 'bool',
-        'app_deployments': 'list[AppDeployment]',
-        'approved_release_id': 'str',
-        'changes_applied': 'list[TerraformChange]',
-        'codebuild_id': 'str',
-        'created_on': 'datetime',
-        'deployment_context_file_path': 'str',
-        'deployment_context_version': 'str',
-        'deployment_job_type': 'str',
-        'deployment_type': 'str',
-        'description': 'str',
-        'error_logs': 'list[RawError]',
-        'finished_on': 'datetime',
-        'force_release': 'bool',
-        'hotfix_resources': 'list[FacetsResource]',
         'id': 'str',
-        'integration_test': 'bool',
-        'is_destroy': 'bool',
-        'migration_scripts_run': 'list[MigrationScriptMetadata]',
-        'override_build_steps': 'list[str]',
-        'parallel_release': 'bool',
-        'release_comment': 'str',
-        'release_reviewed_by': 'str',
-        'release_trace_id': 'str',
-        'release_type': 'str',
-        'rollback_deployment_id': 'str',
-        'signed_off': 'bool',
-        'stack_version': 'str',
-        'status': 'str',
-        'tf_version': 'str',
+        'deployment_job_type': 'str',
+        'codebuild_id': 'str',
+        'description': 'str',
+        'created_on': 'datetime',
+        'finished_on': 'datetime',
         'time_taken_in_seconds': 'int',
+        'release_type': 'str',
+        'status': 'str',
+        'changes_applied': 'list[TerraformChange]',
+        'app_deployments': 'list[AppDeployment]',
+        'migration_scripts_run': 'list[MigrationScriptMetadata]',
+        'error_logs': 'list[RawError]',
+        'deployment_type': 'str',
+        'stack_version': 'str',
+        'tf_version': 'str',
+        'signed_off': 'bool',
+        'deployment_context_version': 'str',
         'triggered_by': 'str',
-        'validation_responses': 'list[ValidationResponse]',
+        'override_build_steps': 'list[str]',
+        'integration_test': 'bool',
+        'with_refresh': 'bool',
+        'is_destroy': 'bool',
+        'allow_destroy': 'bool',
+        'force_release': 'bool',
         'validation_result': 'ValidationResult',
-        'with_refresh': 'bool'
+        'deployment_context_file_path': 'str',
+        'release_comment': 'str',
+        'hotfix_resources': 'list[FacetsResource]',
+        'release_reviewed_by': 'str',
+        'approved_release_id': 'str',
+        'validation_responses': 'list[ValidationResponse]',
+        'release_trace_id': 'str',
+        'rollback_deployment_id': 'str',
+        'parallel_release': 'bool'
     }
 
     attribute_map = {
-        'allow_destroy': 'allowDestroy',
-        'app_deployments': 'appDeployments',
-        'approved_release_id': 'approvedReleaseId',
-        'changes_applied': 'changesApplied',
-        'codebuild_id': 'codebuildId',
-        'created_on': 'createdOn',
-        'deployment_context_file_path': 'deploymentContextFilePath',
-        'deployment_context_version': 'deploymentContextVersion',
-        'deployment_job_type': 'deploymentJobType',
-        'deployment_type': 'deploymentType',
-        'description': 'description',
-        'error_logs': 'errorLogs',
-        'finished_on': 'finishedOn',
-        'force_release': 'forceRelease',
-        'hotfix_resources': 'hotfixResources',
         'id': 'id',
-        'integration_test': 'integrationTest',
-        'is_destroy': 'isDestroy',
-        'migration_scripts_run': 'migrationScriptsRun',
-        'override_build_steps': 'overrideBuildSteps',
-        'parallel_release': 'parallelRelease',
-        'release_comment': 'releaseComment',
-        'release_reviewed_by': 'releaseReviewedBy',
-        'release_trace_id': 'releaseTraceId',
-        'release_type': 'releaseType',
-        'rollback_deployment_id': 'rollbackDeploymentId',
-        'signed_off': 'signedOff',
-        'stack_version': 'stackVersion',
-        'status': 'status',
-        'tf_version': 'tfVersion',
+        'deployment_job_type': 'deploymentJobType',
+        'codebuild_id': 'codebuildId',
+        'description': 'description',
+        'created_on': 'createdOn',
+        'finished_on': 'finishedOn',
         'time_taken_in_seconds': 'timeTakenInSeconds',
+        'release_type': 'releaseType',
+        'status': 'status',
+        'changes_applied': 'changesApplied',
+        'app_deployments': 'appDeployments',
+        'migration_scripts_run': 'migrationScriptsRun',
+        'error_logs': 'errorLogs',
+        'deployment_type': 'deploymentType',
+        'stack_version': 'stackVersion',
+        'tf_version': 'tfVersion',
+        'signed_off': 'signedOff',
+        'deployment_context_version': 'deploymentContextVersion',
         'triggered_by': 'triggeredBy',
-        'validation_responses': 'validationResponses',
+        'override_build_steps': 'overrideBuildSteps',
+        'integration_test': 'integrationTest',
+        'with_refresh': 'withRefresh',
+        'is_destroy': 'isDestroy',
+        'allow_destroy': 'allowDestroy',
+        'force_release': 'forceRelease',
         'validation_result': 'validationResult',
-        'with_refresh': 'withRefresh'
+        'deployment_context_file_path': 'deploymentContextFilePath',
+        'release_comment': 'releaseComment',
+        'hotfix_resources': 'hotfixResources',
+        'release_reviewed_by': 'releaseReviewedBy',
+        'approved_release_id': 'approvedReleaseId',
+        'validation_responses': 'validationResponses',
+        'release_trace_id': 'releaseTraceId',
+        'rollback_deployment_id': 'rollbackDeploymentId',
+        'parallel_release': 'parallelRelease'
     }
 
-    def __init__(self, allow_destroy=None, app_deployments=None, approved_release_id=None, changes_applied=None, codebuild_id=None, created_on=None, deployment_context_file_path=None, deployment_context_version=None, deployment_job_type=None, deployment_type=None, description=None, error_logs=None, finished_on=None, force_release=None, hotfix_resources=None, id=None, integration_test=None, is_destroy=None, migration_scripts_run=None, override_build_steps=None, parallel_release=None, release_comment=None, release_reviewed_by=None, release_trace_id=None, release_type=None, rollback_deployment_id=None, signed_off=None, stack_version=None, status=None, tf_version=None, time_taken_in_seconds=None, triggered_by=None, validation_responses=None, validation_result=None, with_refresh=None):  # noqa: E501
+    def __init__(self, id=None, deployment_job_type=None, codebuild_id=None, description=None, created_on=None, finished_on=None, time_taken_in_seconds=None, release_type=None, status=None, changes_applied=None, app_deployments=None, migration_scripts_run=None, error_logs=None, deployment_type=None, stack_version=None, tf_version=None, signed_off=None, deployment_context_version=None, triggered_by=None, override_build_steps=None, integration_test=None, with_refresh=None, is_destroy=None, allow_destroy=None, force_release=None, validation_result=None, deployment_context_file_path=None, release_comment=None, hotfix_resources=None, release_reviewed_by=None, approved_release_id=None, validation_responses=None, release_trace_id=None, rollback_deployment_id=None, parallel_release=None):  # noqa: E501
         """DeploymentLog - a model defined in Swagger"""  # noqa: E501
-        self._allow_destroy = None
-        self._app_deployments = None
-        self._approved_release_id = None
-        self._changes_applied = None
-        self._codebuild_id = None
-        self._created_on = None
-        self._deployment_context_file_path = None
-        self._deployment_context_version = None
-        self._deployment_job_type = None
-        self._deployment_type = None
-        self._description = None
-        self._error_logs = None
-        self._finished_on = None
-        self._force_release = None
-        self._hotfix_resources = None
         self._id = None
-        self._integration_test = None
-        self._is_destroy = None
-        self._migration_scripts_run = None
-        self._override_build_steps = None
-        self._parallel_release = None
-        self._release_comment = None
-        self._release_reviewed_by = None
-        self._release_trace_id = None
-        self._release_type = None
-        self._rollback_deployment_id = None
-        self._signed_off = None
-        self._stack_version = None
-        self._status = None
-        self._tf_version = None
+        self._deployment_job_type = None
+        self._codebuild_id = None
+        self._description = None
+        self._created_on = None
+        self._finished_on = None
         self._time_taken_in_seconds = None
+        self._release_type = None
+        self._status = None
+        self._changes_applied = None
+        self._app_deployments = None
+        self._migration_scripts_run = None
+        self._error_logs = None
+        self._deployment_type = None
+        self._stack_version = None
+        self._tf_version = None
+        self._signed_off = None
+        self._deployment_context_version = None
         self._triggered_by = None
-        self._validation_responses = None
-        self._validation_result = None
+        self._override_build_steps = None
+        self._integration_test = None
         self._with_refresh = None
+        self._is_destroy = None
+        self._allow_destroy = None
+        self._force_release = None
+        self._validation_result = None
+        self._deployment_context_file_path = None
+        self._release_comment = None
+        self._hotfix_resources = None
+        self._release_reviewed_by = None
+        self._approved_release_id = None
+        self._validation_responses = None
+        self._release_trace_id = None
+        self._rollback_deployment_id = None
+        self._parallel_release = None
         self.discriminator = None
-        if allow_destroy is not None:
-            self.allow_destroy = allow_destroy
-        if app_deployments is not None:
-            self.app_deployments = app_deployments
-        if approved_release_id is not None:
-            self.approved_release_id = approved_release_id
-        if changes_applied is not None:
-            self.changes_applied = changes_applied
-        if codebuild_id is not None:
-            self.codebuild_id = codebuild_id
-        if created_on is not None:
-            self.created_on = created_on
-        if deployment_context_file_path is not None:
-            self.deployment_context_file_path = deployment_context_file_path
-        if deployment_context_version is not None:
-            self.deployment_context_version = deployment_context_version
-        if deployment_job_type is not None:
-            self.deployment_job_type = deployment_job_type
-        if deployment_type is not None:
-            self.deployment_type = deployment_type
-        if description is not None:
-            self.description = description
-        if error_logs is not None:
-            self.error_logs = error_logs
-        if finished_on is not None:
-            self.finished_on = finished_on
-        if force_release is not None:
-            self.force_release = force_release
-        if hotfix_resources is not None:
-            self.hotfix_resources = hotfix_resources
         if id is not None:
             self.id = id
-        if integration_test is not None:
-            self.integration_test = integration_test
-        if is_destroy is not None:
-            self.is_destroy = is_destroy
-        if migration_scripts_run is not None:
-            self.migration_scripts_run = migration_scripts_run
-        if override_build_steps is not None:
-            self.override_build_steps = override_build_steps
-        if parallel_release is not None:
-            self.parallel_release = parallel_release
-        if release_comment is not None:
-            self.release_comment = release_comment
-        if release_reviewed_by is not None:
-            self.release_reviewed_by = release_reviewed_by
-        if release_trace_id is not None:
-            self.release_trace_id = release_trace_id
-        if release_type is not None:
-            self.release_type = release_type
-        if rollback_deployment_id is not None:
-            self.rollback_deployment_id = rollback_deployment_id
-        if signed_off is not None:
-            self.signed_off = signed_off
-        if stack_version is not None:
-            self.stack_version = stack_version
-        if status is not None:
-            self.status = status
-        if tf_version is not None:
-            self.tf_version = tf_version
+        if deployment_job_type is not None:
+            self.deployment_job_type = deployment_job_type
+        if codebuild_id is not None:
+            self.codebuild_id = codebuild_id
+        if description is not None:
+            self.description = description
+        if created_on is not None:
+            self.created_on = created_on
+        if finished_on is not None:
+            self.finished_on = finished_on
         if time_taken_in_seconds is not None:
             self.time_taken_in_seconds = time_taken_in_seconds
+        if release_type is not None:
+            self.release_type = release_type
+        if status is not None:
+            self.status = status
+        if changes_applied is not None:
+            self.changes_applied = changes_applied
+        if app_deployments is not None:
+            self.app_deployments = app_deployments
+        if migration_scripts_run is not None:
+            self.migration_scripts_run = migration_scripts_run
+        if error_logs is not None:
+            self.error_logs = error_logs
+        if deployment_type is not None:
+            self.deployment_type = deployment_type
+        if stack_version is not None:
+            self.stack_version = stack_version
+        if tf_version is not None:
+            self.tf_version = tf_version
+        if signed_off is not None:
+            self.signed_off = signed_off
+        if deployment_context_version is not None:
+            self.deployment_context_version = deployment_context_version
         if triggered_by is not None:
             self.triggered_by = triggered_by
-        if validation_responses is not None:
-            self.validation_responses = validation_responses
-        if validation_result is not None:
-            self.validation_result = validation_result
+        if override_build_steps is not None:
+            self.override_build_steps = override_build_steps
+        if integration_test is not None:
+            self.integration_test = integration_test
         if with_refresh is not None:
             self.with_refresh = with_refresh
+        if is_destroy is not None:
+            self.is_destroy = is_destroy
+        if allow_destroy is not None:
+            self.allow_destroy = allow_destroy
+        if force_release is not None:
+            self.force_release = force_release
+        if validation_result is not None:
+            self.validation_result = validation_result
+        if deployment_context_file_path is not None:
+            self.deployment_context_file_path = deployment_context_file_path
+        if release_comment is not None:
+            self.release_comment = release_comment
+        if hotfix_resources is not None:
+            self.hotfix_resources = hotfix_resources
+        if release_reviewed_by is not None:
+            self.release_reviewed_by = release_reviewed_by
+        if approved_release_id is not None:
+            self.approved_release_id = approved_release_id
+        if validation_responses is not None:
+            self.validation_responses = validation_responses
+        if release_trace_id is not None:
+            self.release_trace_id = release_trace_id
+        if rollback_deployment_id is not None:
+            self.rollback_deployment_id = rollback_deployment_id
+        if parallel_release is not None:
+            self.parallel_release = parallel_release
 
     @property
-    def allow_destroy(self):
-        """Gets the allow_destroy of this DeploymentLog.  # noqa: E501
+    def id(self):
+        """Gets the id of this DeploymentLog.  # noqa: E501
 
 
-        :return: The allow_destroy of this DeploymentLog.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_destroy
-
-    @allow_destroy.setter
-    def allow_destroy(self, allow_destroy):
-        """Sets the allow_destroy of this DeploymentLog.
-
-
-        :param allow_destroy: The allow_destroy of this DeploymentLog.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_destroy = allow_destroy
-
-    @property
-    def app_deployments(self):
-        """Gets the app_deployments of this DeploymentLog.  # noqa: E501
-
-
-        :return: The app_deployments of this DeploymentLog.  # noqa: E501
-        :rtype: list[AppDeployment]
-        """
-        return self._app_deployments
-
-    @app_deployments.setter
-    def app_deployments(self, app_deployments):
-        """Sets the app_deployments of this DeploymentLog.
-
-
-        :param app_deployments: The app_deployments of this DeploymentLog.  # noqa: E501
-        :type: list[AppDeployment]
-        """
-
-        self._app_deployments = app_deployments
-
-    @property
-    def approved_release_id(self):
-        """Gets the approved_release_id of this DeploymentLog.  # noqa: E501
-
-
-        :return: The approved_release_id of this DeploymentLog.  # noqa: E501
+        :return: The id of this DeploymentLog.  # noqa: E501
         :rtype: str
         """
-        return self._approved_release_id
+        return self._id
 
-    @approved_release_id.setter
-    def approved_release_id(self, approved_release_id):
-        """Sets the approved_release_id of this DeploymentLog.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this DeploymentLog.
 
 
-        :param approved_release_id: The approved_release_id of this DeploymentLog.  # noqa: E501
+        :param id: The id of this DeploymentLog.  # noqa: E501
         :type: str
         """
 
-        self._approved_release_id = approved_release_id
-
-    @property
-    def changes_applied(self):
-        """Gets the changes_applied of this DeploymentLog.  # noqa: E501
-
-
-        :return: The changes_applied of this DeploymentLog.  # noqa: E501
-        :rtype: list[TerraformChange]
-        """
-        return self._changes_applied
-
-    @changes_applied.setter
-    def changes_applied(self, changes_applied):
-        """Sets the changes_applied of this DeploymentLog.
-
-
-        :param changes_applied: The changes_applied of this DeploymentLog.  # noqa: E501
-        :type: list[TerraformChange]
-        """
-
-        self._changes_applied = changes_applied
-
-    @property
-    def codebuild_id(self):
-        """Gets the codebuild_id of this DeploymentLog.  # noqa: E501
-
-
-        :return: The codebuild_id of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._codebuild_id
-
-    @codebuild_id.setter
-    def codebuild_id(self, codebuild_id):
-        """Sets the codebuild_id of this DeploymentLog.
-
-
-        :param codebuild_id: The codebuild_id of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._codebuild_id = codebuild_id
-
-    @property
-    def created_on(self):
-        """Gets the created_on of this DeploymentLog.  # noqa: E501
-
-
-        :return: The created_on of this DeploymentLog.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._created_on
-
-    @created_on.setter
-    def created_on(self, created_on):
-        """Sets the created_on of this DeploymentLog.
-
-
-        :param created_on: The created_on of this DeploymentLog.  # noqa: E501
-        :type: datetime
-        """
-
-        self._created_on = created_on
-
-    @property
-    def deployment_context_file_path(self):
-        """Gets the deployment_context_file_path of this DeploymentLog.  # noqa: E501
-
-
-        :return: The deployment_context_file_path of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._deployment_context_file_path
-
-    @deployment_context_file_path.setter
-    def deployment_context_file_path(self, deployment_context_file_path):
-        """Sets the deployment_context_file_path of this DeploymentLog.
-
-
-        :param deployment_context_file_path: The deployment_context_file_path of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._deployment_context_file_path = deployment_context_file_path
-
-    @property
-    def deployment_context_version(self):
-        """Gets the deployment_context_version of this DeploymentLog.  # noqa: E501
-
-
-        :return: The deployment_context_version of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._deployment_context_version
-
-    @deployment_context_version.setter
-    def deployment_context_version(self, deployment_context_version):
-        """Sets the deployment_context_version of this DeploymentLog.
-
-
-        :param deployment_context_version: The deployment_context_version of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._deployment_context_version = deployment_context_version
+        self._id = id
 
     @property
     def deployment_job_type(self):
@@ -408,31 +261,25 @@ class DeploymentLog(object):
         self._deployment_job_type = deployment_job_type
 
     @property
-    def deployment_type(self):
-        """Gets the deployment_type of this DeploymentLog.  # noqa: E501
+    def codebuild_id(self):
+        """Gets the codebuild_id of this DeploymentLog.  # noqa: E501
 
 
-        :return: The deployment_type of this DeploymentLog.  # noqa: E501
+        :return: The codebuild_id of this DeploymentLog.  # noqa: E501
         :rtype: str
         """
-        return self._deployment_type
+        return self._codebuild_id
 
-    @deployment_type.setter
-    def deployment_type(self, deployment_type):
-        """Sets the deployment_type of this DeploymentLog.
+    @codebuild_id.setter
+    def codebuild_id(self, codebuild_id):
+        """Sets the codebuild_id of this DeploymentLog.
 
 
-        :param deployment_type: The deployment_type of this DeploymentLog.  # noqa: E501
+        :param codebuild_id: The codebuild_id of this DeploymentLog.  # noqa: E501
         :type: str
         """
-        allowed_values = ["REGULAR", "CUSTOM", "ROLLBACK"]  # noqa: E501
-        if deployment_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `deployment_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(deployment_type, allowed_values)
-            )
 
-        self._deployment_type = deployment_type
+        self._codebuild_id = codebuild_id
 
     @property
     def description(self):
@@ -456,25 +303,25 @@ class DeploymentLog(object):
         self._description = description
 
     @property
-    def error_logs(self):
-        """Gets the error_logs of this DeploymentLog.  # noqa: E501
+    def created_on(self):
+        """Gets the created_on of this DeploymentLog.  # noqa: E501
 
 
-        :return: The error_logs of this DeploymentLog.  # noqa: E501
-        :rtype: list[RawError]
+        :return: The created_on of this DeploymentLog.  # noqa: E501
+        :rtype: datetime
         """
-        return self._error_logs
+        return self._created_on
 
-    @error_logs.setter
-    def error_logs(self, error_logs):
-        """Sets the error_logs of this DeploymentLog.
+    @created_on.setter
+    def created_on(self, created_on):
+        """Sets the created_on of this DeploymentLog.
 
 
-        :param error_logs: The error_logs of this DeploymentLog.  # noqa: E501
-        :type: list[RawError]
+        :param created_on: The created_on of this DeploymentLog.  # noqa: E501
+        :type: datetime
         """
 
-        self._error_logs = error_logs
+        self._created_on = created_on
 
     @property
     def finished_on(self):
@@ -498,235 +345,25 @@ class DeploymentLog(object):
         self._finished_on = finished_on
 
     @property
-    def force_release(self):
-        """Gets the force_release of this DeploymentLog.  # noqa: E501
+    def time_taken_in_seconds(self):
+        """Gets the time_taken_in_seconds of this DeploymentLog.  # noqa: E501
 
 
-        :return: The force_release of this DeploymentLog.  # noqa: E501
-        :rtype: bool
+        :return: The time_taken_in_seconds of this DeploymentLog.  # noqa: E501
+        :rtype: int
         """
-        return self._force_release
+        return self._time_taken_in_seconds
 
-    @force_release.setter
-    def force_release(self, force_release):
-        """Sets the force_release of this DeploymentLog.
-
-
-        :param force_release: The force_release of this DeploymentLog.  # noqa: E501
-        :type: bool
-        """
-
-        self._force_release = force_release
-
-    @property
-    def hotfix_resources(self):
-        """Gets the hotfix_resources of this DeploymentLog.  # noqa: E501
+    @time_taken_in_seconds.setter
+    def time_taken_in_seconds(self, time_taken_in_seconds):
+        """Sets the time_taken_in_seconds of this DeploymentLog.
 
 
-        :return: The hotfix_resources of this DeploymentLog.  # noqa: E501
-        :rtype: list[FacetsResource]
-        """
-        return self._hotfix_resources
-
-    @hotfix_resources.setter
-    def hotfix_resources(self, hotfix_resources):
-        """Sets the hotfix_resources of this DeploymentLog.
-
-
-        :param hotfix_resources: The hotfix_resources of this DeploymentLog.  # noqa: E501
-        :type: list[FacetsResource]
+        :param time_taken_in_seconds: The time_taken_in_seconds of this DeploymentLog.  # noqa: E501
+        :type: int
         """
 
-        self._hotfix_resources = hotfix_resources
-
-    @property
-    def id(self):
-        """Gets the id of this DeploymentLog.  # noqa: E501
-
-
-        :return: The id of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this DeploymentLog.
-
-
-        :param id: The id of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def integration_test(self):
-        """Gets the integration_test of this DeploymentLog.  # noqa: E501
-
-
-        :return: The integration_test of this DeploymentLog.  # noqa: E501
-        :rtype: bool
-        """
-        return self._integration_test
-
-    @integration_test.setter
-    def integration_test(self, integration_test):
-        """Sets the integration_test of this DeploymentLog.
-
-
-        :param integration_test: The integration_test of this DeploymentLog.  # noqa: E501
-        :type: bool
-        """
-
-        self._integration_test = integration_test
-
-    @property
-    def is_destroy(self):
-        """Gets the is_destroy of this DeploymentLog.  # noqa: E501
-
-
-        :return: The is_destroy of this DeploymentLog.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_destroy
-
-    @is_destroy.setter
-    def is_destroy(self, is_destroy):
-        """Sets the is_destroy of this DeploymentLog.
-
-
-        :param is_destroy: The is_destroy of this DeploymentLog.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_destroy = is_destroy
-
-    @property
-    def migration_scripts_run(self):
-        """Gets the migration_scripts_run of this DeploymentLog.  # noqa: E501
-
-
-        :return: The migration_scripts_run of this DeploymentLog.  # noqa: E501
-        :rtype: list[MigrationScriptMetadata]
-        """
-        return self._migration_scripts_run
-
-    @migration_scripts_run.setter
-    def migration_scripts_run(self, migration_scripts_run):
-        """Sets the migration_scripts_run of this DeploymentLog.
-
-
-        :param migration_scripts_run: The migration_scripts_run of this DeploymentLog.  # noqa: E501
-        :type: list[MigrationScriptMetadata]
-        """
-
-        self._migration_scripts_run = migration_scripts_run
-
-    @property
-    def override_build_steps(self):
-        """Gets the override_build_steps of this DeploymentLog.  # noqa: E501
-
-
-        :return: The override_build_steps of this DeploymentLog.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._override_build_steps
-
-    @override_build_steps.setter
-    def override_build_steps(self, override_build_steps):
-        """Sets the override_build_steps of this DeploymentLog.
-
-
-        :param override_build_steps: The override_build_steps of this DeploymentLog.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._override_build_steps = override_build_steps
-
-    @property
-    def parallel_release(self):
-        """Gets the parallel_release of this DeploymentLog.  # noqa: E501
-
-
-        :return: The parallel_release of this DeploymentLog.  # noqa: E501
-        :rtype: bool
-        """
-        return self._parallel_release
-
-    @parallel_release.setter
-    def parallel_release(self, parallel_release):
-        """Sets the parallel_release of this DeploymentLog.
-
-
-        :param parallel_release: The parallel_release of this DeploymentLog.  # noqa: E501
-        :type: bool
-        """
-
-        self._parallel_release = parallel_release
-
-    @property
-    def release_comment(self):
-        """Gets the release_comment of this DeploymentLog.  # noqa: E501
-
-
-        :return: The release_comment of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_comment
-
-    @release_comment.setter
-    def release_comment(self, release_comment):
-        """Sets the release_comment of this DeploymentLog.
-
-
-        :param release_comment: The release_comment of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._release_comment = release_comment
-
-    @property
-    def release_reviewed_by(self):
-        """Gets the release_reviewed_by of this DeploymentLog.  # noqa: E501
-
-
-        :return: The release_reviewed_by of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_reviewed_by
-
-    @release_reviewed_by.setter
-    def release_reviewed_by(self, release_reviewed_by):
-        """Sets the release_reviewed_by of this DeploymentLog.
-
-
-        :param release_reviewed_by: The release_reviewed_by of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._release_reviewed_by = release_reviewed_by
-
-    @property
-    def release_trace_id(self):
-        """Gets the release_trace_id of this DeploymentLog.  # noqa: E501
-
-
-        :return: The release_trace_id of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_trace_id
-
-    @release_trace_id.setter
-    def release_trace_id(self, release_trace_id):
-        """Sets the release_trace_id of this DeploymentLog.
-
-
-        :param release_trace_id: The release_trace_id of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._release_trace_id = release_trace_id
+        self._time_taken_in_seconds = time_taken_in_seconds
 
     @property
     def release_type(self):
@@ -756,69 +393,6 @@ class DeploymentLog(object):
         self._release_type = release_type
 
     @property
-    def rollback_deployment_id(self):
-        """Gets the rollback_deployment_id of this DeploymentLog.  # noqa: E501
-
-
-        :return: The rollback_deployment_id of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._rollback_deployment_id
-
-    @rollback_deployment_id.setter
-    def rollback_deployment_id(self, rollback_deployment_id):
-        """Sets the rollback_deployment_id of this DeploymentLog.
-
-
-        :param rollback_deployment_id: The rollback_deployment_id of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._rollback_deployment_id = rollback_deployment_id
-
-    @property
-    def signed_off(self):
-        """Gets the signed_off of this DeploymentLog.  # noqa: E501
-
-
-        :return: The signed_off of this DeploymentLog.  # noqa: E501
-        :rtype: bool
-        """
-        return self._signed_off
-
-    @signed_off.setter
-    def signed_off(self, signed_off):
-        """Sets the signed_off of this DeploymentLog.
-
-
-        :param signed_off: The signed_off of this DeploymentLog.  # noqa: E501
-        :type: bool
-        """
-
-        self._signed_off = signed_off
-
-    @property
-    def stack_version(self):
-        """Gets the stack_version of this DeploymentLog.  # noqa: E501
-
-
-        :return: The stack_version of this DeploymentLog.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_version
-
-    @stack_version.setter
-    def stack_version(self, stack_version):
-        """Sets the stack_version of this DeploymentLog.
-
-
-        :param stack_version: The stack_version of this DeploymentLog.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_version = stack_version
-
-    @property
     def status(self):
         """Gets the status of this DeploymentLog.  # noqa: E501
 
@@ -846,6 +420,138 @@ class DeploymentLog(object):
         self._status = status
 
     @property
+    def changes_applied(self):
+        """Gets the changes_applied of this DeploymentLog.  # noqa: E501
+
+
+        :return: The changes_applied of this DeploymentLog.  # noqa: E501
+        :rtype: list[TerraformChange]
+        """
+        return self._changes_applied
+
+    @changes_applied.setter
+    def changes_applied(self, changes_applied):
+        """Sets the changes_applied of this DeploymentLog.
+
+
+        :param changes_applied: The changes_applied of this DeploymentLog.  # noqa: E501
+        :type: list[TerraformChange]
+        """
+
+        self._changes_applied = changes_applied
+
+    @property
+    def app_deployments(self):
+        """Gets the app_deployments of this DeploymentLog.  # noqa: E501
+
+
+        :return: The app_deployments of this DeploymentLog.  # noqa: E501
+        :rtype: list[AppDeployment]
+        """
+        return self._app_deployments
+
+    @app_deployments.setter
+    def app_deployments(self, app_deployments):
+        """Sets the app_deployments of this DeploymentLog.
+
+
+        :param app_deployments: The app_deployments of this DeploymentLog.  # noqa: E501
+        :type: list[AppDeployment]
+        """
+
+        self._app_deployments = app_deployments
+
+    @property
+    def migration_scripts_run(self):
+        """Gets the migration_scripts_run of this DeploymentLog.  # noqa: E501
+
+
+        :return: The migration_scripts_run of this DeploymentLog.  # noqa: E501
+        :rtype: list[MigrationScriptMetadata]
+        """
+        return self._migration_scripts_run
+
+    @migration_scripts_run.setter
+    def migration_scripts_run(self, migration_scripts_run):
+        """Sets the migration_scripts_run of this DeploymentLog.
+
+
+        :param migration_scripts_run: The migration_scripts_run of this DeploymentLog.  # noqa: E501
+        :type: list[MigrationScriptMetadata]
+        """
+
+        self._migration_scripts_run = migration_scripts_run
+
+    @property
+    def error_logs(self):
+        """Gets the error_logs of this DeploymentLog.  # noqa: E501
+
+
+        :return: The error_logs of this DeploymentLog.  # noqa: E501
+        :rtype: list[RawError]
+        """
+        return self._error_logs
+
+    @error_logs.setter
+    def error_logs(self, error_logs):
+        """Sets the error_logs of this DeploymentLog.
+
+
+        :param error_logs: The error_logs of this DeploymentLog.  # noqa: E501
+        :type: list[RawError]
+        """
+
+        self._error_logs = error_logs
+
+    @property
+    def deployment_type(self):
+        """Gets the deployment_type of this DeploymentLog.  # noqa: E501
+
+
+        :return: The deployment_type of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._deployment_type
+
+    @deployment_type.setter
+    def deployment_type(self, deployment_type):
+        """Sets the deployment_type of this DeploymentLog.
+
+
+        :param deployment_type: The deployment_type of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["REGULAR", "CUSTOM", "ROLLBACK"]  # noqa: E501
+        if deployment_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `deployment_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(deployment_type, allowed_values)
+            )
+
+        self._deployment_type = deployment_type
+
+    @property
+    def stack_version(self):
+        """Gets the stack_version of this DeploymentLog.  # noqa: E501
+
+
+        :return: The stack_version of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_version
+
+    @stack_version.setter
+    def stack_version(self, stack_version):
+        """Sets the stack_version of this DeploymentLog.
+
+
+        :param stack_version: The stack_version of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._stack_version = stack_version
+
+    @property
     def tf_version(self):
         """Gets the tf_version of this DeploymentLog.  # noqa: E501
 
@@ -867,25 +573,46 @@ class DeploymentLog(object):
         self._tf_version = tf_version
 
     @property
-    def time_taken_in_seconds(self):
-        """Gets the time_taken_in_seconds of this DeploymentLog.  # noqa: E501
+    def signed_off(self):
+        """Gets the signed_off of this DeploymentLog.  # noqa: E501
 
 
-        :return: The time_taken_in_seconds of this DeploymentLog.  # noqa: E501
-        :rtype: int
+        :return: The signed_off of this DeploymentLog.  # noqa: E501
+        :rtype: bool
         """
-        return self._time_taken_in_seconds
+        return self._signed_off
 
-    @time_taken_in_seconds.setter
-    def time_taken_in_seconds(self, time_taken_in_seconds):
-        """Sets the time_taken_in_seconds of this DeploymentLog.
+    @signed_off.setter
+    def signed_off(self, signed_off):
+        """Sets the signed_off of this DeploymentLog.
 
 
-        :param time_taken_in_seconds: The time_taken_in_seconds of this DeploymentLog.  # noqa: E501
-        :type: int
+        :param signed_off: The signed_off of this DeploymentLog.  # noqa: E501
+        :type: bool
         """
 
-        self._time_taken_in_seconds = time_taken_in_seconds
+        self._signed_off = signed_off
+
+    @property
+    def deployment_context_version(self):
+        """Gets the deployment_context_version of this DeploymentLog.  # noqa: E501
+
+
+        :return: The deployment_context_version of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._deployment_context_version
+
+    @deployment_context_version.setter
+    def deployment_context_version(self, deployment_context_version):
+        """Sets the deployment_context_version of this DeploymentLog.
+
+
+        :param deployment_context_version: The deployment_context_version of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._deployment_context_version = deployment_context_version
 
     @property
     def triggered_by(self):
@@ -909,25 +636,130 @@ class DeploymentLog(object):
         self._triggered_by = triggered_by
 
     @property
-    def validation_responses(self):
-        """Gets the validation_responses of this DeploymentLog.  # noqa: E501
+    def override_build_steps(self):
+        """Gets the override_build_steps of this DeploymentLog.  # noqa: E501
 
 
-        :return: The validation_responses of this DeploymentLog.  # noqa: E501
-        :rtype: list[ValidationResponse]
+        :return: The override_build_steps of this DeploymentLog.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._validation_responses
+        return self._override_build_steps
 
-    @validation_responses.setter
-    def validation_responses(self, validation_responses):
-        """Sets the validation_responses of this DeploymentLog.
+    @override_build_steps.setter
+    def override_build_steps(self, override_build_steps):
+        """Sets the override_build_steps of this DeploymentLog.
 
 
-        :param validation_responses: The validation_responses of this DeploymentLog.  # noqa: E501
-        :type: list[ValidationResponse]
+        :param override_build_steps: The override_build_steps of this DeploymentLog.  # noqa: E501
+        :type: list[str]
         """
 
-        self._validation_responses = validation_responses
+        self._override_build_steps = override_build_steps
+
+    @property
+    def integration_test(self):
+        """Gets the integration_test of this DeploymentLog.  # noqa: E501
+
+
+        :return: The integration_test of this DeploymentLog.  # noqa: E501
+        :rtype: bool
+        """
+        return self._integration_test
+
+    @integration_test.setter
+    def integration_test(self, integration_test):
+        """Sets the integration_test of this DeploymentLog.
+
+
+        :param integration_test: The integration_test of this DeploymentLog.  # noqa: E501
+        :type: bool
+        """
+
+        self._integration_test = integration_test
+
+    @property
+    def with_refresh(self):
+        """Gets the with_refresh of this DeploymentLog.  # noqa: E501
+
+
+        :return: The with_refresh of this DeploymentLog.  # noqa: E501
+        :rtype: bool
+        """
+        return self._with_refresh
+
+    @with_refresh.setter
+    def with_refresh(self, with_refresh):
+        """Sets the with_refresh of this DeploymentLog.
+
+
+        :param with_refresh: The with_refresh of this DeploymentLog.  # noqa: E501
+        :type: bool
+        """
+
+        self._with_refresh = with_refresh
+
+    @property
+    def is_destroy(self):
+        """Gets the is_destroy of this DeploymentLog.  # noqa: E501
+
+
+        :return: The is_destroy of this DeploymentLog.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_destroy
+
+    @is_destroy.setter
+    def is_destroy(self, is_destroy):
+        """Sets the is_destroy of this DeploymentLog.
+
+
+        :param is_destroy: The is_destroy of this DeploymentLog.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_destroy = is_destroy
+
+    @property
+    def allow_destroy(self):
+        """Gets the allow_destroy of this DeploymentLog.  # noqa: E501
+
+
+        :return: The allow_destroy of this DeploymentLog.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_destroy
+
+    @allow_destroy.setter
+    def allow_destroy(self, allow_destroy):
+        """Sets the allow_destroy of this DeploymentLog.
+
+
+        :param allow_destroy: The allow_destroy of this DeploymentLog.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_destroy = allow_destroy
+
+    @property
+    def force_release(self):
+        """Gets the force_release of this DeploymentLog.  # noqa: E501
+
+
+        :return: The force_release of this DeploymentLog.  # noqa: E501
+        :rtype: bool
+        """
+        return self._force_release
+
+    @force_release.setter
+    def force_release(self, force_release):
+        """Sets the force_release of this DeploymentLog.
+
+
+        :param force_release: The force_release of this DeploymentLog.  # noqa: E501
+        :type: bool
+        """
+
+        self._force_release = force_release
 
     @property
     def validation_result(self):
@@ -951,25 +783,193 @@ class DeploymentLog(object):
         self._validation_result = validation_result
 
     @property
-    def with_refresh(self):
-        """Gets the with_refresh of this DeploymentLog.  # noqa: E501
+    def deployment_context_file_path(self):
+        """Gets the deployment_context_file_path of this DeploymentLog.  # noqa: E501
 
 
-        :return: The with_refresh of this DeploymentLog.  # noqa: E501
+        :return: The deployment_context_file_path of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._deployment_context_file_path
+
+    @deployment_context_file_path.setter
+    def deployment_context_file_path(self, deployment_context_file_path):
+        """Sets the deployment_context_file_path of this DeploymentLog.
+
+
+        :param deployment_context_file_path: The deployment_context_file_path of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._deployment_context_file_path = deployment_context_file_path
+
+    @property
+    def release_comment(self):
+        """Gets the release_comment of this DeploymentLog.  # noqa: E501
+
+
+        :return: The release_comment of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_comment
+
+    @release_comment.setter
+    def release_comment(self, release_comment):
+        """Sets the release_comment of this DeploymentLog.
+
+
+        :param release_comment: The release_comment of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._release_comment = release_comment
+
+    @property
+    def hotfix_resources(self):
+        """Gets the hotfix_resources of this DeploymentLog.  # noqa: E501
+
+
+        :return: The hotfix_resources of this DeploymentLog.  # noqa: E501
+        :rtype: list[FacetsResource]
+        """
+        return self._hotfix_resources
+
+    @hotfix_resources.setter
+    def hotfix_resources(self, hotfix_resources):
+        """Sets the hotfix_resources of this DeploymentLog.
+
+
+        :param hotfix_resources: The hotfix_resources of this DeploymentLog.  # noqa: E501
+        :type: list[FacetsResource]
+        """
+
+        self._hotfix_resources = hotfix_resources
+
+    @property
+    def release_reviewed_by(self):
+        """Gets the release_reviewed_by of this DeploymentLog.  # noqa: E501
+
+
+        :return: The release_reviewed_by of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_reviewed_by
+
+    @release_reviewed_by.setter
+    def release_reviewed_by(self, release_reviewed_by):
+        """Sets the release_reviewed_by of this DeploymentLog.
+
+
+        :param release_reviewed_by: The release_reviewed_by of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._release_reviewed_by = release_reviewed_by
+
+    @property
+    def approved_release_id(self):
+        """Gets the approved_release_id of this DeploymentLog.  # noqa: E501
+
+
+        :return: The approved_release_id of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._approved_release_id
+
+    @approved_release_id.setter
+    def approved_release_id(self, approved_release_id):
+        """Sets the approved_release_id of this DeploymentLog.
+
+
+        :param approved_release_id: The approved_release_id of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._approved_release_id = approved_release_id
+
+    @property
+    def validation_responses(self):
+        """Gets the validation_responses of this DeploymentLog.  # noqa: E501
+
+
+        :return: The validation_responses of this DeploymentLog.  # noqa: E501
+        :rtype: list[ValidationResponse]
+        """
+        return self._validation_responses
+
+    @validation_responses.setter
+    def validation_responses(self, validation_responses):
+        """Sets the validation_responses of this DeploymentLog.
+
+
+        :param validation_responses: The validation_responses of this DeploymentLog.  # noqa: E501
+        :type: list[ValidationResponse]
+        """
+
+        self._validation_responses = validation_responses
+
+    @property
+    def release_trace_id(self):
+        """Gets the release_trace_id of this DeploymentLog.  # noqa: E501
+
+
+        :return: The release_trace_id of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_trace_id
+
+    @release_trace_id.setter
+    def release_trace_id(self, release_trace_id):
+        """Sets the release_trace_id of this DeploymentLog.
+
+
+        :param release_trace_id: The release_trace_id of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._release_trace_id = release_trace_id
+
+    @property
+    def rollback_deployment_id(self):
+        """Gets the rollback_deployment_id of this DeploymentLog.  # noqa: E501
+
+
+        :return: The rollback_deployment_id of this DeploymentLog.  # noqa: E501
+        :rtype: str
+        """
+        return self._rollback_deployment_id
+
+    @rollback_deployment_id.setter
+    def rollback_deployment_id(self, rollback_deployment_id):
+        """Sets the rollback_deployment_id of this DeploymentLog.
+
+
+        :param rollback_deployment_id: The rollback_deployment_id of this DeploymentLog.  # noqa: E501
+        :type: str
+        """
+
+        self._rollback_deployment_id = rollback_deployment_id
+
+    @property
+    def parallel_release(self):
+        """Gets the parallel_release of this DeploymentLog.  # noqa: E501
+
+
+        :return: The parallel_release of this DeploymentLog.  # noqa: E501
         :rtype: bool
         """
-        return self._with_refresh
+        return self._parallel_release
 
-    @with_refresh.setter
-    def with_refresh(self, with_refresh):
-        """Sets the with_refresh of this DeploymentLog.
+    @parallel_release.setter
+    def parallel_release(self, parallel_release):
+        """Sets the parallel_release of this DeploymentLog.
 
 
-        :param with_refresh: The with_refresh of this DeploymentLog.  # noqa: E501
+        :param parallel_release: The parallel_release of this DeploymentLog.  # noqa: E501
         :type: bool
         """
 
-        self._with_refresh = with_refresh
+        self._parallel_release = parallel_release
 
     def to_dict(self):
         """Returns the model properties as a dict"""

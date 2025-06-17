@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,44 +28,86 @@ class StackTemplate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
+        'name': 'str',
         'description': 'str',
         'git_url': 'str',
-        'id': 'str',
-        'mono_repo': 'bool',
-        'name': 'str',
-        'relative_path': 'str'
+        'relative_path': 'str',
+        'mono_repo': 'bool'
     }
 
     attribute_map = {
+        'id': 'id',
+        'name': 'name',
         'description': 'description',
         'git_url': 'gitUrl',
-        'id': 'id',
-        'mono_repo': 'monoRepo',
-        'name': 'name',
-        'relative_path': 'relativePath'
+        'relative_path': 'relativePath',
+        'mono_repo': 'monoRepo'
     }
 
-    def __init__(self, description=None, git_url=None, id=None, mono_repo=None, name=None, relative_path=None):  # noqa: E501
+    def __init__(self, id=None, name=None, description=None, git_url=None, relative_path=None, mono_repo=None):  # noqa: E501
         """StackTemplate - a model defined in Swagger"""  # noqa: E501
+        self._id = None
+        self._name = None
         self._description = None
         self._git_url = None
-        self._id = None
-        self._mono_repo = None
-        self._name = None
         self._relative_path = None
+        self._mono_repo = None
         self.discriminator = None
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
         if description is not None:
             self.description = description
         if git_url is not None:
             self.git_url = git_url
-        if id is not None:
-            self.id = id
-        if mono_repo is not None:
-            self.mono_repo = mono_repo
-        if name is not None:
-            self.name = name
         if relative_path is not None:
             self.relative_path = relative_path
+        if mono_repo is not None:
+            self.mono_repo = mono_repo
+
+    @property
+    def id(self):
+        """Gets the id of this StackTemplate.  # noqa: E501
+
+
+        :return: The id of this StackTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this StackTemplate.
+
+
+        :param id: The id of this StackTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this StackTemplate.  # noqa: E501
+
+
+        :return: The name of this StackTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this StackTemplate.
+
+
+        :param name: The name of this StackTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def description(self):
@@ -110,25 +152,25 @@ class StackTemplate(object):
         self._git_url = git_url
 
     @property
-    def id(self):
-        """Gets the id of this StackTemplate.  # noqa: E501
+    def relative_path(self):
+        """Gets the relative_path of this StackTemplate.  # noqa: E501
 
 
-        :return: The id of this StackTemplate.  # noqa: E501
+        :return: The relative_path of this StackTemplate.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._relative_path
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this StackTemplate.
+    @relative_path.setter
+    def relative_path(self, relative_path):
+        """Sets the relative_path of this StackTemplate.
 
 
-        :param id: The id of this StackTemplate.  # noqa: E501
+        :param relative_path: The relative_path of this StackTemplate.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._relative_path = relative_path
 
     @property
     def mono_repo(self):
@@ -150,48 +192,6 @@ class StackTemplate(object):
         """
 
         self._mono_repo = mono_repo
-
-    @property
-    def name(self):
-        """Gets the name of this StackTemplate.  # noqa: E501
-
-
-        :return: The name of this StackTemplate.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this StackTemplate.
-
-
-        :param name: The name of this StackTemplate.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def relative_path(self):
-        """Gets the relative_path of this StackTemplate.  # noqa: E501
-
-
-        :return: The relative_path of this StackTemplate.  # noqa: E501
-        :rtype: str
-        """
-        return self._relative_path
-
-    @relative_path.setter
-    def relative_path(self, relative_path):
-        """Sets the relative_path of this StackTemplate.
-
-
-        :param relative_path: The relative_path of this StackTemplate.  # noqa: E501
-        :type: str
-        """
-
-        self._relative_path = relative_path
 
     def to_dict(self):
         """Returns the model properties as a dict"""

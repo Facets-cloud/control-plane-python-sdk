@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,31 @@ class UserVCSTokenRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'host_name': 'str',
         'id': 'str',
-        'personal_access_token': 'str',
-        'user_name': 'str'
+        'host_name': 'str',
+        'user_name': 'str',
+        'personal_access_token': 'str'
     }
 
     attribute_map = {
-        'host_name': 'hostName',
         'id': 'id',
-        'personal_access_token': 'personalAccessToken',
-        'user_name': 'userName'
+        'host_name': 'hostName',
+        'user_name': 'userName',
+        'personal_access_token': 'personalAccessToken'
     }
 
-    def __init__(self, host_name=None, id=None, personal_access_token=None, user_name=None):  # noqa: E501
+    def __init__(self, id=None, host_name=None, user_name=None, personal_access_token=None):  # noqa: E501
         """UserVCSTokenRequest - a model defined in Swagger"""  # noqa: E501
-        self._host_name = None
         self._id = None
-        self._personal_access_token = None
+        self._host_name = None
         self._user_name = None
+        self._personal_access_token = None
         self.discriminator = None
-        if host_name is not None:
-            self.host_name = host_name
         if id is not None:
             self.id = id
-        if personal_access_token is not None:
-            self.personal_access_token = personal_access_token
-        if user_name is not None:
-            self.user_name = user_name
-
-    @property
-    def host_name(self):
-        """Gets the host_name of this UserVCSTokenRequest.  # noqa: E501
-
-
-        :return: The host_name of this UserVCSTokenRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._host_name
-
-    @host_name.setter
-    def host_name(self, host_name):
-        """Sets the host_name of this UserVCSTokenRequest.
-
-
-        :param host_name: The host_name of this UserVCSTokenRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._host_name = host_name
+        self.host_name = host_name
+        self.user_name = user_name
+        self.personal_access_token = personal_access_token
 
     @property
     def id(self):
@@ -100,25 +76,27 @@ class UserVCSTokenRequest(object):
         self._id = id
 
     @property
-    def personal_access_token(self):
-        """Gets the personal_access_token of this UserVCSTokenRequest.  # noqa: E501
+    def host_name(self):
+        """Gets the host_name of this UserVCSTokenRequest.  # noqa: E501
 
 
-        :return: The personal_access_token of this UserVCSTokenRequest.  # noqa: E501
+        :return: The host_name of this UserVCSTokenRequest.  # noqa: E501
         :rtype: str
         """
-        return self._personal_access_token
+        return self._host_name
 
-    @personal_access_token.setter
-    def personal_access_token(self, personal_access_token):
-        """Sets the personal_access_token of this UserVCSTokenRequest.
+    @host_name.setter
+    def host_name(self, host_name):
+        """Sets the host_name of this UserVCSTokenRequest.
 
 
-        :param personal_access_token: The personal_access_token of this UserVCSTokenRequest.  # noqa: E501
+        :param host_name: The host_name of this UserVCSTokenRequest.  # noqa: E501
         :type: str
         """
+        if host_name is None:
+            raise ValueError("Invalid value for `host_name`, must not be `None`")  # noqa: E501
 
-        self._personal_access_token = personal_access_token
+        self._host_name = host_name
 
     @property
     def user_name(self):
@@ -138,8 +116,33 @@ class UserVCSTokenRequest(object):
         :param user_name: The user_name of this UserVCSTokenRequest.  # noqa: E501
         :type: str
         """
+        if user_name is None:
+            raise ValueError("Invalid value for `user_name`, must not be `None`")  # noqa: E501
 
         self._user_name = user_name
+
+    @property
+    def personal_access_token(self):
+        """Gets the personal_access_token of this UserVCSTokenRequest.  # noqa: E501
+
+
+        :return: The personal_access_token of this UserVCSTokenRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._personal_access_token
+
+    @personal_access_token.setter
+    def personal_access_token(self, personal_access_token):
+        """Sets the personal_access_token of this UserVCSTokenRequest.
+
+
+        :param personal_access_token: The personal_access_token of this UserVCSTokenRequest.  # noqa: E501
+        :type: str
+        """
+        if personal_access_token is None:
+            raise ValueError("Invalid value for `personal_access_token`, must not be `None`")  # noqa: E501
+
+        self._personal_access_token = personal_access_token
 
     def to_dict(self):
         """Returns the model properties as a dict"""

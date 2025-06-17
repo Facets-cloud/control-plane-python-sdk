@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,55 +28,34 @@ class ToolsConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'cluster_id': 'str',
         'id': 'str',
+        'cluster_id': 'str',
         'tools_key': 'str',
         'tools_user': 'str'
     }
 
     attribute_map = {
-        'cluster_id': 'clusterId',
         'id': 'id',
+        'cluster_id': 'clusterId',
         'tools_key': 'toolsKey',
         'tools_user': 'toolsUser'
     }
 
-    def __init__(self, cluster_id=None, id=None, tools_key=None, tools_user=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, tools_key=None, tools_user=None):  # noqa: E501
         """ToolsConfig - a model defined in Swagger"""  # noqa: E501
-        self._cluster_id = None
         self._id = None
+        self._cluster_id = None
         self._tools_key = None
         self._tools_user = None
         self.discriminator = None
-        if cluster_id is not None:
-            self.cluster_id = cluster_id
         if id is not None:
             self.id = id
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if tools_key is not None:
             self.tools_key = tools_key
         if tools_user is not None:
             self.tools_user = tools_user
-
-    @property
-    def cluster_id(self):
-        """Gets the cluster_id of this ToolsConfig.  # noqa: E501
-
-
-        :return: The cluster_id of this ToolsConfig.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_id
-
-    @cluster_id.setter
-    def cluster_id(self, cluster_id):
-        """Sets the cluster_id of this ToolsConfig.
-
-
-        :param cluster_id: The cluster_id of this ToolsConfig.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_id = cluster_id
 
     @property
     def id(self):
@@ -98,6 +77,27 @@ class ToolsConfig(object):
         """
 
         self._id = id
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this ToolsConfig.  # noqa: E501
+
+
+        :return: The cluster_id of this ToolsConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ToolsConfig.
+
+
+        :param cluster_id: The cluster_id of this ToolsConfig.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
 
     @property
     def tools_key(self):

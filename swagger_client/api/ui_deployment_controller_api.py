@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -32,39 +32,39 @@ class UiDeploymentControllerApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def abort_automation_suite_using_delete1(self, cluster_id, execution_id, **kwargs):  # noqa: E501
-        """abortAutomationSuite  # noqa: E501
+    def abort_automation_suite(self, cluster_id, execution_id, **kwargs):  # noqa: E501
+        """abort_automation_suite  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.abort_automation_suite_using_delete1(cluster_id, execution_id, async_req=True)
+        >>> thread = api.abort_automation_suite(cluster_id, execution_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str execution_id: executionId (required)
+        :param str cluster_id: (required)
+        :param str execution_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.abort_automation_suite_using_delete1_with_http_info(cluster_id, execution_id, **kwargs)  # noqa: E501
+            return self.abort_automation_suite_with_http_info(cluster_id, execution_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.abort_automation_suite_using_delete1_with_http_info(cluster_id, execution_id, **kwargs)  # noqa: E501
+            (data) = self.abort_automation_suite_with_http_info(cluster_id, execution_id, **kwargs)  # noqa: E501
             return data
 
-    def abort_automation_suite_using_delete1_with_http_info(self, cluster_id, execution_id, **kwargs):  # noqa: E501
-        """abortAutomationSuite  # noqa: E501
+    def abort_automation_suite_with_http_info(self, cluster_id, execution_id, **kwargs):  # noqa: E501
+        """abort_automation_suite  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.abort_automation_suite_using_delete1_with_http_info(cluster_id, execution_id, async_req=True)
+        >>> thread = api.abort_automation_suite_with_http_info(cluster_id, execution_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str execution_id: executionId (required)
+        :param str cluster_id: (required)
+        :param str execution_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,18 +81,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method abort_automation_suite_using_delete1" % key
+                    " to method abort_automation_suite" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `abort_automation_suite_using_delete1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `abort_automation_suite`")  # noqa: E501
         # verify the required parameter 'execution_id' is set
         if ('execution_id' not in params or
                 params['execution_id'] is None):
-            raise ValueError("Missing the required parameter `execution_id` when calling `abort_automation_suite_using_delete1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `execution_id` when calling `abort_automation_suite`")  # noqa: E501
 
         collection_formats = {}
 
@@ -110,8 +110,12 @@ class UiDeploymentControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite', 'DELETE',
@@ -129,39 +133,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def approve_release_using_post(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """approveRelease  # noqa: E501
+    def approve_release(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """approve_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.approve_release_using_post(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.approve_release(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.approve_release_using_post_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return self.approve_release_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.approve_release_using_post_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            (data) = self.approve_release_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
             return data
 
-    def approve_release_using_post_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """approveRelease  # noqa: E501
+    def approve_release_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """approve_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.approve_release_using_post_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.approve_release_with_http_info(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -178,18 +182,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method approve_release_using_post" % key
+                    " to method approve_release" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `approve_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `approve_release`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `approve_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `approve_release`")  # noqa: E501
 
         collection_formats = {}
 
@@ -209,10 +213,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/approveRelease', 'POST',
@@ -230,37 +234,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def clean_s3_sources_using_delete(self, cluster_id, **kwargs):  # noqa: E501
-        """cleanS3Sources  # noqa: E501
+    def clean_s3_sources(self, cluster_id, **kwargs):  # noqa: E501
+        """clean_s3_sources  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.clean_s3_sources_using_delete(cluster_id, async_req=True)
+        >>> thread = api.clean_s3_sources(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.clean_s3_sources_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.clean_s3_sources_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.clean_s3_sources_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.clean_s3_sources_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def clean_s3_sources_using_delete_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """cleanS3Sources  # noqa: E501
+    def clean_s3_sources_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """clean_s3_sources  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.clean_s3_sources_using_delete_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.clean_s3_sources_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -277,14 +281,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method clean_s3_sources_using_delete" % key
+                    " to method clean_s3_sources" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `clean_s3_sources_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `clean_s3_sources`")  # noqa: E501
 
         collection_formats = {}
 
@@ -300,8 +304,12 @@ class UiDeploymentControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/clean-s3-sources', 'DELETE',
@@ -319,39 +327,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_deployment_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """createDeployment  # noqa: E501
+    def create_deployment(self, body, cluster_id, **kwargs):  # noqa: E501
+        """create_deployment  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_deployment_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.create_deployment(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DeploymentRequest body: deploymentRequest (required)
-        :param str cluster_id: clusterId (required)
+        :param DeploymentRequest body: (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_deployment_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.create_deployment_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_deployment_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.create_deployment_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def create_deployment_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """createDeployment  # noqa: E501
+    def create_deployment_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """create_deployment  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_deployment_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.create_deployment_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param DeploymentRequest body: deploymentRequest (required)
-        :param str cluster_id: clusterId (required)
+        :param DeploymentRequest body: (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -368,18 +376,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_deployment_using_post" % key
+                    " to method create_deployment" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `create_deployment_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `create_deployment`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `create_deployment_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `create_deployment`")  # noqa: E501
 
         collection_formats = {}
 
@@ -399,14 +407,14 @@ class UiDeploymentControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments', 'POST',
@@ -424,37 +432,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def destroy_cluster_using_delete(self, cluster_id, **kwargs):  # noqa: E501
-        """destroyCluster  # noqa: E501
+    def destroy_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """destroy_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.destroy_cluster_using_delete(cluster_id, async_req=True)
+        >>> thread = api.destroy_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.destroy_cluster_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.destroy_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.destroy_cluster_using_delete_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.destroy_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def destroy_cluster_using_delete_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """destroyCluster  # noqa: E501
+    def destroy_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """destroy_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.destroy_cluster_using_delete_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.destroy_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -471,14 +479,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method destroy_cluster_using_delete" % key
+                    " to method destroy_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `destroy_cluster_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `destroy_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -496,10 +504,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/destroy', 'DELETE',
@@ -517,39 +525,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def download_terraform_export_using_get(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """downloadTerraformExport  # noqa: E501
+    def download_terraform_export(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """download_terraform_export  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_terraform_export_using_get(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.download_terraform_export(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.download_terraform_export_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return self.download_terraform_export_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.download_terraform_export_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            (data) = self.download_terraform_export_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
             return data
 
-    def download_terraform_export_using_get_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """downloadTerraformExport  # noqa: E501
+    def download_terraform_export_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """download_terraform_export  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.download_terraform_export_using_get_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.download_terraform_export_with_http_info(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -566,18 +574,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method download_terraform_export_using_get" % key
+                    " to method download_terraform_export" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `download_terraform_export_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `download_terraform_export`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `download_terraform_export_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `download_terraform_export`")  # noqa: E501
 
         collection_formats = {}
 
@@ -595,8 +603,12 @@ class UiDeploymentControllerApi(object):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/download-terraform-export', 'GET',
@@ -614,37 +626,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_cluster_state_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getClusterState  # noqa: E501
+    def get_cluster_state(self, cluster_id, **kwargs):  # noqa: E501
+        """get_cluster_state  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cluster_state_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_cluster_state(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_cluster_state_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_cluster_state_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_cluster_state_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_cluster_state_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_cluster_state_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getClusterState  # noqa: E501
+    def get_cluster_state_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_cluster_state  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_cluster_state_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_cluster_state_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -661,14 +673,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_cluster_state_using_get" % key
+                    " to method get_cluster_state" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_cluster_state_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_cluster_state`")  # noqa: E501
 
         collection_formats = {}
 
@@ -686,10 +698,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/state', 'GET',
@@ -707,41 +719,243 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_deployment_logs_using_get(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """getDeploymentLogs  # noqa: E501
+    def get_deployment(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """get_deployment  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_logs_using_get(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.get_deployment(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
-        :param str next_token: nextToken
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_deployment_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_deployment_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_deployment_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """get_deployment  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_deployment_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cluster_id', 'deployment_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_deployment" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'cluster_id' is set
+        if ('cluster_id' not in params or
+                params['cluster_id'] is None):
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployment`")  # noqa: E501
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params or
+                params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `get_deployment`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'cluster_id' in params:
+            path_params['clusterId'] = params['cluster_id']  # noqa: E501
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeploymentLog',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_deployment_by_release_trace_id(self, cluster_id, release_trace_id, **kwargs):  # noqa: E501
+        """get_deployment_by_release_trace_id  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_deployment_by_release_trace_id(cluster_id, release_trace_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param str release_trace_id: (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_deployment_by_release_trace_id_with_http_info(cluster_id, release_trace_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_deployment_by_release_trace_id_with_http_info(cluster_id, release_trace_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_deployment_by_release_trace_id_with_http_info(self, cluster_id, release_trace_id, **kwargs):  # noqa: E501
+        """get_deployment_by_release_trace_id  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_deployment_by_release_trace_id_with_http_info(cluster_id, release_trace_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param str release_trace_id: (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cluster_id', 'release_trace_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_deployment_by_release_trace_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'cluster_id' is set
+        if ('cluster_id' not in params or
+                params['cluster_id'] is None):
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployment_by_release_trace_id`")  # noqa: E501
+        # verify the required parameter 'release_trace_id' is set
+        if ('release_trace_id' not in params or
+                params['release_trace_id'] is None):
+            raise ValueError("Missing the required parameter `release_trace_id` when calling `get_deployment_by_release_trace_id`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'cluster_id' in params:
+            path_params['clusterId'] = params['cluster_id']  # noqa: E501
+        if 'release_trace_id' in params:
+            path_params['releaseTraceId'] = params['release_trace_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/clusters/{clusterId}/deployments/trace-id/{releaseTraceId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeploymentLog',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_deployment_logs(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """get_deployment_logs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_deployment_logs(cluster_id, deployment_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
+        :param str next_token:
         :return: TokenPaginatedResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_deployment_logs_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return self.get_deployment_logs_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_deployment_logs_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            (data) = self.get_deployment_logs_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
             return data
 
-    def get_deployment_logs_using_get_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """getDeploymentLogs  # noqa: E501
+    def get_deployment_logs_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """get_deployment_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_logs_using_get_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.get_deployment_logs_with_http_info(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
-        :param str next_token: nextToken
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
+        :param str next_token:
         :return: TokenPaginatedResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -758,18 +972,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_deployment_logs_using_get" % key
+                    " to method get_deployment_logs" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployment_logs_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployment_logs`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `get_deployment_logs_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `get_deployment_logs`")  # noqa: E501
 
         collection_formats = {}
 
@@ -791,10 +1005,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs', 'GET',
@@ -812,39 +1026,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_deployment_stats_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getDeploymentStats  # noqa: E501
+    def get_deployment_stats(self, cluster_id, **kwargs):  # noqa: E501
+        """get_deployment_stats  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_stats_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_deployment_stats(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param int days: days
+        :param str cluster_id: (required)
+        :param int days:
         :return: DeploymentStatsDto
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_deployment_stats_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_deployment_stats_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_deployment_stats_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_deployment_stats_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_deployment_stats_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getDeploymentStats  # noqa: E501
+    def get_deployment_stats_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_deployment_stats  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_stats_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_deployment_stats_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param int days: days
+        :param str cluster_id: (required)
+        :param int days:
         :return: DeploymentStatsDto
                  If the method is called asynchronously,
                  returns the request thread.
@@ -861,14 +1075,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_deployment_stats_using_get" % key
+                    " to method get_deployment_stats" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployment_stats_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployment_stats`")  # noqa: E501
 
         collection_formats = {}
 
@@ -888,10 +1102,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/stats', 'GET',
@@ -909,231 +1123,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_deployment_using_get(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """getDeployment  # noqa: E501
+    def get_deployments(self, cluster_id, **kwargs):  # noqa: E501
+        """get_deployments  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_using_get(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.get_deployments(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
-        :return: DeploymentLog
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_deployment_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_deployment_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_deployment_using_get_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """getDeployment  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_using_get_with_http_info(cluster_id, deployment_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
-        :return: DeploymentLog
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['cluster_id', 'deployment_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_deployment_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'cluster_id' is set
-        if ('cluster_id' not in params or
-                params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployment_using_get`")  # noqa: E501
-        # verify the required parameter 'deployment_id' is set
-        if ('deployment_id' not in params or
-                params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `get_deployment_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'cluster_id' in params:
-            path_params['clusterId'] = params['cluster_id']  # noqa: E501
-        if 'deployment_id' in params:
-            path_params['deploymentId'] = params['deployment_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DeploymentLog',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_deployments_overview_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getDeploymentsOverview  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployments_overview_using_get(cluster_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: DeploymentOverview
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_deployments_overview_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_deployments_overview_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
-            return data
-
-    def get_deployments_overview_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getDeploymentsOverview  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployments_overview_using_get_with_http_info(cluster_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: DeploymentOverview
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['cluster_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_deployments_overview_using_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'cluster_id' is set
-        if ('cluster_id' not in params or
-                params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployments_overview_using_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'cluster_id' in params:
-            path_params['clusterId'] = params['cluster_id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['main']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/cc-ui/v1/clusters/{clusterId}/deployments/overview', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DeploymentOverview',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_deployments_using_get1(self, cluster_id, **kwargs):  # noqa: E501
-        """getDeployments  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployments_using_get1(cluster_id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: ListDeploymentsWrapper
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_deployments_using_get1_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_deployments_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_deployments_using_get1_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_deployments_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_deployments_using_get1_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getDeployments  # noqa: E501
+    def get_deployments_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_deployments  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployments_using_get1_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_deployments_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: ListDeploymentsWrapper
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1150,14 +1170,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_deployments_using_get1" % key
+                    " to method get_deployments" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployments_using_get1`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployments`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1175,10 +1195,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments', 'GET',
@@ -1196,45 +1216,43 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_latest_release_by_application_using_get(self, application, cluster_id, **kwargs):  # noqa: E501
-        """getLatestReleaseByApplication  # noqa: E501
+    def get_deployments_overview(self, cluster_id, **kwargs):  # noqa: E501
+        """get_deployments_overview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_latest_release_by_application_using_get(application, cluster_id, async_req=True)
+        >>> thread = api.get_deployments_overview(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application: application (required)
-        :param str cluster_id: clusterId (required)
-        :return: DeploymentLog
+        :param str cluster_id: (required)
+        :return: DeploymentOverview
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_latest_release_by_application_using_get_with_http_info(application, cluster_id, **kwargs)  # noqa: E501
+            return self.get_deployments_overview_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_latest_release_by_application_using_get_with_http_info(application, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_deployments_overview_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_latest_release_by_application_using_get_with_http_info(self, application, cluster_id, **kwargs):  # noqa: E501
-        """getLatestReleaseByApplication  # noqa: E501
+    def get_deployments_overview_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_deployments_overview  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_latest_release_by_application_using_get_with_http_info(application, cluster_id, async_req=True)
+        >>> thread = api.get_deployments_overview_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str application: application (required)
-        :param str cluster_id: clusterId (required)
-        :return: DeploymentLog
+        :param str cluster_id: (required)
+        :return: DeploymentOverview
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['application', 'cluster_id']  # noqa: E501
+        all_params = ['cluster_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1245,24 +1263,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_latest_release_by_application_using_get" % key
+                    " to method get_deployments_overview" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'application' is set
-        if ('application' not in params or
-                params['application'] is None):
-            raise ValueError("Missing the required parameter `application` when calling `get_latest_release_by_application_using_get`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_latest_release_by_application_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_deployments_overview`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'application' in params:
-            path_params['application'] = params['application']  # noqa: E501
         if 'cluster_id' in params:
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
 
@@ -1276,20 +1288,20 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/cc-ui/v1/clusters/{clusterId}/deployments/latest-successful-release/{application}', 'GET',
+            '/cc-ui/v1/clusters/{clusterId}/deployments/overview', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DeploymentLog',  # noqa: E501
+            response_type='DeploymentOverview',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1297,37 +1309,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_latest_release_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """getLatestRelease  # noqa: E501
+    def get_latest_release(self, cluster_id, **kwargs):  # noqa: E501
+        """get_latest_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_latest_release_using_get(cluster_id, async_req=True)
+        >>> thread = api.get_latest_release(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_latest_release_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.get_latest_release_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_latest_release_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.get_latest_release_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def get_latest_release_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """getLatestRelease  # noqa: E501
+    def get_latest_release_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """get_latest_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_latest_release_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.get_latest_release_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1344,14 +1356,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_latest_release_using_get" % key
+                    " to method get_latest_release" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_latest_release_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_latest_release`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1369,10 +1381,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/latest-successful-release', 'GET',
@@ -1390,39 +1402,140 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_release_changes_using_get(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """getReleaseChanges  # noqa: E501
+    def get_latest_release_by_application(self, cluster_id, application, **kwargs):  # noqa: E501
+        """get_latest_release_by_application  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_release_changes_using_get(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.get_latest_release_by_application(cluster_id, application, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str application: (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_latest_release_by_application_with_http_info(cluster_id, application, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_latest_release_by_application_with_http_info(cluster_id, application, **kwargs)  # noqa: E501
+            return data
+
+    def get_latest_release_by_application_with_http_info(self, cluster_id, application, **kwargs):  # noqa: E501
+        """get_latest_release_by_application  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_latest_release_by_application_with_http_info(cluster_id, application, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param str application: (required)
+        :return: DeploymentLog
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cluster_id', 'application']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_latest_release_by_application" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'cluster_id' is set
+        if ('cluster_id' not in params or
+                params['cluster_id'] is None):
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_latest_release_by_application`")  # noqa: E501
+        # verify the required parameter 'application' is set
+        if ('application' not in params or
+                params['application'] is None):
+            raise ValueError("Missing the required parameter `application` when calling `get_latest_release_by_application`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'cluster_id' in params:
+            path_params['clusterId'] = params['cluster_id']  # noqa: E501
+        if 'application' in params:
+            path_params['application'] = params['application']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/clusters/{clusterId}/deployments/latest-successful-release/{application}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeploymentLog',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_release_changes(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """get_release_changes  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_release_changes(cluster_id, deployment_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: ReleaseChanges
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_release_changes_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return self.get_release_changes_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_release_changes_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            (data) = self.get_release_changes_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
             return data
 
-    def get_release_changes_using_get_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """getReleaseChanges  # noqa: E501
+    def get_release_changes_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """get_release_changes  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_release_changes_using_get_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.get_release_changes_with_http_info(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: ReleaseChanges
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1439,18 +1552,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_release_changes_using_get" % key
+                    " to method get_release_changes" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `get_release_changes_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `get_release_changes`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `get_release_changes_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `get_release_changes`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1470,10 +1583,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/release-changes', 'GET',
@@ -1491,37 +1604,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def launch_cluster_using_put(self, cluster_id, **kwargs):  # noqa: E501
-        """launchCluster  # noqa: E501
+    def launch_cluster(self, cluster_id, **kwargs):  # noqa: E501
+        """launch_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.launch_cluster_using_put(cluster_id, async_req=True)
+        >>> thread = api.launch_cluster(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.launch_cluster_using_put_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.launch_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.launch_cluster_using_put_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.launch_cluster_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def launch_cluster_using_put_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """launchCluster  # noqa: E501
+    def launch_cluster_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """launch_cluster  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.launch_cluster_using_put_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.launch_cluster_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1538,14 +1651,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method launch_cluster_using_put" % key
+                    " to method launch_cluster" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `launch_cluster_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `launch_cluster`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1563,10 +1676,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/launch', 'PUT',
@@ -1584,39 +1697,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def reject_release_using_post(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """rejectRelease  # noqa: E501
+    def reject_release(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """reject_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reject_release_using_post(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.reject_release(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.reject_release_using_post_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return self.reject_release_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.reject_release_using_post_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            (data) = self.reject_release_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
             return data
 
-    def reject_release_using_post_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """rejectRelease  # noqa: E501
+    def reject_release_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """reject_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.reject_release_using_post_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.reject_release_with_http_info(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1633,18 +1746,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method reject_release_using_post" % key
+                    " to method reject_release" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `reject_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `reject_release`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `reject_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `reject_release`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1664,10 +1777,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/rejectRelease', 'POST',
@@ -1685,53 +1798,53 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def release_using_put(self, cluster_id, **kwargs):  # noqa: E501
+    def release(self, cluster_id, **kwargs):  # noqa: E501
         """release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.release_using_put(cluster_id, async_req=True)
+        >>> thread = api.release(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool allow_destroy: allowDestroy
-        :param bool can_queue: canQueue
-        :param str comment: comment
-        :param bool force_release: forceRelease
-        :param bool with_refresh: withRefresh
+        :param str cluster_id: (required)
+        :param bool with_refresh:
+        :param bool force_release:
+        :param bool allow_destroy:
+        :param str comment:
+        :param bool can_queue:
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.release_using_put_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.release_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.release_using_put_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.release_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def release_using_put_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+    def release_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
         """release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.release_using_put_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.release_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param bool allow_destroy: allowDestroy
-        :param bool can_queue: canQueue
-        :param str comment: comment
-        :param bool force_release: forceRelease
-        :param bool with_refresh: withRefresh
+        :param str cluster_id: (required)
+        :param bool with_refresh:
+        :param bool force_release:
+        :param bool allow_destroy:
+        :param str comment:
+        :param bool can_queue:
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'allow_destroy', 'can_queue', 'comment', 'force_release', 'with_refresh']  # noqa: E501
+        all_params = ['cluster_id', 'with_refresh', 'force_release', 'allow_destroy', 'comment', 'can_queue']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1742,14 +1855,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method release_using_put" % key
+                    " to method release" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `release_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `release`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1758,16 +1871,16 @@ class UiDeploymentControllerApi(object):
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
 
         query_params = []
-        if 'allow_destroy' in params:
-            query_params.append(('allowDestroy', params['allow_destroy']))  # noqa: E501
-        if 'can_queue' in params:
-            query_params.append(('canQueue', params['can_queue']))  # noqa: E501
-        if 'comment' in params:
-            query_params.append(('comment', params['comment']))  # noqa: E501
-        if 'force_release' in params:
-            query_params.append(('forceRelease', params['force_release']))  # noqa: E501
         if 'with_refresh' in params:
             query_params.append(('withRefresh', params['with_refresh']))  # noqa: E501
+        if 'force_release' in params:
+            query_params.append(('forceRelease', params['force_release']))  # noqa: E501
+        if 'allow_destroy' in params:
+            query_params.append(('allowDestroy', params['allow_destroy']))  # noqa: E501
+        if 'comment' in params:
+            query_params.append(('comment', params['comment']))  # noqa: E501
+        if 'can_queue' in params:
+            query_params.append(('canQueue', params['can_queue']))  # noqa: E501
 
         header_params = {}
 
@@ -1777,10 +1890,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/release', 'PUT',
@@ -1798,55 +1911,55 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def release_v2_using_put(self, cluster_id, release_type, **kwargs):  # noqa: E501
-        """releaseV2  # noqa: E501
+    def release_v2(self, cluster_id, release_type, **kwargs):  # noqa: E501
+        """release_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.release_v2_using_put(cluster_id, release_type, async_req=True)
+        >>> thread = api.release_v2(cluster_id, release_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str release_type: releaseType (required)
-        :param bool allow_destroy: allowDestroy
-        :param bool can_queue: canQueue
-        :param str comment: comment
-        :param bool force_release: forceRelease
-        :param bool with_refresh: withRefresh
+        :param str cluster_id: (required)
+        :param str release_type: (required)
+        :param bool with_refresh:
+        :param bool force_release:
+        :param bool allow_destroy:
+        :param str comment:
+        :param bool can_queue:
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.release_v2_using_put_with_http_info(cluster_id, release_type, **kwargs)  # noqa: E501
+            return self.release_v2_with_http_info(cluster_id, release_type, **kwargs)  # noqa: E501
         else:
-            (data) = self.release_v2_using_put_with_http_info(cluster_id, release_type, **kwargs)  # noqa: E501
+            (data) = self.release_v2_with_http_info(cluster_id, release_type, **kwargs)  # noqa: E501
             return data
 
-    def release_v2_using_put_with_http_info(self, cluster_id, release_type, **kwargs):  # noqa: E501
-        """releaseV2  # noqa: E501
+    def release_v2_with_http_info(self, cluster_id, release_type, **kwargs):  # noqa: E501
+        """release_v2  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.release_v2_using_put_with_http_info(cluster_id, release_type, async_req=True)
+        >>> thread = api.release_v2_with_http_info(cluster_id, release_type, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str release_type: releaseType (required)
-        :param bool allow_destroy: allowDestroy
-        :param bool can_queue: canQueue
-        :param str comment: comment
-        :param bool force_release: forceRelease
-        :param bool with_refresh: withRefresh
+        :param str cluster_id: (required)
+        :param str release_type: (required)
+        :param bool with_refresh:
+        :param bool force_release:
+        :param bool allow_destroy:
+        :param str comment:
+        :param bool can_queue:
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'release_type', 'allow_destroy', 'can_queue', 'comment', 'force_release', 'with_refresh']  # noqa: E501
+        all_params = ['cluster_id', 'release_type', 'with_refresh', 'force_release', 'allow_destroy', 'comment', 'can_queue']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1857,18 +1970,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method release_v2_using_put" % key
+                    " to method release_v2" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `release_v2_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `release_v2`")  # noqa: E501
         # verify the required parameter 'release_type' is set
         if ('release_type' not in params or
                 params['release_type'] is None):
-            raise ValueError("Missing the required parameter `release_type` when calling `release_v2_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `release_type` when calling `release_v2`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1879,16 +1992,16 @@ class UiDeploymentControllerApi(object):
             path_params['releaseType'] = params['release_type']  # noqa: E501
 
         query_params = []
-        if 'allow_destroy' in params:
-            query_params.append(('allowDestroy', params['allow_destroy']))  # noqa: E501
-        if 'can_queue' in params:
-            query_params.append(('canQueue', params['can_queue']))  # noqa: E501
-        if 'comment' in params:
-            query_params.append(('comment', params['comment']))  # noqa: E501
-        if 'force_release' in params:
-            query_params.append(('forceRelease', params['force_release']))  # noqa: E501
         if 'with_refresh' in params:
             query_params.append(('withRefresh', params['with_refresh']))  # noqa: E501
+        if 'force_release' in params:
+            query_params.append(('forceRelease', params['force_release']))  # noqa: E501
+        if 'allow_destroy' in params:
+            query_params.append(('allowDestroy', params['allow_destroy']))  # noqa: E501
+        if 'comment' in params:
+            query_params.append(('comment', params['comment']))  # noqa: E501
+        if 'can_queue' in params:
+            query_params.append(('canQueue', params['can_queue']))  # noqa: E501
 
         header_params = {}
 
@@ -1898,10 +2011,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/releaseV2/{releaseType}', 'PUT',
@@ -1919,57 +2032,59 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def run_hotfix_deployment_recipe_using_post(self, body, cluster_id, **kwargs):  # noqa: E501
-        """runHotfixDeploymentRecipe  # noqa: E501
+    def run_hotfix_deployment_recipe(self, body, cluster_id, **kwargs):  # noqa: E501
+        """run_hotfix_deployment_recipe  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.run_hotfix_deployment_recipe_using_post(body, cluster_id, async_req=True)
+        >>> thread = api.run_hotfix_deployment_recipe(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param HotfixDeploymentRecipe body: deploymentRecipe (required)
-        :param str cluster_id: clusterId (required)
-        :param bool allow_destroy: allowDestroy
-        :param bool can_queue: canQueue
-        :param str comment: comment
-        :param bool force_release: forceRelease
-        :param bool is_plan: isPlan
-        :param bool with_refresh: withRefresh
+        :param HotfixDeploymentRecipe body: (required)
+        :param str cluster_id: (required)
+        :param bool allow_destroy:
+        :param bool with_refresh:
+        :param bool force_release:
+        :param str comment:
+        :param bool is_plan:
+        :param bool can_queue:
+        :param str release_trace_id: Unique identifier of the release that you can search it with
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.run_hotfix_deployment_recipe_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            return self.run_hotfix_deployment_recipe_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.run_hotfix_deployment_recipe_using_post_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
+            (data) = self.run_hotfix_deployment_recipe_with_http_info(body, cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def run_hotfix_deployment_recipe_using_post_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
-        """runHotfixDeploymentRecipe  # noqa: E501
+    def run_hotfix_deployment_recipe_with_http_info(self, body, cluster_id, **kwargs):  # noqa: E501
+        """run_hotfix_deployment_recipe  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.run_hotfix_deployment_recipe_using_post_with_http_info(body, cluster_id, async_req=True)
+        >>> thread = api.run_hotfix_deployment_recipe_with_http_info(body, cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param HotfixDeploymentRecipe body: deploymentRecipe (required)
-        :param str cluster_id: clusterId (required)
-        :param bool allow_destroy: allowDestroy
-        :param bool can_queue: canQueue
-        :param str comment: comment
-        :param bool force_release: forceRelease
-        :param bool is_plan: isPlan
-        :param bool with_refresh: withRefresh
+        :param HotfixDeploymentRecipe body: (required)
+        :param str cluster_id: (required)
+        :param bool allow_destroy:
+        :param bool with_refresh:
+        :param bool force_release:
+        :param str comment:
+        :param bool is_plan:
+        :param bool can_queue:
+        :param str release_trace_id: Unique identifier of the release that you can search it with
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'cluster_id', 'allow_destroy', 'can_queue', 'comment', 'force_release', 'is_plan', 'with_refresh']  # noqa: E501
+        all_params = ['body', 'cluster_id', 'allow_destroy', 'with_refresh', 'force_release', 'comment', 'is_plan', 'can_queue', 'release_trace_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1980,18 +2095,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method run_hotfix_deployment_recipe_using_post" % key
+                    " to method run_hotfix_deployment_recipe" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'body' is set
         if ('body' not in params or
                 params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `run_hotfix_deployment_recipe_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `body` when calling `run_hotfix_deployment_recipe`")  # noqa: E501
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `run_hotfix_deployment_recipe_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `run_hotfix_deployment_recipe`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2002,16 +2117,18 @@ class UiDeploymentControllerApi(object):
         query_params = []
         if 'allow_destroy' in params:
             query_params.append(('allowDestroy', params['allow_destroy']))  # noqa: E501
-        if 'can_queue' in params:
-            query_params.append(('canQueue', params['can_queue']))  # noqa: E501
-        if 'comment' in params:
-            query_params.append(('comment', params['comment']))  # noqa: E501
-        if 'force_release' in params:
-            query_params.append(('forceRelease', params['force_release']))  # noqa: E501
-        if 'is_plan' in params:
-            query_params.append(('isPlan', params['is_plan']))  # noqa: E501
         if 'with_refresh' in params:
             query_params.append(('withRefresh', params['with_refresh']))  # noqa: E501
+        if 'force_release' in params:
+            query_params.append(('forceRelease', params['force_release']))  # noqa: E501
+        if 'comment' in params:
+            query_params.append(('comment', params['comment']))  # noqa: E501
+        if 'is_plan' in params:
+            query_params.append(('isPlan', params['is_plan']))  # noqa: E501
+        if 'can_queue' in params:
+            query_params.append(('canQueue', params['can_queue']))  # noqa: E501
+        if 'release_trace_id' in params:
+            query_params.append(('releaseTraceId', params['release_trace_id']))  # noqa: E501
 
         header_params = {}
 
@@ -2023,14 +2140,14 @@ class UiDeploymentControllerApi(object):
             body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/recipes/deployment/hotfix', 'POST',
@@ -2048,63 +2165,63 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_deployments_using_get(self, cluster_id, **kwargs):  # noqa: E501
-        """searchDeployments  # noqa: E501
+    def search_deployments(self, cluster_id, **kwargs):  # noqa: E501
+        """search_deployments  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_deployments_using_get(cluster_id, async_req=True)
+        >>> thread = api.search_deployments(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param datetime end: end
-        :param list[str] exclude_status: excludeStatus
-        :param int page_number: pageNumber
-        :param int page_size: pageSize
-        :param str release_type: releaseType
-        :param bool signed_off: signedOff
-        :param datetime start: start
-        :param str status: status
-        :param str tf_version: tfVersion
-        :param str triggered_by: triggeredBy
+        :param str cluster_id: (required)
+        :param int page_number:
+        :param int page_size:
+        :param str release_type:
+        :param bool signed_off:
+        :param str status:
+        :param list[str] exclude_status:
+        :param str triggered_by:
+        :param datetime start:
+        :param datetime end:
+        :param str tf_version:
         :return: PageDeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_deployments_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.search_deployments_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_deployments_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.search_deployments_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def search_deployments_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """searchDeployments  # noqa: E501
+    def search_deployments_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """search_deployments  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_deployments_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.search_deployments_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param datetime end: end
-        :param list[str] exclude_status: excludeStatus
-        :param int page_number: pageNumber
-        :param int page_size: pageSize
-        :param str release_type: releaseType
-        :param bool signed_off: signedOff
-        :param datetime start: start
-        :param str status: status
-        :param str tf_version: tfVersion
-        :param str triggered_by: triggeredBy
+        :param str cluster_id: (required)
+        :param int page_number:
+        :param int page_size:
+        :param str release_type:
+        :param bool signed_off:
+        :param str status:
+        :param list[str] exclude_status:
+        :param str triggered_by:
+        :param datetime start:
+        :param datetime end:
+        :param str tf_version:
         :return: PageDeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'end', 'exclude_status', 'page_number', 'page_size', 'release_type', 'signed_off', 'start', 'status', 'tf_version', 'triggered_by']  # noqa: E501
+        all_params = ['cluster_id', 'page_number', 'page_size', 'release_type', 'signed_off', 'status', 'exclude_status', 'triggered_by', 'start', 'end', 'tf_version']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2115,14 +2232,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search_deployments_using_get" % key
+                    " to method search_deployments" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `search_deployments_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `search_deployments`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2131,11 +2248,6 @@ class UiDeploymentControllerApi(object):
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
 
         query_params = []
-        if 'end' in params:
-            query_params.append(('end', params['end']))  # noqa: E501
-        if 'exclude_status' in params:
-            query_params.append(('excludeStatus', params['exclude_status']))  # noqa: E501
-            collection_formats['excludeStatus'] = 'multi'  # noqa: E501
         if 'page_number' in params:
             query_params.append(('pageNumber', params['page_number']))  # noqa: E501
         if 'page_size' in params:
@@ -2144,14 +2256,19 @@ class UiDeploymentControllerApi(object):
             query_params.append(('releaseType', params['release_type']))  # noqa: E501
         if 'signed_off' in params:
             query_params.append(('signedOff', params['signed_off']))  # noqa: E501
-        if 'start' in params:
-            query_params.append(('start', params['start']))  # noqa: E501
         if 'status' in params:
             query_params.append(('status', params['status']))  # noqa: E501
-        if 'tf_version' in params:
-            query_params.append(('tfVersion', params['tf_version']))  # noqa: E501
+        if 'exclude_status' in params:
+            query_params.append(('excludeStatus', params['exclude_status']))  # noqa: E501
+            collection_formats['excludeStatus'] = 'multi'  # noqa: E501
         if 'triggered_by' in params:
             query_params.append(('triggeredBy', params['triggered_by']))  # noqa: E501
+        if 'start' in params:
+            query_params.append(('start', params['start']))  # noqa: E501
+        if 'end' in params:
+            query_params.append(('end', params['end']))  # noqa: E501
+        if 'tf_version' in params:
+            query_params.append(('tfVersion', params['tf_version']))  # noqa: E501
 
         header_params = {}
 
@@ -2161,10 +2278,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/search', 'GET',
@@ -2182,39 +2299,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def sign_off_deployment_using_put(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """signOffDeployment  # noqa: E501
+    def sign_off_deployment(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """sign_off_deployment  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sign_off_deployment_using_put(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.sign_off_deployment(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.sign_off_deployment_using_put_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return self.sign_off_deployment_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.sign_off_deployment_using_put_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            (data) = self.sign_off_deployment_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
             return data
 
-    def sign_off_deployment_using_put_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """signOffDeployment  # noqa: E501
+    def sign_off_deployment_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """sign_off_deployment  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.sign_off_deployment_using_put_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.sign_off_deployment_with_http_info(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2231,18 +2348,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method sign_off_deployment_using_put" % key
+                    " to method sign_off_deployment" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `sign_off_deployment_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `sign_off_deployment`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `sign_off_deployment_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `sign_off_deployment`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2262,10 +2379,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/signoff', 'PUT',
@@ -2283,38 +2400,38 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def simulate_using_get(self, cluster_id, **kwargs):  # noqa: E501
+    def simulate(self, cluster_id, **kwargs):  # noqa: E501
         """simulate  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.simulate_using_get(cluster_id, async_req=True)
+        >>> thread = api.simulate(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: list[ChangeRepresentation]
+        :param str cluster_id: (required)
+        :return: list[ChangeRepresentationObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.simulate_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.simulate_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.simulate_using_get_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.simulate_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def simulate_using_get_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+    def simulate_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
         """simulate  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.simulate_using_get_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.simulate_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :return: list[ChangeRepresentation]
+        :param str cluster_id: (required)
+        :return: list[ChangeRepresentationObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2330,14 +2447,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method simulate_using_get" % key
+                    " to method simulate" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `simulate_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `simulate`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2355,10 +2472,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/simulate', 'GET',
@@ -2368,7 +2485,7 @@ class UiDeploymentControllerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[ChangeRepresentation]',  # noqa: E501
+            response_type='list[ChangeRepresentationObject]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2376,39 +2493,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def state_unlock_using_put(self, cluster_id, lock_id, **kwargs):  # noqa: E501
-        """stateUnlock  # noqa: E501
+    def state_unlock(self, cluster_id, lock_id, **kwargs):  # noqa: E501
+        """state_unlock  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.state_unlock_using_put(cluster_id, lock_id, async_req=True)
+        >>> thread = api.state_unlock(cluster_id, lock_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str lock_id: lockId (required)
+        :param str cluster_id: (required)
+        :param str lock_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.state_unlock_using_put_with_http_info(cluster_id, lock_id, **kwargs)  # noqa: E501
+            return self.state_unlock_with_http_info(cluster_id, lock_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.state_unlock_using_put_with_http_info(cluster_id, lock_id, **kwargs)  # noqa: E501
+            (data) = self.state_unlock_with_http_info(cluster_id, lock_id, **kwargs)  # noqa: E501
             return data
 
-    def state_unlock_using_put_with_http_info(self, cluster_id, lock_id, **kwargs):  # noqa: E501
-        """stateUnlock  # noqa: E501
+    def state_unlock_with_http_info(self, cluster_id, lock_id, **kwargs):  # noqa: E501
+        """state_unlock  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.state_unlock_using_put_with_http_info(cluster_id, lock_id, async_req=True)
+        >>> thread = api.state_unlock_with_http_info(cluster_id, lock_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str lock_id: lockId (required)
+        :param str cluster_id: (required)
+        :param str lock_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2425,18 +2542,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method state_unlock_using_put" % key
+                    " to method state_unlock" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `state_unlock_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `state_unlock`")  # noqa: E501
         # verify the required parameter 'lock_id' is set
         if ('lock_id' not in params or
                 params['lock_id'] is None):
-            raise ValueError("Missing the required parameter `lock_id` when calling `state_unlock_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `lock_id` when calling `state_unlock`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2456,10 +2573,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/unlock', 'PUT',
@@ -2477,39 +2594,39 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def stream_deployment_logs_using_get(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """streamDeploymentLogs  # noqa: E501
+    def stream_deployment_logs(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """stream_deployment_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.stream_deployment_logs_using_get(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.stream_deployment_logs(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: StreamingResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.stream_deployment_logs_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            return self.stream_deployment_logs_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.stream_deployment_logs_using_get_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
+            (data) = self.stream_deployment_logs_with_http_info(cluster_id, deployment_id, **kwargs)  # noqa: E501
             return data
 
-    def stream_deployment_logs_using_get_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
-        """streamDeploymentLogs  # noqa: E501
+    def stream_deployment_logs_with_http_info(self, cluster_id, deployment_id, **kwargs):  # noqa: E501
+        """stream_deployment_logs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.stream_deployment_logs_using_get_with_http_info(cluster_id, deployment_id, async_req=True)
+        >>> thread = api.stream_deployment_logs_with_http_info(cluster_id, deployment_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
         :return: StreamingResponseBody
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2526,18 +2643,18 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method stream_deployment_logs_using_get" % key
+                    " to method stream_deployment_logs" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `stream_deployment_logs_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `stream_deployment_logs`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `stream_deployment_logs_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `stream_deployment_logs`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2557,10 +2674,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/logs/stream', 'GET',
@@ -2578,37 +2695,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def trigger_maintenance_release_using_post(self, cluster_id, **kwargs):  # noqa: E501
-        """triggerMaintenanceRelease  # noqa: E501
+    def trigger_maintenance_release(self, cluster_id, **kwargs):  # noqa: E501
+        """trigger_maintenance_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.trigger_maintenance_release_using_post(cluster_id, async_req=True)
+        >>> thread = api.trigger_maintenance_release(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.trigger_maintenance_release_using_post_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.trigger_maintenance_release_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.trigger_maintenance_release_using_post_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.trigger_maintenance_release_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def trigger_maintenance_release_using_post_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """triggerMaintenanceRelease  # noqa: E501
+    def trigger_maintenance_release_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """trigger_maintenance_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.trigger_maintenance_release_using_post_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.trigger_maintenance_release_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2625,14 +2742,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method trigger_maintenance_release_using_post" % key
+                    " to method trigger_maintenance_release" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `trigger_maintenance_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `trigger_maintenance_release`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2650,10 +2767,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/maintenance', 'POST',
@@ -2671,49 +2788,49 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def trigger_rollback_plan_release_using_post(self, cluster_id, deployment_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """triggerRollbackPlanRelease  # noqa: E501
+    def trigger_rollback_plan_release(self, cluster_id, deployment_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """trigger_rollback_plan_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.trigger_rollback_plan_release_using_post(cluster_id, deployment_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.trigger_rollback_plan_release(cluster_id, deployment_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.trigger_rollback_plan_release_using_post_with_http_info(cluster_id, deployment_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            return self.trigger_rollback_plan_release_with_http_info(cluster_id, deployment_id, resource_type, resource_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.trigger_rollback_plan_release_using_post_with_http_info(cluster_id, deployment_id, resource_name, resource_type, **kwargs)  # noqa: E501
+            (data) = self.trigger_rollback_plan_release_with_http_info(cluster_id, deployment_id, resource_type, resource_name, **kwargs)  # noqa: E501
             return data
 
-    def trigger_rollback_plan_release_using_post_with_http_info(self, cluster_id, deployment_id, resource_name, resource_type, **kwargs):  # noqa: E501
-        """triggerRollbackPlanRelease  # noqa: E501
+    def trigger_rollback_plan_release_with_http_info(self, cluster_id, deployment_id, resource_type, resource_name, **kwargs):  # noqa: E501
+        """trigger_rollback_plan_release  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.trigger_rollback_plan_release_using_post_with_http_info(cluster_id, deployment_id, resource_name, resource_type, async_req=True)
+        >>> thread = api.trigger_rollback_plan_release_with_http_info(cluster_id, deployment_id, resource_type, resource_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
-        :param str deployment_id: deploymentId (required)
-        :param str resource_name: resourceName (required)
-        :param str resource_type: resourceType (required)
+        :param str cluster_id: (required)
+        :param str deployment_id: (required)
+        :param str resource_type: (required)
+        :param str resource_name: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['cluster_id', 'deployment_id', 'resource_name', 'resource_type']  # noqa: E501
+        all_params = ['cluster_id', 'deployment_id', 'resource_type', 'resource_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2724,26 +2841,26 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method trigger_rollback_plan_release_using_post" % key
+                    " to method trigger_rollback_plan_release" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `trigger_rollback_plan_release`")  # noqa: E501
         # verify the required parameter 'deployment_id' is set
         if ('deployment_id' not in params or
                 params['deployment_id'] is None):
-            raise ValueError("Missing the required parameter `deployment_id` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
-        # verify the required parameter 'resource_name' is set
-        if ('resource_name' not in params or
-                params['resource_name'] is None):
-            raise ValueError("Missing the required parameter `resource_name` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `deployment_id` when calling `trigger_rollback_plan_release`")  # noqa: E501
         # verify the required parameter 'resource_type' is set
         if ('resource_type' not in params or
                 params['resource_type'] is None):
-            raise ValueError("Missing the required parameter `resource_type` when calling `trigger_rollback_plan_release_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `resource_type` when calling `trigger_rollback_plan_release`")  # noqa: E501
+        # verify the required parameter 'resource_name' is set
+        if ('resource_name' not in params or
+                params['resource_name'] is None):
+            raise ValueError("Missing the required parameter `resource_name` when calling `trigger_rollback_plan_release`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2752,10 +2869,10 @@ class UiDeploymentControllerApi(object):
             path_params['clusterId'] = params['cluster_id']  # noqa: E501
         if 'deployment_id' in params:
             path_params['deploymentId'] = params['deployment_id']  # noqa: E501
-        if 'resource_name' in params:
-            path_params['resourceName'] = params['resource_name']  # noqa: E501
         if 'resource_type' in params:
             path_params['resourceType'] = params['resource_type']  # noqa: E501
+        if 'resource_name' in params:
+            path_params['resourceName'] = params['resource_name']  # noqa: E501
 
         query_params = []
 
@@ -2767,10 +2884,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan', 'POST',
@@ -2788,37 +2905,37 @@ class UiDeploymentControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def trigger_terraform_export_using_post(self, cluster_id, **kwargs):  # noqa: E501
-        """triggerTerraformExport  # noqa: E501
+    def trigger_terraform_export(self, cluster_id, **kwargs):  # noqa: E501
+        """trigger_terraform_export  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.trigger_terraform_export_using_post(cluster_id, async_req=True)
+        >>> thread = api.trigger_terraform_export(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.trigger_terraform_export_using_post_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            return self.trigger_terraform_export_with_http_info(cluster_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.trigger_terraform_export_using_post_with_http_info(cluster_id, **kwargs)  # noqa: E501
+            (data) = self.trigger_terraform_export_with_http_info(cluster_id, **kwargs)  # noqa: E501
             return data
 
-    def trigger_terraform_export_using_post_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
-        """triggerTerraformExport  # noqa: E501
+    def trigger_terraform_export_with_http_info(self, cluster_id, **kwargs):  # noqa: E501
+        """trigger_terraform_export  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.trigger_terraform_export_using_post_with_http_info(cluster_id, async_req=True)
+        >>> thread = api.trigger_terraform_export_with_http_info(cluster_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str cluster_id: clusterId (required)
+        :param str cluster_id: (required)
         :return: DeploymentLog
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2835,14 +2952,14 @@ class UiDeploymentControllerApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method trigger_terraform_export_using_post" % key
+                    " to method trigger_terraform_export" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'cluster_id' is set
         if ('cluster_id' not in params or
                 params['cluster_id'] is None):
-            raise ValueError("Missing the required parameter `cluster_id` when calling `trigger_terraform_export_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `cluster_id` when calling `trigger_terraform_export`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2860,10 +2977,10 @@ class UiDeploymentControllerApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['*/*'])  # noqa: E501
+            ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['main']  # noqa: E501
+        auth_settings = ['basicAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/cc-ui/v1/clusters/{clusterId}/deployments/terraform-export', 'POST',

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,602 +28,275 @@ class AzureCluster(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auto_sign_off_schedule': 'str',
-        'azs': 'list[str]',
-        'base_cluster_id': 'str',
-        'base_cluster_name': 'str',
-        'branch': 'str',
-        'cd_pipeline_parent': 'str',
-        'client_id': 'str',
-        'client_secret': 'str',
-        'cloud': 'str',
-        'cloud_account_id': 'str',
-        'cloud_account_secret_id': 'str',
-        'cluster_code': 'str',
-        'cluster_state': 'str',
-        'common_environment_variables': 'dict(str, str)',
-        'component_versions': 'dict(str, str)',
-        'configured': 'bool',
+        'id': 'str',
         'created_by': 'str',
         'creation_date': 'datetime',
-        'deleted': 'bool',
-        'dynamic_launch': 'bool',
-        'enable_auto_sign_off': 'bool',
-        'entity_type': 'str',
-        'global_variables': 'dict(str, str)',
-        'id': 'str',
-        'instance_types': 'list[str]',
-        'is_ephemeral': 'bool',
-        'k8s_requests_to_limits_ratio': 'float',
-        'last_modified_by': 'str',
         'last_modified_date': 'datetime',
+        'last_modified_by': 'str',
         'name': 'str',
-        'namespace': 'str',
-        'number_of_versions': 'int',
-        'pause_releases': 'bool',
-        'region': 'str',
-        'release_stream': 'str',
-        'require_sign_off': 'bool',
-        'resource_group_name': 'str',
-        'schedules': 'dict(str, str)',
-        'secrets': 'dict(str, str)',
-        'secrets_uid': 'str',
-        'stack_name': 'str',
-        'subscription_id': 'str',
-        'tenant_id': 'str',
+        'cloud': 'str',
         'tz': 'str',
+        'stack_name': 'str',
+        'release_stream': 'str',
+        'cd_pipeline_parent': 'str',
+        'require_sign_off': 'bool',
+        'deleted': 'bool',
+        'auto_sign_off_schedule': 'str',
+        'enable_auto_sign_off': 'bool',
+        'configured': 'bool',
+        'change_log': 'str',
+        'branch': 'str',
+        'cluster_code': 'str',
+        'common_environment_variables': 'dict(str, str)',
         'variables': 'dict(str, Variables)',
-        'versioning_key': 'str',
+        'secrets': 'dict(str, str)',
+        'global_variables': 'dict(str, str)',
+        'cluster_state': 'str',
+        'schedules': 'dict(str, str)',
+        'k8s_requests_to_limits_ratio': 'float',
+        'component_versions': 'dict(str, str)',
+        'cloud_account_id': 'str',
+        'cloud_account_secret_id': 'str',
+        'is_ephemeral': 'bool',
+        'pause_releases': 'bool',
+        'base_cluster_id': 'str',
+        'base_cluster_name': 'str',
+        'namespace': 'str',
+        'dynamic_launch': 'bool',
+        'tenant_id': 'str',
+        'subscription_id': 'str',
+        'client_id': 'str',
+        'client_secret': 'str',
+        'region': 'str',
+        'azs': 'list[str]',
+        'vpc_cidr': 'str',
+        'instance_types': 'list[str]',
+        'resource_group_name': 'str',
         'vnet_name': 'str',
-        'vpc_cidr': 'str'
+        'entity_type': 'str',
+        'secrets_uid': 'str',
+        'versioning_key': 'str',
+        'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'auto_sign_off_schedule': 'autoSignOffSchedule',
-        'azs': 'azs',
-        'base_cluster_id': 'baseClusterId',
-        'base_cluster_name': 'baseClusterName',
-        'branch': 'branch',
-        'cd_pipeline_parent': 'cdPipelineParent',
-        'client_id': 'clientId',
-        'client_secret': 'clientSecret',
-        'cloud': 'cloud',
-        'cloud_account_id': 'cloudAccountId',
-        'cloud_account_secret_id': 'cloudAccountSecretId',
-        'cluster_code': 'clusterCode',
-        'cluster_state': 'clusterState',
-        'common_environment_variables': 'commonEnvironmentVariables',
-        'component_versions': 'componentVersions',
-        'configured': 'configured',
+        'id': 'id',
         'created_by': 'createdBy',
         'creation_date': 'creationDate',
-        'deleted': 'deleted',
-        'dynamic_launch': 'dynamicLaunch',
-        'enable_auto_sign_off': 'enableAutoSignOff',
-        'entity_type': 'entityType',
-        'global_variables': 'globalVariables',
-        'id': 'id',
-        'instance_types': 'instanceTypes',
-        'is_ephemeral': 'isEphemeral',
-        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
-        'last_modified_by': 'lastModifiedBy',
         'last_modified_date': 'lastModifiedDate',
+        'last_modified_by': 'lastModifiedBy',
         'name': 'name',
-        'namespace': 'namespace',
-        'number_of_versions': 'numberOfVersions',
-        'pause_releases': 'pauseReleases',
-        'region': 'region',
-        'release_stream': 'releaseStream',
-        'require_sign_off': 'requireSignOff',
-        'resource_group_name': 'resourceGroupName',
-        'schedules': 'schedules',
-        'secrets': 'secrets',
-        'secrets_uid': 'secretsUid',
-        'stack_name': 'stackName',
-        'subscription_id': 'subscriptionId',
-        'tenant_id': 'tenantId',
+        'cloud': 'cloud',
         'tz': 'tz',
+        'stack_name': 'stackName',
+        'release_stream': 'releaseStream',
+        'cd_pipeline_parent': 'cdPipelineParent',
+        'require_sign_off': 'requireSignOff',
+        'deleted': 'deleted',
+        'auto_sign_off_schedule': 'autoSignOffSchedule',
+        'enable_auto_sign_off': 'enableAutoSignOff',
+        'configured': 'configured',
+        'change_log': 'changeLog',
+        'branch': 'branch',
+        'cluster_code': 'clusterCode',
+        'common_environment_variables': 'commonEnvironmentVariables',
         'variables': 'variables',
-        'versioning_key': 'versioningKey',
+        'secrets': 'secrets',
+        'global_variables': 'globalVariables',
+        'cluster_state': 'clusterState',
+        'schedules': 'schedules',
+        'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
+        'component_versions': 'componentVersions',
+        'cloud_account_id': 'cloudAccountId',
+        'cloud_account_secret_id': 'cloudAccountSecretId',
+        'is_ephemeral': 'isEphemeral',
+        'pause_releases': 'pauseReleases',
+        'base_cluster_id': 'baseClusterId',
+        'base_cluster_name': 'baseClusterName',
+        'namespace': 'namespace',
+        'dynamic_launch': 'dynamicLaunch',
+        'tenant_id': 'tenantId',
+        'subscription_id': 'subscriptionId',
+        'client_id': 'clientId',
+        'client_secret': 'clientSecret',
+        'region': 'region',
+        'azs': 'azs',
+        'vpc_cidr': 'vpcCIDR',
+        'instance_types': 'instanceTypes',
+        'resource_group_name': 'resourceGroupName',
         'vnet_name': 'vnetName',
-        'vpc_cidr': 'vpcCIDR'
+        'entity_type': 'entityType',
+        'secrets_uid': 'secretsUid',
+        'versioning_key': 'versioningKey',
+        'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, auto_sign_off_schedule=None, azs=None, base_cluster_id=None, base_cluster_name=None, branch=None, cd_pipeline_parent=None, client_id=None, client_secret=None, cloud=None, cloud_account_id=None, cloud_account_secret_id=None, cluster_code=None, cluster_state=None, common_environment_variables=None, component_versions=None, configured=None, created_by=None, creation_date=None, deleted=None, dynamic_launch=None, enable_auto_sign_off=None, entity_type=None, global_variables=None, id=None, instance_types=None, is_ephemeral=None, k8s_requests_to_limits_ratio=None, last_modified_by=None, last_modified_date=None, name=None, namespace=None, number_of_versions=None, pause_releases=None, region=None, release_stream=None, require_sign_off=None, resource_group_name=None, schedules=None, secrets=None, secrets_uid=None, stack_name=None, subscription_id=None, tenant_id=None, tz=None, variables=None, versioning_key=None, vnet_name=None, vpc_cidr=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, cloud=None, tz=None, stack_name=None, release_stream=None, cd_pipeline_parent=None, require_sign_off=None, deleted=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, configured=None, change_log=None, branch=None, cluster_code=None, common_environment_variables=None, variables=None, secrets=None, global_variables=None, cluster_state=None, schedules=None, k8s_requests_to_limits_ratio=None, component_versions=None, cloud_account_id=None, cloud_account_secret_id=None, is_ephemeral=None, pause_releases=None, base_cluster_id=None, base_cluster_name=None, namespace=None, dynamic_launch=None, tenant_id=None, subscription_id=None, client_id=None, client_secret=None, region=None, azs=None, vpc_cidr=None, instance_types=None, resource_group_name=None, vnet_name=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """AzureCluster - a model defined in Swagger"""  # noqa: E501
-        self._auto_sign_off_schedule = None
-        self._azs = None
-        self._base_cluster_id = None
-        self._base_cluster_name = None
-        self._branch = None
-        self._cd_pipeline_parent = None
-        self._client_id = None
-        self._client_secret = None
-        self._cloud = None
-        self._cloud_account_id = None
-        self._cloud_account_secret_id = None
-        self._cluster_code = None
-        self._cluster_state = None
-        self._common_environment_variables = None
-        self._component_versions = None
-        self._configured = None
+        self._id = None
         self._created_by = None
         self._creation_date = None
-        self._deleted = None
-        self._dynamic_launch = None
-        self._enable_auto_sign_off = None
-        self._entity_type = None
-        self._global_variables = None
-        self._id = None
-        self._instance_types = None
-        self._is_ephemeral = None
-        self._k8s_requests_to_limits_ratio = None
-        self._last_modified_by = None
         self._last_modified_date = None
+        self._last_modified_by = None
         self._name = None
-        self._namespace = None
-        self._number_of_versions = None
-        self._pause_releases = None
-        self._region = None
-        self._release_stream = None
-        self._require_sign_off = None
-        self._resource_group_name = None
-        self._schedules = None
-        self._secrets = None
-        self._secrets_uid = None
-        self._stack_name = None
-        self._subscription_id = None
-        self._tenant_id = None
+        self._cloud = None
         self._tz = None
+        self._stack_name = None
+        self._release_stream = None
+        self._cd_pipeline_parent = None
+        self._require_sign_off = None
+        self._deleted = None
+        self._auto_sign_off_schedule = None
+        self._enable_auto_sign_off = None
+        self._configured = None
+        self._change_log = None
+        self._branch = None
+        self._cluster_code = None
+        self._common_environment_variables = None
         self._variables = None
-        self._versioning_key = None
-        self._vnet_name = None
+        self._secrets = None
+        self._global_variables = None
+        self._cluster_state = None
+        self._schedules = None
+        self._k8s_requests_to_limits_ratio = None
+        self._component_versions = None
+        self._cloud_account_id = None
+        self._cloud_account_secret_id = None
+        self._is_ephemeral = None
+        self._pause_releases = None
+        self._base_cluster_id = None
+        self._base_cluster_name = None
+        self._namespace = None
+        self._dynamic_launch = None
+        self._tenant_id = None
+        self._subscription_id = None
+        self._client_id = None
+        self._client_secret = None
+        self._region = None
+        self._azs = None
         self._vpc_cidr = None
+        self._instance_types = None
+        self._resource_group_name = None
+        self._vnet_name = None
+        self._entity_type = None
+        self._secrets_uid = None
+        self._versioning_key = None
+        self._number_of_versions = None
         self.discriminator = None
-        if auto_sign_off_schedule is not None:
-            self.auto_sign_off_schedule = auto_sign_off_schedule
-        if azs is not None:
-            self.azs = azs
-        if base_cluster_id is not None:
-            self.base_cluster_id = base_cluster_id
-        if base_cluster_name is not None:
-            self.base_cluster_name = base_cluster_name
-        if branch is not None:
-            self.branch = branch
-        if cd_pipeline_parent is not None:
-            self.cd_pipeline_parent = cd_pipeline_parent
-        if client_id is not None:
-            self.client_id = client_id
-        if client_secret is not None:
-            self.client_secret = client_secret
-        if cloud is not None:
-            self.cloud = cloud
-        if cloud_account_id is not None:
-            self.cloud_account_id = cloud_account_id
-        if cloud_account_secret_id is not None:
-            self.cloud_account_secret_id = cloud_account_secret_id
-        if cluster_code is not None:
-            self.cluster_code = cluster_code
-        if cluster_state is not None:
-            self.cluster_state = cluster_state
-        if common_environment_variables is not None:
-            self.common_environment_variables = common_environment_variables
-        if component_versions is not None:
-            self.component_versions = component_versions
-        if configured is not None:
-            self.configured = configured
+        if id is not None:
+            self.id = id
         if created_by is not None:
             self.created_by = created_by
         if creation_date is not None:
             self.creation_date = creation_date
-        if deleted is not None:
-            self.deleted = deleted
-        if dynamic_launch is not None:
-            self.dynamic_launch = dynamic_launch
-        if enable_auto_sign_off is not None:
-            self.enable_auto_sign_off = enable_auto_sign_off
-        if entity_type is not None:
-            self.entity_type = entity_type
-        if global_variables is not None:
-            self.global_variables = global_variables
-        if id is not None:
-            self.id = id
-        if instance_types is not None:
-            self.instance_types = instance_types
-        if is_ephemeral is not None:
-            self.is_ephemeral = is_ephemeral
-        if k8s_requests_to_limits_ratio is not None:
-            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-        if last_modified_by is not None:
-            self.last_modified_by = last_modified_by
         if last_modified_date is not None:
             self.last_modified_date = last_modified_date
-        if name is not None:
-            self.name = name
-        if namespace is not None:
-            self.namespace = namespace
-        if number_of_versions is not None:
-            self.number_of_versions = number_of_versions
-        if pause_releases is not None:
-            self.pause_releases = pause_releases
-        if region is not None:
-            self.region = region
-        if release_stream is not None:
-            self.release_stream = release_stream
+        if last_modified_by is not None:
+            self.last_modified_by = last_modified_by
+        self.name = name
+        self.cloud = cloud
+        self.tz = tz
+        self.stack_name = stack_name
+        self.release_stream = release_stream
+        if cd_pipeline_parent is not None:
+            self.cd_pipeline_parent = cd_pipeline_parent
         if require_sign_off is not None:
             self.require_sign_off = require_sign_off
-        if resource_group_name is not None:
-            self.resource_group_name = resource_group_name
-        if schedules is not None:
-            self.schedules = schedules
-        if secrets is not None:
-            self.secrets = secrets
-        if secrets_uid is not None:
-            self.secrets_uid = secrets_uid
-        if stack_name is not None:
-            self.stack_name = stack_name
-        if subscription_id is not None:
-            self.subscription_id = subscription_id
-        if tenant_id is not None:
-            self.tenant_id = tenant_id
-        if tz is not None:
-            self.tz = tz
+        if deleted is not None:
+            self.deleted = deleted
+        if auto_sign_off_schedule is not None:
+            self.auto_sign_off_schedule = auto_sign_off_schedule
+        if enable_auto_sign_off is not None:
+            self.enable_auto_sign_off = enable_auto_sign_off
+        if configured is not None:
+            self.configured = configured
+        if change_log is not None:
+            self.change_log = change_log
+        if branch is not None:
+            self.branch = branch
+        if cluster_code is not None:
+            self.cluster_code = cluster_code
+        if common_environment_variables is not None:
+            self.common_environment_variables = common_environment_variables
         if variables is not None:
             self.variables = variables
-        if versioning_key is not None:
-            self.versioning_key = versioning_key
-        if vnet_name is not None:
-            self.vnet_name = vnet_name
+        if secrets is not None:
+            self.secrets = secrets
+        if global_variables is not None:
+            self.global_variables = global_variables
+        if cluster_state is not None:
+            self.cluster_state = cluster_state
+        if schedules is not None:
+            self.schedules = schedules
+        if k8s_requests_to_limits_ratio is not None:
+            self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+        if component_versions is not None:
+            self.component_versions = component_versions
+        if cloud_account_id is not None:
+            self.cloud_account_id = cloud_account_id
+        if cloud_account_secret_id is not None:
+            self.cloud_account_secret_id = cloud_account_secret_id
+        if is_ephemeral is not None:
+            self.is_ephemeral = is_ephemeral
+        if pause_releases is not None:
+            self.pause_releases = pause_releases
+        if base_cluster_id is not None:
+            self.base_cluster_id = base_cluster_id
+        if base_cluster_name is not None:
+            self.base_cluster_name = base_cluster_name
+        if namespace is not None:
+            self.namespace = namespace
+        if dynamic_launch is not None:
+            self.dynamic_launch = dynamic_launch
+        if tenant_id is not None:
+            self.tenant_id = tenant_id
+        if subscription_id is not None:
+            self.subscription_id = subscription_id
+        if client_id is not None:
+            self.client_id = client_id
+        if client_secret is not None:
+            self.client_secret = client_secret
+        if region is not None:
+            self.region = region
+        if azs is not None:
+            self.azs = azs
         if vpc_cidr is not None:
             self.vpc_cidr = vpc_cidr
+        if instance_types is not None:
+            self.instance_types = instance_types
+        if resource_group_name is not None:
+            self.resource_group_name = resource_group_name
+        if vnet_name is not None:
+            self.vnet_name = vnet_name
+        if entity_type is not None:
+            self.entity_type = entity_type
+        if secrets_uid is not None:
+            self.secrets_uid = secrets_uid
+        if versioning_key is not None:
+            self.versioning_key = versioning_key
+        if number_of_versions is not None:
+            self.number_of_versions = number_of_versions
 
     @property
-    def auto_sign_off_schedule(self):
-        """Gets the auto_sign_off_schedule of this AzureCluster.  # noqa: E501
+    def id(self):
+        """Gets the id of this AzureCluster.  # noqa: E501
 
 
-        :return: The auto_sign_off_schedule of this AzureCluster.  # noqa: E501
+        :return: The id of this AzureCluster.  # noqa: E501
         :rtype: str
         """
-        return self._auto_sign_off_schedule
+        return self._id
 
-    @auto_sign_off_schedule.setter
-    def auto_sign_off_schedule(self, auto_sign_off_schedule):
-        """Sets the auto_sign_off_schedule of this AzureCluster.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this AzureCluster.
 
 
-        :param auto_sign_off_schedule: The auto_sign_off_schedule of this AzureCluster.  # noqa: E501
+        :param id: The id of this AzureCluster.  # noqa: E501
         :type: str
         """
 
-        self._auto_sign_off_schedule = auto_sign_off_schedule
-
-    @property
-    def azs(self):
-        """Gets the azs of this AzureCluster.  # noqa: E501
-
-
-        :return: The azs of this AzureCluster.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._azs
-
-    @azs.setter
-    def azs(self, azs):
-        """Sets the azs of this AzureCluster.
-
-
-        :param azs: The azs of this AzureCluster.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._azs = azs
-
-    @property
-    def base_cluster_id(self):
-        """Gets the base_cluster_id of this AzureCluster.  # noqa: E501
-
-
-        :return: The base_cluster_id of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_cluster_id
-
-    @base_cluster_id.setter
-    def base_cluster_id(self, base_cluster_id):
-        """Sets the base_cluster_id of this AzureCluster.
-
-
-        :param base_cluster_id: The base_cluster_id of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._base_cluster_id = base_cluster_id
-
-    @property
-    def base_cluster_name(self):
-        """Gets the base_cluster_name of this AzureCluster.  # noqa: E501
-
-
-        :return: The base_cluster_name of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._base_cluster_name
-
-    @base_cluster_name.setter
-    def base_cluster_name(self, base_cluster_name):
-        """Sets the base_cluster_name of this AzureCluster.
-
-
-        :param base_cluster_name: The base_cluster_name of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._base_cluster_name = base_cluster_name
-
-    @property
-    def branch(self):
-        """Gets the branch of this AzureCluster.  # noqa: E501
-
-
-        :return: The branch of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._branch
-
-    @branch.setter
-    def branch(self, branch):
-        """Sets the branch of this AzureCluster.
-
-
-        :param branch: The branch of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._branch = branch
-
-    @property
-    def cd_pipeline_parent(self):
-        """Gets the cd_pipeline_parent of this AzureCluster.  # noqa: E501
-
-
-        :return: The cd_pipeline_parent of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cd_pipeline_parent
-
-    @cd_pipeline_parent.setter
-    def cd_pipeline_parent(self, cd_pipeline_parent):
-        """Sets the cd_pipeline_parent of this AzureCluster.
-
-
-        :param cd_pipeline_parent: The cd_pipeline_parent of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cd_pipeline_parent = cd_pipeline_parent
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this AzureCluster.  # noqa: E501
-
-
-        :return: The client_id of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this AzureCluster.
-
-
-        :param client_id: The client_id of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def client_secret(self):
-        """Gets the client_secret of this AzureCluster.  # noqa: E501
-
-
-        :return: The client_secret of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_secret
-
-    @client_secret.setter
-    def client_secret(self, client_secret):
-        """Sets the client_secret of this AzureCluster.
-
-
-        :param client_secret: The client_secret of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._client_secret = client_secret
-
-    @property
-    def cloud(self):
-        """Gets the cloud of this AzureCluster.  # noqa: E501
-
-
-        :return: The cloud of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud
-
-    @cloud.setter
-    def cloud(self, cloud):
-        """Sets the cloud of this AzureCluster.
-
-
-        :param cloud: The cloud of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
-        if cloud not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
-                .format(cloud, allowed_values)
-            )
-
-        self._cloud = cloud
-
-    @property
-    def cloud_account_id(self):
-        """Gets the cloud_account_id of this AzureCluster.  # noqa: E501
-
-
-        :return: The cloud_account_id of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_account_id
-
-    @cloud_account_id.setter
-    def cloud_account_id(self, cloud_account_id):
-        """Sets the cloud_account_id of this AzureCluster.
-
-
-        :param cloud_account_id: The cloud_account_id of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cloud_account_id = cloud_account_id
-
-    @property
-    def cloud_account_secret_id(self):
-        """Gets the cloud_account_secret_id of this AzureCluster.  # noqa: E501
-
-
-        :return: The cloud_account_secret_id of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cloud_account_secret_id
-
-    @cloud_account_secret_id.setter
-    def cloud_account_secret_id(self, cloud_account_secret_id):
-        """Sets the cloud_account_secret_id of this AzureCluster.
-
-
-        :param cloud_account_secret_id: The cloud_account_secret_id of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cloud_account_secret_id = cloud_account_secret_id
-
-    @property
-    def cluster_code(self):
-        """Gets the cluster_code of this AzureCluster.  # noqa: E501
-
-
-        :return: The cluster_code of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_code
-
-    @cluster_code.setter
-    def cluster_code(self, cluster_code):
-        """Sets the cluster_code of this AzureCluster.
-
-
-        :param cluster_code: The cluster_code of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._cluster_code = cluster_code
-
-    @property
-    def cluster_state(self):
-        """Gets the cluster_state of this AzureCluster.  # noqa: E501
-
-
-        :return: The cluster_state of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._cluster_state
-
-    @cluster_state.setter
-    def cluster_state(self, cluster_state):
-        """Sets the cluster_state of this AzureCluster.
-
-
-        :param cluster_state: The cluster_state of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["STOPPED", "RUNNING", "LAUNCHING", "DESTROYING", "LAUNCH_FAILED", "DESTROY_FAILED", "UNKNOWN", "SCALE_DOWN", "SCALING_DOWN", "SCALE_DOWN_FAILED", "SCALING_UP", "SCALE_UP_FAILED"]  # noqa: E501
-        if cluster_state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `cluster_state` ({0}), must be one of {1}"  # noqa: E501
-                .format(cluster_state, allowed_values)
-            )
-
-        self._cluster_state = cluster_state
-
-    @property
-    def common_environment_variables(self):
-        """Gets the common_environment_variables of this AzureCluster.  # noqa: E501
-
-
-        :return: The common_environment_variables of this AzureCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._common_environment_variables
-
-    @common_environment_variables.setter
-    def common_environment_variables(self, common_environment_variables):
-        """Sets the common_environment_variables of this AzureCluster.
-
-
-        :param common_environment_variables: The common_environment_variables of this AzureCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._common_environment_variables = common_environment_variables
-
-    @property
-    def component_versions(self):
-        """Gets the component_versions of this AzureCluster.  # noqa: E501
-
-
-        :return: The component_versions of this AzureCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._component_versions
-
-    @component_versions.setter
-    def component_versions(self, component_versions):
-        """Sets the component_versions of this AzureCluster.
-
-
-        :param component_versions: The component_versions of this AzureCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._component_versions = component_versions
-
-    @property
-    def configured(self):
-        """Gets the configured of this AzureCluster.  # noqa: E501
-
-
-        :return: The configured of this AzureCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._configured
-
-    @configured.setter
-    def configured(self, configured):
-        """Sets the configured of this AzureCluster.
-
-
-        :param configured: The configured of this AzureCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._configured = configured
+        self._id = id
 
     @property
     def created_by(self):
@@ -668,6 +341,211 @@ class AzureCluster(object):
         self._creation_date = creation_date
 
     @property
+    def last_modified_date(self):
+        """Gets the last_modified_date of this AzureCluster.  # noqa: E501
+
+
+        :return: The last_modified_date of this AzureCluster.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._last_modified_date
+
+    @last_modified_date.setter
+    def last_modified_date(self, last_modified_date):
+        """Sets the last_modified_date of this AzureCluster.
+
+
+        :param last_modified_date: The last_modified_date of this AzureCluster.  # noqa: E501
+        :type: datetime
+        """
+
+        self._last_modified_date = last_modified_date
+
+    @property
+    def last_modified_by(self):
+        """Gets the last_modified_by of this AzureCluster.  # noqa: E501
+
+
+        :return: The last_modified_by of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_modified_by
+
+    @last_modified_by.setter
+    def last_modified_by(self, last_modified_by):
+        """Sets the last_modified_by of this AzureCluster.
+
+
+        :param last_modified_by: The last_modified_by of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._last_modified_by = last_modified_by
+
+    @property
+    def name(self):
+        """Gets the name of this AzureCluster.  # noqa: E501
+
+
+        :return: The name of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this AzureCluster.
+
+
+        :param name: The name of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def cloud(self):
+        """Gets the cloud of this AzureCluster.  # noqa: E501
+
+
+        :return: The cloud of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud
+
+    @cloud.setter
+    def cloud(self, cloud):
+        """Sets the cloud of this AzureCluster.
+
+
+        :param cloud: The cloud of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+        if cloud is None:
+            raise ValueError("Invalid value for `cloud`, must not be `None`")  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        if cloud not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
+                .format(cloud, allowed_values)
+            )
+
+        self._cloud = cloud
+
+    @property
+    def tz(self):
+        """Gets the tz of this AzureCluster.  # noqa: E501
+
+
+        :return: The tz of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._tz
+
+    @tz.setter
+    def tz(self, tz):
+        """Sets the tz of this AzureCluster.
+
+
+        :param tz: The tz of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+        if tz is None:
+            raise ValueError("Invalid value for `tz`, must not be `None`")  # noqa: E501
+
+        self._tz = tz
+
+    @property
+    def stack_name(self):
+        """Gets the stack_name of this AzureCluster.  # noqa: E501
+
+
+        :return: The stack_name of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._stack_name
+
+    @stack_name.setter
+    def stack_name(self, stack_name):
+        """Sets the stack_name of this AzureCluster.
+
+
+        :param stack_name: The stack_name of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+        if stack_name is None:
+            raise ValueError("Invalid value for `stack_name`, must not be `None`")  # noqa: E501
+
+        self._stack_name = stack_name
+
+    @property
+    def release_stream(self):
+        """Gets the release_stream of this AzureCluster.  # noqa: E501
+
+
+        :return: The release_stream of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._release_stream
+
+    @release_stream.setter
+    def release_stream(self, release_stream):
+        """Sets the release_stream of this AzureCluster.
+
+
+        :param release_stream: The release_stream of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+        if release_stream is None:
+            raise ValueError("Invalid value for `release_stream`, must not be `None`")  # noqa: E501
+
+        self._release_stream = release_stream
+
+    @property
+    def cd_pipeline_parent(self):
+        """Gets the cd_pipeline_parent of this AzureCluster.  # noqa: E501
+
+
+        :return: The cd_pipeline_parent of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cd_pipeline_parent
+
+    @cd_pipeline_parent.setter
+    def cd_pipeline_parent(self, cd_pipeline_parent):
+        """Sets the cd_pipeline_parent of this AzureCluster.
+
+
+        :param cd_pipeline_parent: The cd_pipeline_parent of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cd_pipeline_parent = cd_pipeline_parent
+
+    @property
+    def require_sign_off(self):
+        """Gets the require_sign_off of this AzureCluster.  # noqa: E501
+
+
+        :return: The require_sign_off of this AzureCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._require_sign_off
+
+    @require_sign_off.setter
+    def require_sign_off(self, require_sign_off):
+        """Sets the require_sign_off of this AzureCluster.
+
+
+        :param require_sign_off: The require_sign_off of this AzureCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._require_sign_off = require_sign_off
+
+    @property
     def deleted(self):
         """Gets the deleted of this AzureCluster.  # noqa: E501
 
@@ -687,6 +565,453 @@ class AzureCluster(object):
         """
 
         self._deleted = deleted
+
+    @property
+    def auto_sign_off_schedule(self):
+        """Gets the auto_sign_off_schedule of this AzureCluster.  # noqa: E501
+
+
+        :return: The auto_sign_off_schedule of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_sign_off_schedule
+
+    @auto_sign_off_schedule.setter
+    def auto_sign_off_schedule(self, auto_sign_off_schedule):
+        """Sets the auto_sign_off_schedule of this AzureCluster.
+
+
+        :param auto_sign_off_schedule: The auto_sign_off_schedule of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_sign_off_schedule = auto_sign_off_schedule
+
+    @property
+    def enable_auto_sign_off(self):
+        """Gets the enable_auto_sign_off of this AzureCluster.  # noqa: E501
+
+
+        :return: The enable_auto_sign_off of this AzureCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_auto_sign_off
+
+    @enable_auto_sign_off.setter
+    def enable_auto_sign_off(self, enable_auto_sign_off):
+        """Sets the enable_auto_sign_off of this AzureCluster.
+
+
+        :param enable_auto_sign_off: The enable_auto_sign_off of this AzureCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_auto_sign_off = enable_auto_sign_off
+
+    @property
+    def configured(self):
+        """Gets the configured of this AzureCluster.  # noqa: E501
+
+
+        :return: The configured of this AzureCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._configured
+
+    @configured.setter
+    def configured(self, configured):
+        """Sets the configured of this AzureCluster.
+
+
+        :param configured: The configured of this AzureCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._configured = configured
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this AzureCluster.  # noqa: E501
+
+
+        :return: The change_log of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this AzureCluster.
+
+
+        :param change_log: The change_log of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
+    def branch(self):
+        """Gets the branch of this AzureCluster.  # noqa: E501
+
+
+        :return: The branch of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._branch
+
+    @branch.setter
+    def branch(self, branch):
+        """Sets the branch of this AzureCluster.
+
+
+        :param branch: The branch of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._branch = branch
+
+    @property
+    def cluster_code(self):
+        """Gets the cluster_code of this AzureCluster.  # noqa: E501
+
+
+        :return: The cluster_code of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_code
+
+    @cluster_code.setter
+    def cluster_code(self, cluster_code):
+        """Sets the cluster_code of this AzureCluster.
+
+
+        :param cluster_code: The cluster_code of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_code = cluster_code
+
+    @property
+    def common_environment_variables(self):
+        """Gets the common_environment_variables of this AzureCluster.  # noqa: E501
+
+
+        :return: The common_environment_variables of this AzureCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._common_environment_variables
+
+    @common_environment_variables.setter
+    def common_environment_variables(self, common_environment_variables):
+        """Sets the common_environment_variables of this AzureCluster.
+
+
+        :param common_environment_variables: The common_environment_variables of this AzureCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._common_environment_variables = common_environment_variables
+
+    @property
+    def variables(self):
+        """Gets the variables of this AzureCluster.  # noqa: E501
+
+
+        :return: The variables of this AzureCluster.  # noqa: E501
+        :rtype: dict(str, Variables)
+        """
+        return self._variables
+
+    @variables.setter
+    def variables(self, variables):
+        """Sets the variables of this AzureCluster.
+
+
+        :param variables: The variables of this AzureCluster.  # noqa: E501
+        :type: dict(str, Variables)
+        """
+
+        self._variables = variables
+
+    @property
+    def secrets(self):
+        """Gets the secrets of this AzureCluster.  # noqa: E501
+
+
+        :return: The secrets of this AzureCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._secrets
+
+    @secrets.setter
+    def secrets(self, secrets):
+        """Sets the secrets of this AzureCluster.
+
+
+        :param secrets: The secrets of this AzureCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._secrets = secrets
+
+    @property
+    def global_variables(self):
+        """Gets the global_variables of this AzureCluster.  # noqa: E501
+
+
+        :return: The global_variables of this AzureCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._global_variables
+
+    @global_variables.setter
+    def global_variables(self, global_variables):
+        """Sets the global_variables of this AzureCluster.
+
+
+        :param global_variables: The global_variables of this AzureCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._global_variables = global_variables
+
+    @property
+    def cluster_state(self):
+        """Gets the cluster_state of this AzureCluster.  # noqa: E501
+
+
+        :return: The cluster_state of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_state
+
+    @cluster_state.setter
+    def cluster_state(self, cluster_state):
+        """Sets the cluster_state of this AzureCluster.
+
+
+        :param cluster_state: The cluster_state of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STOPPED", "RUNNING", "LAUNCHING", "DESTROYING", "LAUNCH_FAILED", "DESTROY_FAILED", "UNKNOWN", "SCALE_DOWN", "SCALING_DOWN", "SCALE_DOWN_FAILED", "SCALING_UP", "SCALE_UP_FAILED"]  # noqa: E501
+        if cluster_state not in allowed_values:
+            raise ValueError(
+                "Invalid value for `cluster_state` ({0}), must be one of {1}"  # noqa: E501
+                .format(cluster_state, allowed_values)
+            )
+
+        self._cluster_state = cluster_state
+
+    @property
+    def schedules(self):
+        """Gets the schedules of this AzureCluster.  # noqa: E501
+
+
+        :return: The schedules of this AzureCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._schedules
+
+    @schedules.setter
+    def schedules(self, schedules):
+        """Sets the schedules of this AzureCluster.
+
+
+        :param schedules: The schedules of this AzureCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._schedules = schedules
+
+    @property
+    def k8s_requests_to_limits_ratio(self):
+        """Gets the k8s_requests_to_limits_ratio of this AzureCluster.  # noqa: E501
+
+
+        :return: The k8s_requests_to_limits_ratio of this AzureCluster.  # noqa: E501
+        :rtype: float
+        """
+        return self._k8s_requests_to_limits_ratio
+
+    @k8s_requests_to_limits_ratio.setter
+    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
+        """Sets the k8s_requests_to_limits_ratio of this AzureCluster.
+
+
+        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this AzureCluster.  # noqa: E501
+        :type: float
+        """
+
+        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
+
+    @property
+    def component_versions(self):
+        """Gets the component_versions of this AzureCluster.  # noqa: E501
+
+
+        :return: The component_versions of this AzureCluster.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._component_versions
+
+    @component_versions.setter
+    def component_versions(self, component_versions):
+        """Sets the component_versions of this AzureCluster.
+
+
+        :param component_versions: The component_versions of this AzureCluster.  # noqa: E501
+        :type: dict(str, str)
+        """
+
+        self._component_versions = component_versions
+
+    @property
+    def cloud_account_id(self):
+        """Gets the cloud_account_id of this AzureCluster.  # noqa: E501
+
+
+        :return: The cloud_account_id of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_account_id
+
+    @cloud_account_id.setter
+    def cloud_account_id(self, cloud_account_id):
+        """Sets the cloud_account_id of this AzureCluster.
+
+
+        :param cloud_account_id: The cloud_account_id of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_account_id = cloud_account_id
+
+    @property
+    def cloud_account_secret_id(self):
+        """Gets the cloud_account_secret_id of this AzureCluster.  # noqa: E501
+
+
+        :return: The cloud_account_secret_id of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._cloud_account_secret_id
+
+    @cloud_account_secret_id.setter
+    def cloud_account_secret_id(self, cloud_account_secret_id):
+        """Sets the cloud_account_secret_id of this AzureCluster.
+
+
+        :param cloud_account_secret_id: The cloud_account_secret_id of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._cloud_account_secret_id = cloud_account_secret_id
+
+    @property
+    def is_ephemeral(self):
+        """Gets the is_ephemeral of this AzureCluster.  # noqa: E501
+
+
+        :return: The is_ephemeral of this AzureCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_ephemeral
+
+    @is_ephemeral.setter
+    def is_ephemeral(self, is_ephemeral):
+        """Sets the is_ephemeral of this AzureCluster.
+
+
+        :param is_ephemeral: The is_ephemeral of this AzureCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_ephemeral = is_ephemeral
+
+    @property
+    def pause_releases(self):
+        """Gets the pause_releases of this AzureCluster.  # noqa: E501
+
+
+        :return: The pause_releases of this AzureCluster.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pause_releases
+
+    @pause_releases.setter
+    def pause_releases(self, pause_releases):
+        """Sets the pause_releases of this AzureCluster.
+
+
+        :param pause_releases: The pause_releases of this AzureCluster.  # noqa: E501
+        :type: bool
+        """
+
+        self._pause_releases = pause_releases
+
+    @property
+    def base_cluster_id(self):
+        """Gets the base_cluster_id of this AzureCluster.  # noqa: E501
+
+
+        :return: The base_cluster_id of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_cluster_id
+
+    @base_cluster_id.setter
+    def base_cluster_id(self, base_cluster_id):
+        """Sets the base_cluster_id of this AzureCluster.
+
+
+        :param base_cluster_id: The base_cluster_id of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._base_cluster_id = base_cluster_id
+
+    @property
+    def base_cluster_name(self):
+        """Gets the base_cluster_name of this AzureCluster.  # noqa: E501
+
+
+        :return: The base_cluster_name of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._base_cluster_name
+
+    @base_cluster_name.setter
+    def base_cluster_name(self, base_cluster_name):
+        """Sets the base_cluster_name of this AzureCluster.
+
+
+        :param base_cluster_name: The base_cluster_name of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._base_cluster_name = base_cluster_name
+
+    @property
+    def namespace(self):
+        """Gets the namespace of this AzureCluster.  # noqa: E501
+
+
+        :return: The namespace of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace):
+        """Sets the namespace of this AzureCluster.
+
+
+        :param namespace: The namespace of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._namespace = namespace
 
     @property
     def dynamic_launch(self):
@@ -710,25 +1035,214 @@ class AzureCluster(object):
         self._dynamic_launch = dynamic_launch
 
     @property
-    def enable_auto_sign_off(self):
-        """Gets the enable_auto_sign_off of this AzureCluster.  # noqa: E501
+    def tenant_id(self):
+        """Gets the tenant_id of this AzureCluster.  # noqa: E501
 
 
-        :return: The enable_auto_sign_off of this AzureCluster.  # noqa: E501
-        :rtype: bool
+        :return: The tenant_id of this AzureCluster.  # noqa: E501
+        :rtype: str
         """
-        return self._enable_auto_sign_off
+        return self._tenant_id
 
-    @enable_auto_sign_off.setter
-    def enable_auto_sign_off(self, enable_auto_sign_off):
-        """Sets the enable_auto_sign_off of this AzureCluster.
+    @tenant_id.setter
+    def tenant_id(self, tenant_id):
+        """Sets the tenant_id of this AzureCluster.
 
 
-        :param enable_auto_sign_off: The enable_auto_sign_off of this AzureCluster.  # noqa: E501
-        :type: bool
+        :param tenant_id: The tenant_id of this AzureCluster.  # noqa: E501
+        :type: str
         """
 
-        self._enable_auto_sign_off = enable_auto_sign_off
+        self._tenant_id = tenant_id
+
+    @property
+    def subscription_id(self):
+        """Gets the subscription_id of this AzureCluster.  # noqa: E501
+
+
+        :return: The subscription_id of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """Sets the subscription_id of this AzureCluster.
+
+
+        :param subscription_id: The subscription_id of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._subscription_id = subscription_id
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this AzureCluster.  # noqa: E501
+
+
+        :return: The client_id of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this AzureCluster.
+
+
+        :param client_id: The client_id of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def client_secret(self):
+        """Gets the client_secret of this AzureCluster.  # noqa: E501
+
+
+        :return: The client_secret of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_secret
+
+    @client_secret.setter
+    def client_secret(self, client_secret):
+        """Sets the client_secret of this AzureCluster.
+
+
+        :param client_secret: The client_secret of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._client_secret = client_secret
+
+    @property
+    def region(self):
+        """Gets the region of this AzureCluster.  # noqa: E501
+
+
+        :return: The region of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._region
+
+    @region.setter
+    def region(self, region):
+        """Sets the region of this AzureCluster.
+
+
+        :param region: The region of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._region = region
+
+    @property
+    def azs(self):
+        """Gets the azs of this AzureCluster.  # noqa: E501
+
+
+        :return: The azs of this AzureCluster.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._azs
+
+    @azs.setter
+    def azs(self, azs):
+        """Sets the azs of this AzureCluster.
+
+
+        :param azs: The azs of this AzureCluster.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._azs = azs
+
+    @property
+    def vpc_cidr(self):
+        """Gets the vpc_cidr of this AzureCluster.  # noqa: E501
+
+
+        :return: The vpc_cidr of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._vpc_cidr
+
+    @vpc_cidr.setter
+    def vpc_cidr(self, vpc_cidr):
+        """Sets the vpc_cidr of this AzureCluster.
+
+
+        :param vpc_cidr: The vpc_cidr of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._vpc_cidr = vpc_cidr
+
+    @property
+    def instance_types(self):
+        """Gets the instance_types of this AzureCluster.  # noqa: E501
+
+
+        :return: The instance_types of this AzureCluster.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._instance_types
+
+    @instance_types.setter
+    def instance_types(self, instance_types):
+        """Sets the instance_types of this AzureCluster.
+
+
+        :param instance_types: The instance_types of this AzureCluster.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._instance_types = instance_types
+
+    @property
+    def resource_group_name(self):
+        """Gets the resource_group_name of this AzureCluster.  # noqa: E501
+
+
+        :return: The resource_group_name of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._resource_group_name
+
+    @resource_group_name.setter
+    def resource_group_name(self, resource_group_name):
+        """Sets the resource_group_name of this AzureCluster.
+
+
+        :param resource_group_name: The resource_group_name of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._resource_group_name = resource_group_name
+
+    @property
+    def vnet_name(self):
+        """Gets the vnet_name of this AzureCluster.  # noqa: E501
+
+
+        :return: The vnet_name of this AzureCluster.  # noqa: E501
+        :rtype: str
+        """
+        return self._vnet_name
+
+    @vnet_name.setter
+    def vnet_name(self, vnet_name):
+        """Sets the vnet_name of this AzureCluster.
+
+
+        :param vnet_name: The vnet_name of this AzureCluster.  # noqa: E501
+        :type: str
+        """
+
+        self._vnet_name = vnet_name
 
     @property
     def entity_type(self):
@@ -758,363 +1272,6 @@ class AzureCluster(object):
         self._entity_type = entity_type
 
     @property
-    def global_variables(self):
-        """Gets the global_variables of this AzureCluster.  # noqa: E501
-
-
-        :return: The global_variables of this AzureCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._global_variables
-
-    @global_variables.setter
-    def global_variables(self, global_variables):
-        """Sets the global_variables of this AzureCluster.
-
-
-        :param global_variables: The global_variables of this AzureCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._global_variables = global_variables
-
-    @property
-    def id(self):
-        """Gets the id of this AzureCluster.  # noqa: E501
-
-
-        :return: The id of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this AzureCluster.
-
-
-        :param id: The id of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def instance_types(self):
-        """Gets the instance_types of this AzureCluster.  # noqa: E501
-
-
-        :return: The instance_types of this AzureCluster.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._instance_types
-
-    @instance_types.setter
-    def instance_types(self, instance_types):
-        """Sets the instance_types of this AzureCluster.
-
-
-        :param instance_types: The instance_types of this AzureCluster.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._instance_types = instance_types
-
-    @property
-    def is_ephemeral(self):
-        """Gets the is_ephemeral of this AzureCluster.  # noqa: E501
-
-
-        :return: The is_ephemeral of this AzureCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_ephemeral
-
-    @is_ephemeral.setter
-    def is_ephemeral(self, is_ephemeral):
-        """Sets the is_ephemeral of this AzureCluster.
-
-
-        :param is_ephemeral: The is_ephemeral of this AzureCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_ephemeral = is_ephemeral
-
-    @property
-    def k8s_requests_to_limits_ratio(self):
-        """Gets the k8s_requests_to_limits_ratio of this AzureCluster.  # noqa: E501
-
-
-        :return: The k8s_requests_to_limits_ratio of this AzureCluster.  # noqa: E501
-        :rtype: float
-        """
-        return self._k8s_requests_to_limits_ratio
-
-    @k8s_requests_to_limits_ratio.setter
-    def k8s_requests_to_limits_ratio(self, k8s_requests_to_limits_ratio):
-        """Sets the k8s_requests_to_limits_ratio of this AzureCluster.
-
-
-        :param k8s_requests_to_limits_ratio: The k8s_requests_to_limits_ratio of this AzureCluster.  # noqa: E501
-        :type: float
-        """
-
-        self._k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
-
-    @property
-    def last_modified_by(self):
-        """Gets the last_modified_by of this AzureCluster.  # noqa: E501
-
-
-        :return: The last_modified_by of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_modified_by
-
-    @last_modified_by.setter
-    def last_modified_by(self, last_modified_by):
-        """Sets the last_modified_by of this AzureCluster.
-
-
-        :param last_modified_by: The last_modified_by of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._last_modified_by = last_modified_by
-
-    @property
-    def last_modified_date(self):
-        """Gets the last_modified_date of this AzureCluster.  # noqa: E501
-
-
-        :return: The last_modified_date of this AzureCluster.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_date
-
-    @last_modified_date.setter
-    def last_modified_date(self, last_modified_date):
-        """Sets the last_modified_date of this AzureCluster.
-
-
-        :param last_modified_date: The last_modified_date of this AzureCluster.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_date = last_modified_date
-
-    @property
-    def name(self):
-        """Gets the name of this AzureCluster.  # noqa: E501
-
-
-        :return: The name of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this AzureCluster.
-
-
-        :param name: The name of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def namespace(self):
-        """Gets the namespace of this AzureCluster.  # noqa: E501
-
-
-        :return: The namespace of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._namespace
-
-    @namespace.setter
-    def namespace(self, namespace):
-        """Sets the namespace of this AzureCluster.
-
-
-        :param namespace: The namespace of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._namespace = namespace
-
-    @property
-    def number_of_versions(self):
-        """Gets the number_of_versions of this AzureCluster.  # noqa: E501
-
-
-        :return: The number_of_versions of this AzureCluster.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_versions
-
-    @number_of_versions.setter
-    def number_of_versions(self, number_of_versions):
-        """Sets the number_of_versions of this AzureCluster.
-
-
-        :param number_of_versions: The number_of_versions of this AzureCluster.  # noqa: E501
-        :type: int
-        """
-
-        self._number_of_versions = number_of_versions
-
-    @property
-    def pause_releases(self):
-        """Gets the pause_releases of this AzureCluster.  # noqa: E501
-
-
-        :return: The pause_releases of this AzureCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._pause_releases
-
-    @pause_releases.setter
-    def pause_releases(self, pause_releases):
-        """Sets the pause_releases of this AzureCluster.
-
-
-        :param pause_releases: The pause_releases of this AzureCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._pause_releases = pause_releases
-
-    @property
-    def region(self):
-        """Gets the region of this AzureCluster.  # noqa: E501
-
-
-        :return: The region of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._region
-
-    @region.setter
-    def region(self, region):
-        """Sets the region of this AzureCluster.
-
-
-        :param region: The region of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._region = region
-
-    @property
-    def release_stream(self):
-        """Gets the release_stream of this AzureCluster.  # noqa: E501
-
-
-        :return: The release_stream of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._release_stream
-
-    @release_stream.setter
-    def release_stream(self, release_stream):
-        """Sets the release_stream of this AzureCluster.
-
-
-        :param release_stream: The release_stream of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._release_stream = release_stream
-
-    @property
-    def require_sign_off(self):
-        """Gets the require_sign_off of this AzureCluster.  # noqa: E501
-
-
-        :return: The require_sign_off of this AzureCluster.  # noqa: E501
-        :rtype: bool
-        """
-        return self._require_sign_off
-
-    @require_sign_off.setter
-    def require_sign_off(self, require_sign_off):
-        """Sets the require_sign_off of this AzureCluster.
-
-
-        :param require_sign_off: The require_sign_off of this AzureCluster.  # noqa: E501
-        :type: bool
-        """
-
-        self._require_sign_off = require_sign_off
-
-    @property
-    def resource_group_name(self):
-        """Gets the resource_group_name of this AzureCluster.  # noqa: E501
-
-
-        :return: The resource_group_name of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._resource_group_name
-
-    @resource_group_name.setter
-    def resource_group_name(self, resource_group_name):
-        """Sets the resource_group_name of this AzureCluster.
-
-
-        :param resource_group_name: The resource_group_name of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._resource_group_name = resource_group_name
-
-    @property
-    def schedules(self):
-        """Gets the schedules of this AzureCluster.  # noqa: E501
-
-
-        :return: The schedules of this AzureCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._schedules
-
-    @schedules.setter
-    def schedules(self, schedules):
-        """Sets the schedules of this AzureCluster.
-
-
-        :param schedules: The schedules of this AzureCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._schedules = schedules
-
-    @property
-    def secrets(self):
-        """Gets the secrets of this AzureCluster.  # noqa: E501
-
-
-        :return: The secrets of this AzureCluster.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._secrets
-
-    @secrets.setter
-    def secrets(self, secrets):
-        """Sets the secrets of this AzureCluster.
-
-
-        :param secrets: The secrets of this AzureCluster.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._secrets = secrets
-
-    @property
     def secrets_uid(self):
         """Gets the secrets_uid of this AzureCluster.  # noqa: E501
 
@@ -1134,111 +1291,6 @@ class AzureCluster(object):
         """
 
         self._secrets_uid = secrets_uid
-
-    @property
-    def stack_name(self):
-        """Gets the stack_name of this AzureCluster.  # noqa: E501
-
-
-        :return: The stack_name of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._stack_name
-
-    @stack_name.setter
-    def stack_name(self, stack_name):
-        """Sets the stack_name of this AzureCluster.
-
-
-        :param stack_name: The stack_name of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._stack_name = stack_name
-
-    @property
-    def subscription_id(self):
-        """Gets the subscription_id of this AzureCluster.  # noqa: E501
-
-
-        :return: The subscription_id of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._subscription_id
-
-    @subscription_id.setter
-    def subscription_id(self, subscription_id):
-        """Sets the subscription_id of this AzureCluster.
-
-
-        :param subscription_id: The subscription_id of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._subscription_id = subscription_id
-
-    @property
-    def tenant_id(self):
-        """Gets the tenant_id of this AzureCluster.  # noqa: E501
-
-
-        :return: The tenant_id of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._tenant_id
-
-    @tenant_id.setter
-    def tenant_id(self, tenant_id):
-        """Sets the tenant_id of this AzureCluster.
-
-
-        :param tenant_id: The tenant_id of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._tenant_id = tenant_id
-
-    @property
-    def tz(self):
-        """Gets the tz of this AzureCluster.  # noqa: E501
-
-
-        :return: The tz of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._tz
-
-    @tz.setter
-    def tz(self, tz):
-        """Sets the tz of this AzureCluster.
-
-
-        :param tz: The tz of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._tz = tz
-
-    @property
-    def variables(self):
-        """Gets the variables of this AzureCluster.  # noqa: E501
-
-
-        :return: The variables of this AzureCluster.  # noqa: E501
-        :rtype: dict(str, Variables)
-        """
-        return self._variables
-
-    @variables.setter
-    def variables(self, variables):
-        """Sets the variables of this AzureCluster.
-
-
-        :param variables: The variables of this AzureCluster.  # noqa: E501
-        :type: dict(str, Variables)
-        """
-
-        self._variables = variables
 
     @property
     def versioning_key(self):
@@ -1262,46 +1314,25 @@ class AzureCluster(object):
         self._versioning_key = versioning_key
 
     @property
-    def vnet_name(self):
-        """Gets the vnet_name of this AzureCluster.  # noqa: E501
+    def number_of_versions(self):
+        """Gets the number_of_versions of this AzureCluster.  # noqa: E501
 
 
-        :return: The vnet_name of this AzureCluster.  # noqa: E501
-        :rtype: str
+        :return: The number_of_versions of this AzureCluster.  # noqa: E501
+        :rtype: int
         """
-        return self._vnet_name
+        return self._number_of_versions
 
-    @vnet_name.setter
-    def vnet_name(self, vnet_name):
-        """Sets the vnet_name of this AzureCluster.
-
-
-        :param vnet_name: The vnet_name of this AzureCluster.  # noqa: E501
-        :type: str
-        """
-
-        self._vnet_name = vnet_name
-
-    @property
-    def vpc_cidr(self):
-        """Gets the vpc_cidr of this AzureCluster.  # noqa: E501
+    @number_of_versions.setter
+    def number_of_versions(self, number_of_versions):
+        """Sets the number_of_versions of this AzureCluster.
 
 
-        :return: The vpc_cidr of this AzureCluster.  # noqa: E501
-        :rtype: str
-        """
-        return self._vpc_cidr
-
-    @vpc_cidr.setter
-    def vpc_cidr(self, vpc_cidr):
-        """Sets the vpc_cidr of this AzureCluster.
-
-
-        :param vpc_cidr: The vpc_cidr of this AzureCluster.  # noqa: E501
-        :type: str
+        :param number_of_versions: The number_of_versions of this AzureCluster.  # noqa: E501
+        :type: int
         """
 
-        self._vpc_cidr = vpc_cidr
+        self._number_of_versions = number_of_versions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,81 +28,39 @@ class SecurityReportSummary(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'critical': 'int',
-        'high': 'int',
         'low': 'int',
+        'high': 'int',
         'medium': 'int',
-        'unknown': 'int'
+        'unknown': 'int',
+        'critical': 'int'
     }
 
     attribute_map = {
-        'critical': 'critical',
-        'high': 'high',
         'low': 'low',
+        'high': 'high',
         'medium': 'medium',
-        'unknown': 'unknown'
+        'unknown': 'unknown',
+        'critical': 'critical'
     }
 
-    def __init__(self, critical=None, high=None, low=None, medium=None, unknown=None):  # noqa: E501
+    def __init__(self, low=None, high=None, medium=None, unknown=None, critical=None):  # noqa: E501
         """SecurityReportSummary - a model defined in Swagger"""  # noqa: E501
-        self._critical = None
-        self._high = None
         self._low = None
+        self._high = None
         self._medium = None
         self._unknown = None
+        self._critical = None
         self.discriminator = None
-        if critical is not None:
-            self.critical = critical
-        if high is not None:
-            self.high = high
         if low is not None:
             self.low = low
+        if high is not None:
+            self.high = high
         if medium is not None:
             self.medium = medium
         if unknown is not None:
             self.unknown = unknown
-
-    @property
-    def critical(self):
-        """Gets the critical of this SecurityReportSummary.  # noqa: E501
-
-
-        :return: The critical of this SecurityReportSummary.  # noqa: E501
-        :rtype: int
-        """
-        return self._critical
-
-    @critical.setter
-    def critical(self, critical):
-        """Sets the critical of this SecurityReportSummary.
-
-
-        :param critical: The critical of this SecurityReportSummary.  # noqa: E501
-        :type: int
-        """
-
-        self._critical = critical
-
-    @property
-    def high(self):
-        """Gets the high of this SecurityReportSummary.  # noqa: E501
-
-
-        :return: The high of this SecurityReportSummary.  # noqa: E501
-        :rtype: int
-        """
-        return self._high
-
-    @high.setter
-    def high(self, high):
-        """Sets the high of this SecurityReportSummary.
-
-
-        :param high: The high of this SecurityReportSummary.  # noqa: E501
-        :type: int
-        """
-
-        self._high = high
+        if critical is not None:
+            self.critical = critical
 
     @property
     def low(self):
@@ -124,6 +82,27 @@ class SecurityReportSummary(object):
         """
 
         self._low = low
+
+    @property
+    def high(self):
+        """Gets the high of this SecurityReportSummary.  # noqa: E501
+
+
+        :return: The high of this SecurityReportSummary.  # noqa: E501
+        :rtype: int
+        """
+        return self._high
+
+    @high.setter
+    def high(self, high):
+        """Sets the high of this SecurityReportSummary.
+
+
+        :param high: The high of this SecurityReportSummary.  # noqa: E501
+        :type: int
+        """
+
+        self._high = high
 
     @property
     def medium(self):
@@ -166,6 +145,27 @@ class SecurityReportSummary(object):
         """
 
         self._unknown = unknown
+
+    @property
+    def critical(self):
+        """Gets the critical of this SecurityReportSummary.  # noqa: E501
+
+
+        :return: The critical of this SecurityReportSummary.  # noqa: E501
+        :rtype: int
+        """
+        return self._critical
+
+    @critical.setter
+    def critical(self, critical):
+        """Sets the critical of this SecurityReportSummary.
+
+
+        :param critical: The critical of this SecurityReportSummary.  # noqa: E501
+        :type: int
+        """
+
+        self._critical = critical
 
     def to_dict(self):
         """Returns the model properties as a dict"""

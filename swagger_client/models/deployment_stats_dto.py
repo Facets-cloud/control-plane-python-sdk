@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Api Documentation
+    Control-plane
 
-    Api Documentation  # noqa: E501
+    API Documentation  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -28,45 +28,24 @@ class DeploymentStatsDto(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'date_wise_counts': 'list[DeploymentStatusCountDto]',
-        'stats': 'DeploymentsStats'
+        'stats': 'DeploymentsStats',
+        'date_wise_counts': 'list[DeploymentStatusCountDto]'
     }
 
     attribute_map = {
-        'date_wise_counts': 'dateWiseCounts',
-        'stats': 'stats'
+        'stats': 'stats',
+        'date_wise_counts': 'dateWiseCounts'
     }
 
-    def __init__(self, date_wise_counts=None, stats=None):  # noqa: E501
+    def __init__(self, stats=None, date_wise_counts=None):  # noqa: E501
         """DeploymentStatsDto - a model defined in Swagger"""  # noqa: E501
-        self._date_wise_counts = None
         self._stats = None
+        self._date_wise_counts = None
         self.discriminator = None
-        if date_wise_counts is not None:
-            self.date_wise_counts = date_wise_counts
         if stats is not None:
             self.stats = stats
-
-    @property
-    def date_wise_counts(self):
-        """Gets the date_wise_counts of this DeploymentStatsDto.  # noqa: E501
-
-
-        :return: The date_wise_counts of this DeploymentStatsDto.  # noqa: E501
-        :rtype: list[DeploymentStatusCountDto]
-        """
-        return self._date_wise_counts
-
-    @date_wise_counts.setter
-    def date_wise_counts(self, date_wise_counts):
-        """Sets the date_wise_counts of this DeploymentStatsDto.
-
-
-        :param date_wise_counts: The date_wise_counts of this DeploymentStatsDto.  # noqa: E501
-        :type: list[DeploymentStatusCountDto]
-        """
-
-        self._date_wise_counts = date_wise_counts
+        if date_wise_counts is not None:
+            self.date_wise_counts = date_wise_counts
 
     @property
     def stats(self):
@@ -88,6 +67,27 @@ class DeploymentStatsDto(object):
         """
 
         self._stats = stats
+
+    @property
+    def date_wise_counts(self):
+        """Gets the date_wise_counts of this DeploymentStatsDto.  # noqa: E501
+
+
+        :return: The date_wise_counts of this DeploymentStatsDto.  # noqa: E501
+        :rtype: list[DeploymentStatusCountDto]
+        """
+        return self._date_wise_counts
+
+    @date_wise_counts.setter
+    def date_wise_counts(self, date_wise_counts):
+        """Sets the date_wise_counts of this DeploymentStatsDto.
+
+
+        :param date_wise_counts: The date_wise_counts of this DeploymentStatsDto.  # noqa: E501
+        :type: list[DeploymentStatusCountDto]
+        """
+
+        self._date_wise_counts = date_wise_counts
 
     def to_dict(self):
         """Returns the model properties as a dict"""
