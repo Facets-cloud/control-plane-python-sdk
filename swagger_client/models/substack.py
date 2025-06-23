@@ -65,13 +65,13 @@ class Substack(object):
         'preview_modules_allowed': 'bool',
         'artifact_path': 'str',
         'tf_module': 'bool',
-        'template': 'bool',
-        'mono_repo': 'bool',
-        'imported_project': 'bool',
-        'starter_project': 'bool',
-        'alpha_blueprint': 'bool',
-        'entity_type': 'str',
         'id': 'str',
+        'alpha_blueprint': 'bool',
+        'template': 'bool',
+        'starter_project': 'bool',
+        'imported_project': 'bool',
+        'entity_type': 'str',
+        'mono_repo': 'bool',
         'versioning_key': 'str',
         'number_of_versions': 'int'
     }
@@ -114,18 +114,18 @@ class Substack(object):
         'preview_modules_allowed': 'previewModulesAllowed',
         'artifact_path': 'artifactPath',
         'tf_module': 'tfModule',
-        'template': 'template',
-        'mono_repo': 'monoRepo',
-        'imported_project': 'importedProject',
-        'starter_project': 'starterProject',
-        'alpha_blueprint': 'alphaBlueprint',
-        'entity_type': 'entityType',
         'id': 'id',
+        'alpha_blueprint': 'alphaBlueprint',
+        'template': 'template',
+        'starter_project': 'starterProject',
+        'imported_project': 'importedProject',
+        'entity_type': 'entityType',
+        'mono_repo': 'monoRepo',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, template_id=None, template_name=None, label=None, change_log=None, branch=None, primary_cloud=None, allowed_clouds=None, component_versions=None, pause_releases=None, stack_vars=None, cluster_variables_meta=None, child_stacks=None, artifactories=None, provided_resources=None, account_id=None, auto_enabled_sub_stacks=None, version_control_account_id=None, user=None, app_password=None, description=None, git_ops_enabled=None, last_modified_date=None, last_modified_by=None, github_organization_name=None, coder_account_id=None, git_overrides_enabled=None, override_config=None, config_modules_disabled=None, project_type_id=None, project_type_name=None, preview_modules_allowed=None, artifact_path=None, tf_module=None, template=None, mono_repo=None, imported_project=None, starter_project=None, alpha_blueprint=None, entity_type=None, id=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, template_id=None, template_name=None, label=None, change_log=None, branch=None, primary_cloud=None, allowed_clouds=None, component_versions=None, pause_releases=None, stack_vars=None, cluster_variables_meta=None, child_stacks=None, artifactories=None, provided_resources=None, account_id=None, auto_enabled_sub_stacks=None, version_control_account_id=None, user=None, app_password=None, description=None, git_ops_enabled=None, last_modified_date=None, last_modified_by=None, github_organization_name=None, coder_account_id=None, git_overrides_enabled=None, override_config=None, config_modules_disabled=None, project_type_id=None, project_type_name=None, preview_modules_allowed=None, artifact_path=None, tf_module=None, id=None, alpha_blueprint=None, template=None, starter_project=None, imported_project=None, entity_type=None, mono_repo=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Substack - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._vcs_url = None
@@ -164,13 +164,13 @@ class Substack(object):
         self._preview_modules_allowed = None
         self._artifact_path = None
         self._tf_module = None
-        self._template = None
-        self._mono_repo = None
-        self._imported_project = None
-        self._starter_project = None
-        self._alpha_blueprint = None
-        self._entity_type = None
         self._id = None
+        self._alpha_blueprint = None
+        self._template = None
+        self._starter_project = None
+        self._imported_project = None
+        self._entity_type = None
+        self._mono_repo = None
         self._versioning_key = None
         self._number_of_versions = None
         self.discriminator = None
@@ -248,20 +248,20 @@ class Substack(object):
             self.artifact_path = artifact_path
         if tf_module is not None:
             self.tf_module = tf_module
-        if template is not None:
-            self.template = template
-        if mono_repo is not None:
-            self.mono_repo = mono_repo
-        if imported_project is not None:
-            self.imported_project = imported_project
-        if starter_project is not None:
-            self.starter_project = starter_project
-        if alpha_blueprint is not None:
-            self.alpha_blueprint = alpha_blueprint
-        if entity_type is not None:
-            self.entity_type = entity_type
         if id is not None:
             self.id = id
+        if alpha_blueprint is not None:
+            self.alpha_blueprint = alpha_blueprint
+        if template is not None:
+            self.template = template
+        if starter_project is not None:
+            self.starter_project = starter_project
+        if imported_project is not None:
+            self.imported_project = imported_project
+        if entity_type is not None:
+            self.entity_type = entity_type
+        if mono_repo is not None:
+            self.mono_repo = mono_repo
         if versioning_key is not None:
             self.versioning_key = versioning_key
         if number_of_versions is not None:
@@ -1064,6 +1064,48 @@ class Substack(object):
         self._tf_module = tf_module
 
     @property
+    def id(self):
+        """Gets the id of this Substack.  # noqa: E501
+
+
+        :return: The id of this Substack.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Substack.
+
+
+        :param id: The id of this Substack.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def alpha_blueprint(self):
+        """Gets the alpha_blueprint of this Substack.  # noqa: E501
+
+
+        :return: The alpha_blueprint of this Substack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._alpha_blueprint
+
+    @alpha_blueprint.setter
+    def alpha_blueprint(self, alpha_blueprint):
+        """Sets the alpha_blueprint of this Substack.
+
+
+        :param alpha_blueprint: The alpha_blueprint of this Substack.  # noqa: E501
+        :type: bool
+        """
+
+        self._alpha_blueprint = alpha_blueprint
+
+    @property
     def template(self):
         """Gets the template of this Substack.  # noqa: E501
 
@@ -1083,48 +1125,6 @@ class Substack(object):
         """
 
         self._template = template
-
-    @property
-    def mono_repo(self):
-        """Gets the mono_repo of this Substack.  # noqa: E501
-
-
-        :return: The mono_repo of this Substack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._mono_repo
-
-    @mono_repo.setter
-    def mono_repo(self, mono_repo):
-        """Sets the mono_repo of this Substack.
-
-
-        :param mono_repo: The mono_repo of this Substack.  # noqa: E501
-        :type: bool
-        """
-
-        self._mono_repo = mono_repo
-
-    @property
-    def imported_project(self):
-        """Gets the imported_project of this Substack.  # noqa: E501
-
-
-        :return: The imported_project of this Substack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._imported_project
-
-    @imported_project.setter
-    def imported_project(self, imported_project):
-        """Sets the imported_project of this Substack.
-
-
-        :param imported_project: The imported_project of this Substack.  # noqa: E501
-        :type: bool
-        """
-
-        self._imported_project = imported_project
 
     @property
     def starter_project(self):
@@ -1148,25 +1148,25 @@ class Substack(object):
         self._starter_project = starter_project
 
     @property
-    def alpha_blueprint(self):
-        """Gets the alpha_blueprint of this Substack.  # noqa: E501
+    def imported_project(self):
+        """Gets the imported_project of this Substack.  # noqa: E501
 
 
-        :return: The alpha_blueprint of this Substack.  # noqa: E501
+        :return: The imported_project of this Substack.  # noqa: E501
         :rtype: bool
         """
-        return self._alpha_blueprint
+        return self._imported_project
 
-    @alpha_blueprint.setter
-    def alpha_blueprint(self, alpha_blueprint):
-        """Sets the alpha_blueprint of this Substack.
+    @imported_project.setter
+    def imported_project(self, imported_project):
+        """Sets the imported_project of this Substack.
 
 
-        :param alpha_blueprint: The alpha_blueprint of this Substack.  # noqa: E501
+        :param imported_project: The imported_project of this Substack.  # noqa: E501
         :type: bool
         """
 
-        self._alpha_blueprint = alpha_blueprint
+        self._imported_project = imported_project
 
     @property
     def entity_type(self):
@@ -1196,25 +1196,25 @@ class Substack(object):
         self._entity_type = entity_type
 
     @property
-    def id(self):
-        """Gets the id of this Substack.  # noqa: E501
+    def mono_repo(self):
+        """Gets the mono_repo of this Substack.  # noqa: E501
 
 
-        :return: The id of this Substack.  # noqa: E501
-        :rtype: str
+        :return: The mono_repo of this Substack.  # noqa: E501
+        :rtype: bool
         """
-        return self._id
+        return self._mono_repo
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Substack.
+    @mono_repo.setter
+    def mono_repo(self, mono_repo):
+        """Sets the mono_repo of this Substack.
 
 
-        :param id: The id of this Substack.  # noqa: E501
-        :type: str
+        :param mono_repo: The mono_repo of this Substack.  # noqa: E501
+        :type: bool
         """
 
-        self._id = id
+        self._mono_repo = mono_repo
 
     @property
     def versioning_key(self):

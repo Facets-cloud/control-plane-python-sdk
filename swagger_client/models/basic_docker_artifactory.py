@@ -40,8 +40,8 @@ class BasicDockerArtifactory(object):
         'stacks_associated': 'list[str]',
         'username': 'str',
         'password': 'str',
-        'system_defined': 'bool',
         'entity_type': 'str',
+        'system_defined': 'bool',
         'versioning_key': 'str',
         'number_of_versions': 'int'
     }
@@ -59,13 +59,13 @@ class BasicDockerArtifactory(object):
         'stacks_associated': 'stacksAssociated',
         'username': 'username',
         'password': 'password',
-        'system_defined': 'systemDefined',
         'entity_type': 'entityType',
+        'system_defined': 'systemDefined',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, uri=None, artifactory_type=None, change_log=None, stacks_associated=None, username=None, password=None, system_defined=None, entity_type=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, uri=None, artifactory_type=None, change_log=None, stacks_associated=None, username=None, password=None, entity_type=None, system_defined=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """BasicDockerArtifactory - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -79,8 +79,8 @@ class BasicDockerArtifactory(object):
         self._stacks_associated = None
         self._username = None
         self._password = None
-        self._system_defined = None
         self._entity_type = None
+        self._system_defined = None
         self._versioning_key = None
         self._number_of_versions = None
         self.discriminator = None
@@ -106,10 +106,10 @@ class BasicDockerArtifactory(object):
         if username is not None:
             self.username = username
         self.password = password
-        if system_defined is not None:
-            self.system_defined = system_defined
         if entity_type is not None:
             self.entity_type = entity_type
+        if system_defined is not None:
+            self.system_defined = system_defined
         if versioning_key is not None:
             self.versioning_key = versioning_key
         if number_of_versions is not None:
@@ -378,27 +378,6 @@ class BasicDockerArtifactory(object):
         self._password = password
 
     @property
-    def system_defined(self):
-        """Gets the system_defined of this BasicDockerArtifactory.  # noqa: E501
-
-
-        :return: The system_defined of this BasicDockerArtifactory.  # noqa: E501
-        :rtype: bool
-        """
-        return self._system_defined
-
-    @system_defined.setter
-    def system_defined(self, system_defined):
-        """Sets the system_defined of this BasicDockerArtifactory.
-
-
-        :param system_defined: The system_defined of this BasicDockerArtifactory.  # noqa: E501
-        :type: bool
-        """
-
-        self._system_defined = system_defined
-
-    @property
     def entity_type(self):
         """Gets the entity_type of this BasicDockerArtifactory.  # noqa: E501
 
@@ -424,6 +403,27 @@ class BasicDockerArtifactory(object):
             )
 
         self._entity_type = entity_type
+
+    @property
+    def system_defined(self):
+        """Gets the system_defined of this BasicDockerArtifactory.  # noqa: E501
+
+
+        :return: The system_defined of this BasicDockerArtifactory.  # noqa: E501
+        :rtype: bool
+        """
+        return self._system_defined
+
+    @system_defined.setter
+    def system_defined(self, system_defined):
+        """Sets the system_defined of this BasicDockerArtifactory.
+
+
+        :param system_defined: The system_defined of this BasicDockerArtifactory.  # noqa: E501
+        :type: bool
+        """
+
+        self._system_defined = system_defined
 
     @property
     def versioning_key(self):

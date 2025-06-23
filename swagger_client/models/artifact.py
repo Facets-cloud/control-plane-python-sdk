@@ -48,10 +48,10 @@ class Artifact(object):
         'applied_rule_name': 'str',
         'repository_name': 'str',
         'tag': 'str',
+        'promoted': 'bool',
         'registration_type': 'str',
         'change_log': 'str',
         'registration_value': 'str',
-        'promoted': 'bool',
         'classified': 'bool',
         'versioning_key': 'str',
         'number_of_versions': 'int'
@@ -78,16 +78,16 @@ class Artifact(object):
         'applied_rule_name': 'appliedRuleName',
         'repository_name': 'repositoryName',
         'tag': 'tag',
+        'promoted': 'promoted',
         'registration_type': 'registrationType',
         'change_log': 'changeLog',
         'registration_value': 'registrationValue',
-        'promoted': 'promoted',
         'classified': 'classified',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, build_id=None, application_name=None, artifact_uri=None, cluster_id=None, release_stream=None, release_type=None, artifactory=None, build_description=None, created_on=None, metadata=None, applied_rule_version_id=None, applied_rule_id=None, applied_rule_name=None, repository_name=None, tag=None, registration_type=None, change_log=None, registration_value=None, promoted=None, classified=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, build_id=None, application_name=None, artifact_uri=None, cluster_id=None, release_stream=None, release_type=None, artifactory=None, build_description=None, created_on=None, metadata=None, applied_rule_version_id=None, applied_rule_id=None, applied_rule_name=None, repository_name=None, tag=None, promoted=None, registration_type=None, change_log=None, registration_value=None, classified=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Artifact - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -109,10 +109,10 @@ class Artifact(object):
         self._applied_rule_name = None
         self._repository_name = None
         self._tag = None
+        self._promoted = None
         self._registration_type = None
         self._change_log = None
         self._registration_value = None
-        self._promoted = None
         self._classified = None
         self._versioning_key = None
         self._number_of_versions = None
@@ -157,14 +157,14 @@ class Artifact(object):
             self.repository_name = repository_name
         if tag is not None:
             self.tag = tag
+        if promoted is not None:
+            self.promoted = promoted
         if registration_type is not None:
             self.registration_type = registration_type
         if change_log is not None:
             self.change_log = change_log
         if registration_value is not None:
             self.registration_value = registration_value
-        if promoted is not None:
-            self.promoted = promoted
         if classified is not None:
             self.classified = classified
         if versioning_key is not None:
@@ -599,6 +599,27 @@ class Artifact(object):
         self._tag = tag
 
     @property
+    def promoted(self):
+        """Gets the promoted of this Artifact.  # noqa: E501
+
+
+        :return: The promoted of this Artifact.  # noqa: E501
+        :rtype: bool
+        """
+        return self._promoted
+
+    @promoted.setter
+    def promoted(self, promoted):
+        """Sets the promoted of this Artifact.
+
+
+        :param promoted: The promoted of this Artifact.  # noqa: E501
+        :type: bool
+        """
+
+        self._promoted = promoted
+
+    @property
     def registration_type(self):
         """Gets the registration_type of this Artifact.  # noqa: E501
 
@@ -666,27 +687,6 @@ class Artifact(object):
         """
 
         self._registration_value = registration_value
-
-    @property
-    def promoted(self):
-        """Gets the promoted of this Artifact.  # noqa: E501
-
-
-        :return: The promoted of this Artifact.  # noqa: E501
-        :rtype: bool
-        """
-        return self._promoted
-
-    @promoted.setter
-    def promoted(self, promoted):
-        """Sets the promoted of this Artifact.
-
-
-        :param promoted: The promoted of this Artifact.  # noqa: E501
-        :type: bool
-        """
-
-        self._promoted = promoted
 
     @property
     def classified(self):

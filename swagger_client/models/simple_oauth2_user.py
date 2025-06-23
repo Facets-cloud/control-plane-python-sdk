@@ -37,8 +37,8 @@ class SimpleOauth2User(object):
         'stack_resources': 'list[StackResource]',
         'allowed_accounts': 'list[str]',
         'user_id': 'str',
-        'authorities': 'list[GrantedAuthority]',
-        'associated_to_resource_group': 'bool'
+        'associated_to_resource_group': 'bool',
+        'authorities': 'list[GrantedAuthority]'
     }
 
     attribute_map = {
@@ -51,11 +51,11 @@ class SimpleOauth2User(object):
         'stack_resources': 'stackResources',
         'allowed_accounts': 'allowedAccounts',
         'user_id': 'userId',
-        'authorities': 'authorities',
-        'associated_to_resource_group': 'associatedToResourceGroup'
+        'associated_to_resource_group': 'associatedToResourceGroup',
+        'authorities': 'authorities'
     }
 
-    def __init__(self, granted_authorities=None, attributes=None, name=None, allowed_cluster_ids=None, allowed_stack_names=None, cluster_role_binding=None, stack_resources=None, allowed_accounts=None, user_id=None, authorities=None, associated_to_resource_group=None):  # noqa: E501
+    def __init__(self, granted_authorities=None, attributes=None, name=None, allowed_cluster_ids=None, allowed_stack_names=None, cluster_role_binding=None, stack_resources=None, allowed_accounts=None, user_id=None, associated_to_resource_group=None, authorities=None):  # noqa: E501
         """SimpleOauth2User - a model defined in Swagger"""  # noqa: E501
         self._granted_authorities = None
         self._attributes = None
@@ -66,8 +66,8 @@ class SimpleOauth2User(object):
         self._stack_resources = None
         self._allowed_accounts = None
         self._user_id = None
-        self._authorities = None
         self._associated_to_resource_group = None
+        self._authorities = None
         self.discriminator = None
         if granted_authorities is not None:
             self.granted_authorities = granted_authorities
@@ -87,10 +87,10 @@ class SimpleOauth2User(object):
             self.allowed_accounts = allowed_accounts
         if user_id is not None:
             self.user_id = user_id
-        if authorities is not None:
-            self.authorities = authorities
         if associated_to_resource_group is not None:
             self.associated_to_resource_group = associated_to_resource_group
+        if authorities is not None:
+            self.authorities = authorities
 
     @property
     def granted_authorities(self):
@@ -282,27 +282,6 @@ class SimpleOauth2User(object):
         self._user_id = user_id
 
     @property
-    def authorities(self):
-        """Gets the authorities of this SimpleOauth2User.  # noqa: E501
-
-
-        :return: The authorities of this SimpleOauth2User.  # noqa: E501
-        :rtype: list[GrantedAuthority]
-        """
-        return self._authorities
-
-    @authorities.setter
-    def authorities(self, authorities):
-        """Sets the authorities of this SimpleOauth2User.
-
-
-        :param authorities: The authorities of this SimpleOauth2User.  # noqa: E501
-        :type: list[GrantedAuthority]
-        """
-
-        self._authorities = authorities
-
-    @property
     def associated_to_resource_group(self):
         """Gets the associated_to_resource_group of this SimpleOauth2User.  # noqa: E501
 
@@ -322,6 +301,27 @@ class SimpleOauth2User(object):
         """
 
         self._associated_to_resource_group = associated_to_resource_group
+
+    @property
+    def authorities(self):
+        """Gets the authorities of this SimpleOauth2User.  # noqa: E501
+
+
+        :return: The authorities of this SimpleOauth2User.  # noqa: E501
+        :rtype: list[GrantedAuthority]
+        """
+        return self._authorities
+
+    @authorities.setter
+    def authorities(self, authorities):
+        """Sets the authorities of this SimpleOauth2User.
+
+
+        :param authorities: The authorities of this SimpleOauth2User.  # noqa: E501
+        :type: list[GrantedAuthority]
+        """
+
+        self._authorities = authorities
 
     def to_dict(self):
         """Returns the model properties as a dict"""

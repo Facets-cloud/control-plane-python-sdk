@@ -194,7 +194,8 @@ class AzureCluster(object):
         if last_modified_by is not None:
             self.last_modified_by = last_modified_by
         self.name = name
-        self.cloud = cloud
+        if cloud is not None:
+            self.cloud = cloud
         self.tz = tz
         self.stack_name = stack_name
         self.release_stream = release_stream
@@ -423,8 +424,6 @@ class AzureCluster(object):
         :param cloud: The cloud of this AzureCluster.  # noqa: E501
         :type: str
         """
-        if cloud is None:
-            raise ValueError("Invalid value for `cloud`, must not be `None`")  # noqa: E501
         allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
         if cloud not in allowed_values:
             raise ValueError(

@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **stacks_associated** | **list[str]** |  | [optional] 
 **username** | **str** |  | [optional] 
 **password** | **str** |  | 
-**system_defined** | **bool** |  | [optional] 
 **entity_type** | **str** |  | [optional] 
+**system_defined** | **bool** |  | [optional] 
 **versioning_key** | **str** |  | [optional] 
 **number_of_versions** | **int** |  | [optional] 
 

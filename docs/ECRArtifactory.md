@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **aws_secret** | **str** |  | 
 **aws_region** | **str** |  | 
 **aws_account_id** | **str** |  | 
-**system_defined** | **bool** |  | [optional] 
 **entity_type** | **str** |  | [optional] 
+**system_defined** | **bool** |  | [optional] 
 **versioning_key** | **str** |  | [optional] 
 **number_of_versions** | **int** |  | [optional] 
 

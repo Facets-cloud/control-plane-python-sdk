@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **last_modified_date** | **datetime** |  | [optional] 
 **last_modified_by** | **str** |  | [optional] 
 **name** | **str** |  | 
-**cloud** | **str** |  | 
+**cloud** | **str** |  | [optional] 
 **tz** | **str** |  | 
 **stack_name** | **str** |  | 
 **release_stream** | **str** |  | 
