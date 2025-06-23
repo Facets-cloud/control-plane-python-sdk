@@ -44,8 +44,8 @@ class GitHubAccount(object):
         'access_token': 'str',
         'org_name': 'str',
         'enterprise_host_name': 'str',
-        'api_base_url': 'str',
         'host': 'str',
+        'api_base_url': 'str',
         'app': 'bool',
         'entity_type': 'str',
         'secrets_uid': 'str',
@@ -70,8 +70,8 @@ class GitHubAccount(object):
         'access_token': 'accessToken',
         'org_name': 'orgName',
         'enterprise_host_name': 'enterpriseHostName',
-        'api_base_url': 'apiBaseUrl',
         'host': 'host',
+        'api_base_url': 'apiBaseUrl',
         'app': 'app',
         'entity_type': 'entityType',
         'secrets_uid': 'secretsUid',
@@ -79,7 +79,7 @@ class GitHubAccount(object):
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, account_type=None, provider=None, change_log=None, system_defined=None, in_use=None, associated_to=None, user_name=None, access_token=None, org_name=None, enterprise_host_name=None, api_base_url=None, host=None, app=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, account_type=None, provider=None, change_log=None, system_defined=None, in_use=None, associated_to=None, user_name=None, access_token=None, org_name=None, enterprise_host_name=None, host=None, api_base_url=None, app=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """GitHubAccount - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -97,8 +97,8 @@ class GitHubAccount(object):
         self._access_token = None
         self._org_name = None
         self._enterprise_host_name = None
-        self._api_base_url = None
         self._host = None
+        self._api_base_url = None
         self._app = None
         self._entity_type = None
         self._secrets_uid = None
@@ -137,10 +137,10 @@ class GitHubAccount(object):
             self.org_name = org_name
         if enterprise_host_name is not None:
             self.enterprise_host_name = enterprise_host_name
-        if api_base_url is not None:
-            self.api_base_url = api_base_url
         if host is not None:
             self.host = host
+        if api_base_url is not None:
+            self.api_base_url = api_base_url
         if app is not None:
             self.app = app
         if entity_type is not None:
@@ -501,27 +501,6 @@ class GitHubAccount(object):
         self._enterprise_host_name = enterprise_host_name
 
     @property
-    def api_base_url(self):
-        """Gets the api_base_url of this GitHubAccount.  # noqa: E501
-
-
-        :return: The api_base_url of this GitHubAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._api_base_url
-
-    @api_base_url.setter
-    def api_base_url(self, api_base_url):
-        """Sets the api_base_url of this GitHubAccount.
-
-
-        :param api_base_url: The api_base_url of this GitHubAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._api_base_url = api_base_url
-
-    @property
     def host(self):
         """Gets the host of this GitHubAccount.  # noqa: E501
 
@@ -541,6 +520,27 @@ class GitHubAccount(object):
         """
 
         self._host = host
+
+    @property
+    def api_base_url(self):
+        """Gets the api_base_url of this GitHubAccount.  # noqa: E501
+
+
+        :return: The api_base_url of this GitHubAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._api_base_url
+
+    @api_base_url.setter
+    def api_base_url(self, api_base_url):
+        """Sets the api_base_url of this GitHubAccount.
+
+
+        :param api_base_url: The api_base_url of this GitHubAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._api_base_url = api_base_url
 
     @property
     def app(self):

@@ -31,6 +31,7 @@ class ModuleMetadata(object):
         'git_url': 'str',
         'git_ref': 'str',
         'auto_create': 'bool',
+        'skip_output_write': 'bool',
         'feature_branch': 'bool'
     }
 
@@ -38,14 +39,16 @@ class ModuleMetadata(object):
         'git_url': 'gitUrl',
         'git_ref': 'gitRef',
         'auto_create': 'autoCreate',
+        'skip_output_write': 'skipOutputWrite',
         'feature_branch': 'featureBranch'
     }
 
-    def __init__(self, git_url=None, git_ref=None, auto_create=None, feature_branch=None):  # noqa: E501
+    def __init__(self, git_url=None, git_ref=None, auto_create=None, skip_output_write=None, feature_branch=None):  # noqa: E501
         """ModuleMetadata - a model defined in Swagger"""  # noqa: E501
         self._git_url = None
         self._git_ref = None
         self._auto_create = None
+        self._skip_output_write = None
         self._feature_branch = None
         self.discriminator = None
         if git_url is not None:
@@ -54,6 +57,8 @@ class ModuleMetadata(object):
             self.git_ref = git_ref
         if auto_create is not None:
             self.auto_create = auto_create
+        if skip_output_write is not None:
+            self.skip_output_write = skip_output_write
         if feature_branch is not None:
             self.feature_branch = feature_branch
 
@@ -119,6 +124,27 @@ class ModuleMetadata(object):
         """
 
         self._auto_create = auto_create
+
+    @property
+    def skip_output_write(self):
+        """Gets the skip_output_write of this ModuleMetadata.  # noqa: E501
+
+
+        :return: The skip_output_write of this ModuleMetadata.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_output_write
+
+    @skip_output_write.setter
+    def skip_output_write(self, skip_output_write):
+        """Sets the skip_output_write of this ModuleMetadata.
+
+
+        :param skip_output_write: The skip_output_write of this ModuleMetadata.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_output_write = skip_output_write
 
     @property
     def feature_branch(self):

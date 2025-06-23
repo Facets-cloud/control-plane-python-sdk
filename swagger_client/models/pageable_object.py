@@ -29,43 +29,43 @@ class PageableObject(object):
     """
     swagger_types = {
         'page_number': 'int',
+        'offset': 'int',
         'sort': 'SortObject',
         'page_size': 'int',
-        'paged': 'bool',
         'unpaged': 'bool',
-        'offset': 'int'
+        'paged': 'bool'
     }
 
     attribute_map = {
         'page_number': 'pageNumber',
+        'offset': 'offset',
         'sort': 'sort',
         'page_size': 'pageSize',
-        'paged': 'paged',
         'unpaged': 'unpaged',
-        'offset': 'offset'
+        'paged': 'paged'
     }
 
-    def __init__(self, page_number=None, sort=None, page_size=None, paged=None, unpaged=None, offset=None):  # noqa: E501
+    def __init__(self, page_number=None, offset=None, sort=None, page_size=None, unpaged=None, paged=None):  # noqa: E501
         """PageableObject - a model defined in Swagger"""  # noqa: E501
         self._page_number = None
+        self._offset = None
         self._sort = None
         self._page_size = None
-        self._paged = None
         self._unpaged = None
-        self._offset = None
+        self._paged = None
         self.discriminator = None
         if page_number is not None:
             self.page_number = page_number
+        if offset is not None:
+            self.offset = offset
         if sort is not None:
             self.sort = sort
         if page_size is not None:
             self.page_size = page_size
-        if paged is not None:
-            self.paged = paged
         if unpaged is not None:
             self.unpaged = unpaged
-        if offset is not None:
-            self.offset = offset
+        if paged is not None:
+            self.paged = paged
 
     @property
     def page_number(self):
@@ -87,6 +87,27 @@ class PageableObject(object):
         """
 
         self._page_number = page_number
+
+    @property
+    def offset(self):
+        """Gets the offset of this PageableObject.  # noqa: E501
+
+
+        :return: The offset of this PageableObject.  # noqa: E501
+        :rtype: int
+        """
+        return self._offset
+
+    @offset.setter
+    def offset(self, offset):
+        """Sets the offset of this PageableObject.
+
+
+        :param offset: The offset of this PageableObject.  # noqa: E501
+        :type: int
+        """
+
+        self._offset = offset
 
     @property
     def sort(self):
@@ -131,27 +152,6 @@ class PageableObject(object):
         self._page_size = page_size
 
     @property
-    def paged(self):
-        """Gets the paged of this PageableObject.  # noqa: E501
-
-
-        :return: The paged of this PageableObject.  # noqa: E501
-        :rtype: bool
-        """
-        return self._paged
-
-    @paged.setter
-    def paged(self, paged):
-        """Sets the paged of this PageableObject.
-
-
-        :param paged: The paged of this PageableObject.  # noqa: E501
-        :type: bool
-        """
-
-        self._paged = paged
-
-    @property
     def unpaged(self):
         """Gets the unpaged of this PageableObject.  # noqa: E501
 
@@ -173,25 +173,25 @@ class PageableObject(object):
         self._unpaged = unpaged
 
     @property
-    def offset(self):
-        """Gets the offset of this PageableObject.  # noqa: E501
+    def paged(self):
+        """Gets the paged of this PageableObject.  # noqa: E501
 
 
-        :return: The offset of this PageableObject.  # noqa: E501
-        :rtype: int
+        :return: The paged of this PageableObject.  # noqa: E501
+        :rtype: bool
         """
-        return self._offset
+        return self._paged
 
-    @offset.setter
-    def offset(self, offset):
-        """Sets the offset of this PageableObject.
+    @paged.setter
+    def paged(self, paged):
+        """Sets the paged of this PageableObject.
 
 
-        :param offset: The offset of this PageableObject.  # noqa: E501
-        :type: int
+        :param paged: The paged of this PageableObject.  # noqa: E501
+        :type: bool
         """
 
-        self._offset = offset
+        self._paged = paged
 
     def to_dict(self):
         """Returns the model properties as a dict"""

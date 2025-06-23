@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **artifactory_type** | **str** |  | [optional] 
 **change_log** | **str** |  | [optional] 
 **stacks_associated** | **list[str]** |  | [optional] 
-**system_defined** | **bool** |  | [optional] 
 **entity_type** | **str** |  | [optional] 
+**system_defined** | **bool** |  | [optional] 
 **versioning_key** | **str** |  | [optional] 
 **number_of_versions** | **int** |  | [optional] 
 

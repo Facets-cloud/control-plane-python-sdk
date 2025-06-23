@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **stack_resources** | [**list[StackResource]**](StackResource.md) |  | [optional] 
 **allowed_accounts** | **list[str]** |  | [optional] 
 **user_id** | **str** |  | [optional] 
-**authorities** | [**list[GrantedAuthority]**](GrantedAuthority.md) |  | [optional] 
 **associated_to_resource_group** | **bool** |  | [optional] 
+**authorities** | [**list[GrantedAuthority]**](GrantedAuthority.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
