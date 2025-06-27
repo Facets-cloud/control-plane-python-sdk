@@ -28,76 +28,34 @@ class MaintenanceWindowDTOTimeZone(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'display_name': 'str',
-        'id': 'str',
         'dstsavings': 'int',
-        'raw_offset': 'int'
+        'raw_offset': 'int',
+        'id': 'str',
+        'display_name': 'str'
     }
 
     attribute_map = {
-        'display_name': 'displayName',
-        'id': 'id',
         'dstsavings': 'dstsavings',
-        'raw_offset': 'rawOffset'
+        'raw_offset': 'rawOffset',
+        'id': 'id',
+        'display_name': 'displayName'
     }
 
-    def __init__(self, display_name=None, id=None, dstsavings=None, raw_offset=None):  # noqa: E501
+    def __init__(self, dstsavings=None, raw_offset=None, id=None, display_name=None):  # noqa: E501
         """MaintenanceWindowDTOTimeZone - a model defined in Swagger"""  # noqa: E501
-        self._display_name = None
-        self._id = None
         self._dstsavings = None
         self._raw_offset = None
+        self._id = None
+        self._display_name = None
         self.discriminator = None
-        if display_name is not None:
-            self.display_name = display_name
-        if id is not None:
-            self.id = id
         if dstsavings is not None:
             self.dstsavings = dstsavings
         if raw_offset is not None:
             self.raw_offset = raw_offset
-
-    @property
-    def display_name(self):
-        """Gets the display_name of this MaintenanceWindowDTOTimeZone.  # noqa: E501
-
-
-        :return: The display_name of this MaintenanceWindowDTOTimeZone.  # noqa: E501
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """Sets the display_name of this MaintenanceWindowDTOTimeZone.
-
-
-        :param display_name: The display_name of this MaintenanceWindowDTOTimeZone.  # noqa: E501
-        :type: str
-        """
-
-        self._display_name = display_name
-
-    @property
-    def id(self):
-        """Gets the id of this MaintenanceWindowDTOTimeZone.  # noqa: E501
-
-
-        :return: The id of this MaintenanceWindowDTOTimeZone.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this MaintenanceWindowDTOTimeZone.
-
-
-        :param id: The id of this MaintenanceWindowDTOTimeZone.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
+        if id is not None:
+            self.id = id
+        if display_name is not None:
+            self.display_name = display_name
 
     @property
     def dstsavings(self):
@@ -140,6 +98,48 @@ class MaintenanceWindowDTOTimeZone(object):
         """
 
         self._raw_offset = raw_offset
+
+    @property
+    def id(self):
+        """Gets the id of this MaintenanceWindowDTOTimeZone.  # noqa: E501
+
+
+        :return: The id of this MaintenanceWindowDTOTimeZone.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this MaintenanceWindowDTOTimeZone.
+
+
+        :param id: The id of this MaintenanceWindowDTOTimeZone.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def display_name(self):
+        """Gets the display_name of this MaintenanceWindowDTOTimeZone.  # noqa: E501
+
+
+        :return: The display_name of this MaintenanceWindowDTOTimeZone.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this MaintenanceWindowDTOTimeZone.
+
+
+        :param display_name: The display_name of this MaintenanceWindowDTOTimeZone.  # noqa: E501
+        :type: str
+        """
+
+        self._display_name = display_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,4 +1,4 @@
-# BasicDockerArtifactory
+# ProjectType
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,17 +8,14 @@ Name | Type | Description | Notes
 **creation_date** | **datetime** |  | [optional] 
 **last_modified_date** | **datetime** |  | [optional] 
 **last_modified_by** | **str** |  | [optional] 
-**name** | **str** |  | 
-**uri** | **str** |  | [optional] 
-**artifactory_type** | **str** |  | [optional] 
-**change_log** | **str** |  | [optional] 
-**stacks_associated** | **list[str]** |  | [optional] 
-**username** | **str** |  | [optional] 
-**password** | **str** |  | 
-**system_defined** | **bool** |  | [optional] 
-**entity_type** | **str** |  | [optional] 
-**versioning_key** | **str** |  | [optional] 
-**number_of_versions** | **int** |  | [optional] 
+**name** | **str** |  | [optional] 
+**allowed_clouds** | **list[str]** |  | [optional] 
+**description** | **str** |  | [optional] 
+**template_git_details** | [**TemplateGitDetails**](TemplateGitDetails.md) |  | [optional] 
+**mapped_resources** | [**list[ProjectTypeMappedResource]**](ProjectTypeMappedResource.md) |  | [optional] 
+**base_project_name** | **str** |  | [optional] 
+**iac_tool** | **str** |  | [optional] 
+**iac_tool_version** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

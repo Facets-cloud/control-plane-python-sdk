@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **stage** | **str** |  | [optional] 
 **iac_tool** | **list[str]** |  | [optional] 
+**name_length_limit** | **int** | Maximum allowed length for resource names using this module | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

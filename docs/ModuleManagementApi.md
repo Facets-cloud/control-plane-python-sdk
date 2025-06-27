@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**download_module_by_id**](ModuleManagementApi.md#download_module_by_id) | **GET** /cc-ui/v1/modules/{id}/download | 
 [**download_module_by_version_id**](ModuleManagementApi.md#download_module_by_version_id) | **GET** /cc-ui/v1/modules/version/{versionId}/download | 
 [**get_all2**](ModuleManagementApi.md#get_all2) | **GET** /cc-ui/v1/modules/all | Get All Modules
-[**get_all_modules**](ModuleManagementApi.md#get_all_modules) | **GET** /cc-ui/v1/modules | 
+[**get_all_modules**](ModuleManagementApi.md#get_all_modules) | **GET** /cc-ui/v1/modules | Get All Modules
 [**get_all_modules_lite**](ModuleManagementApi.md#get_all_modules_lite) | **GET** /cc-ui/v1/modules/modules-lite | 
 [**get_by_id**](ModuleManagementApi.md#get_by_id) | **GET** /cc-ui/v1/modules/{id} | Get Module by ID
 [**get_grouped_modules_for_stack**](ModuleManagementApi.md#get_grouped_modules_for_stack) | **GET** /cc-ui/v1/modules/stack/{stackName}/grouped | Get Grouped Modules for Stack
@@ -277,9 +277,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_modules**
-> list[TFModuleListResponseDTO] get_all_modules()
+> list[TFModuleListResponseDTO] get_all_modules(can_download=can_download)
 
+Get All Modules
 
+- **Description:** Retrieves all modules with optional filtering. - **Parameters:**   - `canDownload` (optional): When true, returns only modules that have downloadable content (modules with path). Defaults to false. - **Permissions:** Requires MODULE_READ permission. - **Audit Logging:** No specific audit logging at the moment.
 
 ### Example
 ```python
@@ -295,16 +297,21 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.ModuleManagementApi(swagger_client.ApiClient(configuration))
+can_download = false # bool |  (optional) (default to false)
 
 try:
-    api_response = api_instance.get_all_modules()
+    # Get All Modules
+    api_response = api_instance.get_all_modules(can_download=can_download)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModuleManagementApi->get_all_modules: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **can_download** | **bool**|  | [optional] [default to false]
 
 ### Return type
 

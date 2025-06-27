@@ -504,14 +504,16 @@ class ModuleManagementApi(object):
             collection_formats=collection_formats)
 
     def get_all_modules(self, **kwargs):  # noqa: E501
-        """get_all_modules  # noqa: E501
+        """Get All Modules  # noqa: E501
 
+        - **Description:** Retrieves all modules with optional filtering. - **Parameters:**   - `canDownload` (optional): When true, returns only modules that have downloadable content (modules with path). Defaults to false. - **Permissions:** Requires MODULE_READ permission. - **Audit Logging:** No specific audit logging at the moment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_all_modules(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param bool can_download:
         :return: list[TFModuleListResponseDTO]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -524,20 +526,22 @@ class ModuleManagementApi(object):
             return data
 
     def get_all_modules_with_http_info(self, **kwargs):  # noqa: E501
-        """get_all_modules  # noqa: E501
+        """Get All Modules  # noqa: E501
 
+        - **Description:** Retrieves all modules with optional filtering. - **Parameters:**   - `canDownload` (optional): When true, returns only modules that have downloadable content (modules with path). Defaults to false. - **Permissions:** Requires MODULE_READ permission. - **Audit Logging:** No specific audit logging at the moment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_all_modules_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param bool can_download:
         :return: list[TFModuleListResponseDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['can_download']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -558,6 +562,8 @@ class ModuleManagementApi(object):
         path_params = {}
 
         query_params = []
+        if 'can_download' in params:
+            query_params.append(('canDownload', params['can_download']))  # noqa: E501
 
         header_params = {}
 

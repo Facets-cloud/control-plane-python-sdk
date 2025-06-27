@@ -42,8 +42,8 @@ class ECRArtifactory(object):
         'aws_secret': 'str',
         'aws_region': 'str',
         'aws_account_id': 'str',
-        'entity_type': 'str',
         'system_defined': 'bool',
+        'entity_type': 'str',
         'versioning_key': 'str',
         'number_of_versions': 'int'
     }
@@ -63,13 +63,13 @@ class ECRArtifactory(object):
         'aws_secret': 'awsSecret',
         'aws_region': 'awsRegion',
         'aws_account_id': 'awsAccountId',
-        'entity_type': 'entityType',
         'system_defined': 'systemDefined',
+        'entity_type': 'entityType',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, uri=None, artifactory_type=None, change_log=None, stacks_associated=None, aws_key=None, aws_secret=None, aws_region=None, aws_account_id=None, entity_type=None, system_defined=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, uri=None, artifactory_type=None, change_log=None, stacks_associated=None, aws_key=None, aws_secret=None, aws_region=None, aws_account_id=None, system_defined=None, entity_type=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """ECRArtifactory - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -85,8 +85,8 @@ class ECRArtifactory(object):
         self._aws_secret = None
         self._aws_region = None
         self._aws_account_id = None
-        self._entity_type = None
         self._system_defined = None
+        self._entity_type = None
         self._versioning_key = None
         self._number_of_versions = None
         self.discriminator = None
@@ -113,10 +113,10 @@ class ECRArtifactory(object):
         self.aws_secret = aws_secret
         self.aws_region = aws_region
         self.aws_account_id = aws_account_id
-        if entity_type is not None:
-            self.entity_type = entity_type
         if system_defined is not None:
             self.system_defined = system_defined
+        if entity_type is not None:
+            self.entity_type = entity_type
         if versioning_key is not None:
             self.versioning_key = versioning_key
         if number_of_versions is not None:
@@ -433,6 +433,27 @@ class ECRArtifactory(object):
         self._aws_account_id = aws_account_id
 
     @property
+    def system_defined(self):
+        """Gets the system_defined of this ECRArtifactory.  # noqa: E501
+
+
+        :return: The system_defined of this ECRArtifactory.  # noqa: E501
+        :rtype: bool
+        """
+        return self._system_defined
+
+    @system_defined.setter
+    def system_defined(self, system_defined):
+        """Sets the system_defined of this ECRArtifactory.
+
+
+        :param system_defined: The system_defined of this ECRArtifactory.  # noqa: E501
+        :type: bool
+        """
+
+        self._system_defined = system_defined
+
+    @property
     def entity_type(self):
         """Gets the entity_type of this ECRArtifactory.  # noqa: E501
 
@@ -458,27 +479,6 @@ class ECRArtifactory(object):
             )
 
         self._entity_type = entity_type
-
-    @property
-    def system_defined(self):
-        """Gets the system_defined of this ECRArtifactory.  # noqa: E501
-
-
-        :return: The system_defined of this ECRArtifactory.  # noqa: E501
-        :rtype: bool
-        """
-        return self._system_defined
-
-    @system_defined.setter
-    def system_defined(self, system_defined):
-        """Sets the system_defined of this ECRArtifactory.
-
-
-        :param system_defined: The system_defined of this ECRArtifactory.  # noqa: E501
-        :type: bool
-        """
-
-        self._system_defined = system_defined
 
     @property
     def versioning_key(self):

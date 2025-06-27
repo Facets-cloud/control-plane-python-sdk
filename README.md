@@ -106,7 +106,7 @@ Class | Method | HTTP request | Description
 *ModuleManagementApi* | [**download_module_by_id**](docs/ModuleManagementApi.md#download_module_by_id) | **GET** /cc-ui/v1/modules/{id}/download | 
 *ModuleManagementApi* | [**download_module_by_version_id**](docs/ModuleManagementApi.md#download_module_by_version_id) | **GET** /cc-ui/v1/modules/version/{versionId}/download | 
 *ModuleManagementApi* | [**get_all2**](docs/ModuleManagementApi.md#get_all2) | **GET** /cc-ui/v1/modules/all | Get All Modules
-*ModuleManagementApi* | [**get_all_modules**](docs/ModuleManagementApi.md#get_all_modules) | **GET** /cc-ui/v1/modules | 
+*ModuleManagementApi* | [**get_all_modules**](docs/ModuleManagementApi.md#get_all_modules) | **GET** /cc-ui/v1/modules | Get All Modules
 *ModuleManagementApi* | [**get_all_modules_lite**](docs/ModuleManagementApi.md#get_all_modules_lite) | **GET** /cc-ui/v1/modules/modules-lite | 
 *ModuleManagementApi* | [**get_by_id**](docs/ModuleManagementApi.md#get_by_id) | **GET** /cc-ui/v1/modules/{id} | Get Module by ID
 *ModuleManagementApi* | [**get_grouped_modules_for_stack**](docs/ModuleManagementApi.md#get_grouped_modules_for_stack) | **GET** /cc-ui/v1/modules/stack/{stackName}/grouped | Get Grouped Modules for Stack
@@ -1007,6 +1007,7 @@ Class | Method | HTTP request | Description
  - [PortworxVolumeSource](docs/PortworxVolumeSource.md)
  - [PreferredSchedulingTerm](docs/PreferredSchedulingTerm.md)
  - [Probe](docs/Probe.md)
+ - [ProjectType](docs/ProjectType.md)
  - [ProjectTypeMappedResource](docs/ProjectTypeMappedResource.md)
  - [ProjectTypeRequest](docs/ProjectTypeRequest.md)
  - [ProjectTypeResponse](docs/ProjectTypeResponse.md)

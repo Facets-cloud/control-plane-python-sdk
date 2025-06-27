@@ -59,9 +59,10 @@ class TFModule(object):
         'tags': 'list[str]',
         'iac_tool': 'list[str]',
         'module_group_id': 'str',
+        'name_length_limit': 'int',
+        'change_log': 'str',
         'feature_branch': 'bool',
         'spec_modeled': 'bool',
-        'change_log': 'str',
         'versioning_key': 'str',
         'number_of_versions': 'int'
     }
@@ -98,14 +99,15 @@ class TFModule(object):
         'tags': 'tags',
         'iac_tool': 'iacTool',
         'module_group_id': 'moduleGroupId',
+        'name_length_limit': 'nameLengthLimit',
+        'change_log': 'changeLog',
         'feature_branch': 'featureBranch',
         'spec_modeled': 'specModeled',
-        'change_log': 'changeLog',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent=None, flavor=None, alias_flavors=None, version=None, git_url=None, git_ref=None, relative_path=None, account_id=None, facets_yaml=None, clouds=None, sample_json=None, spec=None, metadata=None, type=None, source=None, inputs=None, outputs=None, path=None, stage=None, allowed_test_projects=None, description=None, readme_md=None, contains_overridable_fields=None, tags=None, iac_tool=None, module_group_id=None, feature_branch=None, spec_modeled=None, change_log=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent=None, flavor=None, alias_flavors=None, version=None, git_url=None, git_ref=None, relative_path=None, account_id=None, facets_yaml=None, clouds=None, sample_json=None, spec=None, metadata=None, type=None, source=None, inputs=None, outputs=None, path=None, stage=None, allowed_test_projects=None, description=None, readme_md=None, contains_overridable_fields=None, tags=None, iac_tool=None, module_group_id=None, name_length_limit=None, change_log=None, feature_branch=None, spec_modeled=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """TFModule - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -138,9 +140,10 @@ class TFModule(object):
         self._tags = None
         self._iac_tool = None
         self._module_group_id = None
+        self._name_length_limit = None
+        self._change_log = None
         self._feature_branch = None
         self._spec_modeled = None
-        self._change_log = None
         self._versioning_key = None
         self._number_of_versions = None
         self.discriminator = None
@@ -206,12 +209,14 @@ class TFModule(object):
             self.iac_tool = iac_tool
         if module_group_id is not None:
             self.module_group_id = module_group_id
+        if name_length_limit is not None:
+            self.name_length_limit = name_length_limit
+        if change_log is not None:
+            self.change_log = change_log
         if feature_branch is not None:
             self.feature_branch = feature_branch
         if spec_modeled is not None:
             self.spec_modeled = spec_modeled
-        if change_log is not None:
-            self.change_log = change_log
         if versioning_key is not None:
             self.versioning_key = versioning_key
         if number_of_versions is not None:
@@ -928,6 +933,50 @@ class TFModule(object):
         self._module_group_id = module_group_id
 
     @property
+    def name_length_limit(self):
+        """Gets the name_length_limit of this TFModule.  # noqa: E501
+
+        Maximum allowed length for resource names using this module  # noqa: E501
+
+        :return: The name_length_limit of this TFModule.  # noqa: E501
+        :rtype: int
+        """
+        return self._name_length_limit
+
+    @name_length_limit.setter
+    def name_length_limit(self, name_length_limit):
+        """Sets the name_length_limit of this TFModule.
+
+        Maximum allowed length for resource names using this module  # noqa: E501
+
+        :param name_length_limit: The name_length_limit of this TFModule.  # noqa: E501
+        :type: int
+        """
+
+        self._name_length_limit = name_length_limit
+
+    @property
+    def change_log(self):
+        """Gets the change_log of this TFModule.  # noqa: E501
+
+
+        :return: The change_log of this TFModule.  # noqa: E501
+        :rtype: str
+        """
+        return self._change_log
+
+    @change_log.setter
+    def change_log(self, change_log):
+        """Sets the change_log of this TFModule.
+
+
+        :param change_log: The change_log of this TFModule.  # noqa: E501
+        :type: str
+        """
+
+        self._change_log = change_log
+
+    @property
     def feature_branch(self):
         """Gets the feature_branch of this TFModule.  # noqa: E501
 
@@ -968,27 +1017,6 @@ class TFModule(object):
         """
 
         self._spec_modeled = spec_modeled
-
-    @property
-    def change_log(self):
-        """Gets the change_log of this TFModule.  # noqa: E501
-
-
-        :return: The change_log of this TFModule.  # noqa: E501
-        :rtype: str
-        """
-        return self._change_log
-
-    @change_log.setter
-    def change_log(self, change_log):
-        """Sets the change_log of this TFModule.
-
-
-        :param change_log: The change_log of this TFModule.  # noqa: E501
-        :type: str
-        """
-
-        self._change_log = change_log
 
     @property
     def versioning_key(self):

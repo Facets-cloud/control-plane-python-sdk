@@ -63,13 +63,13 @@ class Stack(object):
         'project_type_id': 'str',
         'project_type_name': 'str',
         'preview_modules_allowed': 'bool',
-        'id': 'str',
-        'alpha_blueprint': 'bool',
         'template': 'bool',
-        'starter_project': 'bool',
-        'imported_project': 'bool',
-        'entity_type': 'str',
+        'alpha_blueprint': 'bool',
         'mono_repo': 'bool',
+        'imported_project': 'bool',
+        'starter_project': 'bool',
+        'entity_type': 'str',
+        'id': 'str',
         'versioning_key': 'str',
         'number_of_versions': 'int'
     }
@@ -110,18 +110,18 @@ class Stack(object):
         'project_type_id': 'projectTypeId',
         'project_type_name': 'projectTypeName',
         'preview_modules_allowed': 'previewModulesAllowed',
-        'id': 'id',
-        'alpha_blueprint': 'alphaBlueprint',
         'template': 'template',
-        'starter_project': 'starterProject',
-        'imported_project': 'importedProject',
-        'entity_type': 'entityType',
+        'alpha_blueprint': 'alphaBlueprint',
         'mono_repo': 'monoRepo',
+        'imported_project': 'importedProject',
+        'starter_project': 'starterProject',
+        'entity_type': 'entityType',
+        'id': 'id',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, template_id=None, template_name=None, label=None, change_log=None, branch=None, primary_cloud=None, allowed_clouds=None, component_versions=None, pause_releases=None, stack_vars=None, cluster_variables_meta=None, child_stacks=None, artifactories=None, provided_resources=None, account_id=None, auto_enabled_sub_stacks=None, version_control_account_id=None, user=None, app_password=None, description=None, git_ops_enabled=None, last_modified_date=None, last_modified_by=None, github_organization_name=None, coder_account_id=None, git_overrides_enabled=None, override_config=None, config_modules_disabled=None, project_type_id=None, project_type_name=None, preview_modules_allowed=None, id=None, alpha_blueprint=None, template=None, starter_project=None, imported_project=None, entity_type=None, mono_repo=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, template_id=None, template_name=None, label=None, change_log=None, branch=None, primary_cloud=None, allowed_clouds=None, component_versions=None, pause_releases=None, stack_vars=None, cluster_variables_meta=None, child_stacks=None, artifactories=None, provided_resources=None, account_id=None, auto_enabled_sub_stacks=None, version_control_account_id=None, user=None, app_password=None, description=None, git_ops_enabled=None, last_modified_date=None, last_modified_by=None, github_organization_name=None, coder_account_id=None, git_overrides_enabled=None, override_config=None, config_modules_disabled=None, project_type_id=None, project_type_name=None, preview_modules_allowed=None, template=None, alpha_blueprint=None, mono_repo=None, imported_project=None, starter_project=None, entity_type=None, id=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Stack - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._vcs_url = None
@@ -158,13 +158,13 @@ class Stack(object):
         self._project_type_id = None
         self._project_type_name = None
         self._preview_modules_allowed = None
-        self._id = None
-        self._alpha_blueprint = None
         self._template = None
-        self._starter_project = None
-        self._imported_project = None
-        self._entity_type = None
+        self._alpha_blueprint = None
         self._mono_repo = None
+        self._imported_project = None
+        self._starter_project = None
+        self._entity_type = None
+        self._id = None
         self._versioning_key = None
         self._number_of_versions = None
         self.discriminator = None
@@ -238,20 +238,20 @@ class Stack(object):
             self.project_type_name = project_type_name
         if preview_modules_allowed is not None:
             self.preview_modules_allowed = preview_modules_allowed
-        if id is not None:
-            self.id = id
-        if alpha_blueprint is not None:
-            self.alpha_blueprint = alpha_blueprint
         if template is not None:
             self.template = template
-        if starter_project is not None:
-            self.starter_project = starter_project
-        if imported_project is not None:
-            self.imported_project = imported_project
-        if entity_type is not None:
-            self.entity_type = entity_type
+        if alpha_blueprint is not None:
+            self.alpha_blueprint = alpha_blueprint
         if mono_repo is not None:
             self.mono_repo = mono_repo
+        if imported_project is not None:
+            self.imported_project = imported_project
+        if starter_project is not None:
+            self.starter_project = starter_project
+        if entity_type is not None:
+            self.entity_type = entity_type
+        if id is not None:
+            self.id = id
         if versioning_key is not None:
             self.versioning_key = versioning_key
         if number_of_versions is not None:
@@ -994,6 +994,7 @@ class Stack(object):
     def preview_modules_allowed(self):
         """Gets the preview_modules_allowed of this Stack.  # noqa: E501
 
+        Alternatively called isTestProject  # noqa: E501
 
         :return: The preview_modules_allowed of this Stack.  # noqa: E501
         :rtype: bool
@@ -1004,54 +1005,13 @@ class Stack(object):
     def preview_modules_allowed(self, preview_modules_allowed):
         """Sets the preview_modules_allowed of this Stack.
 
+        Alternatively called isTestProject  # noqa: E501
 
         :param preview_modules_allowed: The preview_modules_allowed of this Stack.  # noqa: E501
         :type: bool
         """
 
         self._preview_modules_allowed = preview_modules_allowed
-
-    @property
-    def id(self):
-        """Gets the id of this Stack.  # noqa: E501
-
-
-        :return: The id of this Stack.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Stack.
-
-
-        :param id: The id of this Stack.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def alpha_blueprint(self):
-        """Gets the alpha_blueprint of this Stack.  # noqa: E501
-
-
-        :return: The alpha_blueprint of this Stack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._alpha_blueprint
-
-    @alpha_blueprint.setter
-    def alpha_blueprint(self, alpha_blueprint):
-        """Sets the alpha_blueprint of this Stack.
-
-
-        :param alpha_blueprint: The alpha_blueprint of this Stack.  # noqa: E501
-        :type: bool
-        """
-
-        self._alpha_blueprint = alpha_blueprint
 
     @property
     def template(self):
@@ -1075,25 +1035,46 @@ class Stack(object):
         self._template = template
 
     @property
-    def starter_project(self):
-        """Gets the starter_project of this Stack.  # noqa: E501
+    def alpha_blueprint(self):
+        """Gets the alpha_blueprint of this Stack.  # noqa: E501
 
 
-        :return: The starter_project of this Stack.  # noqa: E501
+        :return: The alpha_blueprint of this Stack.  # noqa: E501
         :rtype: bool
         """
-        return self._starter_project
+        return self._alpha_blueprint
 
-    @starter_project.setter
-    def starter_project(self, starter_project):
-        """Sets the starter_project of this Stack.
+    @alpha_blueprint.setter
+    def alpha_blueprint(self, alpha_blueprint):
+        """Sets the alpha_blueprint of this Stack.
 
 
-        :param starter_project: The starter_project of this Stack.  # noqa: E501
+        :param alpha_blueprint: The alpha_blueprint of this Stack.  # noqa: E501
         :type: bool
         """
 
-        self._starter_project = starter_project
+        self._alpha_blueprint = alpha_blueprint
+
+    @property
+    def mono_repo(self):
+        """Gets the mono_repo of this Stack.  # noqa: E501
+
+
+        :return: The mono_repo of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mono_repo
+
+    @mono_repo.setter
+    def mono_repo(self, mono_repo):
+        """Sets the mono_repo of this Stack.
+
+
+        :param mono_repo: The mono_repo of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._mono_repo = mono_repo
 
     @property
     def imported_project(self):
@@ -1115,6 +1096,27 @@ class Stack(object):
         """
 
         self._imported_project = imported_project
+
+    @property
+    def starter_project(self):
+        """Gets the starter_project of this Stack.  # noqa: E501
+
+
+        :return: The starter_project of this Stack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._starter_project
+
+    @starter_project.setter
+    def starter_project(self, starter_project):
+        """Sets the starter_project of this Stack.
+
+
+        :param starter_project: The starter_project of this Stack.  # noqa: E501
+        :type: bool
+        """
+
+        self._starter_project = starter_project
 
     @property
     def entity_type(self):
@@ -1144,25 +1146,25 @@ class Stack(object):
         self._entity_type = entity_type
 
     @property
-    def mono_repo(self):
-        """Gets the mono_repo of this Stack.  # noqa: E501
+    def id(self):
+        """Gets the id of this Stack.  # noqa: E501
 
 
-        :return: The mono_repo of this Stack.  # noqa: E501
-        :rtype: bool
+        :return: The id of this Stack.  # noqa: E501
+        :rtype: str
         """
-        return self._mono_repo
+        return self._id
 
-    @mono_repo.setter
-    def mono_repo(self, mono_repo):
-        """Sets the mono_repo of this Stack.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Stack.
 
 
-        :param mono_repo: The mono_repo of this Stack.  # noqa: E501
-        :type: bool
+        :param id: The id of this Stack.  # noqa: E501
+        :type: str
         """
 
-        self._mono_repo = mono_repo
+        self._id = id
 
     @property
     def versioning_key(self):

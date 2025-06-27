@@ -45,6 +45,7 @@ class DeploymentContext(object):
         'modules': 'dict(str, ModuleDTO)',
         'maintenance_window': 'MaintenanceWindowDTO',
         'secrets_context': 'SecretsContextDTO',
+        'project_type': 'ProjectType',
         'parallel_release': 'bool'
     }
 
@@ -66,10 +67,11 @@ class DeploymentContext(object):
         'modules': 'modules',
         'maintenance_window': 'maintenanceWindow',
         'secrets_context': 'secretsContext',
+        'project_type': 'projectType',
         'parallel_release': 'parallelRelease'
     }
 
-    def __init__(self, artifacts=None, artifactory_details=None, overrides=None, snapshots=None, extra_env=None, provided_resources=None, settings=None, template_inputs=None, stack_source_version=None, tf_version=None, resource_metadata=None, provided_secrets_id=None, can_skip_approval=None, resources=None, modules=None, maintenance_window=None, secrets_context=None, parallel_release=None):  # noqa: E501
+    def __init__(self, artifacts=None, artifactory_details=None, overrides=None, snapshots=None, extra_env=None, provided_resources=None, settings=None, template_inputs=None, stack_source_version=None, tf_version=None, resource_metadata=None, provided_secrets_id=None, can_skip_approval=None, resources=None, modules=None, maintenance_window=None, secrets_context=None, project_type=None, parallel_release=None):  # noqa: E501
         """DeploymentContext - a model defined in Swagger"""  # noqa: E501
         self._artifacts = None
         self._artifactory_details = None
@@ -88,6 +90,7 @@ class DeploymentContext(object):
         self._modules = None
         self._maintenance_window = None
         self._secrets_context = None
+        self._project_type = None
         self._parallel_release = None
         self.discriminator = None
         if artifacts is not None:
@@ -124,6 +127,8 @@ class DeploymentContext(object):
             self.maintenance_window = maintenance_window
         if secrets_context is not None:
             self.secrets_context = secrets_context
+        if project_type is not None:
+            self.project_type = project_type
         if parallel_release is not None:
             self.parallel_release = parallel_release
 
@@ -483,6 +488,27 @@ class DeploymentContext(object):
         """
 
         self._secrets_context = secrets_context
+
+    @property
+    def project_type(self):
+        """Gets the project_type of this DeploymentContext.  # noqa: E501
+
+
+        :return: The project_type of this DeploymentContext.  # noqa: E501
+        :rtype: ProjectType
+        """
+        return self._project_type
+
+    @project_type.setter
+    def project_type(self, project_type):
+        """Sets the project_type of this DeploymentContext.
+
+
+        :param project_type: The project_type of this DeploymentContext.  # noqa: E501
+        :type: ProjectType
+        """
+
+        self._project_type = project_type
 
     @property
     def parallel_release(self):
