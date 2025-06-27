@@ -28,50 +28,29 @@ class SortObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'empty': 'bool',
         'sorted': 'bool',
-        'unsorted': 'bool'
+        'unsorted': 'bool',
+        'empty': 'bool'
     }
 
     attribute_map = {
-        'empty': 'empty',
         'sorted': 'sorted',
-        'unsorted': 'unsorted'
+        'unsorted': 'unsorted',
+        'empty': 'empty'
     }
 
-    def __init__(self, empty=None, sorted=None, unsorted=None):  # noqa: E501
+    def __init__(self, sorted=None, unsorted=None, empty=None):  # noqa: E501
         """SortObject - a model defined in Swagger"""  # noqa: E501
-        self._empty = None
         self._sorted = None
         self._unsorted = None
+        self._empty = None
         self.discriminator = None
-        if empty is not None:
-            self.empty = empty
         if sorted is not None:
             self.sorted = sorted
         if unsorted is not None:
             self.unsorted = unsorted
-
-    @property
-    def empty(self):
-        """Gets the empty of this SortObject.  # noqa: E501
-
-
-        :return: The empty of this SortObject.  # noqa: E501
-        :rtype: bool
-        """
-        return self._empty
-
-    @empty.setter
-    def empty(self, empty):
-        """Sets the empty of this SortObject.
-
-
-        :param empty: The empty of this SortObject.  # noqa: E501
-        :type: bool
-        """
-
-        self._empty = empty
+        if empty is not None:
+            self.empty = empty
 
     @property
     def sorted(self):
@@ -114,6 +93,27 @@ class SortObject(object):
         """
 
         self._unsorted = unsorted
+
+    @property
+    def empty(self):
+        """Gets the empty of this SortObject.  # noqa: E501
+
+
+        :return: The empty of this SortObject.  # noqa: E501
+        :rtype: bool
+        """
+        return self._empty
+
+    @empty.setter
+    def empty(self, empty):
+        """Sets the empty of this SortObject.
+
+
+        :param empty: The empty of this SortObject.  # noqa: E501
+        :type: bool
+        """
+
+        self._empty = empty
 
     def to_dict(self):
         """Returns the model properties as a dict"""

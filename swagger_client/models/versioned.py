@@ -28,50 +28,29 @@ class Versioned(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'versioning_key': 'str',
         'change_log': 'str',
+        'versioning_key': 'str',
         'number_of_versions': 'int'
     }
 
     attribute_map = {
-        'versioning_key': 'versioningKey',
         'change_log': 'changeLog',
+        'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, versioning_key=None, change_log=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, change_log=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Versioned - a model defined in Swagger"""  # noqa: E501
-        self._versioning_key = None
         self._change_log = None
+        self._versioning_key = None
         self._number_of_versions = None
         self.discriminator = None
-        if versioning_key is not None:
-            self.versioning_key = versioning_key
         if change_log is not None:
             self.change_log = change_log
+        if versioning_key is not None:
+            self.versioning_key = versioning_key
         if number_of_versions is not None:
             self.number_of_versions = number_of_versions
-
-    @property
-    def versioning_key(self):
-        """Gets the versioning_key of this Versioned.  # noqa: E501
-
-
-        :return: The versioning_key of this Versioned.  # noqa: E501
-        :rtype: str
-        """
-        return self._versioning_key
-
-    @versioning_key.setter
-    def versioning_key(self, versioning_key):
-        """Sets the versioning_key of this Versioned.
-
-
-        :param versioning_key: The versioning_key of this Versioned.  # noqa: E501
-        :type: str
-        """
-
-        self._versioning_key = versioning_key
 
     @property
     def change_log(self):
@@ -93,6 +72,27 @@ class Versioned(object):
         """
 
         self._change_log = change_log
+
+    @property
+    def versioning_key(self):
+        """Gets the versioning_key of this Versioned.  # noqa: E501
+
+
+        :return: The versioning_key of this Versioned.  # noqa: E501
+        :rtype: str
+        """
+        return self._versioning_key
+
+    @versioning_key.setter
+    def versioning_key(self, versioning_key):
+        """Sets the versioning_key of this Versioned.
+
+
+        :param versioning_key: The versioning_key of this Versioned.  # noqa: E501
+        :type: str
+        """
+
+        self._versioning_key = versioning_key
 
     @property
     def number_of_versions(self):

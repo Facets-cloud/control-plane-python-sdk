@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **modules** | [**dict(str, ModuleDTO)**](ModuleDTO.md) |  | [optional] 
 **maintenance_window** | [**MaintenanceWindowDTO**](MaintenanceWindowDTO.md) |  | [optional] 
 **secrets_context** | [**SecretsContextDTO**](SecretsContextDTO.md) |  | [optional] 
+**project_type** | [**ProjectType**](ProjectType.md) |  | [optional] 
 **parallel_release** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

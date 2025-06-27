@@ -39,7 +39,8 @@ class TFModuleLiteDTO(object):
         'allowed_test_projects': 'list[str]',
         'id': 'str',
         'stage': 'str',
-        'iac_tool': 'list[str]'
+        'iac_tool': 'list[str]',
+        'name_length_limit': 'int'
     }
 
     attribute_map = {
@@ -54,10 +55,11 @@ class TFModuleLiteDTO(object):
         'allowed_test_projects': 'allowedTestProjects',
         'id': 'id',
         'stage': 'stage',
-        'iac_tool': 'iacTool'
+        'iac_tool': 'iacTool',
+        'name_length_limit': 'nameLengthLimit'
     }
 
-    def __init__(self, intent=None, intent_type=None, flavor=None, version=None, clouds=None, inputs=None, source=None, tags=None, allowed_test_projects=None, id=None, stage=None, iac_tool=None):  # noqa: E501
+    def __init__(self, intent=None, intent_type=None, flavor=None, version=None, clouds=None, inputs=None, source=None, tags=None, allowed_test_projects=None, id=None, stage=None, iac_tool=None, name_length_limit=None):  # noqa: E501
         """TFModuleLiteDTO - a model defined in Swagger"""  # noqa: E501
         self._intent = None
         self._intent_type = None
@@ -71,6 +73,7 @@ class TFModuleLiteDTO(object):
         self._id = None
         self._stage = None
         self._iac_tool = None
+        self._name_length_limit = None
         self.discriminator = None
         if intent is not None:
             self.intent = intent
@@ -96,6 +99,8 @@ class TFModuleLiteDTO(object):
             self.stage = stage
         if iac_tool is not None:
             self.iac_tool = iac_tool
+        if name_length_limit is not None:
+            self.name_length_limit = name_length_limit
 
     @property
     def intent(self):
@@ -383,6 +388,29 @@ class TFModuleLiteDTO(object):
             )
 
         self._iac_tool = iac_tool
+
+    @property
+    def name_length_limit(self):
+        """Gets the name_length_limit of this TFModuleLiteDTO.  # noqa: E501
+
+        Maximum allowed length for resource names using this module  # noqa: E501
+
+        :return: The name_length_limit of this TFModuleLiteDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._name_length_limit
+
+    @name_length_limit.setter
+    def name_length_limit(self, name_length_limit):
+        """Sets the name_length_limit of this TFModuleLiteDTO.
+
+        Maximum allowed length for resource names using this module  # noqa: E501
+
+        :param name_length_limit: The name_length_limit of this TFModuleLiteDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._name_length_limit = name_length_limit
 
     def to_dict(self):
         """Returns the model properties as a dict"""

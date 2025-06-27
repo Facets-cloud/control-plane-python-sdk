@@ -415,6 +415,7 @@ from swagger_client.models.port_info import PortInfo
 from swagger_client.models.portworx_volume_source import PortworxVolumeSource
 from swagger_client.models.preferred_scheduling_term import PreferredSchedulingTerm
 from swagger_client.models.probe import Probe
+from swagger_client.models.project_type import ProjectType
 from swagger_client.models.project_type_mapped_resource import ProjectTypeMappedResource
 from swagger_client.models.project_type_request import ProjectTypeRequest
 from swagger_client.models.project_type_response import ProjectTypeResponse

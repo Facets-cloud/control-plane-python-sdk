@@ -28,90 +28,69 @@ class PageAbstractCluster(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'total_elements': 'int',
         'total_pages': 'int',
+        'total_elements': 'int',
         'pageable': 'PageableObject',
         'first': 'bool',
-        'size': 'int',
-        'content': 'list[AbstractCluster]',
-        'number': 'int',
         'sort': 'SortObject',
         'number_of_elements': 'int',
         'last': 'bool',
+        'size': 'int',
+        'content': 'list[AbstractCluster]',
+        'number': 'int',
         'empty': 'bool'
     }
 
     attribute_map = {
-        'total_elements': 'totalElements',
         'total_pages': 'totalPages',
+        'total_elements': 'totalElements',
         'pageable': 'pageable',
         'first': 'first',
-        'size': 'size',
-        'content': 'content',
-        'number': 'number',
         'sort': 'sort',
         'number_of_elements': 'numberOfElements',
         'last': 'last',
+        'size': 'size',
+        'content': 'content',
+        'number': 'number',
         'empty': 'empty'
     }
 
-    def __init__(self, total_elements=None, total_pages=None, pageable=None, first=None, size=None, content=None, number=None, sort=None, number_of_elements=None, last=None, empty=None):  # noqa: E501
+    def __init__(self, total_pages=None, total_elements=None, pageable=None, first=None, sort=None, number_of_elements=None, last=None, size=None, content=None, number=None, empty=None):  # noqa: E501
         """PageAbstractCluster - a model defined in Swagger"""  # noqa: E501
-        self._total_elements = None
         self._total_pages = None
+        self._total_elements = None
         self._pageable = None
         self._first = None
-        self._size = None
-        self._content = None
-        self._number = None
         self._sort = None
         self._number_of_elements = None
         self._last = None
+        self._size = None
+        self._content = None
+        self._number = None
         self._empty = None
         self.discriminator = None
-        if total_elements is not None:
-            self.total_elements = total_elements
         if total_pages is not None:
             self.total_pages = total_pages
+        if total_elements is not None:
+            self.total_elements = total_elements
         if pageable is not None:
             self.pageable = pageable
         if first is not None:
             self.first = first
-        if size is not None:
-            self.size = size
-        if content is not None:
-            self.content = content
-        if number is not None:
-            self.number = number
         if sort is not None:
             self.sort = sort
         if number_of_elements is not None:
             self.number_of_elements = number_of_elements
         if last is not None:
             self.last = last
+        if size is not None:
+            self.size = size
+        if content is not None:
+            self.content = content
+        if number is not None:
+            self.number = number
         if empty is not None:
             self.empty = empty
-
-    @property
-    def total_elements(self):
-        """Gets the total_elements of this PageAbstractCluster.  # noqa: E501
-
-
-        :return: The total_elements of this PageAbstractCluster.  # noqa: E501
-        :rtype: int
-        """
-        return self._total_elements
-
-    @total_elements.setter
-    def total_elements(self, total_elements):
-        """Sets the total_elements of this PageAbstractCluster.
-
-
-        :param total_elements: The total_elements of this PageAbstractCluster.  # noqa: E501
-        :type: int
-        """
-
-        self._total_elements = total_elements
 
     @property
     def total_pages(self):
@@ -133,6 +112,27 @@ class PageAbstractCluster(object):
         """
 
         self._total_pages = total_pages
+
+    @property
+    def total_elements(self):
+        """Gets the total_elements of this PageAbstractCluster.  # noqa: E501
+
+
+        :return: The total_elements of this PageAbstractCluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_elements
+
+    @total_elements.setter
+    def total_elements(self, total_elements):
+        """Sets the total_elements of this PageAbstractCluster.
+
+
+        :param total_elements: The total_elements of this PageAbstractCluster.  # noqa: E501
+        :type: int
+        """
+
+        self._total_elements = total_elements
 
     @property
     def pageable(self):
@@ -175,69 +175,6 @@ class PageAbstractCluster(object):
         """
 
         self._first = first
-
-    @property
-    def size(self):
-        """Gets the size of this PageAbstractCluster.  # noqa: E501
-
-
-        :return: The size of this PageAbstractCluster.  # noqa: E501
-        :rtype: int
-        """
-        return self._size
-
-    @size.setter
-    def size(self, size):
-        """Sets the size of this PageAbstractCluster.
-
-
-        :param size: The size of this PageAbstractCluster.  # noqa: E501
-        :type: int
-        """
-
-        self._size = size
-
-    @property
-    def content(self):
-        """Gets the content of this PageAbstractCluster.  # noqa: E501
-
-
-        :return: The content of this PageAbstractCluster.  # noqa: E501
-        :rtype: list[AbstractCluster]
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content):
-        """Sets the content of this PageAbstractCluster.
-
-
-        :param content: The content of this PageAbstractCluster.  # noqa: E501
-        :type: list[AbstractCluster]
-        """
-
-        self._content = content
-
-    @property
-    def number(self):
-        """Gets the number of this PageAbstractCluster.  # noqa: E501
-
-
-        :return: The number of this PageAbstractCluster.  # noqa: E501
-        :rtype: int
-        """
-        return self._number
-
-    @number.setter
-    def number(self, number):
-        """Sets the number of this PageAbstractCluster.
-
-
-        :param number: The number of this PageAbstractCluster.  # noqa: E501
-        :type: int
-        """
-
-        self._number = number
 
     @property
     def sort(self):
@@ -301,6 +238,69 @@ class PageAbstractCluster(object):
         """
 
         self._last = last
+
+    @property
+    def size(self):
+        """Gets the size of this PageAbstractCluster.  # noqa: E501
+
+
+        :return: The size of this PageAbstractCluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        """Sets the size of this PageAbstractCluster.
+
+
+        :param size: The size of this PageAbstractCluster.  # noqa: E501
+        :type: int
+        """
+
+        self._size = size
+
+    @property
+    def content(self):
+        """Gets the content of this PageAbstractCluster.  # noqa: E501
+
+
+        :return: The content of this PageAbstractCluster.  # noqa: E501
+        :rtype: list[AbstractCluster]
+        """
+        return self._content
+
+    @content.setter
+    def content(self, content):
+        """Sets the content of this PageAbstractCluster.
+
+
+        :param content: The content of this PageAbstractCluster.  # noqa: E501
+        :type: list[AbstractCluster]
+        """
+
+        self._content = content
+
+    @property
+    def number(self):
+        """Gets the number of this PageAbstractCluster.  # noqa: E501
+
+
+        :return: The number of this PageAbstractCluster.  # noqa: E501
+        :rtype: int
+        """
+        return self._number
+
+    @number.setter
+    def number(self, number):
+        """Sets the number of this PageAbstractCluster.
+
+
+        :param number: The number of this PageAbstractCluster.  # noqa: E501
+        :type: int
+        """
+
+        self._number = number
 
     @property
     def empty(self):

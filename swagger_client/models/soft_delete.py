@@ -28,45 +28,24 @@ class SoftDelete(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'entity_type': 'str'
+        'entity_type': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'entity_type': 'entityType'
+        'entity_type': 'entityType',
+        'id': 'id'
     }
 
-    def __init__(self, id=None, entity_type=None):  # noqa: E501
+    def __init__(self, entity_type=None, id=None):  # noqa: E501
         """SoftDelete - a model defined in Swagger"""  # noqa: E501
-        self._id = None
         self._entity_type = None
+        self._id = None
         self.discriminator = None
-        if id is not None:
-            self.id = id
         if entity_type is not None:
             self.entity_type = entity_type
-
-    @property
-    def id(self):
-        """Gets the id of this SoftDelete.  # noqa: E501
-
-
-        :return: The id of this SoftDelete.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this SoftDelete.
-
-
-        :param id: The id of this SoftDelete.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
+        if id is not None:
+            self.id = id
 
     @property
     def entity_type(self):
@@ -94,6 +73,27 @@ class SoftDelete(object):
             )
 
         self._entity_type = entity_type
+
+    @property
+    def id(self):
+        """Gets the id of this SoftDelete.  # noqa: E501
+
+
+        :return: The id of this SoftDelete.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this SoftDelete.
+
+
+        :param id: The id of this SoftDelete.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

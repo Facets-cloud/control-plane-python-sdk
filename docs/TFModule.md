@@ -34,9 +34,10 @@ Name | Type | Description | Notes
 **tags** | **list[str]** |  | [optional] 
 **iac_tool** | **list[str]** |  | [optional] 
 **module_group_id** | **str** |  | [optional] 
+**name_length_limit** | **int** | Maximum allowed length for resource names using this module | [optional] 
+**change_log** | **str** |  | [optional] 
 **feature_branch** | **bool** |  | [optional] 
 **spec_modeled** | **bool** |  | [optional] 
-**change_log** | **str** |  | [optional] 
 **versioning_key** | **str** |  | [optional] 
 **number_of_versions** | **int** |  | [optional] 
 

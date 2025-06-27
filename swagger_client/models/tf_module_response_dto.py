@@ -59,6 +59,7 @@ class TFModuleResponseDTO(object):
         'tags': 'list[str]',
         'allowed_test_projects': 'list[str]',
         'iac_tool': 'list[str]',
+        'name_length_limit': 'int',
         'feature_branch': 'bool'
     }
 
@@ -94,10 +95,11 @@ class TFModuleResponseDTO(object):
         'tags': 'tags',
         'allowed_test_projects': 'allowedTestProjects',
         'iac_tool': 'iacTool',
+        'name_length_limit': 'nameLengthLimit',
         'feature_branch': 'featureBranch'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent_details=None, intent=None, flavor=None, alias_flavors=None, version=None, clouds=None, source=None, stage=None, preview_module_id=None, published_module_id=None, type=None, git_url=None, git_ref=None, sample_json=None, spec=None, metadata=None, inputs=None, outputs=None, versioning_key=None, description=None, readme_md=None, other_versions=None, latest_version=None, tags=None, allowed_test_projects=None, iac_tool=None, feature_branch=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent_details=None, intent=None, flavor=None, alias_flavors=None, version=None, clouds=None, source=None, stage=None, preview_module_id=None, published_module_id=None, type=None, git_url=None, git_ref=None, sample_json=None, spec=None, metadata=None, inputs=None, outputs=None, versioning_key=None, description=None, readme_md=None, other_versions=None, latest_version=None, tags=None, allowed_test_projects=None, iac_tool=None, name_length_limit=None, feature_branch=None):  # noqa: E501
         """TFModuleResponseDTO - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -130,6 +132,7 @@ class TFModuleResponseDTO(object):
         self._tags = None
         self._allowed_test_projects = None
         self._iac_tool = None
+        self._name_length_limit = None
         self._feature_branch = None
         self.discriminator = None
         if id is not None:
@@ -194,6 +197,8 @@ class TFModuleResponseDTO(object):
             self.allowed_test_projects = allowed_test_projects
         if iac_tool is not None:
             self.iac_tool = iac_tool
+        if name_length_limit is not None:
+            self.name_length_limit = name_length_limit
         if feature_branch is not None:
             self.feature_branch = feature_branch
 
@@ -908,6 +913,29 @@ class TFModuleResponseDTO(object):
             )
 
         self._iac_tool = iac_tool
+
+    @property
+    def name_length_limit(self):
+        """Gets the name_length_limit of this TFModuleResponseDTO.  # noqa: E501
+
+        Maximum allowed length for resource names using this module  # noqa: E501
+
+        :return: The name_length_limit of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: int
+        """
+        return self._name_length_limit
+
+    @name_length_limit.setter
+    def name_length_limit(self, name_length_limit):
+        """Sets the name_length_limit of this TFModuleResponseDTO.
+
+        Maximum allowed length for resource names using this module  # noqa: E501
+
+        :param name_length_limit: The name_length_limit of this TFModuleResponseDTO.  # noqa: E501
+        :type: int
+        """
+
+        self._name_length_limit = name_length_limit
 
     @property
     def feature_branch(self):
