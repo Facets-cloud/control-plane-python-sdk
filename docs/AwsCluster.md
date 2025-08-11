@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **base_cluster_id** | **str** |  | [optional] 
 **base_cluster_name** | **str** |  | [optional] 
 **namespace** | **str** |  | [optional] 
-**dynamic_launch** | **bool** |  | [optional] 
+**has_k8s_credentials** | **bool** |  | [optional] 
 **aws_region** | **str** |  | [optional] 
 **azs** | **list[str]** |  | [optional] 
 **vpc_cidr** | **str** |  | [optional] 

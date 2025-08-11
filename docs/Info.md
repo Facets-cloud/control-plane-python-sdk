@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **repository** | **str** |  | [optional] 
 **tag** | **str** |  | [optional] 
 **ui** | **dict(str, object)** |  | [optional] 
+**critical_resource** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

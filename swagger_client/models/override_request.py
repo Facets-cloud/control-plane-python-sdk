@@ -31,22 +31,25 @@ class OverrideRequest(object):
         'resource_type': 'str',
         'resource_name': 'str',
         'overrides': 'dict(str, object)',
-        'change_log': 'str'
+        'change_log': 'str',
+        'affected_resources': 'list[ResourceEnableDisableRequest]'
     }
 
     attribute_map = {
         'resource_type': 'resourceType',
         'resource_name': 'resourceName',
         'overrides': 'overrides',
-        'change_log': 'changeLog'
+        'change_log': 'changeLog',
+        'affected_resources': 'affectedResources'
     }
 
-    def __init__(self, resource_type=None, resource_name=None, overrides=None, change_log=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, overrides=None, change_log=None, affected_resources=None):  # noqa: E501
         """OverrideRequest - a model defined in Swagger"""  # noqa: E501
         self._resource_type = None
         self._resource_name = None
         self._overrides = None
         self._change_log = None
+        self._affected_resources = None
         self.discriminator = None
         self.resource_type = resource_type
         self.resource_name = resource_name
@@ -54,6 +57,8 @@ class OverrideRequest(object):
             self.overrides = overrides
         if change_log is not None:
             self.change_log = change_log
+        if affected_resources is not None:
+            self.affected_resources = affected_resources
 
     @property
     def resource_type(self):
@@ -142,6 +147,27 @@ class OverrideRequest(object):
         """
 
         self._change_log = change_log
+
+    @property
+    def affected_resources(self):
+        """Gets the affected_resources of this OverrideRequest.  # noqa: E501
+
+
+        :return: The affected_resources of this OverrideRequest.  # noqa: E501
+        :rtype: list[ResourceEnableDisableRequest]
+        """
+        return self._affected_resources
+
+    @affected_resources.setter
+    def affected_resources(self, affected_resources):
+        """Sets the affected_resources of this OverrideRequest.
+
+
+        :param affected_resources: The affected_resources of this OverrideRequest.  # noqa: E501
+        :type: list[ResourceEnableDisableRequest]
+        """
+
+        self._affected_resources = affected_resources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

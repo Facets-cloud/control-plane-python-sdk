@@ -44,6 +44,7 @@ class DeploymentRequest(object):
         'release_trace_id': 'str',
         'queued_release_id': 'str',
         'rollback_deployment_id': 'str',
+        'skip_state_check': 'bool',
         'alpha': 'bool',
         'approved_release': 'bool'
     }
@@ -65,11 +66,12 @@ class DeploymentRequest(object):
         'release_trace_id': 'releaseTraceId',
         'queued_release_id': 'queuedReleaseId',
         'rollback_deployment_id': 'rollbackDeploymentId',
+        'skip_state_check': 'skipStateCheck',
         'alpha': 'alpha',
         'approved_release': 'approvedRelease'
     }
 
-    def __init__(self, release_type=None, extra_env=None, override_build_steps=None, allow_destroy=None, with_refresh=None, force_release=None, tf_version=None, release_comment=None, plan_code_build_id=None, hotfix_resources=None, lock_id=None, can_queue=None, parallel_release=None, release_trace_id=None, queued_release_id=None, rollback_deployment_id=None, alpha=None, approved_release=None):  # noqa: E501
+    def __init__(self, release_type=None, extra_env=None, override_build_steps=None, allow_destroy=None, with_refresh=None, force_release=None, tf_version=None, release_comment=None, plan_code_build_id=None, hotfix_resources=None, lock_id=None, can_queue=None, parallel_release=False, release_trace_id=None, queued_release_id=None, rollback_deployment_id=None, skip_state_check=None, alpha=None, approved_release=None):  # noqa: E501
         """DeploymentRequest - a model defined in Swagger"""  # noqa: E501
         self._release_type = None
         self._extra_env = None
@@ -87,6 +89,7 @@ class DeploymentRequest(object):
         self._release_trace_id = None
         self._queued_release_id = None
         self._rollback_deployment_id = None
+        self._skip_state_check = None
         self._alpha = None
         self._approved_release = None
         self.discriminator = None
@@ -121,6 +124,8 @@ class DeploymentRequest(object):
             self.queued_release_id = queued_release_id
         if rollback_deployment_id is not None:
             self.rollback_deployment_id = rollback_deployment_id
+        if skip_state_check is not None:
+            self.skip_state_check = skip_state_check
         if alpha is not None:
             self.alpha = alpha
         if approved_release is not None:
@@ -477,6 +482,27 @@ class DeploymentRequest(object):
         """
 
         self._rollback_deployment_id = rollback_deployment_id
+
+    @property
+    def skip_state_check(self):
+        """Gets the skip_state_check of this DeploymentRequest.  # noqa: E501
+
+
+        :return: The skip_state_check of this DeploymentRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_state_check
+
+    @skip_state_check.setter
+    def skip_state_check(self, skip_state_check):
+        """Sets the skip_state_check of this DeploymentRequest.
+
+
+        :param skip_state_check: The skip_state_check of this DeploymentRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_state_check = skip_state_check
 
     @property
     def alpha(self):

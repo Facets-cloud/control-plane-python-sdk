@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**abort_automation_suite**](UiDeploymentControllerApi.md#abort_automation_suite) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite | 
 [**approve_release**](UiDeploymentControllerApi.md#approve_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/approveRelease | 
-[**clean_s3_sources**](UiDeploymentControllerApi.md#clean_s3_sources) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/clean-s3-sources | 
 [**create_deployment**](UiDeploymentControllerApi.md#create_deployment) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments | 
 [**destroy_cluster**](UiDeploymentControllerApi.md#destroy_cluster) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/destroy | 
 [**download_terraform_export**](UiDeploymentControllerApi.md#download_terraform_export) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/download-terraform-export | 
@@ -33,6 +32,7 @@ Method | HTTP request | Description
 [**trigger_maintenance_release**](UiDeploymentControllerApi.md#trigger_maintenance_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/maintenance | 
 [**trigger_rollback_plan_release**](UiDeploymentControllerApi.md#trigger_rollback_plan_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan | 
 [**trigger_terraform_export**](UiDeploymentControllerApi.md#trigger_terraform_export) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/terraform-export | 
+[**upload_release_metadata**](UiDeploymentControllerApi.md#upload_release_metadata) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/upload-release-metadata | 
 
 # **abort_automation_suite**
 > abort_automation_suite(cluster_id, execution_id)
@@ -123,54 +123,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeploymentLog**](DeploymentLog.md)
-
-### Authorization
-
-[basicAuth](../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **clean_s3_sources**
-> clean_s3_sources(cluster_id)
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-# Configure HTTP basic authorization: basicAuth
-configuration = swagger_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
-# create an instance of the API class
-api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
-cluster_id = 'cluster_id_example' # str | 
-
-try:
-    api_instance.clean_s3_sources(cluster_id)
-except ApiException as e:
-    print("Exception when calling UiDeploymentControllerApi->clean_s3_sources: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cluster_id** | **str**|  | 
-
-### Return type
-
-void (empty response body)
 
 ### Authorization
 
@@ -1058,7 +1010,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **run_hotfix_deployment_recipe**
-> DeploymentLog run_hotfix_deployment_recipe(body, cluster_id, allow_destroy=allow_destroy, with_refresh=with_refresh, force_release=force_release, comment=comment, is_plan=is_plan, can_queue=can_queue, release_trace_id=release_trace_id)
+> DeploymentLog run_hotfix_deployment_recipe(body, cluster_id, allow_destroy=allow_destroy, with_refresh=with_refresh, force_release=force_release, comment=comment, is_plan=is_plan, can_queue=can_queue, release_trace_id=release_trace_id, skip_state_check=skip_state_check)
 
 
 
@@ -1085,9 +1037,10 @@ comment = 'comment_example' # str |  (optional)
 is_plan = false # bool |  (optional) (default to false)
 can_queue = false # bool |  (optional) (default to false)
 release_trace_id = 'release_trace_id_example' # str | Unique identifier of the release that you can search it with (optional)
+skip_state_check = false # bool |  (optional) (default to false)
 
 try:
-    api_response = api_instance.run_hotfix_deployment_recipe(body, cluster_id, allow_destroy=allow_destroy, with_refresh=with_refresh, force_release=force_release, comment=comment, is_plan=is_plan, can_queue=can_queue, release_trace_id=release_trace_id)
+    api_response = api_instance.run_hotfix_deployment_recipe(body, cluster_id, allow_destroy=allow_destroy, with_refresh=with_refresh, force_release=force_release, comment=comment, is_plan=is_plan, can_queue=can_queue, release_trace_id=release_trace_id, skip_state_check=skip_state_check)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiDeploymentControllerApi->run_hotfix_deployment_recipe: %s\n" % e)
@@ -1106,6 +1059,7 @@ Name | Type | Description  | Notes
  **is_plan** | **bool**|  | [optional] [default to false]
  **can_queue** | **bool**|  | [optional] [default to false]
  **release_trace_id** | **str**| Unique identifier of the release that you can search it with | [optional] 
+ **skip_state_check** | **bool**|  | [optional] [default to false]
 
 ### Return type
 
@@ -1542,6 +1496,58 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_release_metadata**
+> upload_release_metadata(cluster_id, deployment_id, body=body)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiDeploymentControllerApi(swagger_client.ApiClient(configuration))
+cluster_id = 'cluster_id_example' # str | 
+deployment_id = 'deployment_id_example' # str | 
+body = swagger_client.DeploymentIdUploadreleasemetadataBody() # DeploymentIdUploadreleasemetadataBody |  (optional)
+
+try:
+    api_instance.upload_release_metadata(cluster_id, deployment_id, body=body)
+except ApiException as e:
+    print("Exception when calling UiDeploymentControllerApi->upload_release_metadata: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cluster_id** | **str**|  | 
+ **deployment_id** | **str**|  | 
+ **body** | [**DeploymentIdUploadreleasemetadataBody**](DeploymentIdUploadreleasemetadataBody.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

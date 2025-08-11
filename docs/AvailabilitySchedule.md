@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **last_modified_by** | **str** |  | [optional] 
 **cluster_id** | **str** |  | 
 **schedules** | [**list[AvailabilityTaskSchedule]**](AvailabilityTaskSchedule.md) |  | [optional] 
+**short_lived_schedules** | [**list[ShortLivedTaskSchedule]**](ShortLivedTaskSchedule.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

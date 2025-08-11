@@ -185,7 +185,7 @@ class AzureClusterRequest(object):
         :param cloud: The cloud of this AzureClusterRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if cloud not in allowed_values:
             raise ValueError(
                 "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **release_type** | **str** |  | [optional] 
 **time_zone** | [**MaintenanceWindowDTOTimeZone**](MaintenanceWindowDTOTimeZone.md) |  | [optional] 
 **pause_release_schedule** | **bool** |  | [optional] 
+**tear_down_after** | **int** |  | [optional] 
+**short_lived** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

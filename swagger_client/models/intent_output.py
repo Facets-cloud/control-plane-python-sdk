@@ -30,20 +30,23 @@ class IntentOutput(object):
     swagger_types = {
         'name': 'str',
         'type': 'str',
-        'title': 'str'
+        'title': 'str',
+        'description': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'type': 'type',
-        'title': 'title'
+        'title': 'title',
+        'description': 'description'
     }
 
-    def __init__(self, name=None, type=None, title=None):  # noqa: E501
+    def __init__(self, name=None, type=None, title=None, description=None):  # noqa: E501
         """IntentOutput - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._type = None
         self._title = None
+        self._description = None
         self.discriminator = None
         if name is not None:
             self.name = name
@@ -51,6 +54,8 @@ class IntentOutput(object):
             self.type = type
         if title is not None:
             self.title = title
+        if description is not None:
+            self.description = description
 
     @property
     def name(self):
@@ -114,6 +119,27 @@ class IntentOutput(object):
         """
 
         self._title = title
+
+    @property
+    def description(self):
+        """Gets the description of this IntentOutput.  # noqa: E501
+
+
+        :return: The description of this IntentOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this IntentOutput.
+
+
+        :param description: The description of this IntentOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
 
     def to_dict(self):
         """Returns the model properties as a dict"""

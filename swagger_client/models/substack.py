@@ -66,10 +66,10 @@ class Substack(object):
         'artifact_path': 'str',
         'tf_module': 'bool',
         'template': 'bool',
-        'alpha_blueprint': 'bool',
         'mono_repo': 'bool',
         'imported_project': 'bool',
         'starter_project': 'bool',
+        'alpha_blueprint': 'bool',
         'entity_type': 'str',
         'id': 'str',
         'versioning_key': 'str',
@@ -115,17 +115,17 @@ class Substack(object):
         'artifact_path': 'artifactPath',
         'tf_module': 'tfModule',
         'template': 'template',
-        'alpha_blueprint': 'alphaBlueprint',
         'mono_repo': 'monoRepo',
         'imported_project': 'importedProject',
         'starter_project': 'starterProject',
+        'alpha_blueprint': 'alphaBlueprint',
         'entity_type': 'entityType',
         'id': 'id',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, template_id=None, template_name=None, label=None, change_log=None, branch=None, primary_cloud=None, allowed_clouds=None, component_versions=None, pause_releases=None, stack_vars=None, cluster_variables_meta=None, child_stacks=None, artifactories=None, provided_resources=None, account_id=None, auto_enabled_sub_stacks=None, version_control_account_id=None, user=None, app_password=None, description=None, git_ops_enabled=None, last_modified_date=None, last_modified_by=None, github_organization_name=None, coder_account_id=None, git_overrides_enabled=None, override_config=None, config_modules_disabled=None, project_type_id=None, project_type_name=None, preview_modules_allowed=None, artifact_path=None, tf_module=None, template=None, alpha_blueprint=None, mono_repo=None, imported_project=None, starter_project=None, entity_type=None, id=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, name=None, vcs_url=None, vcs=None, relative_path=None, template_id=None, template_name=None, label=None, change_log=None, branch=None, primary_cloud=None, allowed_clouds=None, component_versions=None, pause_releases=None, stack_vars=None, cluster_variables_meta=None, child_stacks=None, artifactories=None, provided_resources=None, account_id=None, auto_enabled_sub_stacks=None, version_control_account_id=None, user=None, app_password=None, description=None, git_ops_enabled=None, last_modified_date=None, last_modified_by=None, github_organization_name=None, coder_account_id=None, git_overrides_enabled=None, override_config=None, config_modules_disabled=None, project_type_id=None, project_type_name=None, preview_modules_allowed=None, artifact_path=None, tf_module=None, template=None, mono_repo=None, imported_project=None, starter_project=None, alpha_blueprint=None, entity_type=None, id=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Substack - a model defined in Swagger"""  # noqa: E501
         self._name = None
         self._vcs_url = None
@@ -165,10 +165,10 @@ class Substack(object):
         self._artifact_path = None
         self._tf_module = None
         self._template = None
-        self._alpha_blueprint = None
         self._mono_repo = None
         self._imported_project = None
         self._starter_project = None
+        self._alpha_blueprint = None
         self._entity_type = None
         self._id = None
         self._versioning_key = None
@@ -250,14 +250,14 @@ class Substack(object):
             self.tf_module = tf_module
         if template is not None:
             self.template = template
-        if alpha_blueprint is not None:
-            self.alpha_blueprint = alpha_blueprint
         if mono_repo is not None:
             self.mono_repo = mono_repo
         if imported_project is not None:
             self.imported_project = imported_project
         if starter_project is not None:
             self.starter_project = starter_project
+        if alpha_blueprint is not None:
+            self.alpha_blueprint = alpha_blueprint
         if entity_type is not None:
             self.entity_type = entity_type
         if id is not None:
@@ -480,7 +480,7 @@ class Substack(object):
         :param primary_cloud: The primary_cloud of this Substack.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if primary_cloud not in allowed_values:
             raise ValueError(
                 "Invalid value for `primary_cloud` ({0}), must be one of {1}"  # noqa: E501
@@ -507,7 +507,7 @@ class Substack(object):
         :param allowed_clouds: The allowed_clouds of this Substack.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if not set(allowed_clouds).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
@@ -1087,27 +1087,6 @@ class Substack(object):
         self._template = template
 
     @property
-    def alpha_blueprint(self):
-        """Gets the alpha_blueprint of this Substack.  # noqa: E501
-
-
-        :return: The alpha_blueprint of this Substack.  # noqa: E501
-        :rtype: bool
-        """
-        return self._alpha_blueprint
-
-    @alpha_blueprint.setter
-    def alpha_blueprint(self, alpha_blueprint):
-        """Sets the alpha_blueprint of this Substack.
-
-
-        :param alpha_blueprint: The alpha_blueprint of this Substack.  # noqa: E501
-        :type: bool
-        """
-
-        self._alpha_blueprint = alpha_blueprint
-
-    @property
     def mono_repo(self):
         """Gets the mono_repo of this Substack.  # noqa: E501
 
@@ -1169,6 +1148,27 @@ class Substack(object):
         """
 
         self._starter_project = starter_project
+
+    @property
+    def alpha_blueprint(self):
+        """Gets the alpha_blueprint of this Substack.  # noqa: E501
+
+
+        :return: The alpha_blueprint of this Substack.  # noqa: E501
+        :rtype: bool
+        """
+        return self._alpha_blueprint
+
+    @alpha_blueprint.setter
+    def alpha_blueprint(self, alpha_blueprint):
+        """Sets the alpha_blueprint of this Substack.
+
+
+        :param alpha_blueprint: The alpha_blueprint of this Substack.  # noqa: E501
+        :type: bool
+        """
+
+        self._alpha_blueprint = alpha_blueprint
 
     @property
     def entity_type(self):

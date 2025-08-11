@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**create_starter_project**](UiStackControllerApi.md#create_starter_project) | **POST** /cc-ui/v1/stacks/starter-project | 
 [**create_sub_stack**](UiStackControllerApi.md#create_sub_stack) | **POST** /cc-ui/v1/stacks/substack/{substackName} | 
 [**create_subscription**](UiStackControllerApi.md#create_subscription) | **POST** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | 
+[**delete_overrides_fields**](UiStackControllerApi.md#delete_overrides_fields) | **DELETE** /cc-ui/v1/stacks/{stackName}/overrides-fields | 
 [**delete_stack**](UiStackControllerApi.md#delete_stack) | **DELETE** /cc-ui/v1/stacks/{stackName} | 
 [**enable_git_ops**](UiStackControllerApi.md#enable_git_ops) | **PUT** /cc-ui/v1/stacks/{stackName}/enable-git-ops | 
 [**get_all_clusters**](UiStackControllerApi.md#get_all_clusters) | **GET** /cc-ui/v1/stacks/clusters | 
@@ -335,6 +336,57 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_overrides_fields**
+> list[OverrideObject] delete_overrides_fields(body, stack_name)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
+body = swagger_client.OverrideDeleteRequest() # OverrideDeleteRequest | 
+stack_name = 'stack_name_example' # str | 
+
+try:
+    api_response = api_instance.delete_overrides_fields(body, stack_name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiStackControllerApi->delete_overrides_fields: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OverrideDeleteRequest**](OverrideDeleteRequest.md)|  | 
+ **stack_name** | **str**|  | 
+
+### Return type
+
+[**list[OverrideObject]**](OverrideObject.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_stack**
 > Stack delete_stack(stack_name)
 
@@ -456,7 +508,7 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiStackControllerApi(swagger_client.ApiClient(configuration))
 page = 0 # int |  (optional) (default to 0)
 per_page = 50 # int |  (optional) (default to 50)
-sort_by = 'lastModifiedDate' # str |  (optional) (default to lastModifiedDate)
+sort_by = 'LAST_MODIFIED_DATE' # str |  (optional) (default to LAST_MODIFIED_DATE)
 
 try:
     api_response = api_instance.get_all_clusters(page=page, per_page=per_page, sort_by=sort_by)
@@ -471,7 +523,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] [default to 0]
  **per_page** | **int**|  | [optional] [default to 50]
- **sort_by** | **str**|  | [optional] [default to lastModifiedDate]
+ **sort_by** | **str**|  | [optional] [default to LAST_MODIFIED_DATE]
 
 ### Return type
 

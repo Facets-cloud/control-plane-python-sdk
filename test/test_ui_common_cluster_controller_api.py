@@ -46,6 +46,12 @@ class TestUiCommonClusterControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_bulk_edit_inherit_from_base_for_resources1(self):
+        """Test case for bulk_edit_inherit_from_base_for_resources1
+
+        """
+        pass
+
     def test_bulk_enable_disable_resources(self):
         """Test case for bulk_enable_disable_resources
 
@@ -191,8 +197,8 @@ class TestUiCommonClusterControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_get_namespaces_in_use_by_dependent_clusters(self):
-        """Test case for get_namespaces_in_use_by_dependent_clusters
+    def test_get_namespaces_in_use_by_dependent_clusters1(self):
+        """Test case for get_namespaces_in_use_by_dependent_clusters1
 
         """
         pass

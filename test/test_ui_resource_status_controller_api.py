@@ -28,6 +28,12 @@ class TestUiResourceStatusControllerApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_get_namespaces_in_use_by_dependent_clusters(self):
+        """Test case for get_namespaces_in_use_by_dependent_clusters
+
+        """
+        pass
+
     def test_get_release_preview(self):
         """Test case for get_release_preview
 

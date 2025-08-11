@@ -34,7 +34,9 @@ class ScheduleRequest(object):
         'by_time': 'LocalTime',
         'release_type': 'str',
         'time_zone': 'MaintenanceWindowDTOTimeZone',
-        'pause_release_schedule': 'bool'
+        'pause_release_schedule': 'bool',
+        'tear_down_after': 'int',
+        'short_lived': 'bool'
     }
 
     attribute_map = {
@@ -44,10 +46,12 @@ class ScheduleRequest(object):
         'by_time': 'byTime',
         'release_type': 'releaseType',
         'time_zone': 'timeZone',
-        'pause_release_schedule': 'pauseReleaseSchedule'
+        'pause_release_schedule': 'pauseReleaseSchedule',
+        'tear_down_after': 'tearDownAfter',
+        'short_lived': 'shortLived'
     }
 
-    def __init__(self, frequency=None, interval=None, by_day=None, by_time=None, release_type=None, time_zone=None, pause_release_schedule=None):  # noqa: E501
+    def __init__(self, frequency=None, interval=None, by_day=None, by_time=None, release_type=None, time_zone=None, pause_release_schedule=None, tear_down_after=None, short_lived=None):  # noqa: E501
         """ScheduleRequest - a model defined in Swagger"""  # noqa: E501
         self._frequency = None
         self._interval = None
@@ -56,6 +60,8 @@ class ScheduleRequest(object):
         self._release_type = None
         self._time_zone = None
         self._pause_release_schedule = None
+        self._tear_down_after = None
+        self._short_lived = None
         self.discriminator = None
         if frequency is not None:
             self.frequency = frequency
@@ -71,6 +77,10 @@ class ScheduleRequest(object):
             self.time_zone = time_zone
         if pause_release_schedule is not None:
             self.pause_release_schedule = pause_release_schedule
+        if tear_down_after is not None:
+            self.tear_down_after = tear_down_after
+        if short_lived is not None:
+            self.short_lived = short_lived
 
     @property
     def frequency(self):
@@ -237,6 +247,48 @@ class ScheduleRequest(object):
         """
 
         self._pause_release_schedule = pause_release_schedule
+
+    @property
+    def tear_down_after(self):
+        """Gets the tear_down_after of this ScheduleRequest.  # noqa: E501
+
+
+        :return: The tear_down_after of this ScheduleRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._tear_down_after
+
+    @tear_down_after.setter
+    def tear_down_after(self, tear_down_after):
+        """Sets the tear_down_after of this ScheduleRequest.
+
+
+        :param tear_down_after: The tear_down_after of this ScheduleRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._tear_down_after = tear_down_after
+
+    @property
+    def short_lived(self):
+        """Gets the short_lived of this ScheduleRequest.  # noqa: E501
+
+
+        :return: The short_lived of this ScheduleRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._short_lived
+
+    @short_lived.setter
+    def short_lived(self, short_lived):
+        """Sets the short_lived of this ScheduleRequest.
+
+
+        :param short_lived: The short_lived of this ScheduleRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._short_lived = short_lived
 
     def to_dict(self):
         """Returns the model properties as a dict"""

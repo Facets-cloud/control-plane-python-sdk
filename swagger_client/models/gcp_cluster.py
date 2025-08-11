@@ -62,7 +62,7 @@ class GCPCluster(object):
         'base_cluster_id': 'str',
         'base_cluster_name': 'str',
         'namespace': 'str',
-        'dynamic_launch': 'bool',
+        'has_k8s_credentials': 'bool',
         'service_account_key': 'str',
         'project': 'str',
         'region': 'str',
@@ -112,7 +112,7 @@ class GCPCluster(object):
         'base_cluster_id': 'baseClusterId',
         'base_cluster_name': 'baseClusterName',
         'namespace': 'namespace',
-        'dynamic_launch': 'dynamicLaunch',
+        'has_k8s_credentials': 'hasK8sCredentials',
         'service_account_key': 'serviceAccountKey',
         'project': 'project',
         'region': 'region',
@@ -127,7 +127,7 @@ class GCPCluster(object):
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, cloud=None, tz=None, stack_name=None, release_stream=None, cd_pipeline_parent=None, require_sign_off=None, deleted=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, configured=None, change_log=None, branch=None, cluster_code=None, common_environment_variables=None, variables=None, secrets=None, global_variables=None, cluster_state=None, schedules=None, k8s_requests_to_limits_ratio=None, component_versions=None, cloud_account_id=None, cloud_account_secret_id=None, is_ephemeral=None, pause_releases=None, base_cluster_id=None, base_cluster_name=None, namespace=None, dynamic_launch=None, service_account_key=None, project=None, region=None, azs=None, vpc_cidr=None, machine_type=None, provided_vpcid=None, shared_vpc_settings=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, cloud=None, tz=None, stack_name=None, release_stream=None, cd_pipeline_parent=None, require_sign_off=None, deleted=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, configured=None, change_log=None, branch=None, cluster_code=None, common_environment_variables=None, variables=None, secrets=None, global_variables=None, cluster_state=None, schedules=None, k8s_requests_to_limits_ratio=None, component_versions=None, cloud_account_id=None, cloud_account_secret_id=None, is_ephemeral=None, pause_releases=None, base_cluster_id=None, base_cluster_name=None, namespace=None, has_k8s_credentials=None, service_account_key=None, project=None, region=None, azs=None, vpc_cidr=None, machine_type=None, provided_vpcid=None, shared_vpc_settings=None, entity_type=None, secrets_uid=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """GCPCluster - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -163,7 +163,7 @@ class GCPCluster(object):
         self._base_cluster_id = None
         self._base_cluster_name = None
         self._namespace = None
-        self._dynamic_launch = None
+        self._has_k8s_credentials = None
         self._service_account_key = None
         self._project = None
         self._region = None
@@ -241,8 +241,8 @@ class GCPCluster(object):
             self.base_cluster_name = base_cluster_name
         if namespace is not None:
             self.namespace = namespace
-        if dynamic_launch is not None:
-            self.dynamic_launch = dynamic_launch
+        if has_k8s_credentials is not None:
+            self.has_k8s_credentials = has_k8s_credentials
         if service_account_key is not None:
             self.service_account_key = service_account_key
         if project is not None:
@@ -414,7 +414,7 @@ class GCPCluster(object):
         :param cloud: The cloud of this GCPCluster.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if cloud not in allowed_values:
             raise ValueError(
                 "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
@@ -1003,25 +1003,25 @@ class GCPCluster(object):
         self._namespace = namespace
 
     @property
-    def dynamic_launch(self):
-        """Gets the dynamic_launch of this GCPCluster.  # noqa: E501
+    def has_k8s_credentials(self):
+        """Gets the has_k8s_credentials of this GCPCluster.  # noqa: E501
 
 
-        :return: The dynamic_launch of this GCPCluster.  # noqa: E501
+        :return: The has_k8s_credentials of this GCPCluster.  # noqa: E501
         :rtype: bool
         """
-        return self._dynamic_launch
+        return self._has_k8s_credentials
 
-    @dynamic_launch.setter
-    def dynamic_launch(self, dynamic_launch):
-        """Sets the dynamic_launch of this GCPCluster.
+    @has_k8s_credentials.setter
+    def has_k8s_credentials(self, has_k8s_credentials):
+        """Sets the has_k8s_credentials of this GCPCluster.
 
 
-        :param dynamic_launch: The dynamic_launch of this GCPCluster.  # noqa: E501
+        :param has_k8s_credentials: The has_k8s_credentials of this GCPCluster.  # noqa: E501
         :type: bool
         """
 
-        self._dynamic_launch = dynamic_launch
+        self._has_k8s_credentials = has_k8s_credentials
 
     @property
     def service_account_key(self):

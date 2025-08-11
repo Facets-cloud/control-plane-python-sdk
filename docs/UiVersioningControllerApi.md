@@ -380,7 +380,7 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient(configuration))
 page = 0 # int |  (optional) (default to 0)
 per_page = 10 # int |  (optional) (default to 10)
-sort_by = 'lastModifiedDate' # str |  (optional) (default to lastModifiedDate)
+sort_by = 'LAST_MODIFIED_DATE' # str |  (optional) (default to LAST_MODIFIED_DATE)
 
 try:
     api_response = api_instance.soft_deleted_entities(page=page, per_page=per_page, sort_by=sort_by)
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional] [default to 0]
  **per_page** | **int**|  | [optional] [default to 10]
- **sort_by** | **str**|  | [optional] [default to lastModifiedDate]
+ **sort_by** | **str**|  | [optional] [default to LAST_MODIFIED_DATE]
 
 ### Return type
 
@@ -434,7 +434,7 @@ api_instance = swagger_client.UiVersioningControllerApi(swagger_client.ApiClient
 entity_type = 'entity_type_example' # str | 
 page = 0 # int |  (optional) (default to 0)
 per_page = 10 # int |  (optional) (default to 10)
-sort_by = 'lastModifiedDate' # str |  (optional) (default to lastModifiedDate)
+sort_by = 'LAST_MODIFIED_DATE' # str |  (optional) (default to LAST_MODIFIED_DATE)
 
 try:
     api_response = api_instance.soft_deleted_entities_by_type(entity_type, page=page, per_page=per_page, sort_by=sort_by)
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
  **entity_type** | **str**|  | 
  **page** | **int**|  | [optional] [default to 0]
  **per_page** | **int**|  | [optional] [default to 10]
- **sort_by** | **str**|  | [optional] [default to lastModifiedDate]
+ **sort_by** | **str**|  | [optional] [default to LAST_MODIFIED_DATE]
 
 ### Return type
 

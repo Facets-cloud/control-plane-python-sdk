@@ -52,6 +52,12 @@ class TestUiBlueprintDesignerControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_bulk_edit_inherit_from_base_for_resources(self):
+        """Test case for bulk_edit_inherit_from_base_for_resources
+
+        """
+        pass
+
     def test_create_branch(self):
         """Test case for create_branch
 

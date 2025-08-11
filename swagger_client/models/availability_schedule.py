@@ -34,7 +34,8 @@ class AvailabilitySchedule(object):
         'last_modified_date': 'datetime',
         'last_modified_by': 'str',
         'cluster_id': 'str',
-        'schedules': 'list[AvailabilityTaskSchedule]'
+        'schedules': 'list[AvailabilityTaskSchedule]',
+        'short_lived_schedules': 'list[ShortLivedTaskSchedule]'
     }
 
     attribute_map = {
@@ -44,10 +45,11 @@ class AvailabilitySchedule(object):
         'last_modified_date': 'lastModifiedDate',
         'last_modified_by': 'lastModifiedBy',
         'cluster_id': 'clusterId',
-        'schedules': 'schedules'
+        'schedules': 'schedules',
+        'short_lived_schedules': 'shortLivedSchedules'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, cluster_id=None, schedules=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, cluster_id=None, schedules=None, short_lived_schedules=None):  # noqa: E501
         """AvailabilitySchedule - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -56,6 +58,7 @@ class AvailabilitySchedule(object):
         self._last_modified_by = None
         self._cluster_id = None
         self._schedules = None
+        self._short_lived_schedules = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -70,6 +73,8 @@ class AvailabilitySchedule(object):
         self.cluster_id = cluster_id
         if schedules is not None:
             self.schedules = schedules
+        if short_lived_schedules is not None:
+            self.short_lived_schedules = short_lived_schedules
 
     @property
     def id(self):
@@ -219,6 +224,27 @@ class AvailabilitySchedule(object):
         """
 
         self._schedules = schedules
+
+    @property
+    def short_lived_schedules(self):
+        """Gets the short_lived_schedules of this AvailabilitySchedule.  # noqa: E501
+
+
+        :return: The short_lived_schedules of this AvailabilitySchedule.  # noqa: E501
+        :rtype: list[ShortLivedTaskSchedule]
+        """
+        return self._short_lived_schedules
+
+    @short_lived_schedules.setter
+    def short_lived_schedules(self, short_lived_schedules):
+        """Sets the short_lived_schedules of this AvailabilitySchedule.
+
+
+        :param short_lived_schedules: The short_lived_schedules of this AvailabilitySchedule.  # noqa: E501
+        :type: list[ShortLivedTaskSchedule]
+        """
+
+        self._short_lived_schedules = short_lived_schedules
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -58,12 +58,6 @@ class TestUiArtifactsControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_get_all5(self):
-        """Test case for get_all5
-
-        """
-        pass
-
     def test_get_artifact_by_application_name(self):
         """Test case for get_artifact_by_application_name
 

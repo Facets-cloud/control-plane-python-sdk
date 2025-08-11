@@ -45,7 +45,8 @@ class Info(object):
         'artifactory': 'str',
         'repository': 'str',
         'tag': 'str',
-        'ui': 'dict(str, object)'
+        'ui': 'dict(str, object)',
+        'critical_resource': 'bool'
     }
 
     attribute_map = {
@@ -66,10 +67,11 @@ class Info(object):
         'artifactory': 'artifactory',
         'repository': 'repository',
         'tag': 'tag',
-        'ui': 'ui'
+        'ui': 'ui',
+        'critical_resource': 'criticalResource'
     }
 
-    def __init__(self, disabled=None, provided=None, version=None, flavour=None, tf_module_id=None, strategy=None, ci_name=None, artifact_type=None, static_image=None, github_repository_url=None, repository_path=None, namespace=None, overridden_name=None, inherit_from_base=None, artifactory=None, repository=None, tag=None, ui=None):  # noqa: E501
+    def __init__(self, disabled=None, provided=None, version=None, flavour=None, tf_module_id=None, strategy=None, ci_name=None, artifact_type=None, static_image=None, github_repository_url=None, repository_path=None, namespace=None, overridden_name=None, inherit_from_base=None, artifactory=None, repository=None, tag=None, ui=None, critical_resource=None):  # noqa: E501
         """Info - a model defined in Swagger"""  # noqa: E501
         self._disabled = None
         self._provided = None
@@ -89,6 +91,7 @@ class Info(object):
         self._repository = None
         self._tag = None
         self._ui = None
+        self._critical_resource = None
         self.discriminator = None
         if disabled is not None:
             self.disabled = disabled
@@ -126,6 +129,8 @@ class Info(object):
             self.tag = tag
         if ui is not None:
             self.ui = ui
+        if critical_resource is not None:
+            self.critical_resource = critical_resource
 
     @property
     def disabled(self):
@@ -516,6 +521,27 @@ class Info(object):
         """
 
         self._ui = ui
+
+    @property
+    def critical_resource(self):
+        """Gets the critical_resource of this Info.  # noqa: E501
+
+
+        :return: The critical_resource of this Info.  # noqa: E501
+        :rtype: bool
+        """
+        return self._critical_resource
+
+    @critical_resource.setter
+    def critical_resource(self, critical_resource):
+        """Sets the critical_resource of this Info.
+
+
+        :param critical_resource: The critical_resource of this Info.  # noqa: E501
+        :type: bool
+        """
+
+        self._critical_resource = critical_resource
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**add_cluster_schedules**](UiCommonClusterControllerApi.md#add_cluster_schedules) | **POST** /cc-ui/v1/clusters/{clusterId}/schedule | 
 [**add_tools_config**](UiCommonClusterControllerApi.md#add_tools_config) | **POST** /cc-ui/v1/clusters/{clusterId}/tools-config | 
 [**attach_image**](UiCommonClusterControllerApi.md#attach_image) | **POST** /cc-ui/v1/clusters/{clusterId}/attach-image | 
+[**bulk_edit_inherit_from_base_for_resources1**](UiCommonClusterControllerApi.md#bulk_edit_inherit_from_base_for_resources1) | **PUT** /cc-ui/v1/clusters/{clusterId}/resource-inherit-from-base | 
 [**bulk_enable_disable_resources**](UiCommonClusterControllerApi.md#bulk_enable_disable_resources) | **PUT** /cc-ui/v1/clusters/{clusterId}/resource-enable-disable | 
 [**copy_configurations_selective**](UiCommonClusterControllerApi.md#copy_configurations_selective) | **PUT** /cc-ui/v1/clusters/{clusterId}/copy-configurations-selective | Copy configurations from one cluster to another selectively
 [**create_availability_schedule**](UiCommonClusterControllerApi.md#create_availability_schedule) | **POST** /cc-ui/v1/clusters/{clusterId}/availability-schedule | 
@@ -31,7 +32,7 @@ Method | HTTP request | Description
 [**get_k8s_credentials**](UiCommonClusterControllerApi.md#get_k8s_credentials) | **GET** /cc-ui/v1/clusters/{clusterId}/k8sCredentials | 
 [**get_kube_config**](UiCommonClusterControllerApi.md#get_kube_config) | **GET** /cc-ui/v1/clusters/{clusterId}/kubeconfig | 
 [**get_matched_modules**](UiCommonClusterControllerApi.md#get_matched_modules) | **GET** /cc-ui/v1/clusters/{clusterId}/match-modules | 
-[**get_namespaces_in_use_by_dependent_clusters**](UiCommonClusterControllerApi.md#get_namespaces_in_use_by_dependent_clusters) | **GET** /cc-ui/v1/clusters/{baseClusterId}/base-env-in-use-namespaces | 
+[**get_namespaces_in_use_by_dependent_clusters1**](UiCommonClusterControllerApi.md#get_namespaces_in_use_by_dependent_clusters1) | **GET** /cc-ui/v1/clusters/{baseClusterId}/base-env-in-use-namespaces | 
 [**get_open_alerts**](UiCommonClusterControllerApi.md#get_open_alerts) | **GET** /cc-ui/v1/clusters/{clusterId}/open-alerts | 
 [**get_overrides1**](UiCommonClusterControllerApi.md#get_overrides1) | **GET** /cc-ui/v1/clusters/{clusterId}/overrides | 
 [**get_provided_resources**](UiCommonClusterControllerApi.md#get_provided_resources) | **GET** /cc-ui/v1/clusters/{clusterId}/providedResources | 
@@ -195,6 +196,56 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**ImageOverrideRequest**](ImageOverrideRequest.md)|  | 
+ **cluster_id** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bulk_edit_inherit_from_base_for_resources1**
+> bulk_edit_inherit_from_base_for_resources1(body, cluster_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.ResourceInheritFromBaseRequest()] # list[ResourceInheritFromBaseRequest] | 
+cluster_id = 'cluster_id_example' # str | 
+
+try:
+    api_instance.bulk_edit_inherit_from_base_for_resources1(body, cluster_id)
+except ApiException as e:
+    print("Exception when calling UiCommonClusterControllerApi->bulk_edit_inherit_from_base_for_resources1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[ResourceInheritFromBaseRequest]**](ResourceInheritFromBaseRequest.md)|  | 
  **cluster_id** | **str**|  | 
 
 ### Return type
@@ -1416,8 +1467,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_namespaces_in_use_by_dependent_clusters**
-> dict(str, str) get_namespaces_in_use_by_dependent_clusters(base_cluster_id)
+# **get_namespaces_in_use_by_dependent_clusters1**
+> dict(str, str) get_namespaces_in_use_by_dependent_clusters1(base_cluster_id)
 
 
 
@@ -1438,10 +1489,10 @@ api_instance = swagger_client.UiCommonClusterControllerApi(swagger_client.ApiCli
 base_cluster_id = 'base_cluster_id_example' # str | 
 
 try:
-    api_response = api_instance.get_namespaces_in_use_by_dependent_clusters(base_cluster_id)
+    api_response = api_instance.get_namespaces_in_use_by_dependent_clusters1(base_cluster_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UiCommonClusterControllerApi->get_namespaces_in_use_by_dependent_clusters: %s\n" % e)
+    print("Exception when calling UiCommonClusterControllerApi->get_namespaces_in_use_by_dependent_clusters1: %s\n" % e)
 ```
 
 ### Parameters

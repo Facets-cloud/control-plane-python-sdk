@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **live_bp_version** | **str** |  | [optional] 
 **current_artifact_url** | **str** |  | [optional] 
 **live_artifact_url** | **str** |  | [optional] 
+**current_artifact_build_id** | **str** |  | [optional] 
+**live_artifact_build_id** | **str** |  | [optional] 
 **current_override_version** | **str** |  | [optional] 
 **live_override_version** | **str** |  | [optional] 
 **health_status** | **str** |  | [optional] 

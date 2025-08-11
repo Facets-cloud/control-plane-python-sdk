@@ -33,7 +33,8 @@ class Edge(object):
         'resource_name': 'str',
         'is_input': 'bool',
         'input_name': 'str',
-        'block_edits': 'bool'
+        'block_edits': 'bool',
+        'output_name': 'str'
     }
 
     attribute_map = {
@@ -42,10 +43,11 @@ class Edge(object):
         'resource_name': 'resourceName',
         'is_input': 'isInput',
         'input_name': 'inputName',
-        'block_edits': 'blockEdits'
+        'block_edits': 'blockEdits',
+        'output_name': 'outputName'
     }
 
-    def __init__(self, id=None, resource_type=None, resource_name=None, is_input=None, input_name=None, block_edits=None):  # noqa: E501
+    def __init__(self, id=None, resource_type=None, resource_name=None, is_input=None, input_name=None, block_edits=None, output_name=None):  # noqa: E501
         """Edge - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._resource_type = None
@@ -53,6 +55,7 @@ class Edge(object):
         self._is_input = None
         self._input_name = None
         self._block_edits = None
+        self._output_name = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -66,6 +69,8 @@ class Edge(object):
             self.input_name = input_name
         if block_edits is not None:
             self.block_edits = block_edits
+        if output_name is not None:
+            self.output_name = output_name
 
     @property
     def id(self):
@@ -192,6 +197,27 @@ class Edge(object):
         """
 
         self._block_edits = block_edits
+
+    @property
+    def output_name(self):
+        """Gets the output_name of this Edge.  # noqa: E501
+
+
+        :return: The output_name of this Edge.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_name
+
+    @output_name.setter
+    def output_name(self, output_name):
+        """Sets the output_name of this Edge.
+
+
+        :param output_name: The output_name of this Edge.  # noqa: E501
+        :type: str
+        """
+
+        self._output_name = output_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

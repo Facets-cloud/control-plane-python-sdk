@@ -128,6 +128,10 @@ Class | Method | HTTP request | Description
 *UIChatGPTControllerApi* | [**get_all_starters**](docs/UIChatGPTControllerApi.md#get_all_starters) | **GET** /cc-ui/v1/clusters/chat/metadata | Get chat starters metadata
 *UIChatGPTControllerApi* | [**get_chat_by_id**](docs/UIChatGPTControllerApi.md#get_chat_by_id) | **GET** /cc-ui/v1/clusters/chat/{chatId} | Get chat by ID
 *UIChatGPTControllerApi* | [**get_k8s_chats**](docs/UIChatGPTControllerApi.md#get_k8s_chats) | **POST** /cc-ui/v1/clusters/{clusterId}/k8s-chat | Ask Questions about k8s operations
+*VariableManagementApi* | [**add_variable**](docs/VariableManagementApi.md#add_variable) | **POST** /cc-ui/v1/stacks/{stackName}/variables | Add new variable/secret
+*VariableManagementApi* | [**add_variables_bulk**](docs/VariableManagementApi.md#add_variables_bulk) | **POST** /cc-ui/v1/stacks/{stackName}/variables/bulk | Add multiple new variables/secrets
+*VariableManagementApi* | [**get_variable_across_environments**](docs/VariableManagementApi.md#get_variable_across_environments) | **GET** /cc-ui/v1/stacks/{stackName}/variables/{variableName}/environments | Get variable/secret across environments
+*VariableManagementApi* | [**update_variable**](docs/VariableManagementApi.md#update_variable) | **PUT** /cc-ui/v1/stacks/{stackName}/variables | Update variable/secret
 *ApplicationControllerApi* | [**change_password**](docs/ApplicationControllerApi.md#change_password) | **PUT** /api/users/{userId}/changePassword | 
 *ApplicationControllerApi* | [**create_user**](docs/ApplicationControllerApi.md#create_user) | **POST** /api/users | 
 *ApplicationControllerApi* | [**create_user_cc**](docs/ApplicationControllerApi.md#create_user_cc) | **POST** /api/cc-users | 
@@ -146,6 +150,7 @@ Class | Method | HTTP request | Description
 *PublicApIsApi* | [**get_feature_property**](docs/PublicApIsApi.md#get_feature_property) | **GET** /public/v1/features/{name} | 
 *PublicApIsApi* | [**get_login_options**](docs/PublicApIsApi.md#get_login_options) | **GET** /public/v1/loginOptions | 
 *PublicApIsApi* | [**get_logo**](docs/PublicApIsApi.md#get_logo) | **GET** /public/v1/logo | 
+*PublicApIsApi* | [**get_module_schema**](docs/PublicApIsApi.md#get_module_schema) | **GET** /public/v1/module/{intent}/{flavor}/{version}/schema | 
 *PublicApIsApi* | [**health_check**](docs/PublicApIsApi.md#health_check) | **GET** /public/v1/health | 
 *PublicApIsApi* | [**link_aws_account**](docs/PublicApIsApi.md#link_aws_account) | **POST** /public/v1/link-aws | 
 *PublicApIsApi* | [**link_azure_account**](docs/PublicApIsApi.md#link_azure_account) | **POST** /public/v1/link-azure | 
@@ -195,11 +200,6 @@ Class | Method | HTTP request | Description
 *UiAccountsControllerApi* | [**validate_github_account**](docs/UiAccountsControllerApi.md#validate_github_account) | **POST** /cc-ui/v1/accounts/github/validate | 
 *UiAccountsControllerApi* | [**validate_gitlab_account**](docs/UiAccountsControllerApi.md#validate_gitlab_account) | **POST** /cc-ui/v1/accounts/gitlab/validate | 
 *UiAccountsControllerApi* | [**validate_kubernetes_account**](docs/UiAccountsControllerApi.md#validate_kubernetes_account) | **POST** /cc-ui/v1/accounts/kubernetes/validate | 
-*UiAlertsControllerApi* | [**delete_all**](docs/UiAlertsControllerApi.md#delete_all) | **DELETE** /cc-ui/v1/alerts | 
-*UiAlertsControllerApi* | [**get_alerts_count**](docs/UiAlertsControllerApi.md#get_alerts_count) | **GET** /cc-ui/v1/alerts/firing/count | 
-*UiAlertsControllerApi* | [**get_alerts_overview**](docs/UiAlertsControllerApi.md#get_alerts_overview) | **GET** /cc-ui/v1/alerts/firing/overview | 
-*UiAlertsControllerApi* | [**get_cluster_alerts**](docs/UiAlertsControllerApi.md#get_cluster_alerts) | **GET** /cc-ui/v1/alerts/{clusterId}/all | 
-*UiAlertsControllerApi* | [**get_firing_alerts**](docs/UiAlertsControllerApi.md#get_firing_alerts) | **GET** /cc-ui/v1/alerts/firing | 
 *UiApplicationControllerApi* | [**abort**](docs/UiApplicationControllerApi.md#abort) | **PUT** /cc-ui/v1/clusters/{clusterId}/abort | 
 *UiApplicationControllerApi* | [**cluster_sync_with_git**](docs/UiApplicationControllerApi.md#cluster_sync_with_git) | **POST** /cc-ui/v1/clusters/{clusterId}/sync-with-git | 
 *UiApplicationControllerApi* | [**get_application_overrides**](docs/UiApplicationControllerApi.md#get_application_overrides) | **GET** /cc-ui/v1/clusters/{clusterId}/{resourceType}/{appName}/overrides | 
@@ -260,7 +260,6 @@ Class | Method | HTTP request | Description
 *UiArtifactsControllerApi* | [**generate_artifact_push_credentials1**](docs/UiArtifactsControllerApi.md#generate_artifact_push_credentials1) | **POST** /cc-ui/v1/artifacts/pushCredentials/{stackName}/{appName} | 
 *UiArtifactsControllerApi* | [**generate_artifact_push_credentials_v2**](docs/UiArtifactsControllerApi.md#generate_artifact_push_credentials_v2) | **POST** /cc-ui/v1/artifacts/pushCredentialsV2/artifactName/{artifactName}/registrationType/{registrationType}/value/{registrationValue} | 
 *UiArtifactsControllerApi* | [**generate_artifact_push_credentials_v3**](docs/UiArtifactsControllerApi.md#generate_artifact_push_credentials_v3) | **POST** /cc-ui/v1/artifacts/pushCredentialsV3/artifactName/{artifactName} | 
-*UiArtifactsControllerApi* | [**get_all5**](docs/UiArtifactsControllerApi.md#get_all5) | **GET** /cc-ui/v1/artifacts | 
 *UiArtifactsControllerApi* | [**get_artifact_by_application_name**](docs/UiArtifactsControllerApi.md#get_artifact_by_application_name) | **GET** /cc-ui/v1/artifacts/cluster/{clusterId}/application/{applicationName} | 
 *UiArtifactsControllerApi* | [**get_artifact_by_cluster_id**](docs/UiArtifactsControllerApi.md#get_artifact_by_cluster_id) | **GET** /cc-ui/v1/artifacts/{clusterId} | 
 *UiArtifactsControllerApi* | [**get_artifacts_by_resource_name_and_resource_type**](docs/UiArtifactsControllerApi.md#get_artifacts_by_resource_name_and_resource_type) | **GET** /cc-ui/v1/artifacts/cluster/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | 
@@ -299,6 +298,7 @@ Class | Method | HTTP request | Description
 *UiBlueprintDesignerControllerApi* | [**apply_template**](docs/UiBlueprintDesignerControllerApi.md#apply_template) | **POST** /cc-ui/v1/designer/{stackName}/{templateName}/apply | 
 *UiBlueprintDesignerControllerApi* | [**bulk_edit_disabled_for_resources**](docs/UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources) | **PUT** /cc-ui/v1/designer/{stackName}/resource-enable-disable | 
 *UiBlueprintDesignerControllerApi* | [**bulk_edit_disabled_for_resources1**](docs/UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources1) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/resource-enable-disable | 
+*UiBlueprintDesignerControllerApi* | [**bulk_edit_inherit_from_base_for_resources**](docs/UiBlueprintDesignerControllerApi.md#bulk_edit_inherit_from_base_for_resources) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/resource-inherit-from-base | 
 *UiBlueprintDesignerControllerApi* | [**create_branch**](docs/UiBlueprintDesignerControllerApi.md#create_branch) | **POST** /cc-ui/v1/designer/{stackName}/{branch}/create-branch | 
 *UiBlueprintDesignerControllerApi* | [**create_resources**](docs/UiBlueprintDesignerControllerApi.md#create_resources) | **POST** /cc-ui/v1/designer/{stackName}/branch/{branch} | 
 *UiBlueprintDesignerControllerApi* | [**delete_resources**](docs/UiBlueprintDesignerControllerApi.md#delete_resources) | **DELETE** /cc-ui/v1/designer/{stackName}/branch/{branch} | 
@@ -342,6 +342,7 @@ Class | Method | HTTP request | Description
 *UiCommonClusterControllerApi* | [**add_cluster_schedules**](docs/UiCommonClusterControllerApi.md#add_cluster_schedules) | **POST** /cc-ui/v1/clusters/{clusterId}/schedule | 
 *UiCommonClusterControllerApi* | [**add_tools_config**](docs/UiCommonClusterControllerApi.md#add_tools_config) | **POST** /cc-ui/v1/clusters/{clusterId}/tools-config | 
 *UiCommonClusterControllerApi* | [**attach_image**](docs/UiCommonClusterControllerApi.md#attach_image) | **POST** /cc-ui/v1/clusters/{clusterId}/attach-image | 
+*UiCommonClusterControllerApi* | [**bulk_edit_inherit_from_base_for_resources1**](docs/UiCommonClusterControllerApi.md#bulk_edit_inherit_from_base_for_resources1) | **PUT** /cc-ui/v1/clusters/{clusterId}/resource-inherit-from-base | 
 *UiCommonClusterControllerApi* | [**bulk_enable_disable_resources**](docs/UiCommonClusterControllerApi.md#bulk_enable_disable_resources) | **PUT** /cc-ui/v1/clusters/{clusterId}/resource-enable-disable | 
 *UiCommonClusterControllerApi* | [**copy_configurations_selective**](docs/UiCommonClusterControllerApi.md#copy_configurations_selective) | **PUT** /cc-ui/v1/clusters/{clusterId}/copy-configurations-selective | Copy configurations from one cluster to another selectively
 *UiCommonClusterControllerApi* | [**create_availability_schedule**](docs/UiCommonClusterControllerApi.md#create_availability_schedule) | **POST** /cc-ui/v1/clusters/{clusterId}/availability-schedule | 
@@ -366,7 +367,7 @@ Class | Method | HTTP request | Description
 *UiCommonClusterControllerApi* | [**get_k8s_credentials**](docs/UiCommonClusterControllerApi.md#get_k8s_credentials) | **GET** /cc-ui/v1/clusters/{clusterId}/k8sCredentials | 
 *UiCommonClusterControllerApi* | [**get_kube_config**](docs/UiCommonClusterControllerApi.md#get_kube_config) | **GET** /cc-ui/v1/clusters/{clusterId}/kubeconfig | 
 *UiCommonClusterControllerApi* | [**get_matched_modules**](docs/UiCommonClusterControllerApi.md#get_matched_modules) | **GET** /cc-ui/v1/clusters/{clusterId}/match-modules | 
-*UiCommonClusterControllerApi* | [**get_namespaces_in_use_by_dependent_clusters**](docs/UiCommonClusterControllerApi.md#get_namespaces_in_use_by_dependent_clusters) | **GET** /cc-ui/v1/clusters/{baseClusterId}/base-env-in-use-namespaces | 
+*UiCommonClusterControllerApi* | [**get_namespaces_in_use_by_dependent_clusters1**](docs/UiCommonClusterControllerApi.md#get_namespaces_in_use_by_dependent_clusters1) | **GET** /cc-ui/v1/clusters/{baseClusterId}/base-env-in-use-namespaces | 
 *UiCommonClusterControllerApi* | [**get_open_alerts**](docs/UiCommonClusterControllerApi.md#get_open_alerts) | **GET** /cc-ui/v1/clusters/{clusterId}/open-alerts | 
 *UiCommonClusterControllerApi* | [**get_overrides1**](docs/UiCommonClusterControllerApi.md#get_overrides1) | **GET** /cc-ui/v1/clusters/{clusterId}/overrides | 
 *UiCommonClusterControllerApi* | [**get_provided_resources**](docs/UiCommonClusterControllerApi.md#get_provided_resources) | **GET** /cc-ui/v1/clusters/{clusterId}/providedResources | 
@@ -409,7 +410,6 @@ Class | Method | HTTP request | Description
 *UiDeliveryPipelineControllerApi* | [**update_delivery_pipeline**](docs/UiDeliveryPipelineControllerApi.md#update_delivery_pipeline) | **PUT** /cc-ui/v1/delivery-pipeline/{stackName} | 
 *UiDeploymentControllerApi* | [**abort_automation_suite**](docs/UiDeploymentControllerApi.md#abort_automation_suite) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/qa/{executionId}/abortSuite | 
 *UiDeploymentControllerApi* | [**approve_release**](docs/UiDeploymentControllerApi.md#approve_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/approveRelease | 
-*UiDeploymentControllerApi* | [**clean_s3_sources**](docs/UiDeploymentControllerApi.md#clean_s3_sources) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/clean-s3-sources | 
 *UiDeploymentControllerApi* | [**create_deployment**](docs/UiDeploymentControllerApi.md#create_deployment) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments | 
 *UiDeploymentControllerApi* | [**destroy_cluster**](docs/UiDeploymentControllerApi.md#destroy_cluster) | **DELETE** /cc-ui/v1/clusters/{clusterId}/deployments/destroy | 
 *UiDeploymentControllerApi* | [**download_terraform_export**](docs/UiDeploymentControllerApi.md#download_terraform_export) | **GET** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/download-terraform-export | 
@@ -436,6 +436,7 @@ Class | Method | HTTP request | Description
 *UiDeploymentControllerApi* | [**trigger_maintenance_release**](docs/UiDeploymentControllerApi.md#trigger_maintenance_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/maintenance | 
 *UiDeploymentControllerApi* | [**trigger_rollback_plan_release**](docs/UiDeploymentControllerApi.md#trigger_rollback_plan_release) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/{resourceType}/{resourceName}/rollback-plan | 
 *UiDeploymentControllerApi* | [**trigger_terraform_export**](docs/UiDeploymentControllerApi.md#trigger_terraform_export) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/terraform-export | 
+*UiDeploymentControllerApi* | [**upload_release_metadata**](docs/UiDeploymentControllerApi.md#upload_release_metadata) | **POST** /cc-ui/v1/clusters/{clusterId}/deployments/{deploymentId}/upload-release-metadata | 
 *UiDomainMappingControllerApi* | [**add_domain_mapping**](docs/UiDomainMappingControllerApi.md#add_domain_mapping) | **POST** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | 
 *UiDomainMappingControllerApi* | [**delete_domain_mapping**](docs/UiDomainMappingControllerApi.md#delete_domain_mapping) | **DELETE** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | 
 *UiDomainMappingControllerApi* | [**get_all_domains**](docs/UiDomainMappingControllerApi.md#get_all_domains) | **GET** /cc-ui/v1/domain-mapping/clusterId/{clusterId}/resourceType/{resourceType}/resourceName/{resourceName} | 
@@ -467,6 +468,10 @@ Class | Method | HTTP request | Description
 *UiDropdownsControllerApi* | [**get_service_overview**](docs/UiDropdownsControllerApi.md#get_service_overview) | **GET** /cc-ui/v1/dropdown/stack/{stackName}/service/{serviceName}/overview | 
 *UiDropdownsControllerApi* | [**sync_cluster_history**](docs/UiDropdownsControllerApi.md#sync_cluster_history) | **POST** /cc-ui/v1/dropdown/logs/cluster/{clusterId} | 
 *UiDropdownsControllerApi* | [**sync_substack_git_history**](docs/UiDropdownsControllerApi.md#sync_substack_git_history) | **POST** /cc-ui/v1/dropdown/logs/substack | 
+*UiEnvironmentControllerApi* | [**configure_draft_environment**](docs/UiEnvironmentControllerApi.md#configure_draft_environment) | **POST** /cc-ui/v1/environments/configure/{clusterId} | 
+*UiEnvironmentControllerApi* | [**create_environment**](docs/UiEnvironmentControllerApi.md#create_environment) | **POST** /cc-ui/v1/environments | 
+*UiEnvironmentControllerApi* | [**get_environment**](docs/UiEnvironmentControllerApi.md#get_environment) | **GET** /cc-ui/v1/environments/{clusterId} | 
+*UiEnvironmentControllerApi* | [**update_environment**](docs/UiEnvironmentControllerApi.md#update_environment) | **PUT** /cc-ui/v1/environments/{clusterId} | 
 *UiGcpClusterControllerApi* | [**configure_draft_cluster**](docs/UiGcpClusterControllerApi.md#configure_draft_cluster) | **POST** /cc-ui/v1/gcp/clusters/configure/{clusterId} | 
 *UiGcpClusterControllerApi* | [**create_gcp_cluster**](docs/UiGcpClusterControllerApi.md#create_gcp_cluster) | **POST** /cc-ui/v1/gcp/clusters | 
 *UiGcpClusterControllerApi* | [**get_gcp_cluster**](docs/UiGcpClusterControllerApi.md#get_gcp_cluster) | **GET** /cc-ui/v1/gcp/clusters/{clusterId} | 
@@ -502,9 +507,6 @@ Class | Method | HTTP request | Description
 *UiMaintenanceWindowControllerApi* | [**enable_disable**](docs/UiMaintenanceWindowControllerApi.md#enable_disable) | **PUT** /cc-ui/v1/maintenance-window/{clusterId}/enable-disable | 
 *UiMaintenanceWindowControllerApi* | [**get_by_cluster_id**](docs/UiMaintenanceWindowControllerApi.md#get_by_cluster_id) | **GET** /cc-ui/v1/maintenance-window/{clusterId} | 
 *UiMaintenanceWindowControllerApi* | [**update2**](docs/UiMaintenanceWindowControllerApi.md#update2) | **PUT** /cc-ui/v1/maintenance-window | 
-*UiMetaControllerApi* | [**get_cp_account**](docs/UiMetaControllerApi.md#get_cp_account) | **GET** /cc-ui/v1/meta/cpAccount | 
-*UiMetaControllerApi* | [**get_supported_component_version**](docs/UiMetaControllerApi.md#get_supported_component_version) | **GET** /cc-ui/v1/meta/components/{componentType}/supportedVersion | 
-*UiMetaControllerApi* | [**get_supported_component_versions**](docs/UiMetaControllerApi.md#get_supported_component_versions) | **GET** /cc-ui/v1/meta/components/supportedVersion | 
 *UiNoAuthUserControllerApi* | [**reset_password_request**](docs/UiNoAuthUserControllerApi.md#reset_password_request) | **POST** /public-ui/v1/user/resetPassword | 
 *UiNoAuthUserControllerApi* | [**save_password**](docs/UiNoAuthUserControllerApi.md#save_password) | **POST** /public-ui/v1/user/savePassword | 
 *UiNoAuthUserControllerApi* | [**validate_token**](docs/UiNoAuthUserControllerApi.md#validate_token) | **POST** /public-ui/v1/user/token/validate | 
@@ -567,6 +569,7 @@ Class | Method | HTTP request | Description
 *UiResourceGroupControllerApi* | [**update1**](docs/UiResourceGroupControllerApi.md#update1) | **PUT** /cc-ui/v1/resource-groups/{resourceGroupId} | 
 *UiResourceGroupControllerApi* | [**update_all_resources**](docs/UiResourceGroupControllerApi.md#update_all_resources) | **PUT** /cc-ui/v1/resource-groups/{resourceGroupId}/resources | 
 *UiResourceGroupControllerApi* | [**update_resource**](docs/UiResourceGroupControllerApi.md#update_resource) | **PATCH** /cc-ui/v1/resource-groups/{resourceGroupId}/resources | 
+*UiResourceStatusControllerApi* | [**get_namespaces_in_use_by_dependent_clusters**](docs/UiResourceStatusControllerApi.md#get_namespaces_in_use_by_dependent_clusters) | **GET** /cc-ui/v1/resources/{baseClusterId}/base-env-in-use-namespaces | 
 *UiResourceStatusControllerApi* | [**get_release_preview**](docs/UiResourceStatusControllerApi.md#get_release_preview) | **GET** /cc-ui/v1/resources/{clusterId}/release-preview | 
 *UiResourceStatusControllerApi* | [**get_resource_status**](docs/UiResourceStatusControllerApi.md#get_resource_status) | **GET** /cc-ui/v1/resources/{projectName}/{environmentName}/status | 
 *UiResourceStatusControllerApi* | [**sync_resource**](docs/UiResourceStatusControllerApi.md#sync_resource) | **POST** /cc-ui/v1/resources/sync | 
@@ -581,6 +584,7 @@ Class | Method | HTTP request | Description
 *UiStackControllerApi* | [**create_starter_project**](docs/UiStackControllerApi.md#create_starter_project) | **POST** /cc-ui/v1/stacks/starter-project | 
 *UiStackControllerApi* | [**create_sub_stack**](docs/UiStackControllerApi.md#create_sub_stack) | **POST** /cc-ui/v1/stacks/substack/{substackName} | 
 *UiStackControllerApi* | [**create_subscription**](docs/UiStackControllerApi.md#create_subscription) | **POST** /cc-ui/v1/stacks/{stackName}/notification/subscriptions | 
+*UiStackControllerApi* | [**delete_overrides_fields**](docs/UiStackControllerApi.md#delete_overrides_fields) | **DELETE** /cc-ui/v1/stacks/{stackName}/overrides-fields | 
 *UiStackControllerApi* | [**delete_stack**](docs/UiStackControllerApi.md#delete_stack) | **DELETE** /cc-ui/v1/stacks/{stackName} | 
 *UiStackControllerApi* | [**enable_git_ops**](docs/UiStackControllerApi.md#enable_git_ops) | **PUT** /cc-ui/v1/stacks/{stackName}/enable-git-ops | 
 *UiStackControllerApi* | [**get_all_clusters**](docs/UiStackControllerApi.md#get_all_clusters) | **GET** /cc-ui/v1/stacks/clusters | 
@@ -611,11 +615,6 @@ Class | Method | HTTP request | Description
 *UiStackControllerApi* | [**sync_stack_with_git**](docs/UiStackControllerApi.md#sync_stack_with_git) | **GET** /cc-ui/v1/stacks/{stackName}/sync-with-git | 
 *UiStackControllerApi* | [**toggle_release**](docs/UiStackControllerApi.md#toggle_release) | **POST** /cc-ui/v1/stacks/{stackName}/toggleRelease | 
 *UiStackControllerApi* | [**update_stack**](docs/UiStackControllerApi.md#update_stack) | **PUT** /cc-ui/v1/stacks/{stackName} | 
-*UiTeamControllerApi* | [**add_team_members**](docs/UiTeamControllerApi.md#add_team_members) | **POST** /cc-ui/v1/teams/{teamId}/members | 
-*UiTeamControllerApi* | [**get_team**](docs/UiTeamControllerApi.md#get_team) | **GET** /cc-ui/v1/teams/{teamId} | 
-*UiTeamControllerApi* | [**get_team_members**](docs/UiTeamControllerApi.md#get_team_members) | **GET** /cc-ui/v1/teams/{teamId}/members | 
-*UiTeamControllerApi* | [**get_teams**](docs/UiTeamControllerApi.md#get_teams) | **GET** /cc-ui/v1/teams/ | 
-*UiTeamControllerApi* | [**upsert_team**](docs/UiTeamControllerApi.md#upsert_team) | **POST** /cc-ui/v1/teams/ | 
 *UiTfVersionControllerApi* | [**delete_tf_stream_for_cluster**](docs/UiTfVersionControllerApi.md#delete_tf_stream_for_cluster) | **DELETE** /cc-ui/v1/terraform/cluster/{clusterId} | 
 *UiTfVersionControllerApi* | [**get_all_versions**](docs/UiTfVersionControllerApi.md#get_all_versions) | **GET** /cc-ui/v1/terraform/versions | 
 *UiTfVersionControllerApi* | [**get_pending_migration_scripts_by_cluster_id**](docs/UiTfVersionControllerApi.md#get_pending_migration_scripts_by_cluster_id) | **GET** /cc-ui/v1/terraform/cluster/{clusterId}/pending-migration-scripts | 
@@ -677,9 +676,6 @@ Class | Method | HTTP request | Description
  - [AffectedResource](docs/AffectedResource.md)
  - [AffectedResourcesRequest](docs/AffectedResourcesRequest.md)
  - [Affinity](docs/Affinity.md)
- - [Alert](docs/Alert.md)
- - [AlertGroup](docs/AlertGroup.md)
- - [AlertOverview](docs/AlertOverview.md)
  - [AllRegionsAndAZ](docs/AllRegionsAndAZ.md)
  - [AppDeployment](docs/AppDeployment.md)
  - [Artifact](docs/Artifact.md)
@@ -740,7 +736,6 @@ Class | Method | HTTP request | Description
  - [ClientAuthenticationMethod](docs/ClientAuthenticationMethod.md)
  - [CloudLinkingRequest](docs/CloudLinkingRequest.md)
  - [ClusterCostDTO](docs/ClusterCostDTO.md)
- - [ClusterFiringAlertsDTO](docs/ClusterFiringAlertsDTO.md)
  - [ClusterInfo](docs/ClusterInfo.md)
  - [ClusterLite](docs/ClusterLite.md)
  - [ClusterMetadata](docs/ClusterMetadata.md)
@@ -793,6 +788,7 @@ Class | Method | HTTP request | Description
  - [DeletedEntitySoftDelete](docs/DeletedEntitySoftDelete.md)
  - [DeploymentContext](docs/DeploymentContext.md)
  - [DeploymentDTO](docs/DeploymentDTO.md)
+ - [DeploymentIdUploadreleasemetadataBody](docs/DeploymentIdUploadreleasemetadataBody.md)
  - [DeploymentLog](docs/DeploymentLog.md)
  - [DeploymentOverview](docs/DeploymentOverview.md)
  - [DeploymentRequest](docs/DeploymentRequest.md)
@@ -815,6 +811,9 @@ Class | Method | HTTP request | Description
  - [EnvSpecificAccess](docs/EnvSpecificAccess.md)
  - [EnvVar](docs/EnvVar.md)
  - [EnvVarSource](docs/EnvVarSource.md)
+ - [Environment](docs/Environment.md)
+ - [EnvironmentRequest](docs/EnvironmentRequest.md)
+ - [EnvironmentVariableValue](docs/EnvironmentVariableValue.md)
  - [EphemeralContainer](docs/EphemeralContainer.md)
  - [EphemeralVolumeSource](docs/EphemeralVolumeSource.md)
  - [Error](docs/Error.md)
@@ -929,6 +928,7 @@ Class | Method | HTTP request | Description
  - [ModuleDTO](docs/ModuleDTO.md)
  - [ModuleInputDTO](docs/ModuleInputDTO.md)
  - [ModuleMetadata](docs/ModuleMetadata.md)
+ - [ModuleSchemaResponseDTO](docs/ModuleSchemaResponseDTO.md)
  - [ModuleUsageDTO](docs/ModuleUsageDTO.md)
  - [ModulesUploadBody](docs/ModulesUploadBody.md)
  - [NFSVolumeSource](docs/NFSVolumeSource.md)
@@ -961,6 +961,8 @@ Class | Method | HTTP request | Description
  - [OtherVersion](docs/OtherVersion.md)
  - [OutputReference](docs/OutputReference.md)
  - [OverrideConfig](docs/OverrideConfig.md)
+ - [OverrideDelete](docs/OverrideDelete.md)
+ - [OverrideDeleteRequest](docs/OverrideDeleteRequest.md)
  - [OverrideObject](docs/OverrideObject.md)
  - [OverrideRequest](docs/OverrideRequest.md)
  - [OwnerReference](docs/OwnerReference.md)
@@ -1051,6 +1053,7 @@ Class | Method | HTTP request | Description
  - [ResourceHistory](docs/ResourceHistory.md)
  - [ResourceHistoryOverview](docs/ResourceHistoryOverview.md)
  - [ResourceInfo](docs/ResourceInfo.md)
+ - [ResourceInheritFromBaseRequest](docs/ResourceInheritFromBaseRequest.md)
  - [ResourceList](docs/ResourceList.md)
  - [ResourceMetadata](docs/ResourceMetadata.md)
  - [ResourceMetricSource](docs/ResourceMetricSource.md)
@@ -1091,6 +1094,7 @@ Class | Method | HTTP request | Description
  - [ServiceOverview](docs/ServiceOverview.md)
  - [ServicePortDTO](docs/ServicePortDTO.md)
  - [Setting](docs/Setting.md)
+ - [ShortLivedTaskSchedule](docs/ShortLivedTaskSchedule.md)
  - [SilenceAlarmRequest](docs/SilenceAlarmRequest.md)
  - [SimpleOauth2User](docs/SimpleOauth2User.md)
  - [SnapshotInfo](docs/SnapshotInfo.md)
@@ -1107,7 +1111,6 @@ Class | Method | HTTP request | Description
  - [Subscription](docs/Subscription.md)
  - [Substack](docs/Substack.md)
  - [SubstackRequest](docs/SubstackRequest.md)
- - [SupportedVersions](docs/SupportedVersions.md)
  - [Sysctl](docs/Sysctl.md)
  - [TCPSocketAction](docs/TCPSocketAction.md)
  - [TFModule](docs/TFModule.md)
@@ -1121,9 +1124,6 @@ Class | Method | HTTP request | Description
  - [TFProvider](docs/TFProvider.md)
  - [TagDataModel](docs/TagDataModel.md)
  - [TargetResource](docs/TargetResource.md)
- - [Team](docs/Team.md)
- - [TeamMembership](docs/TeamMembership.md)
- - [TeamResource](docs/TeamResource.md)
  - [TemplateGitDetails](docs/TemplateGitDetails.md)
  - [TemplateResponseDTO](docs/TemplateResponseDTO.md)
  - [TerraformChange](docs/TerraformChange.md)
@@ -1140,6 +1140,7 @@ Class | Method | HTTP request | Description
  - [TopologySpreadConstraint](docs/TopologySpreadConstraint.md)
  - [TypedLocalObjectReference](docs/TypedLocalObjectReference.md)
  - [TypedObjectReference](docs/TypedObjectReference.md)
+ - [UpdateBlueprintRequest](docs/UpdateBlueprintRequest.md)
  - [User](docs/User.md)
  - [UserAccessToken](docs/UserAccessToken.md)
  - [UserGroup](docs/UserGroup.md)
@@ -1156,6 +1157,8 @@ Class | Method | HTTP request | Description
  - [ValidationResult](docs/ValidationResult.md)
  - [VariableCountDto](docs/VariableCountDto.md)
  - [VariableDetails](docs/VariableDetails.md)
+ - [VariableEnvironmentResponse](docs/VariableEnvironmentResponse.md)
+ - [VariableRequest](docs/VariableRequest.md)
  - [Variables](docs/Variables.md)
  - [Version](docs/Version.md)
  - [VersionVersioned](docs/VersionVersioned.md)

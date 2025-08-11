@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**apply_template**](UiBlueprintDesignerControllerApi.md#apply_template) | **POST** /cc-ui/v1/designer/{stackName}/{templateName}/apply | 
 [**bulk_edit_disabled_for_resources**](UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources) | **PUT** /cc-ui/v1/designer/{stackName}/resource-enable-disable | 
 [**bulk_edit_disabled_for_resources1**](UiBlueprintDesignerControllerApi.md#bulk_edit_disabled_for_resources1) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/resource-enable-disable | 
+[**bulk_edit_inherit_from_base_for_resources**](UiBlueprintDesignerControllerApi.md#bulk_edit_inherit_from_base_for_resources) | **PUT** /cc-ui/v1/designer/{stackName}/branch/{branch}/resource-inherit-from-base | 
 [**create_branch**](UiBlueprintDesignerControllerApi.md#create_branch) | **POST** /cc-ui/v1/designer/{stackName}/{branch}/create-branch | 
 [**create_resources**](UiBlueprintDesignerControllerApi.md#create_resources) | **POST** /cc-ui/v1/designer/{stackName}/branch/{branch} | 
 [**delete_resources**](UiBlueprintDesignerControllerApi.md#delete_resources) | **DELETE** /cc-ui/v1/designer/{stackName}/branch/{branch} | 
@@ -220,6 +221,58 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**list[ResourceEnableDisableRequest]**](ResourceEnableDisableRequest.md)|  | 
+ **stack_name** | **str**|  | 
+ **branch** | **str**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bulk_edit_inherit_from_base_for_resources**
+> bulk_edit_inherit_from_base_for_resources(body, stack_name, branch)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
+body = [swagger_client.ResourceInheritFromBaseRequest()] # list[ResourceInheritFromBaseRequest] | 
+stack_name = 'stack_name_example' # str | 
+branch = 'branch_example' # str | 
+
+try:
+    api_instance.bulk_edit_inherit_from_base_for_resources(body, stack_name, branch)
+except ApiException as e:
+    print("Exception when calling UiBlueprintDesignerControllerApi->bulk_edit_inherit_from_base_for_resources: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[ResourceInheritFromBaseRequest]**](ResourceInheritFromBaseRequest.md)|  | 
  **stack_name** | **str**|  | 
  **branch** | **str**|  | 
 
@@ -651,7 +704,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_module_inputs**
-> dict(str, ModuleInputDTO) get_module_inputs(stack_name, intent, flavor)
+> dict(str, ModuleInputDTO) get_module_inputs(stack_name, intent, flavor, version=version)
 
 
 
@@ -672,9 +725,10 @@ api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.Ap
 stack_name = 'stack_name_example' # str | 
 intent = 'intent_example' # str | 
 flavor = 'flavor_example' # str | 
+version = 'version_example' # str |  (optional)
 
 try:
-    api_response = api_instance.get_module_inputs(stack_name, intent, flavor)
+    api_response = api_instance.get_module_inputs(stack_name, intent, flavor, version=version)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiBlueprintDesignerControllerApi->get_module_inputs: %s\n" % e)
@@ -687,6 +741,7 @@ Name | Type | Description  | Notes
  **stack_name** | **str**|  | 
  **intent** | **str**|  | 
  **flavor** | **str**|  | 
+ **version** | **str**|  | [optional] 
 
 ### Return type
 
@@ -1360,7 +1415,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_resources**
-> update_resources(body, stack_name, branch)
+> update_resources(body, stack_name, branch, change_affected_resources=change_affected_resources)
 
 
 
@@ -1378,12 +1433,13 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiBlueprintDesignerControllerApi(swagger_client.ApiClient(configuration))
-body = [swagger_client.ResourceFileRequest()] # list[ResourceFileRequest] | 
+body = swagger_client.UpdateBlueprintRequest() # UpdateBlueprintRequest | 
 stack_name = 'stack_name_example' # str | 
 branch = 'branch_example' # str | 
+change_affected_resources = false # bool |  (optional) (default to false)
 
 try:
-    api_instance.update_resources(body, stack_name, branch)
+    api_instance.update_resources(body, stack_name, branch, change_affected_resources=change_affected_resources)
 except ApiException as e:
     print("Exception when calling UiBlueprintDesignerControllerApi->update_resources: %s\n" % e)
 ```
@@ -1392,9 +1448,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**list[ResourceFileRequest]**](ResourceFileRequest.md)|  | 
+ **body** | [**UpdateBlueprintRequest**](UpdateBlueprintRequest.md)|  | 
  **stack_name** | **str**|  | 
  **branch** | **str**|  | 
+ **change_affected_resources** | **bool**|  | [optional] [default to false]
 
 ### Return type
 

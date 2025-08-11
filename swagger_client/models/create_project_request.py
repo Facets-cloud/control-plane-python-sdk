@@ -131,7 +131,7 @@ class CreateProjectRequest(object):
         :param cloud: The cloud of this CreateProjectRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if cloud not in allowed_values:
             raise ValueError(
                 "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
@@ -158,7 +158,7 @@ class CreateProjectRequest(object):
         :param allowed_clouds: The allowed_clouds of this CreateProjectRequest.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if not set(allowed_clouds).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501

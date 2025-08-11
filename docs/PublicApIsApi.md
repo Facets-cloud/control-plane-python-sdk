@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_feature_property**](PublicApIsApi.md#get_feature_property) | **GET** /public/v1/features/{name} | 
 [**get_login_options**](PublicApIsApi.md#get_login_options) | **GET** /public/v1/loginOptions | 
 [**get_logo**](PublicApIsApi.md#get_logo) | **GET** /public/v1/logo | 
+[**get_module_schema**](PublicApIsApi.md#get_module_schema) | **GET** /public/v1/module/{intent}/{flavor}/{version}/schema | 
 [**health_check**](PublicApIsApi.md#health_check) | **GET** /public/v1/health | 
 [**link_aws_account**](PublicApIsApi.md#link_aws_account) | **POST** /public/v1/link-aws | 
 [**link_azure_account**](PublicApIsApi.md#link_azure_account) | **POST** /public/v1/link-azure | 
@@ -239,6 +240,61 @@ This endpoint does not need any parameter.
 ### Return type
 
 **str**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_module_schema**
+> ModuleSchemaResponseDTO get_module_schema(intent, flavor, version, allow_preview=allow_preview)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.PublicApIsApi(swagger_client.ApiClient(configuration))
+intent = 'intent_example' # str | 
+flavor = 'flavor_example' # str | 
+version = 'version_example' # str | 
+allow_preview = false # bool |  (optional) (default to false)
+
+try:
+    api_response = api_instance.get_module_schema(intent, flavor, version, allow_preview=allow_preview)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PublicApIsApi->get_module_schema: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **intent** | **str**|  | 
+ **flavor** | **str**|  | 
+ **version** | **str**|  | 
+ **allow_preview** | **bool**|  | [optional] [default to false]
+
+### Return type
+
+[**ModuleSchemaResponseDTO**](ModuleSchemaResponseDTO.md)
 
 ### Authorization
 
