@@ -41,7 +41,12 @@ class ProjectTypeResponse(object):
         'associated_blueprints': 'list[str]',
         'iac_tool': 'str',
         'iac_tool_version': 'str',
-        'base_project_name': 'str'
+        'dynamic_launch': 'bool',
+        'enable_no_cloud_environment': 'bool',
+        'base_project_name': 'str',
+        'legacy': 'bool',
+        'include_tooling_provider': 'bool',
+        'include_cp_k8s_provider': 'bool'
     }
 
     attribute_map = {
@@ -58,10 +63,15 @@ class ProjectTypeResponse(object):
         'associated_blueprints': 'associatedBlueprints',
         'iac_tool': 'iacTool',
         'iac_tool_version': 'iacToolVersion',
-        'base_project_name': 'baseProjectName'
+        'dynamic_launch': 'dynamicLaunch',
+        'enable_no_cloud_environment': 'enableNoCloudEnvironment',
+        'base_project_name': 'baseProjectName',
+        'legacy': 'legacy',
+        'include_tooling_provider': 'includeToolingProvider',
+        'include_cp_k8s_provider': 'includeCpK8sProvider'
     }
 
-    def __init__(self, id=None, name=None, allowed_clouds=None, description=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, template_git_details=None, mapped_resources=None, associated_blueprints=None, iac_tool=None, iac_tool_version=None, base_project_name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, allowed_clouds=None, description=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, template_git_details=None, mapped_resources=None, associated_blueprints=None, iac_tool=None, iac_tool_version=None, dynamic_launch=None, enable_no_cloud_environment=None, base_project_name=None, legacy=None, include_tooling_provider=None, include_cp_k8s_provider=None):  # noqa: E501
         """ProjectTypeResponse - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
@@ -76,7 +86,12 @@ class ProjectTypeResponse(object):
         self._associated_blueprints = None
         self._iac_tool = None
         self._iac_tool_version = None
+        self._dynamic_launch = None
+        self._enable_no_cloud_environment = None
         self._base_project_name = None
+        self._legacy = None
+        self._include_tooling_provider = None
+        self._include_cp_k8s_provider = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -104,8 +119,18 @@ class ProjectTypeResponse(object):
             self.iac_tool = iac_tool
         if iac_tool_version is not None:
             self.iac_tool_version = iac_tool_version
+        if dynamic_launch is not None:
+            self.dynamic_launch = dynamic_launch
+        if enable_no_cloud_environment is not None:
+            self.enable_no_cloud_environment = enable_no_cloud_environment
         if base_project_name is not None:
             self.base_project_name = base_project_name
+        if legacy is not None:
+            self.legacy = legacy
+        if include_tooling_provider is not None:
+            self.include_tooling_provider = include_tooling_provider
+        if include_cp_k8s_provider is not None:
+            self.include_cp_k8s_provider = include_cp_k8s_provider
 
     @property
     def id(self):
@@ -167,7 +192,7 @@ class ProjectTypeResponse(object):
         :param allowed_clouds: The allowed_clouds of this ProjectTypeResponse.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if not set(allowed_clouds).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
@@ -394,6 +419,48 @@ class ProjectTypeResponse(object):
         self._iac_tool_version = iac_tool_version
 
     @property
+    def dynamic_launch(self):
+        """Gets the dynamic_launch of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The dynamic_launch of this ProjectTypeResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._dynamic_launch
+
+    @dynamic_launch.setter
+    def dynamic_launch(self, dynamic_launch):
+        """Sets the dynamic_launch of this ProjectTypeResponse.
+
+
+        :param dynamic_launch: The dynamic_launch of this ProjectTypeResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._dynamic_launch = dynamic_launch
+
+    @property
+    def enable_no_cloud_environment(self):
+        """Gets the enable_no_cloud_environment of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The enable_no_cloud_environment of this ProjectTypeResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_no_cloud_environment
+
+    @enable_no_cloud_environment.setter
+    def enable_no_cloud_environment(self, enable_no_cloud_environment):
+        """Sets the enable_no_cloud_environment of this ProjectTypeResponse.
+
+
+        :param enable_no_cloud_environment: The enable_no_cloud_environment of this ProjectTypeResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_no_cloud_environment = enable_no_cloud_environment
+
+    @property
     def base_project_name(self):
         """Gets the base_project_name of this ProjectTypeResponse.  # noqa: E501
 
@@ -413,6 +480,69 @@ class ProjectTypeResponse(object):
         """
 
         self._base_project_name = base_project_name
+
+    @property
+    def legacy(self):
+        """Gets the legacy of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The legacy of this ProjectTypeResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._legacy
+
+    @legacy.setter
+    def legacy(self, legacy):
+        """Sets the legacy of this ProjectTypeResponse.
+
+
+        :param legacy: The legacy of this ProjectTypeResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._legacy = legacy
+
+    @property
+    def include_tooling_provider(self):
+        """Gets the include_tooling_provider of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The include_tooling_provider of this ProjectTypeResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_tooling_provider
+
+    @include_tooling_provider.setter
+    def include_tooling_provider(self, include_tooling_provider):
+        """Sets the include_tooling_provider of this ProjectTypeResponse.
+
+
+        :param include_tooling_provider: The include_tooling_provider of this ProjectTypeResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_tooling_provider = include_tooling_provider
+
+    @property
+    def include_cp_k8s_provider(self):
+        """Gets the include_cp_k8s_provider of this ProjectTypeResponse.  # noqa: E501
+
+
+        :return: The include_cp_k8s_provider of this ProjectTypeResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_cp_k8s_provider
+
+    @include_cp_k8s_provider.setter
+    def include_cp_k8s_provider(self, include_cp_k8s_provider):
+        """Sets the include_cp_k8s_provider of this ProjectTypeResponse.
+
+
+        :param include_cp_k8s_provider: The include_cp_k8s_provider of this ProjectTypeResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_cp_k8s_provider = include_cp_k8s_provider
 
     def to_dict(self):
         """Returns the model properties as a dict"""

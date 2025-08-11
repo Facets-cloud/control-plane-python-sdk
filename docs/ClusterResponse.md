@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **configured** | **bool** |  | [optional] 
 **k8s_requests_to_limits_ratio** | **float** |  | [optional] 
 **dynamic_launch** | **bool** |  | [optional] 
+**has_k8s_credentials** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

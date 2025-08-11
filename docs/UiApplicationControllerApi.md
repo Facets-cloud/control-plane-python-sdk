@@ -854,7 +854,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_resource_override_object**
-> OverrideObject post_resource_override_object(body, cluster_id, resource_name, resource_type, do_sync=do_sync)
+> OverrideObject post_resource_override_object(body, cluster_id, resource_name, resource_type, do_sync=do_sync, change_affected_resources=change_affected_resources)
 
 
 
@@ -877,9 +877,10 @@ cluster_id = 'cluster_id_example' # str |
 resource_name = 'resource_name_example' # str | 
 resource_type = 'resource_type_example' # str | 
 do_sync = true # bool |  (optional) (default to true)
+change_affected_resources = false # bool |  (optional) (default to false)
 
 try:
-    api_response = api_instance.post_resource_override_object(body, cluster_id, resource_name, resource_type, do_sync=do_sync)
+    api_response = api_instance.post_resource_override_object(body, cluster_id, resource_name, resource_type, do_sync=do_sync, change_affected_resources=change_affected_resources)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiApplicationControllerApi->post_resource_override_object: %s\n" % e)
@@ -894,6 +895,7 @@ Name | Type | Description  | Notes
  **resource_name** | **str**|  | 
  **resource_type** | **str**|  | 
  **do_sync** | **bool**|  | [optional] [default to true]
+ **change_affected_resources** | **bool**|  | [optional] [default to false]
 
 ### Return type
 

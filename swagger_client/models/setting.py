@@ -294,7 +294,7 @@ class Setting(object):
         """
         if supported_for_clouds is None:
             raise ValueError("Invalid value for `supported_for_clouds`, must not be `None`")  # noqa: E501
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if not set(supported_for_clouds).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `supported_for_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501

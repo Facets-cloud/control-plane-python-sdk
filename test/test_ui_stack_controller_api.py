@@ -64,6 +64,12 @@ class TestUiStackControllerApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_overrides_fields(self):
+        """Test case for delete_overrides_fields
+
+        """
+        pass
+
     def test_delete_stack(self):
         """Test case for delete_stack
 

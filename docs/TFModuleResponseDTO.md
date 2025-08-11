@@ -31,10 +31,12 @@ Name | Type | Description | Notes
 **readme_md** | **str** | Readme content in markdown format | [optional] 
 **other_versions** | [**list[OtherVersion]**](OtherVersion.md) |  | [optional] 
 **latest_version** | [**OtherVersion**](OtherVersion.md) |  | [optional] 
+**critical_resource** | **bool** |  | [optional] 
 **tags** | **list[str]** | Tags associated with the module | [optional] 
 **allowed_test_projects** | **list[str]** | List of test projects where this module will be available. If absent, it is available globally. | [optional] 
 **iac_tool** | **list[str]** |  | [optional] 
 **name_length_limit** | **int** | Maximum allowed length for resource names using this module | [optional] 
+**can_download** | **bool** |  | [optional] 
 **feature_branch** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -48,9 +48,9 @@ class Artifact(object):
         'applied_rule_name': 'str',
         'repository_name': 'str',
         'tag': 'str',
+        'registration_type': 'str',
         'change_log': 'str',
         'registration_value': 'str',
-        'registration_type': 'str',
         'promoted': 'bool',
         'classified': 'bool',
         'versioning_key': 'str',
@@ -78,16 +78,16 @@ class Artifact(object):
         'applied_rule_name': 'appliedRuleName',
         'repository_name': 'repositoryName',
         'tag': 'tag',
+        'registration_type': 'registrationType',
         'change_log': 'changeLog',
         'registration_value': 'registrationValue',
-        'registration_type': 'registrationType',
         'promoted': 'promoted',
         'classified': 'classified',
         'versioning_key': 'versioningKey',
         'number_of_versions': 'numberOfVersions'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, build_id=None, application_name=None, artifact_uri=None, cluster_id=None, release_stream=None, release_type=None, artifactory=None, build_description=None, created_on=None, metadata=None, applied_rule_version_id=None, applied_rule_id=None, applied_rule_name=None, repository_name=None, tag=None, change_log=None, registration_value=None, registration_type=None, promoted=None, classified=None, versioning_key=None, number_of_versions=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, build_id=None, application_name=None, artifact_uri=None, cluster_id=None, release_stream=None, release_type=None, artifactory=None, build_description=None, created_on=None, metadata=None, applied_rule_version_id=None, applied_rule_id=None, applied_rule_name=None, repository_name=None, tag=None, registration_type=None, change_log=None, registration_value=None, promoted=None, classified=None, versioning_key=None, number_of_versions=None):  # noqa: E501
         """Artifact - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -109,9 +109,9 @@ class Artifact(object):
         self._applied_rule_name = None
         self._repository_name = None
         self._tag = None
+        self._registration_type = None
         self._change_log = None
         self._registration_value = None
-        self._registration_type = None
         self._promoted = None
         self._classified = None
         self._versioning_key = None
@@ -157,12 +157,12 @@ class Artifact(object):
             self.repository_name = repository_name
         if tag is not None:
             self.tag = tag
+        if registration_type is not None:
+            self.registration_type = registration_type
         if change_log is not None:
             self.change_log = change_log
         if registration_value is not None:
             self.registration_value = registration_value
-        if registration_type is not None:
-            self.registration_type = registration_type
         if promoted is not None:
             self.promoted = promoted
         if classified is not None:
@@ -599,6 +599,33 @@ class Artifact(object):
         self._tag = tag
 
     @property
+    def registration_type(self):
+        """Gets the registration_type of this Artifact.  # noqa: E501
+
+
+        :return: The registration_type of this Artifact.  # noqa: E501
+        :rtype: str
+        """
+        return self._registration_type
+
+    @registration_type.setter
+    def registration_type(self, registration_type):
+        """Sets the registration_type of this Artifact.
+
+
+        :param registration_type: The registration_type of this Artifact.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
+        if registration_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(registration_type, allowed_values)
+            )
+
+        self._registration_type = registration_type
+
+    @property
     def change_log(self):
         """Gets the change_log of this Artifact.  # noqa: E501
 
@@ -639,33 +666,6 @@ class Artifact(object):
         """
 
         self._registration_value = registration_value
-
-    @property
-    def registration_type(self):
-        """Gets the registration_type of this Artifact.  # noqa: E501
-
-
-        :return: The registration_type of this Artifact.  # noqa: E501
-        :rtype: str
-        """
-        return self._registration_type
-
-    @registration_type.setter
-    def registration_type(self, registration_type):
-        """Sets the registration_type of this Artifact.
-
-
-        :param registration_type: The registration_type of this Artifact.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["ENVIRONMENT", "RELEASE_STREAM", "HYBRID"]  # noqa: E501
-        if registration_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `registration_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(registration_type, allowed_values)
-            )
-
-        self._registration_type = registration_type
 
     @property
     def promoted(self):

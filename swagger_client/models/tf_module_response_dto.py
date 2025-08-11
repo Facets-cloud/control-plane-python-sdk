@@ -56,10 +56,12 @@ class TFModuleResponseDTO(object):
         'readme_md': 'str',
         'other_versions': 'list[OtherVersion]',
         'latest_version': 'OtherVersion',
+        'critical_resource': 'bool',
         'tags': 'list[str]',
         'allowed_test_projects': 'list[str]',
         'iac_tool': 'list[str]',
         'name_length_limit': 'int',
+        'can_download': 'bool',
         'feature_branch': 'bool'
     }
 
@@ -92,14 +94,16 @@ class TFModuleResponseDTO(object):
         'readme_md': 'readmeMd',
         'other_versions': 'otherVersions',
         'latest_version': 'latestVersion',
+        'critical_resource': 'criticalResource',
         'tags': 'tags',
         'allowed_test_projects': 'allowedTestProjects',
         'iac_tool': 'iacTool',
         'name_length_limit': 'nameLengthLimit',
+        'can_download': 'canDownload',
         'feature_branch': 'featureBranch'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent_details=None, intent=None, flavor=None, alias_flavors=None, version=None, clouds=None, source=None, stage=None, preview_module_id=None, published_module_id=None, type=None, git_url=None, git_ref=None, sample_json=None, spec=None, metadata=None, inputs=None, outputs=None, versioning_key=None, description=None, readme_md=None, other_versions=None, latest_version=None, tags=None, allowed_test_projects=None, iac_tool=None, name_length_limit=None, feature_branch=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, intent_details=None, intent=None, flavor=None, alias_flavors=None, version=None, clouds=None, source=None, stage=None, preview_module_id=None, published_module_id=None, type=None, git_url=None, git_ref=None, sample_json=None, spec=None, metadata=None, inputs=None, outputs=None, versioning_key=None, description=None, readme_md=None, other_versions=None, latest_version=None, critical_resource=None, tags=None, allowed_test_projects=None, iac_tool=None, name_length_limit=None, can_download=None, feature_branch=None):  # noqa: E501
         """TFModuleResponseDTO - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -129,10 +133,12 @@ class TFModuleResponseDTO(object):
         self._readme_md = None
         self._other_versions = None
         self._latest_version = None
+        self._critical_resource = None
         self._tags = None
         self._allowed_test_projects = None
         self._iac_tool = None
         self._name_length_limit = None
+        self._can_download = None
         self._feature_branch = None
         self.discriminator = None
         if id is not None:
@@ -191,6 +197,8 @@ class TFModuleResponseDTO(object):
             self.other_versions = other_versions
         if latest_version is not None:
             self.latest_version = latest_version
+        if critical_resource is not None:
+            self.critical_resource = critical_resource
         if tags is not None:
             self.tags = tags
         if allowed_test_projects is not None:
@@ -199,6 +207,8 @@ class TFModuleResponseDTO(object):
             self.iac_tool = iac_tool
         if name_length_limit is not None:
             self.name_length_limit = name_length_limit
+        if can_download is not None:
+            self.can_download = can_download
         if feature_branch is not None:
             self.feature_branch = feature_branch
 
@@ -841,6 +851,27 @@ class TFModuleResponseDTO(object):
         self._latest_version = latest_version
 
     @property
+    def critical_resource(self):
+        """Gets the critical_resource of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The critical_resource of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._critical_resource
+
+    @critical_resource.setter
+    def critical_resource(self, critical_resource):
+        """Sets the critical_resource of this TFModuleResponseDTO.
+
+
+        :param critical_resource: The critical_resource of this TFModuleResponseDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._critical_resource = critical_resource
+
+    @property
     def tags(self):
         """Gets the tags of this TFModuleResponseDTO.  # noqa: E501
 
@@ -936,6 +967,27 @@ class TFModuleResponseDTO(object):
         """
 
         self._name_length_limit = name_length_limit
+
+    @property
+    def can_download(self):
+        """Gets the can_download of this TFModuleResponseDTO.  # noqa: E501
+
+
+        :return: The can_download of this TFModuleResponseDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._can_download
+
+    @can_download.setter
+    def can_download(self, can_download):
+        """Sets the can_download of this TFModuleResponseDTO.
+
+
+        :param can_download: The can_download of this TFModuleResponseDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._can_download = can_download
 
     @property
     def feature_branch(self):

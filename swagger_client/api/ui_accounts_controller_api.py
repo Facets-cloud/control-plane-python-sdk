@@ -1607,10 +1607,10 @@ class UiAccountsControllerApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'account_id' in params:
+            path_params['accountId'] = params['account_id']  # noqa: E501
 
         query_params = []
-        if 'account_id' in params:
-            query_params.append(('accountId', params['account_id']))  # noqa: E501
 
         header_params = {}
 

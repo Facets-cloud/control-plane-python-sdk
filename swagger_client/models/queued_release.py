@@ -41,6 +41,7 @@ class QueuedRelease(object):
         'triggered_by': 'str',
         'creation_date': 'datetime',
         'release_trace_id': 'str',
+        'skip_state_check': 'bool',
         'tf_version': 'TfVersion',
         'parallel_release': 'bool'
     }
@@ -59,11 +60,12 @@ class QueuedRelease(object):
         'triggered_by': 'triggeredBy',
         'creation_date': 'creationDate',
         'release_trace_id': 'releaseTraceId',
+        'skip_state_check': 'skipStateCheck',
         'tf_version': 'tfVersion',
         'parallel_release': 'parallelRelease'
     }
 
-    def __init__(self, id=None, cluster_id=None, release_type=None, hotfix_resources=None, with_refresh=None, force_release=None, allow_destroy=None, comment=None, override_build_steps=None, can_queue=None, triggered_by=None, creation_date=None, release_trace_id=None, tf_version=None, parallel_release=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, release_type=None, hotfix_resources=None, with_refresh=None, force_release=None, allow_destroy=None, comment=None, override_build_steps=None, can_queue=None, triggered_by=None, creation_date=None, release_trace_id=None, skip_state_check=None, tf_version=None, parallel_release=None):  # noqa: E501
         """QueuedRelease - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._cluster_id = None
@@ -78,6 +80,7 @@ class QueuedRelease(object):
         self._triggered_by = None
         self._creation_date = None
         self._release_trace_id = None
+        self._skip_state_check = None
         self._tf_version = None
         self._parallel_release = None
         self.discriminator = None
@@ -107,6 +110,8 @@ class QueuedRelease(object):
             self.creation_date = creation_date
         if release_trace_id is not None:
             self.release_trace_id = release_trace_id
+        if skip_state_check is not None:
+            self.skip_state_check = skip_state_check
         if tf_version is not None:
             self.tf_version = tf_version
         if parallel_release is not None:
@@ -390,6 +395,27 @@ class QueuedRelease(object):
         """
 
         self._release_trace_id = release_trace_id
+
+    @property
+    def skip_state_check(self):
+        """Gets the skip_state_check of this QueuedRelease.  # noqa: E501
+
+
+        :return: The skip_state_check of this QueuedRelease.  # noqa: E501
+        :rtype: bool
+        """
+        return self._skip_state_check
+
+    @skip_state_check.setter
+    def skip_state_check(self, skip_state_check):
+        """Sets the skip_state_check of this QueuedRelease.
+
+
+        :param skip_state_check: The skip_state_check of this QueuedRelease.  # noqa: E501
+        :type: bool
+        """
+
+        self._skip_state_check = skip_state_check
 
     @property
     def tf_version(self):

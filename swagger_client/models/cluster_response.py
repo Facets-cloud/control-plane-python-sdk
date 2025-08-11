@@ -54,7 +54,8 @@ class ClusterResponse(object):
         'cluster_state': 'str',
         'configured': 'bool',
         'k8s_requests_to_limits_ratio': 'float',
-        'dynamic_launch': 'bool'
+        'dynamic_launch': 'bool',
+        'has_k8s_credentials': 'bool'
     }
 
     attribute_map = {
@@ -84,10 +85,11 @@ class ClusterResponse(object):
         'cluster_state': 'clusterState',
         'configured': 'configured',
         'k8s_requests_to_limits_ratio': 'k8sRequestsToLimitsRatio',
-        'dynamic_launch': 'dynamicLaunch'
+        'dynamic_launch': 'dynamicLaunch',
+        'has_k8s_credentials': 'hasK8sCredentials'
     }
 
-    def __init__(self, id=None, name=None, stack_name=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, branch=None, cloud=None, tz=None, release_stream=None, cd_pipeline_parent=None, require_sign_off=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, cluster_code=None, cloud_account_id=None, cloud_account_name=None, is_ephemeral=None, pause_releases=None, namespace=None, base_cluster=None, dependent_clusters=None, cluster_state=None, configured=None, k8s_requests_to_limits_ratio=None, dynamic_launch=None):  # noqa: E501
+    def __init__(self, id=None, name=None, stack_name=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, branch=None, cloud=None, tz=None, release_stream=None, cd_pipeline_parent=None, require_sign_off=None, auto_sign_off_schedule=None, enable_auto_sign_off=None, cluster_code=None, cloud_account_id=None, cloud_account_name=None, is_ephemeral=None, pause_releases=None, namespace=None, base_cluster=None, dependent_clusters=None, cluster_state=None, configured=None, k8s_requests_to_limits_ratio=None, dynamic_launch=None, has_k8s_credentials=None):  # noqa: E501
         """ClusterResponse - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
@@ -116,6 +118,7 @@ class ClusterResponse(object):
         self._configured = None
         self._k8s_requests_to_limits_ratio = None
         self._dynamic_launch = None
+        self._has_k8s_credentials = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -171,6 +174,8 @@ class ClusterResponse(object):
             self.k8s_requests_to_limits_ratio = k8s_requests_to_limits_ratio
         if dynamic_launch is not None:
             self.dynamic_launch = dynamic_launch
+        if has_k8s_credentials is not None:
+            self.has_k8s_credentials = has_k8s_credentials
 
     @property
     def id(self):
@@ -358,7 +363,7 @@ class ClusterResponse(object):
         :param cloud: The cloud of this ClusterResponse.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if cloud not in allowed_values:
             raise ValueError(
                 "Invalid value for `cloud` ({0}), must be one of {1}"  # noqa: E501
@@ -750,6 +755,27 @@ class ClusterResponse(object):
         """
 
         self._dynamic_launch = dynamic_launch
+
+    @property
+    def has_k8s_credentials(self):
+        """Gets the has_k8s_credentials of this ClusterResponse.  # noqa: E501
+
+
+        :return: The has_k8s_credentials of this ClusterResponse.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_k8s_credentials
+
+    @has_k8s_credentials.setter
+    def has_k8s_credentials(self, has_k8s_credentials):
+        """Sets the has_k8s_credentials of this ClusterResponse.
+
+
+        :param has_k8s_credentials: The has_k8s_credentials of this ClusterResponse.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_k8s_credentials = has_k8s_credentials
 
     def to_dict(self):
         """Returns the model properties as a dict"""

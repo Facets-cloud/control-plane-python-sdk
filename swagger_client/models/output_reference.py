@@ -31,22 +31,25 @@ class OutputReference(object):
         'resource_type': 'str',
         'resource_name': 'str',
         'output_name': 'str',
-        'output_title': 'str'
+        'output_title': 'str',
+        'output_description': 'str'
     }
 
     attribute_map = {
         'resource_type': 'resourceType',
         'resource_name': 'resourceName',
         'output_name': 'outputName',
-        'output_title': 'outputTitle'
+        'output_title': 'outputTitle',
+        'output_description': 'outputDescription'
     }
 
-    def __init__(self, resource_type=None, resource_name=None, output_name=None, output_title=None):  # noqa: E501
+    def __init__(self, resource_type=None, resource_name=None, output_name=None, output_title=None, output_description=None):  # noqa: E501
         """OutputReference - a model defined in Swagger"""  # noqa: E501
         self._resource_type = None
         self._resource_name = None
         self._output_name = None
         self._output_title = None
+        self._output_description = None
         self.discriminator = None
         if resource_type is not None:
             self.resource_type = resource_type
@@ -56,6 +59,8 @@ class OutputReference(object):
             self.output_name = output_name
         if output_title is not None:
             self.output_title = output_title
+        if output_description is not None:
+            self.output_description = output_description
 
     @property
     def resource_type(self):
@@ -140,6 +145,27 @@ class OutputReference(object):
         """
 
         self._output_title = output_title
+
+    @property
+    def output_description(self):
+        """Gets the output_description of this OutputReference.  # noqa: E501
+
+
+        :return: The output_description of this OutputReference.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_description
+
+    @output_description.setter
+    def output_description(self, output_description):
+        """Sets the output_description of this OutputReference.
+
+
+        :param output_description: The output_description of this OutputReference.  # noqa: E501
+        :type: str
+        """
+
+        self._output_description = output_description
 
     def to_dict(self):
         """Returns the model properties as a dict"""

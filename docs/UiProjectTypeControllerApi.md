@@ -114,7 +114,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_all_project_types**
-> list[ProjectTypeResponse] get_all_project_types()
+> list[ProjectTypeResponse] get_all_project_types(legacy=legacy)
 
 Get all project types
 
@@ -134,17 +134,21 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = swagger_client.UiProjectTypeControllerApi(swagger_client.ApiClient(configuration))
+legacy = true # bool |  (optional)
 
 try:
     # Get all project types
-    api_response = api_instance.get_all_project_types()
+    api_response = api_instance.get_all_project_types(legacy=legacy)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UiProjectTypeControllerApi->get_all_project_types: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **legacy** | **bool**|  | [optional] 
 
 ### Return type
 

@@ -37,6 +37,8 @@ class ResourceStatus(object):
         'live_bp_version': 'str',
         'current_artifact_url': 'str',
         'live_artifact_url': 'str',
+        'current_artifact_build_id': 'str',
+        'live_artifact_build_id': 'str',
         'current_override_version': 'str',
         'live_override_version': 'str',
         'health_status': 'str',
@@ -60,6 +62,8 @@ class ResourceStatus(object):
         'live_bp_version': 'liveBPVersion',
         'current_artifact_url': 'currentArtifactUrl',
         'live_artifact_url': 'liveArtifactUrl',
+        'current_artifact_build_id': 'currentArtifactBuildId',
+        'live_artifact_build_id': 'liveArtifactBuildId',
         'current_override_version': 'currentOverrideVersion',
         'live_override_version': 'liveOverrideVersion',
         'health_status': 'healthStatus',
@@ -73,7 +77,7 @@ class ResourceStatus(object):
         'flavor': 'flavor'
     }
 
-    def __init__(self, id=None, cluster_id=None, resource_name=None, resource_type=None, sync_status=None, current_bp_version=None, live_bp_version=None, current_artifact_url=None, live_artifact_url=None, current_override_version=None, live_override_version=None, health_status=None, release_status=None, release_trace_id=None, is_alpha=None, disabled=None, current_state=None, previous_state=None, has_state_change=None, flavor=None):  # noqa: E501
+    def __init__(self, id=None, cluster_id=None, resource_name=None, resource_type=None, sync_status=None, current_bp_version=None, live_bp_version=None, current_artifact_url=None, live_artifact_url=None, current_artifact_build_id=None, live_artifact_build_id=None, current_override_version=None, live_override_version=None, health_status=None, release_status=None, release_trace_id=None, is_alpha=None, disabled=None, current_state=None, previous_state=None, has_state_change=None, flavor=None):  # noqa: E501
         """ResourceStatus - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._cluster_id = None
@@ -84,6 +88,8 @@ class ResourceStatus(object):
         self._live_bp_version = None
         self._current_artifact_url = None
         self._live_artifact_url = None
+        self._current_artifact_build_id = None
+        self._live_artifact_build_id = None
         self._current_override_version = None
         self._live_override_version = None
         self._health_status = None
@@ -114,6 +120,10 @@ class ResourceStatus(object):
             self.current_artifact_url = current_artifact_url
         if live_artifact_url is not None:
             self.live_artifact_url = live_artifact_url
+        if current_artifact_build_id is not None:
+            self.current_artifact_build_id = current_artifact_build_id
+        if live_artifact_build_id is not None:
+            self.live_artifact_build_id = live_artifact_build_id
         if current_override_version is not None:
             self.current_override_version = current_override_version
         if live_override_version is not None:
@@ -331,6 +341,48 @@ class ResourceStatus(object):
         """
 
         self._live_artifact_url = live_artifact_url
+
+    @property
+    def current_artifact_build_id(self):
+        """Gets the current_artifact_build_id of this ResourceStatus.  # noqa: E501
+
+
+        :return: The current_artifact_build_id of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._current_artifact_build_id
+
+    @current_artifact_build_id.setter
+    def current_artifact_build_id(self, current_artifact_build_id):
+        """Sets the current_artifact_build_id of this ResourceStatus.
+
+
+        :param current_artifact_build_id: The current_artifact_build_id of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._current_artifact_build_id = current_artifact_build_id
+
+    @property
+    def live_artifact_build_id(self):
+        """Gets the live_artifact_build_id of this ResourceStatus.  # noqa: E501
+
+
+        :return: The live_artifact_build_id of this ResourceStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._live_artifact_build_id
+
+    @live_artifact_build_id.setter
+    def live_artifact_build_id(self, live_artifact_build_id):
+        """Sets the live_artifact_build_id of this ResourceStatus.
+
+
+        :param live_artifact_build_id: The live_artifact_build_id of this ResourceStatus.  # noqa: E501
+        :type: str
+        """
+
+        self._live_artifact_build_id = live_artifact_build_id
 
     @property
     def current_override_version(self):

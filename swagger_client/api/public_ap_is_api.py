@@ -465,6 +465,119 @@ class PublicApIsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_module_schema(self, intent, flavor, version, **kwargs):  # noqa: E501
+        """get_module_schema  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_module_schema(intent, flavor, version, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str intent: (required)
+        :param str flavor: (required)
+        :param str version: (required)
+        :param bool allow_preview:
+        :return: ModuleSchemaResponseDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_module_schema_with_http_info(intent, flavor, version, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_module_schema_with_http_info(intent, flavor, version, **kwargs)  # noqa: E501
+            return data
+
+    def get_module_schema_with_http_info(self, intent, flavor, version, **kwargs):  # noqa: E501
+        """get_module_schema  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_module_schema_with_http_info(intent, flavor, version, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str intent: (required)
+        :param str flavor: (required)
+        :param str version: (required)
+        :param bool allow_preview:
+        :return: ModuleSchemaResponseDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['intent', 'flavor', 'version', 'allow_preview']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_module_schema" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'intent' is set
+        if ('intent' not in params or
+                params['intent'] is None):
+            raise ValueError("Missing the required parameter `intent` when calling `get_module_schema`")  # noqa: E501
+        # verify the required parameter 'flavor' is set
+        if ('flavor' not in params or
+                params['flavor'] is None):
+            raise ValueError("Missing the required parameter `flavor` when calling `get_module_schema`")  # noqa: E501
+        # verify the required parameter 'version' is set
+        if ('version' not in params or
+                params['version'] is None):
+            raise ValueError("Missing the required parameter `version` when calling `get_module_schema`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'intent' in params:
+            path_params['intent'] = params['intent']  # noqa: E501
+        if 'flavor' in params:
+            path_params['flavor'] = params['flavor']  # noqa: E501
+        if 'version' in params:
+            path_params['version'] = params['version']  # noqa: E501
+
+        query_params = []
+        if 'allow_preview' in params:
+            query_params.append(('allowPreview', params['allow_preview']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/public/v1/module/{intent}/{flavor}/{version}/schema', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ModuleSchemaResponseDTO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def health_check(self, **kwargs):  # noqa: E501
         """health_check  # noqa: E501
 

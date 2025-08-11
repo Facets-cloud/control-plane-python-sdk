@@ -292,7 +292,7 @@ class CreateBlueprintRequest(object):
         :param primary_cloud: The primary_cloud of this CreateBlueprintRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if primary_cloud not in allowed_values:
             raise ValueError(
                 "Invalid value for `primary_cloud` ({0}), must be one of {1}"  # noqa: E501
@@ -319,7 +319,7 @@ class CreateBlueprintRequest(object):
         :param allowed_clouds: The allowed_clouds of this CreateBlueprintRequest.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if not set(allowed_clouds).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501

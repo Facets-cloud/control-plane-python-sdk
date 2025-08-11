@@ -40,12 +40,6 @@ class TestUiDeploymentControllerApi(unittest.TestCase):
         """
         pass
 
-    def test_clean_s3_sources(self):
-        """Test case for clean_s3_sources
-
-        """
-        pass
-
     def test_create_deployment(self):
         """Test case for create_deployment
 
@@ -198,6 +192,12 @@ class TestUiDeploymentControllerApi(unittest.TestCase):
 
     def test_trigger_terraform_export(self):
         """Test case for trigger_terraform_export
+
+        """
+        pass
+
+    def test_upload_release_metadata(self):
+        """Test case for upload_release_metadata
 
         """
         pass

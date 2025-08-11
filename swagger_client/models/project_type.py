@@ -40,7 +40,12 @@ class ProjectType(object):
         'mapped_resources': 'list[ProjectTypeMappedResource]',
         'base_project_name': 'str',
         'iac_tool': 'str',
-        'iac_tool_version': 'str'
+        'iac_tool_version': 'str',
+        'dynamic_launch': 'bool',
+        'enable_no_cloud_environment': 'bool',
+        'legacy': 'bool',
+        'include_tooling_provider': 'bool',
+        'include_cp_k8s_provider': 'bool'
     }
 
     attribute_map = {
@@ -56,10 +61,15 @@ class ProjectType(object):
         'mapped_resources': 'mappedResources',
         'base_project_name': 'baseProjectName',
         'iac_tool': 'iacTool',
-        'iac_tool_version': 'iacToolVersion'
+        'iac_tool_version': 'iacToolVersion',
+        'dynamic_launch': 'dynamicLaunch',
+        'enable_no_cloud_environment': 'enableNoCloudEnvironment',
+        'legacy': 'legacy',
+        'include_tooling_provider': 'includeToolingProvider',
+        'include_cp_k8s_provider': 'includeCpK8sProvider'
     }
 
-    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, allowed_clouds=None, description=None, template_git_details=None, mapped_resources=None, base_project_name=None, iac_tool=None, iac_tool_version=None):  # noqa: E501
+    def __init__(self, id=None, created_by=None, creation_date=None, last_modified_date=None, last_modified_by=None, name=None, allowed_clouds=None, description=None, template_git_details=None, mapped_resources=None, base_project_name=None, iac_tool=None, iac_tool_version=None, dynamic_launch=None, enable_no_cloud_environment=None, legacy=None, include_tooling_provider=None, include_cp_k8s_provider=None):  # noqa: E501
         """ProjectType - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._created_by = None
@@ -74,6 +84,11 @@ class ProjectType(object):
         self._base_project_name = None
         self._iac_tool = None
         self._iac_tool_version = None
+        self._dynamic_launch = None
+        self._enable_no_cloud_environment = None
+        self._legacy = None
+        self._include_tooling_provider = None
+        self._include_cp_k8s_provider = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -101,6 +116,16 @@ class ProjectType(object):
             self.iac_tool = iac_tool
         if iac_tool_version is not None:
             self.iac_tool_version = iac_tool_version
+        if dynamic_launch is not None:
+            self.dynamic_launch = dynamic_launch
+        if enable_no_cloud_environment is not None:
+            self.enable_no_cloud_environment = enable_no_cloud_environment
+        if legacy is not None:
+            self.legacy = legacy
+        if include_tooling_provider is not None:
+            self.include_tooling_provider = include_tooling_provider
+        if include_cp_k8s_provider is not None:
+            self.include_cp_k8s_provider = include_cp_k8s_provider
 
     @property
     def id(self):
@@ -246,7 +271,7 @@ class ProjectType(object):
         :param allowed_clouds: The allowed_clouds of this ProjectType.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES"]  # noqa: E501
+        allowed_values = ["AWS", "AZURE", "LOCAL", "GCP", "KUBERNETES", "NO_CLOUD"]  # noqa: E501
         if not set(allowed_clouds).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `allowed_clouds` [{0}], must be a subset of [{1}]"  # noqa: E501
@@ -387,6 +412,111 @@ class ProjectType(object):
         """
 
         self._iac_tool_version = iac_tool_version
+
+    @property
+    def dynamic_launch(self):
+        """Gets the dynamic_launch of this ProjectType.  # noqa: E501
+
+
+        :return: The dynamic_launch of this ProjectType.  # noqa: E501
+        :rtype: bool
+        """
+        return self._dynamic_launch
+
+    @dynamic_launch.setter
+    def dynamic_launch(self, dynamic_launch):
+        """Sets the dynamic_launch of this ProjectType.
+
+
+        :param dynamic_launch: The dynamic_launch of this ProjectType.  # noqa: E501
+        :type: bool
+        """
+
+        self._dynamic_launch = dynamic_launch
+
+    @property
+    def enable_no_cloud_environment(self):
+        """Gets the enable_no_cloud_environment of this ProjectType.  # noqa: E501
+
+
+        :return: The enable_no_cloud_environment of this ProjectType.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_no_cloud_environment
+
+    @enable_no_cloud_environment.setter
+    def enable_no_cloud_environment(self, enable_no_cloud_environment):
+        """Sets the enable_no_cloud_environment of this ProjectType.
+
+
+        :param enable_no_cloud_environment: The enable_no_cloud_environment of this ProjectType.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_no_cloud_environment = enable_no_cloud_environment
+
+    @property
+    def legacy(self):
+        """Gets the legacy of this ProjectType.  # noqa: E501
+
+
+        :return: The legacy of this ProjectType.  # noqa: E501
+        :rtype: bool
+        """
+        return self._legacy
+
+    @legacy.setter
+    def legacy(self, legacy):
+        """Sets the legacy of this ProjectType.
+
+
+        :param legacy: The legacy of this ProjectType.  # noqa: E501
+        :type: bool
+        """
+
+        self._legacy = legacy
+
+    @property
+    def include_tooling_provider(self):
+        """Gets the include_tooling_provider of this ProjectType.  # noqa: E501
+
+
+        :return: The include_tooling_provider of this ProjectType.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_tooling_provider
+
+    @include_tooling_provider.setter
+    def include_tooling_provider(self, include_tooling_provider):
+        """Sets the include_tooling_provider of this ProjectType.
+
+
+        :param include_tooling_provider: The include_tooling_provider of this ProjectType.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_tooling_provider = include_tooling_provider
+
+    @property
+    def include_cp_k8s_provider(self):
+        """Gets the include_cp_k8s_provider of this ProjectType.  # noqa: E501
+
+
+        :return: The include_cp_k8s_provider of this ProjectType.  # noqa: E501
+        :rtype: bool
+        """
+        return self._include_cp_k8s_provider
+
+    @include_cp_k8s_provider.setter
+    def include_cp_k8s_provider(self, include_cp_k8s_provider):
+        """Sets the include_cp_k8s_provider of this ProjectType.
+
+
+        :param include_cp_k8s_provider: The include_cp_k8s_provider of this ProjectType.  # noqa: E501
+        :type: bool
+        """
+
+        self._include_cp_k8s_provider = include_cp_k8s_provider
 
     def to_dict(self):
         """Returns the model properties as a dict"""

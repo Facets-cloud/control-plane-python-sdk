@@ -464,6 +464,119 @@ class UiBlueprintDesignerControllerApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def bulk_edit_inherit_from_base_for_resources(self, body, stack_name, branch, **kwargs):  # noqa: E501
+        """bulk_edit_inherit_from_base_for_resources  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bulk_edit_inherit_from_base_for_resources(body, stack_name, branch, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[ResourceInheritFromBaseRequest] body: (required)
+        :param str stack_name: (required)
+        :param str branch: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bulk_edit_inherit_from_base_for_resources_with_http_info(body, stack_name, branch, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bulk_edit_inherit_from_base_for_resources_with_http_info(body, stack_name, branch, **kwargs)  # noqa: E501
+            return data
+
+    def bulk_edit_inherit_from_base_for_resources_with_http_info(self, body, stack_name, branch, **kwargs):  # noqa: E501
+        """bulk_edit_inherit_from_base_for_resources  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bulk_edit_inherit_from_base_for_resources_with_http_info(body, stack_name, branch, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[ResourceInheritFromBaseRequest] body: (required)
+        :param str stack_name: (required)
+        :param str branch: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'stack_name', 'branch']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bulk_edit_inherit_from_base_for_resources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `bulk_edit_inherit_from_base_for_resources`")  # noqa: E501
+        # verify the required parameter 'stack_name' is set
+        if ('stack_name' not in params or
+                params['stack_name'] is None):
+            raise ValueError("Missing the required parameter `stack_name` when calling `bulk_edit_inherit_from_base_for_resources`")  # noqa: E501
+        # verify the required parameter 'branch' is set
+        if ('branch' not in params or
+                params['branch'] is None):
+            raise ValueError("Missing the required parameter `branch` when calling `bulk_edit_inherit_from_base_for_resources`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'stack_name' in params:
+            path_params['stackName'] = params['stack_name']  # noqa: E501
+        if 'branch' in params:
+            path_params['branch'] = params['branch']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/cc-ui/v1/designer/{stackName}/branch/{branch}/resource-inherit-from-base', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_branch(self, stack_name, branch, **kwargs):  # noqa: E501
         """create_branch  # noqa: E501
 
@@ -1310,6 +1423,7 @@ class UiBlueprintDesignerControllerApi(object):
         :param str stack_name: (required)
         :param str intent: (required)
         :param str flavor: (required)
+        :param str version:
         :return: dict(str, ModuleInputDTO)
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1333,12 +1447,13 @@ class UiBlueprintDesignerControllerApi(object):
         :param str stack_name: (required)
         :param str intent: (required)
         :param str flavor: (required)
+        :param str version:
         :return: dict(str, ModuleInputDTO)
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['stack_name', 'intent', 'flavor']  # noqa: E501
+        all_params = ['stack_name', 'intent', 'flavor', 'version']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1377,6 +1492,8 @@ class UiBlueprintDesignerControllerApi(object):
             path_params['flavor'] = params['flavor']  # noqa: E501
 
         query_params = []
+        if 'version' in params:
+            query_params.append(('version', params['version']))  # noqa: E501
 
         header_params = {}
 
@@ -2732,9 +2849,10 @@ class UiBlueprintDesignerControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ResourceFileRequest] body: (required)
+        :param UpdateBlueprintRequest body: (required)
         :param str stack_name: (required)
         :param str branch: (required)
+        :param bool change_affected_resources:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2755,15 +2873,16 @@ class UiBlueprintDesignerControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[ResourceFileRequest] body: (required)
+        :param UpdateBlueprintRequest body: (required)
         :param str stack_name: (required)
         :param str branch: (required)
+        :param bool change_affected_resources:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'stack_name', 'branch']  # noqa: E501
+        all_params = ['body', 'stack_name', 'branch', 'change_affected_resources']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2800,6 +2919,8 @@ class UiBlueprintDesignerControllerApi(object):
             path_params['branch'] = params['branch']  # noqa: E501
 
         query_params = []
+        if 'change_affected_resources' in params:
+            query_params.append(('changeAffectedResources', params['change_affected_resources']))  # noqa: E501
 
         header_params = {}
 

@@ -58,6 +58,12 @@ class TestPublicApIsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_module_schema(self):
+        """Test case for get_module_schema
+
+        """
+        pass
+
     def test_health_check(self):
         """Test case for health_check
 

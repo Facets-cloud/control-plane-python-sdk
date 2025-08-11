@@ -16,6 +16,11 @@ Name | Type | Description | Notes
 **base_project_name** | **str** |  | [optional] 
 **iac_tool** | **str** |  | [optional] 
 **iac_tool_version** | **str** |  | [optional] 
+**dynamic_launch** | **bool** |  | [optional] 
+**enable_no_cloud_environment** | **bool** |  | [optional] 
+**legacy** | **bool** |  | [optional] 
+**include_tooling_provider** | **bool** |  | [optional] 
+**include_cp_k8s_provider** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **triggered_by** | **str** |  | [optional] 
 **creation_date** | **datetime** |  | [optional] 
 **release_trace_id** | **str** |  | [optional] 
+**skip_state_check** | **bool** |  | [optional] 
 **tf_version** | [**TfVersion**](TfVersion.md) |  | [optional] 
 **parallel_release** | **bool** |  | [optional] 
 

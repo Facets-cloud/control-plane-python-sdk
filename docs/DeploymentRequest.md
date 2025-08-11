@@ -15,10 +15,11 @@ Name | Type | Description | Notes
 **hotfix_resources** | [**list[FacetsResource]**](FacetsResource.md) |  | [optional] 
 **lock_id** | **str** |  | [optional] 
 **can_queue** | **bool** |  | [optional] 
-**parallel_release** | **bool** |  | [optional] 
+**parallel_release** | **bool** |  | [optional] [default to False]
 **release_trace_id** | **str** |  | [optional] 
 **queued_release_id** | **str** |  | [optional] 
 **rollback_deployment_id** | **str** |  | [optional] 
+**skip_state_check** | **bool** |  | [optional] 
 **alpha** | **bool** |  | [optional] 
 **approved_release** | **bool** |  | [optional] 
 

@@ -1714,6 +1714,7 @@ class UiApplicationControllerApi(object):
         :param str resource_name: (required)
         :param str resource_type: (required)
         :param bool do_sync:
+        :param bool change_affected_resources:
         :return: OverrideObject
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1739,12 +1740,13 @@ class UiApplicationControllerApi(object):
         :param str resource_name: (required)
         :param str resource_type: (required)
         :param bool do_sync:
+        :param bool change_affected_resources:
         :return: OverrideObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'cluster_id', 'resource_name', 'resource_type', 'do_sync']  # noqa: E501
+        all_params = ['body', 'cluster_id', 'resource_name', 'resource_type', 'do_sync', 'change_affected_resources']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1789,6 +1791,8 @@ class UiApplicationControllerApi(object):
         query_params = []
         if 'do_sync' in params:
             query_params.append(('doSync', params['do_sync']))  # noqa: E501
+        if 'change_affected_resources' in params:
+            query_params.append(('changeAffectedResources', params['change_affected_resources']))  # noqa: E501
 
         header_params = {}
 

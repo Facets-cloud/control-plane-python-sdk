@@ -30,25 +30,30 @@ class ResourceStatusResponse(object):
     swagger_types = {
         'project_name': 'str',
         'environment_name': 'str',
+        'cluster_id': 'str',
         'resource_statuses': 'list[ResourceStatus]'
     }
 
     attribute_map = {
         'project_name': 'projectName',
         'environment_name': 'environmentName',
+        'cluster_id': 'clusterId',
         'resource_statuses': 'resourceStatuses'
     }
 
-    def __init__(self, project_name=None, environment_name=None, resource_statuses=None):  # noqa: E501
+    def __init__(self, project_name=None, environment_name=None, cluster_id=None, resource_statuses=None):  # noqa: E501
         """ResourceStatusResponse - a model defined in Swagger"""  # noqa: E501
         self._project_name = None
         self._environment_name = None
+        self._cluster_id = None
         self._resource_statuses = None
         self.discriminator = None
         if project_name is not None:
             self.project_name = project_name
         if environment_name is not None:
             self.environment_name = environment_name
+        if cluster_id is not None:
+            self.cluster_id = cluster_id
         if resource_statuses is not None:
             self.resource_statuses = resource_statuses
 
@@ -93,6 +98,27 @@ class ResourceStatusResponse(object):
         """
 
         self._environment_name = environment_name
+
+    @property
+    def cluster_id(self):
+        """Gets the cluster_id of this ResourceStatusResponse.  # noqa: E501
+
+
+        :return: The cluster_id of this ResourceStatusResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._cluster_id
+
+    @cluster_id.setter
+    def cluster_id(self, cluster_id):
+        """Sets the cluster_id of this ResourceStatusResponse.
+
+
+        :param cluster_id: The cluster_id of this ResourceStatusResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._cluster_id = cluster_id
 
     @property
     def resource_statuses(self):

@@ -4,9 +4,59 @@ All URIs are relative to *https://facetsdemo.console.facets.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_namespaces_in_use_by_dependent_clusters**](UiResourceStatusControllerApi.md#get_namespaces_in_use_by_dependent_clusters) | **GET** /cc-ui/v1/resources/{baseClusterId}/base-env-in-use-namespaces | 
 [**get_release_preview**](UiResourceStatusControllerApi.md#get_release_preview) | **GET** /cc-ui/v1/resources/{clusterId}/release-preview | 
 [**get_resource_status**](UiResourceStatusControllerApi.md#get_resource_status) | **GET** /cc-ui/v1/resources/{projectName}/{environmentName}/status | 
 [**sync_resource**](UiResourceStatusControllerApi.md#sync_resource) | **POST** /cc-ui/v1/resources/sync | 
+
+# **get_namespaces_in_use_by_dependent_clusters**
+> dict(str, str) get_namespaces_in_use_by_dependent_clusters(base_cluster_id)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+# Configure HTTP basic authorization: basicAuth
+configuration = swagger_client.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+
+# create an instance of the API class
+api_instance = swagger_client.UiResourceStatusControllerApi(swagger_client.ApiClient(configuration))
+base_cluster_id = 'base_cluster_id_example' # str | 
+
+try:
+    api_response = api_instance.get_namespaces_in_use_by_dependent_clusters(base_cluster_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UiResourceStatusControllerApi->get_namespaces_in_use_by_dependent_clusters: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **base_cluster_id** | **str**|  | 
+
+### Return type
+
+**dict(str, str)**
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_release_preview**
 > ReleasePreviewResponse get_release_preview(cluster_id)

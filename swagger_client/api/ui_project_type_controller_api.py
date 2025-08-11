@@ -236,6 +236,7 @@ class UiProjectTypeControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param bool legacy:
         :return: list[ProjectTypeResponse]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -257,12 +258,13 @@ class UiProjectTypeControllerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param bool legacy:
         :return: list[ProjectTypeResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['legacy']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -283,6 +285,8 @@ class UiProjectTypeControllerApi(object):
         path_params = {}
 
         query_params = []
+        if 'legacy' in params:
+            query_params.append(('legacy', params['legacy']))  # noqa: E501
 
         header_params = {}
 
